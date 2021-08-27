@@ -5,14 +5,16 @@ Extract and analyze text type sequences with the Wolfram Language.
 ---
 ## Background
 
-I needed a function that could show me common adjectives associated with a particular topic or object. I was able to write it, but I wanted to support more text types.
+I needed a function that could show me common adjectives associated with a particular topic or object. I wrote a function to search relevant Wikipedia articles for particular sequences like ("adjective", "air craft"), but I wanted to support more text types.
 
-Facilitating this is the concept of a TextPattern: an arrangement of text and text content types.
+Introducing the TextPattern: an arrangement of text and text content types. Here's a basic example of what it looks like:
 
 For example:
 ```Mathematica
 TextPattern["this","is", "a", TextType["Adjective"], TextType["Noun"]]
 ```
+
+TextPatterns are Pattern Objects that expand during the evaluation of TextSequenceCases based on the sourcetext.
 
 ---
 ## Usage:
