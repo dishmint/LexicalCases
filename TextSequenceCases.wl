@@ -9,6 +9,12 @@
 
 
 BeginPackage["TextSequenceCases`"]
+TextSequenceCases::usage="TextSequenceCases[\!\(\*
+StyleBox[\"source\", \"TI\"]\), \!\(\*
+StyleBox[\"textpatt\", \"TI\"]\)] gives the text sequences in \!\(\*
+StyleBox[\"source\", \"TI\"]\) that match the text pattern \!\(\*
+StyleBox[\"textpatt\", \"TI\"]\)."
+Cases
 Begin["Private`"]
 End[]
 EndPackage[]
