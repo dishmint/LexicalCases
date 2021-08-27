@@ -15,7 +15,7 @@ Usage:
 TextSequenceCases looks for sequences in a text matching a TextPattern.
 
 ```Mathematica
-TextSequenceCases[source-text, text-pattern]
+TextSequenceCases[sourcetext, TextPattern[...]]
 ```
 ---
 Under the hood
@@ -28,4 +28,4 @@ TextSequenceCases works thusly:
 2. Tokenizes source-text
 	2.1 Applies TextWords to source-text
 3. Looks for Sequences in tokenized-source-text matching the expanded TextPattern
-	3.1 SequenceCases[tokenized-source-text, expanded-text-pattern] 
+	3.1 SequenceCases[tokenized-source-text, expanded-text-pattern]
