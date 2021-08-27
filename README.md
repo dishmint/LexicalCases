@@ -23,9 +23,9 @@ Under the hood
 TextSequenceCases works thusly:
 
 1. Expands the TextPattern
-	2. Replaces TextType[<type>] with all occurrences of that type in source-text
-	3. Converts Text Pattern Objects to built-in WL Pattern Objects
+    2. Replaces TextType[<type>] with all occurrences of that type in source-text
+    3. Converts Text Pattern Objects to built-in WL Pattern Objects
 4. Tokenizes source-text
-	5. Applies TextWords to source-text
+    5. Applies TextWords to source-text
 6. Looks for Sequences in tokenized-source-text matching the expanded TextPattern
-	7. SequenceCases[tokenized-source-text, expanded-text-pattern]
+    7. SequenceCases[tokenized-source-text, expanded-text-pattern]
