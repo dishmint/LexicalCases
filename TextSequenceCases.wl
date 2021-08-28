@@ -19,9 +19,14 @@ StyleBox[\"textpatt\", \"TI\"]\)."
 (* TextPatterns *)
 TextPattern::usage="TextPattern[\!\(\*SubscriptBox[
 StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] represents a pattern of text matching \!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object matching \!\(\*SubscriptBox[
 StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
 StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\!\(\*SubscriptBox[\(\[Ellipsis]\), \(,\)]\)in the fixed order given."
+TextPatternSequence::usage="TextPatternSequence[\!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object representing a sequence of TextPattern objects arguments matching \!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]"
 OrderlessTextPattern::usage="OrderlessTextPattern[\!\(\*SubscriptBox[
 StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
 StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object representing a pattern of text matching \!\(\*SubscriptBox[
@@ -33,18 +38,19 @@ StyleBox[\"textpatt\", \"TI\"]\)"
 TextType::usage="TextType[\!\(\*
 StyleBox[\"type\", \"TI\"]\)] is a TextPattern object representing text content of type \!\(\*
 StyleBox[\"type\", \"TI\"]\)"
-ConvertToPatternObject::usage="For development purposes only, convert TextPattern objects to Pattern objects"
+ConvertToSequencePattern::usage="For development purposes only, convert TextPattern objects to Pattern objects"
 
 Begin["Private`"]
 $TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType)..)
 
 (* Pattern Behaviors and Processors *)
-ConvertToPatternObject[tp_TextPattern]:=ReplaceAll[
+ConvertToSequencePattern[tp_TextPattern]:=ReplaceAll[
 	tp,
 	{
-	TextPattern -> PatternSequence,
-	OrderlessTextPattern -> OrderlessPatternSequence,
-	OptionalTextPattern -> Function[With[{sym=Unique[]}, Optional[Pattern[sym,RepeatedNull[#,{1}]],Nothing]]]
+	TextPattern -> List,
+	TextPatternSequence -> PatternSequence,
+	OrderlessTextPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
+	OptionalTextPattern -> (Function[Flatten@Alternatives[#,PatternSequence[]]])
 	}
 	]
 
@@ -78,23 +84,23 @@ ValidTextPatternObjectQ[tp_]:=Module[
 	]
 
 TextSequenceCases[tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesServiceQuery[ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
+	TextSequenceCasesServiceQuery[ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
 	
 TextSequenceCases[sourcetext_String,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesOnString[sourcetext, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnString,{opts}]]
+	TextSequenceCasesOnString[sourcetext, ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesOnString,{opts}]]
 	
 TextSequenceCases[wikiquery_Rule,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
+	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
 
 (* No SourceText specified *)
-TextSequenceCasesServiceQuery[patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+TextSequenceCasesServiceQuery[patt_List, opts:OptionsPattern[]]:=Module[
 		{p=patt},
 		EchoLabel["patt  :"][p];
 		EchoLabel["optsg  :"][opts];
 	]
 
 (* SourceText is a string *)
-TextSequenceCasesOnString[source_String, patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+TextSequenceCasesOnString[source_String, patt_List, opts:OptionsPattern[]]:=Module[
 	{s=source,p=patt},
 	EchoLabel["source:"][s];
 	EchoLabel["tpatt :"][p];
@@ -102,7 +108,7 @@ TextSequenceCasesOnString[source_String, patt_PatternSequence, opts:OptionsPatte
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, patt_List, opts:OptionsPattern[]]:=Module[
 	{res=wikipediaquery,p=patt},
 	EchoLabel["rule   :"][res];
 	EchoLabel["tpatt  :"][p];
