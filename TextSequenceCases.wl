@@ -114,9 +114,7 @@ TextSequenceCasesServiceQuery[tp_TextPattern, opts:OptionsPattern[]]:=Module[
 (* SourceText is a string *)
 TextSequenceCasesOnString[source_String, tp_TextPattern, opts:OptionsPattern[]]:=Module[
 	{s=TextWords[source],p=InsertTextTypeCases[source,ConvertToSequencePattern[tp]]},
-	EchoLabel["source:"][s];
-	EchoLabel["tpatt :"][p];
-	EchoLabel["optsg  :"][opts];
+	SequenceCases[s,p]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
