@@ -42,10 +42,9 @@ $TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPa
 ConvertToPatternObject[tp_TextPattern]:=ReplaceAll[
 	tp,
 	{
-	TextPattern -> PatternSequence, 
+	TextPattern -> PatternSequence,
 	OrderlessTextPattern -> OrderlessPatternSequence,
-	OptionalTextPattern->Function[With[{sym=Unique[]}, Optional[Pattern[sym,RepeatedNull[#,{1}]],Nothing]]]
-	(* TODO: Nothing could be replaced with a desired default *)
+	OptionalTextPattern -> Function[With[{sym=Unique[]}, Optional[Pattern[sym,RepeatedNull[#,{1}]],Nothing]]]
 	}
 	]
 
