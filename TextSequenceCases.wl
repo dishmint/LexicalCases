@@ -33,17 +33,21 @@ StyleBox[\"textpatt\", \"TI\"]\)"
 TextType::usage="TextType[\!\(\*
 StyleBox[\"type\", \"TI\"]\)] is a TextPattern object representing text content of type \!\(\*
 StyleBox[\"type\", \"TI\"]\)"
-
+ConvertToPatternObject::usage="For development purposes only, convert TextPattern objects to Pattern objects"
 
 Begin["Private`"]
-$TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType|_Repeated|_Pattern|_PatternSequence|_OrderlessPatternSequence|_Alternatives|_Blank|_BlankNull|_BlankNullSequence)..)
-
+$TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType)..)
 
 (* Pattern Behaviors and Processors *)
-TextPattern[seq:$TextPatternHeads]:=PatternSequence[seq]
-OrderlessTextPattern[seq:$TextPatternHeads]:=OrderlessPatternSequence[seq]
-OptionalTextPattern[p:$TextPatternHeads]:=Repeated[p,{0,1}]
-(* ^^ Default arg for Optional is not supported (at the moment) *)
+ConvertToPatternObject[tp_TextPattern]:=ReplaceAll[
+	tp,
+	{
+	TextPattern -> PatternSequence, 
+	OrderlessTextPattern -> OrderlessPatternSequence,
+	OptionalTextPattern->Function[With[{sym=Unique[]}, Optional[Pattern[sym,RepeatedNull[#,{1}]],Nothing]]]
+	(* TODO: Nothing could be replaced with a desired default *)
+	}
+	]
 
 (* Input Handlers *)
 Options[TextSequenceCases]:={
@@ -66,31 +70,31 @@ TextSequenceCases[tpatt_PatternSequence, opts:OptionsPattern[]]:=
 	TextSequenceCasesServiceQuery[tpatt, OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
 	
 TextSequenceCases[sourcetext_String,tpatt_PatternSequence, opts___]:=
-	TextSequenceCasesOnString[sourcetext, tpatt, OptionsGiven[TextSequenceCasesOnString,{opts}]]
+	TextSequenceCasesOnString[sourcetext, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnString,{opts}]]
 	
 TextSequenceCases[wikiquery_Rule,tpatt_PatternSequence, opts___]:=
-	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, tpatt, OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
+	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
 
 (* No SourceText specified *)
-TextSequenceCasesServiceQuery[tpatt_PatternSequence, opts:OptionsPattern[]]:=Module[
-		{t=tpatt},
-		EchoLabel["tpatt  :"][tpatt];
+TextSequenceCasesServiceQuery[patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+		{p=patt},
+		EchoLabel["patt  :"][p];
 		EchoLabel["optsg  :"][opts];
 	]
 
 (* SourceText is a string *)
-TextSequenceCasesOnString[source_String, tpatt_PatternSequence, opts:OptionsPattern[]]:=Module[
-	{s=source,t=tpatt},
+TextSequenceCasesOnString[source_String, patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+	{s=source,p=patt},
 	EchoLabel["source:"][s];
-	EchoLabel["tpatt :"][tpatt];
+	EchoLabel["tpatt :"][p];
 	EchoLabel["optsg  :"][opts];
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, tpatt_PatternSequence, opts:OptionsPattern[]]:=Module[
-	{res=wikipediaquery,t=tpatt},
+TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, patt_PatternSequence, opts:OptionsPattern[]]:=Module[
+	{res=wikipediaquery,p=patt},
 	EchoLabel["rule   :"][res];
-	EchoLabel["tpatt  :"][tpatt];
+	EchoLabel["tpatt  :"][p];
 	EchoLabel["optsg  :"][opts];
 	];
 
