@@ -44,6 +44,14 @@ Begin["Private`"]
 $TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType)..)
 
 (* Pattern Behaviors and Processors *)
+InsertTextTypeCases[text_,tp_List]:=With[
+	{cases=TextCases[text,Cases[tp,TextType[type_]:>type,Infinity]]},
+	List@@Replace[
+	tp,
+	TextType[type_]:>Alternatives@@cases[type],
+	Infinity
+	]
+]
 ConvertToSequencePattern[tp_TextPattern]:=ReplaceAll[
 	tp,
 	{
@@ -84,32 +92,34 @@ ValidTextPatternObjectQ[tp_]:=Module[
 	]
 
 TextSequenceCases[tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesServiceQuery[ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
+	TextSequenceCasesServiceQuery[tpatt, OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
 	
 TextSequenceCases[sourcetext_String,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesOnString[sourcetext, ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesOnString,{opts}]]
+	TextSequenceCasesOnString[sourcetext, tpatt, OptionsGiven[TextSequenceCasesOnString,{opts}]]
 	
 TextSequenceCases[wikiquery_Rule,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
-	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, ConvertToSequencePattern[tpatt], OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
+	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, tpatt, OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
 
 (* No SourceText specified *)
-TextSequenceCasesServiceQuery[patt_List, opts:OptionsPattern[]]:=Module[
-		{p=patt},
+TextSequenceCasesServiceQuery[tp_TextPattern, opts:OptionsPattern[]]:=Module[
+		{p=ConvertToSequencePattern[tp]},
+		(*with the text InsertTextTypeCases[text, p] *)
 		EchoLabel["patt  :"][p];
 		EchoLabel["optsg  :"][opts];
 	]
 
 (* SourceText is a string *)
-TextSequenceCasesOnString[source_String, patt_List, opts:OptionsPattern[]]:=Module[
-	{s=source,p=patt},
+TextSequenceCasesOnString[source_String, tp_TextPattern, opts:OptionsPattern[]]:=Module[
+	{s=TextWords[source],p=InsertTextTypeCases[source,ConvertToSequencePattern[tp]]},
 	EchoLabel["source:"][s];
 	EchoLabel["tpatt :"][p];
 	EchoLabel["optsg  :"][opts];
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, patt_List, opts:OptionsPattern[]]:=Module[
-	{res=wikipediaquery,p=patt},
+TextSequenceCasesOnWikipediaSearchQueryResults[wikipediaquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
+	{res=wikipediaquery,p=ConvertToSequencePattern[tp]},
+	(* with the text InsertTextTypeCases[text, p] *)
 	EchoLabel["rule   :"][res];
 	EchoLabel["tpatt  :"][p];
 	EchoLabel["optsg  :"][opts];
