@@ -44,11 +44,14 @@ Begin["Private`"]
 $TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType)..)
 
 (* Pattern Behaviors and Processors *)
+PatternizeTextCase[{x_}]:=x
+PatternizeTextCase[x:{__}]:=Apply[PatternSequence][x]
+
 InsertTextTypeCases[text_,tp_List]:=With[
 	{cases=TextCases[text,Cases[tp,TextType[type_]:>type,Infinity]]},
 	List@@Replace[
 	tp,
-	TextType[type_]:>Alternatives@@cases[type],
+	TextType[type_]:>Alternatives@@Map[PatternizeTextCase][StringSplit[cases[type]]],
 	Infinity
 	]
 ]
