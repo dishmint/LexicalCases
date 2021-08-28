@@ -66,13 +66,25 @@ OptionsGiven[sym_Symbol][o_]:=OptionsGiven[sym,o]
 OptionsGiven[sym_Symbol, {}]:=Options[sym]
 OptionsGiven[sym_Symbol, opts:{__}]:=FilterRules[{opts}, Options[sym]]
 
-TextSequenceCases[tpatt_PatternSequence, opts:OptionsPattern[]]:=
-	TextSequenceCasesServiceQuery[tpatt, OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
+(* Validate TextPatternObject *)
+ContainsOnlyTextPatternSymbols[heads_List]:=ContainsOnly[heads,{Symbol,String,TextPattern,OrderlessTextPattern,OptionalTextPattern,TextType}]
+SymbolsTextPatternSymbolsQ[heads_List]:=With[
+	{hcounts=KeyDrop[String][Counts[heads]]},
+	hcounts[Symbol]===(KeyDrop[Symbol]/*Total@hcounts)
+	]
+ValidTextPatternObjectQ[tp_]:=Module[
+	{heads},
+	heads=Cases[tp,x_:>Head[x],{0,Infinity},Heads->True];
+	Through[(ContainsOnlyTextPatternSymbols\[And]SymbolsTextPatternSymbolsQ)[heads]]
+	]
+
+TextSequenceCases[tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
+	TextSequenceCasesServiceQuery[ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesServiceQuery,{opts}]]
 	
-TextSequenceCases[sourcetext_String,tpatt_PatternSequence, opts___]:=
+TextSequenceCases[sourcetext_String,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
 	TextSequenceCasesOnString[sourcetext, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnString,{opts}]]
 	
-TextSequenceCases[wikiquery_Rule,tpatt_PatternSequence, opts___]:=
+TextSequenceCases[wikiquery_Rule,tpatt_?ValidTextPatternObjectQ, opts:OptionsPattern[]]:=
 	TextSequenceCasesOnWikipediaSearchQueryResults[wikiquery, ConvertToPatternObject[tpatt], OptionsGiven[TextSequenceCasesOnWikipediaSearchQueryResults,{opts}]]
 
 (* No SourceText specified *)
