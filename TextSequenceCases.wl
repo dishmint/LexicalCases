@@ -83,7 +83,7 @@ OptionsGiven[sym_Symbol, {}]:=Options[sym]
 OptionsGiven[sym_Symbol, opts:{__}]:=FilterRules[{opts}, Options[sym]]
 
 (* Validate TextPatternObject *)
-ContainsOnlyTextPatternSymbols[heads_List]:=ContainsOnly[heads,{Symbol,String,Alternatives,TextPattern,OrderlessTextPattern,OptionalTextPattern,TextType}]
+ContainsOnlyTextPatternSymbols[heads_List]:=ContainsOnly[heads,{Symbol,String,Alternatives,TextPattern,OrderlessTextPattern,OptionalTextPattern,TextType,RegularExpression}]
 SymbolsTextPatternSymbolsQ[heads_List]:=With[
 	{hcounts=KeyDrop[String][Counts[heads]]},
 	hcounts[Symbol]===(KeyDrop[Symbol]/*Total@hcounts)
