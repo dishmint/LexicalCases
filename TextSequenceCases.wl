@@ -10,42 +10,33 @@
 
 BeginPackage["TextSequenceCases`"]
 (* Main *)
-TextSequenceCases::usage="TextSequenceCases[\!\(\*
-StyleBox[\"source\", \"TI\"]\), \!\(\*
-StyleBox[\"textpatt\", \"TI\"]\)] gives the text sequences in \!\(\*
-StyleBox[\"source\", \"TI\"]\) that match the text pattern \!\(\*
-StyleBox[\"textpatt\", \"TI\"]\)."
+TextSequenceCases::usage="TextSequenceCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt."
 
 (* TextPatterns *)
-TextPattern::usage="TextPattern[\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object matching \!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\!\(\*SubscriptBox[\(\[Ellipsis]\), \(,\)]\)in the fixed order given."
-TextPatternSequence::usage="TextPatternSequence[\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object representing a sequence of TextPattern objects arguments matching \!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]"
-OrderlessTextPattern::usage="OrderlessTextPattern[\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\[Ellipsis]] is a TextPattern object representing a pattern of text matching \!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(1\)\(,\)\)]\)\!\(\*SubscriptBox[
-StyleBox[\"t\", \"TI\"], \(\(2\)\(,\)\)]\)\!\(\*SubscriptBox[\(\[Ellipsis]\), \(,\)]\) in any order."
-OptionalTextPattern::usage="OptionalTextPattern[\!\(\*
-StyleBox[\"textpatt\", \"TI\"]\)] is a TextPattern object that represents 0 or 1 instances of \!\(\*
-StyleBox[\"textpatt\", \"TI\"]\)"
-TextType::usage="TextType[\!\(\*
-StyleBox[\"type\", \"TI\"]\)] is a TextPattern object representing text content of type \!\(\*
-StyleBox[\"type\", \"TI\"]\)"
-ConvertToSequencePattern::usage="For development purposes only, convert TextPattern objects to Pattern objects"
+TextPattern::usage="TextPattern[t1, t2, ...] is a TextPattern object matching (t1, t2, ...) in the fixed order given."
+TextPatternSequence::usage="TextPatternSequence[t1, t2, ...] is a TextPattern object representing a sequence of TextPattern objects arguments matching (t1, t2, ...)"
+OrderlessTextPattern::usage="OrderlessTextPattern[t1, t2, ...] is a TextPattern object representing a pattern of text matching (t1, t2, ...) in any order."
+OptionalTextPattern::usage="OptionalTextPattern[t] is a TextPattern object that represents 0 or 1 instances of t"
+TextType::usage="TextType[type] is a TextPattern object representing a type of text content."
+(* ConvertToSequencePattern::usage="For development purposes only, convert TextPattern objects to Pattern objects" *)
 
 Begin["Private`"]
 
+(* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
-(* $TextPatternHeads = ((_String|_OrderlessTextPattern|_OptionalTextPattern|_TextPattern|_TextType)..) *)
+Listify[x_List] := x
+Listify[x_] := {x}
 
+ReplaceEmptyListWithMissing[list:List[__List]]:=Replace[list, {} -> Missing["NoMatchesFound"], Infinity]
+
+MonitorTextTypeInsertion[expr_]:= Monitor[expr, Row[{"Performing TextType Insertion", ProgressIndicator[Appearance -> "Ellipsis"]}]]
+SetAttributes[MonitorTextTypeInsertion, HoldAll]
+
+MonitorSequenceSearch[searchexpr_, article_]:= Monitor[searchexpr, Row[{article, ProgressIndicator[Appearance -> "Ellipsis"]}]]
+SetAttributes[MonitorSequenceSearch, HoldAll]
+
+(* Format TextPatterns for strings *)
 TextPatternFormat[s_String] := s
 TextPatternFormat[re_RegularExpression] := ToString[re]
 TextPatternFormat[a_Alternatives] := (Apply[Riffle[Map[TextPatternFormat]@{##}, "|"] &])[a]
@@ -89,10 +80,6 @@ ConvertToSequencePattern[tp_List]:=ReplaceAll[
 	}
 	]
 
-Listify[x_List] := x
-Listify[x_] := {x}
-
-ReplaceEmptyListWithMissing[list:List[__List]]:=Replace[list, {} -> Missing["NoMatchesFound"], Infinity]
 
 ConvertToWikipediaSearchQuery[tp_TextPattern]:= Module[
 	{clean, alt2list},
@@ -144,13 +131,16 @@ TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{T
 
 (* SourceText is a string *)
 TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
-	{s=TextWords[source],p=InsertTextTypeCases[source,ConvertToSequencePattern[tp]]},
+	{
+		s= TextWords[source],
+		p= MonitorTextTypeInsertion@InsertTextTypeCases[source,ConvertToSequencePattern[tp]]
+	},
 	SequenceCases[s,p]
 	]
 
 (* SourceText is a list of strings (used in TextSequenceCasesWikipedia ) *)
 TextSequenceCasesOnStringList[source:List[__String], tp_List]:=Module[
-	{p=InsertTextTypeCases[StringRiffle[source],ConvertToSequencePattern[tp]]},
+	{p= MonitorTextTypeInsertion@InsertTextTypeCases[StringRiffle[source], tp]},
 	SequenceCases[source,p]
 	]
 
@@ -197,9 +187,9 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	
 	(* 4 \[LongDash] Search *)
 	TextSequenceCases`ArticleIndex=0;
-	SetSharedVariable[p];
+	SetSharedVariable[p, articles];
 	matches = Monitor[
-		ParallelMap[(++TextSequenceCases`ArticleIndex;TextSequenceCasesOnStringList[#,p])&, tokenizedsourcetexts],
+		ParallelMap[(++TextSequenceCases`ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[TextSequenceCases`ArticleIndex]]])&, tokenizedsourcetexts],
 		Row[{
 			"Searching for "<>ConvertToPatternString[tp]<>" sequences ",
 			Dynamic[If[TextSequenceCases`ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[TextSequenceCases`ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
