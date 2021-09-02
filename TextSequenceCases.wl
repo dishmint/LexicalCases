@@ -158,15 +158,15 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	maxTitleLength = First@TakeLargestBy[StringLength,1][articles->"Value"];
 	
 	(* 2 \[LongDash] Get Wikipedia article text *)
-	SetSharedVariable[TextSequenceCases`ArticleIndex];
-	TextSequenceCases`ArticleIndex=0;
+	SetSharedVariable[ArticleIndex];
+	ArticleIndex=0;
 	sourcetexts = Monitor[
-		ParallelMap[(++TextSequenceCases`ArticleIndex;WikipediaData[#])&,articles],
+		ParallelMap[(++ArticleIndex;WikipediaData[#])&,articles],
 		Row[{
 			"Gathering text from "<>articleCountString<>" articles:\n",
-			ProgressIndicator[Dynamic[TextSequenceCases`ArticleIndex],{0,articleCount}]," ",
-			Dynamic[NumberForm[PercentForm[N[TextSequenceCases`ArticleIndex/articleCount]],{3,2}]],
-			Dynamic[If[TextSequenceCases`ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[TextSequenceCases`ArticleIndex+1]]<>"\"",maxTitleLength],""]]
+			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",
+			Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]],
+			Dynamic[If[ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]]
 			}
 			]
 		];
@@ -175,40 +175,40 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	(* 3 \[LongDash] Tokenize source texts *)
 	(* TODO: I'll need to rethink the source Tokenization because what if there is a text sequence that matches across a full stop? That should be avoided.  (refer to TextSequenceCasesOnStringList) *)
 	
-	TextSequenceCases`ArticleIndex=0;
+	ArticleIndex=0;
 	tokenizedsourcetexts = Monitor[
-		ParallelMap[(++TextSequenceCases`ArticleIndex;TextWords[#])&, sourcetexts],
+		ParallelMap[(++ArticleIndex;TextWords[#])&, sourcetexts],
 		Row[{
 			"Preparing articles for sequence search ",
-			Dynamic[If[TextSequenceCases`ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[TextSequenceCases`ArticleIndex+1]]<>"\" ",maxTitleLength],""]],"\n",
-			ProgressIndicator[Dynamic[TextSequenceCases`ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[TextSequenceCases`ArticleIndex/articleCount]],{3,2}]]
+			Dynamic[If[ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength],""]],"\n",
+			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 		}
 		]];
 	
 	(* 4 \[LongDash] Search *)
-	TextSequenceCases`ArticleIndex=0;
+	ArticleIndex=0;
 	SetSharedVariable[p, articles];
 	matches = Monitor[
-		ParallelMap[(++TextSequenceCases`ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[TextSequenceCases`ArticleIndex]]])&, tokenizedsourcetexts],
+		ParallelMap[(++ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[ArticleIndex]]])&, tokenizedsourcetexts],
 		Row[{
 			"Searching for "<>ConvertToPatternString[tp]<>" sequences ",
-			Dynamic[If[TextSequenceCases`ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[TextSequenceCases`ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
-			ProgressIndicator[Dynamic[TextSequenceCases`ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[TextSequenceCases`ArticleIndex/articleCount]],{3,2}]]
+			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
+			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 			}]];
 	
 	articlematchthread = Monitor[Thread[{articles, ReplaceEmptyListWithMissing[matches]}], Row[{"Threading Articles with Matches ", ProgressIndicator[Appearance->"Ellipsis"]}]];
 	
 	SetSharedVariable[articlematchthread];
-	TextSequenceCases`ArticleIndex=0;
+	ArticleIndex=0;
 	matchesassoc = Monitor[
-		ParallelMap[(++TextSequenceCases`ArticleIndex;AssociationThread[{"Article", "Matches"} -> #])&, articlematchthread],
+		ParallelMap[(++ArticleIndex;AssociationThread[{"Article", "Matches"} -> #])&, articlematchthread],
 		Row[{
 			"Generating Association for ",
-			Dynamic[If[TextSequenceCases`ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[TextSequenceCases`ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
-			ProgressIndicator[Dynamic[TextSequenceCases`ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[TextSequenceCases`ArticleIndex/articleCount]],{3,2}]]
+			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
+			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 			}]];
 	
-	TextSequenceCases`ArticleIndex=.;
+	Clear[ArticleIndex];
 	
 	matchesassoc
 	]
