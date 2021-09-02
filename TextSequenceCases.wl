@@ -133,14 +133,14 @@ TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{T
 TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
 	{
 		s= TextWords[source],
-		p= MonitorTextTypeInsertion@InsertTextTypeCases[source,ConvertToSequencePattern[tp]]
+		p= (*MonitorTextTypeInsertion@*)InsertTextTypeCases[source,ConvertToSequencePattern[tp]]
 	},
 	SequenceCases[s,p]
 	]
 
 (* SourceText is a list of strings (used in TextSequenceCasesWikipedia ) *)
 TextSequenceCasesOnStringList[source:List[__String], tp_List]:=Module[
-	{p= MonitorTextTypeInsertion@InsertTextTypeCases[StringRiffle[source], tp]},
+	{p= (*MonitorTextTypeInsertion@*)InsertTextTypeCases[StringRiffle[source], tp]},
 	SequenceCases[source,p]
 	]
 
@@ -189,7 +189,11 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	ArticleIndex=0;
 	SetSharedVariable[p, articles];
 	matches = Monitor[
-		ParallelMap[(++ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[ArticleIndex]]])&, tokenizedsourcetexts],
+		ParallelMap[
+		(* (++ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[ArticleIndex]]])&, *)
+		(++ArticleIndex;TextSequenceCasesOnStringList[#,p])&,
+		tokenizedsourcetexts
+		],
 		Row[{
 			"Searching for "<>ConvertToPatternString[tp]<>" sequences ",
 			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
