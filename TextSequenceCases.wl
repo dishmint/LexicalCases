@@ -19,7 +19,7 @@ OrderlessTextPattern::usage="OrderlessTextPattern[t1, t2, ...] is a TextPattern 
 OptionalTextPattern::usage="OptionalTextPattern[t] is a TextPattern object that represents 0 or 1 instances of t"
 TextType::usage="TextType[type] is a TextPattern object representing a type of text content."
 (* ConvertToSequencePattern::usage="For development purposes only, convert TextPattern objects to Pattern objects" *)
-
+ConvertToWikipediaSearchQuery::usage="For development purposes only, convert TextPattern to WikipediaSearch query strings"
 Begin["Private`"]
 
 (* Utility *)
@@ -70,8 +70,7 @@ ConvertToSequencePattern[tp_TextPattern]:=ReplaceAll[
 	}
 	]
 
-ConvertToSequencePattern[tp_List]:=ReplaceAll[
-	tp,
+ConvertToSequencePattern[tp_List]:= ReplaceAll[tp,
 	{
 	TextPattern -> List,
 	TextPatternSequence -> PatternSequence,
@@ -80,14 +79,19 @@ ConvertToSequencePattern[tp_List]:=ReplaceAll[
 	}
 	]
 
+WikipediaSearchQuery[List[], tp_TextPattern] := Message[ConvertToWikipediaSearchQuery::novq, tp]
+WikipediaSearchQuery[wsq:List[__String], tp_TextPattern] := StringRiffle[wsq]
+WikipediaSearchQuery[wsq:List[List[__String]], tp_TextPattern] := Flatten[wsq]
+WikipediaSearchQuery[wsq_List, tp_TextPattern] := Cases[List[(_List|_String)..]][wsq] // Map[StringRiffle]
 
 ConvertToWikipediaSearchQuery[tp_TextPattern]:= Module[
-	{clean, alt2list},
-	(* TODO: Rather than delete OrderlessTextPattern object it should be tupled; Add ExpandTextPattern function? *)
-	clean = DeleteCases[tp, _TextType | _OptionalTextPattern | _OrderlessTextPattern];
-	alt2list = ReplaceAll[clean, Alternatives -> List];
-	result = (alt2list // Apply[List] /* Map[Listify] // Tuples // Map[StringRiffle])
+	{cleanTextPattern, stage1},
+	cleanTextPattern = DeleteCases[List@@tp, (_TextType | _OptionalTextPattern | _OrderlessTextPattern), All];
+	stage1 = ReplaceAll[cleanTextPattern, {Alternatives -> List}];
+	Check[WikipediaSearchQuery[stage1, tp], Return[$Failed, Module]]
 	]
+
+ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the pattern ``. Consider using the \"Content\" option to supply keyaords, or trying a different TextPattern."
 
 (* Validate TextPattern Objects *)
 ContainsOnlyTextPatternSymbols[heads_List]:= ContainsOnly[heads, {Symbol, String, Alternatives, RegularExpression, TextPattern, TextPatternSequence, OrderlessTextPattern, OptionalTextPattern, TextType}]
@@ -126,7 +130,10 @@ TODO: Add relevant services from the list below
 	*)
 TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{TextSequenceCasesWikipedia}]]:= With[
 	{wikiquery = ConvertToWikipediaSearchQuery[tp]},
+	If[FailureQ[wikiquery],
+	wikiquery,
 	TextSequenceCasesWikipedia["Content" -> wikiquery, tp, FilterRules[{opts}, Options[TextSequenceCasesWikipedia]]]
+	]
 	]
 
 (* SourceText is a string *)
