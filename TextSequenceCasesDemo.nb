@@ -1,0 +1,20 @@
+TextSequenceCasesDemo
+In[7]:= <<TextSequenceCases`
+In[8]:= ?TextSequenceCases
+Out[8]=  Symbol	
+TextSequenceCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt.	
+	\[SpanFromLeft]
+
+
+In[10]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern["here","is","a","very",TextType["Adjective"],"sentence"]]
+Out[10]= {{here,is,a,very,nice,sentence}}
+In[13]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern[TextType["Adjective"]|TextType["Noun"]]]
+Out[13]= {{nice},{sentence}}
+In[14]:= TextSequenceCases["Content"->"music",TextPattern[TextType["Adjective"],"music","by",TextType["Person"]],MaxItems->5]
+During evaluation of In[14]:= Join::incpt: Incompatible elements in Join[<|intt->RowBox[{\[Integral],RowBox[{\[SelectionPlaceholder],RowBox[{\[DifferentialD],\[Placeholder]}]}]}],dintt->RowBox[{SubsuperscriptBox[\[Integral],\[SelectionPlaceholder],\[Placeholder]],RowBox[{\[Placeholder],RowBox[{\[DifferentialD],\[Placeholder]}]}]}],rintt->RowBox[{UnderscriptBox[\[Integral],RowBox[{\[SelectionPlaceholder],\[Element],\[Placeholder]}]],\[Placeholder]}],sumt->RowBox[{UnderoverscriptBox[\[Sum],RowBox[{\[SelectionPlaceholder],=,\[Placeholder]}],\[Placeholder]],\[Placeholder]}],prodt->RowBox[{UnderoverscriptBox[\[Product],RowBox[{\[SelectionPlaceholder],=,\[Placeholder]}],\[Placeholder]],\[Placeholder]}],<<38>>,cI->TemplateBox[{},CombinatorI],cK->TemplateBox[{},CombinatorK],cS->TemplateBox[{},CombinatorS],cW->TemplateBox[{},CombinatorW],cY->TemplateBox[{},CombinatorY]|>,{notation-><<1>>,<<7>>},<<8>>,<<1>>] cannot be joined.
+Out[14]= {<|Article->Music,Matches->Missing[NoMatchesFound]|>,<|Article->Music (disambiguation),Matches->Missing[NoMatchesFound]|>,<|Article->Classical music,Matches->Missing[NoMatchesFound]|>,<|Article->Electronic music,Matches->Missing[NoMatchesFound]|>,<|Article->Music genre,Matches->Missing[NoMatchesFound]|>}
+The string case should output an association as well. + in that case the Article key should be Source instead.
+capturing punctuation should work
+In[18]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern[TextType["Noun"],TextType["Punctuation"]]]
+Out[18]= {}
+Convert
