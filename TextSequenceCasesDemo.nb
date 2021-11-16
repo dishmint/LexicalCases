@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6443,        179]
-NotebookOptionsPosition[      4790,        141]
-NotebookOutlinePosition[      5182,        157]
-CellTagsIndexPosition[      5139,        154]
+NotebookDataLength[     42508,       1131]
+NotebookOptionsPosition[     38801,       1055]
+NotebookOutlinePosition[     39193,       1071]
+CellTagsIndexPosition[     39150,       1068]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,40 +25,212 @@ Cell["TextSequenceCases | Demo", "Title",
   3.846034390760312*^9}},ExpressionUUID->"7428b188-1d93-45c3-ac0b-\
 40bc273b6198"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"Context", "[", "ContentAssociation", "]"}]], "Input",
- CellChangeTimes->{{3.84603612442059*^9, 3.846036137319652*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"118c07c5-3bcf-4087-8726-9136a714ba61"],
-
-Cell[BoxData["\<\"Global`\"\>"], "Output",
- CellChangeTimes->{3.846036137894617*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"c3251ce9-5e14-4112-bf73-9ada9d693b6e"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"<<", "TextSequenceCases`"}]], "Input",
- CellLabel->"In[1]:=",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
+ RowBox[{"Quit", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.846037292237047*^9, 3.846037293044958*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"677e03af-6afa-49c0-afa1-d8f32ee345b8"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"Names", "[", "\"\<TextSequenceCases`*\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.846034499453909*^9, 3.846034499955658*^9}, {
-  3.846036162215417*^9, 3.84603616600379*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
+Cell[TextData[{
+ "for some reason this ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"<<", "TextSequenceCases`"}], "Input"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a3882fca-0907-4f15-8111-b7337a2c31f9"],
+ "loads the old definitions, the code below with the full path loads the new \
+definitions."
+}], "Item",
+ CellChangeTimes->{{3.846037067454616*^9, 
+  3.846037095674312*^9}},ExpressionUUID->"6330727c-6baf-45b0-b6eb-\
+f99d78a79b1f"],
 
 Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"\<\"ArticleIndex\"\>", ",", "\<\"ConvertToSequencePattern\"\>", 
-   ",", "\<\"OptionalTextPattern\"\>", ",", "\<\"OrderlessTextPattern\"\>", 
-   ",", "\<\"TextPattern\"\>", ",", "\<\"TextPatternSequence\"\>", 
-   ",", "\<\"TextSequenceCases\"\>", ",", "\<\"TextType\"\>"}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.846034501028303*^9, 3.84603459532432*^9, 
-  3.84603583438785*^9, 3.846036166318618*^9},
- CellLabel->"Out[7]=",ExpressionUUID->"77c06b77-c550-411f-9740-139c05f8b419"]
+ RowBox[{"Get", "[", 
+  "\"\</Users/faizonzaman/Documents/Programs/comp-exp/prj/TextSequenceCases/\
+TextSequenceCases.wl\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8460370393303823`*^9, 3.8460370465098133`*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"40e2ebf9-2e3c-4029-863f-1431d04dc66f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "TextSequenceCases`*"}]], "Input",
+ CellChangeTimes->{{3.84603705037425*^9, 3.846037055522493*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"9b5829f8-2560-449e-96f0-b35e1c319419"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], " ", 
+              StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["ContentAssociation", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "ContentAssociation", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["OptionalTextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "OptionalTextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextPatternSequence", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "TextPatternSequence", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextType", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "TextType", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 
+                 StyleBox["ConvertToWikipediaSearchQuery", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "ConvertToWikipediaSearchQuery", "TextSequenceCases`"}, 
+                   False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["OrderlessTextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "OrderlessTextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 
+                 StyleBox["TextPatternToRegularExpression", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "TextPatternToRegularExpression", "TextSequenceCases`"}, 
+                   False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 
+                 StyleBox["GenerateRegularExpressionTemplate", 
+                  "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "GenerateRegularExpressionTemplate", "TextSequenceCases`"},
+                    False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "TextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextSequenceCases", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-8086c876-5456-45d1-bbee-6a763a312db1", {
+                   "TextSequenceCases", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.2375]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{3.846037056010913*^9, 3.8460378516541967`*^9, 
+  3.84603827297647*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"a7bb5f25-67f4-472d-9c56-0117fad61c66"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -68,21 +240,55 @@ Cell[BoxData[
   RowBox[{
   "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
    RowBox[{"TextPattern", "[", 
-    RowBox[{
-    "\"\<here\>\"", ",", "\"\<is\>\"", ",", " ", "\"\<a\>\"", ",", 
-     "\"\<very\>\"", ",", 
+    RowBox[{"\"\<here is a very \>\"", ",", 
      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
-     "\"\<sentence\>\""}], "]"}]}], "]"}]], "Input",
- CellLabel->"In[3]:=",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
+     "\"\< sentence\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.846037107444057*^9, 3.846037109334264*^9}, {
+  3.84603786656485*^9, 3.846037871016097*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"{", 
-   RowBox[{"\<\"here\"\>", ",", "\<\"is\"\>", ",", "\<\"a\"\>", 
-    ",", "\<\"very\"\>", ",", "\<\"nice\"\>", ",", "\<\"sentence\"\>"}], 
-   "}"}], "}"}]], "Output",
- CellChangeTimes->{3.846036092985343*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"6c125de1-8a80-4bae-8cdc-40546bd2a023"]
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", 
+     "\[Rule]", "\<\"here is a very nice sentence\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "28"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.846036092985343*^9, 3.846036862790895*^9, {3.846036993984003*^9, 
+   3.846036997611322*^9}, {3.846037099176839*^9, 3.846037110018897*^9}, 
+   3.8460373200712347`*^9, {3.8460378647275248`*^9, 3.846037871447194*^9}},
+ CellLabel->"Out[5]=",ExpressionUUID->"a264882e-3ffd-4845-8953-3116e3224730"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{"\"\<here is a very\>\"", ",", "\"\< \>\"", ",", 
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", "\"\< \>\"", 
+     ",", " ", "\"\<sentence\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8460378804457808`*^9, 3.846037893676643*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"fe3127a9-13df-4639-bcb3-b0fc696bed26"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", 
+     "\[Rule]", "\<\"here is a very nice sentence\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "28"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.846037894677404*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"478ccedb-66f7-481c-9c7b-a4f406fc9d24"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -96,15 +302,64 @@ Cell[BoxData[
      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], "|", 
      RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}]}], "]"}]}], 
   "]"}]], "Input",
- CellLabel->"In[4]:=",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+ CellLabel->"In[7]:=",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"{", "\<\"nice\"\>", "}"}], ",", 
-   RowBox[{"{", "\<\"sentence\"\>", "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.8460360982411213`*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"04a58ab6-53ab-4af4-b1ec-5ef8827fd510"]
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"nice\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"16", ",", "19"}], "}"}]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"sentence\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"21", ",", "28"}], "}"}]}]}], "\[RightAssociation]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8460360982411213`*^9, 3.84603711625149*^9, 
+  3.846037322949741*^9, 3.846037903316023*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"1ebcb42a-0163-4586-95e8-7a7d1812cf7c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextPatternToRegularExpression", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], "|", 
+     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.84603715688697*^9, 3.8460371669610233`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"ca8b0da6-7555-4040-956e-ce57386bd9b0"],
+
+Cell[BoxData["\<\"((nice)|(sentence))\"\>"], "Output",
+ CellChangeTimes->{3.846037167394102*^9, 3.8460373536163073`*^9, 
+  3.846037906537759*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"ea163895-4043-4394-9189-93675de57349"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GenerateRegularExpressionTemplate", "[", 
+  RowBox[{"TextPattern", "[", 
+   RowBox[{
+    RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], "|", 
+    RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8460371889586973`*^9, 3.846037201310883*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"ef71cca1-9b72-4aa2-a9aa-b015d36fef43"],
+
+Cell[BoxData["\<\"(`[:Adjective:]`|`[:Noun:]`)\"\>"], "Output",
+ CellChangeTimes->{3.846037201650504*^9, 3.8460373569851933`*^9, 
+  3.846037909456102*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"b17ff90f-78fe-411b-a59a-61517ea5c64e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -118,13 +373,91 @@ Cell[BoxData[
      RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
      RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}]}], 
   "]"}]], "Input",
- CellLabel->"In[5]:=",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
+ CellLabel->"In[10]:=",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
 
 Cell[BoxData[
- RowBox[{"{", "}"}]], "Output",
- CellChangeTimes->{3.846036109517632*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"b22debab-f822-41cd-a5b3-b1a96ce75888"]
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"sentence.\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"21", ",", "29"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.846036109517632*^9, 3.846037363589321*^9, 
+  3.846037912408003*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"90a1219b-c666-4005-83a8-ea90c0017d40"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Here\[CloseCurlyQuote]s a case where the required whitespace is an issue, \
+there shouldn\[CloseCurlyQuote]t be a space between ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["\"\<sentence\>\"", "Input"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9d76f96d-8bf1-45bf-ab68-fcf4340997e4"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["\"\<.\>\"", "Input"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a19a8187-946c-4e57-95b1-6a568d958f96"]
+}], "Item",
+ CellChangeTimes->{{3.846037403939906*^9, 3.8460374685870123`*^9}, {
+  3.8460379298593493`*^9, 
+  3.846037929860767*^9}},ExpressionUUID->"fd7ecb3d-e760-4b00-93f5-\
+0a9f5afccd66"],
+
+Cell[CellGroupData[{
+
+Cell["Resolved, now user must specify whitespace.", "Subitem",
+ CellChangeTimes->{{3.846037403939906*^9, 3.8460374685870123`*^9}, {
+  3.846037931219659*^9, 
+  3.846037942505971*^9}},ExpressionUUID->"fff3b586-17f4-44d2-b86c-\
+fcf5d1ef8905"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextPatternToRegularExpression", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
+     RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.846037383148449*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"b20e48d8-17bc-4d89-8a0b-2037e580d716"],
+
+Cell[BoxData["\<\"(sentence) (.)\"\>"], "Output",
+ CellChangeTimes->{3.846037383933319*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"12b3289a-94d3-44a8-8aac-f1fb28195008"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GenerateRegularExpressionTemplate", "[", 
+  RowBox[{"TextPattern", "[", 
+   RowBox[{
+    RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
+    RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.8460374992300158`*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"be0d09d8-839b-46b4-bcc3-f0762d0f5ded"],
+
+Cell[BoxData["\<\"`[:Noun:]``[:Punctuation:]`\"\>"], "Output",
+ CellChangeTimes->{{3.846037491644712*^9, 3.8460374998224163`*^9}, 
+   3.84603794879844*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"c1d1e4dd-ed90-4177-835c-b1e697ddb685"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"TextSequenceCases", "[", 
@@ -133,10 +466,591 @@ Cell[BoxData[
    RowBox[{"TextPattern", "[", 
     RowBox[{
      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
-     "\"\<music\>\"", ",", "\"\<by\>\"", ",", 
+     "\"\< music by \>\"", ",", 
      RowBox[{"TextType", "[", "\"\<Person\>\"", "]"}]}], "]"}], ",", 
-   RowBox[{"MaxItems", "->", "5"}]}], "]"}]], "Input",ExpressionUUID->\
-"96a2829d-390b-4432-a7b6-4acf2b0eda5f"]
+   RowBox[{"MaxItems", "->", "1"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.846038863298153*^9, 3.846038871628324*^9}, {
+  3.8460390646869183`*^9, 3.8460390648303127`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Article\"\>", "\[Rule]", "\<\"Music\"\>"}], ",", 
+    RowBox[{"\<\"Match\"\>", "\[Rule]", 
+     RowBox[{"Missing", "[", "\<\"MatchNotFound\"\>", "]"}]}]}], 
+   "\[RightAssociation]"}], "}"}]], "Output",
+ CellChangeTimes->{3.846039709503243*^9, 3.846039862574863*^9, 
+  3.846040745315424*^9},
+ CellLabel->"Out[62]=",ExpressionUUID->"2ef213c1-6656-4f42-a9cd-a9a279034749"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Progress indicator remains at 100", "Item",
+ CellChangeTimes->{{3.846038996997053*^9, 
+  3.846039017998094*^9}},ExpressionUUID->"1c10a0e9-17b9-431a-a038-\
+f4cf6c6d0d17"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"originOfSpecies", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Text\>\"", ",", "\"\<OriginOfSpecies\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.846040873818598*^9, 3.846040894667199*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"cd6d984d-5274-4ad1-b15e-3af149fe6cd3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"oosp1", "=", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}], ",", "\"\< \>\"", ",", 
+     
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+     RowBox[{"\"\< species\>\"", "|", "\"\< specie\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.846040904826392*^9, 3.846040914421834*^9}, {
+  3.846040951231185*^9, 3.8460409592546864`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"6b0768fe-1278-4d09-8c4a-c1c57f27af94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{"originOfSpecies", ",", "oosp1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.846040923840867*^9, 3.846040932869364*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"c4308c4e-98bb-4fb2-9fd2-ae7b621fb429"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", 
+      "\[Rule]", "\<\"generally extinct species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"9949", ",", "9973"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", 
+      "\[Rule]", "\<\"aboriginally distinct species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"27844", ",", "27872"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"51384", ",", "51412"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"490687", ",", "490715"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"even wild species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"33229", ",", "33245"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as well-defined species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"39968", ",", "39990"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"so many species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"42078", ",", "42092"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", 
+      "\[Rule]", "\<\"extraordinarily abnormal species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"43663", ",", "43694"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as distinct species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"85564", ",", "85582"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"89007", ",", "89025"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"89482", ",", "89500"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"207958", ",", "207976"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"450417", ",", "450435"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"464593", ",", "464611"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"542018", ",", "542036"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"544853", ",", "544871"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"549985", ",", "550003"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"611433", ",", "611451"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"676879", ",", "676897"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"685573", ",", "685591"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"690461", ",", "690479"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"723909", ",", "723927"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"735758", ",", "735776"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"737225", ",", "737243"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as good species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"87408", ",", "87422"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as undoubted species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"88427", ",", "88446"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"490097", ",", "490116"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as independent species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"95992", ",", "96013"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"closely related species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"100728", ",", "100750"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"727778", ",", "727800"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"here many species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"100942", ",", "100958"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"103301", ",", "103317"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"309122", ",", "309138"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"855394", ",", "855410"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"ever many species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"102243", ",", "102259"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"102686", ",", "102702"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as incipient species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"102609", ",", "102628"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as doubtful species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"107226", ",", "107244"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"most vigorous species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"122687", ",", "122707"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"already existing species\"\>"}],
+      ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"193555", ",", "193578"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"here more species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"201125", ",", "201141"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as new species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"201928", ",", "201941"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"846368", ",", "846381"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"nearly extreme species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"221865", ",", "221886"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"widely diffused species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"224108", ",", "224130"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"more ancient species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"231849", ",", "231868"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"513482", ",", "513501"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"most ancient species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"232133", ",", "232152"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"very distinct species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"303893", ",", "303913"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"353659", ",", "353679"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"469586", ",", "469606"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"498261", ",", "498281"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"694607", ",", "694627"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"732066", ",", "732086"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"most distinct species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"304406", ",", "304426"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", 
+      "\[Rule]", "\<\"as representative species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"325002", ",", "325026"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"very same species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"452882", ",", "452898"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"456397", ",", "456413"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"more aboriginal species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"463660", ",", "463682"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"very many species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"469709", ",", "469725"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"extremely close species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"469855", ",", "469877"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", 
+      "\[Rule]", "\<\"particularly distinct species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"470144", ",", "470172"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"together various species\"\>"}],
+      ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"480798", ",", "480821"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"widely distinct species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"495622", ",", "495644"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"nearly related species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"500963", ",", "500984"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"still existing species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"535639", ",", "535660"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"very fine species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"542308", ",", "542324"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"now extinct species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"553195", ",", "553213"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"568399", ",", "568417"}], "}"}]}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"very few species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"556585", ",", "556600"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"more dominant species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"593129", ",", "593149"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"too few species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"602108", ",", "602122"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"all peculiar species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"635730", ",", "635749"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"so certain species\"\>"}], ",", 
+     
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"638766", ",", "638783"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"as many species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"686468", ",", "686482"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"quite distinct species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"694106", ",", "694127"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"only herbaceous species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"713843", ",", "713865"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"extremely few species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"782509", ",", "782529"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"still older species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"843698", ",", "843716"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"either single species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"866144", ",", "866164"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"yet distinct species\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"870851", ",", "870870"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"not real species\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"878602", ",", "878617"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"already recorded species\"\>"}],
+      ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"885795", ",", "885818"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8460409447840443`*^9, 3.8460409755126667`*^9, 
+  3.846042228346126*^9, 3.8460423804331207`*^9},
+ CellLabel->"Out[85]=",ExpressionUUID->"2392713d-aff0-41a2-a670-d5ed3fa0def1"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1440, 847},
@@ -158,28 +1072,66 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 167, 3, 98, "Title",ExpressionUUID->"7428b188-1d93-45c3-ac0b-40bc273b6198"],
+Cell[750, 27, 196, 3, 30, "Input",ExpressionUUID->"677e03af-6afa-49c0-afa1-d8f32ee345b8"],
 Cell[CellGroupData[{
-Cell[772, 29, 220, 3, 30, "Input",ExpressionUUID->"118c07c5-3bcf-4087-8726-9136a714ba61"],
-Cell[995, 34, 162, 2, 34, "Output",ExpressionUUID->"c3251ce9-5e14-4112-bf73-9ada9d693b6e"]
-}, Open  ]],
-Cell[1172, 39, 140, 2, 30, "Input",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
+Cell[971, 34, 472, 13, 32, "Item",ExpressionUUID->"6330727c-6baf-45b0-b6eb-f99d78a79b1f"],
+Cell[1446, 49, 306, 5, 30, "Input",ExpressionUUID->"40e2ebf9-2e3c-4029-863f-1431d04dc66f"],
 Cell[CellGroupData[{
-Cell[1337, 45, 276, 4, 30, "Input",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
-Cell[1616, 51, 521, 9, 34, "Output",ExpressionUUID->"77c06b77-c550-411f-9740-139c05f8b419"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2174, 65, 468, 10, 30, "Input",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
-Cell[2645, 77, 331, 7, 34, "Output",ExpressionUUID->"6c125de1-8a80-4bae-8cdc-40546bd2a023"]
+Cell[1777, 58, 205, 3, 30, "Input",ExpressionUUID->"9b5829f8-2560-449e-96f0-b35e1c319419"],
+Cell[1985, 63, 7193, 169, 136, "Output",ExpressionUUID->"a7bb5f25-67f4-472d-9c56-0117fad61c66"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3013, 89, 404, 9, 32, "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
-Cell[3420, 100, 269, 6, 34, "Output",ExpressionUUID->"04a58ab6-53ab-4af4-b1ec-5ef8827fd510"]
+Cell[9215, 237, 520, 10, 30, "Input",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
+Cell[9738, 249, 636, 14, 37, "Output",ExpressionUUID->"a264882e-3ffd-4845-8953-3116e3224730"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3726, 111, 406, 9, 30, "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
-Cell[4135, 122, 165, 3, 34, "Output",ExpressionUUID->"b22debab-f822-41cd-a5b3-b1a96ce75888"]
+Cell[10411, 268, 513, 9, 30, "Input",ExpressionUUID->"fe3127a9-13df-4639-bcb3-b0fc696bed26"],
+Cell[10927, 279, 439, 11, 37, "Output",ExpressionUUID->"478ccedb-66f7-481c-9c7b-a4f406fc9d24"]
 }, Open  ]],
-Cell[4315, 128, 459, 10, 30, "Input",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"]
+Cell[CellGroupData[{
+Cell[11403, 295, 404, 9, 32, "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+Cell[11810, 306, 756, 18, 37, "Output",ExpressionUUID->"1ebcb42a-0163-4586-95e8-7a7d1812cf7c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12603, 329, 484, 10, 32, "Input",ExpressionUUID->"ca8b0da6-7555-4040-956e-ce57386bd9b0"],
+Cell[13090, 341, 223, 3, 34, "Output",ExpressionUUID->"ea163895-4043-4394-9189-93675de57349"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13350, 349, 395, 7, 32, "Input",ExpressionUUID->"ef71cca1-9b72-4aa2-a9aa-b015d36fef43"],
+Cell[13748, 358, 232, 3, 34, "Output",ExpressionUUID->"b17ff90f-78fe-411b-a59a-61517ea5c64e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14017, 366, 407, 9, 30, "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
+Cell[14427, 377, 463, 11, 37, "Output",ExpressionUUID->"90a1219b-c666-4005-83a8-ea90c0017d40"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14939, 394, 695, 18, 32, "Item",ExpressionUUID->"fd7ecb3d-e760-4b00-93f5-0a9f5afccd66"],
+Cell[CellGroupData[{
+Cell[15659, 416, 239, 4, 27, "Subitem",ExpressionUUID->"fff3b586-17f4-44d2-b86c-fcf5d1ef8905"],
+Cell[CellGroupData[{
+Cell[15923, 424, 461, 10, 30, "Input",ExpressionUUID->"b20e48d8-17bc-4d89-8a0b-2037e580d716"],
+Cell[16387, 436, 169, 2, 34, "Output",ExpressionUUID->"12b3289a-94d3-44a8-8aac-f1fb28195008"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16593, 443, 377, 8, 30, "Input",ExpressionUUID->"be0d09d8-839b-46b4-bcc3-f0762d0f5ded"],
+Cell[16973, 453, 234, 3, 34, "Output",ExpressionUUID->"c1d1e4dd-ed90-4177-835c-b1e697ddb685"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17244, 461, 586, 12, 30, "Input",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
+Cell[17833, 475, 461, 10, 37, "Output",ExpressionUUID->"2ef213c1-6656-4f42-a9cd-a9a279034749"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18355, 492, 175, 3, 32, "Item",ExpressionUUID->"1c10a0e9-17b9-431a-a038-f4cf6c6d0d17"],
+Cell[18533, 497, 352, 8, 30, "Input",ExpressionUUID->"cd6d984d-5274-4ad1-b15e-3af149fe6cd3"],
+Cell[18888, 507, 528, 12, 32, "Input",ExpressionUUID->"6b0768fe-1278-4d09-8c4a-c1c57f27af94"],
+Cell[CellGroupData[{
+Cell[19441, 523, 256, 4, 30, "Input",ExpressionUUID->"c4308c4e-98bb-4fb2-9fd2-ae7b621fb429"],
+Cell[19700, 529, 19061, 521, 681, "Output",ExpressionUUID->"2392713d-aff0-41a2-a670-d5ed3fa0def1"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]

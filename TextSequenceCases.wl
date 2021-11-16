@@ -31,7 +31,7 @@ OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 Listify[x_List] := x;
 Listify[x_] := {x};
 
-ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["NoMatchesFound"], Infinity];
+ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFound"], Infinity];
 
 (* Format TextPatterns for strings *)
 TextPatternFormat[s_String] := s
@@ -50,16 +50,19 @@ ExpressionRiffle[h_[args___], sep_] := h@@Riffle[{args}, sep];
 AlternativesToList[s_String] := {s};
 AlternativesToList[a_Alternatives] := List@@a;
 
+PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
+PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
+
 GenerateRegularExpressionTemplate[tp_TextPattern] := Module[
-	{spacefluffed = ExpressionRiffle[tp, " "]},
-	ReplaceAll[spacefluffed, {
+	{p1,p2},
+	p1 = ReplaceAll[tp, {
 		TextPattern -> StringExpression,
 		TextPatternSequence -> PatternSequence,
 		OrderlessTextPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
 		OptionalTextPattern[opt__] :> ("(" <> StringRiffle[AlternativesToList[opt], "|"] <>")?"),
-		TextType[type_] :> "`[:" <> type <> ":]`",
-		a_Alternatives :> ("(" <>StringRiffle[AlternativesToList[a], "|"] <> ")")
-		}]
+		TextType[type_] :> "`[:" <> type <> ":]`"
+		}];
+	p2 = ReplaceAll[p1, a_Alternatives :> ("(" <>StringRiffle[AlternativesToList[a], "|"] <> ")")]
 		]
 
 TextContentGroup[content_List] := "(" <> StringRiffle[content, "|"] <> ")";
@@ -133,12 +136,16 @@ TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{T
 (* SourceText is a string *)
 TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
 	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]]},
-	MapThread[<|"Match" -> #1, "Position" -> #2|>&, Through[{Apply[StringCases], Apply[StringPosition]}[{source,RX}]]]
+	(* TODO: Add # of Positions Key *)
+	DeleteDuplicates@Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
+		{cases = StringCases[source, RX]},
+		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
+		]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
 TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
-	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]], articles, sourcetexts, matches, matchesassoc, articlematchthread},
+	{articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[
@@ -165,10 +172,10 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	
 	(* 4 \[LongDash] Search *)
 	ArticleIndex=0;
-	SetSharedVariable[RX, articles];
+	SetSharedVariable[tp, articles];
 	matches = Monitor[
 		ParallelMap[
-		(++ArticleIndex;TextSequenceCasesOnString[#, RX])&,
+		(++ArticleIndex;TextSequenceCasesOnString[#, tp])&,
 		sourcetexts
 		],
 		Row[{
@@ -182,7 +189,7 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	SetSharedVariable[articlematchthread];
 	ArticleIndex=0;
 	matchesassoc = Monitor[
-		ParallelMap[(++ArticleIndex;Map[Apply[Prepend]]@Thread[{#2,"Article" -> #1}])&, articlematchthread],
+		ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, articlematchthread],
 		Row[{
 			"Generating Association for ",
 			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
@@ -191,6 +198,7 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	
 	Clear[ArticleIndex];
 	
+	(* articlematchthread *)
 	matchesassoc
 	]
 
