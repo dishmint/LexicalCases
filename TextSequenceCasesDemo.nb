@@ -1,20 +1,259 @@
-TextSequenceCasesDemo
-In[7]:= <<TextSequenceCases`
-In[8]:= ?TextSequenceCases
-Out[8]=  Symbol	
-TextSequenceCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt.	
-	\[SpanFromLeft]
+(* Content-type: application/vnd.wolfram.mathematica *)
 
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-In[10]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern["here","is","a","very",TextType["Adjective"],"sentence"]]
-Out[10]= {{here,is,a,very,nice,sentence}}
-In[13]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern[TextType["Adjective"]|TextType["Noun"]]]
-Out[13]= {{nice},{sentence}}
-In[14]:= TextSequenceCases["Content"->"music",TextPattern[TextType["Adjective"],"music","by",TextType["Person"]],MaxItems->5]
-During evaluation of In[14]:= Join::incpt: Incompatible elements in Join[<|intt->RowBox[{\[Integral],RowBox[{\[SelectionPlaceholder],RowBox[{\[DifferentialD],\[Placeholder]}]}]}],dintt->RowBox[{SubsuperscriptBox[\[Integral],\[SelectionPlaceholder],\[Placeholder]],RowBox[{\[Placeholder],RowBox[{\[DifferentialD],\[Placeholder]}]}]}],rintt->RowBox[{UnderscriptBox[\[Integral],RowBox[{\[SelectionPlaceholder],\[Element],\[Placeholder]}]],\[Placeholder]}],sumt->RowBox[{UnderoverscriptBox[\[Sum],RowBox[{\[SelectionPlaceholder],=,\[Placeholder]}],\[Placeholder]],\[Placeholder]}],prodt->RowBox[{UnderoverscriptBox[\[Product],RowBox[{\[SelectionPlaceholder],=,\[Placeholder]}],\[Placeholder]],\[Placeholder]}],<<38>>,cI->TemplateBox[{},CombinatorI],cK->TemplateBox[{},CombinatorK],cS->TemplateBox[{},CombinatorS],cW->TemplateBox[{},CombinatorW],cY->TemplateBox[{},CombinatorY]|>,{notation-><<1>>,<<7>>},<<8>>,<<1>>] cannot be joined.
-Out[14]= {<|Article->Music,Matches->Missing[NoMatchesFound]|>,<|Article->Music (disambiguation),Matches->Missing[NoMatchesFound]|>,<|Article->Classical music,Matches->Missing[NoMatchesFound]|>,<|Article->Electronic music,Matches->Missing[NoMatchesFound]|>,<|Article->Music genre,Matches->Missing[NoMatchesFound]|>}
-The string case should output an association as well. + in that case the Article key should be Source instead.
-capturing punctuation should work
-In[18]:= TextSequenceCases["here is a very nice sentence. this one is what it is.",TextPattern[TextType["Noun"],TextType["Punctuation"]]]
-Out[18]= {}
-Convert
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9893,        251]
+NotebookOptionsPosition[      8830,        226]
+NotebookOutlinePosition[      9224,        242]
+CellTagsIndexPosition[      9181,        239]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["TextSequenceCases | Demo", "Title",
+ CellChangeTimes->{{3.846034381638287*^9, 
+  3.846034390760312*^9}},ExpressionUUID->"7428b188-1d93-45c3-ac0b-\
+40bc273b6198"],
+
+Cell[BoxData[
+ RowBox[{"<<", "TextSequenceCases`"}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "TextSequenceCases`*"}]], "Input",
+ CellChangeTimes->{{3.846034499453909*^9, 3.846034499955658*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], " ", 
+              StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["ArticleIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "ArticleIndex", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["OrderlessTextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "OrderlessTextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextSequenceCases", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "TextSequenceCases", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ConvertToSequencePattern", "InformationGridButton"],
+                 
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "ConvertToSequencePattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "TextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextType", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "TextType", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["OptionalTextPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "OptionalTextPattern", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["TextPatternSequence", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
+                   "TextPatternSequence", "TextSequenceCases`"}, False},
+                 ButtonNote->"TextSequenceCases`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.31666666666666665`]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{3.846034501028303*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"af7ef612-2daa-4fe2-a818-f05154562c83"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+    "\"\<here\>\"", ",", "\"\<is\>\"", ",", " ", "\"\<a\>\"", ",", 
+     "\"\<very\>\"", ",", 
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+     "\"\<sentence\>\""}], "]"}]}], "]"}]], "Input",ExpressionUUID->"06f13119-\
+0eca-4f3e-af45-9d64c3b15725"],
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], "|", 
+     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+   RowBox[{"\"\<Content\>\"", "->", "\"\<music\>\""}], ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+     "\"\<music\>\"", ",", "\"\<by\>\"", ",", 
+     RowBox[{"TextType", "[", "\"\<Person\>\"", "]"}]}], "]"}], ",", 
+   RowBox[{"MaxItems", "->", "5"}]}], "]"}]], "Input",ExpressionUUID->\
+"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
+     RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 857}, {62, Automatic}},
+FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (June 24, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"062ed9de-a110-4faa-beaf-5afb664927a4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 167, 3, 98, "Title",ExpressionUUID->"7428b188-1d93-45c3-ac0b-40bc273b6198"],
+Cell[750, 27, 140, 2, 30, "Input",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
+Cell[CellGroupData[{
+Cell[915, 33, 206, 3, 30, "Input",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
+Cell[1124, 38, 5996, 140, 136, "Output",ExpressionUUID->"af7ef612-2daa-4fe2-a818-f05154562c83"]
+}, Open  ]],
+Cell[7135, 181, 447, 10, 52, "Input",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
+Cell[7585, 193, 381, 8, 53, "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+Cell[7969, 203, 459, 10, 73, "Input",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
+Cell[8431, 215, 383, 8, 52, "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"]
+}, Open  ]]
+}
+]
+*)
+
