@@ -18,23 +18,20 @@ TextPatternSequence::usage="TextPatternSequence[t1, t2, ...] is a TextPattern ob
 OrderlessTextPattern::usage="OrderlessTextPattern[t1, t2, ...] is a TextPattern object representing a pattern of text matching (t1, t2, ...) in any order."
 OptionalTextPattern::usage="OptionalTextPattern[t] is a TextPattern object that represents 0 or 1 instances of t"
 TextType::usage="TextType[type] is a TextPattern object representing a type of text content."
-(* ConvertToSequencePattern::usage="For development purposes only, convert TextPattern objects to Pattern objects" *)
 ConvertToWikipediaSearchQuery::usage="For development purposes only, convert TextPattern to WikipediaSearch query strings"
+TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t] Convert a TextPattern to a RegularExpression"
+GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
+ContentAssociation::usage="ContentAssociation[source, t]"
+
 Begin["Private`"]
 
 (* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
-Listify[x_List] := x
-Listify[x_] := {x}
+Listify[x_List] := x;
+Listify[x_] := {x};
 
-ReplaceEmptyListWithMissing[list:List[__List]]:=Replace[list, {} -> Missing["NoMatchesFound"], Infinity]
-
-MonitorTextTypeInsertion[expr_]:= Monitor[expr, Row[{"Performing TextType Insertion", ProgressIndicator[Appearance -> "Ellipsis"]}]]
-SetAttributes[MonitorTextTypeInsertion, HoldAll]
-
-MonitorSequenceSearch[searchexpr_, article_]:= Monitor[searchexpr, Row[{article, ProgressIndicator[Appearance -> "Ellipsis"]}]]
-SetAttributes[MonitorSequenceSearch, HoldAll]
+ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFound"], Infinity];
 
 (* Format TextPatterns for strings *)
 TextPatternFormat[s_String] := s
@@ -46,38 +43,38 @@ TextPatternFormat[OrderlessTextPattern[args__]] := {"(~",Map[TextPatternFormat]@
 TextPatternFormat[OptionalTextPattern[args__]] := {"(",Map[TextPatternFormat]@{args}, ")?"}
 TextPatternFormat[TextType[args:(_String|_RegularExpression)]] := {"(:",Map[TextPatternFormat]@{args}, ":)"}
 
-ConvertToPatternString[tp_TextPattern]:= (Flatten /* StringRiffle)@TextPatternFormat[tp]
+ConvertToPatternString[tp_TextPattern]:= (Flatten /* StringRiffle)@TextPatternFormat[tp];
 
-(* Pattern Behaviors and Processors *)
-PatternizeTextCase[{x_}]:=x
-PatternizeTextCase[x:{__}]:=Apply[PatternSequence][x]
+ExpressionRiffle[h_[args___], sep_] := h@@Riffle[{args}, sep];
 
-InsertTextTypeCases[text_,tp_List]:=With[
-	{cases=TextCases[text,Cases[tp,TextType[type_]:>type,Infinity]]},
-	List@@Replace[
-	tp,
-	TextType[type_]:>Alternatives@@Map[PatternizeTextCase][StringSplit[cases[type]]],
-	Infinity
-	]
-]
-ConvertToSequencePattern[tp_TextPattern]:=ReplaceAll[
-	tp,
-	{
-	TextPattern -> List,
-	TextPatternSequence -> PatternSequence,
-	OrderlessTextPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
-	OptionalTextPattern -> (Function[Flatten@Alternatives[#,PatternSequence[]]])
-	}
-	]
+AlternativesToList[s_String] := {s};
+AlternativesToList[a_Alternatives] := List@@a;
 
-ConvertToSequencePattern[tp_List]:= ReplaceAll[tp,
-	{
-	TextPattern -> List,
-	TextPatternSequence -> PatternSequence,
-	OrderlessTextPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
-	OptionalTextPattern -> (Function[Flatten@Alternatives[#,PatternSequence[]]])
-	}
-	]
+PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
+PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
+
+GenerateRegularExpressionTemplate[tp_TextPattern] := Module[
+	{p1,p2},
+	p1 = ReplaceAll[tp, {
+		TextPattern -> StringExpression,
+		TextPatternSequence -> PatternSequence,
+		OrderlessTextPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
+		OptionalTextPattern[opt__] :> ("(" <> StringRiffle[AlternativesToList[opt], "|"] <>")?"),
+		TextType[type_] :> "`[:" <> type <> ":]`"
+		}];
+	p2 = ReplaceAll[p1, a_Alternatives :> ("(" <>StringRiffle[AlternativesToList[a], "|"] <> ")")]
+		]
+
+TextContentGroup[content_List] := "(" <> StringRiffle[content, "|"] <> ")";
+ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infinity];
+ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
+
+TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
+	Module[{TRX, CA},
+		TRX = GenerateRegularExpressionTemplate[tp];
+		CA  = ContentAssociation[sourcetext, tp];
+		StringTemplate[TRX][CA]
+		]
 
 WikipediaSearchQuery[List[], tp_TextPattern] := Message[ConvertToWikipediaSearchQuery::novq, tp]
 WikipediaSearchQuery[wsq:List[__String], tp_TextPattern] := StringRiffle[wsq]
@@ -138,22 +135,17 @@ TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{T
 
 (* SourceText is a string *)
 TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
-	{
-		s= TextWords[source],
-		p= (*MonitorTextTypeInsertion@*)InsertTextTypeCases[source,ConvertToSequencePattern[tp]]
-	},
-	SequenceCases[s,p]
-	]
-
-(* SourceText is a list of strings (used in TextSequenceCasesWikipedia ) *)
-TextSequenceCasesOnStringList[source:List[__String], tp_List]:=Module[
-	{p= (*MonitorTextTypeInsertion@*)InsertTextTypeCases[StringRiffle[source], tp]},
-	SequenceCases[source,p]
+	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]]},
+	(* TODO: Add # of Positions Key *)
+	DeleteDuplicates@Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
+		{cases = StringCases[source, RX]},
+		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
+		]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
 TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
-	{p=ConvertToSequencePattern[tp],articles, sourcetexts, tokenizedsourcetexts, matches, matchesassoc, articlematchthread},
+	{articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[
@@ -177,29 +169,14 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 			}
 			]
 		];
-	(* TODO: clean text here if necessary *)
-	
-	(* 3 \[LongDash] Tokenize source texts *)
-	(* TODO: I'll need to rethink the source Tokenization because what if there is a text sequence that matches across a full stop? That should be avoided.  (refer to TextSequenceCasesOnStringList) *)
-	
-	ArticleIndex=0;
-	tokenizedsourcetexts = Monitor[
-		ParallelMap[(++ArticleIndex;TextWords[#])&, sourcetexts],
-		Row[{
-			"Preparing articles for sequence search ",
-			Dynamic[If[ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength],""]],"\n",
-			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
-		}
-		]];
 	
 	(* 4 \[LongDash] Search *)
 	ArticleIndex=0;
-	SetSharedVariable[p, articles];
+	SetSharedVariable[tp, articles];
 	matches = Monitor[
 		ParallelMap[
-		(* (++ArticleIndex;MonitorSequenceSearch[TextSequenceCasesOnStringList[#,p], articles[[ArticleIndex]]])&, *)
-		(++ArticleIndex;TextSequenceCasesOnStringList[#,p])&,
-		tokenizedsourcetexts
+		(++ArticleIndex;TextSequenceCasesOnString[#, tp])&,
+		sourcetexts
 		],
 		Row[{
 			"Searching for "<>ConvertToPatternString[tp]<>" sequences ",
@@ -212,7 +189,7 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	SetSharedVariable[articlematchthread];
 	ArticleIndex=0;
 	matchesassoc = Monitor[
-		ParallelMap[(++ArticleIndex;AssociationThread[{"Article", "Matches"} -> #])&, articlematchthread],
+		ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, articlematchthread],
 		Row[{
 			"Generating Association for ",
 			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
@@ -221,6 +198,7 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	
 	Clear[ArticleIndex];
 	
+	(* articlematchthread *)
 	matchesassoc
 	]
 
