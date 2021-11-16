@@ -22,21 +22,16 @@ ConvertToWikipediaSearchQuery::usage="For development purposes only, convert Tex
 TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t] Convert a TextPattern to a RegularExpression"
 GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
 ContentAssociation::usage="ContentAssociation[source, t]"
+
 Begin["Private`"]
 
 (* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
-Listify[x_List] := x
-Listify[x_] := {x}
+Listify[x_List] := x;
+Listify[x_] := {x};
 
-ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["NoMatchesFound"], Infinity]
-
-MonitorTextTypeInsertion[expr_]:= Monitor[expr, Row[{"Performing TextType Insertion", ProgressIndicator[Appearance -> "Ellipsis"]}]]
-SetAttributes[MonitorTextTypeInsertion, HoldAll]
-
-MonitorSequenceSearch[searchexpr_, article_]:= Monitor[searchexpr, Row[{article, ProgressIndicator[Appearance -> "Ellipsis"]}]]
-SetAttributes[MonitorSequenceSearch, HoldAll]
+ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["NoMatchesFound"], Infinity];
 
 (* Format TextPatterns for strings *)
 TextPatternFormat[s_String] := s
@@ -48,12 +43,12 @@ TextPatternFormat[OrderlessTextPattern[args__]] := {"(~",Map[TextPatternFormat]@
 TextPatternFormat[OptionalTextPattern[args__]] := {"(",Map[TextPatternFormat]@{args}, ")?"}
 TextPatternFormat[TextType[args:(_String|_RegularExpression)]] := {"(:",Map[TextPatternFormat]@{args}, ":)"}
 
-ConvertToPatternString[tp_TextPattern]:= (Flatten /* StringRiffle)@TextPatternFormat[tp]
+ConvertToPatternString[tp_TextPattern]:= (Flatten /* StringRiffle)@TextPatternFormat[tp];
 
-ExpressionRiffle[h_[args___], sep_] := h @@ Riffle[{args}, sep]
+ExpressionRiffle[h_[args___], sep_] := h@@Riffle[{args}, sep];
 
-AlternativesToList[s_String] := {s}
-AlternativesToList[a_Alternatives] := List @@ a
+AlternativesToList[s_String] := {s};
+AlternativesToList[a_Alternatives] := List@@a;
 
 GenerateRegularExpressionTemplate[tp_TextPattern] := Module[
 	{spacefluffed = ExpressionRiffle[tp, " "]},
@@ -67,9 +62,9 @@ GenerateRegularExpressionTemplate[tp_TextPattern] := Module[
 		}]
 		]
 
-TextContentGroup[content_List ] :="(" <> StringRiffle[content, "|"] <> ")"
-ExtractContentTypes[tp_TextPattern] :=Cases[tp, TextType[type_] :> type, Infinity]
-ContentAssociation[sourcetext_String, tp_TextPattern] :=KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
+TextContentGroup[content_List] := "(" <> StringRiffle[content, "|"] <> ")";
+ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infinity];
+ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
 
 TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 	Module[{TRX, CA},
@@ -77,7 +72,6 @@ TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 		CA  = ContentAssociation[sourcetext, tp];
 		StringTemplate[TRX][CA]
 		]
-]
 
 WikipediaSearchQuery[List[], tp_TextPattern] := Message[ConvertToWikipediaSearchQuery::novq, tp]
 WikipediaSearchQuery[wsq:List[__String], tp_TextPattern] := StringRiffle[wsq]
@@ -139,12 +133,12 @@ TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{T
 (* SourceText is a string *)
 TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
 	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]]},
-	Through[{Apply[StringCases], Apply[StringPosition]}[{source,RX}]] // MapThread[<|"Match" -> #1, "Position" -> #2|> &, #] &
+	MapThread[<|"Match" -> #1, "Position" -> #2|>&, Through[{Apply[StringCases], Apply[StringPosition]}[{source,RX}]]]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
 TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
-	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]], articles, sourcetexts, tokenizedsourcetexts, matches, matchesassoc, articlematchthread},
+	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]], articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9893,        251]
-NotebookOptionsPosition[      8830,        226]
-NotebookOutlinePosition[      9224,        242]
-CellTagsIndexPosition[      9181,        239]
+NotebookDataLength[      6443,        179]
+NotebookOptionsPosition[      4790,        141]
+NotebookOutlinePosition[      5182,        157]
+CellTagsIndexPosition[      5139,        154]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,6 +25,18 @@ Cell["TextSequenceCases | Demo", "Title",
   3.846034390760312*^9}},ExpressionUUID->"7428b188-1d93-45c3-ac0b-\
 40bc273b6198"],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "ContentAssociation", "]"}]], "Input",
+ CellChangeTimes->{{3.84603612442059*^9, 3.846036137319652*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"118c07c5-3bcf-4087-8726-9136a714ba61"],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.846036137894617*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"c3251ce9-5e14-4112-bf73-9ada9d693b6e"]
+}, Open  ]],
+
 Cell[BoxData[
  RowBox[{"<<", "TextSequenceCases`"}]], "Input",
  CellLabel->"In[1]:=",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
@@ -32,152 +44,24 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "TextSequenceCases`*"}]], "Input",
- CellChangeTimes->{{3.846034499453909*^9, 3.846034499955658*^9}},
- CellLabel->"In[2]:=",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
+ RowBox[{"Names", "[", "\"\<TextSequenceCases`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.846034499453909*^9, 3.846034499955658*^9}, {
+  3.846036162215417*^9, 3.84603616600379*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
 
 Cell[BoxData[
- StyleBox[
-  FrameBox[GridBox[{
-     {
-      DynamicModuleBox[{Typeset`open$$ = True}, 
-       PaneSelectorBox[{False->
-        ButtonBox[
-         RowBox[{
-          
-          DynamicBox[FEPrivate`FrontEndResource[
-           "FEBitmaps", "RightPointerOpener"]], " ", 
-          StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
-         Appearance->None,
-         BaseStyle->"InformationGridLink",
-         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
-         Evaluator->Automatic,
-         Method->"Preemptive"], True->
-        PaneBox[GridBox[{
-           {
-            ButtonBox[
-             RowBox[{
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpener"],
-               ImageSizeCache->{10., {3., 7.}}], " ", 
-              StyleBox["TextSequenceCases`", "InformationGridGroupHeader"]}],
-             Appearance->None,
-             BaseStyle->"InformationGridLink",
-             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
-             Evaluator->Automatic,
-             Method->"Preemptive"]},
-           {
-            PaneBox[GridBox[{
-               {
-                ButtonBox[
-                 StyleBox["ArticleIndex", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "ArticleIndex", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], 
-                ButtonBox[
-                 StyleBox["OrderlessTextPattern", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "OrderlessTextPattern", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], 
-                ButtonBox[
-                 StyleBox["TextSequenceCases", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "TextSequenceCases", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic]},
-               {
-                ButtonBox[
-                 StyleBox["ConvertToSequencePattern", "InformationGridButton"],
-                 
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "ConvertToSequencePattern", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], 
-                ButtonBox[
-                 StyleBox["TextPattern", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "TextPattern", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], 
-                ButtonBox[
-                 StyleBox["TextType", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "TextType", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic]},
-               {
-                ButtonBox[
-                 StyleBox["OptionalTextPattern", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "OptionalTextPattern", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], 
-                ButtonBox[
-                 StyleBox["TextPatternSequence", "InformationGridButton"],
-                 Appearance->None,
-                 BaseStyle->"InformationGridLink",
-                 
-                 ButtonData:>{
-                  "Info-7bbdffac-7877-4204-a9bf-dd8c793c2f59", {
-                   "TextPatternSequence", "TextSequenceCases`"}, False},
-                 ButtonNote->"TextSequenceCases`",
-                 Evaluator->Automatic], ""}
-              },
-              DefaultBaseStyle->"Text",
-              
-              GridBoxAlignment->{
-               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
-              GridBoxItemSize->{"Columns" -> {{
-                   Scaled[0.31666666666666665`]}}}],
-             ImageMargins->{{10, 0}, {0, 2}}]}
-          },
-          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
-         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
-        ImageSize->Automatic]]}
-    },
-    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
-    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
-    GridBoxSpacings->{"Columns" -> {
-        Offset[0.27999999999999997`], {
-         Offset[0.5599999999999999]}, 
-        Offset[0.27999999999999997`]}, "Rows" -> {
-        Offset[0.2], {
-         Offset[0.8]}, 
-        Offset[0.2]}}],
-   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
- CellChangeTimes->{3.846034501028303*^9},
- CellLabel->"Out[2]=",ExpressionUUID->"af7ef612-2daa-4fe2-a818-f05154562c83"]
+ RowBox[{"{", 
+  RowBox[{"\<\"ArticleIndex\"\>", ",", "\<\"ConvertToSequencePattern\"\>", 
+   ",", "\<\"OptionalTextPattern\"\>", ",", "\<\"OrderlessTextPattern\"\>", 
+   ",", "\<\"TextPattern\"\>", ",", "\<\"TextPatternSequence\"\>", 
+   ",", "\<\"TextSequenceCases\"\>", ",", "\<\"TextType\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.846034501028303*^9, 3.84603459532432*^9, 
+  3.84603583438785*^9, 3.846036166318618*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"77c06b77-c550-411f-9740-139c05f8b419"]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"TextSequenceCases", "[", 
@@ -188,8 +72,20 @@ Cell[BoxData[
     "\"\<here\>\"", ",", "\"\<is\>\"", ",", " ", "\"\<a\>\"", ",", 
      "\"\<very\>\"", ",", 
      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
-     "\"\<sentence\>\""}], "]"}]}], "]"}]], "Input",ExpressionUUID->"06f13119-\
-0eca-4f3e-af45-9d64c3b15725"],
+     "\"\<sentence\>\""}], "]"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"here\"\>", ",", "\<\"is\"\>", ",", "\<\"a\"\>", 
+    ",", "\<\"very\"\>", ",", "\<\"nice\"\>", ",", "\<\"sentence\"\>"}], 
+   "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.846036092985343*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"6c125de1-8a80-4bae-8cdc-40546bd2a023"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"TextSequenceCases", "[", 
@@ -199,7 +95,36 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], "|", 
      RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}]}], "]"}]}], 
-  "]"}]], "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+  "]"}]], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"nice\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"sentence\"\>", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8460360982411213`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"04a58ab6-53ab-4af4-b1ec-5ef8827fd510"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextSequenceCases", "[", 
+  RowBox[{
+  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
+   RowBox[{"TextPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
+     RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.846036109517632*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"b22debab-f822-41cd-a5b3-b1a96ce75888"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"TextSequenceCases", "[", 
@@ -211,21 +136,11 @@ Cell[BoxData[
      "\"\<music\>\"", ",", "\"\<by\>\"", ",", 
      RowBox[{"TextType", "[", "\"\<Person\>\"", "]"}]}], "]"}], ",", 
    RowBox[{"MaxItems", "->", "5"}]}], "]"}]], "Input",ExpressionUUID->\
-"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
-
-Cell[BoxData[
- RowBox[{"TextSequenceCases", "[", 
-  RowBox[{
-  "\"\<here is a very nice sentence. this one is what it is.\>\"", ",", 
-   RowBox[{"TextPattern", "[", 
-    RowBox[{
-     RowBox[{"TextType", "[", "\"\<Noun\>\"", "]"}], ",", 
-     RowBox[{"TextType", "[", "\"\<Punctuation\>\"", "]"}]}], "]"}]}], 
-  "]"}]], "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"]
+"96a2829d-390b-4432-a7b6-4acf2b0eda5f"]
 }, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{Automatic, 857}, {62, Automatic}},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (June 24, 2021)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"062ed9de-a110-4faa-beaf-5afb664927a4"
@@ -243,15 +158,28 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 167, 3, 98, "Title",ExpressionUUID->"7428b188-1d93-45c3-ac0b-40bc273b6198"],
-Cell[750, 27, 140, 2, 30, "Input",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
 Cell[CellGroupData[{
-Cell[915, 33, 206, 3, 30, "Input",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
-Cell[1124, 38, 5996, 140, 136, "Output",ExpressionUUID->"af7ef612-2daa-4fe2-a818-f05154562c83"]
+Cell[772, 29, 220, 3, 30, "Input",ExpressionUUID->"118c07c5-3bcf-4087-8726-9136a714ba61"],
+Cell[995, 34, 162, 2, 34, "Output",ExpressionUUID->"c3251ce9-5e14-4112-bf73-9ada9d693b6e"]
 }, Open  ]],
-Cell[7135, 181, 447, 10, 52, "Input",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
-Cell[7585, 193, 381, 8, 53, "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
-Cell[7969, 203, 459, 10, 73, "Input",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"],
-Cell[8431, 215, 383, 8, 52, "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"]
+Cell[1172, 39, 140, 2, 30, "Input",ExpressionUUID->"611827af-9e03-4390-b43a-430079511c55"],
+Cell[CellGroupData[{
+Cell[1337, 45, 276, 4, 30, "Input",ExpressionUUID->"d3ddb568-3c14-4b62-a0cb-3e50d90e0d5a"],
+Cell[1616, 51, 521, 9, 34, "Output",ExpressionUUID->"77c06b77-c550-411f-9740-139c05f8b419"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2174, 65, 468, 10, 30, "Input",ExpressionUUID->"06f13119-0eca-4f3e-af45-9d64c3b15725"],
+Cell[2645, 77, 331, 7, 34, "Output",ExpressionUUID->"6c125de1-8a80-4bae-8cdc-40546bd2a023"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3013, 89, 404, 9, 32, "Input",ExpressionUUID->"b00caf5f-56f6-422f-b115-2a1b976b2f5e"],
+Cell[3420, 100, 269, 6, 34, "Output",ExpressionUUID->"04a58ab6-53ab-4af4-b1ec-5ef8827fd510"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3726, 111, 406, 9, 30, "Input",ExpressionUUID->"a3d67757-5fec-4ab8-853c-8855ca2df6d2"],
+Cell[4135, 122, 165, 3, 34, "Output",ExpressionUUID->"b22debab-f822-41cd-a5b3-b1a96ce75888"]
+}, Open  ]],
+Cell[4315, 128, 459, 10, 30, "Input",ExpressionUUID->"96a2829d-390b-4432-a7b6-4acf2b0eda5f"]
 }, Open  ]]
 }
 ]
