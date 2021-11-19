@@ -1,20 +1,20 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*TextSequenceCases*)
+(*TextStructureCases*)
 
 
 (* ::Abstract:: *)
 (*Extract and analyze text type sequences with the Wolfram Language.*)
 
 
-BeginPackage["TextSequenceCases`"]
+BeginPackage["TextStructureCases`"]
 (* Main *)
-TextSequenceCases::usage="TextSequenceCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt."
+TextStructureCases::usage="TextStructureCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt."
 
 (* TextPatterns *)
 TextPattern::usage="TextPattern[t1, t2, ...] is a TextPattern object matching (t1, t2, ...) in the fixed order given."
-TextPatternSequence::usage="TextPatternSequence[t1, t2, ...] is a TextPattern object representing a sequence of TextPattern objects arguments matching (t1, t2, ...)"
+TextPatternSequence::usage="TextPatternSequence[t1, t2, ...] is a TextPattern object representing a sequence of TextPattern objects matching (t1, t2, ...)"
 OrderlessTextPattern::usage="OrderlessTextPattern[t1, t2, ...] is a TextPattern object representing a pattern of text matching (t1, t2, ...) in any order."
 OptionalTextPattern::usage="OptionalTextPattern[t] is a TextPattern object that represents 0 or 1 instances of t"
 TextType::usage="TextType[type] is a TextPattern object representing a type of text content."
@@ -73,7 +73,7 @@ TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 	Module[{TRX, CA},
 		TRX = GenerateRegularExpressionTemplate[tp];
 		CA  = ContentAssociation[sourcetext, tp];
-		StringTemplate[TRX][CA]
+		RegularExpression[StringTemplate[TRX][CA]]
 		]
 
 WikipediaSearchQuery[List[], tp_TextPattern] := Message[ConvertToWikipediaSearchQuery::novq, tp]
@@ -101,23 +101,23 @@ ValidTextPatternQ[tp_TextPattern]:=Module[{heads},
 	]
 
 (* Input Handlers *)
-Options[TextSequenceCases]={
+Options[TextStructureCases]={
 	"Service" -> "Wikipedia"
 };
-Options[TextSequenceCasesWikipedia] = {
+Options[TextStructureCasesWikipedia] = {
 	MaxItems -> 50,
 	Language -> "English"
 };
 
-TextSequenceCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextSequenceCases, TextSequenceCasesWikipedia}]]:=
-	TextSequenceCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextSequenceCasesWikipedia]]]
+TextStructureCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextStructureCases, TextStructureCasesWikipedia}]]:=
+	TextStructureCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextStructureCasesWikipedia]]]
 	
-TextSequenceCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= TextSequenceCasesOnString[sourcetext, tpatt]
+TextStructureCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= TextStructureCasesOnString[sourcetext, tpatt]
 	
-TextSequenceCases[wikiquery_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextSequenceCases, TextSequenceCasesWikipedia}]]:= TextSequenceCasesWikipedia[wikiquery, tpatt, FilterRules[{opts}, Options[TextSequenceCasesWikipedia]]]
+TextStructureCases[wikiquery_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextStructureCases, TextStructureCasesWikipedia}]]:= TextStructureCasesWikipedia[wikiquery, tpatt, FilterRules[{opts}, Options[TextStructureCasesWikipedia]]]
 
 (* No SourceText specified *)
-Options[TextSequenceCasesFromService]={
+Options[TextStructureCasesFromService]={
 
 };
 
@@ -125,31 +125,34 @@ Options[TextSequenceCasesFromService]={
 TODO: Add relevant services from the list below
 	{"ArXiv","AWS","BingSearch","CharityEngine","ChemSpider","CrossRef","Dropbox","Facebook","Factual","FederalReserveEconomicData","Fitbit","Flickr","GoogleAnalytics","GoogleCalendar","GoogleContacts","GoogleCustomSearch","GooglePlus","GoogleTranslate","Instagram","IPFS","LinkedIn","MailChimp","MicrosoftTranslator","Mixpanel","MusicBrainz","OpenLibrary","OpenPHACTS","PubChem","PubMed","Pushbullet","Reddit","RunKeeper","SeatGeek","SurveyMonkey","Twilio","Twitter","Wikipedia","Yelp"}
 	*)
-TextSequenceCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{TextSequenceCasesWikipedia}]]:= With[
+TextStructureCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{TextStructureCasesWikipedia}]]:= With[
 	{wikiquery = ConvertToWikipediaSearchQuery[tp]},
 	If[FailureQ[wikiquery],
 	wikiquery,
-	TextSequenceCasesWikipedia["Content" -> wikiquery, tp, FilterRules[{opts}, Options[TextSequenceCasesWikipedia]]]
+	TextStructureCasesWikipedia["Content" -> wikiquery, tp, FilterRules[{opts}, Options[TextStructureCasesWikipedia]]]
 	]
 	]
 
+EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
+
 (* SourceText is a string *)
-TextSequenceCasesOnString[source_String, tp_TextPattern]:=Module[
-	{RX = RegularExpression[TextPatternToRegularExpression[source, tp]]},
-	(* TODO: Add # of Positions Key *)
-	DeleteDuplicates@Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
-		{cases = StringCases[source, RX]},
+TextStructureCasesOnString[source_String, tp_TextPattern]:=Module[
+	{RX, S = EscapePunctuation[source]},
+	
+	RX = TextPatternToRegularExpression[S, tp];
+	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
+		{cases = DeleteDuplicates@StringCases[source, RX]},
 		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
 		]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
+TextStructureCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
 	{articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[
-		WikipediaArticlesFromRule[wikiquery, FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextSequenceCasesWikipedia]]],
+		WikipediaArticlesFromRule[wikiquery, FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextStructureCasesWikipedia]]],
 		Row[{"Searching Wikipedia: ", StringRiffle[Listify[Values[wikiquery]], ", "], ProgressIndicator[Appearance->"Ellipsis"]}]
 		];
 	articleCount = Length[articles];
@@ -175,7 +178,7 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	SetSharedVariable[tp, articles];
 	matches = Monitor[
 		ParallelMap[
-		(++ArticleIndex;TextSequenceCasesOnString[#, tp])&,
+		(++ArticleIndex;TextStructureCasesOnString[#, tp])&,
 		sourcetexts
 		],
 		Row[{
@@ -203,8 +206,8 @@ TextSequenceCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]
 	]
 
 
-WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextSequenceCasesWikipedia]]]
-WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextSequenceCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextStructureCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextStructureCasesWikipedia]]]
 
 End[]
 EndPackage[]
