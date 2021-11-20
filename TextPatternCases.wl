@@ -21,8 +21,8 @@ TextType::usage="TextType[type] is a TextPattern object representing a type of t
 ConvertToWikipediaSearchQuery::usage="For development purposes only, convert TextPattern to WikipediaSearch query strings"
 TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t] Convert a TextPattern to a RegularExpression"
 GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
-ContentAssociation::usage="ContentAssociation[source, t]"
-
+ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
+EscapePunctuation::usage = "EscapePunctuation[s] add escape characters before punctuation in the source text so they're not considered as patterns in RegularExpressions"
 Begin["Private`"]
 
 (* Utility *)
@@ -65,9 +65,12 @@ GenerateRegularExpressionTemplate[tp_TextPattern] := Module[
 	p2 = ReplaceAll[p1, a_Alternatives :> ("(" <>StringRiffle[AlternativesToList[a], "|"] <> ")")]
 		]
 
+TextContentGroup[List[content_String]] := content;
 TextContentGroup[content_List] := "(" <> StringRiffle[content, "|"] <> ")";
 ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infinity];
 ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
+EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
+
 
 TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 	Module[{TRX, CA},
@@ -133,12 +136,9 @@ TextPatternCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{Te
 	]
 	]
 
-EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
-
 (* SourceText is a string *)
 TextPatternCasesOnString[source_String, tp_TextPattern]:=Module[
 	{RX, S = EscapePunctuation[source]},
-	
 	RX = TextPatternToRegularExpression[S, tp];
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
 		{cases = DeleteDuplicates@StringCases[source, RX]},
