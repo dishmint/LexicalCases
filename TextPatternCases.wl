@@ -23,6 +23,7 @@ TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t]
 GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
 EscapePunctuation::usage = "EscapePunctuation[s] add escape characters before punctuation in the source text so they're not considered as patterns in RegularExpressions"
+TextPatternSummary::usage ="Represents the results of TextPatternCases. Possible accessors are: \"Data\", \"Source\", \"MatchCount\", \"MatchCounts\", \"MatchCountGroups\",  \"TextPatternString\", \"Counts\", and \"CountGroups\""
 Begin["Private`"]
 
 (* Utility *)
@@ -112,12 +113,19 @@ Options[TextPatternCasesWikipedia] = {
 	Language -> "English"
 };
 
-TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:=
-	TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= Module[
+	{data},
+	data = TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]];
+	generateTextPatternSummary[data, OptionValue["Service"], tpatt]
+	]
 	
-TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= TextPatternCasesOnString[sourcetext, tpatt]
+TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= generateTextPatternSummary[TextPatternCasesOnString[sourcetext, tpatt], "Text", tpatt]
 	
-TextPatternCases[wikiquery_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesWikipedia[wikiquery, tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+TextPatternCases[wikiquery_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= generateTextPatternSummary[
+	TextPatternCasesWikipedia[wikiquery, tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]],
+	"Wikipedia",
+	tpatt
+]
 
 (* No SourceText specified *)
 Options[TextPatternCasesFromService]={
@@ -129,10 +137,11 @@ TODO: Add relevant services from the list below
 	{"ArXiv","AWS","BingSearch","CharityEngine","ChemSpider","CrossRef","Dropbox","Facebook","Factual","FederalReserveEconomicData","Fitbit","Flickr","GoogleAnalytics","GoogleCalendar","GoogleContacts","GoogleCustomSearch","GooglePlus","GoogleTranslate","Instagram","IPFS","LinkedIn","MailChimp","MicrosoftTranslator","Mixpanel","MusicBrainz","OpenLibrary","OpenPHACTS","PubChem","PubMed","Pushbullet","Reddit","RunKeeper","SeatGeek","SurveyMonkey","Twilio","Twitter","Wikipedia","Yelp"}
 	*)
 TextPatternCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
-	{wikiquery = ConvertToWikipediaSearchQuery[tp]},
+	{wikiquery = ConvertToWikipediaSearchQuery[tp], data},
 	If[FailureQ[wikiquery],
 	wikiquery,
-	TextPatternCasesWikipedia["Content" -> wikiquery, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+	data = TextPatternCasesWikipedia["Content" -> wikiquery, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]];
+	generateTextPatternSummary[data, "Wikipedia", tp]
 	]
 	]
 
@@ -202,12 +211,60 @@ TextPatternCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]
 	Clear[ArticleIndex];
 	
 	(* articlematchthread *)
-	matchesassoc
+	Flatten[matchesassoc]
 	]
 
 
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]]
 WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]]
+
+
+
+(* TextPatternSummary *)
+TextPatternSummary /: MakeBoxes[obj : TextPatternSummary[asc_?TextPatternSummaryAscQ], form : (StandardForm | TraditionalForm)] :=
+Module[{above, below},
+	above = {(*example grid*)
+		{BoxForm`SummaryItem[{"Source: ", asc["Source"]}]},
+		{BoxForm`SummaryItem[{"TextPatternString: ",asc["TextPatternString"]}]},
+		{BoxForm`SummaryItem[{"MatchCount: ",asc["MatchCount"]}]}
+	};
+	below = {(*example column*)};
+	BoxForm`ArrangeSummaryBox[
+		TextPatternSummary,(*head*)
+		obj,(*interpretation*)
+		None,(*icon,use None if not needed*)
+		above,(*always shown content*)
+		below,(*expandable content*)
+		form,
+		"Interpretable" -> Automatic]
+		];
+TextPatternSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Source", "MatchCount", "TextPatternString"}, KeyExistsQ[asc, #] &]
+TextPatternSummaryAscQ[_] = False;
+
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Data"] := asc["Data"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dataset"] := Dataset[asc["Data"]]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Counts"] := GetDatasetCounts[TextPatternSummary[asc]["Dataset"], asc["Source"]]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Counts", "Ascending"] := (TextPatternSummary[asc]["Counts"][SortBy["Count"]])
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Counts", "Descending"] := (TextPatternSummary[asc]["Counts"][ReverseSortBy["Count"]])
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["CountGroups"] := (TextPatternSummary[asc]["Counts", "Descending"] // CountGroups)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts"] := (TextPatternSummary[asc]["Counts"] // DeleteMissing[#, 1, 1] &)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts", "Ascending"] := (TextPatternSummary[asc]["Counts", "Ascending"] // DeleteMissing[#, 1, 1] &)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts", "Descending"] := (TextPatternSummary[asc]["Counts", "Descending"] // DeleteMissing[#, 1, 1] &)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups"] := (TextPatternSummary[asc]["MatchCounts", "Descending"] // CountGroups)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Source"] := asc["Source"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCount"] := asc["MatchCount"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["TextPatternString"] := asc["TextPatternString"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ][invalidkey_] := asc[invalidkey]
+
+generateTextPatternSummary[data_, sourceType_String, textpattern_] := Module[
+	{matchcount},
+	matchcount = GetDatasetCounts[Dataset[data], sourceType] // DeleteMissing[#, 1, 1]&;
+	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "MatchCount" -> matchcount, "TextPatternString" -> ConvertToPatternString[textpattern] |>]
+]
+
+CountGroups[ds_Dataset] := (ds // Query[GroupBy[#Count&], KeyDrop["Count"] /* Values /* Flatten] // KeyValueMap[<|"CountGroup" -> #1, "Matches" -> #2|> &])
+GetDatasetCounts[ds_Dataset,"Text"] := ds[All, <|"Match" -> "Match", "Count" -> "Position" /* Length|>]
+GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], KeyDrop[{"Article", "Match"}] /* Values] // KeyValueMap[<|"Match" -> #1, "Count" -> Length[#2]|> &]
 
 End[]
 EndPackage[]
