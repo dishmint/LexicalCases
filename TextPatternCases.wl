@@ -23,7 +23,7 @@ TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t]
 GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
 EscapePunctuation::usage = "EscapePunctuation[s] add escape characters before punctuation in the source text so they're not considered as patterns in RegularExpressions"
-TextPatternSummary::usage ="Represents the results of TextPatternCases. Possible accessors are: \"Data\", \"Source\", \"MatchCount\", \"MatchCounts\", \"MatchCountGroups\",  \"TextPatternString\", \"Counts\", and \"CountGroups\""
+TextPatternSummary::usage ="Represents the results of TextPatternCases. Use the \"Properties\" subvalue for a list of properties."
 Begin["Private`"]
 
 (* Utility *)
@@ -226,7 +226,7 @@ Module[{above, below},
 	above = {(*example grid*)
 		{BoxForm`SummaryItem[{"Source: ", asc["Source"]}]},
 		{BoxForm`SummaryItem[{"TextPatternString: ",asc["TextPatternString"]}]},
-		{BoxForm`SummaryItem[{"MatchCount: ",asc["MatchCount"]}]}
+		{BoxForm`SummaryItem[{"MatchCount: ",asc["TotalMatchCount"]}]}
 	};
 	below = {(*example column*)};
 	BoxForm`ArrangeSummaryBox[
@@ -238,7 +238,7 @@ Module[{above, below},
 		form,
 		"Interpretable" -> Automatic]
 		];
-TextPatternSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Source", "MatchCount", "TextPatternString"}, KeyExistsQ[asc, #] &]
+TextPatternSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Source", "TotalMatchCount", "TextPatternString"}, KeyExistsQ[asc, #] &]
 TextPatternSummaryAscQ[_] = False;
 
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Data"] := asc["Data"]
@@ -254,19 +254,44 @@ TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts", "Descending"] := 
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups"] := (TextPatternSummary[asc]["MatchCounts", "Descending"] // CountGroups)
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", n_Integer] := (TextPatternSummary[asc]["MatchCountGroups"][;;UpTo[n]])
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Source"] := asc["Source"]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCount"] := asc["MatchCount"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["TextPatternString"] := asc["TextPatternString"]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard"] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups"], TextPatternSummary[asc]["TotalMatchCount"]]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard", n_Integer] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups", n]]
 TextPatternSummary[asc_?TextPatternSummaryAscQ][invalidkey_] := asc[invalidkey]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups", "MatchCounts", "MatchCountGroups", "Source","TotalMatchCount","TextPatternString", "Dashboard"}
 
 generateTextPatternSummary[data_, sourceType_String, textpattern_] := Module[
 	{matchcount},
-	matchcount = GetDatasetCounts[Dataset[data], sourceType] // DeleteMissing[#, 1, 1]&;
-	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "MatchCount" -> matchcount, "TextPatternString" -> ConvertToPatternString[textpattern] |>]
+	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
+	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextPatternString" -> ConvertToPatternString[textpattern] |>]
 ]
+
+PartOfSpeechKey[word_String] := ProcessWordData[WordData[word, "PartsOfSpeech"]]
+ProcessWordData[w_WordData] := None
+ProcessWordData[w_] := w
 
 CountGroups[ds_Dataset] := (ds // Query[GroupBy[#Count&], KeyDrop["Count"] /* Values /* Flatten] // KeyValueMap[<|"CountGroup" -> #1, "Matches" -> #2|> &])
 GetDatasetCounts[ds_Dataset,"Text"] := ds[All, <|"Match" -> "Match", "Count" -> "Position" /* Length|>]
 GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], KeyDrop[{"Article", "Match"}] /* Values] // KeyValueMap[<|"Match" -> #1, "Count" -> Length[#2]|> &]
+PartOfSpeechGroups[ds_Dataset] := (ds[TextWords /* ToLowerCase /* Flatten /* DeleteStopwords /* DeleteDuplicates, "Matches"][AlphabeticSort][GroupBy[PartOfSpeechKey]][KeyDrop[None]] // KeySort)
+
+GenerateDashboard[ds_Dataset,matchcount_Integer] := With[
+	{
+		dataset=ds[All, <|"Percentage" ->Interpreter["Percent"]@*ToString@*PercentForm@*N@((#CountGroup Length[#Matches])/matchcount),"Matches" -> #Matches|> &][ReverseSortBy["Percentage"]],
+		posg = PartOfSpeechGroups[ds]
+		},
+			DynamicModule[{plot="Dataset"},
+				Column[{
+					Panel[SetterBar[Dynamic[plot],{"Dataset","PartOfSpeechGroups"}]],
+					Dynamic[
+						Switch[plot,
+							"Dataset",dataset,
+							"PartOfSpeechGroups", posg
+							]]
+					}]
+			]
+		]
 
 End[]
 EndPackage[]
