@@ -24,6 +24,7 @@ GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] G
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
 EscapePunctuation::usage = "EscapePunctuation[s] add escape characters before punctuation in the source text so they're not considered as patterns in RegularExpressions"
 TextPatternSummary::usage ="Represents the results of TextPatternCases. Use the \"Properties\" subvalue for a list of properties."
+ValidTextPatternQ::usage="ValidTextPatternQ[input] Returns True if input is a valid TextPattern"
 Begin["Private`"]
 
 (* Utility *)
@@ -45,6 +46,8 @@ TextPatternFormat[OptionalTextPattern[args__]] := {"(",Map[TextPatternFormat]@{a
 TextPatternFormat[TextType[args:(_String|_RegularExpression)]] := {"(:",Map[TextPatternFormat]@{args}, ":)"}
 
 ConvertToPatternString[tp_TextPattern]:= (Flatten /* StringRiffle)@TextPatternFormat[tp];
+ConvertToPatternString[Rule[tp_TextPattern,_]]:= (Flatten /* StringRiffle)@TextPatternFormat[tp];
+ConvertToPatternString[RuleDelayed[tp_TextPattern,_]]:= (Flatten /* StringRiffle)@TextPatternFormat[tp];
 
 ExpressionRiffle[h_[args___], sep_] := h@@Riffle[{args}, sep];
 
@@ -72,12 +75,24 @@ ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infini
 ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
+StripNamedPattern[tp_TextPattern] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
 
 TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 	Module[{TRX, CA},
 		TRX = GenerateRegularExpressionTemplate[tp];
 		CA  = ContentAssociation[sourcetext, tp];
 		RegularExpression[StringTemplate[TRX][CA]]
+		]
+
+TextPatternToRegularExpression[sourcetext_String, rule:(Rule[tp_TextPattern, expr_]|RuleDelayed[tp_TextPattern, expr_])] :=
+	Module[{TP = StripNamedPattern[tp], TRX, CA, REX, PTC = 0, CGR},
+		(* Process LHS *)
+		TRX = GenerateRegularExpressionTemplate[TP];
+		CA  = ContentAssociation[sourcetext, TP];
+		REX = RegularExpression[StringTemplate[TRX][CA]];
+		(* Process RHS *)
+		CGR = Cases[rule, p_Pattern :> (Extract[1][p] ->"$" <> ToString[++PTC]), Infinity];
+		Replace[REX :> expr, CGR, Infinity]
 		]
 
 WikipediaSearchQuery[List[], tp_TextPattern] := Message[ConvertToWikipediaSearchQuery::novq, tp]
@@ -95,14 +110,9 @@ ConvertToWikipediaSearchQuery[tp_TextPattern]:= Module[
 ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the pattern ``. Consider using the \"Content\" option to supply keyaords, or trying a different TextPattern."
 
 (* Validate TextPattern Objects *)
-ContainsOnlyTextPatternSymbols[heads_List]:= ContainsOnly[heads, {Symbol, String, Alternatives, RegularExpression, TextPattern, TextPatternSequence, OrderlessTextPattern, OptionalTextPattern, TextType}]
+$TextPatternValidHeads = {TextPattern, TextPatternSequence, OptionalTextPattern, OrderlessTextPattern, TextType, Pattern, Alternatives, Rule, RuleDelayed, RegularExpression}
 
-SymbolsTextPatternSymbolsQ[heads_List]:= With[{hcounts = KeyDrop[String][Counts[heads]]}, hcounts[Symbol]===(KeyDrop[Symbol]/*Total@hcounts)]
-
-ValidTextPatternQ[tp_TextPattern]:=Module[{heads},
-	heads=Cases[tp, x_:>Head[x],{0,Infinity},Heads->True];
-	Through[(ContainsOnlyTextPatternSymbols\[And]SymbolsTextPatternSymbolsQ)[heads]]
-	]
+ValidTextPatternQ[input_]:= With[{heads = Cases[input, h_[___] :> h, {0, Infinity}] }, ContainsOnly[heads, $TextPatternValidHeads]]
 
 (* Input Handlers *)
 Options[TextPatternCases]={
@@ -136,7 +146,7 @@ Options[TextPatternCasesFromService]={
 TODO: Add relevant services from the list below
 	{"ArXiv","AWS","BingSearch","CharityEngine","ChemSpider","CrossRef","Dropbox","Facebook","Factual","FederalReserveEconomicData","Fitbit","Flickr","GoogleAnalytics","GoogleCalendar","GoogleContacts","GoogleCustomSearch","GooglePlus","GoogleTranslate","Instagram","IPFS","LinkedIn","MailChimp","MicrosoftTranslator","Mixpanel","MusicBrainz","OpenLibrary","OpenPHACTS","PubChem","PubMed","Pushbullet","Reddit","RunKeeper","SeatGeek","SurveyMonkey","Twilio","Twitter","Wikipedia","Yelp"}
 	*)
-TextPatternCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
+TextPatternCasesFromService["Wikipedia", tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
 	{wikiquery = ConvertToWikipediaSearchQuery[tp], data},
 	If[FailureQ[wikiquery],
 	wikiquery,
@@ -146,7 +156,7 @@ TextPatternCasesFromService["Wikipedia", tp_TextPattern, opts:OptionsPattern[{Te
 	]
 
 (* SourceText is a string *)
-TextPatternCasesOnString[source_String, tp_TextPattern]:=Module[
+TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 	{RX, S = EscapePunctuation[source]},
 	RX = TextPatternToRegularExpression[S, tp];
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
@@ -156,8 +166,8 @@ TextPatternCasesOnString[source_String, tp_TextPattern]:=Module[
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextPatternCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]:=Module[
-	{articles, sourcetexts, matches, matchesassoc, articlematchthread},
+TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:=Module[
+	{TP = (Extract[1][tp])articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[
@@ -191,7 +201,7 @@ TextPatternCasesWikipedia[wikiquery_Rule, tp_TextPattern, opts:OptionsPattern[]]
 		sourcetexts
 		],
 		Row[{
-			"Searching for "<>ConvertToPatternString[tp]<>" sequences ",
+			"Searching for "<>ConvertToPatternString[TP]<>" sequences ",
 			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
 			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 			}]];
@@ -264,7 +274,7 @@ TextPatternSummary[asc_?TextPatternSummaryAscQ]["Properties"] := {"Data","Datase
 generateTextPatternSummary[data_, sourceType_String, textpattern_] := Module[
 	{matchcount},
 	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
-	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextPatternString" -> ConvertToPatternString[textpattern] |>]
+	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextPatternString" -> ConvertToPatternString[Extract[1] /* StripNamedPattern@textpattern] |>]
 ]
 
 PartOfSpeechKey[word_String] := ProcessWordData[WordData[word, "PartsOfSpeech"]]
