@@ -43,9 +43,10 @@ PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Ma
 ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFound"], Infinity];
 
 (* Validate TextPattern Objects *)
+ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 $TextPatternValidHeads = {TextPattern, TextPatternSequence, OptionalTextPattern, OrderlessTextPattern, TextType, Pattern, Alternatives, Rule, RuleDelayed, RegularExpression}
 
-ValidTextPatternQ[input_TextPattern]:= With[{heads = DeleteDuplicates@Cases[input, h_[___] :> h, {0, Infinity}] }, ContainsOnly[heads, $TextPatternValidHeads]]
+ValidTextPatternQ[input_TextPattern]:= With[{heads = DeleteDuplicates@ExtractHeads[input]}, ContainsOnly[heads, $TextPatternValidHeads]]
 ValidTextPatternQ[Rule[input_TextPattern,_]]:= ValidTextPatternQ[input]
 ValidTextPatternQ[RuleDelayed[input_TextPattern,_]]:= ValidTextPatternQ[input]
 
@@ -80,8 +81,11 @@ ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infini
 ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
-StripNamedPattern[tp_TextPattern] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
-StripNamedPattern[(Rule|RuleDelayed)[tp_TextPattern,_]] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
+ContainsPatternHeadsQ[tp_] := ContainsAny[ExtractHeads[tp], {Pattern}]
+StripNamedPattern[tp_] := StripNames[ContainsPatternHeadsQ[tp], tp]
+StripNames[True, tp_TextPattern] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (Rule|RuleDelayed)[tp_TextPattern,_]] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[False, tp_]:= tp
 
 TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 	Module[{TRX, CA},
@@ -131,7 +135,19 @@ Options[TextPatternCasesWikipedia] = {
 
 
 (* SourceText and TextPattern Input *)
-TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= generateTextPatternSummary[TextPatternCasesOnString[sourcetext, tpatt], "Text", tpatt]
+TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= Module[
+	{TPC},
+	(* Find Matches *)
+	TPC = Monitor[
+		TextPatternCasesOnString[sourcetext, tpatt],
+		Row[{Style["Searching", Bold], ProgressIndicator[Appearance->"Ellipsis"], "\n", ToTextElementStructure[StripNamedPattern@tpatt]}]
+		];
+	(* Generate Summary Object *)
+	Monitor[
+		generateTextPatternSummary[TPC, "Text", tpatt],
+		Row[{"Generating TextPatternSummary", ProgressIndicator[Appearance->"Necklace"]}]
+	]
+	]
 
 (* TextPattern on Service *)
 TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
@@ -270,12 +286,16 @@ TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts"] := (TextPatternSu
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts", "Ascending"] := (TextPatternSummary[asc]["Counts", "Ascending"] // DeleteMissing[#, 1, 1] &)
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts", "Descending"] := (TextPatternSummary[asc]["Counts", "Descending"] // DeleteMissing[#, 1, 1] &)
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups"] := (TextPatternSummary[asc]["MatchCounts", "Descending"] // CountGroups)
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", DeleteStopwords] := (TextPatternSummary[asc]["MatchCounts", "Descending"] // Select[\[Not]StringMatchQ[Alternatives @@ WordList["Stopwords"]][#Match] &] // CountGroups)
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", n_Integer] := (TextPatternSummary[asc]["MatchCountGroups"][;;UpTo[n]])
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", n_Integer, DeleteStopwords] := (TextPatternSummary[asc]["MatchCountGroups", DeleteStopwords][;;UpTo[n]])
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Source"] := asc["Source"]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["TextElementStructure"] := asc["TextElementStructure"]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard"] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups"], TextPatternSummary[asc]["TotalMatchCount"]]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard", n_Integer] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups", n]]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard", DeleteStopwords] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups", DeleteStopwords], TextPatternSummary[asc]["TotalMatchCount"]]
+TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dashboard", n_Integer, DeleteStopwords] := GenerateDashboard[TextPatternSummary[asc]["MatchCountGroups", n, DeleteStopwords]]
 TextPatternSummary[asc_?TextPatternSummaryAscQ][invalidkey_] := asc[invalidkey]
 TextPatternSummary[asc_?TextPatternSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups", "MatchCounts", "MatchCountGroups", "Source","TotalMatchCount","TextElementStructure", "Dashboard"}
 
@@ -283,7 +303,7 @@ generateTextPatternSummary[data_?FailureQ, ___] := data
 generateTextPatternSummary[data_, sourceType_String, textpattern_] := Module[
 	{matchcount},
 	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
-	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[Extract[1] /* StripNamedPattern@textpattern] |>]
+	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@textpattern] |>]
 ]
 
 PartOfSpeechKey[word_String] := ProcessWordData[WordData[word, "PartsOfSpeech"]]
