@@ -80,7 +80,7 @@ ExtractContentTypes[tp_TextPattern] := Cases[tp, TextType[type_] :> type, Infini
 ContentAssociation[sourcetext_String, tp_TextPattern] := KeyMap["[:" <> # <> ":]" &][Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[tp]]]]
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
-StripNamedPattern[tp_TextPattern] := tp
+StripNamedPattern[tp_TextPattern] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
 StripNamedPattern[(Rule|RuleDelayed)[tp_TextPattern,_]] := Replace[tp, p_Pattern :> Extract[2][p], Infinity]
 
 TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
@@ -90,7 +90,7 @@ TextPatternToRegularExpression[sourcetext_String, tp_TextPattern] :=
 		RegularExpression[StringTemplate[TRX][CA]]
 		]
 
-TextPatternToRegularExpression[sourcetext_String, rule:(Rule[tp_TextPattern, expr_]|RuleDelayed[tp_TextPattern, expr_])] :=
+TextPatternToRegularExpression[sourcetext_String, rule:((Rule|RuleDelayed)[tp_TextPattern, expr_])] :=
 	Module[{TP = StripNamedPattern[tp], TRX, CA, REX, PTC = 0, CGR},
 		(* Process LHS *)
 		TRX = GenerateRegularExpressionTemplate[TP];
