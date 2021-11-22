@@ -167,7 +167,7 @@ TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 
 (* SourceText is a WikipediaSearch Query *)
 TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:=Module[
-	{TP = (Extract[1][tp])articles, sourcetexts, matches, matchesassoc, articlematchthread},
+	{TP = StripNamedPattern[Extract[1][tp]], articles, sourcetexts, matches, matchesassoc, articlematchthread},
 
 	(* 1 \[LongDash] Get Wikipedia Articles *)
 	articles = Monitor[
