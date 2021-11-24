@@ -26,6 +26,7 @@ ContentAssociation::usage="ContentAssociation[source, t] generates an associatio
 TextPatternSummary::usage ="Represents the results of TextPatternCases. Use the \"Properties\" subvalue for a list of properties."
 ValidTextPatternQ::usage="ValidTextPatternQ[input] Returns True if input is a valid TextPattern"
 ToTextElementStructure::usage="ToTextElementStructure[tp] renders a TextPattern using TextElements"
+$TextPatternCasesSupportedServices::usage="List of supported services"
 Begin["Private`"]
 
 (* Utility *)
@@ -133,7 +134,7 @@ Options[TextPatternCasesWikipedia] = {
 	Language -> "English"
 };
 
-
+$TextPatternCasesSupportedServices = {"Wikipedia"}
 (* SourceText and TextPattern Input *)
 TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= Module[
 	{TPC},
@@ -149,36 +150,6 @@ TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= Module[
 	]
 	]
 
-(* TextPattern on Service *)
-TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
-
-(* WikiQueryRyle and TextPattern Input *)
-TextPatternCases[wikiquery_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= generateTextPatternSummary[
-	TextPatternCasesWikipedia[wikiquery, tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]],
-	"Wikipedia",
-	tpatt
-]
-
-(* No SourceText specified *)
-Options[TextPatternCasesFromService]={
-
-};
-
-(*
-TODO: Add relevant services from the list below
-	{"ArXiv","AWS","BingSearch","CharityEngine","ChemSpider","CrossRef","Dropbox","Facebook","Factual","FederalReserveEconomicData","Fitbit","Flickr","GoogleAnalytics","GoogleCalendar","GoogleContacts","GoogleCustomSearch","GooglePlus","GoogleTranslate","Instagram","IPFS","LinkedIn","MailChimp","MicrosoftTranslator","Mixpanel","MusicBrainz","OpenLibrary","OpenPHACTS","PubChem","PubMed","Pushbullet","Reddit","RunKeeper","SeatGeek","SurveyMonkey","Twilio","Twitter","Wikipedia","Yelp"}
-	*)
-TextPatternCasesFromService["Wikipedia", tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
-	{wikiquery = ConvertToWikipediaSearchQuery[tp]},
-	ProcessWikiQuery[wikiquery,tp,opts]
-	]
-
-ProcessWikiQuery[query_?FailureQ,___] := Return[query, With]
-ProcessWikiQuery[query_,tp_?ValidTextPatternQ, opts___] := Module[
-	{data = TextPatternCasesWikipedia["Content" -> query, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]},
-	generateTextPatternSummary[data, "Wikipedia", tp]
-	]
-
 (* SourceText is a string *)
 TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 	{RX, S = EscapePunctuation[source]},
@@ -189,63 +160,117 @@ TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 		]
 	]
 
-(* SourceText is a WikipediaSearch Query *)
-TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:=Module[
-	{TP = StripNamedPattern[tp], articles, sourcetexts, matches, matchesassoc, articlematchthread},
-	(* 1 \[LongDash] Get Wikipedia Articles *)
-	articles = Monitor[
-		WikipediaArticlesFromRule[wikiquery, FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]],
-		Row[{"Searching Wikipedia: ", StringRiffle[Listify[Values[wikiquery]], ", "], ProgressIndicator[Appearance->"Ellipsis"]}]
+(* TextPattern on Service *)
+TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+
+(* WikiQueryRyle and TextPattern Input *)
+TextPatternCases[query_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], query, tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+
+Options[TextPatternCasesFromService]={
+
+};
+
+(*
+TODO: Add relevant services from the list below
+	{"ArXiv","CrossRef","Dropbox","Facebook","GoogleCustomSearch","Instagram","OpenLibrary","PubMed""Reddit""SurveyMonkey","Twilio","Twitter","Wikipedia"}
+	*)
+
+GetArticlesFromService["Wikipedia", query_, opts___] := Module[
+	{ART, ARC, MTL},
+	ART = Monitor[
+		WikipediaArticlesFromRule[query, FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]],
+		Row[{"Searching Wikipedia: ", StringRiffle[Listify[Values[query]], ", "], ProgressIndicator[Appearance->"Ellipsis"]}]
 		];
-	articleCount = Length[articles];
-	articleCountString = ToString[articleCount];
-	maxTitleLength = First@TakeLargestBy[StringLength,1][articles->"Value"];
-	
-	(* 2 \[LongDash] Get Wikipedia article text *)
-	SetSharedVariable[ArticleIndex];
-	ArticleIndex=0;
-	sourcetexts = Monitor[
-		ParallelMap[(++ArticleIndex;WikipediaData[#])&,articles],
-		Row[{
-			"Gathering text from "<>articleCountString<>" articles:\n",
-			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",
-			Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]],
-			Dynamic[If[ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]]
-			}
+	ARC = Length[ART];
+	MTL = First@TakeLargestBy[StringLength,1][ART->"Value"];
+	<|"Articles" -> ART, "ArticleCount" -> ARC, "ArticleCountString" -> ToString[ARC], "MaxTitleLength" -> MTL|>
+	]
+
+GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCountString_String, maxTitleLength_Integer] := Module[
+	{texts},
+		SetSharedVariable[ArticleIndex];
+		ArticleIndex=0;
+		Monitor[
+			ParallelMap[(++ArticleIndex;WikipediaData[#])&,articles],
+			Row[{
+				"Gathering text from "<>articleCountString<>" articles:\n",
+				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",
+				Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]],
+				Dynamic[If[ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]]
+				}
+				]
 			]
-		];
+	]
+
+SearchForTextPattern[texts_List, tp_?ValidTextPatternQ, stp_?ValidTextPatternQ, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
+	{T = texts},
+		ArticleIndex=0;
+		SetSharedVariable[tp];
+		Monitor[
+			ParallelMap[(++ArticleIndex;TextPatternCasesOnString[#, tp])&, T],
+			Row[{
+				Style["Searching for TextPattern:\n", Bold],
+				ToTextElementStructure[stp],
+				Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
+				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
+				}]
+			]
 	
-	(* 4 \[LongDash] Search *)
-	ArticleIndex=0;
-	SetSharedVariable[tp, articles];
-	matches = Monitor[
-		ParallelMap[
-		(++ArticleIndex;TextPatternCasesOnString[#, tp])&,
-		sourcetexts
-		],
-		Row[{
-			Style["Searching for TextPattern:\n", Bold],
-			ToTextElementStructure[TP],
-			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
-			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
-			}]];
+	]
+
+PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
+	{AMT, MAC},
+		AMT = Monitor[Thread[{articles, ReplaceEmptyListWithMissing[matches]}], Row[{"Threading Articles with Matches ", ProgressIndicator[Appearance->"Ellipsis"]}]];
+		
+		SetSharedVariable[AMT];
+		ArticleIndex=0;
+		MAC = Monitor[
+			ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, AMT],
+			Row[{
+				"Generating Association for ",
+				Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
+				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
+				}]];
+		Clear[ArticleIndex];
+		Flatten[MAC]
+	]
+
+(* Search wikipedia when only a pattern is given *)
+TextPatternCasesFromService["Wikipedia", tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
+	{wikiquery = StringTrim@ConvertToWikipediaSearchQuery[tp]},
+	ProcessWikiQuery[wikiquery,tp,opts]
+	]
+
+TextPatternCasesFromService["Wikipedia", query_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= ProcessWikiQuery[query,tp,opts]
+
+ProcessWikiQuery[query_?FailureQ,___] := Return[query, With]
+ProcessWikiQuery[query_Rule,tp_?ValidTextPatternQ, opts___] := Module[
+	{data = TextPatternCasesWikipedia[query, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]},
+	generateTextPatternSummary[data, "Wikipedia", tp]
+	]
+
+ProcessWikiQuery[query:(_String|_List),tp_?ValidTextPatternQ, opts___] := Module[
+	{data = TextPatternCasesWikipedia["Content" -> query, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]},
+	generateTextPatternSummary[data, "Wikipedia", tp]
+	]
+
+(* SourceText is a WikipediaSearch Query *)
+TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:= Module[
+	{TP = tp, STP = StripNamedPattern[tp], ard, art, arc, acs, mtl, src, mtc, matchesassoc, articlematchthread},
+	(* 1 - Get Wikipedia Articles *)
+	ard = GetArticlesFromService["Wikipedia", wikiquery, opts];
 	
-	articlematchthread = Monitor[Thread[{articles, ReplaceEmptyListWithMissing[matches]}], Row[{"Threading Articles with Matches ", ProgressIndicator[Appearance->"Ellipsis"]}]];
+	art = ard["Articles"];
+	arc = ard["ArticleCount"];
+	acs = ard["ArticleCountString"];
+	mtl = ard["MaxTitleLength"];
 	
-	SetSharedVariable[articlematchthread];
-	ArticleIndex=0;
-	matchesassoc = Monitor[
-		ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, articlematchthread],
-		Row[{
-			"Generating Association for ",
-			Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
-			ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
-			}]];
+	(* 2 - Get Wikipedia article text *)
+	src = GetTextFromArticles["Wikipedia", art, arc, acs, mtl];
 	
-	Clear[ArticleIndex];
-	
-	(* articlematchthread *)
-	Flatten[matchesassoc]
+	(* 3 - Search for TextPattern *)
+	mtc = SearchForTextPattern[src, TP, STP, art, arc, mtl];
+	PackageResults[mtc, art, arc, mtl]
 	]
 
 
