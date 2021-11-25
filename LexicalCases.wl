@@ -44,7 +44,14 @@ ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFou
 
 (* Validate LexicalPattern Objects *)
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
-$LexicalPatternValidHeads = {LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType, Pattern, Alternatives, Rule, RuleDelayed, RegularExpression}
+$LexicalPatternValidHeads = {
+	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType,
+	Pattern, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
+	Alternatives, Rule, RuleDelayed, RegularExpression,
+	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
+	NumberString, StartOfString, EndOfString,
+	StartOfLine, EndOfLine
+ }
 
 ValidLexicalPatternQ[input_LexicalPattern]:= With[{heads = DeleteDuplicates@ExtractHeads[input]}, ContainsOnly[heads, $LexicalPatternValidHeads]]
 ValidLexicalPatternQ[Rule[input_LexicalPattern,_]]:= ValidLexicalPatternQ[input]
