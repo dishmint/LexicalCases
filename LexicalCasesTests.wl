@@ -7,20 +7,20 @@
 (* ::Abstract:: *)
 (*Extract and analyze text type sequences with the Wolfram Language.*)
 
-BeginPackage["TextPatternTests`"]
+BeginPackage["LexicalCasesTests`"]
 
-Needs["TextPatternCases`"]
+Needs["LexicalCases`"]
 (* Main *)
-TextPatternTestReport::usage="TextPatternTestReport returns a TestReport for TextPattern components."
-$TextPatternTests::usage="A list of VerificationTests for TextPattern components"
-$TextPatternSampleStringShort::usage="A short example string"
-$TextPatternSampleStringLong::usage="A long example string"
+LexicalCasesTestReport::usage="TextPatternTestReport returns a TestReport for TextPattern components."
+$LexicalCasesTests::usage="A list of VerificationTests for TextPattern components"
+$SampleStringShort::usage="A short example string"
+$SampleStringLong::usage="A long example string"
 $SampleTextPattern::usage="A sample text pattern used for testing"
 Begin["Private`"]
 (* From https://randomwordgenerator.com/sentence.php *)
-$TextPatternSampleStringShort = "The best key lime pie is still up for debate."
+$SampleStringShort = "The best key lime pie is still up for debate."
 (* From TextCases[WikipediaData["computer"], "Paragraph"] // First *)
-$TextPatternSampleStringLong = "A computer is a machine that can be programmed to carry out \
+$SampleStringLong = "A computer is a machine that can be programmed to carry out \
 sequences of arithmetic or logical operations automatically. Modern \
 computers can perform generic sets of operations known as programs. \
 These programs enable computers to perform a wide range of tasks. A \
@@ -65,10 +65,10 @@ touchscreen). Peripheral devices allow information to be retrieved \
 from an external source and they enable the result of operations to \
 be saved and retrieved."
 $SampleTextPattern = TextPattern[TextType["Adjective"], " key lime pie"];
-$TextPatternTests := {
+$LexicalCasesTests := {
 	(* ContentAssociation *)
 	VerificationTest[
-		ContentAssociation[$TextPatternSampleStringShort, $SampleTextPattern],
+		ContentAssociation[$SampleStringShort, $SampleTextPattern],
 		<|"[:Adjective:]" -> "(best|key)"|>,
 		"TestID" -> "ContentAssociationTest1"
 	],
@@ -91,7 +91,7 @@ $TextPatternTests := {
 	],
 	(* TextPatternToRegularExpression *)
 	VerificationTest[
-		TextPatternToRegularExpression[$TextPatternSampleStringLong, TextPattern["computer" | "computers", " ", TextType["Verb"]]],
+		TextPatternToRegularExpression[$SampleStringLong, TextPattern["computer" | "computers", " ", TextType["Verb"]]],
 		RegularExpression["(computer|computers) (is|can|be|programmed|carry|perform|known|enable|includes|operating|needed|used|may|refer|are|linked|function|use|included|links|were|meant|have|aided|doing|built|automate|guiding|did|specialized|calculating|developed|followed|integrated|leading|been|increasing|counts|predicted|consists|carries|change|stored|include|allow|retrieved|saved)"],
 		"TestID" -> "TextPatternToRegularExpressionTest1"
 	],
@@ -111,13 +111,13 @@ $TextPatternTests := {
 	(* FilterOutStopwordRows *)
 	(* Short Strings *)
 	VerificationTest[
-		TextPatternCases[$TextPatternSampleStringShort, $SampleTextPattern]["Data"],
+		LexicalCases[$SampleStringShort, $SampleTextPattern]["Data"],
 		{<|"Match" -> "best key lime pie", "Position" -> {{5, 21}}|>},
 		"TestID" -> "ShortStringTest1"
 		]
 	(* Long Strings *)
 };
 
-TextPatternTestReport := TestReport[$TextPatternTests]
+LexicalCasesTestReport := TestReport[$LexicalCasesTests]
 End[]
 EndPackage[]

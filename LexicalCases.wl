@@ -1,16 +1,16 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*TextPatternCases*)
+(*LexicalCases*)
 
 
 (* ::Abstract:: *)
 (*Extract and analyze text type sequences with the Wolfram Language.*)
 
 
-BeginPackage["TextPatternCases`"]
+BeginPackage["LexicalCases`"]
 (* Main *)
-TextPatternCases::usage="TextPatternCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt."
+LexicalCases::usage="LexicalCases[source, textpatt] gives the text sequences in source that match the text pattern textpatt."
 
 (* TextPatterns *)
 TextPattern::usage="TextPattern[t1, t2, ...] is a TextPattern object matching (t1, t2, ...) in the fixed order given."
@@ -23,10 +23,10 @@ TextPatternToRegularExpression::usage="TextPatternToRegularExpression[source, t]
 GenerateRegularExpressionTemplate::usage="GenerateRegularExpressionTemplate[t] Generate a RegularExpression template from a TextPattern"
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
 (* EscapePunctuation::usage = "EscapePunctuation[s] add escape characters before punctuation in the source text so they're not considered as patterns in RegularExpressions" *)
-TextPatternSummary::usage ="Represents the results of TextPatternCases. Use the \"Properties\" subvalue for a list of properties."
+LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Properties\" subvalue for a list of properties."
 ValidTextPatternQ::usage="ValidTextPatternQ[input] Returns True if input is a valid TextPattern"
 ToTextElementStructure::usage="ToTextElementStructure[tp] renders a TextPattern using TextElements"
-$TextPatternCasesSupportedServices::usage="List of supported services"
+$LexicalCasesSupportedServices::usage="List of supported services"
 (* FilterOutStopwordRows::usage="FilterOutStopwordRows[data] filters out rows with stopwords" *)
 Begin["Private`"]
 
@@ -127,32 +127,32 @@ ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the
 
 
 (* Input Handlers *)
-Options[TextPatternCases]={
+Options[LexicalCases]={
 	"Service" -> "Wikipedia"
 };
-Options[TextPatternCasesWikipedia] = {
+Options[LexicalCasesWikipedia] = {
 	MaxItems -> 50,
 	Language -> "English"
 };
 
-$TextPatternCasesSupportedServices = {"Wikipedia"}
+$LexicalCasesSupportedServices = {"Wikipedia"}
 (* SourceText and TextPattern Input *)
-TextPatternCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= Module[
+LexicalCases[sourcetext_String, tpatt_?ValidTextPatternQ]:= Module[
 	{TPC},
 	(* Find Matches *)
 	TPC = Monitor[
-		TextPatternCasesOnString[sourcetext, tpatt],
+		LexicalCasesOnString[sourcetext, tpatt],
 		Row[{Style["Searching", Bold], ProgressIndicator[Appearance->"Ellipsis"], "\n", ToTextElementStructure[StripNamedPattern@tpatt]}]
 		];
 	(* Generate Summary Object *)
 	Monitor[
-		generateTextPatternSummary[TPC, "Text", tpatt],
-		Row[{"Generating TextPatternSummary", ProgressIndicator[Appearance->"Necklace"]}]
+		generateLexicalSummary[TPC, "Text", tpatt],
+		Row[{"Generating LexicalSummary", ProgressIndicator[Appearance->"Necklace"]}]
 	]
 	]
 
 (* SourceText is a string *)
-TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
+LexicalCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 	{RX, S = EscapePunctuation[source]},
 	RX = TextPatternToRegularExpression[S, tp];
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
@@ -162,12 +162,12 @@ TextPatternCasesOnString[source_String, tp_?ValidTextPatternQ]:=Module[
 	]
 
 (* TextPattern on Service *)
-TextPatternCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+LexicalCases[tpatt_?ValidTextPatternQ, opts:OptionsPattern[{LexicalCases, LexicalCasesWikipedia}]]:= LexicalCasesFromService[OptionValue["Service"], tpatt, FilterRules[{opts}, Options[LexicalCasesWikipedia]]]
 
 (* WikiQueryRyle and TextPattern Input *)
-TextPatternCases[query_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCases, TextPatternCasesWikipedia}]]:= TextPatternCasesFromService[OptionValue["Service"], query, tpatt, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]
+LexicalCases[query_Rule, tpatt_?ValidTextPatternQ, opts:OptionsPattern[{LexicalCases, LexicalCasesWikipedia}]]:= LexicalCasesFromService[OptionValue["Service"], query, tpatt, FilterRules[{opts}, Options[LexicalCasesWikipedia]]]
 
-Options[TextPatternCasesFromService]={
+Options[LexicalCasesFromService]={
 
 };
 
@@ -179,7 +179,7 @@ TODO: Add relevant services from the list below
 GetArticlesFromService["Wikipedia", query_, opts___] := Module[
 	{ART, ARC, MTL},
 	ART = Monitor[
-		WikipediaArticlesFromRule[query, FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]],
+		WikipediaArticlesFromRule[query, FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]],
 		Row[{"Searching Wikipedia: ", StringRiffle[Listify[Values[query]], ", "], ProgressIndicator[Appearance->"Ellipsis"]}]
 		];
 	ARC = Length[ART];
@@ -208,7 +208,7 @@ SearchForTextPattern[texts_List, tp_?ValidTextPatternQ, stp_?ValidTextPatternQ, 
 		ArticleIndex=0;
 		SetSharedVariable[tp];
 		Monitor[
-			ParallelMap[(++ArticleIndex;TextPatternCasesOnString[#, tp])&, T],
+			ParallelMap[(++ArticleIndex;LexicalCasesOnString[#, tp])&, T],
 			Row[{
 				Style["Searching for TextPattern:\n", Bold],
 				ToTextElementStructure[stp], "\n",
@@ -237,26 +237,26 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 	]
 
 (* Search wikipedia when only a pattern is given *)
-TextPatternCasesFromService["Wikipedia", tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= With[
+LexicalCasesFromService["Wikipedia", tp_?ValidTextPatternQ, opts:OptionsPattern[{LexicalCasesWikipedia}]]:= With[
 	{wikiquery = StringTrim@ConvertToWikipediaSearchQuery[tp]},
 	ProcessWikiQuery[wikiquery,tp,opts]
 	]
 
-TextPatternCasesFromService["Wikipedia", query_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[{TextPatternCasesWikipedia}]]:= ProcessWikiQuery[query,tp,opts]
+LexicalCasesFromService["Wikipedia", query_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[{LexicalCasesWikipedia}]]:= ProcessWikiQuery[query,tp,opts]
 
 ProcessWikiQuery[query_?FailureQ,___] := Return[query, With]
 ProcessWikiQuery[query_Rule,tp_?ValidTextPatternQ, opts___] := Module[
-	{data = TextPatternCasesWikipedia[query, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]},
-	generateTextPatternSummary[data, "Wikipedia", tp]
+	{data = LexicalCasesWikipedia[query, tp, FilterRules[{opts}, Options[LexicalCasesWikipedia]]]},
+	generateLexicalSummary[data, "Wikipedia", tp]
 	]
 
 ProcessWikiQuery[query:(_String|_List),tp_?ValidTextPatternQ, opts___] := Module[
-	{data = TextPatternCasesWikipedia["Content" -> query, tp, FilterRules[{opts}, Options[TextPatternCasesWikipedia]]]},
-	generateTextPatternSummary[data, "Wikipedia", tp]
+	{data = LexicalCasesWikipedia["Content" -> query, tp, FilterRules[{opts}, Options[LexicalCasesWikipedia]]]},
+	generateLexicalSummary[data, "Wikipedia", tp]
 	]
 
 (* SourceText is a WikipediaSearch Query *)
-TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:= Module[
+LexicalCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPattern[]]:= Module[
 	{TP = tp, STP = StripNamedPattern[tp], ard, art, arc, acs, mtl, src, mtc, matchesassoc, articlematchthread},
 	(* 1 - Get Wikipedia Articles *)
 	ard = GetArticlesFromService["Wikipedia", wikiquery, opts];
@@ -275,13 +275,13 @@ TextPatternCasesWikipedia[wikiquery_Rule, tp_?ValidTextPatternQ, opts:OptionsPat
 	]
 
 
-WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]]
-WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,TextPatternCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 
 
 
-(* TextPatternSummary *)
-TextPatternSummary /: MakeBoxes[obj : TextPatternSummary[asc_?TextPatternSummaryAscQ], form : (StandardForm | TraditionalForm)] :=
+(* LexicalSummary *)
+LexicalSummary /: MakeBoxes[obj : LexicalSummary[asc_?LexicalSummaryAscQ], form : (StandardForm | TraditionalForm)] :=
 Module[{above, below},
 	above = {(*example grid*)
 		{BoxForm`SummaryItem[{"Source: ", asc["Source"]}]},
@@ -290,7 +290,7 @@ Module[{above, below},
 	below = {
 	};
 	BoxForm`ArrangeSummaryBox[
-		TextPatternSummary,(*head*)
+		LexicalSummary,(*head*)
 		obj,(*interpretation*)
 		None,(*icon,use None if not needed*)
 		above,(*always shown content*)
@@ -298,51 +298,51 @@ Module[{above, below},
 		form,
 		"Interpretable" -> Automatic]
 		];
-TextPatternSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Source", "TotalMatchCount", "TextElementStructure"}, KeyExistsQ[asc, #] &]
-TextPatternSummaryAscQ[_] = False;
+LexicalSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Source", "TotalMatchCount", "TextElementStructure"}, KeyExistsQ[asc, #] &]
+LexicalSummaryAscQ[_] = False;
 
 (* Direct Properties *)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Data"] := asc["Data"]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Source"] := asc["Source"]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Dataset"] := Dataset[asc["Data"]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["TextElementStructure"] := asc["TextElementStructure"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Data"] := asc["Data"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Source"] := asc["Source"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Dataset"] := Dataset[asc["Data"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["TextElementStructure"] := asc["TextElementStructure"]
 
 (* Dataset Properties *)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PercentDataset"] := PercentDataset[TextPatternSummary[asc]["MatchCountGroups"], asc["TotalMatchCount"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset"] := PercentDataset[LexicalSummary[asc]["MatchCountGroups"], asc["TotalMatchCount"]]
 (* Dataset Properties Filtered *)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PercentDataset", n_Integer] := TextPatternSummary[asc]["PercentDataset"][;;UpTo[n]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PercentDataset", DeleteStopwords] := TextPatternSummary[asc]["PercentDataset"][Select[Not@StopWordQ[#Matches]&]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PercentDataset", n_Integer, DeleteStopwords] := TextPatternSummary[asc]["PercentDataset", n][Select[Not@StopWordQ[#Matches]&]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", n_Integer] := LexicalSummary[asc]["PercentDataset"][;;UpTo[n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", DeleteStopwords] := LexicalSummary[asc]["PercentDataset"][Select[Not@StopWordQ[#Matches]&]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", n_Integer, DeleteStopwords] := LexicalSummary[asc]["PercentDataset", n][Select[Not@StopWordQ[#Matches]&]]
 
 (* Count Properties *)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Counts"] := GetDatasetCounts[TextPatternSummary[asc]["Dataset"], asc["Source"]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["CountGroups"] := (TextPatternSummary[asc]["Counts"] // CountGroups)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCounts"] := (TextPatternSummary[asc]["Counts"] // DeleteMissing[#, 1, 1] &)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups"] := (TextPatternSummary[asc]["MatchCounts"] // CountGroups)
+LexicalSummary[asc_?LexicalSummaryAscQ]["Counts"] := GetDatasetCounts[LexicalSummary[asc]["Dataset"], asc["Source"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups"] := (LexicalSummary[asc]["Counts"] // CountGroups)
+LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCounts"] := (LexicalSummary[asc]["Counts"] // DeleteMissing[#, 1, 1] &)
+LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups"] := (LexicalSummary[asc]["MatchCounts"] // CountGroups)
 (* Count Properties Filtered *)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["CountGroups", n_Integer] := (TextPatternSummary[asc]["CountGroups"][;;UpTo[n]])
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", n_Integer] := (TextPatternSummary[asc]["MatchCountGroups"][;;UpTo[n]])
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", DeleteStopwords] := (TextPatternSummary[asc]["MatchCounts"] // FilterOutStopwordRows // CountGroups)
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["MatchCountGroups", n_Integer, DeleteStopwords] := (TextPatternSummary[asc]["MatchCountGroups", DeleteStopwords][;;UpTo[n]])
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer] := (LexicalSummary[asc]["CountGroups"][;;UpTo[n]])
+LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", n_Integer] := (LexicalSummary[asc]["MatchCountGroups"][;;UpTo[n]])
+LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", DeleteStopwords] := (LexicalSummary[asc]["MatchCounts"] // FilterOutStopwordRows // CountGroups)
+LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", n_Integer, DeleteStopwords] := (LexicalSummary[asc]["MatchCountGroups", DeleteStopwords][;;UpTo[n]])
 
 
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Survey", n_Integer] := GenerateDashboard[TextPatternSummary[asc], n]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Survey", DeleteStopwords] := GenerateDashboard[TextPatternSummary[asc], DeleteStopwords]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Survey", n_Integer, DeleteStopwords] := GenerateDashboard[TextPatternSummary[asc], n, DeleteStopwords]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[TextPatternSummary[asc]["MatchCountGroups"]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[TextPatternSummary[asc]["MatchCountGroups", n]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[TextPatternSummary[asc]["MatchCountGroups", DeleteStopwords]]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[TextPatternSummary[asc]["MatchCountGroups", n, DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer] := GenerateDashboard[LexicalSummary[asc], n]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], DeleteStopwords]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer, DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], n, DeleteStopwords]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", n, DeleteStopwords]]
 
-TextPatternSummary[asc_?TextPatternSummaryAscQ][invalidkey_] := asc[invalidkey]
-TextPatternSummary[asc_?TextPatternSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups", "MatchCounts", "MatchCountGroups","PercentDataset","PartOfSpeechGroups", "Source","TotalMatchCount","TextElementStructure", "Survey"}
+LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups", "MatchCounts", "MatchCountGroups","PercentDataset","PartOfSpeechGroups", "Source","TotalMatchCount","TextElementStructure", "Survey"}
 
-generateTextPatternSummary[data_?FailureQ, ___] := data
-generateTextPatternSummary[data_, sourceType_String, textpattern_] := Module[
+generateLexicalSummary[data_?FailureQ, ___] := data
+generateLexicalSummary[data_, sourceType_String, textpattern_] := Module[
 	{matchcount},
 	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
-	TextPatternSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@textpattern] |>]
+	LexicalSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@textpattern] |>]
 ]
 
 StopWordQ[s_String] := StringMatchQ[Alternatives @@ WordList["Stopwords"]][s]
@@ -363,7 +363,7 @@ PartOfSpeechGroups[ds_Dataset] := (ds[TextWords /* ToLowerCase /* Flatten /* Del
 
 PercentDataset[ds_Dataset, matchcount_Integer] := (ds[All, <|"Percentage" ->Interpreter["Percent"]@*ToString@*PercentForm@*N@((#CountGroup Length[#Matches])/matchcount),"Matches" -> #Matches|> &][ReverseSortBy["Percentage"]])
 
-GenerateDashboard[tps_TextPatternSummary, params___] := With[
+GenerateDashboard[tps_LexicalSummary, params___] := With[
 	{
 		pdat = tps["PercentDataset",params] ,
 		posg = tps["PartOfSpeechGroups", params]
