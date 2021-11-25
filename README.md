@@ -1,13 +1,13 @@
-# TextPatternCases
+# LexicalCases
 
-Extract abstract text patterns from a source text.
+Search text for lexical patterns.
 
 ---
 ## Overview
 
-Find bits of text that match a pattern specified by TextPattern.
+Find text matching a lexical pattern.
 
-For example, the following will match strings of the form "this is a cool place", or "this is a wonderful book".
+For example, the following will match text of the form "this is a cool place", or "this is a wonderful book".
 ```Mathematica
 TextPattern["this is a ", TextType["Adjective"], " ", TextType["Noun"]]
 ```
@@ -16,10 +16,10 @@ TextPattern["this is a ", TextType["Adjective"], " ", TextType["Noun"]]
 ---
 ## Usage:
 
-TextPatternCases looks for cases of TextPattern in a text. The first argument is the source text, the second argument is the text pattern.
+LexicalCases looks for cases of TextPattern in a text. The first argument is the source text, the second argument is the text pattern.
 
 ```Mathematica
-TextPatternCases[sourcetext, TextPattern[...]]
+LexicalCases[sourcetext, TextPattern[...]]
 ```
 
 TextPattern supports the following constructs:
