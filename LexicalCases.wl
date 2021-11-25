@@ -46,10 +46,10 @@ ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFou
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 $LexicalPatternValidHeads = {
 	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType,
-	Pattern, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
+	Pattern, Except, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
 	Alternatives, Rule, RuleDelayed, RegularExpression,
 	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
-	NumberString, StartOfString, EndOfString,
+	NumberString, StartOfString, EndOfString, WordBoundary,
 	StartOfLine, EndOfLine
  }
 
