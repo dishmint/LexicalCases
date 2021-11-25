@@ -116,7 +116,7 @@ ConvertToWikipediaSearchQuery[tp_TextPattern]:= Module[
 	{cleanTextPattern, stage1},
 	cleanTextPattern = DeleteCases[List@@tp, (_TextType | _OptionalTextPattern | _OrderlessTextPattern), All];
 	stage1 = ReplaceAll[cleanTextPattern, {Alternatives -> List}]//DeleteCases[" "];
-	Check[WikipediaSearchQuery[stage1, tp] // StringReplace[(" " ..) -> " "], Return[$Failed, Module]]
+	Check[WikipediaSearchQuery[stage1, tp] // StringReplace[(" " ..) -> " "] // StringTrim, Return[$Failed, Module]]
 	]
 
 ConvertToWikipediaSearchQuery[Rule[tp_TextPattern,_]] := ConvertToWikipediaSearchQuery[StripNamedPattern[tp]]
