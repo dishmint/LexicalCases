@@ -67,7 +67,7 @@ TextElementFormat[OrderlessLexicalPattern[args__]] :=TextElement[Map[TextElement
 TextElementFormat[OptionalLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
-TextElementFormat[x_[args__]] := TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> ToString[x]|>]
+TextElementFormat[x_[arg1_,args___]] := TextElement[Map[TextElementFormat]@{arg1}, <|"GrammaticalUnit" -> ToString[x]|>]
 TextElementFormat[sym_Symbol] := ToString[sym]
 TextElementFormat[x_] := x
 
