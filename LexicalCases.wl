@@ -26,6 +26,7 @@ ContentAssociation::usage="ContentAssociation[source, t] generates an associatio
 LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Properties\" subvalue for a list of properties."
 ConvertToWikipediaSearchQuery::usage="For development purposes only, convert LexicalPattern to WikipediaSearch query strings"
 $LexicalCasesSupportedServices::usage="List of supported services"
+$LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
 Begin["Private`"]
 
 (* Utility *)
