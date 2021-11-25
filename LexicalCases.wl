@@ -69,6 +69,7 @@ TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit"
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[x_[args__]] := TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> ToString[x]|>]
 TextElementFormat[sym_Symbol] := ToString[sym]
+TextElementFormat[x_] := x
 
 ToTextElementStructure[lp_LexicalPattern] := TextElementFormat[lp];
 ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := TextElementFormat[StripNamedPattern@lp];
