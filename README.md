@@ -1,29 +1,21 @@
 # LexicalCases
 
-Search text for lexical patterns.
+Extract substrings that match a lexical pattern. Lexical patterns describe string patterns that include lexical categories, like parts of speech, or wolfram language enities.
 
----
-## Overview
-
-Find text matching a lexical pattern.
-
-For example, the following will match text of the form "this is a cool place", or "this is a wonderful book".
+## Install
+After cloning this repository or downloading the package files, use `Get` to load definitions
 ```Mathematica
-TextPattern["this is a ", TextType["Adjective"], " ", TextType["Noun"]]
+Get["path/to/LexicalCases.wl"]
+Get["path/to/LexicalCasesTests.wl"]
 ```
 
+## Usage
 
----
-## Usage:
-
-LexicalCases looks for cases of TextPattern in a text. The first argument is the source text, the second argument is the text pattern.
+[LexicalCases](https://github.com/dishmint/LexicalCases/wiki/LexicalCases) takes a string as its first argument, and a lexical pattern as its second argument.
 
 ```Mathematica
-LexicalCases[sourcetext, TextPattern[...]]
+LexicalPattern["This is a cool string", LexicalPattern["This is a ", TextType["Adjective"], " string"]]
 ```
 
-TextPattern supports the following constructs:
-* TextPatternSequence: A sequence of text pattern objects or strings
-* OptionalTextPattern: An optional text pattern or string
-* OrderlessTextPattern: An orderless sequence of text pattern objects or strings
-* TextType[type]: Text content recognized by the Wolfram Language, find a full list of types [here](https://reference.wolfram.com/language/guide/TextContentTypes.html).
+For additional syntax, visit the [LexicalCases](https://github.com/dishmint/LexicalCases/wiki/LexicalCases) wiki
+
