@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*TextPatternCases*)
+(*LexicalPatternCases*)
 
 
 (* ::Abstract:: *)
@@ -11,11 +11,11 @@ BeginPackage["LexicalCasesTests`"]
 
 Needs["LexicalCases`"]
 (* Main *)
-LexicalCasesTestReport::usage="TextPatternTestReport returns a TestReport for TextPattern components."
-$LexicalCasesTests::usage="A list of VerificationTests for TextPattern components"
+LexicalCasesTestReport::usage="LexicalPatternTestReport returns a TestReport for LexicalPattern components."
+$LexicalCasesTests::usage="A list of VerificationTests for LexicalPattern components"
 $SampleStringShort::usage="A short example string"
 $SampleStringLong::usage="A long example string"
-$SampleTextPattern::usage="A sample text pattern used for testing"
+$SampleLexicalPattern::usage="A sample text pattern used for testing"
 Begin["Private`"]
 (* From https://randomwordgenerator.com/sentence.php *)
 $SampleStringShort = "The best key lime pie is still up for debate."
@@ -64,54 +64,53 @@ input/output devices that perform both functions (e.g., the 2000s-era \
 touchscreen). Peripheral devices allow information to be retrieved \
 from an external source and they enable the result of operations to \
 be saved and retrieved."
-$SampleTextPattern = TextPattern[TextType["Adjective"], " key lime pie"];
+$SampleLexicalPattern = LexicalPattern[TextType["Adjective"], " key lime pie"];
 $LexicalCasesTests := {
 	(* ContentAssociation *)
 	VerificationTest[
-		ContentAssociation[$SampleStringShort, $SampleTextPattern],
-		<|"[:Adjective:]" -> "(best|key)"|>,
+		ContentAssociation[$SampleStringShort, $SampleLexicalPattern],
+		Association[Rule["Adjective",Alternatives["best","key"]]],
 		"TestID" -> "ContentAssociationTest1"
 	],
 	(* ConvertToWikipediaSearchQuery *)
 	VerificationTest[
-		ConvertToWikipediaSearchQuery[$SampleTextPattern],
+		ConvertToWikipediaSearchQuery[$SampleLexicalPattern],
 		"key lime pie",
 		"TestID" -> "ConvertToWikipediaSearchQueryTest1"
 	],
 	VerificationTest[
-		ConvertToWikipediaSearchQuery[TextPattern[TextType["Determiner"], " ", "king" | "queen"]],
+		ConvertToWikipediaSearchQuery[LexicalPattern[TextType["Determiner"], " ", "king" | "queen"]],
 		{"king", "queen"},
 		"TestID" -> "ConvertToWikipediaSearchQueryTest2"
 	],
-	(* GenerateRegularExpressionTemplate *)
+	(* LexicalPatternToStringExpression *)
 	VerificationTest[
-		GenerateRegularExpressionTemplate[TextPattern[TextType["Determiner"], " ", "king" | "queen"]],
-		"`[:Determiner:]` (king|queen)",
-	"TestID" -> "GenerateRegularExpressionTemplateTest1"
-	],
-	(* TextPatternToRegularExpression *)
-	VerificationTest[
-		TextPatternToRegularExpression[$SampleStringLong, TextPattern["computer" | "computers", " ", TextType["Verb"]]],
-		RegularExpression["(computer|computers) (is|can|be|programmed|carry|perform|known|enable|includes|operating|needed|used|may|refer|are|linked|function|use|included|links|were|meant|have|aided|doing|built|automate|guiding|did|specialized|calculating|developed|followed|integrated|leading|been|increasing|counts|predicted|consists|carries|change|stored|include|allow|retrieved|saved)"],
-		"TestID" -> "TextPatternToRegularExpressionTest1"
+	LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
+	StringExpression[
+		Alternatives["computer","computers"],
+		" ",
+		Alternatives[
+			"is","can","be","programmed","carry","perform","known","enable","includes","operating","needed","used","may","refer","are","linked","function","use","included","links","were","meant","have","aided","doing","built","automate","guiding","did","specialized","calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists","carries","change","stored","include","allow","retrieved","saved"
+			]
+		],
+		"TestID" -> "LexicalPatternToRegularExpressionTest1"
 	],
 	(* ToTextElementStructure *)
 	VerificationTest[
-		ToTextElementStructure[TextPattern["computer" | "computers", " ", TextType["Verb"]]],
+		ToTextElementStructure[LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
 		TextElement[
 			{
 				TextElement["computer | computers", Association["GrammaticalUnit" -> "Alternatives"]]," ",
 				TextElement["Verb", Association["GrammaticalUnit" -> "TextType"]]
 				},
-				Association["GrammaticalUnit" -> "TextPattern"]
+				Association["GrammaticalUnit" -> "LexicalPattern"]
 				]
 	,
-	"TestID" -> "TextPatternToRegularExpressionTest1"
+	"TestID" -> "LexicalPatternToRegularExpressionTest1"
 	],
-	(* FilterOutStopwordRows *)
 	(* Short Strings *)
 	VerificationTest[
-		LexicalCases[$SampleStringShort, $SampleTextPattern]["Data"],
+		LexicalCases[$SampleStringShort, $SampleLexicalPattern]["Data"],
 		{<|"Match" -> "best key lime pie", "Position" -> {{5, 21}}|>},
 		"TestID" -> "ShortStringTest1"
 		]
