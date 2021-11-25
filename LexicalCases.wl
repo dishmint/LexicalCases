@@ -60,13 +60,15 @@ ValidLexicalPatternQ[RuleDelayed[input_LexicalPattern,_]]:= ValidLexicalPatternQ
 (* Format LexicalPatterns for strings *)
 TextElementFormat[s_String] := s
 TextElementFormat[re_RegularExpression] := ToString[re]
-TextElementFormat[a_Alternatives] :=TextElement[ToString[a], <|"GrammaticalUnit" -> "Alternatives"|>]
+TextElementFormat[a_Alternatives] := TextElement[ToString[a], <|"GrammaticalUnit" -> "Alternatives"|>]
 TextElementFormat[LexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "LexicalPattern"|>];
 TextElementFormat[LexicalPatternSequence[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Sequence"|>];
 TextElementFormat[OrderlessLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Orderless"|>];
 TextElementFormat[OptionalLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
+TextElementFormat[x_[args__]] := TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> ToString[x]|>]
+TextElementFormat[sym_Symbol] := ToString[sym]
 
 ToTextElementStructure[lp_LexicalPattern] := TextElementFormat[lp];
 ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := TextElementFormat[StripNamedPattern@lp];
