@@ -17,7 +17,7 @@ Get["path/to/LexicalCasesTests.wl"]
 LexicalPattern["This is a cool string", LexicalPattern["This is a ", TextType["Adjective"], " string"]]
 ```
 
-Additional syntax is noted in the [LexicalCases](https://dishmint.github.io/LexicalCases/LexicalCases.html) documentation.
+Additional syntax noted [here](https://dishmint.github.io/LexicalCases/LexicalCases.html).
 
 
 ## Documentation
