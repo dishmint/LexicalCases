@@ -1,6 +1,6 @@
 # LexicalSummary
 
-A LexicalSummary object contains the results of pattern matching, as well as provide convenient access to analysis via properties.
+A LexicalSummary object holds the match results and provides access to the data via properties.
 
 ![Image of a Lexical Summary object](./assets/images/LexicalSummary.png)
 
