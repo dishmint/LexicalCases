@@ -134,6 +134,7 @@ Options[LexicalCasesWikipedia] = {
 };
 
 $LexicalCasesSupportedServices = {"Wikipedia"}
+SetAttributes[LexicalCases, Listable]
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ]:= Module[
 	{lpC},
