@@ -13,7 +13,7 @@ LexicalCases[<string>, LexicalPattern[...]]
 LexicalCases["Content" -> <keywords>, LexicalPattern[...]]
 ```
 
-#### Search wikipedia by converting LexicalPattern to a search query
+#### Search Wikipedia by converting LexicalPattern to a search query
 ```Mathematica
 LexicalCases[LexicalPattern[...]]
 ```
