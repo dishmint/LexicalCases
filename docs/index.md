@@ -1,3 +1,5 @@
+# LexicalCases
+
 ## Installation
 
 After cloning the repo or downloading the individual files, load the definitions using `Get`:
