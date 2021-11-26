@@ -12,7 +12,7 @@ Get["path/to/LexicalCasesTests.wl"]
 
 ## Introduction
 
-[LexicalCases](https://github.com/dishmint/LexicalCases/wiki/LexicalCases) allows one to search for lexical patterns, returning a [LexicalSummary](./LexicalSummary.md) object with support for properties like match counts.
+[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns, returning a [LexicalSummary](./LexicalSummary.md) object with support for properties like match counts.
 
 A sample LexicalPattern
 ```Mathematica
