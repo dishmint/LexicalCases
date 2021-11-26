@@ -369,7 +369,8 @@ GetWordStemCounts[ds_Dataset] := (ds[All, "Matches"] // Normal // Flatten // (St
 
 WordStemGroups[ds_Dataset] := (GetWordStemCounts[ds] // KeyValueMap[<|"Stem" -> #1, "Count" -> #2|> &] // Dataset // ReverseSortBy[#Count &]) // Query[GroupBy[#Count &], KeyDrop["Count"] /* Values /* (Flatten[#, 1]&)] // KeyValueMap[<|"CountGroup" -> #1, "WordStem" -> #2|> &]
 
-PercentDataset[ds_Dataset, matchcount_Integer] := (ds[All, <|"Percentage" ->Interpreter["Percent"]@*ToString@*PercentForm@*N@((#CountGroup Length[#Matches])/matchcount),"Matches" -> #Matches|> &][ReverseSortBy["Percentage"]])
+PercentDataset[ds_Dataset, matchcount_Integer] := (ds[
+	All, <|"Matches" -> #Matches, "Percentage" ->Interpreter["Percent"]@*ToString@*PercentForm@*N@((#CountGroup Length[#Matches])/matchcount)|> &][ReverseSortBy["Percentage"]])
 
 GenerateDashboard[lps_LexicalSummary, params___] := With[
 	{
