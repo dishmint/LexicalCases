@@ -14,12 +14,8 @@ Get["path/to/LexicalCasesTests.wl"]
 [LexicalCases](https://dishmint.github.io/LexicalCases/LexicalCases.html) takes a string as its first argument, and a lexical pattern as its second argument. A [LexicalSummary](https://dishmint.github.io/LexicalCases/LexicalSummary.html) object is returned with properties to access and manipulate the results.
 
 ```Mathematica
-LexicalPattern["This is a cool string", LexicalPattern["This is a ", TextType["Adjective"], " string"]]
+LexicalCases["This is a cool string", LexicalPattern["This is a ", TextType["Adjective"], " string"]]
 ```
 
-Additional syntax noted [here](https://dishmint.github.io/LexicalCases/LexicalCases.html).
+Visit the [documentation](https://dishmint.github.io/LexicalCases/) for additional examples.
 
-
-## Documentation
-
-Speaking of docs! Here's the documentation [homepage](https://dishmint.github.io/LexicalCases/)
