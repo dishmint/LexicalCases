@@ -45,13 +45,16 @@ LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb
 LexicalCases["This is a cool thing!", LexicalPattern["This ", TextType["Verb"], " a ", adj : TextType["Adjective"], " ", TextType["Noun"], "!"] :> adj]
 ```
 
+---
+#### Resources
+
 For more information see the following:
 * [LexicalCases](./LexicalCases.md)
 * [LexicalPattern](./LexicalPattern.md)
 * [LexicalSummary](./LexicalSummary.md)
 * [TextType](./TextType.md)
 
-For similar Wolfram Language functions see the following:
+Related Wolfram Language Documentation:
 * [TextCases](https://reference.wolfram.com/language/ref/TextCases.html)
 * [TextContents](https://reference.wolfram.com/language/ref/TextContents.html)
 * [TextContentTypes](https://reference.wolfram.com/language/guide/TextContentTypes.html)
