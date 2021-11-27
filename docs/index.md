@@ -2,7 +2,7 @@
 
 ## Introduction
 
-About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like TextCases for example, but the solution I came up with took too long. Something like this: (`TextCases[<text>, Containing["AdjectivePhrase", Verbatim["dogs"]]]`). I first specified the pattern structure in a list, and since I only cared about adjectives coming before words, the order was fixed: `{"Adjective", "dogs"}`. Though I soon realized I might want a spcification that's more flexible, well, the fruits of that realization I introduce below.
+About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like [TextCases](https://reference.wolfram.com/language/ref/TextCases.html) for example, but the solution I came up with took too long, and it just wasn't flexible enough. Early iterations of the [LexicalCases](./LexicalCases.md) functionality had patterns structured in a list, and since I only cared about adjectives coming before words, the order was fixed: `{"Adjective", "dogs"}`. I soon realized I may want a more flexible specification, and that's what this project hopes to offer.
 
 
 ## Installation
