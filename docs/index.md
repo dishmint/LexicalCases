@@ -1,6 +1,9 @@
 # LexicalCases
 
-[LexicalCases](./LexicalCases.md) allows one to search for [lexical patterns](./LexicalPattern.md), and results are contained in a [summary](./LexicalSummary.md) object (see the doc for supported properties).
+## Introduction
+
+About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like TextCases for example, but the solution I came up with took too long. Something like this: (`TextCases[<text>, Containing["AdjectivePhrase", Verbatim["dogs"]]]`). I first specified the pattern structure in a list, and since I only cared about adjectives coming before words, the order was fixed: `{"Adjective", "dogs"}`. Though I soon realized I might want a spcification that's more flexible, well, the fruits of that realization I introduce below.
+
 
 ## Installation
 
@@ -11,7 +14,10 @@ Get["path/to/LexicalCases.wl"]
 Get["path/to/LexicalCasesTests.wl"]
 ```
 
+
 ---
+A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements include text content types (those listed [here](https://reference.wolfram.com/language/guide/TextContentTypes.html)). [LexicalCases](./LexicalCases.md) searches for these patterns in strings. The result is a [summary](./LexicalSummary.md) object which supports several properties (see the doc for a listing). Below are some basic examples.
+
 ## Examples
 #### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
 
