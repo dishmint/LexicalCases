@@ -1,5 +1,9 @@
 # LexicalCases
 
+## Introduction
+
+[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The searchterm is defined by a [LexicalPattern](./LexicalPattern.md), and results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for supported properties).
+
 ## Installation
 
 After cloning the repo or downloading the individual files, load the definitions using `Get`:
@@ -9,12 +13,8 @@ Get["path/to/LexicalCases.wl"]
 Get["path/to/LexicalCasesTests.wl"]
 ```
 
-
-## Introduction
-
-[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for a listing of properties). The searchterm is defined by a [LexicalPattern](./LexicalPattern.md).
-
 ---
+## Examples
 #### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
 
 ```Mathematica
@@ -46,7 +46,7 @@ LexicalCases["This is a cool thing!", LexicalPattern["This ", TextType["Verb"], 
 ```
 
 ---
-#### Resources
+## Resources
 
 For more information see the following:
 * [LexicalCases](./LexicalCases.md)
