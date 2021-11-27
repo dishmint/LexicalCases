@@ -25,7 +25,7 @@ A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements inclu
 LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]
 ```
 ---
-#### Visualize a LexicalPattern's structure
+#### Visualize its structure
 ![Text Element Structure of a Lexical Pattern](./assets/images/LexicalPattern-TextElementStructure.png)
 
 
