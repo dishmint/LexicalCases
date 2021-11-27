@@ -18,7 +18,7 @@ Get["path/to/LexicalCasesTests.wl"]
 #### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
 ![Lexical Pattern Example](./assets/images/LexicalPattern.png)
 
-_copy the code_
+
 ```Mathematica
 LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]
 ```
@@ -26,7 +26,7 @@ LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", Tex
 #### Visualize a LexicalPattern's structure
 ![Text Element Structure of a Lexical Pattern](./assets/images/LexicalPattern-TextElementStructure.png)
 
-_copy the code_
+
 ```Mathematica
 ToTextElementStructure[LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]]
 ```
@@ -34,7 +34,7 @@ ToTextElementStructure[LexicalPattern["This ", TextType["Verb"], " a ", TextType
 #### Find cases of the pattern in a string
 ![Lexical Cases Example on a string](./assets/images/LexicalCases-Example1.png)
 
-_copy the code_
+
 ```Mathematica
 LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]]
 ```
@@ -42,7 +42,7 @@ LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb
 #### Use replacement rules to extract pieces of the pattern
 ![Lexical Cases Example with Rule on a string](./assets/images/LexicalCases-Example1_Rule.png)
 
-_copy the code_
+
 ```Mathematica
 LexicalCases["This is a cool thing!", LexicalPattern["This ", TextType["Verb"], " a ", adj : TextType["Adjective"], " ", TextType["Noun"], "!"] :> adj]
 ```
