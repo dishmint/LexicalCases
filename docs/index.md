@@ -12,25 +12,39 @@ Get["path/to/LexicalCasesTests.wl"]
 
 ## Introduction
 
-[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for a listing of properties).
+[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for a listing of properties). The searchterm is defined by a [LexicalPattern](./LexicalPattern.md).
 
+---
+#### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
+![Lexical Pattern Example](./assets/images/LexicalPattern.png)
 
-> A pattern representing the structure "This is a :Adverb: :Adjective:!"
+_copy the code_
 ```Mathematica
-LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]
+LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]
 ```
+---
+#### Visualize a LexicalPattern's structure
+![Text Element Structure of a Lexical Pattern](./assets/images/LexicalPattern-TextElementStructure.png)
 
-> Search a string with this pattern
+> _copy the code_
+```Mathematica
+ToTextElementStructure[LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]]
+```
+---
+#### Find cases of the pattern in a string
+![Lexical Cases Example on a string](./assets/images/LexicalCases-Example1.png)
+
+> _copy the code_
 ```Mathematica
 LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]]
 ```
+---
+#### Use replacement rules to extract pieces of the pattern
+![Lexical Cases Example with Rule on a string](./assets/images/LexicalCases-Example1_Rule.png)
 
-> Extract data from the summary object
+> _copy the code_
 ```Mathematica
-ls = LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]];
-ls["Data"]
-
-{<|"Match" -> "This is really cool!", "Position" -> {{1, 20}}|>}
+LexicalCases["This is a cool thing!", LexicalPattern["This ", TextType["Verb"], " a ", adj : TextType["Adjective"], " ", TextType["Noun"], "!"] :> adj]
 ```
 
 For more information see the following:
