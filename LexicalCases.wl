@@ -71,7 +71,7 @@ TextElementFormat[OrderlessLexicalPattern[args__]] :=TextElement[Map[TextElement
 TextElementFormat[OptionalLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
-TextElementFormat[TextType[type_Alternatives]] :=TextElement[TextElementFormat[type], <|"GrammaticalUnit" -> "TextType"|>];
+TextElementFormat[TextType[type_Alternatives]] := TextElementFormat[ExpandAlternativeTextTypes[type]];
 TextElementFormat[Alternatives[args___]] := TextElement[{Map[TextElementFormat][args]}, <|"GrammaticalUnit" -> "Alternatives"|>]
 TextElementFormat[x_[arg1_,args___]] := TextElement[Map[TextElementFormat]@{arg1}, <|"GrammaticalUnit" -> ToString[x]|>]
 TextElementFormat[sym_Symbol] := ToString[sym]
@@ -80,13 +80,15 @@ TextElementFormat[x_] := x
 ToTextElementStructure[lp_LexicalPattern] := TextElementFormat[lp];
 ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := TextElementFormat[StripNamedPattern@lp];
 
+ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
+
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
 	LexicalPatternSequence -> StringExpression,
 	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[StringExpression]][Permutations[{##}]]],
 	OptionalLexicalPattern[opt_Alternatives] :> (opt~Join~Alternatives[""]),
 	OptionalLexicalPattern[opt_] :> (Alternatives[opt]~Join~Alternatives[""]),
-	TextType[alts_Alternatives] :> (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
+	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts]
 	}]
 
 TextContentGroup[List[content_String]] := content;
