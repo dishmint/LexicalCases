@@ -16,8 +16,6 @@ Get["path/to/LexicalCasesTests.wl"]
 
 ---
 #### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
-![Lexical Pattern Example](./assets/images/LexicalPattern.png)
-
 
 ```Mathematica
 LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]
