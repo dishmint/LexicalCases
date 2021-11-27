@@ -157,28 +157,44 @@ LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExten
 
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ]:= Module[
-	{lpC},
+	{LPC,RES},
 	(* Find Matches *)
-	lpC = Monitor[
+	LPC = Monitor[
 		LexicalCasesOnString[sourcetext, lpatt],
 		Row[{Style["Searching", Bold], ProgressIndicator[Appearance->"Ellipsis"], "\n", ToTextElementStructure[StripNamedPattern@lpatt]}]
 		];
 	(* Generate Summary Object *)
-	Monitor[
-		generateLexicalSummary[lpC, "Text", lpatt],
+	RES = Monitor[
+		generateLexicalSummary[LPC, "Text", lpatt],
 		Row[{"Generating LexicalSummary", ProgressIndicator[Appearance->"Necklace"]}]
-	]
+	];
+	ArticleIndex=.;
+	RES
 	]
 
 (* SourceText is a string *)
 LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ]:=Module[
 	{RX, S = EscapePunctuation[source]},
+	++ArticleIndex;
 	RX = LexicalPatternToStringExpression[S, lp];
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
 		{cases = DeleteDuplicates@StringCases[source, RX]},
 		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
 		]
 	]
+(* LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ]:=Module[
+	{RX, S = EscapePunctuation[source]},
+	
+	RX = Monitor[LexicalPatternToStringExpression[S, lp],Row[{"Converting LexicalPattern to StringExpression",ProgressIndicator[Appearance->"Ellipsis"]}]];
+	
+	Monitor[
+		Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
+			{cases = DeleteDuplicates@StringCases[source, RX]},
+			Thread[{cases, Map[StringPosition[source, #] &][cases]}]
+			],
+			Row[{"Finding matches",ProgressIndicator[Appearance->"Ellipsis"]}]
+		]
+	] *)
 
 (* LexicalPattern on Service *)
 LexicalCases[lpatt_?ValidLexicalPatternQ, opts:OptionsPattern[{LexicalCases, LexicalCasesWikipedia}]]:= LexicalCasesFromService[OptionValue["Service"], lpatt, FilterRules[{opts}, Options[LexicalCasesWikipedia]]]
@@ -207,10 +223,10 @@ GetArticlesFromService["Wikipedia", query_, opts___] := Module[
 	]
 
 GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCountString_String, maxTitleLength_Integer] := Module[
-	{texts},
+	{TXT},
 		SetSharedVariable[ArticleIndex];
 		ArticleIndex=0;
-		Monitor[
+		TXT=Monitor[
 			ParallelMap[(++ArticleIndex;WikipediaData[#])&,articles],
 			Row[{
 				"Gathering text from "<>articleCountString<>" articles:\n",
@@ -219,23 +235,25 @@ GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCou
 				Dynamic[If[ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]]
 				}
 				]
-			]
+			];
+			ArticleIndex=.;
+			TXT
 	]
 
 SearchForLexicalPattern[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
-	{T = texts},
+	{MAT},
 		ArticleIndex=0;
 		SetSharedVariable[lp];
-		Monitor[
-			ParallelMap[(++ArticleIndex;LexicalCasesOnString[#, lp])&, T],
+		MAT = Monitor[
+			ParallelMap[(LexicalCasesOnString[#, lp])&, texts],
 			Row[{
 				Style["Searching", Bold], ProgressIndicator[Appearance->"Ellipsis"],"\n",
 				ToTextElementStructure[slp], "\n",
 				Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}]
-			]
-	
+			];
+		MAT
 	]
 
 PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
@@ -251,7 +269,7 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 				Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}]];
-		Clear[ArticleIndex];
+		ArticleIndex=.;
 		Flatten[MAC]
 	]
 
