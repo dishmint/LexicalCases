@@ -12,22 +12,25 @@ Get["path/to/LexicalCasesTests.wl"]
 
 ## Introduction
 
-[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns, returning a [LexicalSummary](./LexicalSummary.md) object with support for properties like match counts.
+[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for a listing of properties).
 
-A sample LexicalPattern
+
+> A pattern representing the structure "This is a :Adverb: :Adjective:!"
 ```Mathematica
 LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]
 ```
 
-Call LexicalCases with this pattern
+> Search a string with this pattern
 ```Mathematica
 LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]]
 ```
 
-Extract the data
+> Extract data from the summary object
 ```Mathematica
-In[] := ls = LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]]
-Out[] = {<|"Match" -> "This is really cool!", "Position" -> {{1, 20}}|>}
+ls = LexicalCases["This is really cool!", LexicalPattern["This is ", TextType["Adverb"], " ", TextType["Adjective"],"!"]];
+ls["Data"]
+
+{<|"Match" -> "This is really cool!", "Position" -> {{1, 20}}|>}
 ```
 
 For more information see the following:
