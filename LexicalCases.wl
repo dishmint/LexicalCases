@@ -229,7 +229,7 @@ SearchForLexicalPattern[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalP
 		Monitor[
 			ParallelMap[(++ArticleIndex;LexicalCasesOnString[#, lp])&, T],
 			Row[{
-				Style["Searching for LexicalPattern:\n", Bold],
+				Style["Searching", Bold], ProgressIndicator[Appearance->"Ellipsis"],"\n",
 				ToTextElementStructure[slp], "\n",
 				Dynamic[If[ArticleIndex <= articleCount-1, StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\" ",maxTitleLength]," "]],"\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
