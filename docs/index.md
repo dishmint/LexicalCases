@@ -16,7 +16,7 @@ Get["path/to/LexicalCasesTests.wl"]
 
 
 ---
-A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements include text content types (those listed [here](https://reference.wolfram.com/language/guide/TextContentTypes.html)). [LexicalCases](./LexicalCases.md) searches for these patterns in strings. The result is a [summary](./LexicalSummary.md) object which supports several properties (see the doc for a listing). Below are some basic examples.
+A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements include text content types (those listed [here](https://reference.wolfram.com/language/guide/TextContentTypes.html)). [LexicalCases](./LexicalCases.md) searches for these patterns in strings. The result is a [summary](./LexicalSummary.md) object which supports several properties (see the doc or use the summary object's `"Properties"` subvalue for a listing).
 
 ## Examples
 #### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
