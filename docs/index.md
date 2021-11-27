@@ -1,8 +1,6 @@
 # LexicalCases
 
-## Introduction
-
-[LexicalCases](./LexicalCases.md) allows one to search for lexical patterns. The searchterm is defined by a [LexicalPattern](./LexicalPattern.md), and results are contained in a [LexicalSummary](./LexicalSummary.md) object (see the doc for supported properties).
+[LexicalCases](./LexicalCases.md) allows one to search for [lexical patterns](./LexicalPattern.md), and results are contained in a [summary](./LexicalSummary.md) object (see the doc for supported properties).
 
 ## Installation
 
