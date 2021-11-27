@@ -23,8 +23,9 @@ TextType::usage="TextType[type] is a LexicalPattern object representing a type o
 ValidLexicalPatternQ::usage="ValidLexicalPatternQ[input] Returns True if input is a valid LexicalPattern"
 ToTextElementStructure::usage="ToTextElementStructure[lp] renders a LexicalPattern using TextElements"
 
-ExpandLexicalPattern::usage="ExpandLexicalPattern[t] Generate a RegularExpression template from a LexicalPattern"
+ExpandLexicalPattern::usage="ExpandLexicalPattern[lp] expands a lexical pattern into constructs suitable for StringExpression"
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
+ExtractContentTypes::usage="ExtractContentTypes[lp] extract content types from a lexical pattern"
 LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Properties\" subvalue for a list of properties."
 ConvertToWikipediaSearchQuery::usage="For development purposes only, convert LexicalPattern to WikipediaSearch query strings"
 $LexicalCasesSupportedServices::usage="List of supported services"
@@ -51,7 +52,7 @@ ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 $LexicalPatternValidHeads = {
 	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType,
 	Pattern, PatternSequence, Except, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
-	Alternatives, Rule, RuleDelayed, RegularExpression,
+	Alternatives, Rule, RuleDelayed, RegularExpression, StringExpression,
 	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
 	NumberString, StartOfString, EndOfString, WordBoundary,
 	StartOfLine, EndOfLine
@@ -70,6 +71,7 @@ TextElementFormat[OrderlessLexicalPattern[args__]] :=TextElement[Map[TextElement
 TextElementFormat[OptionalLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
+TextElementFormat[TextType[type_Alternatives]] :=TextElement[TextElementFormat[type], <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[Alternatives[args___]] := TextElement[{Map[TextElementFormat][args]}, <|"GrammaticalUnit" -> "Alternatives"|>]
 TextElementFormat[x_[arg1_,args___]] := TextElement[Map[TextElementFormat]@{arg1}, <|"GrammaticalUnit" -> ToString[x]|>]
 TextElementFormat[sym_Symbol] := ToString[sym]
@@ -80,15 +82,18 @@ ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := TextElementFo
 
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
-	LexicalPatternSequence -> PatternSequence,
-	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
+	LexicalPatternSequence -> StringExpression,
+	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[StringExpression]][Permutations[{##}]]],
 	OptionalLexicalPattern[opt_Alternatives] :> (opt~Join~Alternatives[""]),
-	OptionalLexicalPattern[opt_] :> (Alternatives[opt]~Join~Alternatives[""])
+	OptionalLexicalPattern[opt_] :> (Alternatives[opt]~Join~Alternatives[""]),
+	TextType[alts_Alternatives] :> (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 	}]
 
 TextContentGroup[List[content_String]] := content;
 TextContentGroup[content_List] := Alternatives@@content;
-ExtractContentTypes[lp_LexicalPattern] := Cases[lp, TextType[type_] :> type, Infinity];
+ExtractStringContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_String] :> type, Infinity]];
+ExtractAlternativeContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
+ExtractContentTypes[lp_LexicalPattern] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[lp]]
 ContentAssociation[sourcetext_String, lp_LexicalPattern] := Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[lp]]]
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
