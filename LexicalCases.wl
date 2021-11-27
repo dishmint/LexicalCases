@@ -15,6 +15,8 @@ LexicalCases::usage="LexicalCases[source, texlpatt] gives the text sequences in 
 (* LexicalPatterns *)
 LexicalPattern::usage="LexicalPattern[t1, t2, ...] is a LexicalPattern object matching (t1, t2, ...) in the fixed order given."
 OptionalLexicalPattern::usage="OptionalLexicalPattern[lp] matches 0 or 1 instances of lp"
+OrderlessLexicalPattern::usage="OrderlessLexicalPattern[p1, p2, ...] matches p's in any order"
+LexicalPatternSequence::usage="LexicalPatternSequence[p1, p2, ...] represents a sequence of p's"
 LexicalPatternToStringExpression::usage="LexicalPatternToStringExpression[source, lp] Converts lexical pattern lp to a StringExpression"
 TextType::usage="TextType[type] is a LexicalPattern object representing a type of text content."
 
@@ -27,6 +29,7 @@ LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Proper
 ConvertToWikipediaSearchQuery::usage="For development purposes only, convert LexicalPattern to WikipediaSearch query strings"
 $LexicalCasesSupportedServices::usage="List of supported services"
 $LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
+TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
 Begin["Private`"]
 
 (* Utility *)
@@ -47,7 +50,7 @@ ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFou
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 $LexicalPatternValidHeads = {
 	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType,
-	Pattern, Except, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
+	Pattern, PatternSequence, Except, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
 	Alternatives, Rule, RuleDelayed, RegularExpression,
 	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
 	NumberString, StartOfString, EndOfString, WordBoundary,
@@ -61,13 +64,13 @@ ValidLexicalPatternQ[RuleDelayed[input_LexicalPattern,_]]:= ValidLexicalPatternQ
 (* Format LexicalPatterns for strings *)
 TextElementFormat[s_String] := s
 TextElementFormat[re_RegularExpression] := ToString[re]
-TextElementFormat[a_Alternatives] := TextElement[ToString[a], <|"GrammaticalUnit" -> "Alternatives"|>]
 TextElementFormat[LexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "LexicalPattern"|>];
 TextElementFormat[LexicalPatternSequence[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Sequence"|>];
 TextElementFormat[OrderlessLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Orderless"|>];
 TextElementFormat[OptionalLexicalPattern[args__]] :=TextElement[Map[TextElementFormat]@{args}, <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[TextType[type_String]] :=TextElement[type, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[type_RegularExpression]] :=TextElement[ToString[type], <|"GrammaticalUnit" -> "TextType"|>];
+TextElementFormat[Alternatives[args___]] := TextElement[{Map[TextElementFormat][args]}, <|"GrammaticalUnit" -> "Alternatives"|>]
 TextElementFormat[x_[arg1_,args___]] := TextElement[Map[TextElementFormat]@{arg1}, <|"GrammaticalUnit" -> ToString[x]|>]
 TextElementFormat[sym_Symbol] := ToString[sym]
 TextElementFormat[x_] := x
@@ -77,6 +80,7 @@ ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := TextElementFo
 
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
+	LexicalPatternSequence -> PatternSequence,
 	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[PatternSequence]][Permutations[{##}]]],
 	OptionalLexicalPattern[opt_Alternatives] :> (opt~Join~Alternatives[""]),
 	OptionalLexicalPattern[opt_] :> (Alternatives[opt]~Join~Alternatives[""])
