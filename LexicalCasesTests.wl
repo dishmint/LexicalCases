@@ -100,11 +100,12 @@ $LexicalCasesTests := {
 		ToTextElementStructure[LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
 		TextElement[
 			{
-				TextElement["computer | computers", Association["GrammaticalUnit" -> "Alternatives"]]," ",
-				TextElement["Verb", Association["GrammaticalUnit" -> "TextType"]]
-				},
-				Association["GrammaticalUnit" -> "LexicalPattern"]
-				]
+				TextElement[{Alternatives["computer", "computers"]}, Association["GrammaticalUnit" -> "Alternatives"]],
+				" ",
+				TextElement["Verb",Association["GrammaticalUnit" -> "TextType"]]
+			},
+		Association["GrammaticalUnit" -> "LexicalPattern"]
+		]
 	,
 	"TestID" -> "LexicalPatternToRegularExpressionTest1"
 	],
