@@ -135,6 +135,12 @@ Options[LexicalCasesWikipedia] = {
 
 $LexicalCasesSupportedServices = {"Wikipedia"}
 SetAttributes[LexicalCases, Listable]
+LexicalCases::unsupobj=Import::unsupobj;
+GetFileExtension[file_File] := Information[file, "FileExtension"]
+SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
+LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
+LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
+
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ]:= Module[
 	{lpC},
