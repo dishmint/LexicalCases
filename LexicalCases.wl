@@ -31,6 +31,7 @@ ConvertToWikipediaSearchQuery::usage="For development purposes only, convert Lex
 $LexicalCasesSupportedServices::usage="List of supported services"
 $LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
 TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
+LowerCaseConsolidate::usage="LowerCaseConsolidate[ds] Makes matches lowercase and merges rows that now have the same match."
 Begin["Private`"]
 
 (* Utility *)
@@ -53,7 +54,7 @@ AlternativesToList[a_Alternatives] := List@@a;
 PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
 
-ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], Infinity];
+ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
 (* Validate LexicalPattern Objects *)
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
@@ -229,7 +230,10 @@ GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCou
 		SetSharedVariable[ArticleIndex];
 		ArticleIndex=0;
 		TXT=Monitor[
-			ParallelMap[GetArticleText[#]&, articles],
+			(* Progress appears to be fast *)
+			ParallelMap[(++ArticleIndex;WikipediaData[#])&, articles],
+			(* Progress appears to be slow  *)
+			(* ParallelMap[GetArticleText[#]&, articles], *)
 			Row[{
 				"Gathering text from "<>articleCountString<>" articles:\n",
 				Dynamic[If[ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]], "\n",
@@ -243,7 +247,7 @@ GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCou
 
 LexicalPatternSearch[text_,pattern_] := Module[
 	{RES = LexicalCasesOnString[text, pattern]},
-		MatchCount+=Length[Flatten[Lookup[RES,"Position"], 1]];
+		MatchCount+=Length[Replace[_Missing -> {}]@Flatten[Lookup[RES,"Position"], 1]];
 		RES
 		]
 
@@ -316,7 +320,7 @@ WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= Wikipe
 WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 
 ArticleWithMatchCount["Text", _] := ""
-ArticleWithMatchCount[_String, data_] := (data // Lookup["Article"] // DeleteDuplicates // Length)
+ArticleWithMatchCount[_String, data_] := (data // DeleteMissing[#, 1, 1]& // Lookup["Article"] // DeleteDuplicates // Length)
 
 DisplayArticlesWithMatch["Text",_]:= Nothing
 DisplayArticlesWithMatch[source_,data_]:= {BoxForm`SummaryItem[{"Articles: ", ArticleWithMatchCount[source, data]}]}
@@ -351,22 +355,19 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCou
 LexicalSummary[asc_?LexicalSummaryAscQ]["TextElementStructure"] := asc["TextElementStructure"]
 
 (* Dataset Properties *)
-LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset"] := PercentDataset[LexicalSummary[asc]["MatchCountGroups"], asc["TotalMatchCount"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset"] := PercentDataset[LexicalSummary[asc]["CountGroups"], asc["TotalMatchCount"]]
 (* Dataset Properties Filtered *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", n_Integer] := LexicalSummary[asc]["PercentDataset"][;;UpTo[n]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", DeleteStopwords] := LexicalSummary[asc]["PercentDataset"][Select[Not@StopWordQ[#Matches]&]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["PercentDataset", n_Integer, DeleteStopwords] := LexicalSummary[asc]["PercentDataset", n][Select[Not@StopWordQ[#Matches]&]]
 
 (* Count Properties *)
-LexicalSummary[asc_?LexicalSummaryAscQ]["Counts"] := GetDatasetCounts[LexicalSummary[asc]["Dataset"], asc["Source"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["Counts"] := GetDatasetCounts[LexicalSummary[asc]["Dataset"], asc["Source"]] // DeleteMissing[#, 1, 1] & // ReverseSortBy[#Count&]
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups"] := (LexicalSummary[asc]["Counts"] // CountGroups)
-LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCounts"] := (LexicalSummary[asc]["Counts"] // DeleteMissing[#, 1, 1] &)
-LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups"] := (LexicalSummary[asc]["MatchCounts"] // CountGroups)
 (* Count Properties Filtered *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer] := (LexicalSummary[asc]["CountGroups"][;;UpTo[n]])
-LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", n_Integer] := (LexicalSummary[asc]["MatchCountGroups"][;;UpTo[n]])
-LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", DeleteStopwords] := (LexicalSummary[asc]["MatchCounts"] // FilterOutStopwordRows // CountGroups)
-LexicalSummary[asc_?LexicalSummaryAscQ]["MatchCountGroups", n_Integer, DeleteStopwords] := (LexicalSummary[asc]["MatchCountGroups", DeleteStopwords][;;UpTo[n]])
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", DeleteStopwords] := (LexicalSummary[asc]["Counts"] // FilterOutStopwordRows // CountGroups)
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer, DeleteStopwords] := (LexicalSummary[asc]["CountGroups", DeleteStopwords][;;UpTo[n]])
 
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey"] := GenerateDashboard[LexicalSummary[asc]]
@@ -374,25 +375,28 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer] := GenerateDashboar
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], DeleteStopwords]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer, DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], n, DeleteStopwords]
 
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups"]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", n]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", DeleteStopwords]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", n, DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
 
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups"] := WordStemGroups[LexicalSummary[asc]["MatchCountGroups"]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer] := WordStemGroups[LexicalSummary[asc]["MatchCountGroups", n]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["MatchCountGroups", DeleteStopwords]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["MatchCountGroups", n, DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups"] := WordStemGroups[LexicalSummary[asc]["CountGroups"]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer] := WordStemGroups[LexicalSummary[asc]["CountGroups", n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
 
 LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
-LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups", "MatchCounts", "MatchCountGroups","PercentDataset","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","TextElementStructure", "Survey"}
+LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","PercentDataset","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","TextElementStructure", "Survey"}
 
 generateLexicalSummary[data_?FailureQ, ___] := data
 generateLexicalSummary[data_, sourceType_String, LexicalPattern_] := Module[
 	{matchcount},
-	matchcount = GetDatasetCounts[Dataset[data], sourceType][Total, "Count"];
+	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
 	LexicalSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@LexicalPattern] |>]
 ]
+
+LowerCaseConsolidate[ds_Dataset] := (ds // Query[GroupBy[ToLowerCase[#Match] &], Total /* KeyDrop["Match"]] //
+  KeyValueMap[<|"Match" -> #1, #2|> &] // ReverseSortBy[#Count &])
 
 StopWordQ[s_String] := StringMatchQ[Alternatives @@ WordList["Stopwords"]][s]
 StopWordQ[l : List[__String]] := AnyTrue[l, StopWordQ]
@@ -411,7 +415,7 @@ GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], Map[KeyDrop[{"
 
 PartOfSpeechGroups[ds_Dataset] := (ds[TextWords /* ToLowerCase /* Flatten /* DeleteStopwords /* DeleteDuplicates, "Matches"][AlphabeticSort][GroupBy[PartOfSpeechKey]][KeyDrop[None]] // KeySort) // KeyValueMap[<|"Words" -> #2, "PartOfSpeech" -> #1|>&]
 
-GetWordStemCounts[ds_Dataset] := (ds[All, "Matches"] // Normal // Flatten // (StringSplit[#, WordBoundary]&) /* Flatten // DeleteCases[" "] // DeleteStopwords // ToLowerCase // WordStem // Counts)
+GetWordStemCounts[ds_Dataset] := (ds[All, "Matches"] // Normal // Flatten // (StringSplit[#, WordBoundary]&) /* Flatten /* DeleteCases[" "] // DeleteStopwords // ToLowerCase // WordStem // Counts)
 
 WordStemGroups[ds_Dataset] := (GetWordStemCounts[ds] // KeyValueMap[<|"Stem" -> #1, "Count" -> #2|> &] // Dataset // ReverseSortBy[#Count &]) // Query[GroupBy[#Count &], KeyDrop["Count"] /* Values /* (Flatten[#, 1]&)] // KeyValueMap[<|"WordStem" -> #2, "CountGroup" -> #1|> &]
 
