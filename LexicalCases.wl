@@ -53,7 +53,7 @@ AlternativesToList[a_Alternatives] := List@@a;
 PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
 
-ReplaceEmptyListWithMissing[result_]:=Replace[result, {} -> Missing["MatchNotFound"], Infinity];
+ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], Infinity];
 
 (* Validate LexicalPattern Objects *)
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
@@ -218,17 +218,22 @@ GetArticlesFromService["Wikipedia", query_, opts___] := Module[
 	<|"Articles" -> ART, "ArticleCount" -> ARC, "ArticleCountString" -> ToString[ARC], "MaxTitleLength" -> MTL|>
 	]
 
+GetArticleText[title_String] := Module[{TXT},
+	TXT = WikipediaData[title];
+	++ArticleIndex;
+	TXT
+	]
+
 GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCountString_String, maxTitleLength_Integer] := Module[
 	{TXT},
 		SetSharedVariable[ArticleIndex];
 		ArticleIndex=0;
 		TXT=Monitor[
-			ParallelMap[(++ArticleIndex;WikipediaData[#])&,articles],
+			ParallelMap[GetArticleText[#]&, articles],
 			Row[{
 				"Gathering text from "<>articleCountString<>" articles:\n",
-				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",
-				Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]],
-				Dynamic[If[ArticleIndex <= articleCount-1," Getting article "<>StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]]
+				Dynamic[If[ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]], "\n",
+				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}
 				]
 			];
@@ -236,24 +241,32 @@ GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCou
 			TXT
 	]
 
-SearchForLexicalPattern[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
+LexicalPatternSearch[text_,pattern_] := Module[
+	{RES = LexicalCasesOnString[text, pattern]},
+		MatchCount+=Length[Flatten[Lookup[RES,"Position"], 1]];
+		RES
+		]
+
+SearchArticles[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
 	{MAT},
 		ArticleIndex=0;
-		SetSharedVariable[lp];
+		MatchCount=0;
+		SetSharedVariable[lp,MatchCount];
 		MAT = Monitor[
-			ParallelMap[(LexicalCasesOnString[#, lp])&, texts],
+			ParallelMap[(LexicalPatternSearch[#,lp])&, texts],
 			Row[{
 				"Searching ", Dynamic[If[ArticleIndex <= articleCount-1, "\""<>articles[[ArticleIndex+1]]<>"\" ", " "]], "\n",
+				"Found: ", Dynamic[MatchCount], "\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}]
 			];
+		MatchCount=.;
 		MAT
 	]
 
 PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
 	{AMT, MAC},
-		AMT = Monitor[Thread[{articles, ReplaceEmptyListWithMissing[matches]}], Row[{"Threading Articles with Matches ", ProgressIndicator[Appearance->"Ellipsis"]}]];
-		
+		AMT = Thread[{articles, ReplaceEmptyListWithMissing[matches]}];
 		SetSharedVariable[AMT];
 		ArticleIndex=0;
 		MAC = ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, AMT];
@@ -295,22 +308,26 @@ LexicalCasesWikipedia[wikiquery_Rule, lp_?ValidLexicalPatternQ, opts:OptionsPatt
 	src = GetTextFromArticles["Wikipedia", art, arc, acs, mtl];
 	
 	(* 3 - Search for LexicalPattern *)
-	mtc = SearchForLexicalPattern[src, LP, SLP, art, arc, mtl];
+	mtc = SearchArticles[src, LP, SLP, art, arc, mtl];
 	PackageResults[mtc, art, arc, mtl]
 	]
-
 
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 
+ArticleWithMatchCount["Text", _] := ""
+ArticleWithMatchCount[_String, data_] := (data // Lookup["Article"] // DeleteDuplicates // Length)
 
+DisplayArticlesWithMatch["Text",_]:= Nothing
+DisplayArticlesWithMatch[source_,data_]:= {BoxForm`SummaryItem[{"Articles: ", ArticleWithMatchCount[source, data]}]}
 
 (* LexicalSummary *)
 LexicalSummary /: MakeBoxes[obj : LexicalSummary[asc_?LexicalSummaryAscQ], form : (StandardForm | TraditionalForm)] :=
 Module[{above, below},
 	above = {(*example grid*)
 		{BoxForm`SummaryItem[{"Source: ", asc["Source"]}]},
-		{BoxForm`SummaryItem[{"MatchCount: ",asc["TotalMatchCount"]}]}
+		DisplayArticlesWithMatch[asc["Source"], asc["Data"]],
+		{BoxForm`SummaryItem[{"Matches: ",asc["TotalMatchCount"]}]}
 	};
 	below = {
 	};
@@ -356,6 +373,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Survey"] := GenerateDashboard[LexicalSu
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer] := GenerateDashboard[LexicalSummary[asc], n]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], DeleteStopwords]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer, DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], n, DeleteStopwords]
+
 LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups"]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", n]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["MatchCountGroups", DeleteStopwords]]
@@ -372,7 +390,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Coun
 generateLexicalSummary[data_?FailureQ, ___] := data
 generateLexicalSummary[data_, sourceType_String, LexicalPattern_] := Module[
 	{matchcount},
-	matchcount = DeleteMissing[GetDatasetCounts[Dataset[data], sourceType], 1, 1][Total, "Count"];
+	matchcount = GetDatasetCounts[Dataset[data], sourceType][Total, "Count"];
 	LexicalSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@LexicalPattern] |>]
 ]
 
@@ -389,7 +407,7 @@ ProcessWordData[w_] := w
 (* TODO: module-ize these functions for clarity *)
 CountGroups[ds_Dataset] := (ds // Query[GroupBy[#Count&], KeyDrop["Count"] /* Values /* (Flatten[#,1]&)] // KeyValueMap[<|"Matches" -> #2, "CountGroup" -> #1|> &]//ReverseSortBy[#CountGroup&])
 GetDatasetCounts[ds_Dataset,"Text"] := ds[All, <|"Match" -> "Match", "Count" -> "Position" /* Length|>]
-GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], KeyDrop[{"Article", "Match"}] /* Values] // KeyValueMap[<|"Match" -> #1, "Count" -> Length[#2]|> &]
+GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], Map[KeyDrop[{"Article", "Match"}]]][All, Total@*Map[Length], "Position"] // KeyValueMap[<|"Match" -> #1, "Count" -> #2|> &]
 
 PartOfSpeechGroups[ds_Dataset] := (ds[TextWords /* ToLowerCase /* Flatten /* DeleteStopwords /* DeleteDuplicates, "Matches"][AlphabeticSort][GroupBy[PartOfSpeechKey]][KeyDrop[None]] // KeySort) // KeyValueMap[<|"Words" -> #2, "PartOfSpeech" -> #1|>&]
 
