@@ -9,6 +9,8 @@ Get["path/to/LexicalCases.wl"]
 Get["path/to/LexicalCasesTests.wl"]
 ```
 
+_Note: This functionality was developed in v12.3.1_
+
 ## Usage
 
 [LexicalCases](https://dishmint.github.io/LexicalCases/LexicalCases.html) takes a string as its first argument, and a lexical pattern as its second argument. A [LexicalSummary](https://dishmint.github.io/LexicalCases/LexicalSummary.html) object is returned with properties to access and manipulate the results.
