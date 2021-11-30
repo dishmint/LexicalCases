@@ -31,7 +31,7 @@ ConvertToWikipediaSearchQuery::usage="For development purposes only, convert Lex
 $LexicalCasesSupportedServices::usage="List of supported services"
 $LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
 TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
-LowerCaseConsolidate::usage="LowerCaseConsolidate[ds] Makes matches lowercase and merges rows that now have the same match."
+CountSummaryLowercase::usage="CountSummaryLowercase[ds] Makes matches lowercase and merges rows that now have the same match."
 WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
 Begin["Private`"]
 
@@ -39,7 +39,7 @@ $PartsOfSpeech = {"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition
 $PartsOfSpeechAlternatives = Alternatives@@$PartsOfSpeech;
 WordLists = Monitor[Map[<|# -> WordList[#]|> &, $PartsOfSpeech], Row[{"Getting PartOfSpeech words",ProgressIndicator[Appearance->"Ellipsis"]}]];
 WordListLookup[pos:$PartsOfSpeechAlternatives] := WordLists // Lookup[pos] // DeleteMissing // Flatten
-
+WordListLookup[s_String] := {}
 (* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
@@ -113,7 +113,10 @@ TextContentGroup[content_List] := Alternatives@@content;
 ExtractStringContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_String] :> type, Infinity]];
 ExtractAlternativeContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
 ExtractContentTypes[lp_LexicalPattern] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[lp]]
-ContentAssociation[sourcetext_String, lp_LexicalPattern] := Map[DeleteDuplicates /* TextContentGroup][TextCases[sourcetext, ExtractContentTypes[lp]]]
+ContentAssociation[sourcetext_String, lp_LexicalPattern] := Module[
+	{WORDS = TextWords[sourcetext]},
+	Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@((WORDS~Intersection~WordListLookup[#1])~Join~#2)|> &][TextCases[sourcetext, ExtractContentTypes[lp]]]
+	]
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
 ContainsPatternHeadsQ[lp_] := ContainsAny[ExtractHeads[lp], {Pattern}]
@@ -126,7 +129,7 @@ LexicalPatternToStringExpression[sourcetext_String, lp_LexicalPattern] :=
 	Module[{TRX, CA},
 		TRX = ExpandLexicalPattern[lp];
 		CA  = ContentAssociation[sourcetext, lp];
-		Replace[TRX, TextType[type_] :> CA[type]~Join~(Alternatives@@WordListLookup[type]), Infinity]
+		Replace[TRX, TextType[type_] :> CA[type], Infinity]
 		]
 
 LexicalPatternToStringExpression[sourcetext_String, Rule[lp_LexicalPattern, expr_]] := Rule[LexicalPatternToStringExpression[sourcetext, lp], expr]
@@ -401,8 +404,13 @@ generateLexicalSummary[data_, sourceType_String, LexicalPattern_] := Module[
 	LexicalSummary[<|"Data" -> data, "Source" -> sourceType, "TotalMatchCount" -> matchcount, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@LexicalPattern] |>]
 ]
 
-LowerCaseConsolidate[ds_Dataset] := (ds // Query[GroupBy[ToLowerCase[#Match] &], Total /* KeyDrop["Match"]] //
-  KeyValueMap[<|"Match" -> #1, #2|> &] // ReverseSortBy[#Count &])
+
+CountGroupDSQ[ds_Dataset] :=Normal /* First /* KeyMemberQ["CountGroup"]@ds
+CountDSQ[ds_Dataset] := Normal /* First /* KeyMemberQ["Count"]@ds
+
+CountSummaryLowercase[ds_Dataset] /; CountDSQ[ds] := (ds // Query[GroupBy[ToLowerCase[#Match] &], Total /* KeyDrop["Match"]] // KeyValueMap[<|"Match" -> #1, #2|> &])
+
+CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] := (ds // Query[GroupBy[ToLowerCase[#Matches] &], Total /* KeyDrop["Matches"]] // KeyValueMap[<|"Matches" -> #1, #2|> &])
 
 StopWordQ[s_String] := StringMatchQ[Alternatives @@ WordList["Stopwords"]][s]
 StopWordQ[l : List[__String]] := AnyTrue[l, StopWordQ]
