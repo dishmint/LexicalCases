@@ -299,7 +299,7 @@ ProcessWikiQuery[query:(_String|_List),lp_?ValidLexicalPatternQ, opts___] := Mod
 
 (* SourceText is a WikipediaSearch Query *)
 LexicalCasesWikipedia[wikiquery_Rule, lp_?ValidLexicalPatternQ, opts:OptionsPattern[]]:= Module[
-	{LP = lp, SLP = StripNamedPattern[lp], ard, art, arc, acs, mtl, src, mtc, matchesassoc, articlematchthread},
+	{LP = lp, SLP = StripNamedPattern[lp], ard, art, arc, acs, mtl, src, mtc},
 	(* 1 - Get Wikipedia Articles *)
 	ard = GetArticlesFromService["Wikipedia", wikiquery, opts];
 	
