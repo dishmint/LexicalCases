@@ -447,7 +447,6 @@ CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] := ReverseSortBy[#CountGr
 StopWordQ[s_String] := StringMatchQ[Alternatives @@ WordList["Stopwords"]][s]
 StopWordQ[l : List[__String]] := AnyTrue[l, StopWordQ]
 
-PercentDatasetQ[ds_Dataset] := (First /* Normal /* Keys /* ContainsAny[{"Matches"}])[ds]
 FilterOutStopwordRows[ds_Dataset] := Select[\[Not]StopWordQ[#Match] &][ds]
 
 PartOfSpeechKey[word_String] := ProcessWordData[WordData[word, "PartsOfSpeech"]]
