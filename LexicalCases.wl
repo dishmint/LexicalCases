@@ -32,7 +32,13 @@ $LexicalCasesSupportedServices::usage="List of supported services"
 $LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
 TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
 LowerCaseConsolidate::usage="LowerCaseConsolidate[ds] Makes matches lowercase and merges rows that now have the same match."
+WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
 Begin["Private`"]
+
+$PartsOfSpeech = {"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition", "Conjunction", "Determiner", "Interjection"};
+$PartsOfSpeechAlternatives = Alternatives@@{"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition", "Conjunction", "Determiner", "Interjection"};
+WordLists = Monitor[Map[<|# -> WordList[#]|> &, $PartsOfSpeech], Row[{"Getting PartOfSpeech words",ProgressIndicator[Appearance->"Ellipsis"]}]];
+WordListLookup[pos:$PartsOfSpeechAlternatives] := WordLists // Lookup[pos] // DeleteMissing // Flatten
 
 (* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
@@ -120,7 +126,7 @@ LexicalPatternToStringExpression[sourcetext_String, lp_LexicalPattern] :=
 	Module[{TRX, CA},
 		TRX = ExpandLexicalPattern[lp];
 		CA  = ContentAssociation[sourcetext, lp];
-		Replace[TRX, TextType[type_] :> CA[type], Infinity]
+		Replace[TRX, TextType[type_] :> CA[type]~Join~(Alternatives@@WordListLookup[type]), Infinity]
 		]
 
 LexicalPatternToStringExpression[sourcetext_String, Rule[lp_LexicalPattern, expr_]] := Rule[LexicalPatternToStringExpression[sourcetext, lp], expr]
