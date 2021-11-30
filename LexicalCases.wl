@@ -36,7 +36,7 @@ WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
 Begin["Private`"]
 
 $PartsOfSpeech = {"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition", "Conjunction", "Determiner", "Interjection"};
-$PartsOfSpeechAlternatives = Alternatives@@{"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition", "Conjunction", "Determiner", "Interjection"};
+$PartsOfSpeechAlternatives = Alternatives@@$PartsOfSpeech;
 WordLists = Monitor[Map[<|# -> WordList[#]|> &, $PartsOfSpeech], Row[{"Getting PartOfSpeech words",ProgressIndicator[Appearance->"Ellipsis"]}]];
 WordListLookup[pos:$PartsOfSpeechAlternatives] := WordLists // Lookup[pos] // DeleteMissing // Flatten
 
