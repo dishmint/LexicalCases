@@ -69,7 +69,7 @@ $LexicalCasesTests := {
 	(* ContentAssociation *)
 	VerificationTest[
 		ContentAssociation[$SampleStringShort, $SampleLexicalPattern],
-		Association[Rule["Adjective",Alternatives["best","key"]]],
+		Association["Adjective" -> {"best" | "key" | "still" | "up"}],
 		"TestID" -> "ContentAssociationTest1"
 	],
 	(* ConvertToWikipediaSearchQuery *)
@@ -85,14 +85,13 @@ $LexicalCasesTests := {
 	],
 	(* LexicalPatternToStringExpression *)
 	VerificationTest[
-	LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
-	StringExpression[
-		Alternatives["computer","computers"],
-		" ",
-		Alternatives[
-			"is","can","be","programmed","carry","perform","known","enable","includes","operating","needed","used","may","refer","are","linked","function","use","included","links","were","meant","have","aided","doing","built","automate","guiding","did","specialized","calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists","carries","change","stored","include","allow","retrieved","saved"
-			]
-		],
+		LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
+		StringExpression[
+			Alternatives["computer","computers"]," ",
+			Alternatives[
+				"allow","automate","be","can","carry","change","chip","circuit","cluster","complete","control","design","enable","form","full","function","group","have","include","input","like","long","machine","microwave","monitor","network","order","out","output","pace","people","perform","power","range","refer","result","source","speed","term","type","use","well","is","programmed","known","includes","operating","needed","used","may","are","linked","included","links","were","meant","aided","doing","built","guiding","did","specialized","calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists","carries","stored","retrieved","saved"
+				]
+			],
 		"TestID" -> "LexicalPatternToRegularExpressionTest1"
 	],
 	(* ToTextElementStructure *)

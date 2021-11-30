@@ -108,8 +108,6 @@ ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts]
 	}]
 
-TextContentGroup[List[content_String]] := content;
-TextContentGroup[content_List] := Alternatives@@content;
 ExtractStringContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_String] :> type, Infinity]];
 ExtractAlternativeContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
 ExtractContentTypes[lp_LexicalPattern] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[lp]]
@@ -125,11 +123,13 @@ StripNames[True, lp_LexicalPattern] := Replace[lp, p_Pattern :> Extract[2][p], I
 StripNames[True, (Rule|RuleDelayed)[lp_LexicalPattern,_]] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False, lp_]:= lp
 
+ContentAlts[List[a_Alternatives]] := a
+ContentAlts[a_Alternatives] := a
 LexicalPatternToStringExpression[sourcetext_String, lp_LexicalPattern] :=
 	Module[{TRX, CA},
 		TRX = ExpandLexicalPattern[lp];
 		CA  = ContentAssociation[sourcetext, lp];
-		Replace[TRX, TextType[type_] :> CA[type], Infinity]
+		Replace[TRX, TextType[type_] :> ContentAlts[CA[type]], Infinity]
 		]
 
 LexicalPatternToStringExpression[sourcetext_String, Rule[lp_LexicalPattern, expr_]] := Rule[LexicalPatternToStringExpression[sourcetext, lp], expr]
