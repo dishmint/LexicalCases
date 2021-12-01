@@ -10,16 +10,15 @@ LexicalCases[<string>, LexicalPattern[...]]
 ---
 #### Search Wikipedia articles
 ```Mathematica
-LexicalCases["Content" -> <keywords>, LexicalPattern[...]]
+LexicalCases["Content" -> "music", LexicalPattern[TextType["ProperNoun" | "Adjective"], " ", "music"], MaxItems -> 1000]
 ```
 
 #### Search Wikipedia by converting LexicalPattern to a search query
 ```Mathematica
-LexicalCases[LexicalPattern[...]]
+LexicalCases[LexicalPattern[TextType["ProperNoun" | "Adjective"], " ", "music"]]
 ```
-
-Use the `MaxItems` option to limit the number of articles to search over (the default is 50).
 
 ## Options
 
-* "Service" select which service to search over. Use `$LexicalCasesSupportedServices` to see which are available.
+* `"Service"` — Select which service to search over. Run `$LexicalCasesSupportedServices` for supported services.
+* `"MaxItems"`— Limit the number of articles to search over (the default is 50).

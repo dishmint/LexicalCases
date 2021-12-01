@@ -2,7 +2,7 @@
 
 ## Introduction
 
-About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like [TextCases](https://reference.wolfram.com/language/ref/TextCases.html) for example, but the solution I came up with took too long, and it just wasn't flexible enough. Early iterations of the [LexicalCases](./LexicalCases.md) functionality had patterns structured in a list, and since I only cared about adjectives coming before words, the order was fixed: `{"Adjective", "dogs"}`. I soon realized I may want a more flexible specification, and that's what this project hopes to offer.
+About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like [TextCases](https://reference.wolfram.com/language/ref/TextCases.html) for example, but the solution I came up with took too long, and it wasn't flexible enough. Previous iterations of the [LexicalCases](./LexicalCases.md) functionality had patterns structured in a list, with types always preceding words or phrases: `{"Adjective", "dogs"}`. I soon realized I may want a more flexible specification, and that's what this project attempts to bring.
 
 
 ## Installation
@@ -16,10 +16,10 @@ Get["path/to/LexicalCasesTests.wl"]
 
 
 ---
-A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements include text content types (those listed [here](https://reference.wolfram.com/language/guide/TextContentTypes.html)). [LexicalCases](./LexicalCases.md) searches for these patterns in strings. The result is a [summary](./LexicalSummary.md) object which supports several properties (see the doc or use the summary object's `"Properties"` subvalue for a listing).
+A [LexicalPattern](./LexicalPattern.md) is a string pattern whose elements include text content types (those listed [here](https://reference.wolfram.com/language/guide/TextContentTypes.html)). [LexicalCases](./LexicalCases.md) searches for these patterns in strings. The result is a [summary](./LexicalSummary.md) object which supporting  properties for data access and analysis (see the doc or query the summary object's `"Properties"` for a listing).
 
 ## Examples
-#### A pattern representing the structure "This :Verb: a :Adjective: :Noun:!"
+#### A pattern representing the structure "This \<Verb\> a \<Adjective\> \<Noun\>!"
 
 ```Mathematica
 LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]
