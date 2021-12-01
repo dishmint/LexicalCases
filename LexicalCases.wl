@@ -52,6 +52,7 @@ InsertAnd[x_List] := Insert[x, "and", -2];
 KeyWordString[{s_String}]:= "\""<>s<>"\"";
 KeyWordString[l:{_String,_String}]:= StringRiffle[Map[KeyWordString][l], ", "];
 KeyWordString[x_List] := StringRiffle[InsertAnd[Map[KeyWordString][x]], ", "];
+KeyWordString[x_Alternatives] := ToString[Map[KeyWordString][x]]
 KeyWordString[x_] := "\""<>x<>"\"";
 
 AlternativesToList[s_String] := {s};
@@ -331,6 +332,15 @@ LexicalCasesWikipedia[wikiquery_Rule, lp_?ValidLexicalPatternQ, opts:OptionsPatt
 	PackageResults[mtc, art, arc, mtl]
 	]
 
+Options[WikipediaArticlesFromRule] = {
+	MaxItems -> 50
+};
+
+WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[]]:= Module[
+	{KWL = Apply[List][a], RULES},
+	RULES = Thread["Content"-> KWL];
+	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[opts, Except[MaxItems]]]][RULES]
+]
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
 
