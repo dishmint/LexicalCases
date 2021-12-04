@@ -100,7 +100,7 @@ ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[Tex
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
-MatchBoundary[patt_] := Except[WordCharacter]~~patt~~Except[WordCharacter]
+MatchBoundary[patt_] := Except[WordCharacter,WordBoundary|" "]~~patt~~Except[WordCharacter,WordBoundary|" "]
 
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
@@ -132,7 +132,7 @@ LexicalPatternToStringExpression[sourcetext_String, lp_LexicalPattern] :=
 	Module[{TRX, CA},
 		TRX = ExpandLexicalPattern[lp];
 		CA  = ContentAssociation[sourcetext, lp];
-		Replace[TRX, TextType[type_] :> ContentAlts[CA[type]], Infinity]
+		Replace[TRX, TextType[type_] :> MatchBoundary[ContentAlts[CA[type]]], Infinity]
 		]
 
 LexicalPatternToStringExpression[sourcetext_String, Rule[lp_LexicalPattern, expr_]] := Rule[LexicalPatternToStringExpression[sourcetext, lp], expr]
@@ -160,7 +160,8 @@ ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the
 
 (* Input Handlers *)
 Options[LexicalCases]={
-	"Service" -> "Wikipedia"
+	"Service" -> "Wikipedia",
+	"StringTrim" -> True
 };
 Options[LexicalCasesWikipedia] = {
 	MaxItems -> 50,
@@ -176,12 +177,12 @@ LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Impor
 LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
 
 (* SourceText and LexicalPattern Input *)
-LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ]:= Module[
+LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ, opts:OptionsPattern[LexicalCases]]:= Module[
 	{LPC,RES},
 	ArticleIndex=0;
 	(* Find Matches *)
 	LPC = Monitor[
-		LexicalCasesOnString[sourcetext, lpatt],
+		LexicalCasesOnString[sourcetext, lpatt, opts],
 		Row[{"Searching", ProgressIndicator[Appearance->"Ellipsis"]}]
 		];
 	(* Generate Summary Object *)
@@ -193,13 +194,18 @@ LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ]:= Module[
 	RES
 	]
 
+MatchTrim[True, matches_List]:= StringTrim[matches]
+MatchTrim[False, matches_List]:= matches
+
+MatchTrim[bool:(True|False)][matches_List] := MatchTrim[bool,matches]
+
 (* SourceText is a string *)
-LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ]:=Module[
+LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ, opts:OptionsPattern[LexicalCases]]:=Module[
 	{RX, S = EscapePunctuation[source]},
 	++ArticleIndex;
 	RX = LexicalPatternToStringExpression[S, lp];
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
-		{cases = DeleteDuplicates@StringCases[source, RX]},
+		{cases = MatchTrim[OptionValue["StringTrim"]]@DeleteDuplicates@StringCases[source, RX]},
 		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
 		]
 	]
