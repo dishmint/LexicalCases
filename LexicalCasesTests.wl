@@ -86,13 +86,18 @@ $LexicalCasesTests := {
 	(* LexicalPatternToStringExpression *)
 	VerificationTest[
 		LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
-		StringExpression[
-			Alternatives["computer","computers"]," ",
-			Alternatives[
-				"allow","automate","be","can","carry","change","chip","circuit","cluster","complete","control","design","enable","form","full","function","group","have","include","input","like","long","machine","microwave","monitor","network","order","out","output","pace","people","perform","power","range","refer","result","source","speed","term","type","use","well","is","programmed","known","includes","operating","needed","used","may","are","linked","included","links","were","meant","aided","doing","built","guiding","did","specialized","calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists","carries","stored","retrieved","saved"
-				]
-			],
-		"TestID" -> "LexicalPatternToRegularExpressionTest1"
+			StringExpression[
+				Alternatives["computer","computers"]," ",
+				Except[WordCharacter,Alternatives[WordBoundary," "]],
+				Alternatives[
+				"allow","automate","be","can","carry","change","chip","circuit","cluster","complete","control","design","enable","form","full","function","group","have","include","input","like",
+				"long","machine","microwave","monitor","network","order","out","output","pace","people","perform","power","range","refer","result","source","speed","term","type","use","well","is",
+				"programmed","known","includes","operating","needed","used","may","are","linked","included","links","were","meant","aided","doing","built","guiding","did","specialized",
+				"calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists","carries","stored","retrieved","saved"
+				],
+				Except[WordCharacter,Alternatives[WordBoundary," "]]
+				],
+		"TestID" -> "LexicalPatternToStringExpressionTest1"
 	],
 	(* ToTextElementStructure *)
 	VerificationTest[
@@ -106,7 +111,7 @@ $LexicalCasesTests := {
 		Association["GrammaticalUnit" -> "LexicalPattern"]
 		]
 	,
-	"TestID" -> "LexicalPatternToRegularExpressionTest1"
+	"TestID" -> "ToTextElementStructureTest1"
 	],
 	(* Short Strings *)
 	VerificationTest[
