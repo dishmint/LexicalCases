@@ -35,11 +35,6 @@ CountSummaryLowercase::usage="CountSummaryLowercase[ds] Makes matches lowercase 
 WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
 Begin["Private`"]
 
-$PartsOfSpeech = {"Noun", "Verb", "Adjective", "Adverb", "Pronoun", "Preposition", "Conjunction", "Determiner", "Interjection"};
-$PartsOfSpeechAlternatives = Alternatives@@$PartsOfSpeech;
-WordLists = Monitor[Map[<|# -> WordList[#]|> &, $PartsOfSpeech], Row[{"Getting PartOfSpeech words",ProgressIndicator[Appearance->"Ellipsis"]}]];
-WordListLookup[pos:$PartsOfSpeechAlternatives] := WordLists // Lookup[pos] // DeleteMissing // Flatten
-WordListLookup[s_String] := {}
 (* Utility *)
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
@@ -114,10 +109,12 @@ ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 ExtractStringContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_String] :> type, Infinity]];
 ExtractAlternativeContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
 ExtractContentTypes[lp_LexicalPattern] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[lp]]
-ContentAssociation[sourcetext_String, lp_LexicalPattern] := Module[
-	{WORDS = TextWords[sourcetext]},
-	Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@((WORDS~Intersection~WordListLookup[#1])~Join~#2)|> &][TextCases[sourcetext, ExtractContentTypes[lp]]]
-	]
+
+ExtractAlternatives[List[a_Alternatives]] := a
+ExtractAlternatives[a_] := a
+
+ContentAssociation[sourcetext_String, lp_LexicalPattern] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[lp]]]
+
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
 ContainsPatternHeadsQ[lp_] := ContainsAny[ExtractHeads[lp], {Pattern}]
