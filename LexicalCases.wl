@@ -100,12 +100,14 @@ ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[Tex
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
+MatchBoundary[patt_] := Except[WordCharacter]~~patt~~Except[WordCharacter]
+
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
 	LexicalPatternSequence -> StringExpression,
 	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[StringExpression]][Permutations[{##}]]],
-	OptionalLexicalPattern[opt_Alternatives] :> (opt~Join~Alternatives[""]),
-	OptionalLexicalPattern[opt_] :> (Alternatives[opt]~Join~Alternatives[""]),
+	OptionalLexicalPattern[opt_Alternatives] :> (Map[MatchBoundary][opt]~Join~Alternatives[" ",""]),
+	OptionalLexicalPattern[opt_] :> (Alternatives[MatchBoundary[opt]]~Join~Alternatives[" ",""]),
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts]
 	}]
 
