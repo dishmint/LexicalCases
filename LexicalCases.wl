@@ -100,7 +100,7 @@ ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[Tex
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
-MatchBoundary[patt_] := Except[WordCharacter,WordBoundary|" "]~~patt~~Except[WordCharacter,WordBoundary|" "]
+MatchBoundary[patt_] := Except[WordCharacter,WordBoundary|" "|StartOfString|StartOfLine]~~patt~~Except[WordCharacter,WordBoundary|" "|EndOfString|EndOfLine]
 
 ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	LexicalPattern -> StringExpression,
@@ -194,7 +194,7 @@ LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ, opts:OptionsPattern
 	RES
 	]
 
-MatchTrim[True, matches_List]:= StringTrim[matches]
+MatchTrim[True, matches_List]:= Replace[matches, {x : List[__String] :> StringTrim[x], x_String :> StringTrim[x]}, Infinity]
 MatchTrim[False, matches_List]:= matches
 
 MatchTrim[bool:(True|False)][matches_List] := MatchTrim[bool,matches]
