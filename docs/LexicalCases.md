@@ -21,4 +21,5 @@ LexicalCases[LexicalPattern[TextType["ProperNoun" | "Adjective"], " ", "music"]]
 ## Options
 
 * `"Service"` — Select which service to search over. Run `$LexicalCasesSupportedServices` for supported services.
-* `"MaxItems"`— Limit the number of articles to search over (the default is 50).
+* `"MaxItems"`— Limit the number of articles to search over (50 by default).
+* `"StringTrim"`— True will trim whitespace from the beginning and end of matches (True by default).
