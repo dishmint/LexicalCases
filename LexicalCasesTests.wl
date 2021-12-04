@@ -115,7 +115,7 @@ $LexicalCasesTests := {
 	],
 	(* Short Strings *)
 	VerificationTest[
-		LexicalCases[$SampleStringShort, $SampleLexicalPattern, "StringTrim" -> True]["Data"],
+		LexicalCases[$SampleStringShort, $SampleLexicalPattern]["Data"],
 		{<|"Match" -> "best key lime pie", "Position" -> {{5, 21}}|>},
 		"TestID" -> "ShortStringTest1"
 		]
