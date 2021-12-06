@@ -66,7 +66,7 @@ $LexicalPatternValidHeads = {
 	Alternatives, Rule, RuleDelayed, RegularExpression, StringExpression,
 	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
 	NumberString, StartOfString, EndOfString, WordBoundary,
-	StartOfLine, EndOfLine
+	StartOfLine, EndOfLine, DatePattern, List
  }
 
 ValidLexicalPatternQ[input_LexicalPattern]:= With[{heads = DeleteDuplicates@ExtractHeads[input]}, ContainsOnly[heads, $LexicalPatternValidHeads]]
@@ -234,24 +234,28 @@ GetArticlesFromService["Wikipedia", query_, opts___] := Module[
 	<|"Articles" -> ART, "ArticleCount" -> ARC, "ArticleCountString" -> ToString[ARC], "MaxTitleLength" -> MTL|>
 	]
 
-GetArticleText[title_String] := Module[{TXT},
-	TXT = WikipediaData[title];
-	++ArticleIndex;
-	TXT
-	]
+articlePluralize[0] := Message[GetTextFromArticles::noarticles]
+articlePluralize[1] := "article"
+articlePluralize[_Integer?Positive] := "articles"
+
+GetTextFromArticles::noarticles = "No articles found"
 
 GetTextFromArticles["Wikipedia", articles_List, articleCount_Integer, articleCountString_String, maxTitleLength_Integer] := Module[
 	{TXT},
 		SetSharedVariable[ArticleIndex];
 		ArticleIndex=0;
 		TXT=Monitor[
-			(* Progress appears to be fast *)
 			ParallelMap[(++ArticleIndex;WikipediaData[#])&, articles],
-			(* Progress appears to be slow  *)
-			(* ParallelMap[GetArticleText[#]&, articles], *)
 			Row[{
-				"Gathering text from "<>articleCountString<>" articles:\n",
-				Dynamic[If[ArticleIndex <= articleCount-1,StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],""]], "\n",
+				"Gathering text from "<>articleCountString<>" "<>articlePluralize[articleCount]<>":\n",
+				Dynamic[
+					Which[
+					(ArticleIndex <= articleCount-1),StringPadRight["\""<>articles[[ArticleIndex+1]]<>"\"",maxTitleLength],
+					(ArticleIndex === 1), "\""<>articles[[1]]<>"\" ",
+					True, ""
+					]
+				],
+				"\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}
 				]
@@ -274,7 +278,14 @@ SearchArticles[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, 
 		MAT = Monitor[
 			ParallelMap[(LexicalPatternSearch[#,lp])&, texts],
 			Row[{
-				"Searching ", Dynamic[If[ArticleIndex <= articleCount-1, "\""<>articles[[ArticleIndex+1]]<>"\" ", " "]], "\n",
+				"Searching ", Dynamic[
+					Which[
+						(ArticleIndex <= articleCount-1), "\""<>articles[[ArticleIndex+1]]<>"\" ",
+						(ArticleIndex === 1), "\""<>articles[[1]]<>"\" ",
+						True," "
+						]
+				],
+				"\n",
 				"Found: ", Dynamic[MatchCount], "\n",
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}]
@@ -456,7 +467,7 @@ ThreadMatchesWithCount[asc_Association] := Apply[Sequence][Map[<|"Matches" -> To
 
 CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] := ReverseSortBy[#CountGroup&]@Query[
 	GroupBy[#Count &] /* KeyValueMap[<|"Matches" -> #2, "CountGroup" -> #1|> &],
-	KeyDrop["Count"] /* Values /* Flatten
+	KeyDrop["Count"] /* Values /* (Flatten[#,1]&)
 	][
 	Query[
 		GroupBy[#Matches &] /* KeyValueMap[<|"Matches" -> #1, #2|> &],
