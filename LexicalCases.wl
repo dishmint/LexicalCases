@@ -122,8 +122,8 @@ EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\
 
 ContainsPatternHeadsQ[lp_] := ContainsAny[ExtractHeads[lp], {Pattern}]
 StripNamedPattern[lp_] := StripNames[ContainsPatternHeadsQ[lp], lp]
-StripNames[True, lp_LexicalPattern] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
-StripNames[True, (Rule|RuleDelayed)[lp_LexicalPattern,_]] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (lp_LexicalPattern|lp_StringExpression)] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (Rule|RuleDelayed)[(lp_LexicalPattern|lp_StringExpression),_]] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False, lp_]:= lp
 
 ContentAlts[List[a_Alternatives]] := a
@@ -229,7 +229,7 @@ LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ, opts:OptionsPatter
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@
 	Transpose@{
 		StringCases[source,RX],
-		StringPosition[source, RX]
+		StringPosition[source, StripNamedPattern[RX]]
 	}
 	]
 
