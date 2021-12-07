@@ -2,7 +2,7 @@
 
 ## Introduction
 
-About a year ago I started working on functionality that lead to this package. I had to find cases of adjectives preceding words or phrases for a task at work, and thought it would be great to search wikipedia, gather data and do some analysis. The Wolfram Language has functions built in, like [TextCases](https://reference.wolfram.com/language/ref/TextCases.html) for example, but the solution I came up with took too long, and it wasn't flexible enough. Previous iterations of the [LexicalCases](./LexicalCases.md) functionality had patterns structured in a list, with types always preceding words or phrases: `{"Adjective", "dogs"}`. I soon realized I may want a more flexible specification, and that's what this project attempts to bring.
+The Wolfram Language supports text search, text analysis, and text parsing in various ways. Search for substrings with [StringCases]((https://reference.wolfram.com/language/ref/StringCases.html), entities with [TextCases]((https://reference.wolfram.com/language/ref/TextCases.html),  or return all examples of identifiable entities with [TextContents]((https://reference.wolfram.com/language/ref/TextContents.html) etc. The current approach to search for lexical patterns is to use the Containing wrapper, though it isn't a flexible strategy. With LexicalCases, one can search for complex and refined lexical patterns.
 
 
 ## Installation
