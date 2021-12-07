@@ -9,6 +9,7 @@ LexicalPattern["Alice ", verb:TextType["Verb"], " ", TextType["Preposition"], " 
 
 Supported expressions are:
 * [Strings](https://reference.wolfram.com/language/ref/String.html) — Matches a string
+* BoundedString — Matches a string surrounded by explicit WordBoundaries
 * [TextType](./TextType.md) — Matches a lexical category
 * OptionalLexicalPattern — Matches 0 or 1 instances of its arguments
 * OrderlessLexicalPattern — Matches its arguments in any order
