@@ -19,6 +19,7 @@ OrderlessLexicalPattern::usage="OrderlessLexicalPattern[p1, p2, ...] matches p's
 LexicalPatternSequence::usage="LexicalPatternSequence[p1, p2, ...] represents a sequence of p's"
 LexicalPatternToStringExpression::usage="LexicalPatternToStringExpression[source, lp] Converts lexical pattern lp to a StringExpression"
 TextType::usage="TextType[type] is a LexicalPattern object representing a type of text content."
+BoundedString::usage="BoundedString[s] wraps s with WordBoundary"
 
 ValidLexicalPatternQ::usage="ValidLexicalPatternQ[input] Returns True if input is a valid LexicalPattern"
 ToTextElementStructure::usage="ToTextElementStructure[lp] renders a LexicalPattern using TextElements"
@@ -61,7 +62,7 @@ ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"
 (* Validate LexicalPattern Objects *)
 ExtractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 $LexicalPatternValidHeads = {
-	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType,
+	LexicalPattern, LexicalPatternSequence, OptionalLexicalPattern, OrderlessLexicalPattern, TextType, BoundedString,
 	Pattern, PatternSequence, Except, Repeated, RepeatedNull,Blank, BlankSequence, BlankNullSequence,
 	Alternatives, Rule, RuleDelayed, RegularExpression, StringExpression,
 	LetterCharacter, WordCharacter, PunctuationCharacter, WhitespaceCharacter, DigitCharacter, HexadecimalCharacter,
@@ -103,7 +104,9 @@ ExpandLexicalPattern[lp_LexicalPattern] := ReplaceAll[lp, {
 	OrderlessLexicalPattern -> Function[Alternatives@@Map[Apply[StringExpression]][Permutations[{##}]]],
 	OptionalLexicalPattern[opt_Alternatives] :> (Map[MatchBoundary][opt]~Join~Alternatives[" ",""]),
 	OptionalLexicalPattern[opt_] :> (Alternatives[MatchBoundary[opt]]~Join~Alternatives[" ",""]),
-	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts]
+	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
+	BoundedString[s_String] :> (WordBoundary ~~ s ~~ WordBoundary),
+	BoundedString[a_Alternatives] :> (WordBoundary ~~ a ~~ WordBoundary)
 	}]
 
 ExtractStringContentTypes[lp_LexicalPattern] := Splice[Cases[lp, TextType[type_String] :> type, Infinity]];
@@ -119,8 +122,8 @@ EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\
 
 ContainsPatternHeadsQ[lp_] := ContainsAny[ExtractHeads[lp], {Pattern}]
 StripNamedPattern[lp_] := StripNames[ContainsPatternHeadsQ[lp], lp]
-StripNames[True, lp_LexicalPattern] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
-StripNames[True, (Rule|RuleDelayed)[lp_LexicalPattern,_]] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (lp_LexicalPattern|lp_StringExpression)] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (Rule|RuleDelayed)[(lp_LexicalPattern|lp_StringExpression),_]] := Replace[lp, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False, lp_]:= lp
 
 ContentAlts[List[a_Alternatives]] := a
@@ -191,7 +194,23 @@ LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ, opts:OptionsPattern
 	RES
 	]
 
-MatchTrim[True, matches_List]:= Replace[matches, {x : List[__String] :> StringTrim[x], x_String :> StringTrim[x]}, Infinity]
+(* MatchTrim[True, matches_List]:= Replace[matches, {x : List[__String] :> StringTrim[x], x_String :> StringTrim[x]}, Infinity]
+MatchTrim[False, matches_List]:= matches
+
+MatchTrim[bool:(True|False)][matches_List] := MatchTrim[bool,matches] *)
+
+startTrim[True] := 1
+startTrim[False] := 0
+endTrim[True] := -1
+endTrim[False] := 0
+
+mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
+
+MatchTrim[True, matches_List]:= Query[
+	All,
+	<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
+	][matches]
+		
 MatchTrim[False, matches_List]:= matches
 
 MatchTrim[bool:(True|False)][matches_List] := MatchTrim[bool,matches]
@@ -201,10 +220,17 @@ LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ, opts:OptionsPatter
 	{RX, S = EscapePunctuation[source]},
 	++ArticleIndex;
 	RX = LexicalPatternToStringExpression[S, lp];
-	Map[AssociationThread[{"Match", "Position"} -> #] &]@With[
-		{cases = MatchTrim[OptionValue["StringTrim"]]@DeleteDuplicates@StringCases[source, RX]},
-		Thread[{cases, Map[StringPosition[source, #] &][cases]}]
-		]
+	
+	MatchTrim[OptionValue["StringTrim"]]@
+	Query[
+		GroupBy[#Match &] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|> &]),
+		KeyDrop["Match"] /* Values /* (Flatten[#, 1] &)
+		]@
+	Map[AssociationThread[{"Match", "Position"} -> #] &]@
+	Transpose@{
+		StringCases[source,RX],
+		StringPosition[source, StripNamedPattern[RX]]
+	}
 	]
 
 (* LexicalPattern on Service *)
