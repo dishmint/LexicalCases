@@ -22,7 +22,7 @@ TextType::usage="TextType[type] is a LexicalPattern object representing a type o
 BoundedString::usage="BoundedString[s] wraps s with WordBoundary"
 
 ValidLexicalPatternQ::usage="ValidLexicalPatternQ[input] Returns True if input is a valid LexicalPattern"
-ToTextElementStructure::usage="ToTextElementStructure[lp] renders a LexicalPattern using TextElements"
+LexicalPatternStructure::usage="LexicalPatternStructure[lp] renders a LexicalPattern using TextElements"
 
 ExpandLexicalPattern::usage="ExpandLexicalPattern[lp] expands a lexical pattern into constructs suitable for StringExpression"
 ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
@@ -94,8 +94,8 @@ TextElementFormat[h_] := TextElementFormat[Extract[0][h],Extract[1][h]];
 TextElementFormat[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[h_, args__] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
 
-ToTextElementStructure[lp_LexicalPattern] := TextElementFormat[lp];
-ToTextElementStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[TextElementFormat, StripNamedPattern[lp]];
+LexicalPatternStructure[lp_LexicalPattern] := TextElementFormat[lp];
+LexicalPatternStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[TextElementFormat, StripNamedPattern[lp]];
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
@@ -432,7 +432,7 @@ Module[{above, below},
 		form,
 		"Interpretable" -> Automatic]
 		];
-LexicalSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Dataset", "Source", "TotalMatchCount", "TextElementStructure"}, KeyExistsQ[asc, #] &]
+LexicalSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Dataset", "Source", "TotalMatchCount", "LexicalPatternStructure"}, KeyExistsQ[asc, #] &]
 LexicalSummaryAscQ[_] = False;
 
 (* Direct Properties *)
@@ -440,7 +440,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Data"] := asc["Data"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Source"] := asc["Source"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Dataset"] := asc["Dataset"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
-LexicalSummary[asc_?LexicalSummaryAscQ]["TextElementStructure"] := asc["TextElementStructure"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["LexicalPatternStructure"] := asc["LexicalPatternStructure"]
 
 (* Dataset Properties *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages"] := PercentDataset[LexicalSummary[asc]["CountGroups"], asc["TotalMatchCount"]]
@@ -479,7 +479,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", DeleteStopwords] 
 LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
 
 LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
-LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","TextElementStructure", "Survey"}
+LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","LexicalPatternStructure", "Survey"}
 
 GenerateLexicalSummary[data_?FailureQ, ___] := data
 GenerateLexicalSummary[data_, sourceType_String, lexpatt_] := Monitor[
@@ -490,7 +490,7 @@ GenerateLexicalSummary[data_, sourceType_String, lexpatt_] := Monitor[
 iGenerateLexicalSummary[data_, sourceType_String, lexpatt_] := Module[
 	{MTC, DS = Dataset[data]},
 	MTC = DeleteMissing[GetDatasetCounts[DS, sourceType], 1, 1][Total, "Count"];
-	LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "TextElementStructure" -> ToTextElementStructure[StripNamedPattern@lexpatt] |>]
+	LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "LexicalPatternStructure" -> LexicalPatternStructure[StripNamedPattern@lexpatt] |>]
 ]
 
 GetDatasetCounts[ds_Dataset,"Text"] := ds[All, <|"Match" -> "Match", "Count" -> "Position" /* Length|>]

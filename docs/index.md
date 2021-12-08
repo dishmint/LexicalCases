@@ -30,7 +30,7 @@ LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", Tex
 
 
 ```Mathematica
-ToTextElementStructure[LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]]
+LexicalPatternStructure[LexicalPattern["This ", TextType["Verb"], " a ", TextType["Adjective"], " ", TextType["Noun"], "!"]]
 ```
 ---
 #### Find cases of the pattern in a string

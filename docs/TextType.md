@@ -12,6 +12,6 @@ The Wolfram Language knows about entities, as well as parts of speech. Below, `"
 LexicalPattern["This ", TextType["Verb"]," a ",TextType["Adjective"]," ", TextType["Ocean"|"Person"],"!"]
 ```
 
-Use `ToTextElementStructure` to visualize the pattern structure.
+Use `LexicalPatternStructure` to visualize the pattern structure.
 
 _Note: TextTypes that match large sections of text (Phrase types for example) may cause memory errors when searching over articles._
