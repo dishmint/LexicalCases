@@ -57,6 +57,9 @@ AlternativesToList[a_Alternatives] := List@@a;
 PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
 
+PrependArticleKey[{article_Integer, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
+PrependArticleKey[{article_Integer, data_Missing}] := <|"Article" -> article, "Match" -> data|>
+
 ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
 (* Validate LexicalPattern Objects *)
@@ -169,12 +172,14 @@ Options[LexicalCasesWikipedia] = {
 };
 
 $LexicalCasesSupportedServices = {"Wikipedia"}
-SetAttributes[LexicalCases, Listable]
 LexicalCases::unsupobj=Import::unsupobj;
 GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
 LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
 LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
+
+LexicalCases[files:(List[__File]), lp_?ValidLexicalPatternQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesFileList[files, lp, opts]
+LexicalCases[texts:(List[__String]), lp_?ValidLexicalPatternQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesStringList[texts, lp, opts]
 
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ, opts:OptionsPattern[LexicalCases]]:= Module[
@@ -318,7 +323,7 @@ SearchArticles[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, 
 PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer] := Module[
 	{AMT, MAC},
 		AMT = Thread[{articles, ReplaceEmptyListWithMissing[matches]}];
-		SetSharedVariable[AMT];
+		SetSharedVariable[AMT,ArticleIndex];
 		ArticleIndex=0;
 		MAC = Monitor[
 			ParallelMap[(++ArticleIndex;PrependArticleKey[#])&, AMT],
@@ -329,6 +334,27 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 			];
 		ArticleIndex=.;
 		Flatten[MAC]
+	]
+
+LexicalCasesFileList[files_List, lp_?ValidLexicalPatternQ, opts:OptionsPattern[]] := Module[
+	(* TODO: If Text import fails, Plaintext should be tried, otherwise ignore the file *)
+	{texts = Map[Import[#, "Text"]&][files]},
+	LexicalCasesStringList[texts, lp, opts]
+	]
+
+LexicalCasesStringList[texts_List, lp_?ValidLexicalPatternQ, opts:OptionsPattern[]]:= Module[
+	{LP = lp, SLP = StripNamedPattern[lp], LEN = Length[texts], REN, ard, art, arc, acs, mtl, mtc},
+	REN = Range[LEN];
+	ard = <|"Articles" -> Map[ToString][REN], "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>;
+	
+	art = ard["Articles"];
+	arc = ard["ArticleCount"];
+	acs = ard["ArticleCountString"];
+	mtl = ard["MaxTitleLength"];
+	
+	(* 3 - Search for LexicalPattern *)
+	mtc = SearchArticles[texts, LP, SLP, art, arc, mtl];
+	PackageResults[mtc, art, arc, mtl]
 	]
 
 (* Search wikipedia when only a pattern is given *)
