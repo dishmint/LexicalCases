@@ -147,7 +147,7 @@ WikipediaSearchQuery[wsq_List, lp_LexicalPattern] := Cases[List[(_List|_String).
 ConvertToWikipediaSearchQuery[lp_LexicalPattern]:= Module[
 	{cleanLexicalPattern, stage1},
 	cleanLexicalPattern = DeleteCases[List@@lp, (_TextType | _OptionalLexicalPattern | _OrderlessLexicalPattern), All];
-	stage1 = ReplaceAll[cleanLexicalPattern, {Alternatives -> List}]//DeleteCases[" "];
+	stage1 = ReplaceAll[cleanLexicalPattern, {BoundedString[s_] :> s, Alternatives -> List}] // DeleteCases[" "];
 	Check[WikipediaSearchQuery[stage1, lp] // StringReplace[(" " ..) -> " "] // StringTrim, Return[$Failed, Module]]
 	]
 
