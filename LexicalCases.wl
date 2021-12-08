@@ -194,11 +194,6 @@ LexicalCases[sourcetext_String, lpatt_?ValidLexicalPatternQ, opts:OptionsPattern
 	RES
 	]
 
-(* MatchTrim[True, matches_List]:= Replace[matches, {x : List[__String] :> StringTrim[x], x_String :> StringTrim[x]}, Infinity]
-MatchTrim[False, matches_List]:= matches
-
-MatchTrim[bool:(True|False)][matches_List] := MatchTrim[bool,matches] *)
-
 startTrim[True] := 1
 startTrim[False] := 0
 endTrim[True] := -1
