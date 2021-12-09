@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Wolfram Language supports text search, parsing, and analysis in the following ways: substring search with [StringCases](https://reference.wolfram.com/language/ref/StringCases.html), entity extraction with [TextCases](https://reference.wolfram.com/language/ref/TextCases.html), and entity recognition with [TextContents](https://reference.wolfram.com/language/ref/TextContents.html). When one wants to find specific structures, the [Containing](https://reference.wolfram.com/language/ref/Containing.html) wrapper allows for defining rich, hierarchical lexical structures, but it isn't flexible. LexicalPatterns,  a pattern containing strings, pattern objects and lexical categories, provides this "low-level" control, which LexicalCases compiles into StringExpressions for searching. Below you will find basic [examples](#examples), for more information consult the [Resources](#resources) section.
+The Wolfram Language supports text search, parsing, and analysis in the following ways: substring search with [StringCases](https://reference.wolfram.com/language/ref/StringCases.html), entity extraction with [TextCases](https://reference.wolfram.com/language/ref/TextCases.html), and entity recognition with [TextContents](https://reference.wolfram.com/language/ref/TextContents.html). When one wants to find structures containing specific content types or strings, the [Containing](https://reference.wolfram.com/language/ref/Containing.html) wrapper supports defining rich, hierarchical lexical structures, though it lacks low-level flexibility. LexicalPatterns, a pattern construct containing strings, pattern objects _and_ lexical categories, provides this "low-level" control. LexicalCases then converts the pattern into a [StringExpression](https://reference.wolfram.com/language/ref/StringExpression.html) for searching. With the search results packaged into a [LexicalSummary](./LexicalSummary.md) object, revealing the data is easy with the `"Data"` property, or use the `"Survey"` property for a basic dashboard. Basic [examples](#examples) follow below, for more information consult the [Resources](#resources) section.
 
 ## Installation
 
@@ -51,13 +51,13 @@ LexicalCases["This is a cool thing!", LexicalPattern["This ", TextType["Verb"], 
 ---
 ## Resources
 
-For more information see the following:
+Lexical\* Documentation:
 * [LexicalCases](./LexicalCases.md)
 * [LexicalPattern](./LexicalPattern.md)
 * [LexicalSummary](./LexicalSummary.md)
 * [TextType](./TextType.md)
 
-Related Wolfram Language Documentation:
+Wolfram Language Documentation:
 * [TextCases](https://reference.wolfram.com/language/ref/TextCases.html)
 * [TextContents](https://reference.wolfram.com/language/ref/TextContents.html)
 * [TextContentTypes](https://reference.wolfram.com/language/guide/TextContentTypes.html)

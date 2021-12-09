@@ -15,7 +15,7 @@ Properties:
 * PartOfSpeechGroups — A Dataset of unique words from matches grouped by their part-of-speech classes
 * WordStemCountGroups — A Dataset of word stems from unique words in matches grouped by their count
 * Source — A string indicating the source of the matches ("Text", "Wikipedia", etc...)
-* TextElementStructure — Visualize a LexicalPattern via TextElements
+* LexicalPatternStructure — Visualize a LexicalPattern via TextElements
 * Survey — A Dashboard showing the PercentDataset, PartOfSpeechGroups, and WordStemCountGroups
 
 Use `CountSummaryLowercase` to lowercase the `Counts` or `CountGroups` datasets in post.
