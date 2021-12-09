@@ -2,8 +2,7 @@
 
 ## Introduction
 
-The Wolfram Language supports text search, text analysis, and text parsing in various ways. Search for substrings with [StringCases](https://reference.wolfram.com/language/ref/StringCases.html), entities with [TextCases](https://reference.wolfram.com/language/ref/TextCases.html),  or return all examples of identifiable entities with [TextContents](https://reference.wolfram.com/language/ref/TextContents.html) etc. The current approach to search for lexical patterns is to use the Containing wrapper, though it isn't a flexible strategy. With LexicalCases, one can search for complex and refined lexical patterns.
-
+The Wolfram Language supports text search, parsing, and analysis in the following ways: substring search with [StringCases](https://reference.wolfram.com/language/ref/StringCases.html), entity extraction with [TextCases](https://reference.wolfram.com/language/ref/TextCases.html), and entity recognition with [TextContents](https://reference.wolfram.com/language/ref/TextContents.html). When one wants to find specific structures, the [Containing](https://reference.wolfram.com/language/ref/Containing.html) wrapper allows for defining rich, hierarchical lexical structures, but it isn't flexible. LexicalPatterns,  a pattern containing strings, pattern objects and lexical categories, provides this "low-level" control, which LexicalCases compiles into StringExpressions for searching. Below you will find basic [examples](#examples), for more information consult the [Resources](#resources) section.
 
 ## Installation
 
