@@ -1,6 +1,11 @@
 # LexicalCases
 
-## Introduction
+* [Overview](#introduction)
+* [Installation](#installation)
+* [Examples](#examples)
+* [Resources](#resources)
+
+## Overview
 
 The Wolfram Language can search for substrings with [StringCases](https://reference.wolfram.com/language/ref/StringCases.html), extract entities with [TextCases](https://reference.wolfram.com/language/ref/TextCases.html), and offer information about these entities with [TextContents](https://reference.wolfram.com/language/ref/TextContents.html). When one wants to find structures containing specific content types or strings, the [Containing](https://reference.wolfram.com/language/ref/Containing.html) wrapper might suffice, allowing one to define rich, hierarchical lexical structures, though it lacks low-level flexibility. A [LexicalPattern](./LexicalPattern.md), which contains strings, pattern objects and lexical categories, provides this "low-level" control. LexicalCases extracts substrings matching the lexical pattern and packages results into a [LexicalSummary](./LexicalSummary.md) object. Revealing the data is easy with the `"Data"` property, or use the `"Survey"` property for a basic dashboard. Basic [examples](#examples) follow below, for more information consult the [Resources](#resources) section.
 
