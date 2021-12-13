@@ -83,12 +83,12 @@ PostProcessAlternatives[te_] := te
 
 SetAttributes[TextElementFormat, HoldAll]
 TextElementFormat[LexicalPattern[args___]] := TextElementFormat[LexicalPattern,args];
-TextElementFormat[TextType[args_String]] := TextElementFormat[TextType,args];
-TextElementFormat[TextType[args_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[args]]], <|"GrammaticalUnit" -> "Alternatives"|>];
+TextElementFormat[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
+TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[OptionalLexicalPattern[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[LexicalPatternSequence[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Sequence"|>];
 TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
-TextElementFormat[s_String] := s;
+TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 TextElementFormat[s_Symbol] := s;
 TextElementFormat[h_] := TextElementFormat[Extract[0][h],Extract[1][h]];
 TextElementFormat[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];

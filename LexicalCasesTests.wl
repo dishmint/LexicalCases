@@ -100,14 +100,18 @@ $LexicalCasesTests := {
 	],
 	(* LexicalPatternStructure *)
 	VerificationTest[
-		LexicalPatternStructure[LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
+		LexicalPatternStructure[LexicalPattern["computer" | "computers", TextType["Verb"]]],
 		TextElement[
-			{
-				TextElement[{Alternatives["computer", "computers"]}, Association["GrammaticalUnit" -> "Alternatives"]],
-				" ",
-				TextElement["Verb",Association["GrammaticalUnit" -> "TextType"]]
-			},
-		Association["GrammaticalUnit" -> "LexicalPattern"]
+			List[
+				TextElement[
+					List[
+						Alternatives[TextElement[List["computer"],Association[Rule["GrammaticalUnit","Text"]]],TextElement[List["computers"],Association[Rule["GrammaticalUnit","Text"]]]]
+						],
+					Association[Rule["GrammaticalUnit","Alternatives"]]
+					],
+				TextElement[List["Verb"],Association[Rule["GrammaticalUnit","TextType"]]]
+				],
+			Association[Rule["GrammaticalUnit","LexicalPattern"]]
 		]
 	,
 	"TestID" -> "LexicalPatternStructureTest1"
