@@ -206,6 +206,8 @@ endTrim[False] := 0
 
 mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
 
+mTrimPositions[_,p_]:= p
+
 MatchTrim[True, matches_List]:= Query[
 	All,
 	<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
@@ -316,6 +318,7 @@ SearchArticles[texts_List, lp_?ValidLexicalPatternQ, slp_?ValidLexicalPatternQ, 
 				ProgressIndicator[Dynamic[ArticleIndex],{0,articleCount}]," ",Dynamic[NumberForm[PercentForm[N[ArticleIndex/articleCount]],{3,2}]]
 				}]
 			];
+		ArticleIndex=.;
 		MatchCount=.;
 		MAT
 	]
