@@ -98,9 +98,9 @@ $LexicalCasesTests := {
 				],
 		"TestID" -> "LexicalPatternToStringExpressionTest1"
 	],
-	(* ToTextElementStructure *)
+	(* LexicalPatternStructure *)
 	VerificationTest[
-		ToTextElementStructure[LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
+		LexicalPatternStructure[LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
 		TextElement[
 			{
 				TextElement[{Alternatives["computer", "computers"]}, Association["GrammaticalUnit" -> "Alternatives"]],
@@ -110,7 +110,7 @@ $LexicalCasesTests := {
 		Association["GrammaticalUnit" -> "LexicalPattern"]
 		]
 	,
-	"TestID" -> "ToTextElementStructureTest1"
+	"TestID" -> "LexicalPatternStructureTest1"
 	],
 	(* Short Strings *)
 	VerificationTest[
