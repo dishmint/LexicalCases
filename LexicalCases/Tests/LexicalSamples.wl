@@ -1,18 +1,4 @@
-(* ::Package:: *)
-
-(* ::Title:: *)
-(*LexicalPatternCases*)
-
-
-(* ::Abstract:: *)
-(*Extract and analyze text type sequences with the Wolfram Language.*)
-
-BeginPackage["LexicalCasesTests`"]
-
-Needs["LexicalCases`"]
-(* Main *)
-LexicalCasesTestReport::usage="LexicalPatternTestReport returns a TestReport for LexicalPattern components."
-$LexicalCasesTests::usage="A list of VerificationTests for LexicalPattern components"
+BeginPackage["LexicalSamples`"]
 $SampleStringShort::usage="A short example string"
 $SampleStringLong::usage="A long example string"
 $SampleLexicalPattern::usage="A sample text pattern used for testing"
@@ -65,66 +51,5 @@ touchscreen). Peripheral devices allow information to be retrieved \
 from an external source and they enable the result of operations to \
 be saved and retrieved."
 $SampleLexicalPattern = LexicalPattern[TextType["Adjective"], " key lime pie"];
-$LexicalCasesTests := {
-	(* ContentAssociation *)
-	VerificationTest[
-		ContentAssociation[$SampleStringShort, $SampleLexicalPattern],
-		Association["Adjective" \[Rule] "best" | "key"],
-		"TestID" -> "ContentAssociationTest1"
-	],
-	(* ConvertToWikipediaSearchQuery *)
-	VerificationTest[
-		ConvertToWikipediaSearchQuery[$SampleLexicalPattern],
-		"key lime pie",
-		"TestID" -> "ConvertToWikipediaSearchQueryTest1"
-	],
-	VerificationTest[
-		ConvertToWikipediaSearchQuery[LexicalPattern[TextType["Determiner"], " ", "king" | "queen"]],
-		{"king", "queen"},
-		"TestID" -> "ConvertToWikipediaSearchQueryTest2"
-	],
-	(* LexicalPatternToStringExpression *)
-	VerificationTest[
-		LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
-			StringExpression[
-				Alternatives["computer","computers"]," ",
-				Except[WordCharacter,Alternatives[WordBoundary," ",StartOfString,StartOfLine]],
-				Alternatives[
-					"is","can","be","programmed","carry","perform","known","enable","includes","operating","needed","used","may","refer","are","linked","function","use","included","links","were","meant","have",
-					"aided","doing","built","automate","guiding","did","specialized","calculating","developed","followed","integrated","leading","been","increasing","counts","predicted","consists",
-					"carries","change","stored","include","allow","retrieved","saved"
-				],
-				Except[WordCharacter,Alternatives[WordBoundary," ",EndOfString,EndOfLine]]
-				],
-		"TestID" -> "LexicalPatternToStringExpressionTest1"
-	],
-	(* LexicalPatternStructure *)
-	VerificationTest[
-		LexicalPatternStructure[LexicalPattern["computer" | "computers", TextType["Verb"]]],
-		TextElement[
-			List[
-				TextElement[
-					List[
-						Alternatives[TextElement[List["computer"],Association[Rule["GrammaticalUnit","Text"]]],TextElement[List["computers"],Association[Rule["GrammaticalUnit","Text"]]]]
-						],
-					Association[Rule["GrammaticalUnit","Alternatives"]]
-					],
-				TextElement[List["Verb"],Association[Rule["GrammaticalUnit","TextType"]]]
-				],
-			Association[Rule["GrammaticalUnit","LexicalPattern"]]
-		]
-	,
-	"TestID" -> "LexicalPatternStructureTest1"
-	],
-	(* Short Strings *)
-	VerificationTest[
-		LexicalCases[$SampleStringShort, $SampleLexicalPattern]["Data"],
-		{<|"Match" -> "best key lime pie", "Position" -> {{5, 21}}|>},
-		"TestID" -> "ShortStringTest1"
-		]
-	(* Long Strings *)
-};
-
-LexicalCasesTestReport := TestReport[$LexicalCasesTests]
 End[]
 EndPackage[]

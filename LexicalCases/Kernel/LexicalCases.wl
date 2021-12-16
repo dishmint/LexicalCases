@@ -33,7 +33,6 @@ $LexicalCasesSupportedServices::usage="List of supported services"
 $LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
 TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
 CountSummaryLowercase::usage="CountSummaryLowercase[ds] Makes matches lowercase and merges rows that now have the same match."
-WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
 Begin["Private`"]
 
 (* Utility *)
