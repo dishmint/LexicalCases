@@ -1,0 +1,807 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30240,        797]
+NotebookOptionsPosition[     24915,        694]
+NotebookOutlinePosition[     26679,        737]
+CellTagsIndexPosition[     26636,        734]
+WindowTitle->LexicalCases
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES GUIDE", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "3453072f-cef0-46a0-828f-7444d9483a06"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "dbd4144b-dd8b-4588-9cf9-e48e732774ed"],
+        Background->RGBColor[0.85098, 0.396078, 0],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Functions",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "75bee2fb-24f2-44e3-b812-c9f8790ffa8f"]
+         }],ExpressionUUID->"34a59eae-a077-4296-8b8b-d45b4b3b63d8"],
+         StripOnInput->False], {"\<\"Association\"\>":>
+        Documentation`HelpLookup[
+        "paclet:ref/Association"], "\<\"BoundedString\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/BoundedString"], \
+"\<\"ContentAssociation\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/ContentAssociation"], \
+"\<\"ConvertToWikipediaSearchQuery\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/ConvertToWikipediaSearchQuery"], \
+"\<\"CountSummaryLowercase\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/CountSummaryLowercase"], \
+"\<\"ExpandLexicalPattern\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/ExpandLexicalPattern"], \
+"\<\"ExtractContentTypes\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/ExtractContentTypes"], \
+"\<\"LexicalCases\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalCases"], "\<\"LexicalPattern\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalPattern"], \
+"\<\"LexicalPatternSequence\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalPatternSequence"], \
+"\<\"LexicalPatternStructure\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalPatternStructure"], \
+"\<\"LexicalPatternToStringExpression\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalPatternToStringExpression"], \
+"\<\"LexicalSummary\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalSummary"], \
+"\<\"OptionalLexicalPattern\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/OptionalLexicalPattern"], \
+"\<\"OrderlessLexicalPattern\"\>":>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/OrderlessLexicalPattern"], \
+"\<\"StringExpression\"\>":>Documentation`HelpLookup[
+        "paclet:ref/StringExpression"], "\<\"TextElementFormat\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/TextElementFormat"], "\<\"TextType\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/TextType"], "\<\"ValidLexicalPatternQ\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/ValidLexicalPatternQ"], "\<\"WikipediaSearch\
+\"\>":>Documentation`HelpLookup["paclet:ref/WikipediaSearch"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"GuideFunction"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f71f2f18-6d85-4338-8408-521342feefac"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "5df72f6e-ccc0-44dd-a141-ae0a4a42d0ce"]
+         }],ExpressionUUID->"c1060e5d-7465-466f-8cb8-b9a52d96eee8"],
+         StripOnInput->False], {"\<\"Text Content Types\"\>":>
+        Documentation`HelpLookup[
+        "paclet:guide/TextContentTypes"], "\<\"Text Manipulation\"\>":>
+        Documentation`HelpLookup[
+        "paclet:guide/ProcessingTextualData"], "\<\"Text Normalization\"\>":>
+        Documentation`HelpLookup[
+        "paclet:guide/TextNormalization"], "\<\"Text Analysis\"\>":>
+        Documentation`HelpLookup["paclet:guide/TextAnalysis"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"GuideMoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "ca8bf41f-0a2c-44c9-be34-5bdc554def1c"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tutorials",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "ce1cc447-b79c-4f3f-871f-aeaee9654432"]
+         }],ExpressionUUID->"53953f78-d9c7-4cfa-9d8e-7da0893d597f"],
+         StripOnInput->False], {"\<\"LexicalCases Overview\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/tutorial/LexicalCasesOverview"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"GuideTutorial"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9c695ae1-12d8-4160-a3a1-86d6873633cb"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "26b9554c-156c-416f-bf78-30709de6ad0d"]
+         }],ExpressionUUID->"b2515b5b-637f-4912-b184-e4440f36ed60"],
+         StripOnInput->False], {"\<\"LexicalCases/guide/LexicalCases\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["LexicalCases/guide/LexicalCases"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/LexicalCases/guide/\
+LexicalCases.html"], StandardForm]], "Input", TextClipboardType -> 
+               "PlainText"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$69502], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "LexicalCases/guide/LexicalCases" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "3cd34a6b-6c7d-4dd1-8e25-494855b85ec9"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "4a1f5719-032d-4144-a0a5-49da0b8141ee"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"25e5dd6e-576b-481f-bd52-16fd59fc5775"],
+
+Cell[CellGroupData[{
+
+Cell["LexicalCases", "GuideTitle",
+ CellID->2114834589,ExpressionUUID->"97a5dc15-c5eb-48d7-a53b-5139fa2661b8"],
+
+Cell["\<\
+The built-in functions TextCases and TextContents will find text \
+corresponding to entities or matching lexical structures. LexicalCases \
+provides low-level lexical structure representation.\
+\>", "GuideAbstract",
+ CellID->1023095826,ExpressionUUID->"f9fb54b9-bd63-4898-9b31-a3d721a1356b"],
+
+Cell["\t", "GuideDelimiterSubsection",ExpressionUUID->"037f2fc3-4225-4575-a6d3-6d51b8772ffb"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalCases"]], "paclet:LexicalCases/ref/LexicalCases", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "114076bb-4aa5-46d5-bf52-284c97c599be"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " find text matching a LexicalPattern"
+}], "GuideText",
+ CellID->22646660,ExpressionUUID->"c063885e-d51f-4e68-8ca2-10dcfee078e1"],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->1213822863,ExpressionUUID->"f2ca82b2-a629-4802-8ce0-e56060fb4f52"],
+
+Cell[CellGroupData[{
+
+Cell["Lexical Patterns", "GuideFunctionsSubsection",
+ CellID->2025035330,ExpressionUUID->"86fa254b-4288-48d8-ba44-2c625f8d96f9"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPattern"]], "paclet:LexicalCases/ref/LexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "5d115013-3cac-45b3-95c1-f0d10ce4f4d9"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "a symbolic string expression including symbolic string and lexical \
+patterns"
+}], "GuideText",
+ CellID->517809101,ExpressionUUID->"4768ea11-cc1b-44f5-8736-259d369b308e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPatternSequence"]], 
+    "paclet:LexicalCases/ref/LexicalPatternSequence", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "da727910-b833-446a-be79-f4e6ce831075"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["OptionalLexicalPattern"]], 
+    "paclet:LexicalCases/ref/OptionalLexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "9e502a1a-fa52-4d05-89e1-0829b8ec577e"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["OrderlessLexicalPattern"]], 
+    "paclet:LexicalCases/ref/OrderlessLexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "2c6ac173-7bd7-426b-9a9b-caa3114e6136"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["TextType"]], "paclet:LexicalCases/ref/TextType", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "b618cb53-e8eb-45a8-a9ba-58087b00c5a8"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BoundedString"]], "paclet:LexicalCases/ref/BoundedString", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "95550e72-aeb5-4cd9-bbd5-6b15df10bb1d"]
+}], "InlineGuideFunctionListing",
+ CellID->1773695588,ExpressionUUID->"fe43ae21-1d8f-497f-b3cb-296f642ae7c9"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ValidLexicalPatternQ"]], 
+    "paclet:LexicalCases/ref/ValidLexicalPatternQ", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "cd4d6df6-d0fe-4188-b274-3a2e10453073"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "test if a LexicalPattern is valid"
+}], "GuideText",
+ CellID->1801616000,ExpressionUUID->"2f47848d-1e13-43f5-b5a0-97d1279e82ca"],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->2020564815,ExpressionUUID->"3a8a08fc-fa65-4e79-a148-b1dffc878a5a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "GuideFunctionsSubsection",
+ CellID->1473935694,ExpressionUUID->"b0a4ab4d-e21e-489e-8fcf-acd64b0688ea"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalSummary"]], "paclet:LexicalCases/ref/LexicalSummary", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "b741613e-e00c-43ad-b050-fed31c817d3f"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " results object"
+}], "GuideText",
+ CellID->2077460040,ExpressionUUID->"8b4bd95f-e57e-494c-9748-bd9129ecbe20"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CountSummaryLowercase"]], 
+    "paclet:LexicalCases/ref/CountSummaryLowercase", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "7786243e-6fae-4b9f-86b2-d5174a01c58e"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " lowercase ",
+ Cell["\"Counts\"", "InlineFunctionSansUnlinked",ExpressionUUID->
+  "4c00c307-d4de-4640-bcae-0fdb610cdef3"],
+ " and ",
+ Cell["\"CountGroups\"", "InlineFunctionSansUnlinked",ExpressionUUID->
+  "2be4014c-e31a-4b39-b41c-c0eaec543f06"],
+ " datasets"
+}], "GuideText",
+ CellID->235428291,ExpressionUUID->"7f3ed888-eb13-4589-98d7-7b74880c6581"],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->126062960,ExpressionUUID->"cd645c2f-4e9b-4ffc-9f17-afa126360544"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Visualization", "GuideFunctionsSubsection",
+ CellID->1321292778,ExpressionUUID->"c715bac6-0f67-4b9d-bb3f-3918d7756b48"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPatternStructure"]], 
+    "paclet:LexicalCases/ref/LexicalPatternStructure", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "7faf7fb4-bacd-4176-87fc-cda3492a163d"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "visualize the structure of a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPattern"]], "paclet:LexicalCases/ref/LexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "f4b31877-a112-4569-ab85-8e226c6e16a7"]
+}], "GuideText",
+ CellID->249278582,ExpressionUUID->"b2c0e518-c2fa-4128-8f80-b77a1f50033c"],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->2032016024,ExpressionUUID->"18bb5994-dbbd-4b26-b6fd-5bb2949527b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Utility", "GuideFunctionsSubsection",
+ CellID->660877127,ExpressionUUID->"1d44f592-721d-4e1c-8964-5221c16f8375"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExtractContentTypes"]], 
+    "paclet:LexicalCases/ref/ExtractContentTypes", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "3e9c941a-48ec-4314-95c4-33890a434a1c"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "extract content types from a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPattern"]], "paclet:LexicalCases/ref/LexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "91ca5fbe-577f-4218-8f2f-c82c11ebfde6"]
+}], "GuideText",
+ CellID->133910088,ExpressionUUID->"df66a001-217d-4df5-a66e-b84661dd056d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ContentAssociation"]], 
+    "paclet:LexicalCases/ref/ContentAssociation", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "d7404982-a675-4a49-9b63-09aa76237d2d"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " generate a type-content ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Association"]], "paclet:ref/Association"},
+   "RefLink",
+   BaseStyle->{"InlineFunctionSans"}]], "InlineFunctionSans",ExpressionUUID->
+  "bf112363-71ab-482e-bfb9-f12d27e493ec"],
+ " from a given text"
+}], "GuideText",
+ CellID->81255735,ExpressionUUID->"34306cae-d8ad-421b-98a1-1763a53e14bc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExpandLexicalPattern"]], 
+    "paclet:LexicalCases/ref/ExpandLexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "cfab5928-0401-4781-ae72-ac1ce694f5f1"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "expand LexicalPattern objects into constructs suitable for \
+StringExpression"
+}], "GuideText",
+ CellID->1040672925,ExpressionUUID->"7a4286f6-5484-4c52-a73e-7a08f2dfa072"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPatternToStringExpression"]], 
+    "paclet:LexicalCases/ref/LexicalPatternToStringExpression", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "04b2a6fe-9bcc-48b1-bb6a-6786b7dcabcc"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " convert a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPattern"]], "paclet:LexicalCases/ref/LexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "a86e2928-683c-4de5-bf32-21a4aa0b58ae"],
+ " to a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StringExpression"]], "paclet:ref/StringExpression"},
+   "RefLink",
+   BaseStyle->{"InlineFunctionSans"}]], "InlineFunctionSans",ExpressionUUID->
+  "0f71055a-60df-4bf7-86da-66a73ab6f59f"]
+}], "GuideText",
+ CellID->8068905,ExpressionUUID->"5846a9df-46eb-4aed-86b6-1a8392201598"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ConvertToWikipediaSearchQuery"]], 
+    "paclet:LexicalCases/ref/ConvertToWikipediaSearchQuery", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "5f8172a2-7bc4-4867-8b65-db99f65a2768"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "converts a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPattern"]], "paclet:LexicalCases/ref/LexicalPattern", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "798e8c34-1f74-4ffc-9542-f421c708b306"],
+ " into keywords for ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["WikipediaSearch"]], "paclet:ref/WikipediaSearch"},
+   "RefLink",
+   BaseStyle->{"InlineFunctionSans"}]], "InlineFunctionSans",ExpressionUUID->
+  "993fbd01-1b35-485b-95f7-25ed71cc3764"],
+ " to use"
+}], "GuideText",
+ CellID->2108855876,ExpressionUUID->"105c5763-2b2b-4afd-a065-7d66cc637d65"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["TextElementFormat"]], 
+    "paclet:LexicalCases/ref/TextElementFormat", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "a76ed27c-9895-4091-8c09-21ac2958ab61"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " ",
+ "see how a lexical token will render in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalPatternStructure"]], 
+    "paclet:LexicalCases/ref/LexicalPatternStructure", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",ExpressionUUID->
+  "599a3a12-845c-48b9-aa00-7b3c46ac2a67"],
+ "."
+}], "GuideText",
+ CellID->45685383,ExpressionUUID->"137423d9-e28a-4cc1-bab3-85182afabe1e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox["Tutorials", "GuideTutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases Overview"]], 
+           "paclet:LexicalCases/tutorial/LexicalCasesOverview"},
+          "RefLinkPlain",
+          BaseStyle->{"GuideTutorial"}]], "GuideTutorial",ExpressionUUID->
+         "95f12633-af68-4153-8c9f-ca82108716c6"]}]}
+     }]}
+  }]], "GuideTutorialsSection",ExpressionUUID->"793cfb08-0643-404d-a609-\
+179615bbf372"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "GuideMoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Text Content Types"]], "paclet:guide/TextContentTypes"},
+          
+          "RefLinkPlain",
+          BaseStyle->{"GuideMoreAbout"}]], "GuideMoreAbout",ExpressionUUID->
+         "1ed01271-27b5-4af8-b693-8ccbaf310030"]}]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Text Manipulation"]], 
+           "paclet:guide/ProcessingTextualData"},
+          "RefLinkPlain",
+          BaseStyle->{"GuideMoreAbout"}]], "GuideMoreAbout",ExpressionUUID->
+         "9300761b-6fbf-4698-9726-de6aa18d61a2"]}]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Text Normalization"]], "paclet:guide/TextNormalization"},
+          "RefLinkPlain",
+          BaseStyle->{"GuideMoreAbout"}]], "GuideMoreAbout",ExpressionUUID->
+         "d908b565-1be8-4a34-b897-15e3fdc71799"]}]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Text Analysis"]], "paclet:guide/TextAnalysis"},
+          "RefLinkPlain",
+          BaseStyle->{"GuideMoreAbout"}]], "GuideMoreAbout",ExpressionUUID->
+         "bcd54463-a49c-4992-8a02-89c8d3ea4982"]}]}
+     }]}
+  }]], "GuideMoreAboutSection",ExpressionUUID->"4287b2bf-c222-4fad-b31b-\
+20be7f559f3b"],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{29},
+     "Spacer1"], GridBox[{
+      {
+       RowBox[{
+        TemplateBox[{17},
+         "Spacer1"], 
+        StyleBox[
+         RowBox[{"Related", " ", "Links"}], "GuideRelatedLinksSection"]}]},
+      {Cell[TextData[Cell[BoxData[
+        TemplateBox[{
+          Cell[
+           TextData["LexicalCases GitHub repository"]], 
+          "https://github.com/dishmint/LexicalCases"},
+         "WebLink",
+         BaseStyle->{"GuideRelatedLinks"}]],ExpressionUUID->
+        "512117fd-8b1f-4414-9c7e-47f945e2a1c1"]], "GuideText",ExpressionUUID->
+        "740d150d-82f0-4b7f-80d7-5ae4c631ad8c"]}
+     }]}
+  }]], "GuideRelatedLinksSection",ExpressionUUID->"32487d81-c2b7-4bf6-b11f-\
+f476a7dc437c"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"39516902-1b46-4fbe-a9db-2985af722581"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"LexicalCases",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> {"", ""}, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 17, 19, 42, 35.852368}", 
+    "history" -> {"??", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Guide", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "The built-in functions TextCases and TextContents will find text \
+corresponding to entities or matching lexical structures. LexicalCases \
+provides low-level lexical structure representation.", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$69440, 
+    "title" -> "LexicalCases", "titlemodifier" -> "", "windowtitle" -> 
+    "LexicalCases", "type" -> "Guide", "uri" -> 
+    "LexicalCases/guide/LexicalCases", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CacheGraphics->False,
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"a92335ca-dcbf-4551-a3e0-5f74960532e9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 8664, 194, 70, "AnchorBarGrid",ExpressionUUID->"25e5dd6e-576b-481f-bd52-16fd59fc5775",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[9273, 219, 110, 1, 70, "GuideTitle",ExpressionUUID->"97a5dc15-c5eb-48d7-a53b-5139fa2661b8",
+ CellID->2114834589],
+Cell[9386, 222, 301, 5, 70, "GuideAbstract",ExpressionUUID->"f9fb54b9-bd63-4898-9b31-a3d721a1356b",
+ CellID->1023095826],
+Cell[9690, 229, 93, 0, 70, "GuideDelimiterSubsection",ExpressionUUID->"037f2fc3-4225-4575-a6d3-6d51b8772ffb"],
+Cell[9786, 231, 480, 13, 70, "GuideText",ExpressionUUID->"c063885e-d51f-4e68-8ca2-10dcfee078e1",
+ CellID->22646660],
+Cell[10269, 246, 114, 1, 70, "GuideDelimiterSubsection",ExpressionUUID->"f2ca82b2-a629-4802-8ce0-e56060fb4f52",
+ CellID->1213822863],
+Cell[CellGroupData[{
+Cell[10408, 251, 128, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"86fa254b-4288-48d8-ba44-2c625f8d96f9",
+ CellID->2025035330],
+Cell[10539, 254, 532, 15, 70, "GuideText",ExpressionUUID->"4768ea11-cc1b-44f5-8736-259d369b308e",
+ CellID->517809101],
+Cell[11074, 271, 2106, 61, 70, "InlineGuideFunctionListing",ExpressionUUID->"fe43ae21-1d8f-497f-b3cb-296f642ae7c9",
+ CellID->1773695588],
+Cell[13183, 334, 506, 15, 70, "GuideText",ExpressionUUID->"2f47848d-1e13-43f5-b5a0-97d1279e82ca",
+ CellID->1801616000],
+Cell[13692, 351, 114, 1, 70, "GuideDelimiterSubsection",ExpressionUUID->"3a8a08fc-fa65-4e79-a148-b1dffc878a5a",
+ CellID->2020564815]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13843, 357, 119, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"b0a4ab4d-e21e-489e-8fcf-acd64b0688ea",
+ CellID->1473935694],
+Cell[13965, 360, 465, 13, 70, "GuideText",ExpressionUUID->"8b4bd95f-e57e-494c-9748-bd9129ecbe20",
+ CellID->2077460040],
+Cell[14433, 375, 726, 20, 70, "GuideText",ExpressionUUID->"7f3ed888-eb13-4589-98d7-7b74880c6581",
+ CellID->235428291],
+Cell[15162, 397, 113, 1, 70, "GuideDelimiterSubsection",ExpressionUUID->"cd645c2f-4e9b-4ffc-9f17-afa126360544",
+ CellID->126062960]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15312, 403, 125, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"c715bac6-0f67-4b9d-bb3f-3918d7756b48",
+ CellID->1321292778],
+Cell[15440, 406, 798, 23, 70, "GuideText",ExpressionUUID->"b2c0e518-c2fa-4128-8f80-b77a1f50033c",
+ CellID->249278582],
+Cell[16241, 431, 114, 1, 70, "GuideDelimiterSubsection",ExpressionUUID->"18bb5994-dbbd-4b26-b6fd-5bb2949527b9",
+ CellID->2032016024]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16392, 437, 118, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"1d44f592-721d-4e1c-8964-5221c16f8375",
+ CellID->660877127],
+Cell[16513, 440, 790, 23, 70, "GuideText",ExpressionUUID->"df66a001-217d-4df5-a66e-b84661dd056d",
+ CellID->133910088],
+Cell[17306, 465, 743, 22, 70, "GuideText",ExpressionUUID->"34306cae-d8ad-421b-98a1-1763a53e14bc",
+ CellID->81255735],
+Cell[18052, 489, 550, 16, 70, "GuideText",ExpressionUUID->"7a4286f6-5484-4c52-a73e-7a08f2dfa072",
+ CellID->1040672925],
+Cell[18605, 507, 1045, 30, 70, "GuideText",ExpressionUUID->"5846a9df-46eb-4aed-86b6-1a8392201598",
+ CellID->8068905],
+Cell[19653, 539, 1071, 32, 70, "GuideText",ExpressionUUID->"105c5763-2b2b-4afd-a065-7d66cc637d65",
+ CellID->2108855876],
+Cell[20727, 573, 824, 25, 70, "GuideText",ExpressionUUID->"137423d9-e28a-4cc1-bab3-85182afabe1e",
+ CellID->45685383]
+}, Open  ]]
+}, Open  ]],
+Cell[21578, 602, 741, 19, 70, "GuideTutorialsSection",ExpressionUUID->"793cfb08-0643-404d-a609-179615bbf372"],
+Cell[22322, 623, 1768, 44, 70, "GuideMoreAboutSection",ExpressionUUID->"4287b2bf-c222-4fad-b31b-20be7f559f3b"],
+Cell[24093, 669, 737, 21, 70, "GuideRelatedLinksSection",ExpressionUUID->"32487d81-c2b7-4bf6-b11f-f476a7dc437c"],
+Cell[24833, 692, 78, 0, 70, "FooterCell",ExpressionUUID->"39516902-1b46-4fbe-a9db-2985af722581"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

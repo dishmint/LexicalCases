@@ -10,29 +10,31 @@
 
 BeginPackage["LexicalCases`"]
 (* Main *)
-LexicalCases::usage="LexicalCases[source, texlpatt] gives the text sequences in source that match the text pattern texlpatt."
+LexicalCases
+$LexicalCasesSupportedServices
+$LexicalPatternValidHeads
 
 (* LexicalPatterns *)
-LexicalPattern::usage="LexicalPattern[t1, t2, ...] is a LexicalPattern object matching (t1, t2, ...) in the fixed order given."
-OptionalLexicalPattern::usage="OptionalLexicalPattern[lp] matches 0 or 1 instances of lp"
-OrderlessLexicalPattern::usage="OrderlessLexicalPattern[p1, p2, ...] matches p's in any order"
-LexicalPatternSequence::usage="LexicalPatternSequence[p1, p2, ...] represents a sequence of p's"
-LexicalPatternToStringExpression::usage="LexicalPatternToStringExpression[source, lp] Converts lexical pattern lp to a StringExpression"
-TextType::usage="TextType[type] is a LexicalPattern object representing a type of text content."
-BoundedString::usage="BoundedString[s] wraps s with WordBoundary"
+LexicalPattern
+OptionalLexicalPattern
+OrderlessLexicalPattern
+LexicalPatternSequence
+TextType
+BoundedString
 
-ValidLexicalPatternQ::usage="ValidLexicalPatternQ[input] Returns True if input is a valid LexicalPattern"
-LexicalPatternStructure::usage="LexicalPatternStructure[lp] renders a LexicalPattern using TextElements"
+LexicalPatternToStringExpression
+ValidLexicalPatternQ
 
-ExpandLexicalPattern::usage="ExpandLexicalPattern[lp] expands a lexical pattern into constructs suitable for StringExpression"
-ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
-ExtractContentTypes::usage="ExtractContentTypes[lp] extract content types from a lexical pattern"
-LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Properties\" subvalue for a list of properties."
-ConvertToWikipediaSearchQuery::usage="For development purposes only, convert LexicalPattern to WikipediaSearch query strings"
-$LexicalCasesSupportedServices::usage="List of supported services"
-$LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
-TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
-CountSummaryLowercase::usage="CountSummaryLowercase[ds] Makes matches lowercase and merges rows that now have the same match."
+ExpandLexicalPattern
+ContentAssociation
+ExtractContentTypes
+LexicalSummary
+ConvertToWikipediaSearchQuery
+CountSummaryLowercase
+
+(* Display*)
+LexicalPatternStructure
+TextElementFormat
 Begin["Private`"]
 
 (* Utility *)
@@ -85,6 +87,7 @@ TextElementFormat[LexicalPattern[args___]] := TextElementFormat[LexicalPattern,a
 TextElementFormat[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[OptionalLexicalPattern[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
+TextElementFormat[OrderlessLexicalPattern[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Orderless"|>];
 TextElementFormat[LexicalPatternSequence[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Sequence"|>];
 TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];

@@ -1,0 +1,217 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8102,        207]
+NotebookOptionsPosition[      5775,        153]
+NotebookOutlinePosition[      7680,        201]
+CellTagsIndexPosition[      7637,        198]
+WindowTitle->OrderlessLexicalPattern
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "7dee5819-b843-4301-b089-25639b32ddf1"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "4b9541b0-61c3-417e-a92a-f802c791a788"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "a8bb3e94-5e94-4ef1-93a6-127cb7017aa7"]
+        }],ExpressionUUID->"1acbf730-99f0-40d8-b0b0-722663f02887"],
+        StripOnInput->
+         False], {"\<\"LexicalCases/ref/OrderlessLexicalPattern\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/OrderlessLexicalPattern"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+OrderlessLexicalPattern.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$75442], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/OrderlessLexicalPattern" <> ".html"], None}]}]},
+       
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "88e0228f-037f-4c38-8eff-b75a9b818a84"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "8c661a94-5a36-4c46-abd6-d7dc3853e4cf"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"7b9c5d5f-afa7-447c-8db0-60f39981a59d"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"0d694c7b-21eb-447b-9edb-ad767cdd4a64"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "OrderlessLexicalPattern", "ObjectName",ExpressionUUID->
+      "42a49da5-aa70-466a-895e-47d246a932b7"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"786a9fe7-4112-436f-a2c7-f6ed78e1b1a0"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "df31b8c5-d30a-4cf6-a1f4-287f047cc9da"]
+    }],ExpressionUUID->"2c53ecef-75af-45bf-a88e-4dc004cf4e1c"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"698d6725-6f35-4ce9-909d-\
+16a34df6bd11"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["OrderlessLexicalPattern"]], 
+         "paclet:LexicalCases/ref/OrderlessLexicalPattern", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["p", "TI"], 
+         StyleBox["1", "TR"]], ",", 
+        SubscriptBox[
+         StyleBox["p", "TI"], 
+         StyleBox["2", "TR"]], ",", " ", 
+        StyleBox["\[Ellipsis]", "TR"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "ddce6a0b-c659-48f9-a507-a389cee2ca17"],
+     "\[LineSeparator]matches p's in any order"
+    }],ExpressionUUID->"82902fcf-f690-4cdc-a2eb-a1c5e321c902"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->582299356,ExpressionUUID->"1aab46fa-1f48-4a9d-a251-dc4812710481"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"ecf3c424-7f8b-4b11-898e-1018cbf07884"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"OrderlessLexicalPattern",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 17, 19, 42, 40.905890}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "OrderlessLexicalPattern[p1, p2, ...] matches p's in any order", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "OrderlessLexicalPattern",
+     "titlemodifier" -> "", "windowtitle" -> "OrderlessLexicalPattern", 
+    "type" -> "Symbol", "uri" -> "LexicalCases/ref/OrderlessLexicalPattern", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"234c98a7-fe20-4aac-80ab-03cd2e424e68"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 3403, 79, 57, "AnchorBarGrid",ExpressionUUID->"7b9c5d5f-afa7-447c-8db0-60f39981a59d",
+ CellID->1],
+Cell[4001, 102, 95, 0, 23, "ContextNameCell",ExpressionUUID->"0d694c7b-21eb-447b-9edb-ad767cdd4a64"],
+Cell[CellGroupData[{
+Cell[4121, 106, 566, 14, 60, "ObjectNameGrid",ExpressionUUID->"698d6725-6f35-4ce9-909d-16a34df6bd11"],
+Cell[4690, 122, 988, 26, 114, "Usage",ExpressionUUID->"1aab46fa-1f48-4a9d-a251-dc4812710481",
+ CellID->582299356]
+}, Open  ]],
+Cell[5693, 151, 78, 0, 40, "FooterCell",ExpressionUUID->"ecf3c424-7f8b-4b11-898e-1018cbf07884"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

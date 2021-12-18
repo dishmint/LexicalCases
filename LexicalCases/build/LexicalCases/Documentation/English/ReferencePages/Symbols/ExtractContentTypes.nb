@@ -1,0 +1,208 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7852,        198]
+NotebookOptionsPosition[      5533,        144]
+NotebookOutlinePosition[      7429,        192]
+CellTagsIndexPosition[      7386,        189]
+WindowTitle->ExtractContentTypes
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "8fb909da-2751-4b5c-a92c-261f8ee4d00b"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "ae0fa166-514e-46ee-87b1-fc8c644c7aa8"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "469e08d5-0c1c-4a67-b5ac-a93053e4d9c0"]
+        }],ExpressionUUID->"409d878b-fead-4a8d-b785-5a787c2ee944"],
+        StripOnInput->False], {"\<\"LexicalCases/ref/ExtractContentTypes\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/ExtractContentTypes"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+ExtractContentTypes.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$71959], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/ExtractContentTypes" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "35113a99-8a36-4d36-89b2-4065d7f16d68"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "65bf5ff6-aa03-44f4-8498-9bb24028e485"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"28f53ca1-7fd2-4953-9b51-2237a3aa7b0b"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"8c2acc5f-4cd3-475d-8b75-b0159c48e890"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "ExtractContentTypes", "ObjectName",ExpressionUUID->
+      "d705957f-b547-4565-9a61-db3631df8450"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"d1bdce7f-6b8a-4835-aec8-6725299e06ba"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "66a1a43d-23d3-4331-9064-e601915bf379"]
+    }],ExpressionUUID->"7cfe7689-2c70-4416-a138-65a725c2d40b"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"9a990aad-f828-4f70-ae49-\
+898601933e9d"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ExtractContentTypes"]], 
+         "paclet:LexicalCases/ref/ExtractContentTypes", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       StyleBox["lp", "TI"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3cb3fa26-54f9-48e9-bfcd-8267fcd9d680"],
+     "\[LineSeparator]extract content types from a lexical pattern"
+    }],ExpressionUUID->"4d6586c2-c0ba-4d80-a420-788376a67b41"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->1908100887,ExpressionUUID->"17f2c3d5-5916-4256-9656-67c2aa616062"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"3b8c3881-3fd5-441c-8c82-ff3c522eaef5"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ExtractContentTypes",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 17, 19, 42, 37.941940}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "ExtractContentTypes[lp] extract content types from a lexical pattern", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ExtractContentTypes", 
+    "titlemodifier" -> "", "windowtitle" -> "ExtractContentTypes", "type" -> 
+    "Symbol", "uri" -> "LexicalCases/ref/ExtractContentTypes", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"96642f8a-22e2-4f30-8013-6c578c01cf17"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 3369, 77, 57, "AnchorBarGrid",ExpressionUUID->"28f53ca1-7fd2-4953-9b51-2237a3aa7b0b",
+ CellID->1],
+Cell[3963, 100, 95, 0, 23, "ContextNameCell",ExpressionUUID->"8c2acc5f-4cd3-475d-8b75-b0159c48e890"],
+Cell[CellGroupData[{
+Cell[4083, 104, 562, 14, 60, "ObjectNameGrid",ExpressionUUID->"9a990aad-f828-4f70-ae49-898601933e9d"],
+Cell[4648, 120, 788, 19, 114, "Usage",ExpressionUUID->"17f2c3d5-5916-4256-9656-67c2aa616062",
+ CellID->1908100887]
+}, Open  ]],
+Cell[5451, 142, 78, 0, 40, "FooterCell",ExpressionUUID->"3b8c3881-3fd5-441c-8c82-ff3c522eaef5"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

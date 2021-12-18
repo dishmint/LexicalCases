@@ -1,0 +1,216 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8147,        206]
+NotebookOptionsPosition[      5769,        151]
+NotebookOutlinePosition[      7725,        200]
+CellTagsIndexPosition[      7682,        197]
+WindowTitle->ConvertToWikipediaSearchQuery
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "fb365119-bcc4-4502-90ec-41073da7f504"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "3a73dcb9-7f61-4fa7-bc0b-2408bfeeca87"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "1a05b80f-5a51-402e-b731-d497231a015d"]
+        }],ExpressionUUID->"a0d7c58d-0f98-40cb-b426-cbe5e310d100"],
+        StripOnInput->
+         False], {"\<\"LexicalCases/ref/ConvertToWikipediaSearchQuery\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/ConvertToWikipediaSearchQuery"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+ConvertToWikipediaSearchQuery.html"], StandardForm]], "Input", 
+              TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$70842], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/ConvertToWikipediaSearchQuery" <> ".html"], 
+           None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "b4961b84-ef61-47e1-bb22-37e01a89424b"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "3e2abdc3-6862-4d74-8caf-ba91bc2ba664"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"9b6ad974-7763-49f1-a95e-e302fea2d5a7"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"78a9ae3d-6aa3-43fc-88b8-acbad299311f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "ConvertToWikipediaSearchQuery", "ObjectName",ExpressionUUID->
+      "bdb3e5ee-d297-4851-acf5-4de0bc7fb277"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"54e4fde2-b7d2-4a32-a5eb-b913b3d2a78b"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "b9d13104-c127-4e54-a674-fb4d9f6a858d"]
+    }],ExpressionUUID->"364cb334-2299-46b0-be2e-794c1e7a61ed"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"a7c1dd61-bf5f-46d7-8265-\
+fa2988d22083"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["For"]], "paclet:ref/For"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "49e93b0d-d34c-4f63-95c4-4b2da97a5484"],
+     " development purposes only, convert LexicalPattern to ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["WikipediaSearch"]], "paclet:ref/WikipediaSearch"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "1e18240d-ebec-439f-93e0-d355d27fe6f2"],
+     " query strings"
+    }],ExpressionUUID->"63584fe5-424c-4f77-b9d3-f8437c196c7c"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->1886496228,ExpressionUUID->"af34f4ea-e6e3-429f-ada6-03f9deaac3b5"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"51110275-94ec-4cac-90b6-aefb596eb102"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ConvertToWikipediaSearchQuery",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 17, 19, 42, 36.956769}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "For development purposes only, convert LexicalPattern to WikipediaSearch \
+query strings", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ConvertToWikipediaSearchQuery", "titlemodifier" -> "", "windowtitle" -> 
+    "ConvertToWikipediaSearchQuery", "type" -> "Symbol", "uri" -> 
+    "LexicalCases/ref/ConvertToWikipediaSearchQuery", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"6c2b4844-02b0-44e5-a1e2-f36bea9b5447"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[601, 21, 3431, 79, 57, "AnchorBarGrid",ExpressionUUID->"9b6ad974-7763-49f1-a95e-e302fea2d5a7",
+ CellID->1],
+Cell[4035, 102, 95, 0, 23, "ContextNameCell",ExpressionUUID->"78a9ae3d-6aa3-43fc-88b8-acbad299311f"],
+Cell[CellGroupData[{
+Cell[4155, 106, 572, 14, 60, "ObjectNameGrid",ExpressionUUID->"a7c1dd61-bf5f-46d7-8265-fa2988d22083"],
+Cell[4730, 122, 942, 24, 92, "Usage",ExpressionUUID->"af34f4ea-e6e3-429f-ada6-03f9deaac3b5",
+ CellID->1886496228]
+}, Open  ]],
+Cell[5687, 149, 78, 0, 40, "FooterCell",ExpressionUUID->"51110275-94ec-4cac-90b6-aefb596eb102"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

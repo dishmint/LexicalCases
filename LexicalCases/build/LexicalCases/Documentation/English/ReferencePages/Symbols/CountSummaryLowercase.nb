@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7940,        201]
+NotebookOptionsPosition[      5586,        146]
+NotebookOutlinePosition[      7517,        195]
+CellTagsIndexPosition[      7474,        192]
+WindowTitle->CountSummaryLowercase
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "298efe1c-5732-4f1a-b5e1-45af446bbdd4"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "e88e7c34-4bb8-4e68-b00a-e652e5e66ec6"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "4fc0d1dc-7ba6-40d6-b38a-65cbf67dfcf3"]
+        }],ExpressionUUID->"920c6140-6451-4aad-b1c0-99462379b6b8"],
+        StripOnInput->
+         False], {"\<\"LexicalCases/ref/CountSummaryLowercase\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/CountSummaryLowercase"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+CountSummaryLowercase.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$71214], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/CountSummaryLowercase" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "8984c7f6-70ab-4643-bb7e-1ad23f6b8836"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "4c8e5013-ef5a-4d9b-88c1-9eefba14f4ca"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"a56e796f-6d95-4cc3-b12c-dbd8adbcd19d"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"da9453d7-ec79-4daf-8fd3-501398e4e321"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "CountSummaryLowercase", "ObjectName",ExpressionUUID->
+      "1c4fd590-4022-42cc-82f7-90242497fac2"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"a6fd21fd-4de9-43a3-921a-e8c4176529b2"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "2666022f-9a99-46f6-bcba-7811344d0847"]
+    }],ExpressionUUID->"5111539a-aaac-46f1-b0e6-c7af67c135de"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"015ec8b5-9603-45ff-8ae3-\
+2991b260fb06"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CountSummaryLowercase"]], 
+         "paclet:LexicalCases/ref/CountSummaryLowercase", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       StyleBox["ds", "TI"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "93f2d720-fe06-4d52-ab21-6a2fc2a65a45"],
+     "\[LineSeparator]Makes matches lowercase and merges rows that now have \
+the same match."
+    }],ExpressionUUID->"06e2abd3-7414-41e9-9eb9-74c0e5a141db"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->1835048001,ExpressionUUID->"f286fced-dda7-4d5f-ba4b-e5c120342d30"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"7d5c5f06-3a99-4515-a514-48b2c84c833f"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CountSummaryLowercase",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 17, 19, 42, 37.277171}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "CountSummaryLowercase[ds] Makes matches lowercase and merges rows that \
+now have the same match.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "CountSummaryLowercase", "titlemodifier" -> "", "windowtitle" -> 
+    "CountSummaryLowercase", "type" -> "Symbol", "uri" -> 
+    "LexicalCases/ref/CountSummaryLowercase", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"4f301beb-0975-42ea-a12c-82412cb1c22a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 3387, 78, 57, "AnchorBarGrid",ExpressionUUID->"a56e796f-6d95-4cc3-b12c-dbd8adbcd19d",
+ CellID->1],
+Cell[3983, 101, 95, 0, 23, "ContextNameCell",ExpressionUUID->"da9453d7-ec79-4daf-8fd3-501398e4e321"],
+Cell[CellGroupData[{
+Cell[4103, 105, 564, 14, 60, "ObjectNameGrid",ExpressionUUID->"015ec8b5-9603-45ff-8ae3-2991b260fb06"],
+Cell[4670, 121, 819, 20, 114, "Usage",ExpressionUUID->"f286fced-dda7-4d5f-ba4b-e5c120342d30",
+ CellID->1835048001]
+}, Open  ]],
+Cell[5504, 144, 78, 0, 40, "FooterCell",ExpressionUUID->"7d5c5f06-3a99-4515-a514-48b2c84c833f"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
