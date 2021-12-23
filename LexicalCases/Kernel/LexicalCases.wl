@@ -11,7 +11,7 @@
 BeginPackage["LexicalCases`"]
 (* Main *)
 LexicalCases
-$LexicalCasesSupportedServices
+$LexicalCasesServices
 $LexicalPatternValidHeads
 
 (* LexicalPatterns *)
@@ -173,7 +173,7 @@ Options[LexicalCasesWikipedia] = {
 	Language -> "English"
 };
 
-$LexicalCasesSupportedServices = {"Wikipedia"}
+$LexicalCasesServices = {"Wikipedia"}
 LexicalCases::unsupobj=Import::unsupobj;
 GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
@@ -410,7 +410,7 @@ WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[]]:= 
 	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[opts, Except[MaxItems]]]][RULES]
 ]
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
-WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= Map[WikipediaData["Category" -> #, "CategoryArticles"]&][WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]]
 
 ArticleWithMatchCount["Text", _] := ""
 ArticleWithMatchCount[_String, data_] := (data // DeleteMissing[#, 1, 1]& // Lookup["Article"] // DeleteDuplicates // Length)

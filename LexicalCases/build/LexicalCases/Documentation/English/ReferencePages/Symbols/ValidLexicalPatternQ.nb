@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8512,        219]
-NotebookOptionsPosition[      6183,        164]
-NotebookOutlinePosition[      8088,        213]
-CellTagsIndexPosition[      8045,        210]
+NotebookDataLength[     16270,        421]
+NotebookOptionsPosition[     12516,        340]
+NotebookOutlinePosition[     14769,        397]
+CellTagsIndexPosition[     14684,        392]
 WindowTitle->ValidLexicalPatternQ
 WindowFrame->Normal*)
 
@@ -27,11 +27,11 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "7ef12ac9-b12e-4e62-8ad6-97b081b72e44"], 
+           "3a68d600-f5d1-4a87-8236-939664b0aa44"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "700d08a5-ee67-481a-a378-0fb50ddf3aa1"],
+         "a0b97b84-64d3-457e-b69a-ba927073fe50"],
         Background->RGBColor[0.490196, 0.576471, 0.690196],
         ItemSize->Full], ""}
      },
@@ -50,8 +50,8 @@ Cell[BoxData[GridBox[{
            AspectRatio->1,
            ImageSize->20,
            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-          "ee832144-ad11-4a26-b092-59cdcf5858e7"]
-        }],ExpressionUUID->"d01ce58e-57f0-4989-b49a-43ad25deb360"],
+          "460ca3ba-cfae-450f-ac1a-9d2bc1f570b4"]
+        }],ExpressionUUID->"d161e101-023b-4215-a78c-23691b9933ea"],
         StripOnInput->
          False], {"\<\"LexicalCases/ref/ValidLexicalPatternQ\"\>":>
        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
@@ -80,7 +80,7 @@ ValidLexicalPatternQ.html"], StandardForm]], "Input", TextClipboardType ->
         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
          NotebookLocate[{
            URL[If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$195120], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$523353], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"] <> 
             "LexicalCases/ref/ValidLexicalPatternQ" <> ".html"], None}]}]},
@@ -89,17 +89,17 @@ ValidLexicalPatternQ.html"], StandardForm]], "Input", TextClipboardType ->
        MenuStyle->"URLMenu"],
       MouseAppearanceTag["LinkHand"]]],
      LineSpacing->{1.4, 0},ExpressionUUID->
-     "e74e6c7b-23ff-436d-b5d9-41fae5709d37"]], "AnchorBar",
+     "f6ed4a28-419b-48c9-9569-7d4dbe6e87df"]], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "d741e321-e574-4833-9bc9-48c8dc6f4d3b"]}
+     "0e9933df-c696-4638-8e82-6f153787c05c"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
       Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
    "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"c63e1723-2c46-422b-9ae6-1d795b10cd28"],
+ CellID->1,ExpressionUUID->"10cb0d60-c483-428c-9b3c-14b2e2daea0f"],
 
-Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"6f715c2b-4710-4ac1-8652-9adacb1aa5c2"],
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"1a8002e6-38c8-43dd-a8a6-1d6b52282c2a"],
 
 Cell[CellGroupData[{
 
@@ -107,17 +107,38 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "ValidLexicalPatternQ", "ObjectName",ExpressionUUID->
-      "eb319f36-22a9-4f90-bebc-10b98ee721f2"],
+      "dbc584ad-592a-4cb3-97ef-50f7134007da"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"fb268aa0-5427-4197-a9c1-6c8f110cef0f"],
+       "Spacer1"]],ExpressionUUID->"c51feb80-7872-4e37-a201-9e08ed7ffeae"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "40bc8a98-8b5d-4b78-8915-4c6a874d617a"]
-    }],ExpressionUUID->"cd10622e-b70a-4704-9b4d-6092eeb6438c"], 
-    "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"4e1a1189-3ef8-4de9-bc24-\
-38d46406afe0"],
+      "aa9dc030-18f2-4c7d-8af5-05ad63b46960"]
+    }],ExpressionUUID->"67dbd671-059b-4497-aac3-d194e4ba1f88"], Cell[BoxData[
+     TooltipBox[
+      StyleBox[
+       TagBox[
+        StyleBox[
+         GraphicsBox[InsetBox[
+           StyleBox["\<\"NEW IN 13.0\"\>",
+            StripOnInput->False,
+            FontFamily->"Source Sans Pro",
+            FontSize->18,
+            FontWeight->"Bold",
+            FontSlant->"Italic",
+            FontColor->RGBColor[0.968627, 0.466667, 0]], {Right, Center}, {
+           Right, Center}],
+          ImageSize->{125, 24}], "NewInGraphic",
+         StripOnInput->False],
+        Deploy,
+        DefaultBaseStyle->"Deploy"], "NewInGraphic",
+       StripOnInput->False],
+      "New in 12",
+      TooltipDelay->0.3]],
+     Magnification->1,ExpressionUUID->
+     "bd0ee690-7031-4413-b46e-11ec63df27c4"]}
+  }]], "ObjectNameGrid",
+ CacheGraphics->False,ExpressionUUID->"05f0925c-1f48-40ec-bbde-17df181dddce"],
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -130,7 +151,7 @@ Cell[BoxData[GridBox[{
          "LexicalCases Package Symbol"},
         "PackageLink",
         BaseStyle->"InlineFormula"], "[", 
-       StyleBox["input", "TI"], "]"}]], "InlineFormula",
+       StyleBox["expr", "TI"], "]"}]], "InlineFormula",
       FontFamily->"Source Sans Pro",ExpressionUUID->
       "ab6c8f63-fae9-4d22-9944-add3a393c37c"],
      "\[LineSeparator]Returns ",
@@ -153,14 +174,169 @@ Cell[BoxData[GridBox[{
        BaseStyle->"InlineFormula"]], "InlineFormula",
       FontFamily->"Source Sans Pro",ExpressionUUID->
       "e1006a30-5af2-4de9-8281-9591034a4687"]
-    }],ExpressionUUID->"e3b2c44c-9f70-4438-b4c4-9ebbdec5cf36"]}
+    }],ExpressionUUID->"a9ca3e90-753b-4153-843a-14fae8b84fe0"]}
   }]], "Usage",
  GridBoxOptions->{
  GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->1513526209,ExpressionUUID->"ecbd9ecb-25c9-4eba-8cc1-9cdccdbe9395"]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"f1b550a9-5b7d-4346-b19b-04a326d8159b"]
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+    ExpressionUUID->"e7b2786c-52b8-4aaf-8e0c-cd87849a4766"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"ba2b376a-180a-460d-bf91-a233ae8b5b2d"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"2eec4e37-859e-4f7f-a2e0-0fc0a5a0e92c"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"f589dbf0-fca1-4cf4-85b3-86aafa6162c6"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->1205796486,ExpressionUUID->"d7b61c27-e8c4-4683-9760-f99aac4d2a41"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["expr", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "09cbabbf-fc5b-4547-9d02-24f34e4feddf"],
+ " must only contain heads that are members of $LexicalPatternValidHeads."
+}], "Notes",
+ CellID->891195948,ExpressionUUID->"abcc7133-7055-4aa8-bf2f-36e7695cf3d8"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "07cc7e85-0ed9-4379-8881-ef58284d3b56"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"93d5fd3f-3042-4409-8389-05364477895b"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "1358bedd-f813-43be-910a-741e208698fe"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->18363463,ExpressionUUID->"7c911fea-401f-4c44-abfd-1fcf34f39883"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "1"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+  ExpressionUUID->"1e34598e-2790-481a-8178-67abf7e0ceec"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"f7f0ade1-8638-4f7e-88a9-2f332a94f7be"],
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "3b1e8475-6a03-4e7c-82d0-44df65c61c05"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->497776619,ExpressionUUID->"c0c4604c-8068-42b7-b0fb-c46b7be1142d"],
+
+Cell["\<\
+If expr contains any head not in $LexicalPatternValidHeads False is returned.\
+\
+\>", "ExampleText",
+ CellID->1263402444,ExpressionUUID->"f057c955-b383-4da2-bd17-807f080c6592"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "1"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0c0db454-fdfa-4235-9f28-1c01485f5c27"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -171,17 +347,18 @@ TaggingRules->{
  "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
   "ExampleCounter" -> 1, 
   "Openers" -> {
-   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
-  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
-  False, "RootCaptions" -> "", 
+   "PrimaryExamplesSection" -> Open, 
+    "ExampleSection" -> {"0" -> Open, "1" -> Closed}, "NotesSection" -> 
+    Closed}, "NewStyles" -> True, "CitationPopupData" -> $Failed, 
+  "ShowCitation" -> False, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2021, 12, 18, 3, 57, 4.043736}", 
-    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
-    "keywords" -> {}, "specialkeywords" -> {}, 
-    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
-    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
-    "status" -> "None", "summary" -> 
-    "ValidLexicalPatternQ[input] Returns True if input is a valid \
+   "built" -> "{2021, 12, 21, 21, 11, 54.838379}", 
+    "history" -> {"13.0", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {"lexical cases lexical analysis lexical pattern Q"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Lexical Cases Symbol", "language" -> "en", "paclet" -> 
+    "LexicalCases", "status" -> "None", "summary" -> 
+    "ValidLexicalPatternQ[expr] Returns True if input is a valid \
 LexicalPattern", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
     "ValidLexicalPatternQ", "titlemodifier" -> "", "windowtitle" -> 
     "ValidLexicalPatternQ", "type" -> "Symbol", "uri" -> 
@@ -199,28 +376,53 @@ StyleDefinitions->Notebook[{
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
   StyleDefinitions -> "Default.nb"],
-ExpressionUUID->"6fa9947e-9d8d-45ae-a16c-37aa618b3765"
+ExpressionUUID->"8ac8c5ed-ae6b-42be-8068-9ffdfd1ee52e"
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9199, 247, 1388, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"7c911fea-401f-4c44-abfd-1fcf34f39883",
+   CellTags->"PrimaryExamplesSection",
+   CellID->18363463]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14486, 385}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[592, 21, 3384, 78, 57, "AnchorBarGrid",ExpressionUUID->"c63e1723-2c46-422b-9ae6-1d795b10cd28",
+Cell[592, 21, 3384, 78, 57, "AnchorBarGrid",ExpressionUUID->"10cb0d60-c483-428c-9b3c-14b2e2daea0f",
  CellID->1],
-Cell[3979, 101, 95, 0, 23, "ContextNameCell",ExpressionUUID->"6f715c2b-4710-4ac1-8652-9adacb1aa5c2"],
+Cell[3979, 101, 95, 0, 23, "ContextNameCell",ExpressionUUID->"1a8002e6-38c8-43dd-a8a6-1d6b52282c2a"],
 Cell[CellGroupData[{
-Cell[4099, 105, 563, 14, 60, "ObjectNameGrid",ExpressionUUID->"4e1a1189-3ef8-4de9-bc24-38d46406afe0"],
-Cell[4665, 121, 1421, 38, 116, "Usage",ExpressionUUID->"ecbd9ecb-25c9-4eba-8cc1-9cdccdbe9395",
+Cell[4099, 105, 1294, 35, 60, "ObjectNameGrid",ExpressionUUID->"05f0925c-1f48-40ec-bbde-17df181dddce"],
+Cell[5396, 142, 1420, 38, 116, "Usage",ExpressionUUID->"ecbd9ecb-25c9-4eba-8cc1-9cdccdbe9395",
  CellID->1513526209]
 }, Open  ]],
-Cell[6101, 162, 78, 0, 40, "FooterCell",ExpressionUUID->"f1b550a9-5b7d-4346-b19b-04a326d8159b"]
+Cell[CellGroupData[{
+Cell[6853, 185, 1887, 47, 37, "NotesSection",ExpressionUUID->"d7b61c27-e8c4-4683-9760-f99aac4d2a41",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1205796486],
+Cell[8743, 234, 329, 7, 70, "Notes",ExpressionUUID->"abcc7133-7055-4aa8-bf2f-36e7695cf3d8",
+ CellID->891195948]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[9199, 247, 1388, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"7c911fea-401f-4c44-abfd-1fcf34f39883",
+ CellTags->"PrimaryExamplesSection",
+ CellID->18363463],
+Cell[CellGroupData[{
+Cell[10612, 288, 1403, 36, 30, "ExampleSection",ExpressionUUID->"c0c4604c-8068-42b7-b0fb-c46b7be1142d",
+ CellID->497776619],
+Cell[12018, 326, 186, 4, 70, "ExampleText",ExpressionUUID->"f057c955-b383-4da2-bd17-807f080c6592",
+ CellID->1263402444]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "1"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[12434, 338, 78, 0, 40, "FooterCell",ExpressionUUID->"0c0db454-fdfa-4235-9f28-1c01485f5c27"]
 }
 ]
 *)

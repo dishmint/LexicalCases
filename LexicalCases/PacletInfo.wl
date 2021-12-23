@@ -4,6 +4,7 @@ PacletObject[
         "Version" -> "0.0.1",
         "WolframVersion" -> "12.3+",
         "Creator" -> "Faizon Zaman",
+        "Description" -> "Extract lexical patterns from text",
         "Extensions" ->
             {
                 {

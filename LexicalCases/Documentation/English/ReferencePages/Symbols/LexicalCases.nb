@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20302,        544]
-NotebookOptionsPosition[     14604,        423]
-NotebookOutlinePosition[     15337,        448]
-CellTagsIndexPosition[     15258,        443]
+NotebookDataLength[    155221,       2955]
+NotebookOptionsPosition[    146607,       2774]
+NotebookOutlinePosition[    147342,       2799]
+CellTagsIndexPosition[    147261,       2794]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -61,9 +61,10 @@ Cell[CellGroupData[{
 Cell["Keywords", "KeywordsSection",
  CellID->1636478737,ExpressionUUID->"7ad041de-2256-477d-b1a0-b90b3f418c19"],
 
-Cell["XXXX", "Keywords",
+Cell["lexical case, lexical cases", "Keywords",
+ CellChangeTimes->{{3.849206101349578*^9, 3.8492061064840937`*^9}},
  CellID->1475065630,ExpressionUUID->"e460f5a0-ea7b-41a1-97b8-f99a5a3958b8"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -320,6 +321,8 @@ Cell[TextData[Cell[BoxData[
  CellID->929063744,ExpressionUUID->"496e66e5-2515-4ccd-a47a-5582fb778eb3"]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[GridBox[{
     {
@@ -333,11 +336,986 @@ Cell[BoxData[
   $Line = 0; Null]], "PrimaryExamplesSection",
  CellID->420748071,ExpressionUUID->"355d4f86-2518-4773-809b-c22e3d9a194d"],
 
+Cell["Extract lexical cases from the Origin of Species:", "ExampleText",
+ CellChangeTimes->{{3.849206352787451*^9, 3.849206380002871*^9}},
+ CellID->1163429445,ExpressionUUID->"307bbdc4-095b-4dc7-b92d-07989dbb6085"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"oosp", " ", "=", " ", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Text\>\"", ",", "\"\<OriginOfSpecies\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.849206128828751*^9, 3.849206150469462*^9}, {
+  3.849206213964492*^9, 3.849206314701846*^9}},
+ CellLabel->"In[21]:=",
+ CellID->1445746235,ExpressionUUID->"10edf3fb-e744-44e2-bb93-4d98566c89eb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ols", "=", 
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"oosp", ",", " ", 
+    RowBox[{"LexicalPattern", "[", 
+     RowBox[{
+      RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}], ",", 
+      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+      RowBox[{"BoundedString", "[", 
+       RowBox[{"\"\<specie\>\"", "|", "\"\<species\>\""}], "]"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.849206128828751*^9, 3.849206150469462*^9}, {
+  3.849206213964492*^9, 3.849206314701846*^9}},
+ CellLabel->"In[23]:=",
+ CellID->1493889061,ExpressionUUID->"0bd95460-746f-4033-950b-65119c63f145"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["LexicalSummary",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Text\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["74", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Text\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["74", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  LexicalCases`LexicalSummary[<|
+   "Data" -> {<|
+      "Match" -> "generally extinct species", 
+       "Position" -> {{9949, 9973}}|>, <|
+      "Match" -> "aboriginally distinct species", 
+       "Position" -> {{27844, 27872}, {51384, 51412}, {490687, 490715}}|>, <|
+      "Match" -> "so many species", "Position" -> {{42078, 42092}}|>, <|
+      "Match" -> "extraordinarily abnormal species", 
+       "Position" -> {{43663, 43694}}|>, <|
+      "Match" -> "as distinct species", 
+       "Position" -> {{85564, 85582}, {89007, 89025}, {89482, 89500}, {207958,
+         207976}, {450417, 450435}, {464593, 464611}, {542018, 542036}, {
+        544853, 544871}, {549985, 550003}, {611433, 611451}, {676879, 
+        676897}, {685573, 685591}, {690461, 690479}, {723909, 723927}, {
+        735758, 735776}, {737225, 737243}}|>, <|
+      "Match" -> "as good species", "Position" -> {{87408, 87422}}|>, <|
+      "Match" -> "as undoubted species", 
+       "Position" -> {{88427, 88446}, {490097, 490116}}|>, <|
+      "Match" -> "as independent species", "Position" -> {{95992, 96013}}|>, <|
+      "Match" -> "closely related species", 
+       "Position" -> {{100728, 100750}, {727778, 727800}}|>, <|
+      "Match" -> "as incipient species", "Position" -> {{102609, 102628}}|>, <|
+      "Match" -> "as doubtful species", "Position" -> {{107226, 107244}}|>, <|
+      "Match" -> "most vigorous species", 
+       "Position" -> {{122687, 122707}}|>, <|
+      "Match" -> "already existing species", 
+       "Position" -> {{193555, 193578}}|>, <|
+      "Match" -> "as new species", 
+       "Position" -> {{201928, 201941}, {846368, 846381}}|>, <|
+      "Match" -> "nearly extreme species", 
+       "Position" -> {{221865, 221886}}|>, <|
+      "Match" -> "widely diffused species", 
+       "Position" -> {{224108, 224130}}|>, <|
+      "Match" -> "more ancient species", 
+       "Position" -> {{231849, 231868}, {513482, 513501}}|>, <|
+      "Match" -> "most ancient species", "Position" -> {{232133, 232152}}|>, <|
+      "Match" -> "very distinct species", 
+       "Position" -> {{303893, 303913}, {353659, 353679}, {469586, 469606}, {
+        498261, 498281}, {694607, 694627}, {732066, 732086}}|>, <|
+      "Match" -> "most distinct species", 
+       "Position" -> {{304406, 304426}}|>, <|
+      "Match" -> "as representative species", 
+       "Position" -> {{325002, 325026}}|>, <|
+      "Match" -> "very same species", 
+       "Position" -> {{452882, 452898}, {456397, 456413}}|>, <|
+      "Match" -> "more aboriginal species", 
+       "Position" -> {{463660, 463682}}|>, <|
+      "Match" -> "very many species", "Position" -> {{469709, 469725}}|>, <|
+      "Match" -> "extremely close species", 
+       "Position" -> {{469855, 469877}}|>, <|
+      "Match" -> "particularly distinct species", 
+       "Position" -> {{470144, 470172}}|>, <|
+      "Match" -> "together various species", 
+       "Position" -> {{480798, 480821}}|>, <|
+      "Match" -> "widely distinct species", 
+       "Position" -> {{495622, 495644}}|>, <|
+      "Match" -> "nearly related species", 
+       "Position" -> {{500963, 500984}}|>, <|
+      "Match" -> "all living species", "Position" -> {{513205, 513222}}|>, <|
+      "Match" -> "still existing species", 
+       "Position" -> {{535639, 535660}}|>, <|
+      "Match" -> "very fine species", "Position" -> {{542308, 542324}}|>, <|
+      "Match" -> "now extinct species", 
+       "Position" -> {{553195, 553213}, {568399, 568417}}|>, <|
+      "Match" -> "very few species", "Position" -> {{556585, 556600}}|>, <|
+      "Match" -> "more dominant species", 
+       "Position" -> {{593129, 593149}}|>, <|
+      "Match" -> "too few species", "Position" -> {{602108, 602122}}|>, <|
+      "Match" -> "all peculiar species", "Position" -> {{635730, 635749}}|>, <|
+      "Match" -> "so certain species", "Position" -> {{638766, 638783}}|>, <|
+      "Match" -> "as many species", "Position" -> {{686468, 686482}}|>, <|
+      "Match" -> "quite distinct species", 
+       "Position" -> {{694106, 694127}}|>, <|
+      "Match" -> "only herbaceous species", 
+       "Position" -> {{713843, 713865}}|>, <|
+      "Match" -> "extremely few species", 
+       "Position" -> {{782509, 782529}}|>, <|
+      "Match" -> "still older species", "Position" -> {{843698, 843716}}|>, <|
+      "Match" -> "yet distinct species", "Position" -> {{870851, 870870}}|>, <|
+      "Match" -> "not real species", "Position" -> {{878602, 878617}}|>, <|
+      "Match" -> "already recorded species", 
+       "Position" -> {{885795, 885818}}|>}, "Dataset" -> 
+    Dataset[{<|
+       "Match" -> "generally extinct species", 
+        "Position" -> {{9949, 9973}}|>, <|
+       "Match" -> "aboriginally distinct species", 
+        "Position" -> {{27844, 27872}, {51384, 51412}, {490687, 490715}}|>, <|
+       "Match" -> "so many species", "Position" -> {{42078, 42092}}|>, <|
+       "Match" -> "extraordinarily abnormal species", 
+        "Position" -> {{43663, 43694}}|>, <|
+       "Match" -> "as distinct species", 
+        "Position" -> {{85564, 85582}, {89007, 89025}, {89482, 89500}, {
+         207958, 207976}, {450417, 450435}, {464593, 464611}, {542018, 
+         542036}, {544853, 544871}, {549985, 550003}, {611433, 611451}, {
+         676879, 676897}, {685573, 685591}, {690461, 690479}, {723909, 
+         723927}, {735758, 735776}, {737225, 737243}}|>, <|
+       "Match" -> "as good species", "Position" -> {{87408, 87422}}|>, <|
+       "Match" -> "as undoubted species", 
+        "Position" -> {{88427, 88446}, {490097, 490116}}|>, <|
+       "Match" -> "as independent species", 
+        "Position" -> {{95992, 96013}}|>, <|
+       "Match" -> "closely related species", 
+        "Position" -> {{100728, 100750}, {727778, 727800}}|>, <|
+       "Match" -> "as incipient species", 
+        "Position" -> {{102609, 102628}}|>, <|
+       "Match" -> "as doubtful species", "Position" -> {{107226, 107244}}|>, <|
+       "Match" -> "most vigorous species", 
+        "Position" -> {{122687, 122707}}|>, <|
+       "Match" -> "already existing species", 
+        "Position" -> {{193555, 193578}}|>, <|
+       "Match" -> "as new species", 
+        "Position" -> {{201928, 201941}, {846368, 846381}}|>, <|
+       "Match" -> "nearly extreme species", 
+        "Position" -> {{221865, 221886}}|>, <|
+       "Match" -> "widely diffused species", 
+        "Position" -> {{224108, 224130}}|>, <|
+       "Match" -> "more ancient species", 
+        "Position" -> {{231849, 231868}, {513482, 513501}}|>, <|
+       "Match" -> "most ancient species", 
+        "Position" -> {{232133, 232152}}|>, <|
+       "Match" -> "very distinct species", 
+        "Position" -> {{303893, 303913}, {353659, 353679}, {469586, 469606}, {
+         498261, 498281}, {694607, 694627}, {732066, 732086}}|>, <|
+       "Match" -> "most distinct species", 
+        "Position" -> {{304406, 304426}}|>, <|
+       "Match" -> "as representative species", 
+        "Position" -> {{325002, 325026}}|>, <|
+       "Match" -> "very same species", 
+        "Position" -> {{452882, 452898}, {456397, 456413}}|>, <|
+       "Match" -> "more aboriginal species", 
+        "Position" -> {{463660, 463682}}|>, <|
+       "Match" -> "very many species", "Position" -> {{469709, 469725}}|>, <|
+       "Match" -> "extremely close species", 
+        "Position" -> {{469855, 469877}}|>, <|
+       "Match" -> "particularly distinct species", 
+        "Position" -> {{470144, 470172}}|>, <|
+       "Match" -> "together various species", 
+        "Position" -> {{480798, 480821}}|>, <|
+       "Match" -> "widely distinct species", 
+        "Position" -> {{495622, 495644}}|>, <|
+       "Match" -> "nearly related species", 
+        "Position" -> {{500963, 500984}}|>, <|
+       "Match" -> "all living species", "Position" -> {{513205, 513222}}|>, <|
+       "Match" -> "still existing species", 
+        "Position" -> {{535639, 535660}}|>, <|
+       "Match" -> "very fine species", "Position" -> {{542308, 542324}}|>, <|
+       "Match" -> "now extinct species", 
+        "Position" -> {{553195, 553213}, {568399, 568417}}|>, <|
+       "Match" -> "very few species", "Position" -> {{556585, 556600}}|>, <|
+       "Match" -> "more dominant species", 
+        "Position" -> {{593129, 593149}}|>, <|
+       "Match" -> "too few species", "Position" -> {{602108, 602122}}|>, <|
+       "Match" -> "all peculiar species", 
+        "Position" -> {{635730, 635749}}|>, <|
+       "Match" -> "so certain species", "Position" -> {{638766, 638783}}|>, <|
+       "Match" -> "as many species", "Position" -> {{686468, 686482}}|>, <|
+       "Match" -> "quite distinct species", 
+        "Position" -> {{694106, 694127}}|>, <|
+       "Match" -> "only herbaceous species", 
+        "Position" -> {{713843, 713865}}|>, <|
+       "Match" -> "extremely few species", 
+        "Position" -> {{782509, 782529}}|>, <|
+       "Match" -> "still older species", "Position" -> {{843698, 843716}}|>, <|
+       "Match" -> "yet distinct species", 
+        "Position" -> {{870851, 870870}}|>, <|
+       "Match" -> "not real species", "Position" -> {{878602, 878617}}|>, <|
+       "Match" -> "already recorded species", 
+        "Position" -> {{885795, 885818}}|>}, 
+      TypeSystem`Vector[
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Vector[
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], TypeSystem`AnyLength]}], 46], <||>], 
+    "Source" -> "Text", "TotalMatchCount" -> 74, "LexicalPatternStructure" -> 
+    TextElement[{
+       TextElement[{"Adverb"}, <|"GrammaticalUnit" -> "TextType"|>], 
+       TextElement[{"Adjective"}, <|"GrammaticalUnit" -> "TextType"|>], 
+       TextElement[{
+         TextElement[{
+           Alternatives[
+            TextElement[{"specie"}, <|"GrammaticalUnit" -> "Text"|>], 
+            TextElement[{"species"}, <|"GrammaticalUnit" -> "Text"|>]]}, <|
+          "GrammaticalUnit" -> "Alternatives"|>]}, <|
+        "GrammaticalUnit" -> "BoundedString"|>]}, <|
+      "GrammaticalUnit" -> "LexicalPattern"|>]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.849206292142178*^9, 3.849206565566186*^9},
+ CellLabel->"Out[23]=",
+ CellID->1977843092,ExpressionUUID->"4edefb83-37b1-4070-a683-0110e7f82819"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ols", "[", "\"\<CountGroups\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8492065325071917`*^9, 3.849206551281538*^9}, {
+  3.84920658458641*^9, 3.84920658596135*^9}},
+ CellLabel->"In[25]:=",
+ CellID->2071664732,ExpressionUUID->"a76f1de6-6ebc-4890-ba1b-8f25c0ad356f"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Matches" -> {"as distinct species"}, "CountGroup" -> 16|>, <|
+       "Matches" -> {"very distinct species"}, "CountGroup" -> 6|>, <|
+       "Matches" -> {"aboriginally distinct species"}, "CountGroup" -> 3|>, <|
+       "Matches" -> {
+         "very same species", "now extinct species", "more ancient species", 
+          "closely related species", "as undoubted species", 
+          "as new species"}, "CountGroup" -> 2|>, <|
+       "Matches" -> {
+         "yet distinct species", "widely distinct species", 
+          "widely diffused species", "very many species", "very fine species",
+           "very few species", "too few species", "together various species", 
+          "still older species", "still existing species", "so many species", 
+          "so certain species", "quite distinct species", 
+          "particularly distinct species", "only herbaceous species", 
+          "not real species", "nearly related species", 
+          "nearly extreme species", "most vigorous species", 
+          "most distinct species", "most ancient species", 
+          "more dominant species", "more aboriginal species", 
+          "generally extinct species", "extremely few species", 
+          "extremely close species", "extraordinarily abnormal species", 
+          "as representative species", "as many species", 
+          "as independent species", "as incipient species", "as good species",
+           "as doubtful species", "already recorded species", 
+          "already existing species", "all peculiar species", 
+          "all living species"}, "CountGroup" -> 1|>}, "AllowEmbedding" -> 
+     True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 5, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 5], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 5, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 5], "Path" -> {}, "DisplayedRowCount" -> 
+     5, "DisplayedColumnCount" -> 2, "DataRowCount" -> 5, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Matches", 
+                  Style[
+                  "Matches", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Matches"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Matches"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["CountGroup", 
+                  Style[
+                  "CountGroup", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "CountGroup"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "CountGroup"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"as distinct species"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"as distinct species"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{1, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["16"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"very distinct species"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"very distinct species"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{2, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["6"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"aboriginally distinct species"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"aboriginally distinct species"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{3, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["3"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"very same species", "now extinct species", 
+                    "more ancient species", "closely related species", 
+                    "as undoubted species", "as new species"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"very same species", "now extinct species", 
+                    "more ancient species", "closely related species", 
+                    "as undoubted species", "as new species"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{4, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 37], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 37], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{5, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{817., {87.8544921875, 93.1455078125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{817., {87.8544921875, 93.1455078125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.849206568807096*^9, 3.849206586528986*^9}},
+ CellLabel->"Out[25]=",
+ CellID->2141531800,ExpressionUUID->"aad859e2-aa65-42e2-ae13-bc30f424df46"]
+}, Open  ]]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell["More Examples", "ExtendedExamplesSection",
  CellTags->"ExtendedExamples",
  CellID->1996663373,ExpressionUUID->"8d97f221-c17c-4edb-9e24-42e59b838e2a"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -345,6 +1323,1369 @@ Cell[BoxData[
    "4aee2c60-bf76-4e63-8d8d-24af8b548982"],
   $Line = 0; Null]], "ExampleSection",
  CellID->1341841989,ExpressionUUID->"90da12a8-1fe6-4612-bab2-9e161bbcde9d"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellID->556403277,ExpressionUUID->"1ef5b840-34e4-415e-86f9-a64f00dab7b0"],
+
+Cell["\<\
+Search for lexical patterns in Wikipedia articles containing the keyword music\
+\>", "ExampleText",
+ CellChangeTimes->{{3.849207051989272*^9, 3.8492070780032263`*^9}},
+ CellID->2075223231,ExpressionUUID->"69fad572-b2fd-4f69-8dc6-ee0f2486645e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LexicalCases", "[", 
+  RowBox[{
+   RowBox[{"\"\<Content\>\"", "->", "\"\<music\>\""}], ",", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+     "\"\<music\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.849206699080229*^9, 3.849206723772504*^9}, {
+  3.849206895982045*^9, 3.849206926170787*^9}, {3.849207043734161*^9, 
+  3.8492070440750437`*^9}, {3.849207082213571*^9, 3.849207087333374*^9}},
+ CellLabel->"In[26]:=",
+ CellID->102964692,ExpressionUUID->"7dfb3fb9-a8a8-432d-8227-a1813d79afe5"],
+
+Cell[BoxData[
+ TagBox[
+  TemplateBox[{
+    RowBox[{
+      StyleBox[
+       TagBox["LexicalSummary", "SummaryHead"], "NonInterpretableSummary"], 
+      StyleBox["[", "NonInterpretableSummary"], 
+      DynamicModuleBox[{
+       Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+       TemplateBox[{
+         TemplateBox[{
+           PaneSelectorBox[{False -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["46", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1732", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}], True -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["46", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1732", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}]}, 
+            Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+          "SummaryPanel"], 
+         ButtonBox[
+          DynamicBox[
+           ToBoxes[
+            If[
+             
+             Or[$VersionNumber < 11.2, CurrentValue["RunningEvaluator"] =!= 
+              "Local"], 
+             Style["This object cannot be used as input.", "SummaryEmbed"], 
+             BoxForm`EmbedSummaryLabel[LexicalCases`LexicalSummary, 1297904, 
+              Dynamic[Typeset`embedState$$], Automatic]], StandardForm]], 
+          ButtonFunction :> 
+          BoxForm`EmbedSummaryInterpretation[
+           "Choose", LexicalCases`LexicalSummary, 1297904, 
+            7816548695030228664771815930678184684224686393243096945136, 
+            EvaluationBox[], 
+            Dynamic[Typeset`embedState$$], StandardForm, 
+            ElisionsDump`embedSummaryBoxes], DefaultBaseStyle -> 
+          "SummaryEmbedButton", ImageSize -> Inherited, 
+          BaseStyle -> {"DialogStyle"}, Enabled -> Dynamic[
+            
+            And[$VersionNumber >= 11.2, CurrentValue["RunningEvaluator"] === 
+             "Local", Typeset`embedState$$ === "Ready"]], Appearance -> 
+          Inherited, Method -> Inherited, Evaluator -> Automatic]}, 
+        "SummaryEmbedGrid"], DynamicModuleValues :> {}], 
+      StyleBox["]", "NonInterpretableSummary"]}]},
+   "CopyTag",
+   DisplayFunction->(#& ),
+   InterpretationFunction->(
+    "LexicalSummary[<|Data -> {<|Article -> Music, Match -> <<12>>c, Position \
+-> {{2020, 2032}, {6520, 6532}, {7497, 7509}, {8089, 8101}, {8659, 8671}, \
+{9819, 9831}, {11032, 11044}, {12875, 12887}, {13261, 13273}, {13346, 13358}, \
+{26254, 26266}, {48855, 48867}, <<4>>, {66477, 66489}, {67521, 67533}, \
+{69250, 69262}, {78326, 78338}, {81103, 81115}, {88353, 88365}}|>, <<691>>}, \
+<<4>>|>]"& )],
+  False,
+  BoxID -> 7816548695030228664771815930678184684224686393243096945136,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.849207120000901*^9},
+ CellLabel->"Out[26]=",
+ CellID->70455927,ExpressionUUID->"9763071d-ba94-4920-ad00-029772d503eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "99ea73fa-7071-4fea-86aa-43d0d2efce02"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->889275592,ExpressionUUID->"e25012eb-258a-463a-b17b-c5df84f8d34f"],
+
+Cell["\<\
+Search for lexical patterns in Wikipedia articles of the categories \
+containing the keyword music\
+\>", "ExampleText",
+ CellChangeTimes->{{3.849207194783861*^9, 3.849207224551241*^9}},
+ CellID->1716175271,ExpressionUUID->"0030104b-4dda-45d7-a6a6-ab0d4dbb9b46"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellLabel->"In[34]:=",
+ CellID->162076544,ExpressionUUID->"c583a9f8-f7db-43dd-b95f-ae8d40a829d9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LexicalCases", "[", 
+  RowBox[{
+   RowBox[{"\"\<Category\>\"", "->", "\"\<music\>\""}], ",", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{
+     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+     "\"\<music\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.849206699080229*^9, 3.849206723772504*^9}, {
+  3.849206895982045*^9, 3.849206926170787*^9}, {3.849207043734161*^9, 
+  3.8492070440750437`*^9}, {3.849207082213571*^9, 3.849207087333374*^9}, {
+  3.849207230478973*^9, 3.849207232489771*^9}},
+ CellLabel->"In[40]:=",
+ CellID->2032411926,ExpressionUUID->"1f52e65a-6a97-4a73-9dd1-a7d4af930cdf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "WikipediaSearch", "invinpm", 
+   "\"Category -> music, CategoryArticles are not valid inputs.\"", 2, 40, 32,
+    22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.8492153596875134`*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->739545300,ExpressionUUID->"a4fbb533-6bd0-4474-a114-c66c4620614e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "TakeLargestBy", "invrp", 
+   "\"The argument \\!\\(\\*RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}]\\) is not a valid Association or a list.\"", 2, 40, 33, 
+   22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.849215359744512*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->2049991911,ExpressionUUID->"7750c5fe-a57f-4590-9bb4-3cb4faf5d44c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "KeyValueMap", "invak", 
+   "\"The argument \
+\\!\\(\\*RowBox[{InterpretationBox[RowBox[{TagBox[\\\"Failure\\\", \
+\\\"SummaryHead\\\"], \\\"[\\\", DynamicModuleBox[{Typeset`open$$ = False, \
+Set[Typeset`embedState$$, \\\"Ready\\\"]}, \
+TemplateBox[List[PaneSelectorBox[List[Rule[False, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"The argument \
+\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\"Private`PackageResults\\\\\
+\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\
+\\\"Private`SearchArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"Private`GetTextFromArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\"Wikipedia\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\
+\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\
+\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\
+\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Adjective\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\
+\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\
+\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\
+\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"Adjective\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\
+\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\[LeftSkeleton]\\\\\\\\\\\
+\\\\\", \\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[RightSkeleton]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}]\\\\\\\\) is \
+not a valid list of Associations or rules or lists of rules.\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"GroupBy\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]], Rule[True, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"The argument \
+\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\"Private`PackageResults\\\\\
+\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\
+\\\"Private`SearchArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"Private`GetTextFromArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\"Wikipedia\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\
+\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\
+\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\
+\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Adjective\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\
+\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\
+\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\
+\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"Adjective\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\
+\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\[LeftSkeleton]\\\\\\\\\\\
+\\\\\", \\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[RightSkeleton]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}]\\\\\\\\) is \
+not a valid list of Associations or rules or lists of rules.\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"GroupBy\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]]], Dynamic[Typeset`open$$], Rule[ImageSize, Automatic]]], \
+\\\"SummaryPanel\\\"], RuleDelayed[DynamicModuleValues, List[]]], \
+\\\"]\\\"}], Failure[GroupBy, \
+Association[RuleDelayed[\\\"MessageTemplate\\\", MessageName[GroupBy, \
+\\\"list1\\\"]], Rule[\\\"MessageParameters\\\", \
+List[HoldForm[Private`PackageResults[Private`SearchArticles[Private`\
+GetTextFromArticles[\\\"Wikipedia\\\", WikipediaSearch[Rule[\\\"Category\\\", \
+\\\"music\\\"], \\\"CategoryArticles\\\"], 2, \\\"2\\\", \
+Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]], \
+LexicalPattern[TextType[\\\"Adjective\\\"], \\\"music\\\"], \
+LexicalPattern[TextType[\\\"Adjective\\\"], \\\"music\\\"], \
+WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \\\"CategoryArticles\\\
+\"], 2, Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]], WikipediaSearch[Rule[\\\"Category\
+\\\", \\\"music\\\"], \\\"CategoryArticles\\\"], 2, \
+Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]]]]]]], Rule[Selectable, False], \
+Rule[Editable, False], Rule[SelectWithContents, True]], \\\"[\\\", RowBox[{\\\
+\"All\\\", \\\",\\\", RowBox[{\\\"Total\\\", \\\"@*\\\", RowBox[{\\\"Map\\\", \
+\\\"[\\\", \\\"Length\\\", \\\"]\\\"}]}], \\\",\\\", \\\"\\\\\\\"Position\\\\\
+\\\"\\\"}], \\\"]\\\"}]\\) is not a valid Association.\"", 2, 40, 34, 
+   22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.849215359765132*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->1469571392,ExpressionUUID->"32b1e845-49bd-43c6-a539-df32991a1b74"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DeleteMissing", "invrp", 
+   "\"The argument \\!\\(\\*RowBox[{RowBox[{\\\"KeyValueMap\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Association\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Match\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"#1\\\"}], \
+\\\",\\\", RowBox[{\\\"\\\\\\\"Count\\\\\\\"\\\", \\\"\[Rule]\\\", \
+\\\"#2\\\"}]}], \\\"]\\\"}], \\\"&\\\"}], \\\"]\\\"}], \\\"[\\\", \
+RowBox[{InterpretationBox[RowBox[{TagBox[\\\"Failure\\\", \
+\\\"SummaryHead\\\"], \\\"[\\\", DynamicModuleBox[{Typeset`open$$ = False, \
+Set[Typeset`embedState$$, \\\"Ready\\\"]}, \
+TemplateBox[List[PaneSelectorBox[List[Rule[False, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"The argument \
+\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\"Private`PackageResults\\\\\
+\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\
+\\\"Private`SearchArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"Private`GetTextFromArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\"Wikipedia\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\
+\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\
+\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\
+\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Adjective\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\
+\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\
+\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\
+\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"Adjective\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\
+\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\[LeftSkeleton]\\\\\\\\\\\
+\\\\\", \\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[RightSkeleton]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}]\\\\\\\\) is \
+not a valid list of Associations or rules or lists of rules.\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"GroupBy\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]], Rule[True, \
+GridBox[List[List[FrameBox[StyleBox[\\\"\\\\\\\"\\\\[WarningSign]\\\\\\\"\\\",\
+ Directive[\\\"Message\\\", 35], Rule[StripOnInput, False]], \
+Rule[ContentPadding, False], Rule[FrameStyle, None], Rule[FrameMargins, \
+List[List[0, 0], List[0, 0]]], Rule[StripOnInput, False]], \
+GridBox[List[List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Message: \\\\\\\
+\"\\\", \\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", TagBox[\
+\\\"\\\\\\\"The argument \
+\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\"Private`PackageResults\\\\\
+\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\
+\\\"Private`SearchArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"Private`GetTextFromArticles\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\"Wikipedia\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\
+\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"2\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\
+\", \\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\
+\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Adjective\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\
+\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\
+\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"LexicalPattern\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"[\\\\\
+\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"TextType\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\"Adjective\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\
+\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\
+, \\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\
+\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"\\\\[LeftSkeleton]\\\\\\\\\\\
+\\\\\", \\\\\\\\\\\\\\\"1\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[RightSkeleton]\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"2\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"WikipediaSearch\\\\\\\\\\\\\\\", \\\\\\\\\\\\\
+\\\"[\\\\\\\\\\\\\\\", RowBox[{RowBox[{\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\"Category\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"music\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\
+\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"CategoryArticles\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\"\
+\\\\[Rule]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Value\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\"\\\\\\\\\\\\\\\"}]}], \\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}]\\\\\\\\) is \
+not a valid list of Associations or rules or lists of rules.\\\\\\\"\\\", \
+\\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", \
+List[6.5`, All]]]], Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", \
+List[List[Left]]]]], Rule[GridBoxSpacings, List[Rule[\\\"Columns\\\", \
+List[List[0]]]]]], \\\"SummaryItem\\\"]], \
+List[TagBox[GridBox[List[List[TagBox[\\\"\\\\\\\"Tag: \\\\\\\"\\\", \
+\\\"SummaryItemAnnotation\\\"], \\\"\\\\[InvisibleSpace]\\\", \
+TagBox[\\\"GroupBy\\\", \\\"SummaryItem\\\"]]], Rule[GridBoxItemSize, \
+List[Rule[\\\"Columns\\\", List[6.5`, All]]]], Rule[GridBoxAlignment, \
+List[Rule[\\\"Columns\\\", List[List[Left]]]]], Rule[GridBoxSpacings, \
+List[Rule[\\\"Columns\\\", List[List[0]]]]]], \\\"SummaryItem\\\"]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[GridBoxSpacings, List[Rule[\
+\\\"Columns\\\", List[List[2]]], Rule[\\\"Rows\\\", List[List[Automatic]]]]], \
+Rule[BaseStyle, List[Rule[ShowStringCharacters, False], Rule[NumberMarks, \
+False], Rule[PrintPrecision, 3], Rule[ShowSyntaxStyles, False]]]]]], \
+Rule[GridBoxAlignment, List[Rule[\\\"Columns\\\", List[List[Left]]], \
+Rule[\\\"Rows\\\", List[List[Top]]]]], Rule[AutoDelete, False], \
+Rule[GridBoxItemSize, List[Rule[\\\"Columns\\\", List[List[Automatic]]], \
+Rule[\\\"Rows\\\", List[List[Automatic]]]]], Rule[BaselinePosition, List[1, \
+1]]]]], Dynamic[Typeset`open$$], Rule[ImageSize, Automatic]]], \
+\\\"SummaryPanel\\\"], RuleDelayed[DynamicModuleValues, List[]]], \
+\\\"]\\\"}], Failure[GroupBy, \
+Association[RuleDelayed[\\\"MessageTemplate\\\", MessageName[GroupBy, \
+\\\"list1\\\"]], Rule[\\\"MessageParameters\\\", \
+List[HoldForm[Private`PackageResults[Private`SearchArticles[Private`\
+GetTextFromArticles[\\\"Wikipedia\\\", WikipediaSearch[Rule[\\\"Category\\\", \
+\\\"music\\\"], \\\"CategoryArticles\\\"], 2, \\\"2\\\", \
+Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]], \
+LexicalPattern[TextType[\\\"Adjective\\\"], \\\"music\\\"], \
+LexicalPattern[TextType[\\\"Adjective\\\"], \\\"music\\\"], \
+WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \\\"CategoryArticles\\\
+\"], 2, Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]], WikipediaSearch[Rule[\\\"Category\
+\\\", \\\"music\\\"], \\\"CategoryArticles\\\"], 2, \
+Rule[WikipediaSearch[Rule[\\\"Category\\\", \\\"music\\\"], \
+\\\"CategoryArticles\\\"], \\\"Value\\\"]]]]]]], Rule[Selectable, False], \
+Rule[Editable, False], Rule[SelectWithContents, True]], \\\"[\\\", RowBox[{\\\
+\"All\\\", \\\",\\\", RowBox[{\\\"Total\\\", \\\"@*\\\", RowBox[{\\\"Map\\\", \
+\\\"[\\\", \\\"Length\\\", \\\"]\\\"}]}], \\\",\\\", \\\"\\\\\\\"Position\\\\\
+\\\"\\\"}], \\\"]\\\"}], \\\"]\\\"}]\\) is not a valid Association or a list.\
+\"", 2, 40, 35, 22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.849215359830038*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->876961197,ExpressionUUID->"30e9adff-21df-44f2-af5e-7c392f7eeca2"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DeleteMissing", "invrp", 
+   "\"The argument \\!\\(\\*RowBox[{\\\"Private`PackageResults\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Private`SearchArticles\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`GetTextFromArticles\\\", \\\"[\\\", \
+RowBox[{\\\"\\\\\\\"Wikipedia\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", RowBox[{RowBox[{\\\"\\\
+\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\"music\\\\\\\"\\\"}], \
+\\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"2\\\", \\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\",\\\", \
+\\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \\\"]\\\"}], \\\"\[Rule]\\\", \
+\\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}]\\) is not a valid Association \
+or a list.\"", 2, 40, 36, 22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.849215359891182*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->906568618,ExpressionUUID->"84abf6a6-4d78-4071-a0eb-980637e07c1d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Lookup", "invrl", 
+   "\"The argument \\!\\(\\*RowBox[{\\\"DeleteMissing\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`PackageResults\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"Private`SearchArticles\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`GetTextFromArticles\\\", \\\"[\\\", \
+RowBox[{\\\"\\\\\\\"Wikipedia\\\\\\\"\\\", \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", RowBox[{RowBox[{\\\"\\\
+\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\"music\\\\\\\"\\\"}], \
+\\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"2\\\", \\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\",\\\", \
+\\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \\\"]\\\"}], \\\"\[Rule]\\\", \
+\\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \\\",\\\", \\\"1\\\", \\\",\\\
+\", \\\"1\\\"}], \\\"]\\\"}]\\) is not a valid Association or a list of \
+rules.\"", 2, 40, 37, 22970772084838393055, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.849207238392049*^9, {3.849207593412425*^9, 3.849207621226798*^9}, 
+   3.849215359899247*^9},
+ CellLabel->"During evaluation of In[40]:=",
+ CellID->302287261,ExpressionUUID->"0ef5075b-96a6-48d2-afe8-943e0abb8703"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["LexicalSummary",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{
+                    RowBox[{"DeleteMissing", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"KeyValueMap", "[", 
+                    RowBox[{
+                    RowBox[{"Association", "[", 
+                    RowBox[{
+                    RowBox[{"\"Match\"", "\[Rule]", "#1"}], ",", 
+                    RowBox[{"\"Count\"", "\[Rule]", "#2"}]}], "]"}], "&"}], 
+                    "]"}], "[", 
+                    RowBox[{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Failure", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"The argument \
+\\!\\(\\*TagBox[RowBox[{\\\"Private`PackageResults\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`SearchArticles\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"Private`GetTextFromArticles\\\", \\\"[\\\", RowBox[{\\\"\\\\\\\"Wikipedia\\\
+\\\\\"\\\", \\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) is not a valid list of Associations or rules \
+or lists of rules.\"", "SummaryItem"]}}, GridBoxItemSize -> {
+                    "Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["GroupBy", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"The argument \
+\\!\\(\\*TagBox[RowBox[{\\\"Private`PackageResults\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`SearchArticles\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"Private`GetTextFromArticles\\\", \\\"[\\\", RowBox[{\\\"\\\\\\\"Wikipedia\\\
+\\\\\"\\\", \\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) is not a valid list of Associations or rules \
+or lists of rules.\"", "SummaryItem"]}}, GridBoxItemSize -> {
+                    "Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["GroupBy", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Failure[
+                    GroupBy, <|"MessageTemplate" :> 
+                    MessageName[GroupBy, "list1"], "MessageParameters" -> {
+                    HoldForm[
+                    Private`PackageResults[
+                    Private`SearchArticles[
+                    Private`GetTextFromArticles["Wikipedia", 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, "2", 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"], 
+                    LexicalCases`LexicalPattern[
+                    LexicalCases`TextType["Adjective"], "music"], 
+                    LexicalCases`LexicalPattern[
+                    LexicalCases`TextType["Adjective"], "music"], 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"], 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"]]}|>], Selectable -> False,
+                     Editable -> False, SelectWithContents -> True], "[", 
+                    RowBox[{"All", ",", 
+                    RowBox[{"Total", "@*", 
+                    RowBox[{"Map", "[", "Length", "]"}]}], ",", 
+                    "\"Position\""}], "]"}], "]"}], ",", "1", ",", "1"}], 
+                    "]"}], "[", 
+                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{
+                    RowBox[{"DeleteMissing", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"KeyValueMap", "[", 
+                    RowBox[{
+                    RowBox[{"Association", "[", 
+                    RowBox[{
+                    RowBox[{"\"Match\"", "\[Rule]", "#1"}], ",", 
+                    RowBox[{"\"Count\"", "\[Rule]", "#2"}]}], "]"}], "&"}], 
+                    "]"}], "[", 
+                    RowBox[{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["Failure", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"The argument \
+\\!\\(\\*TagBox[RowBox[{\\\"Private`PackageResults\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`SearchArticles\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"Private`GetTextFromArticles\\\", \\\"[\\\", RowBox[{\\\"\\\\\\\"Wikipedia\\\
+\\\\\"\\\", \\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) is not a valid list of Associations or rules \
+or lists of rules.\"", "SummaryItem"]}}, GridBoxItemSize -> {
+                    "Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["GroupBy", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    FrameBox[
+                    StyleBox["\"\[WarningSign]\"", 
+                    Directive["Message", 35], StripOnInput -> False], 
+                    ContentPadding -> False, FrameStyle -> None, 
+                    FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+                    
+                    GridBox[{{
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"The argument \
+\\!\\(\\*TagBox[RowBox[{\\\"Private`PackageResults\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"Private`SearchArticles\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"Private`GetTextFromArticles\\\", \\\"[\\\", RowBox[{\\\"\\\\\\\"Wikipedia\\\
+\\\\\"\\\", \\\",\\\", RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \\\"\\\\\\\"2\\\\\\\"\\\", \
+\\\",\\\", RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"TextType\\\", \\\"[\\\", \
+\\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"LexicalPattern\\\", \\\"[\\\", RowBox[{RowBox[{\\\"TextType\\\", \
+\\\"[\\\", \\\"\\\\\\\"Adjective\\\\\\\"\\\", \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"music\\\\\\\"\\\"}], \\\"]\\\"}], \\\",\\\", \
+RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+\\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\
+\"}], \\\",\\\", \\\"2\\\", \\\",\\\", \
+RowBox[{RowBox[{\\\"WikipediaSearch\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"\\\\\\\"Category\\\\\\\"\\\", \\\"\[Rule]\\\", \\\"\\\\\\\
+\"music\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"CategoryArticles\\\\\\\"\\\"}], \
+\\\"]\\\"}], \\\"\[Rule]\\\", \\\"\\\\\\\"Value\\\\\\\"\\\"}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) is not a valid list of Associations or rules \
+or lists of rules.\"", "SummaryItem"]}}, GridBoxItemSize -> {
+                    "Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}, {
+                    TagBox[
+                    GridBox[{{
+                    TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["GroupBy", "SummaryItem"]}}, 
+                    GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0}}}], 
+                    "SummaryItem"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    Failure[
+                    GroupBy, <|"MessageTemplate" :> 
+                    MessageName[GroupBy, "list1"], "MessageParameters" -> {
+                    HoldForm[
+                    Private`PackageResults[
+                    Private`SearchArticles[
+                    Private`GetTextFromArticles["Wikipedia", 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, "2", 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"], 
+                    LexicalCases`LexicalPattern[
+                    LexicalCases`TextType["Adjective"], "music"], 
+                    LexicalCases`LexicalPattern[
+                    LexicalCases`TextType["Adjective"], "music"], 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"], 
+                    WikipediaSearch[
+                    "Category" -> "music", "CategoryArticles"], 2, 
+                    WikipediaSearch["Category" -> "music", 
+                    "CategoryArticles"] -> "Value"]]}|>], Selectable -> False,
+                     Editable -> False, SelectWithContents -> True], "[", 
+                    RowBox[{"All", ",", 
+                    RowBox[{"Total", "@*", 
+                    RowBox[{"Map", "[", "Length", "]"}]}], ",", 
+                    "\"Position\""}], "]"}], "]"}], ",", "1", ",", "1"}], 
+                    "]"}], "[", 
+                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  LexicalCases`LexicalSummary[<|"Data" -> Private`PackageResults[
+      Private`SearchArticles[
+       Private`GetTextFromArticles["Wikipedia", 
+        WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, "2", 
+        WikipediaSearch["Category" -> "music", "CategoryArticles"] -> 
+        "Value"], 
+       LexicalCases`LexicalPattern[
+        LexicalCases`TextType["Adjective"], "music"], 
+       LexicalCases`LexicalPattern[
+        LexicalCases`TextType["Adjective"], "music"], 
+       WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+       WikipediaSearch["Category" -> "music", "CategoryArticles"] -> "Value"], 
+      WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+      WikipediaSearch["Category" -> "music", "CategoryArticles"] -> "Value"], 
+    "Dataset" -> Dataset[
+      Private`PackageResults[
+       Private`SearchArticles[
+        Private`GetTextFromArticles["Wikipedia", 
+         WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, "2", 
+         WikipediaSearch["Category" -> "music", "CategoryArticles"] -> 
+         "Value"], 
+        LexicalCases`LexicalPattern[
+         LexicalCases`TextType["Adjective"], "music"], 
+        LexicalCases`LexicalPattern[
+         LexicalCases`TextType["Adjective"], "music"], 
+        WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+        WikipediaSearch["Category" -> "music", "CategoryArticles"] -> 
+        "Value"], 
+       WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+       WikipediaSearch["Category" -> "music", "CategoryArticles"] -> "Value"],
+       TypeSystem`AnyType, <||>], "Source" -> "Wikipedia", "TotalMatchCount" -> 
+    DeleteMissing[
+      KeyValueMap[<|"Match" -> #, "Count" -> #2|>& ][
+       Failure[
+       GroupBy, <|
+        "MessageTemplate" :> MessageName[GroupBy, "list1"], 
+         "MessageParameters" -> {
+           HoldForm[
+            Private`PackageResults[
+             Private`SearchArticles[
+              Private`GetTextFromArticles["Wikipedia", 
+               WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+               "2", WikipediaSearch[
+                "Category" -> "music", "CategoryArticles"] -> "Value"], 
+              LexicalCases`LexicalPattern[
+               LexicalCases`TextType["Adjective"], "music"], 
+              LexicalCases`LexicalPattern[
+               LexicalCases`TextType["Adjective"], "music"], 
+              WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+              WikipediaSearch["Category" -> "music", "CategoryArticles"] -> 
+              "Value"], 
+             WikipediaSearch["Category" -> "music", "CategoryArticles"], 2, 
+             WikipediaSearch["Category" -> "music", "CategoryArticles"] -> 
+             "Value"]]}|>][All, 
+        Composition[Total, 
+         Map[Length]], "Position"]], 1, 1][Total, "Count"], 
+    "LexicalPatternStructure" -> TextElement[{
+       TextElement[{"Adjective"}, <|"GrammaticalUnit" -> "TextType"|>], 
+       TextElement[{"music"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
+      "GrammaticalUnit" -> "LexicalPattern"|>]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.8492072386256447`*^9, {3.849207593635232*^9, 3.849207621463709*^9}, 
+   3.8492153599079103`*^9},
+ CellLabel->"Out[40]=",
+ CellID->1743170472,ExpressionUUID->"d7d17430-2c88-48a4-98e7-4c0a510d4634"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -362,12 +2703,22 @@ Cell[BoxData[
   $Line = 0; Null]], "ExampleSection",
  CellID->1755546364,ExpressionUUID->"94d2fa99-26bd-4a96-a9a8-72c99fb70fde"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[Cell[
   "\"Service\"", "ExampleSubsection",ExpressionUUID->
    "448e2a6e-3020-4310-b35e-649e4ebada64"],
   $Line = 0; Null]], "ExampleSubsection",
  CellID->1189913615,ExpressionUUID->"d4ad80f9-a6fe-4b08-93a4-b79bae68070b"],
+
+Cell["\<\
+Specify which external service to get text from when a content or category \
+rule is not specified\
+\>", "ExampleText",
+ CellChangeTimes->{{3.849206651120442*^9, 3.8492066929115763`*^9}},
+ CellID->1263282626,ExpressionUUID->"2058419a-1560-4eda-ae8b-eff02f80897b"]
+}, Open  ]],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -421,8 +2772,8 @@ Cell[BoxData[
  CellID->705128167,ExpressionUUID->"259221e6-d804-44de-b86a-967be4e01400"]
 }, Open  ]]
 },
-WindowSize->{781, 1105},
-WindowMargins->{{Automatic, 469}, {Automatic, 114}},
+WindowSize->{1142, 847},
+WindowMargins->{{89, Automatic}, {Automatic, 540}},
 CellContext->"Global`",
 FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
@@ -435,14 +2786,14 @@ ExpressionUUID->"7d34e1ca-cfa5-4202-8c8b-fe8a7f4b8417"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[11524, 337, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"8d97f221-c17c-4edb-9e24-42e59b838e2a",
+  Cell[63250, 1313, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"8d97f221-c17c-4edb-9e24-42e59b838e2a",
    CellTags->"ExtendedExamples",
    CellID->1996663373]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 15064, 436}
+ {"ExtendedExamples", 147066, 2787}
  }
 *)
 (*NotebookFileOutline
@@ -464,86 +2815,146 @@ Cell[1728, 53, 150, 2, 30, "Categorization",ExpressionUUID->"1bbeb70d-5720-4ce2-
 Cell[CellGroupData[{
 Cell[1915, 60, 111, 1, 19, "KeywordsSection",ExpressionUUID->"7ad041de-2256-477d-b1a0-b90b3f418c19",
  CellID->1636478737],
-Cell[2029, 63, 100, 1, 19, "Keywords",ExpressionUUID->"e460f5a0-ea7b-41a1-97b8-f99a5a3958b8",
+Cell[2029, 63, 191, 2, 19, "Keywords",ExpressionUUID->"e460f5a0-ea7b-41a1-97b8-f99a5a3958b8",
  CellID->1475065630]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[2166, 69, 119, 1, 19, "TemplatesSection",ExpressionUUID->"c65a4953-68a2-4618-ab90-547c0d7c8422",
+Cell[2257, 70, 119, 1, 29, "TemplatesSection",ExpressionUUID->"c65a4953-68a2-4618-ab90-547c0d7c8422",
  CellID->876822442],
-Cell[2288, 72, 148, 2, 27, "Template",ExpressionUUID->"b8fb96bc-8117-474f-ae38-ca0049e272b1",
+Cell[2379, 73, 148, 2, 27, "Template",ExpressionUUID->"b8fb96bc-8117-474f-ae38-ca0049e272b1",
  CellID->721996980],
-Cell[2439, 76, 138, 2, 27, "Template",ExpressionUUID->"8fadc952-828b-4667-9940-cb768a1532a6",
+Cell[2530, 77, 138, 2, 27, "Template",ExpressionUUID->"8fadc952-828b-4667-9940-cb768a1532a6",
  CellID->1320637310],
-Cell[2580, 80, 136, 2, 27, "Template",ExpressionUUID->"3e93116c-7b8d-474f-9b1f-061d084340ed",
+Cell[2671, 81, 136, 2, 27, "Template",ExpressionUUID->"3e93116c-7b8d-474f-9b1f-061d084340ed",
  CellID->1707777425],
-Cell[2719, 84, 138, 2, 27, "Template",ExpressionUUID->"cade73ec-39cf-4f42-a2b0-e49fedad8640",
+Cell[2810, 85, 138, 2, 27, "Template",ExpressionUUID->"cade73ec-39cf-4f42-a2b0-e49fedad8640",
  CellID->1496239820]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[2894, 91, 109, 1, 63, "ObjectName",ExpressionUUID->"464c6838-97cb-4596-8e8e-03ee20bed79f",
+Cell[2985, 92, 109, 1, 63, "ObjectName",ExpressionUUID->"464c6838-97cb-4596-8e8e-03ee20bed79f",
  CellID->269148370],
-Cell[3006, 94, 3362, 97, 164, "Usage",ExpressionUUID->"63ab6e6f-0ba6-46f2-bacd-fbd18ee5b6ad",
+Cell[3097, 95, 3362, 97, 164, "Usage",ExpressionUUID->"63ab6e6f-0ba6-46f2-bacd-fbd18ee5b6ad",
  CellID->976094008],
-Cell[6371, 193, 128, 1, 25, "Notes",ExpressionUUID->"8a15d67a-dd4f-419d-b951-8c30a9a0cfd9",
+Cell[6462, 194, 128, 1, 25, "Notes",ExpressionUUID->"8a15d67a-dd4f-419d-b951-8c30a9a0cfd9",
  CellID->584413023],
-Cell[6502, 196, 1168, 24, 81, "3ColumnTableMod",ExpressionUUID->"0e063569-c10c-45ea-b49d-b4c6ba4171db",
+Cell[6593, 197, 1168, 24, 81, "3ColumnTableMod",ExpressionUUID->"0e063569-c10c-45ea-b49d-b4c6ba4171db",
  CellID->1786959830],
-Cell[7673, 222, 333, 7, 26, "Notes",ExpressionUUID->"c7751df2-c6b5-4b03-8824-e9391862dff3",
+Cell[7764, 223, 333, 7, 26, "Notes",ExpressionUUID->"c7751df2-c6b5-4b03-8824-e9391862dff3",
  CellID->1026104798]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8043, 234, 113, 1, 44, "TechNotesSection",ExpressionUUID->"003b8e0e-6b80-4fd4-a00f-019e9ad202b8",
+Cell[8134, 235, 113, 1, 44, "TechNotesSection",ExpressionUUID->"003b8e0e-6b80-4fd4-a00f-019e9ad202b8",
  CellID->179801102],
-Cell[8159, 237, 324, 6, 16, "Tutorials",ExpressionUUID->"17567256-2b57-4c18-ba97-2d515aa234b2",
+Cell[8250, 238, 324, 6, 16, "Tutorials",ExpressionUUID->"17567256-2b57-4c18-ba97-2d515aa234b2",
  CellID->977997067]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8520, 248, 120, 1, 31, "RelatedLinksSection",ExpressionUUID->"99b20e13-979e-4d5d-bf88-13a3268b0537",
+Cell[8611, 249, 120, 1, 31, "RelatedLinksSection",ExpressionUUID->"99b20e13-979e-4d5d-bf88-13a3268b0537",
  CellID->2138076703],
-Cell[8643, 251, 343, 6, 16, "RelatedLinks",ExpressionUUID->"03d46fd3-274c-445f-b1f4-f5d410e13ac4",
+Cell[8734, 252, 343, 6, 16, "RelatedLinks",ExpressionUUID->"03d46fd3-274c-445f-b1f4-f5d410e13ac4",
  CellID->811282070]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9023, 262, 109, 1, 31, "SeeAlsoSection",ExpressionUUID->"ee303cde-a11b-418d-a811-e39005ec7124",
+Cell[9114, 263, 109, 1, 31, "SeeAlsoSection",ExpressionUUID->"ee303cde-a11b-418d-a811-e39005ec7124",
  CellID->844075687],
-Cell[9135, 265, 1345, 37, 40, "SeeAlso",ExpressionUUID->"b2bd545b-d886-427d-9067-8f4178299eef",
+Cell[9226, 266, 1345, 37, 40, "SeeAlso",ExpressionUUID->"b2bd545b-d886-427d-9067-8f4178299eef",
  CellID->103099327]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10517, 307, 184, 2, 31, "MoreAboutSection",ExpressionUUID->"c4f01b75-e7bf-4a96-8f63-5147c8ea7248",
+Cell[10608, 308, 184, 2, 31, "MoreAboutSection",ExpressionUUID->"c4f01b75-e7bf-4a96-8f63-5147c8ea7248",
  CellID->1918569407],
-Cell[10704, 311, 369, 8, 22, "MoreAbout",ExpressionUUID->"496e66e5-2515-4ccd-a47a-5582fb778eb3",
+Cell[10795, 312, 369, 8, 22, "MoreAbout",ExpressionUUID->"496e66e5-2515-4ccd-a47a-5582fb778eb3",
  CellID->929063744]
 }, Open  ]],
-Cell[11088, 322, 411, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"355d4f86-2518-4773-809b-c22e3d9a194d",
- CellID->420748071],
 Cell[CellGroupData[{
-Cell[11524, 337, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"8d97f221-c17c-4edb-9e24-42e59b838e2a",
+Cell[11201, 325, 411, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"355d4f86-2518-4773-809b-c22e3d9a194d",
+ CellID->420748071],
+Cell[11615, 338, 214, 2, 22, "ExampleText",ExpressionUUID->"307bbdc4-095b-4dc7-b92d-07989dbb6085",
+ CellID->1163429445],
+Cell[11832, 342, 421, 10, 27, "Input",ExpressionUUID->"10edf3fb-e744-44e2-bb93-4d98566c89eb",
+ CellID->1445746235],
+Cell[CellGroupData[{
+Cell[12278, 356, 626, 14, 66, "Input",ExpressionUUID->"0bd95460-746f-4033-950b-65119c63f145",
+ CellID->1493889061],
+Cell[12907, 372, 12833, 247, 53, "Output",ExpressionUUID->"4edefb83-37b1-4070-a683-0110e7f82819",
+ CellID->1977843092]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25777, 624, 289, 5, 27, "Input",ExpressionUUID->"a76f1de6-6ebc-4890-ba1b-8f25c0ad356f",
+ CellID->2071664732],
+Cell[26069, 631, 37132, 676, 194, "Output",ExpressionUUID->"aad859e2-aa65-42e2-ae13-bc30f424df46",
+ CellID->2141531800]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63250, 1313, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"8d97f221-c17c-4edb-9e24-42e59b838e2a",
  CellTags->"ExtendedExamples",
  CellID->1996663373],
-Cell[11682, 341, 242, 5, 33, "ExampleSection",ExpressionUUID->"90da12a8-1fe6-4612-bab2-9e161bbcde9d",
+Cell[CellGroupData[{
+Cell[63430, 1319, 242, 5, 33, "ExampleSection",ExpressionUUID->"90da12a8-1fe6-4612-bab2-9e161bbcde9d",
  CellID->1341841989],
-Cell[11927, 348, 265, 5, 21, "ExampleSection",ExpressionUUID->"848c7e4b-5aa0-4f8a-b452-f90323da5423",
+Cell[63675, 1326, 153, 2, 27, "Input",ExpressionUUID->"1ef5b840-34e4-415e-86f9-a64f00dab7b0",
+ CellID->556403277],
+Cell[63831, 1330, 253, 4, 22, "ExampleText",ExpressionUUID->"69fad572-b2fd-4f69-8dc6-ee0f2486645e",
+ CellID->2075223231],
+Cell[CellGroupData[{
+Cell[64109, 1338, 589, 12, 47, "Input",ExpressionUUID->"7dfb3fb9-a8a8-432d-8227-a1813d79afe5",
+ CellID->102964692],
+Cell[64701, 1352, 5392, 111, 90, "Output",ExpressionUUID->"9763071d-ba94-4920-ad00-029772d503eb",
+ CellID->70455927]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70130, 1468, 242, 5, 17, "ExampleDelimiter",ExpressionUUID->"e25012eb-258a-463a-b17b-c5df84f8d34f",
+ CellID->889275592],
+Cell[70375, 1475, 271, 5, 22, "ExampleText",ExpressionUUID->"0030104b-4dda-45d7-a6a6-ab0d4dbb9b46",
+ CellID->1716175271],
+Cell[70649, 1482, 177, 3, 27, "Input",ExpressionUUID->"c583a9f8-f7db-43dd-b95f-ae8d40a829d9",
+ CellID->162076544],
+Cell[CellGroupData[{
+Cell[70851, 1489, 640, 13, 47, "Input",ExpressionUUID->"1f52e65a-6a97-4a73-9dd1-a7d4af930cdf",
+ CellID->2032411926],
+Cell[71494, 1504, 456, 10, 26, "Message",ExpressionUUID->"a4fbb533-6bd0-4474-a114-c66c4620614e",
+ CellID->739545300],
+Cell[71953, 1516, 673, 13, 44, "Message",ExpressionUUID->"7750c5fe-a57f-4590-9bb4-3cb4faf5d44c",
+ CellID->2049991911],
+Cell[72629, 1531, 17719, 263, 76, "Message",ExpressionUUID->"32b1e845-49bd-43c6-a539-df32991a1b74",
+ CellID->1469571392],
+Cell[90351, 1796, 18056, 267, 80, "Message",ExpressionUUID->"30e9adff-21df-44f2-af5e-7c392f7eeca2",
+ CellID->876961197],
+Cell[108410, 2065, 2806, 44, 163, "Message",ExpressionUUID->"84abf6a6-4d78-4071-a0eb-980637e07c1d",
+ CellID->906568618],
+Cell[111219, 2111, 2921, 46, 180, "Message",ExpressionUUID->"0ef5075b-96a6-48d2-afe8-943e0abb8703",
+ CellID->302287261],
+Cell[114143, 2159, 29438, 525, 105, "Output",ExpressionUUID->"d7d17430-2c88-48a4-98e7-4c0a510d4634",
+ CellID->1743170472]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[143620, 2689, 265, 5, 33, "ExampleSection",ExpressionUUID->"848c7e4b-5aa0-4f8a-b452-f90323da5423",
  CellID->1612531976],
 Cell[CellGroupData[{
-Cell[12217, 357, 244, 5, 21, "ExampleSection",ExpressionUUID->"94d2fa99-26bd-4a96-a9a8-72c99fb70fde",
+Cell[143910, 2698, 244, 5, 21, "ExampleSection",ExpressionUUID->"94d2fa99-26bd-4a96-a9a8-72c99fb70fde",
  CellID->1755546364],
-Cell[12464, 364, 254, 5, 24, "ExampleSubsection",ExpressionUUID->"d4ad80f9-a6fe-4b08-93a4-b79bae68070b",
+Cell[CellGroupData[{
+Cell[144179, 2707, 254, 5, 24, "ExampleSubsection",ExpressionUUID->"d4ad80f9-a6fe-4b08-93a4-b79bae68070b",
  CellID->1189913615],
-Cell[12721, 371, 257, 5, 20, "ExampleSubsection",ExpressionUUID->"02c19efb-3d37-4361-bd6c-679f13edae59",
+Cell[144436, 2714, 273, 5, 22, "ExampleText",ExpressionUUID->"2058419a-1560-4eda-ae8b-eff02f80897b",
+ CellID->1263282626]
+}, Open  ]],
+Cell[144724, 2722, 257, 5, 24, "ExampleSubsection",ExpressionUUID->"02c19efb-3d37-4361-bd6c-679f13edae59",
  CellID->1510406441],
-Cell[12981, 378, 316, 6, 20, "ExampleSubsection",ExpressionUUID->"5658e280-1520-402d-86bf-e7a992143d60",
+Cell[144984, 2729, 316, 6, 20, "ExampleSubsection",ExpressionUUID->"5658e280-1520-402d-86bf-e7a992143d60",
  CellID->833854035]
 }, Open  ]],
-Cell[13312, 387, 249, 5, 33, "ExampleSection",ExpressionUUID->"46e14a54-feee-4c11-8084-dd7c5de73c8e",
+Cell[145315, 2738, 249, 5, 33, "ExampleSection",ExpressionUUID->"46e14a54-feee-4c11-8084-dd7c5de73c8e",
  CellID->1123521267],
-Cell[13564, 394, 258, 5, 21, "ExampleSection",ExpressionUUID->"48210fc0-9069-450c-9acf-52532c849778",
+Cell[145567, 2745, 258, 5, 21, "ExampleSection",ExpressionUUID->"48210fc0-9069-450c-9acf-52532c849778",
  CellID->198226398],
-Cell[13825, 401, 251, 5, 21, "ExampleSection",ExpressionUUID->"b3bbbfc3-a53c-4843-80d1-130614681359",
+Cell[145828, 2752, 251, 5, 21, "ExampleSection",ExpressionUUID->"b3bbbfc3-a53c-4843-80d1-130614681359",
  CellID->843934689],
-Cell[14079, 408, 257, 5, 21, "ExampleSection",ExpressionUUID->"4975bcd2-ef02-436e-9659-760646f99bd1",
+Cell[146082, 2759, 257, 5, 21, "ExampleSection",ExpressionUUID->"4975bcd2-ef02-436e-9659-760646f99bd1",
  CellID->2028313235],
-Cell[14339, 415, 249, 5, 21, "ExampleSection",ExpressionUUID->"259221e6-d804-44de-b86a-967be4e01400",
+Cell[146342, 2766, 249, 5, 21, "ExampleSection",ExpressionUUID->"259221e6-d804-44de-b86a-967be4e01400",
  CellID->705128167]
 }, Open  ]]
 }
