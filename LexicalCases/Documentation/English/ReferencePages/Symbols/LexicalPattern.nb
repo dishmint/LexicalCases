@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     33797,        874]
-NotebookOptionsPosition[     25900,        705]
-NotebookOutlinePosition[     26631,        730]
-CellTagsIndexPosition[     26552,        725]
+NotebookDataLength[     37067,        972]
+NotebookOptionsPosition[     28496,        787]
+NotebookOutlinePosition[     29227,        812]
+CellTagsIndexPosition[     29148,        807]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -613,36 +613,86 @@ Cell["Extract pieces of the pattern", "ExampleText",
  CellID->961723231,ExpressionUUID->"ddbfe35f-9c4e-4d0e-bf69-b23706a52ca6"],
 
 Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"\"\<the best music I've ever heard.\>\"", ",", " ", 
-   RowBox[{
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{
-      RowBox[{"adj", ":", 
-       RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}]}], ",", " ", 
-      "\"\<music\>\""}], "]"}], ":>", "adj"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.848776421534521*^9, 3.848776428177232*^9}},
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellLabel->"In[36]:=",
+ CellID->5534578,ExpressionUUID->"52ddf49e-44d3-4e31-8a76-f3b85823a162"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"\"\<the best music I've ever heard.\>\"", ",", " ", 
+    RowBox[{
+     RowBox[{"LexicalPattern", "[", 
+      RowBox[{
+       RowBox[{"adj", ":", 
+        RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}]}], ",", " ", 
+       "\"\<music\>\""}], "]"}], ":>", "adj"}]}], "]"}], "[", "\"\<Data\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.848776421534521*^9, 3.848776428177232*^9}, {
+  3.8498015963414183`*^9, 3.849801599257622*^9}},
+ CellLabel->"In[39]:=",
  CellID->424066901,ExpressionUUID->"6355d22b-b0df-4236-9566-b2810c84bd06"],
 
-Cell["Extract larger pieces", "ExampleText",
- CellChangeTimes->{{3.848776574207815*^9, 3.848776578844636*^9}},
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"best\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"5", ",", "13"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.849801564933209*^9, 3.849801600304653*^9},
+ CellLabel->"Out[39]=",
+ CellID->763653014,ExpressionUUID->"efe35271-dac1-4133-a1ca-4850f91300ad"]
+}, Open  ]],
+
+Cell["Group and extract larger segments", "ExampleText",
+ CellChangeTimes->{{3.848776574207815*^9, 3.848776578844636*^9}, {
+  3.849801622976915*^9, 3.849801633705361*^9}},
  CellID->1115992199,ExpressionUUID->"fcc0e97b-5a6b-4347-bcaf-f0b9f2218d13"],
 
 Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"\"\<What is the best music in the us?\>\"", ",", " ", 
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellID->677855625,ExpressionUUID->"cd1d4840-d12e-412b-9fd9-80e51ab46888"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"\"\<What is the best music in the us?\>\"", ",", " ", 
+    RowBox[{
+     RowBox[{"LexicalPattern", "[", 
+      RowBox[{
+       RowBox[{"phrase", ":", 
+        RowBox[{"LexicalPatternSequence", "[", 
+         RowBox[{
+          RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", " ", 
+          "\"\<music\>\""}], "]"}]}], ",", " ", "\"\< in the us\>\""}], "]"}],
+      ":>", "phrase"}]}], "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.848776473077036*^9, 3.848776540951859*^9}, {
+  3.849801588950471*^9, 3.849801606978034*^9}},
+ CellLabel->"In[40]:=",
+ CellID->1369432106,ExpressionUUID->"140ed902-2d49-47c5-8655-6891f6b37007"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
    RowBox[{
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{
-      RowBox[{"phrase", ":", 
-       RowBox[{"LexicalPatternSequence", "[", 
-        RowBox[{
-         RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", " ", 
-         "\"\<music\>\""}], "]"}]}], ",", " ", "\"\< in the\>\"", ",", " ", 
-      RowBox[{"TextType", "[", "\"\<Country\>\"", "]"}]}], "]"}], ":>", 
-    "phrase"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.848776473077036*^9, 3.848776540951859*^9}},
- CellID->1369432106,ExpressionUUID->"140ed902-2d49-47c5-8655-6891f6b37007"]
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"best music\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"13", ",", "32"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.849801571236018*^9, 3.849801607551475*^9},
+ CellLabel->"Out[40]=",
+ CellID->308277996,ExpressionUUID->"90995fac-aa33-4273-89ab-13286e557e0a"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -663,15 +713,47 @@ Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
  CellID->261587916,ExpressionUUID->"595c178e-cb75-4d72-8b70-d986ddfeeb53"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"\"\<the best music I've ever heard.\>\"", ",", " ", 
-   RowBox[{"LexicalPattern", "[", 
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{
+   "\"\<The best music I've ever heard. The worst music I've ever heard.\>\"",
+     ",", " ", 
+    RowBox[{"LexicalPattern", "[", 
+     RowBox[{
+      RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", " ", 
+      "\"\<music\>\""}], "]"}]}], "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",\
+
+ CellChangeTimes->{{3.848776335485915*^9, 3.848776378571946*^9}, {
+  3.8498016722386503`*^9, 3.849801695215577*^9}},
+ CellLabel->"In[41]:=",
+ CellID->1880380419,ExpressionUUID->"09ab57ac-4fc5-44c8-9393-365854958129"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
     RowBox[{
-     RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", " ", 
-     "\"\<music\>\""}], "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.848776335485915*^9, 3.848776378571946*^9}},
- CellID->1880380419,ExpressionUUID->"09ab57ac-4fc5-44c8-9393-365854958129"]
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"best music\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "14"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+   ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"worst music\"\>"}], ",", 
+     RowBox[{"\<\"Position\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"37", ",", "47"}], "}"}], "}"}]}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.849801695813332*^9},
+ CellLabel->"Out[41]=",
+ CellID->808645414,ExpressionUUID->"980f0b85-4398-4561-803e-16d56a9f2c25"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[BoxData[
@@ -724,7 +806,7 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 26359, 718}
+ {"ExtendedExamples", 28955, 800}
  }
 *)
 (*NotebookFileOutline
@@ -849,31 +931,47 @@ Cell[21937, 602, 243, 5, 17, "ExampleDelimiter",ExpressionUUID->"7492ce5e-b3d3-4
  CellID->2080459955],
 Cell[22183, 609, 240, 3, 22, "ExampleText",ExpressionUUID->"ddbfe35f-9c4e-4d0e-bf69-b23706a52ca6",
  CellID->961723231],
-Cell[22426, 614, 477, 10, 47, "Input",ExpressionUUID->"6355d22b-b0df-4236-9566-b2810c84bd06",
+Cell[22426, 614, 175, 3, 27, "Input",ExpressionUUID->"52ddf49e-44d3-4e31-8a76-f3b85823a162",
+ CellID->5534578],
+Cell[CellGroupData[{
+Cell[22626, 621, 601, 14, 66, "Input",ExpressionUUID->"6355d22b-b0df-4236-9566-b2810c84bd06",
  CellID->424066901],
-Cell[22906, 626, 186, 2, 22, "ExampleText",ExpressionUUID->"fcc0e97b-5a6b-4347-bcaf-f0b9f2218d13",
+Cell[23230, 637, 480, 12, 29, "Output",ExpressionUUID->"efe35271-dac1-4133-a1ca-4850f91300ad",
+ CellID->763653014]
+}, Open  ]],
+Cell[23725, 652, 247, 3, 22, "ExampleText",ExpressionUUID->"fcc0e97b-5a6b-4347-bcaf-f0b9f2218d13",
  CellID->1115992199],
-Cell[23095, 630, 666, 14, 85, "Input",ExpressionUUID->"140ed902-2d49-47c5-8655-6891f6b37007",
- CellID->1369432106]
+Cell[23975, 657, 153, 2, 27, "Input",ExpressionUUID->"cd1d4840-d12e-412b-9fd9-80e51ab46888",
+ CellID->677855625],
+Cell[CellGroupData[{
+Cell[24153, 663, 723, 16, 85, "Input",ExpressionUUID->"140ed902-2d49-47c5-8655-6891f6b37007",
+ CellID->1369432106],
+Cell[24879, 681, 487, 12, 29, "Output",ExpressionUUID->"90995fac-aa33-4273-89ab-13286e557e0a",
+ CellID->308277996]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23810, 650, 249, 5, 33, "ExampleSection",ExpressionUUID->"da1d0626-79e0-4840-972e-f00a7072d2c4",
+Cell[25427, 700, 249, 5, 33, "ExampleSection",ExpressionUUID->"da1d0626-79e0-4840-972e-f00a7072d2c4",
  CellID->1329430591],
-Cell[24062, 657, 206, 2, 22, "ExampleText",ExpressionUUID->"b7545dae-71a8-448d-88a1-d8a5b1a91044",
+Cell[25679, 707, 206, 2, 22, "ExampleText",ExpressionUUID->"b7545dae-71a8-448d-88a1-d8a5b1a91044",
  CellID->1338838993],
-Cell[24271, 661, 153, 2, 27, "Input",ExpressionUUID->"595c178e-cb75-4d72-8b70-d986ddfeeb53",
+Cell[25888, 711, 153, 2, 27, "Input",ExpressionUUID->"595c178e-cb75-4d72-8b70-d986ddfeeb53",
  CellID->261587916],
-Cell[24427, 665, 417, 8, 47, "Input",ExpressionUUID->"09ab57ac-4fc5-44c8-9393-365854958129",
- CellID->1880380419]
+Cell[CellGroupData[{
+Cell[26066, 717, 580, 14, 66, "Input",ExpressionUUID->"09ab57ac-4fc5-44c8-9393-365854958129",
+ CellID->1880380419],
+Cell[26649, 733, 779, 21, 51, "Output",ExpressionUUID->"980f0b85-4398-4561-803e-16d56a9f2c25",
+ CellID->808645414]
+}, Open  ]]
 }, Open  ]],
-Cell[24859, 676, 259, 5, 33, "ExampleSection",ExpressionUUID->"e923bef3-83b2-434f-a8d9-34593aa6e3e5",
+Cell[27455, 758, 259, 5, 33, "ExampleSection",ExpressionUUID->"e923bef3-83b2-434f-a8d9-34593aa6e3e5",
  CellID->1320079549],
-Cell[25121, 683, 251, 5, 21, "ExampleSection",ExpressionUUID->"c96c10ed-75fe-45a0-a31c-1f3fe9a733ba",
+Cell[27717, 765, 251, 5, 21, "ExampleSection",ExpressionUUID->"c96c10ed-75fe-45a0-a31c-1f3fe9a733ba",
  CellID->923422886],
-Cell[25375, 690, 256, 5, 21, "ExampleSection",ExpressionUUID->"342ac3fd-ecb0-4152-925d-262ddfb8ff2a",
+Cell[27971, 772, 256, 5, 21, "ExampleSection",ExpressionUUID->"342ac3fd-ecb0-4152-925d-262ddfb8ff2a",
  CellID->104128133],
-Cell[25634, 697, 250, 5, 21, "ExampleSection",ExpressionUUID->"6f807c91-d325-4423-960f-4e05450a1097",
+Cell[28230, 779, 250, 5, 21, "ExampleSection",ExpressionUUID->"6f807c91-d325-4423-960f-4e05450a1097",
  CellID->2029842673]
 }, Open  ]]
 }

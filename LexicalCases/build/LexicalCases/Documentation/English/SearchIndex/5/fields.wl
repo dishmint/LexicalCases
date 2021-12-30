@@ -363,10 +363,10 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "TableText",
+		"Name" -> "Keywords",
 		"Type" -> "Text",
+		"Stored" -> True,
 		"Tokenized" -> True,
-		"Stored" -> False,
 		"Weight" -> 1,
 		"Searchable" -> True,
 		"Language" -> "English",
@@ -378,10 +378,10 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "Keywords",
+		"Name" -> "TableText",
 		"Type" -> "Text",
-		"Stored" -> True,
 		"Tokenized" -> True,
+		"Stored" -> False,
 		"Weight" -> 1,
 		"Searchable" -> True,
 		"Language" -> "English",

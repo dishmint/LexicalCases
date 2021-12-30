@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7941,        201]
-NotebookOptionsPosition[      5587,        146]
-NotebookOutlinePosition[      7518,        195]
-CellTagsIndexPosition[      7475,        192]
+NotebookDataLength[    188822,       3674]
+NotebookOptionsPosition[    183574,       3564]
+NotebookOutlinePosition[    185768,       3620]
+CellTagsIndexPosition[    185681,       3615]
 WindowTitle->CountSummaryLowercase
 WindowFrame->Normal*)
 
@@ -27,79 +27,164 @@ Cell[BoxData[GridBox[{
           TemplateBox[{12},
            "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
            TextAlignment->Center,ExpressionUUID->
-           "b940ae73-6251-4b53-b168-1e44c7a77115"], 
+           "4d9bab40-229a-4d01-bfdb-72443eff6004"], 
           TemplateBox[{8},
            "Spacer1"]}]],
          TextAlignment->Center,ExpressionUUID->
-         "e7ed1fe1-d405-4b51-bc9f-ff6829885094"],
+         "7760a520-90fb-45a1-bdfc-3c6fb323a474"],
         Background->RGBColor[0.490196, 0.576471, 0.690196],
         ItemSize->Full], ""}
      },
      GridBoxAlignment->{"Rows" -> {{Center}}},
      GridBoxItemSize->{"Columns" -> {Full, 
-         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
-     TagBox[
-      ActionMenuBox[
-       FrameBox[Cell[TextData[{
-         "URL",
-         " ",
-         Cell[BoxData[
-          GraphicsBox[
-           {GrayLevel[0.66667], Thickness[0.13], 
-            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
-           AspectRatio->1,
-           ImageSize->20,
-           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
-          "5ecdd94d-a887-46e2-9302-50db3c0c9931"]
-        }],ExpressionUUID->"67b222fe-c59a-48a8-96b3-981443045e95"],
-        StripOnInput->
-         False], {"\<\"LexicalCases/ref/CountSummaryLowercase\"\>":>
-       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell["LexicalCases/ref/CountSummaryLowercase"]}, Visible -> 
-            False]]; SelectionMove[
-         DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-       Delimiter, "\<\"Copy web URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell[
-              BoxData[
-               MakeBoxes[
-                Hyperlink[
-                "http://reference.wolfram.com/language/LexicalCases/ref/\
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "002a203c-cb2a-429f-b3eb-8ef429d47050"]
+         }],ExpressionUUID->"fab67bd8-b8f9-45bb-b4f1-85d9cc69b6fc"],
+         StripOnInput->False], {"\<\"ToLowerCase\"\>":>
+        Documentation`HelpLookup["paclet:ref/ToLowerCase"], Delimiter, 
+        StyleBox["\<\"Functions\"\>", "SeeAlsoSection",
+         StripOnInput->False,
+         FontSize->14,
+         FontSlant->"Italic"]:>NotebookFind[
+         EvaluationNotebook[], "SeeAlsoSection", All, CellStyle], 
+        StyleBox["\<\"LexicalCases\"\>", "SeeAlsoRelated",
+         StripOnInput->False]:>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalCases"], 
+        StyleBox["\<\"LexicalSummary\"\>", "SeeAlsoRelated",
+         StripOnInput->False]:>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalSummary"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "82a94844-69fa-4122-b687-efe52556822d"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "c1d4791b-7bbb-419c-8469-20c94542010b"]
+         }],ExpressionUUID->"c3fb4b16-d037-41aa-8112-e3fab46dbd37"],
+         StripOnInput->False], {"\<\"LexicalCases\"\>":>
+        Documentation`HelpLookup["paclet:LexicalCases/guide/LexicalCases"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "da8076b8-f0ac-48f0-bc25-09fdc020c0c3"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tutorials",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "31e5ff64-805c-4cd1-870b-006e54cfd5da"]
+         }],ExpressionUUID->"7fdf7b61-b5d3-4981-bef9-ee3ca1da1086"],
+         StripOnInput->False], {"\<\"Lexical Cases Overview\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/tutorial/LexicalCasesOverview"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d461f7c1-66bf-4d71-a326-85a5b698d2ba"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "969e1c5a-9a35-4603-b6cd-0fbbbd5dc200"]
+         }],ExpressionUUID->"84ff888b-b577-4d79-83a8-543bd444f9aa"],
+         StripOnInput->
+          False], {"\<\"LexicalCases/ref/CountSummaryLowercase\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["LexicalCases/ref/CountSummaryLowercase"]}, Visible -> 
+             False]]; SelectionMove[
+          DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/LexicalCases/ref/\
 CountSummaryLowercase.html"], StandardForm]], "Input", TextClipboardType -> 
-              "PlainText"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; 
-        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-         NotebookLocate[{
-           URL[If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$518002], 
-              "http://reference.wolfram.com/system-modeler/", 
-              "http://reference.wolfram.com/language/"] <> 
-            "LexicalCases/ref/CountSummaryLowercase" <> ".html"], None}]}]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"URLMenu"],
-      MouseAppearanceTag["LinkHand"]]],
-     LineSpacing->{1.4, 0},ExpressionUUID->
-     "8fa40b81-d3f1-4313-a77b-0bb219a26d53"]], "AnchorBar",
+               "PlainText"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$34736], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "LexicalCases/ref/CountSummaryLowercase" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "20f96369-5ce8-4173-a6c5-8772872803f6"]
+    }], "AnchorBar",
      CacheGraphics->False,ExpressionUUID->
-     "fc256740-9463-48db-bfd8-cee1c4721103"]}
+     "b824960d-5258-4df2-829e-84f3b97974a9"]}
   }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"bd5ca15d-7c7c-4b24-9396-ac345231d9e5"],
+ CellID->1,ExpressionUUID->"ecf280d7-c856-4a6b-affe-3533d8a3d646"],
 
-Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"37718c8d-0d19-4359-b466-30b177e04d44"],
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"9af06af6-c8b8-46c6-9a8b-c83d55d229ee"],
 
 Cell[CellGroupData[{
 
@@ -107,17 +192,17 @@ Cell[BoxData[GridBox[{
    {Cell[TextData[{
      Cell[
      "CountSummaryLowercase", "ObjectName",ExpressionUUID->
-      "1187a554-45d3-4a56-86d3-5eb94f4da4bf"],
+      "82df8a07-4875-43ae-b798-e153b1bc15f2"],
      Cell[BoxData[
       TemplateBox[{8},
-       "Spacer1"]],ExpressionUUID->"7fc9aa69-f7c0-4d2f-aaaf-35b9cf1b57e0"],
+       "Spacer1"]],ExpressionUUID->"6c281a9d-1cea-4bbc-9bf2-7a2a040a3ee0"],
      Cell[BoxData[
      ""], "ObjectNameTranslation",ExpressionUUID->
-      "15747263-1c89-4557-b017-f70c67cb6c03"]
-    }],ExpressionUUID->"63ababda-5cc1-47f2-a7ad-9a20b6e2dd2d"], 
+      "b9c1a987-a1fb-4008-aff4-754edd2c3716"]
+    }],ExpressionUUID->"b9fc2ca1-0f21-4aa7-ba84-16a854c8351e"], 
     "\[SpanFromLeft]"}
-  }]], "ObjectNameGrid",ExpressionUUID->"7ecfefbf-25c1-4fe2-8f1d-\
-5a35d0ef5a26"],
+  }]], "ObjectNameGrid",ExpressionUUID->"e6aef2d1-14c9-4e56-acc8-\
+fcfe71a2771c"],
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -133,16 +218,3349 @@ Cell[BoxData[GridBox[{
        StyleBox["ds", "TI"], "]"}]], "InlineFormula",
       FontFamily->"Source Sans Pro",ExpressionUUID->
       "93f2d720-fe06-4d52-ab21-6a2fc2a65a45"],
-     "\[LineSeparator]Makes matches lowercase and merges rows that now have \
-the same match."
-    }],ExpressionUUID->"ad34c39b-2941-4f90-b179-850afb8a61d8"]}
+     "\[LineSeparator]lowercase matches and merge rows with the same match"
+    }],ExpressionUUID->"c73008d8-87c6-408f-870f-30030b36cc8b"]}
   }]], "Usage",
  GridBoxOptions->{
  GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->1835048001,ExpressionUUID->"f286fced-dda7-4d5f-ba4b-e5c120342d30"]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"d2fc062a-b6d2-4c3f-848f-0788a973639c"]
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+    ExpressionUUID->"0fb7ee0e-f8d0-4816-ad08-78e224a9b058"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"609d8178-a5bd-4a2e-a5b3-49c8f2124ecb"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"2e400749-545f-4334-a86f-2d8aadffa32d"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"6c7936c4-c36d-4399-8467-db4d0303e1b5"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->2030378860,ExpressionUUID->"058dbefc-b756-48e5-b4a4-e7fe9387a526"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["ds", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b7b7247b-68d5-4574-8fd3-26e2a2fb71aa"],
+ " must be a counts or count groups dataset which can be accessed via ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalSummary"]], "paclet:LexicalCases/ref/LexicalSummary", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "41c075dc-d21b-4735-88ff-465ec0ac6859"],
+ "'s ",
+ Cell[BoxData["\"\<Counts\>\""], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3dfa1c34-a489-422a-a8d4-c910001d20ce"],
+ " and ",
+ Cell[BoxData["\"\<CountGroups\>\""], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "207d08fd-a48f-4f71-b6b6-7f4267928d66"],
+ " properties."
+}], "Notes",
+ CellID->1639098240,ExpressionUUID->"c4928127-182d-4a78-9bc1-f4543546de09"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "de057947-0a05-4fc8-88f0-1c8a99dd94e4"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"e7c80edc-75fc-4513-9428-eb355e5a32be"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "1495a818-db76-4cf9-80a5-01ec287dad06"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1062349190,ExpressionUUID->"36848c45-dfff-4587-ad93-1926f22b4921"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "a00fafcd-90e7-4f9a-93c4-d8a2b97e31e1"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"8c515db6-6e75-42ac-8522-ba37678e26f4"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "13e10974-a9b9-4a08-9e89-193e59e98089"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->723795172,ExpressionUUID->"377471f5-c9e9-44aa-acb9-1ee52d24a015"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1087657768,ExpressionUUID->"98a8f694-aa52-4c21-b40d-f5d5e57ffb89"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cslp", "=", 
+   RowBox[{"LexicalCases", "[", 
+    RowBox[{
+     RowBox[{"\"\<Content\>\"", "->", "\"\<music\>\""}], ",", 
+     RowBox[{"LexicalPattern", "[", 
+      RowBox[{
+       RowBox[{"TextType", "[", "\"\<Adjective\>\"", "]"}], ",", 
+       "\"\<music\>\""}], "]"}], ",", 
+     RowBox[{"MaxItems", "->", "5"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "cslp"}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->127674473,ExpressionUUID->"8035ea70-4278-4a03-92b7-1909ef4782be"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["LexicalSummary",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["5", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["400", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["5", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["400", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  LexicalCases`LexicalSummary[<|
+   "Data" -> {<|
+      "Article" -> "Music", "Match" -> "popular music", 
+       "Position" -> {{2020, 2032}, {6520, 6532}, {7497, 7509}, {8089, 
+        8101}, {8659, 8671}, {9819, 9831}, {11032, 11044}, {12875, 12887}, {
+        13261, 13273}, {13346, 13358}, {26254, 26266}, {48855, 48867}, {49818,
+         49830}, {50303, 50315}, {52458, 52470}, {56087, 56099}, {66477, 
+        66489}, {67521, 67533}, {69250, 69262}, {78326, 78338}, {81103, 
+        81115}, {88353, 88365}}|>, <|
+      "Article" -> "Music", "Match" -> "traditional music", 
+       "Position" -> {{2035, 2051}, {8107, 8123}, {11050, 11066}, {22644, 
+        22660}, {22808, 22824}, {22919, 22935}, {23447, 23463}, {35225, 
+        35241}, {52042, 52058}, {52172, 52188}, {56105, 56121}, {76284, 
+        76300}, {78258, 78274}}|>, <|
+      "Article" -> "Music", "Match" -> "Classical music", 
+       "Position" -> {{2196, 2210}, {23012, 23026}, {41024, 41038}}|>, <|
+      "Article" -> "Music", "Match" -> "improvisational music", 
+       "Position" -> {{2280, 2300}}|>, <|
+      "Article" -> "Music", "Match" -> "contemporary music", 
+       "Position" -> {{2355, 2372}, {21532, 21549}, {34106, 34123}}|>, <|
+      "Article" -> "Music", "Match" -> "professional music", 
+       "Position" -> {{3654, 3671}, {6833, 6850}, {6903, 6920}, {6990, 
+        7007}, {80085, 80102}}|>, <|
+      "Article" -> "Music", "Match" -> "record music", 
+       "Position" -> {{3940, 3951}}|>, <|
+      "Article" -> "Music", "Match" -> "Italian music", 
+       "Position" -> {{4816, 4828}}|>, <|
+      "Article" -> "Music", "Match" -> "digital music", 
+       "Position" -> {{5881, 5893}, {76106, 76118}}|>, <|
+      "Article" -> "Music", "Match" -> "Professional music", 
+       "Position" -> {{6377, 6394}, {6651, 6668}, {74990, 75007}}|>, <|
+      "Article" -> "Music", "Match" -> "amateur music", 
+       "Position" -> {{6867, 6879}, {6959, 6971}, {46902, 46914}}|>, <|
+      "Article" -> "Music", "Match" -> "classical music", 
+       "Position" -> {{7474, 7488}, {7897, 7911}, {8327, 8341}, {8768, 
+        8782}, {8840, 8854}, {10938, 10952}, {15216, 15230}, {22570, 22584}, {
+        30847, 30861}, {32051, 32065}, {33227, 33241}, {34447, 34461}, {34912,
+         34926}, {35472, 35486}, {36878, 36892}, {43251, 43265}, {48475, 
+        48489}, {48692, 48706}, {51633, 51647}, {51899, 51913}, {52412, 
+        52426}, {53252, 53266}, {53591, 53605}, {66495, 66509}, {66744, 
+        66758}, {66883, 66897}, {67150, 67164}, {68686, 68700}, {79753, 
+        79767}, {80994, 81008}, {87269, 87283}, {88315, 88329}, {89275, 
+        89289}, {89791, 89805}}|>, <|
+      "Article" -> "Music", "Match" -> "instrumental music", 
+       "Position" -> {{7767, 7784}, {41790, 41807}, {44661, 44678}}|>, <|
+      "Article" -> "Music", "Match" -> "pop music", 
+       "Position" -> {{8439, 8447}, {50484, 50492}, {88441, 88449}, {89080, 
+        89088}}|>, <|
+      "Article" -> "Music", "Match" -> "own music", 
+       "Position" -> {{9331, 9339}}|>, <|
+      "Article" -> "Music", "Match" -> "aleatoric music", 
+       "Position" -> {{10578, 10592}}|>, <|
+      "Article" -> "Music", "Match" -> "notated music", 
+       "Position" -> {{11932, 11944}, {38547, 38559}}|>, <|
+      "Article" -> "Music", "Match" -> "standard music", 
+       "Position" -> {{12911, 12924}}|>, <|
+      "Article" -> "Music", "Match" -> "spontaneous music", 
+       "Position" -> {{13761, 13777}}|>, <|
+      "Article" -> "Music", "Match" -> "more music", 
+       "Position" -> {{15010, 15019}}|>, <|
+      "Article" -> "Music", "Match" -> "appropriate music", 
+       "Position" -> {{17361, 17377}}|>, <|
+      "Article" -> "Music", "Match" -> "common music", 
+       "Position" -> {{18780, 18791}}|>, <|
+      "Article" -> "Music", "Match" -> "intended music", 
+       "Position" -> {{19558, 19571}}|>, <|
+      "Article" -> "Music", "Match" -> "deep music", 
+       "Position" -> {{21947, 21956}}|>, <|
+      "Article" -> "Music", "Match" -> "Choral music", 
+       "Position" -> {{25931, 25942}}|>, <|
+      "Article" -> "Music", "Match" -> "particular music", 
+       "Position" -> {{26793, 26808}, {89510, 89525}}|>, <|
+      "Article" -> "Music", "Match" -> "Western music", 
+       "Position" -> {{30704, 30716}}|>, <|
+      "Article" -> "Music", "Match" -> "oldest music", 
+       "Position" -> {{33167, 33178}, {34477, 34488}}|>, <|
+      "Article" -> "Music", "Match" -> "prehistoric music", 
+       "Position" -> {{33357, 33373}}|>, <|
+      "Article" -> "Music", "Match" -> "Egyptian music", 
+       "Position" -> {{33672, 33685}, {34142, 34155}}|>, <|
+      "Article" -> "Music", "Match" -> "folk music", 
+       "Position" -> {{34032, 34041}, {44769, 44778}, {48416, 48425}, {53880, 
+        53889}, {88552, 88561}}|>, <|
+      "Article" -> "Music", "Match" -> "old music", 
+       "Position" -> {{34582, 34590}}|>, <|
+      "Article" -> "Music", "Match" -> "Indian music", 
+       "Position" -> {{34821, 34832}, {89752, 89763}}|>, <|
+      "Article" -> "Music", "Match" -> "Carnatic music", 
+       "Position" -> {{35263, 35276}}|>, <|
+      "Article" -> "Music", "Match" -> "Chinese music", 
+       "Position" -> {{35731, 35743}}|>, <|
+      "Article" -> "Music", "Match" -> "Greek music", 
+       "Position" -> {{36410, 36420}, {36701, 36711}, {36766, 36776}, {36798, 
+        36808}, {36985, 36995}}|>, <|
+      "Article" -> "Music", "Match" -> "complete music", 
+       "Position" -> {{37056, 37069}}|>, <|
+      "Article" -> "Music", "Match" -> "religious music", 
+       "Position" -> {{37722, 37736}, {78400, 78414}}|>, <|
+      "Article" -> "Music", "Match" -> "sacred music", 
+       "Position" -> {{38912, 38923}, {41735, 41746}}|>, <|
+      "Article" -> "Music", "Match" -> "vibrant music", 
+       "Position" -> {{39481, 39493}}|>, <|
+      "Article" -> "Music", "Match" -> "Baroque music", 
+       "Position" -> {{39741, 39753}, {41294, 41306}}|>, <|
+      "Article" -> "Music", "Match" -> "vocal music", 
+       "Position" -> {{39798, 39808}, {40027, 40037}}|>, <|
+      "Article" -> "Music", "Match" -> "contrapuntal music", 
+       "Position" -> {{39885, 39902}}|>, <|
+      "Article" -> "Music", "Match" -> "major music", 
+       "Position" -> {{40276, 40286}}|>, <|
+      "Article" -> "Music", "Match" -> "Symphonic music", 
+       "Position" -> {{43421, 43435}}|>, <|
+      "Article" -> "Music", "Match" -> "Romantic music", 
+       "Position" -> {{44268, 44281}}|>, <|
+      "Article" -> "Music", "Match" -> "orchestral music", 
+       "Position" -> {{44740, 44755}}|>, <|
+      "Article" -> "Music", "Match" -> "ballet music", 
+       "Position" -> {{45578, 45589}}|>, <|
+      "Article" -> "Music", "Match" -> "new music", 
+       "Position" -> {{47544, 47552}}|>, <|
+      "Article" -> "Music", "Match" -> "Traditional music", 
+       "Position" -> {{48374, 48390}}|>, <|
+      "Article" -> "Music", "Match" -> "American music", 
+       "Position" -> {{49462, 49475}}|>, <|
+      "Article" -> "Music", "Match" -> "European music", 
+       "Position" -> {{49635, 49648}}|>, <|
+      "Article" -> "Music", "Match" -> "recorded music", 
+       "Position" -> {{51212, 51225}, {75805, 75818}}|>, <|
+      "Article" -> "Music", "Match" -> "other music", 
+       "Position" -> {{51587, 51597}, {53033, 53043}, {54664, 54674}, {58270, 
+        58280}, {66283, 66293}, {74945, 74955}, {80178, 80188}, {90935, 
+        90945}}|>, <|
+      "Article" -> "Music", "Match" -> "Different music", 
+       "Position" -> {{54260, 54274}}|>, <|
+      "Article" -> "Music", "Match" -> "many music", 
+       "Position" -> {{57966, 57975}}|>, <|
+      "Article" -> "Music", "Match" -> "microtonal music", 
+       "Position" -> {{58347, 58362}}|>, <|
+      "Article" -> "Music", "Match" -> "alternate music", 
+       "Position" -> {{58381, 58395}}|>, <|
+      "Article" -> "Music", "Match" -> "Cognitive music", 
+       "Position" -> {{60828, 60842}}|>, <|
+      "Article" -> "Music", "Match" -> "Evolutionary music", 
+       "Position" -> {{61974, 61991}}|>, <|
+      "Article" -> "Music", "Match" -> "numerous music", 
+       "Position" -> {{62659, 62672}}|>, <|
+      "Article" -> "Music", "Match" -> "familiar music", 
+       "Position" -> {{62909, 62922}, {63170, 63183}}|>, <|
+      "Article" -> "Music", "Match" -> "unfamiliar music", 
+       "Position" -> {{63205, 63220}}|>, <|
+      "Article" -> "Music", "Match" -> "academic music", 
+       "Position" -> {{65554, 65567}}|>, <|
+      "Article" -> "Music", "Match" -> "live music", 
+       "Position" -> {{69927, 69936}, {71486, 71495}, {71802, 71811}}|>, <|
+      "Article" -> "Music", "Match" -> "prerecorded music", 
+       "Position" -> {{71355, 71371}}|>, <|
+      "Article" -> "Music", "Match" -> "online music", 
+       "Position" -> {{76550, 76561}, {94775, 94786}}|>, <|
+      "Article" -> "Music", "Match" -> "private music", 
+       "Position" -> {{78763, 78775}}|>, <|
+      "Article" -> "Music", "Match" -> "Amateur music", 
+       "Position" -> {{78844, 78856}}|>, <|
+      "Article" -> "Music", "Match" -> "basic music", 
+       "Position" -> {{78878, 78888}}|>, <|
+      "Article" -> "Music", "Match" -> "few music", 
+       "Position" -> {{79154, 79162}}|>, <|
+      "Article" -> "Music", "Match" -> "different music", 
+       "Position" -> {{79335, 79349}}|>, <|
+      "Article" -> "Music", "Match" -> "Gamelan music", 
+       "Position" -> {{80021, 80033}}|>, <|
+      "Article" -> "Music", "Match" -> "regular music", 
+       "Position" -> {{81894, 81906}}|>, <|
+      "Article" -> "Music", "Match" -> "undergraduate music", 
+       "Position" -> {{82640, 82658}}|>, <|
+      "Article" -> "Music", "Match" -> "systematic music", 
+       "Position" -> {{84756, 84771}}|>, <|
+      "Article" -> "Music", "Match" -> "historical music", 
+       "Position" -> {{84779, 84794}}|>, <|
+      "Article" -> "Music", "Match" -> "comparative music", 
+       "Position" -> {{84806, 84822}}|>, <|
+      "Article" -> "Music", "Match" -> "tonal music", 
+       "Position" -> {{85854, 85864}}|>, <|
+      "Article" -> "Music", "Match" -> "atonal music", 
+       "Position" -> {{86039, 86050}}|>, <|
+      "Article" -> "Music", "Match" -> "Speculative music", 
+       "Position" -> {{86053, 86069}}|>, <|
+      "Article" -> "Music", "Match" -> "analytic music", 
+       "Position" -> {{86095, 86108}}|>, <|
+      "Article" -> "Music", "Match" -> "indigenous music", 
+       "Position" -> {{87605, 87620}, {88664, 88679}}|>, <|
+      "Article" -> "Music", "Match" -> "commercial music", 
+       "Position" -> {{88371, 88386}}|>, <|
+      "Article" -> "Music", "Match" -> "actual music", 
+       "Position" -> {{89179, 89190}}|>, <|
+      "Article" -> "Music", "Match" -> "current music", 
+       "Position" -> {{89431, 89443}}|>, <|
+      "Article" -> "Music", "Match" -> "percussion music", 
+       "Position" -> {{89911, 89926}}|>, <|
+      "Article" -> "Music", "Match" -> "clear music", 
+       "Position" -> {{92692, 92702}}|>, <|
+      "Article" -> "Music", "Match" -> "specialised music", 
+       "Position" -> {{94839, 94855}}|>, <|
+      "Article" -> "Music (disambiguation)", "Match" -> "first music", 
+       "Position" -> {{1407, 1417}}|>, <|
+      "Article" -> "Classical music", "Match" -> "formal music", 
+       "Position" -> {{41, 52}, {10302, 10313}, {35234, 35245}}|>, <|
+      "Article" -> "Classical music", "Match" -> "folk music", 
+       "Position" -> {{127, 136}, {10361, 10370}, {35813, 35822}, {42255, 
+        42264}, {42628, 42637}}|>, <|
+      "Article" -> "Classical music", "Match" -> "popular music", 
+       "Position" -> {{141, 153}, {3745, 3757}, {35798, 35810}, {41214, 
+        41226}, {41685, 41697}, {41967, 41979}}|>, <|
+      "Article" -> "Classical music", "Match" -> "classical music", 
+       "Position" -> {{208, 222}, {362, 376}, {787, 801}, {5847, 5861}, {7869,
+         7883}, {9554, 9568}, {9748, 9762}, {10107, 10121}, {10802, 10816}, {
+        11933, 11947}, {13214, 13228}, {30728, 30742}, {34440, 34454}, {34860,
+         34874}, {35203, 35217}, {35345, 35359}, {35755, 35769}, {35840, 
+        35854}, {35882, 35896}, {37472, 37486}, {37560, 37574}, {37752, 
+        37766}, {41792, 41806}, {41918, 41932}, {42216, 42230}, {42776, 
+        42790}, {43499, 43513}, {43729, 43743}, {44087, 44101}, {44965, 
+        44979}, {45115, 45129}}|>, <|
+      "Article" -> "Classical music", "Match" -> "medieval music", 
+       "Position" -> {{1043, 1056}, {1553, 1566}, {12580, 12593}, {12625, 
+        12638}, {12847, 12860}, {13237, 13250}, {15328, 15341}}|>, <|
+      "Article" -> "Classical music", "Match" -> "extant music", 
+       "Position" -> {{1194, 1205}}|>, <|
+      "Article" -> "Classical music", "Match" -> "European music", 
+       "Position" -> {{1627, 1640}, {10422, 10435}, {10663, 10676}, {14332, 
+        14345}, {14562, 14575}}|>, <|
+      "Article" -> "Classical music", "Match" -> "secular music", 
+       "Position" -> {{1744, 1756}}|>, <|
+      "Article" -> "Classical music", "Match" -> "sacred music", 
+       "Position" -> {{2184, 2195}, {18651, 18662}}|>, <|
+      "Article" -> "Classical music", "Match" -> "central music", 
+       "Position" -> {{2283, 2295}}|>, <|
+      "Article" -> "Classical music", "Match" -> "galant music", 
+       "Position" -> {{3009, 3020}}|>, <|
+      "Article" -> "Classical music", "Match" -> "absolute music", 
+       "Position" -> {{3244, 3257}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Romantic music", 
+       "Position" -> {{3328, 3341}, {8064, 8077}}|>, <|
+      "Article" -> "Classical music", "Match" -> "programmatic music", 
+       "Position" -> {{3374, 3391}}|>, <|
+      "Article" -> "Classical music", "Match" -> "older music", 
+       "Position" -> {{4066, 4076}}|>, <|
+      "Article" -> "Classical music", "Match" -> "such music", 
+       "Position" -> {{6941, 6950}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Western music", 
+       "Position" -> {{9350, 9362}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Hindustani music", 
+       "Position" -> {{9584, 9599}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Gamelan music", 
+       "Position" -> {{9603, 9615}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Early music", 
+       "Position" -> {{10837, 10847}, {14262, 14272}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Modernist music", 
+       "Position" -> {{11138, 11152}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Postmodern music", 
+       "Position" -> {{11184, 11199}}|>, <|
+      "Article" -> "Classical music", "Match" -> "predominant music", 
+       "Position" -> {{11704, 11720}}|>, <|
+      "Article" -> "Classical music", "Match" -> "ancient music", 
+       "Position" -> {{11989, 12001}, {14118, 14130}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Roman music", 
+       "Position" -> {{12078, 12088}}|>, <|
+      "Article" -> "Classical music", "Match" -> "indisputable music", 
+       "Position" -> {{13358, 13375}}|>, <|
+      "Article" -> "Classical music", "Match" -> "vocal music", 
+       "Position" -> {{14852, 14862}}|>, <|
+      "Article" -> "Classical music", "Match" -> "earlier music", 
+       "Position" -> {{20384, 20396}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Baroque music", 
+       "Position" -> {{22016, 22028}}|>, <|
+      "Article" -> "Classical music", "Match" -> "traditional music", 
+       "Position" -> {{28051, 28067}}|>, <|
+      "Article" -> "Classical music", "Match" -> "single music", 
+       "Position" -> {{32369, 32380}}|>, <|
+      "Article" -> "Classical music", "Match" -> "postmodern music", 
+       "Position" -> {{34156, 34171}}|>, <|
+      "Article" -> "Classical music", "Match" -> "pluralist music", 
+       "Position" -> {{34794, 34808}}|>, <|
+      "Article" -> "Classical music", "Match" -> "more music", 
+       "Position" -> {{36078, 36087}}|>, <|
+      "Article" -> "Classical music", "Match" -> "Classical music", 
+       "Position" -> {{36498, 36512}, {36569, 36583}}|>, <|
+      "Article" -> "Classical music", "Match" -> "other music", 
+       "Position" -> {{41099, 41109}}|>, <|
+      "Article" -> "Classical music", "Match" -> "occasional music", 
+       "Position" -> {{41269, 41284}}|>, <|
+      "Article" -> "Classical music", "Match" -> "instrumental music", 
+       "Position" -> {{42162, 42179}}|>, <|
+      "Article" -> "Music video", "Match" -> "Many music", 
+       "Position" -> {{1277, 1286}}|>, <|
+      "Article" -> "Music video", "Match" -> "Other music", 
+       "Position" -> {{1391, 1401}}|>, <|
+      "Article" -> "Music video", "Match" -> "many music", 
+       "Position" -> {{2004, 2013}}|>, <|
+      "Article" -> "Music video", "Match" -> "popular music", 
+       "Position" -> {{2394, 2406}, {19879, 19891}}|>, <|
+      "Article" -> "Music video", "Match" -> "other music", 
+       "Position" -> {{3101, 3111}}|>, <|
+      "Article" -> "Music video", "Match" -> "short music", 
+       "Position" -> {{3129, 3139}, {19266, 19276}}|>, <|
+      "Article" -> "Music video", "Match" -> "later music", 
+       "Position" -> {{3307, 3317}}|>, <|
+      "Article" -> "Music video", "Match" -> "first music", 
+       "Position" -> {{4452, 4462}, {14290, 14300}, {17203, 17213}, {18243, 
+        18253}, {19178, 19188}}|>, <|
+      "Article" -> "Music video", "Match" -> "promotional music", 
+       "Position" -> {{4764, 4780}}|>, <|
+      "Article" -> "Music video", "Match" -> "Most music", 
+       "Position" -> {{5597, 5606}}|>, <|
+      "Article" -> "Music video", "Match" -> "subsequent music", 
+       "Position" -> {{6505, 6520}}|>, <|
+      "Article" -> "Music video", "Match" -> "adventurous music", 
+       "Position" -> {{8974, 8990}}|>, <|
+      "Article" -> "Music video", "Match" -> "memorable music", 
+       "Position" -> {{16744, 16758}}|>, <|
+      "Article" -> "Music video", "Match" -> "video music", 
+       "Position" -> {{17861, 17871}, {19519, 19529}}|>, <|
+      "Article" -> "Music video", "Match" -> "modern music", 
+       "Position" -> {{20162, 20173}}|>, <|
+      "Article" -> "Music video", "Match" -> "spoof music", 
+       "Position" -> {{20976, 20986}}|>, <|
+      "Article" -> "Music video", "Match" -> "iconic music", 
+       "Position" -> {{22569, 22580}}|>, <|
+      "Article" -> "Music video", "Match" -> "softer music", 
+       "Position" -> {{24420, 24431}}|>, <|
+      "Article" -> "Music video", "Match" -> "expensive music", 
+       "Position" -> {{26293, 26307}}|>, <|
+      "Article" -> "Music video", "Match" -> "older music", 
+       "Position" -> {{26947, 26957}}|>, <|
+      "Article" -> "Music video", "Match" -> "free music", 
+       "Position" -> {{28448, 28457}}|>, <|
+      "Article" -> "Music video", "Match" -> "major music", 
+       "Position" -> {{29867, 29877}, {42216, 42226}}|>, <|
+      "Article" -> "Music video", "Match" -> "indie music", 
+       "Position" -> {{31158, 31168}}|>, <|
+      "Article" -> "Music video", "Match" -> "traditional music", 
+       "Position" -> {{32121, 32137}, {32739, 32755}}|>, <|
+      "Article" -> "Music video", "Match" -> "Australian music", 
+       "Position" -> {{43735, 43750}}|>, <|
+      "Article" -> "Music video", "Match" -> "multiple music", 
+       "Position" -> {{44709, 44722}}|>, <|
+      "Article" -> "Music video", "Match" -> "longform music", 
+       "Position" -> {{46390, 46403}}|>, <|
+      "Article" -> "Music video", "Match" -> "more music", 
+       "Position" -> {{49000, 49009}}|>, <|
+      "Article" -> "Music video", "Match" -> "Japanese music", 
+       "Position" -> {{49096, 49109}}|>, <|
+      "Article" -> "Music video", "Match" -> "Unofficial music", 
+       "Position" -> {{49896, 49911}}|>, <|
+      "Article" -> "Music genre", "Match" -> "popular music", 
+       "Position" -> {{326, 338}, {1817, 1829}, {2812, 2824}, {7791, 7803}, {
+        8241, 8253}, {9102, 9114}, {9551, 9563}, {11041, 11053}, {11166, 
+        11178}, {12586, 12598}, {18122, 18134}, {18684, 18696}}|>, <|
+      "Article" -> "Music genre", "Match" -> "religious music", 
+       "Position" -> {{358, 372}, {13700, 13714}}|>, <|
+      "Article" -> "Music genre", "Match" -> "secular music", 
+       "Position" -> {{378, 390}}|>, <|
+      "Article" -> "Music genre", "Match" -> "electronic music", 
+       "Position" -> {{4361, 4376}, {9700, 9715}, {9819, 9834}}|>, <|
+      "Article" -> "Music genre", "Match" -> "written music", 
+       "Position" -> {{6024, 6036}, {6937, 6949}}|>, <|
+      "Article" -> "Music genre", "Match" -> "classical music", 
+       "Position" -> {{6058, 6072}, {6671, 6685}, {7679, 7693}, {16844, 
+        16858}}|>, <|
+      "Article" -> "Music genre", "Match" -> "oral music", 
+       "Position" -> {{6119, 6128}}|>, <|
+      "Article" -> "Music genre", "Match" -> "folk music", 
+       "Position" -> {{6136, 6145}, {13739, 13748}, {13771, 13780}, {13957, 
+        13966}, {14163, 14172}, {14752, 14761}, {14786, 14795}, {14807, 
+        14816}, {14931, 14940}, {15114, 15123}, {15372, 15381}, {15520, 
+        15529}, {15760, 15769}, {16136, 16145}}|>, <|
+      "Article" -> "Music genre", "Match" -> "ethnic music", 
+       "Position" -> {{6150, 6161}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Audiotactile music", 
+       "Position" -> {{6217, 6234}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Major music", 
+       "Position" -> {{6534, 6544}}|>, <|
+      "Article" -> "Music genre", "Match" -> "traditional music", 
+       "Position" -> {{7085, 7101}, {13825, 13841}, {13927, 13943}, {14038, 
+        14054}}|>, <|
+      "Article" -> "Music genre", "Match" -> "commercial music", 
+       "Position" -> {{8830, 8845}}|>, <|
+      "Article" -> "Music genre", "Match" -> "minimalist music", 
+       "Position" -> {{9169, 9184}}|>, <|
+      "Article" -> "Music genre", "Match" -> "hillbilly music", 
+       "Position" -> {{9520, 9534}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Electronic music", 
+       "Position" -> {{9638, 9653}}|>, <|
+      "Article" -> "Music genre", "Match" -> "rhythmic music", 
+       "Position" -> {{10483, 10496}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Latin music", 
+       "Position" -> {{10983, 10993}}|>, <|
+      "Article" -> "Music genre", "Match" -> "modern music", 
+       "Position" -> {{11549, 11560}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Reggae music", 
+       "Position" -> {{11851, 11862}}|>, <|
+      "Article" -> "Music genre", "Match" -> "reggae music", 
+       "Position" -> {{12017, 12028}, {12446, 12457}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Religious music", 
+       "Position" -> {{13507, 13521}}|>, <|
+      "Article" -> "Music genre", "Match" -> "sacred music", 
+       "Position" -> {{13550, 13561}}|>, <|
+      "Article" -> "Music genre", "Match" -> "Christian music", 
+       "Position" -> {{13668, 13682}}|>, <|
+      "Article" -> "Music genre", "Match" -> "heavier music", 
+       "Position" -> {{16666, 16678}}|>, <|
+      "Article" -> "Music genre", "Match" -> "lighter music", 
+       "Position" -> {{16810, 16822}}|>, <|
+      "Article" -> "Music genre", "Match" -> "percussive music", 
+       "Position" -> {{17175, 17190}}|>, <|
+      "Article" -> "Music genre", "Match" -> "energetic music", 
+       "Position" -> {{17326, 17340}}|>}, "Dataset" -> 
+    Dataset[{<|
+       "Article" -> "Music", "Match" -> "popular music", 
+        "Position" -> {{2020, 2032}, {6520, 6532}, {7497, 7509}, {8089, 
+         8101}, {8659, 8671}, {9819, 9831}, {11032, 11044}, {12875, 12887}, {
+         13261, 13273}, {13346, 13358}, {26254, 26266}, {48855, 48867}, {
+         49818, 49830}, {50303, 50315}, {52458, 52470}, {56087, 56099}, {
+         66477, 66489}, {67521, 67533}, {69250, 69262}, {78326, 78338}, {
+         81103, 81115}, {88353, 88365}}|>, <|
+       "Article" -> "Music", "Match" -> "traditional music", 
+        "Position" -> {{2035, 2051}, {8107, 8123}, {11050, 11066}, {22644, 
+         22660}, {22808, 22824}, {22919, 22935}, {23447, 23463}, {35225, 
+         35241}, {52042, 52058}, {52172, 52188}, {56105, 56121}, {76284, 
+         76300}, {78258, 78274}}|>, <|
+       "Article" -> "Music", "Match" -> "Classical music", 
+        "Position" -> {{2196, 2210}, {23012, 23026}, {41024, 41038}}|>, <|
+       "Article" -> "Music", "Match" -> "improvisational music", 
+        "Position" -> {{2280, 2300}}|>, <|
+       "Article" -> "Music", "Match" -> "contemporary music", 
+        "Position" -> {{2355, 2372}, {21532, 21549}, {34106, 34123}}|>, <|
+       "Article" -> "Music", "Match" -> "professional music", 
+        "Position" -> {{3654, 3671}, {6833, 6850}, {6903, 6920}, {6990, 
+         7007}, {80085, 80102}}|>, <|
+       "Article" -> "Music", "Match" -> "record music", 
+        "Position" -> {{3940, 3951}}|>, <|
+       "Article" -> "Music", "Match" -> "Italian music", 
+        "Position" -> {{4816, 4828}}|>, <|
+       "Article" -> "Music", "Match" -> "digital music", 
+        "Position" -> {{5881, 5893}, {76106, 76118}}|>, <|
+       "Article" -> "Music", "Match" -> "Professional music", 
+        "Position" -> {{6377, 6394}, {6651, 6668}, {74990, 75007}}|>, <|
+       "Article" -> "Music", "Match" -> "amateur music", 
+        "Position" -> {{6867, 6879}, {6959, 6971}, {46902, 46914}}|>, <|
+       "Article" -> "Music", "Match" -> "classical music", 
+        "Position" -> {{7474, 7488}, {7897, 7911}, {8327, 8341}, {8768, 
+         8782}, {8840, 8854}, {10938, 10952}, {15216, 15230}, {22570, 
+         22584}, {30847, 30861}, {32051, 32065}, {33227, 33241}, {34447, 
+         34461}, {34912, 34926}, {35472, 35486}, {36878, 36892}, {43251, 
+         43265}, {48475, 48489}, {48692, 48706}, {51633, 51647}, {51899, 
+         51913}, {52412, 52426}, {53252, 53266}, {53591, 53605}, {66495, 
+         66509}, {66744, 66758}, {66883, 66897}, {67150, 67164}, {68686, 
+         68700}, {79753, 79767}, {80994, 81008}, {87269, 87283}, {88315, 
+         88329}, {89275, 89289}, {89791, 89805}}|>, <|
+       "Article" -> "Music", "Match" -> "instrumental music", 
+        "Position" -> {{7767, 7784}, {41790, 41807}, {44661, 44678}}|>, <|
+       "Article" -> "Music", "Match" -> "pop music", 
+        "Position" -> {{8439, 8447}, {50484, 50492}, {88441, 88449}, {89080, 
+         89088}}|>, <|
+       "Article" -> "Music", "Match" -> "own music", 
+        "Position" -> {{9331, 9339}}|>, <|
+       "Article" -> "Music", "Match" -> "aleatoric music", 
+        "Position" -> {{10578, 10592}}|>, <|
+       "Article" -> "Music", "Match" -> "notated music", 
+        "Position" -> {{11932, 11944}, {38547, 38559}}|>, <|
+       "Article" -> "Music", "Match" -> "standard music", 
+        "Position" -> {{12911, 12924}}|>, <|
+       "Article" -> "Music", "Match" -> "spontaneous music", 
+        "Position" -> {{13761, 13777}}|>, <|
+       "Article" -> "Music", "Match" -> "more music", 
+        "Position" -> {{15010, 15019}}|>, <|
+       "Article" -> "Music", "Match" -> "appropriate music", 
+        "Position" -> {{17361, 17377}}|>, <|
+       "Article" -> "Music", "Match" -> "common music", 
+        "Position" -> {{18780, 18791}}|>, <|
+       "Article" -> "Music", "Match" -> "intended music", 
+        "Position" -> {{19558, 19571}}|>, <|
+       "Article" -> "Music", "Match" -> "deep music", 
+        "Position" -> {{21947, 21956}}|>, <|
+       "Article" -> "Music", "Match" -> "Choral music", 
+        "Position" -> {{25931, 25942}}|>, <|
+       "Article" -> "Music", "Match" -> "particular music", 
+        "Position" -> {{26793, 26808}, {89510, 89525}}|>, <|
+       "Article" -> "Music", "Match" -> "Western music", 
+        "Position" -> {{30704, 30716}}|>, <|
+       "Article" -> "Music", "Match" -> "oldest music", 
+        "Position" -> {{33167, 33178}, {34477, 34488}}|>, <|
+       "Article" -> "Music", "Match" -> "prehistoric music", 
+        "Position" -> {{33357, 33373}}|>, <|
+       "Article" -> "Music", "Match" -> "Egyptian music", 
+        "Position" -> {{33672, 33685}, {34142, 34155}}|>, <|
+       "Article" -> "Music", "Match" -> "folk music", 
+        "Position" -> {{34032, 34041}, {44769, 44778}, {48416, 48425}, {53880,
+          53889}, {88552, 88561}}|>, <|
+       "Article" -> "Music", "Match" -> "old music", 
+        "Position" -> {{34582, 34590}}|>, <|
+       "Article" -> "Music", "Match" -> "Indian music", 
+        "Position" -> {{34821, 34832}, {89752, 89763}}|>, <|
+       "Article" -> "Music", "Match" -> "Carnatic music", 
+        "Position" -> {{35263, 35276}}|>, <|
+       "Article" -> "Music", "Match" -> "Chinese music", 
+        "Position" -> {{35731, 35743}}|>, <|
+       "Article" -> "Music", "Match" -> "Greek music", 
+        "Position" -> {{36410, 36420}, {36701, 36711}, {36766, 36776}, {36798,
+          36808}, {36985, 36995}}|>, <|
+       "Article" -> "Music", "Match" -> "complete music", 
+        "Position" -> {{37056, 37069}}|>, <|
+       "Article" -> "Music", "Match" -> "religious music", 
+        "Position" -> {{37722, 37736}, {78400, 78414}}|>, <|
+       "Article" -> "Music", "Match" -> "sacred music", 
+        "Position" -> {{38912, 38923}, {41735, 41746}}|>, <|
+       "Article" -> "Music", "Match" -> "vibrant music", 
+        "Position" -> {{39481, 39493}}|>, <|
+       "Article" -> "Music", "Match" -> "Baroque music", 
+        "Position" -> {{39741, 39753}, {41294, 41306}}|>, <|
+       "Article" -> "Music", "Match" -> "vocal music", 
+        "Position" -> {{39798, 39808}, {40027, 40037}}|>, <|
+       "Article" -> "Music", "Match" -> "contrapuntal music", 
+        "Position" -> {{39885, 39902}}|>, <|
+       "Article" -> "Music", "Match" -> "major music", 
+        "Position" -> {{40276, 40286}}|>, <|
+       "Article" -> "Music", "Match" -> "Symphonic music", 
+        "Position" -> {{43421, 43435}}|>, <|
+       "Article" -> "Music", "Match" -> "Romantic music", 
+        "Position" -> {{44268, 44281}}|>, <|
+       "Article" -> "Music", "Match" -> "orchestral music", 
+        "Position" -> {{44740, 44755}}|>, <|
+       "Article" -> "Music", "Match" -> "ballet music", 
+        "Position" -> {{45578, 45589}}|>, <|
+       "Article" -> "Music", "Match" -> "new music", 
+        "Position" -> {{47544, 47552}}|>, <|
+       "Article" -> "Music", "Match" -> "Traditional music", 
+        "Position" -> {{48374, 48390}}|>, <|
+       "Article" -> "Music", "Match" -> "American music", 
+        "Position" -> {{49462, 49475}}|>, <|
+       "Article" -> "Music", "Match" -> "European music", 
+        "Position" -> {{49635, 49648}}|>, <|
+       "Article" -> "Music", "Match" -> "recorded music", 
+        "Position" -> {{51212, 51225}, {75805, 75818}}|>, <|
+       "Article" -> "Music", "Match" -> "other music", 
+        "Position" -> {{51587, 51597}, {53033, 53043}, {54664, 54674}, {58270,
+          58280}, {66283, 66293}, {74945, 74955}, {80178, 80188}, {90935, 
+         90945}}|>, <|
+       "Article" -> "Music", "Match" -> "Different music", 
+        "Position" -> {{54260, 54274}}|>, <|
+       "Article" -> "Music", "Match" -> "many music", 
+        "Position" -> {{57966, 57975}}|>, <|
+       "Article" -> "Music", "Match" -> "microtonal music", 
+        "Position" -> {{58347, 58362}}|>, <|
+       "Article" -> "Music", "Match" -> "alternate music", 
+        "Position" -> {{58381, 58395}}|>, <|
+       "Article" -> "Music", "Match" -> "Cognitive music", 
+        "Position" -> {{60828, 60842}}|>, <|
+       "Article" -> "Music", "Match" -> "Evolutionary music", 
+        "Position" -> {{61974, 61991}}|>, <|
+       "Article" -> "Music", "Match" -> "numerous music", 
+        "Position" -> {{62659, 62672}}|>, <|
+       "Article" -> "Music", "Match" -> "familiar music", 
+        "Position" -> {{62909, 62922}, {63170, 63183}}|>, <|
+       "Article" -> "Music", "Match" -> "unfamiliar music", 
+        "Position" -> {{63205, 63220}}|>, <|
+       "Article" -> "Music", "Match" -> "academic music", 
+        "Position" -> {{65554, 65567}}|>, <|
+       "Article" -> "Music", "Match" -> "live music", 
+        "Position" -> {{69927, 69936}, {71486, 71495}, {71802, 71811}}|>, <|
+       "Article" -> "Music", "Match" -> "prerecorded music", 
+        "Position" -> {{71355, 71371}}|>, <|
+       "Article" -> "Music", "Match" -> "online music", 
+        "Position" -> {{76550, 76561}, {94775, 94786}}|>, <|
+       "Article" -> "Music", "Match" -> "private music", 
+        "Position" -> {{78763, 78775}}|>, <|
+       "Article" -> "Music", "Match" -> "Amateur music", 
+        "Position" -> {{78844, 78856}}|>, <|
+       "Article" -> "Music", "Match" -> "basic music", 
+        "Position" -> {{78878, 78888}}|>, <|
+       "Article" -> "Music", "Match" -> "few music", 
+        "Position" -> {{79154, 79162}}|>, <|
+       "Article" -> "Music", "Match" -> "different music", 
+        "Position" -> {{79335, 79349}}|>, <|
+       "Article" -> "Music", "Match" -> "Gamelan music", 
+        "Position" -> {{80021, 80033}}|>, <|
+       "Article" -> "Music", "Match" -> "regular music", 
+        "Position" -> {{81894, 81906}}|>, <|
+       "Article" -> "Music", "Match" -> "undergraduate music", 
+        "Position" -> {{82640, 82658}}|>, <|
+       "Article" -> "Music", "Match" -> "systematic music", 
+        "Position" -> {{84756, 84771}}|>, <|
+       "Article" -> "Music", "Match" -> "historical music", 
+        "Position" -> {{84779, 84794}}|>, <|
+       "Article" -> "Music", "Match" -> "comparative music", 
+        "Position" -> {{84806, 84822}}|>, <|
+       "Article" -> "Music", "Match" -> "tonal music", 
+        "Position" -> {{85854, 85864}}|>, <|
+       "Article" -> "Music", "Match" -> "atonal music", 
+        "Position" -> {{86039, 86050}}|>, <|
+       "Article" -> "Music", "Match" -> "Speculative music", 
+        "Position" -> {{86053, 86069}}|>, <|
+       "Article" -> "Music", "Match" -> "analytic music", 
+        "Position" -> {{86095, 86108}}|>, <|
+       "Article" -> "Music", "Match" -> "indigenous music", 
+        "Position" -> {{87605, 87620}, {88664, 88679}}|>, <|
+       "Article" -> "Music", "Match" -> "commercial music", 
+        "Position" -> {{88371, 88386}}|>, <|
+       "Article" -> "Music", "Match" -> "actual music", 
+        "Position" -> {{89179, 89190}}|>, <|
+       "Article" -> "Music", "Match" -> "current music", 
+        "Position" -> {{89431, 89443}}|>, <|
+       "Article" -> "Music", "Match" -> "percussion music", 
+        "Position" -> {{89911, 89926}}|>, <|
+       "Article" -> "Music", "Match" -> "clear music", 
+        "Position" -> {{92692, 92702}}|>, <|
+       "Article" -> "Music", "Match" -> "specialised music", 
+        "Position" -> {{94839, 94855}}|>, <|
+       "Article" -> "Music (disambiguation)", "Match" -> "first music", 
+        "Position" -> {{1407, 1417}}|>, <|
+       "Article" -> "Classical music", "Match" -> "formal music", 
+        "Position" -> {{41, 52}, {10302, 10313}, {35234, 35245}}|>, <|
+       "Article" -> "Classical music", "Match" -> "folk music", 
+        "Position" -> {{127, 136}, {10361, 10370}, {35813, 35822}, {42255, 
+         42264}, {42628, 42637}}|>, <|
+       "Article" -> "Classical music", "Match" -> "popular music", 
+        "Position" -> {{141, 153}, {3745, 3757}, {35798, 35810}, {41214, 
+         41226}, {41685, 41697}, {41967, 41979}}|>, <|
+       "Article" -> "Classical music", "Match" -> "classical music", 
+        "Position" -> {{208, 222}, {362, 376}, {787, 801}, {5847, 5861}, {
+         7869, 7883}, {9554, 9568}, {9748, 9762}, {10107, 10121}, {10802, 
+         10816}, {11933, 11947}, {13214, 13228}, {30728, 30742}, {34440, 
+         34454}, {34860, 34874}, {35203, 35217}, {35345, 35359}, {35755, 
+         35769}, {35840, 35854}, {35882, 35896}, {37472, 37486}, {37560, 
+         37574}, {37752, 37766}, {41792, 41806}, {41918, 41932}, {42216, 
+         42230}, {42776, 42790}, {43499, 43513}, {43729, 43743}, {44087, 
+         44101}, {44965, 44979}, {45115, 45129}}|>, <|
+       "Article" -> "Classical music", "Match" -> "medieval music", 
+        "Position" -> {{1043, 1056}, {1553, 1566}, {12580, 12593}, {12625, 
+         12638}, {12847, 12860}, {13237, 13250}, {15328, 15341}}|>, <|
+       "Article" -> "Classical music", "Match" -> "extant music", 
+        "Position" -> {{1194, 1205}}|>, <|
+       "Article" -> "Classical music", "Match" -> "European music", 
+        "Position" -> {{1627, 1640}, {10422, 10435}, {10663, 10676}, {14332, 
+         14345}, {14562, 14575}}|>, <|
+       "Article" -> "Classical music", "Match" -> "secular music", 
+        "Position" -> {{1744, 1756}}|>, <|
+       "Article" -> "Classical music", "Match" -> "sacred music", 
+        "Position" -> {{2184, 2195}, {18651, 18662}}|>, <|
+       "Article" -> "Classical music", "Match" -> "central music", 
+        "Position" -> {{2283, 2295}}|>, <|
+       "Article" -> "Classical music", "Match" -> "galant music", 
+        "Position" -> {{3009, 3020}}|>, <|
+       "Article" -> "Classical music", "Match" -> "absolute music", 
+        "Position" -> {{3244, 3257}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Romantic music", 
+        "Position" -> {{3328, 3341}, {8064, 8077}}|>, <|
+       "Article" -> "Classical music", "Match" -> "programmatic music", 
+        "Position" -> {{3374, 3391}}|>, <|
+       "Article" -> "Classical music", "Match" -> "older music", 
+        "Position" -> {{4066, 4076}}|>, <|
+       "Article" -> "Classical music", "Match" -> "such music", 
+        "Position" -> {{6941, 6950}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Western music", 
+        "Position" -> {{9350, 9362}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Hindustani music", 
+        "Position" -> {{9584, 9599}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Gamelan music", 
+        "Position" -> {{9603, 9615}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Early music", 
+        "Position" -> {{10837, 10847}, {14262, 14272}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Modernist music", 
+        "Position" -> {{11138, 11152}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Postmodern music", 
+        "Position" -> {{11184, 11199}}|>, <|
+       "Article" -> "Classical music", "Match" -> "predominant music", 
+        "Position" -> {{11704, 11720}}|>, <|
+       "Article" -> "Classical music", "Match" -> "ancient music", 
+        "Position" -> {{11989, 12001}, {14118, 14130}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Roman music", 
+        "Position" -> {{12078, 12088}}|>, <|
+       "Article" -> "Classical music", "Match" -> "indisputable music", 
+        "Position" -> {{13358, 13375}}|>, <|
+       "Article" -> "Classical music", "Match" -> "vocal music", 
+        "Position" -> {{14852, 14862}}|>, <|
+       "Article" -> "Classical music", "Match" -> "earlier music", 
+        "Position" -> {{20384, 20396}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Baroque music", 
+        "Position" -> {{22016, 22028}}|>, <|
+       "Article" -> "Classical music", "Match" -> "traditional music", 
+        "Position" -> {{28051, 28067}}|>, <|
+       "Article" -> "Classical music", "Match" -> "single music", 
+        "Position" -> {{32369, 32380}}|>, <|
+       "Article" -> "Classical music", "Match" -> "postmodern music", 
+        "Position" -> {{34156, 34171}}|>, <|
+       "Article" -> "Classical music", "Match" -> "pluralist music", 
+        "Position" -> {{34794, 34808}}|>, <|
+       "Article" -> "Classical music", "Match" -> "more music", 
+        "Position" -> {{36078, 36087}}|>, <|
+       "Article" -> "Classical music", "Match" -> "Classical music", 
+        "Position" -> {{36498, 36512}, {36569, 36583}}|>, <|
+       "Article" -> "Classical music", "Match" -> "other music", 
+        "Position" -> {{41099, 41109}}|>, <|
+       "Article" -> "Classical music", "Match" -> "occasional music", 
+        "Position" -> {{41269, 41284}}|>, <|
+       "Article" -> "Classical music", "Match" -> "instrumental music", 
+        "Position" -> {{42162, 42179}}|>, <|
+       "Article" -> "Music video", "Match" -> "Many music", 
+        "Position" -> {{1277, 1286}}|>, <|
+       "Article" -> "Music video", "Match" -> "Other music", 
+        "Position" -> {{1391, 1401}}|>, <|
+       "Article" -> "Music video", "Match" -> "many music", 
+        "Position" -> {{2004, 2013}}|>, <|
+       "Article" -> "Music video", "Match" -> "popular music", 
+        "Position" -> {{2394, 2406}, {19879, 19891}}|>, <|
+       "Article" -> "Music video", "Match" -> "other music", 
+        "Position" -> {{3101, 3111}}|>, <|
+       "Article" -> "Music video", "Match" -> "short music", 
+        "Position" -> {{3129, 3139}, {19266, 19276}}|>, <|
+       "Article" -> "Music video", "Match" -> "later music", 
+        "Position" -> {{3307, 3317}}|>, <|
+       "Article" -> "Music video", "Match" -> "first music", 
+        "Position" -> {{4452, 4462}, {14290, 14300}, {17203, 17213}, {18243, 
+         18253}, {19178, 19188}}|>, <|
+       "Article" -> "Music video", "Match" -> "promotional music", 
+        "Position" -> {{4764, 4780}}|>, <|
+       "Article" -> "Music video", "Match" -> "Most music", 
+        "Position" -> {{5597, 5606}}|>, <|
+       "Article" -> "Music video", "Match" -> "subsequent music", 
+        "Position" -> {{6505, 6520}}|>, <|
+       "Article" -> "Music video", "Match" -> "adventurous music", 
+        "Position" -> {{8974, 8990}}|>, <|
+       "Article" -> "Music video", "Match" -> "memorable music", 
+        "Position" -> {{16744, 16758}}|>, <|
+       "Article" -> "Music video", "Match" -> "video music", 
+        "Position" -> {{17861, 17871}, {19519, 19529}}|>, <|
+       "Article" -> "Music video", "Match" -> "modern music", 
+        "Position" -> {{20162, 20173}}|>, <|
+       "Article" -> "Music video", "Match" -> "spoof music", 
+        "Position" -> {{20976, 20986}}|>, <|
+       "Article" -> "Music video", "Match" -> "iconic music", 
+        "Position" -> {{22569, 22580}}|>, <|
+       "Article" -> "Music video", "Match" -> "softer music", 
+        "Position" -> {{24420, 24431}}|>, <|
+       "Article" -> "Music video", "Match" -> "expensive music", 
+        "Position" -> {{26293, 26307}}|>, <|
+       "Article" -> "Music video", "Match" -> "older music", 
+        "Position" -> {{26947, 26957}}|>, <|
+       "Article" -> "Music video", "Match" -> "free music", 
+        "Position" -> {{28448, 28457}}|>, <|
+       "Article" -> "Music video", "Match" -> "major music", 
+        "Position" -> {{29867, 29877}, {42216, 42226}}|>, <|
+       "Article" -> "Music video", "Match" -> "indie music", 
+        "Position" -> {{31158, 31168}}|>, <|
+       "Article" -> "Music video", "Match" -> "traditional music", 
+        "Position" -> {{32121, 32137}, {32739, 32755}}|>, <|
+       "Article" -> "Music video", "Match" -> "Australian music", 
+        "Position" -> {{43735, 43750}}|>, <|
+       "Article" -> "Music video", "Match" -> "multiple music", 
+        "Position" -> {{44709, 44722}}|>, <|
+       "Article" -> "Music video", "Match" -> "longform music", 
+        "Position" -> {{46390, 46403}}|>, <|
+       "Article" -> "Music video", "Match" -> "more music", 
+        "Position" -> {{49000, 49009}}|>, <|
+       "Article" -> "Music video", "Match" -> "Japanese music", 
+        "Position" -> {{49096, 49109}}|>, <|
+       "Article" -> "Music video", "Match" -> "Unofficial music", 
+        "Position" -> {{49896, 49911}}|>, <|
+       "Article" -> "Music genre", "Match" -> "popular music", 
+        "Position" -> {{326, 338}, {1817, 1829}, {2812, 2824}, {7791, 7803}, {
+         8241, 8253}, {9102, 9114}, {9551, 9563}, {11041, 11053}, {11166, 
+         11178}, {12586, 12598}, {18122, 18134}, {18684, 18696}}|>, <|
+       "Article" -> "Music genre", "Match" -> "religious music", 
+        "Position" -> {{358, 372}, {13700, 13714}}|>, <|
+       "Article" -> "Music genre", "Match" -> "secular music", 
+        "Position" -> {{378, 390}}|>, <|
+       "Article" -> "Music genre", "Match" -> "electronic music", 
+        "Position" -> {{4361, 4376}, {9700, 9715}, {9819, 9834}}|>, <|
+       "Article" -> "Music genre", "Match" -> "written music", 
+        "Position" -> {{6024, 6036}, {6937, 6949}}|>, <|
+       "Article" -> "Music genre", "Match" -> "classical music", 
+        "Position" -> {{6058, 6072}, {6671, 6685}, {7679, 7693}, {16844, 
+         16858}}|>, <|
+       "Article" -> "Music genre", "Match" -> "oral music", 
+        "Position" -> {{6119, 6128}}|>, <|
+       "Article" -> "Music genre", "Match" -> "folk music", 
+        "Position" -> {{6136, 6145}, {13739, 13748}, {13771, 13780}, {13957, 
+         13966}, {14163, 14172}, {14752, 14761}, {14786, 14795}, {14807, 
+         14816}, {14931, 14940}, {15114, 15123}, {15372, 15381}, {15520, 
+         15529}, {15760, 15769}, {16136, 16145}}|>, <|
+       "Article" -> "Music genre", "Match" -> "ethnic music", 
+        "Position" -> {{6150, 6161}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Audiotactile music", 
+        "Position" -> {{6217, 6234}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Major music", 
+        "Position" -> {{6534, 6544}}|>, <|
+       "Article" -> "Music genre", "Match" -> "traditional music", 
+        "Position" -> {{7085, 7101}, {13825, 13841}, {13927, 13943}, {14038, 
+         14054}}|>, <|
+       "Article" -> "Music genre", "Match" -> "commercial music", 
+        "Position" -> {{8830, 8845}}|>, <|
+       "Article" -> "Music genre", "Match" -> "minimalist music", 
+        "Position" -> {{9169, 9184}}|>, <|
+       "Article" -> "Music genre", "Match" -> "hillbilly music", 
+        "Position" -> {{9520, 9534}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Electronic music", 
+        "Position" -> {{9638, 9653}}|>, <|
+       "Article" -> "Music genre", "Match" -> "rhythmic music", 
+        "Position" -> {{10483, 10496}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Latin music", 
+        "Position" -> {{10983, 10993}}|>, <|
+       "Article" -> "Music genre", "Match" -> "modern music", 
+        "Position" -> {{11549, 11560}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Reggae music", 
+        "Position" -> {{11851, 11862}}|>, <|
+       "Article" -> "Music genre", "Match" -> "reggae music", 
+        "Position" -> {{12017, 12028}, {12446, 12457}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Religious music", 
+        "Position" -> {{13507, 13521}}|>, <|
+       "Article" -> "Music genre", "Match" -> "sacred music", 
+        "Position" -> {{13550, 13561}}|>, <|
+       "Article" -> "Music genre", "Match" -> "Christian music", 
+        "Position" -> {{13668, 13682}}|>, <|
+       "Article" -> "Music genre", "Match" -> "heavier music", 
+        "Position" -> {{16666, 16678}}|>, <|
+       "Article" -> "Music genre", "Match" -> "lighter music", 
+        "Position" -> {{16810, 16822}}|>, <|
+       "Article" -> "Music genre", "Match" -> "percussive music", 
+        "Position" -> {{17175, 17190}}|>, <|
+       "Article" -> "Music genre", "Match" -> "energetic music", 
+        "Position" -> {{17326, 17340}}|>}, 
+      TypeSystem`Vector[
+       TypeSystem`Struct[{"Article", "Match", "Position"}, {
+         TypeSystem`Atom[
+          TypeSystem`Enumeration[
+          "Classical music", "Music", "Music (disambiguation)", "Music genre",
+            "Music video"]], 
+         TypeSystem`Atom[String], 
+         TypeSystem`Vector[
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], TypeSystem`AnyLength]}], 186], <||>],
+     "Source" -> "Wikipedia", "TotalMatchCount" -> 400, 
+    "LexicalPatternStructure" -> TextElement[{
+       TextElement[{"Adjective"}, <|"GrammaticalUnit" -> "TextType"|>], 
+       TextElement[{"music"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
+      "GrammaticalUnit" -> "LexicalPattern"|>]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->70711118,ExpressionUUID->"df28c396-cd8e-4b34-bc07-bc9f390308f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cgs", "=", 
+  RowBox[{"cslp", "[", "\"\<CountGroups\>\"", "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->469941029,ExpressionUUID->"74c48725-4f75-4dd9-851b-54ba187534da"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Matches" -> {"classical music"}, "CountGroup" -> 69|>, <|
+       "Matches" -> {"popular music"}, "CountGroup" -> 42|>, <|
+       "Matches" -> {"folk music"}, "CountGroup" -> 24|>, <|
+       "Matches" -> {"traditional music"}, "CountGroup" -> 20|>, <|
+       "Matches" -> {"other music"}, "CountGroup" -> 10|>, <|
+       "Matches" -> {"medieval music"}, "CountGroup" -> 7|>, <|
+       "Matches" -> {"first music", "European music"}, "CountGroup" -> 6|>, <|
+       "Matches" -> {
+         "sacred music", "professional music", "Greek music", 
+          "Classical music"}, "CountGroup" -> 5|>, <|
+       "Matches" -> {"religious music", "pop music", "instrumental music"}, 
+        "CountGroup" -> 4|>, <|
+       "Matches" -> {
+         "vocal music", "Romantic music", "Professional music", "more music", 
+          "major music", "live music", "formal music", "electronic music", 
+          "contemporary music", "Baroque music", "amateur music"}, 
+        "CountGroup" -> 3|>, <|
+       "Matches" -> {
+         "written music", "Western music", "video music", "short music", 
+          "secular music", "reggae music", "recorded music", 
+          "particular music", "online music", "oldest music", "older music", 
+          "notated music", "modern music", "many music", "indigenous music", 
+          "Indian music", "Gamelan music", "familiar music", "Egyptian music",
+           "Early music", "digital music", "commercial music", 
+          "ancient music"}, "CountGroup" -> 2|>, <|
+       "Matches" -> {
+         "vibrant music", "Unofficial music", "unfamiliar music", 
+          "undergraduate music", "Traditional music", "tonal music", 
+          "systematic music", "Symphonic music", "such music", 
+          "subsequent music", "standard music", "spoof music", 
+          "spontaneous music", "Speculative music", "specialised music", 
+          "softer music", "single music", "Roman music", "rhythmic music", 
+          "Religious music", "regular music", "Reggae music", "record music", 
+          "promotional music", "programmatic music", "private music", 
+          "prerecorded music", "prehistoric music", "predominant music", 
+          "Postmodern music", "postmodern music", "pluralist music", 
+          "percussive music", "percussion music", "own music", "Other music", 
+          "orchestral music", "oral music", "old music", "occasional music", 
+          "numerous music", "new music", "multiple music", "Most music", 
+          "Modernist music", "minimalist music", "microtonal music", 
+          "memorable music", "Many music", "Major music", "longform music", 
+          "lighter music", "Latin music", "later music", "Japanese music", 
+          "Italian music", "intended music", "indisputable music", 
+          "indie music", "improvisational music", "iconic music", 
+          "historical music", "Hindustani music", "hillbilly music", 
+          "heavier music", "galant music", "free music", "few music", 
+          "extant music", "expensive music", "Evolutionary music", 
+          "ethnic music", "energetic music", "Electronic music", 
+          "earlier music", "Different music", "different music", "deep music",
+           "current music", "contrapuntal music", "complete music", 
+          "comparative music", "common music", "Cognitive music", 
+          "clear music", "Christian music", "Choral music", "Chinese music", 
+          "central music", "Carnatic music", "basic music", "ballet music", 
+          "Australian music", "Audiotactile music", "atonal music", 
+          "appropriate music", "analytic music", "American music", 
+          "Amateur music", "alternate music", "aleatoric music", 
+          "adventurous music", "actual music", "academic music", 
+          "absolute music"}, "CountGroup" -> 1|>}, "AllowEmbedding" -> True, 
+     "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 12, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 12], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 12, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 12], "Path" -> {}, "DisplayedRowCount" -> 
+     12, "DisplayedColumnCount" -> 2, "DataRowCount" -> 12, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Matches", 
+                  Style[
+                  "Matches", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Matches"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Matches"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["CountGroup", 
+                  Style[
+                  "CountGroup", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "CountGroup"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "CountGroup"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"classical music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"classical music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{1, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["69"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"popular music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"popular music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{2, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["42"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"folk music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"folk music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{3, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["24"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"traditional music"}, ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"traditional music"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{4, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["20"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"other music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"other music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{5, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["10"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"medieval music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"medieval music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{6, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["7"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"first music", "European music"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"first music", "European music"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{7, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["6"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"sacred music", "professional music", "Greek music", 
+                    "Classical music"}, ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"sacred music", "professional music", "Greek music",
+                     "Classical music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{8, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["5"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"religious music", "pop music", 
+                    "instrumental music"}, ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"religious music", "pop music", 
+                    "instrumental music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{9, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["4"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 11], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 11], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{10, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["3"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 23], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 23], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{11, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 105], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 105], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{12, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{
+                   TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = {
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{464., {182.3544921875, 187.6455078125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{464., {182.3544921875, 187.6455078125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1841423435,ExpressionUUID->"83a63e8d-782a-4819-acb0-656241f89a13"]
+}, Open  ]],
+
+Cell["Lowercase the results", "ExampleText",
+ CellID->1286674683,ExpressionUUID->"6dd6044f-c8c4-4430-83fc-ca985ad36e80"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cgs", "//", "CountSummaryLowercase"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1449318360,ExpressionUUID->"4c4209e6-ccb8-4df4-b197-11d48622da6c"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Matches" -> {"classical music"}, "CountGroup" -> 74|>, <|
+       "Matches" -> {"popular music"}, "CountGroup" -> 42|>, <|
+       "Matches" -> {"folk music"}, "CountGroup" -> 24|>, <|
+       "Matches" -> {"traditional music"}, "CountGroup" -> 21|>, <|
+       "Matches" -> {"other music"}, "CountGroup" -> 11|>, <|
+       "Matches" -> {"professional music"}, "CountGroup" -> 8|>, <|
+       "Matches" -> {"medieval music"}, "CountGroup" -> 7|>, <|
+       "Matches" -> {"first music", "european music"}, "CountGroup" -> 6|>, <|
+       "Matches" -> {"sacred music", "greek music", "religious music"}, 
+        "CountGroup" -> 5|>, <|
+       "Matches" -> {
+         "pop music", "instrumental music", "major music", "electronic music",
+           "amateur music"}, "CountGroup" -> 4|>, <|
+       "Matches" -> {
+         "vocal music", "romantic music", "more music", "live music", 
+          "formal music", "contemporary music", "baroque music", 
+          "reggae music", "many music"}, "CountGroup" -> 3|>, <|
+       "Matches" -> {
+         "written music", "western music", "video music", "short music", 
+          "secular music", "recorded music", "particular music", 
+          "online music", "oldest music", "older music", "notated music", 
+          "modern music", "indigenous music", "indian music", "gamelan music",
+           "familiar music", "egyptian music", "early music", "digital music",
+           "commercial music", "ancient music", "postmodern music", 
+          "different music"}, "CountGroup" -> 2|>, <|
+       "Matches" -> {
+         "vibrant music", "unofficial music", "unfamiliar music", 
+          "undergraduate music", "tonal music", "systematic music", 
+          "symphonic music", "such music", "subsequent music", 
+          "standard music", "spoof music", "spontaneous music", 
+          "speculative music", "specialised music", "softer music", 
+          "single music", "roman music", "rhythmic music", "regular music", 
+          "record music", "promotional music", "programmatic music", 
+          "private music", "prerecorded music", "prehistoric music", 
+          "predominant music", "pluralist music", "percussive music", 
+          "percussion music", "own music", "orchestral music", "oral music", 
+          "old music", "occasional music", "numerous music", "new music", 
+          "multiple music", "most music", "modernist music", 
+          "minimalist music", "microtonal music", "memorable music", 
+          "longform music", "lighter music", "latin music", "later music", 
+          "japanese music", "italian music", "intended music", 
+          "indisputable music", "indie music", "improvisational music", 
+          "iconic music", "historical music", "hindustani music", 
+          "hillbilly music", "heavier music", "galant music", "free music", 
+          "few music", "extant music", "expensive music", 
+          "evolutionary music", "ethnic music", "energetic music", 
+          "earlier music", "deep music", "current music", 
+          "contrapuntal music", "complete music", "comparative music", 
+          "common music", "cognitive music", "clear music", "christian music",
+           "choral music", "chinese music", "central music", "carnatic music",
+           "basic music", "ballet music", "australian music", 
+          "audiotactile music", "atonal music", "appropriate music", 
+          "analytic music", "american music", "alternate music", 
+          "aleatoric music", "adventurous music", "actual music", 
+          "academic music", "absolute music"}, "CountGroup" -> 1|>}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 13, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 13], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 13, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 13], "Path" -> {}, "DisplayedRowCount" -> 
+     13, "DisplayedColumnCount" -> 2, "DataRowCount" -> 13, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Matches", 
+                  Style[
+                  "Matches", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Matches"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Matches"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["CountGroup", 
+                  Style[
+                  "CountGroup", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "CountGroup"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "CountGroup"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"classical music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"classical music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{1, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["74"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"popular music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"popular music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{2, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["42"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"folk music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"folk music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{3, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["24"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"traditional music"}, ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"traditional music"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{4, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["21"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"other music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"other music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{5, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["11"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"professional music"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"professional music"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{6, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["8"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"medieval music"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"medieval music"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{7, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["7"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"first music", "european music"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"first music", "european music"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{8, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["6"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"sacred music", "greek music", "religious music"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"sacred music", "greek music", "religious music"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{9, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["5"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"pop music", "instrumental music", "major music", 
+                    "electronic music", "amateur music"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"pop music", "instrumental music", "major music", 
+                    "electronic music", "amateur music"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{10, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["4"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 9], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 9], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{11, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["3"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 23], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 23], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{12, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 93], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 93], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{13, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{555., {195.8544921875, 201.1455078125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{555., {195.8544921875, 201.1455078125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->667191050,ExpressionUUID->"de63e039-1992-4440-898f-43e0ffd9fc9a"]
+}, Open  ]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases"]], "paclet:LexicalCases/ref/LexicalCases",
+            "LexicalCases Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "2343ea0d-e77d-40ff-9ee5-e3d04ffa9bd6"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalSummary"]], 
+           "paclet:LexicalCases/ref/LexicalSummary", 
+           "LexicalCases Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "aba1283f-8c6c-4338-b0a8-521668e1d4fb"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["ToLowerCase"]], "paclet:ref/ToLowerCase"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "90a07c5f-11f3-4ef4-af9b-ccf2dbdd6900"]
+       }], "SeeAlso",ExpressionUUID->"76462803-0613-4b70-996e-39c640b4fd29"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"90c63cbd-a78c-4d2a-86f4-\
+10f18e0b4c4f"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTechNote.png"]],
+     ImageSizeCache->{50., {28., 32.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TechNotesSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["Lexical Cases Overview"]], 
+           "paclet:LexicalCases/tutorial/LexicalCasesOverview"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "75419e8c-09af-4001-b42e-c3e1074568bf"]}]}
+     }]}
+  }]], "TechNotesSection",ExpressionUUID->"e6db2b25-ac6e-48eb-b226-\
+643cdb3773b6"]
+}, Open  ]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases"]], 
+           "paclet:LexicalCases/guide/LexicalCases"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "bef493b6-2f15-4536-b2c5-81aed90b522f"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"37123439-406d-40a4-b617-\
+14e7843c3a05"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{29},
+     "Spacer1"], GridBox[{
+      {
+       RowBox[{
+        TemplateBox[{17},
+         "Spacer1"], 
+        StyleBox[
+         RowBox[{"Related", " ", "Links"}], "RelatedLinksSection"]}]},
+      {Cell[TextData[Cell[BoxData[
+        RowBox[{
+         TemplateBox[{16},
+          "Spacer1"], "\[FilledVerySmallSquare]", Cell[BoxData[
+          TemplateBox[{
+            Cell[
+             TextData[
+              Cell[
+               TextData[{
+                 Cell[
+                  BoxData[
+                   TemplateBox[{2}, "Spacer1"]]], 
+                 "LexicalCases GitHub Repository"}]]]], 
+            "https://github.com/dishmint/LexicalCases"},
+           "WebLink",
+           BaseStyle->{"RelatedLinks"}]],ExpressionUUID->
+          "7bdf9c93-eb49-4c23-8a54-914231c94da3"]}]],ExpressionUUID->
+        "a4ac342f-f408-4aa2-a731-027e48b279b6"]], "RelatedLinks",
+        ExpressionUUID->"c58f58a2-5e7d-4ea6-a274-3a215da17669"]}
+     }]}
+  }]], "RelatedLinksSection",ExpressionUUID->"3ca55abf-990a-46da-943a-\
+4c141c1c97b4"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Lexical Cases Overview"]], 
+   "paclet:LexicalCases/tutorial/LexicalCasesOverview"},
+  "RefLinkPlain",
+  BaseStyle->{"Tutorials"}]], "Tutorials",
+ CellID->83658781,ExpressionUUID->"75419e8c-09af-4001-b42e-c3e1074568bf"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"3ac34fdc-b8a2-4270-bf47-862654c853ec"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -153,18 +3571,18 @@ TaggingRules->{
  "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
   "ExampleCounter" -> 1, 
   "Openers" -> {
-   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
-  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
-  False, "RootCaptions" -> "", 
-  "Metadata" -> {
-   "built" -> "{2021, 12, 21, 21, 11, 48.454952}", 
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "NotesSection" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2021, 12, 30, 15, 31, 31.085399}", 
     "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
     "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
     "status" -> "None", "summary" -> 
-    "CountSummaryLowercase[ds] Makes matches lowercase and merges rows that \
-now have the same match.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "CountSummaryLowercase[ds] lowercase matches and merge rows with the same \
+match", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
     "CountSummaryLowercase", "titlemodifier" -> "", "windowtitle" -> 
     "CountSummaryLowercase", "type" -> "Symbol", "uri" -> 
     "LexicalCases/ref/CountSummaryLowercase", "WorkflowDockedCell" -> ""}, 
@@ -181,28 +3599,83 @@ StyleDefinitions->Notebook[{
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
   StyleDefinitions -> "Default.nb"],
-ExpressionUUID->"e27fb088-3cd3-4a51-8cec-c41b6dc3afcf"
+ExpressionUUID->"7e9eed90-bcfb-4918-bf6f-7e14c542d29b"
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[11878, 310, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"36848c45-dfff-4587-ad93-1926f22b4921",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1062349190]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 185480, 3608}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[593, 21, 3388, 78, 57, "AnchorBarGrid",ExpressionUUID->"bd5ca15d-7c7c-4b24-9396-ac345231d9e5",
+Cell[593, 21, 6778, 163, 57, "AnchorBarGrid",ExpressionUUID->"ecf280d7-c856-4a6b-affe-3533d8a3d646",
  CellID->1],
-Cell[3984, 101, 95, 0, 23, "ContextNameCell",ExpressionUUID->"37718c8d-0d19-4359-b466-30b177e04d44"],
+Cell[7374, 186, 95, 0, 23, "ContextNameCell",ExpressionUUID->"9af06af6-c8b8-46c6-9a8b-c83d55d229ee"],
 Cell[CellGroupData[{
-Cell[4104, 105, 564, 14, 60, "ObjectNameGrid",ExpressionUUID->"7ecfefbf-25c1-4fe2-8f1d-5a35d0ef5a26"],
-Cell[4671, 121, 819, 20, 114, "Usage",ExpressionUUID->"f286fced-dda7-4d5f-ba4b-e5c120342d30",
+Cell[7494, 190, 564, 14, 60, "ObjectNameGrid",ExpressionUUID->"e6aef2d1-14c9-4e56-acc8-fcfe71a2771c"],
+Cell[8061, 206, 800, 19, 112, "Usage",ExpressionUUID->"f286fced-dda7-4d5f-ba4b-e5c120342d30",
  CellID->1835048001]
 }, Open  ]],
-Cell[5505, 144, 78, 0, 40, "FooterCell",ExpressionUUID->"d2fc062a-b6d2-4c3f-848f-0788a973639c"]
+Cell[CellGroupData[{
+Cell[8898, 230, 1887, 47, 37, "NotesSection",ExpressionUUID->"058dbefc-b756-48e5-b4a4-e7fe9387a526",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->2030378860],
+Cell[10788, 279, 963, 25, 70, "Notes",ExpressionUUID->"c4928127-182d-4a78-9bc1-f4543546de09",
+ CellID->1639098240]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[11878, 310, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"36848c45-dfff-4587-ad93-1926f22b4921",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1062349190],
+Cell[CellGroupData[{
+Cell[13293, 351, 1367, 36, 31, "ExampleSection",ExpressionUUID->"377471f5-c9e9-44aa-acb9-1ee52d24a015",
+ CellID->723795172],
+Cell[14663, 389, 177, 3, 29, "Input",ExpressionUUID->"98a8f694-aa52-4c21-b40d-f5d5e57ffb89",
+ CellID->1087657768],
+Cell[CellGroupData[{
+Cell[14865, 396, 513, 13, 66, "Input",ExpressionUUID->"8035ea70-4278-4a03-92b7-1909ef4782be",
+ CellID->127674473],
+Cell[15381, 411, 50790, 912, 79, "Output",ExpressionUUID->"df28c396-cd8e-4b34-bc07-bc9f390308f9",
+ CellID->70711118]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66208, 1328, 198, 4, 29, "Input",ExpressionUUID->"74c48725-4f75-4dd9-851b-54ba187534da",
+ CellID->469941029],
+Cell[66409, 1334, 54856, 1011, 393, "Output",ExpressionUUID->"83a63e8d-782a-4819-acb0-656241f89a13",
+ CellID->1841423435]
+}, Open  ]],
+Cell[121280, 2348, 120, 1, 70, "ExampleText",ExpressionUUID->"6dd6044f-c8c4-4430-83fc-ca985ad36e80",
+ CellID->1286674683],
+Cell[CellGroupData[{
+Cell[121425, 2353, 171, 3, 70, "Input",ExpressionUUID->"4c4209e6-ccb8-4df4-b197-11d48622da6c",
+ CellID->1449318360],
+Cell[121599, 2358, 56870, 1052, 70, "Output",ExpressionUUID->"de63e039-1992-4440-898f-43e0ffd9fc9a",
+ CellID->667191050]
+}, Open  ]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[178733, 3421, 1868, 50, 70, "SeeAlsoSection",ExpressionUUID->"90c63cbd-a78c-4d2a-86f4-10f18e0b4c4f"],
+Cell[180604, 3473, 752, 20, 70, "TechNotesSection",ExpressionUUID->"e6db2b25-ac6e-48eb-b226-643cdb3773b6"]
+}, Open  ]],
+Cell[181371, 3496, 724, 19, 70, "MoreAboutSection",ExpressionUUID->"37123439-406d-40a4-b617-14e7843c3a05"],
+Cell[CellGroupData[{
+Cell[182120, 3519, 1083, 31, 70, "RelatedLinksSection",ExpressionUUID->"3ca55abf-990a-46da-943a-4c141c1c97b4"],
+Cell[183206, 3552, 271, 7, 70, "Tutorials",ExpressionUUID->"75419e8c-09af-4001-b42e-c3e1074568bf",
+ CellID->83658781]
+}, Open  ]],
+Cell[183492, 3562, 78, 0, 70, "FooterCell",ExpressionUUID->"3ac34fdc-b8a2-4270-bf47-862654c853ec"]
 }
 ]
 *)
