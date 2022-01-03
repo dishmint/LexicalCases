@@ -10,31 +10,37 @@
 
 BeginPackage["LexicalCases`"]
 (* Main *)
-LexicalCases
-$LexicalCasesServices
-$LexicalPatternValidHeads
+LexicalCases::usage = "LexicalCases[source, lexpatt] extract cases of LexicalPattern lexpatt from Text source"
+$LexicalCasesServices::usage = "List of supported services"
+$LexicalPatternValidHeads::usage = "List of heads allowed in a LexicalPattern"
 
 (* LexicalPatterns *)
-LexicalPattern
-OptionalLexicalPattern
-OrderlessLexicalPattern
-LexicalPatternSequence
-TextType
-BoundedString
+LexicalPattern::usage = "LexicalPattern[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens t1 \[Ellipsis] ti"
+OptionalLexicalPattern::usage = "OptionalLexicalPattern[lexpatt] matches lexpatt, \" \", or \"\""
+OrderlessLexicalPattern::usage = "OrderlessLexicalPattern[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens t1 \[Ellipsis] ti in any order"
+LexicalPatternSequence::usage = "LexicalPatternSequence[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens"
+TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
+BoundedString::usage = "BoundedString[s] wraps s with WordBoundary\nBoundedString[s1|\[Ellipsis]|si] wraps the si with WordBoundary"
 
-LexicalPatternToStringExpression
-ValidLexicalPatternQ
+LexicalPatternToStringExpression::usage = "LexicalPatternToStringExpression[lexpatt] converts LexicalPattern lexpatt to a StringExpression"
+ValidLexicalPatternQ::usage = "ValidLexicalPatternQ[expr] checks if expr consists of allowed heads"
 
-ExpandLexicalPattern
-ContentAssociation
-ExtractContentTypes
-LexicalSummary
-ConvertToWikipediaSearchQuery
-CountSummaryLowercase
+ExpandLexicalPattern::usage = "ExpandLexicalPattern[lexpatt] expands top level pattern objects"
+ContentAssociation::usage = "ContentAssociation[source, lexpatt] extracts text-types from lexpatt and returns and returns an association of the form \"Type\" \[Rule] example1 | \[Ellipsis] | example$$i"
+ExtractContentTypes::usage = "ExtractContentTypes[lexpatt] extracts text content type specifications from lexpatt"
+LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
+ConvertToWikipediaSearchQuery::usage = "ConvertToWikipediaSearchQuery[lexpatt] converts lexpatt to a form suitable for WikipediaSearch"
+CountSummaryLowercase::usage = "CountSummaryLowercase[LexicalSummary[<>][\"Counts\"]] Converts matches to LowerCase and consolidates results\nCountSummaryLowercase[LexicalSummary[<>][\"CountGroups\"]] Converts matches to LowerCase and consolidates results"
 
 (* Display*)
-LexicalPatternStructure
-TextElementFormat
+LexicalPatternStructure::usage="LexicalPatternStructure[lexpatt] Visualize the structure of lexpatt"
+TextElementFormat::usage = "TextElementFormat[token] formats tokens for LexicalPatternStructure"
+
+(* Samples *)
+$SampleStringShort::usage="A short example string"
+$SampleStringLong::usage="A long example string"
+$SampleLexicalPattern::usage="A sample text pattern used for testing"
+
 Begin["Private`"]
 
 (* Utility *)
@@ -567,6 +573,59 @@ GenerateDashboard[lps_LexicalSummary, params___] := With[
 					}]
 			]
 		]
-		
+
+
+
+(* Samples *)
+
+(* From https://randomwordgenerator.com/sentence.php *)
+$SampleStringShort = "The best key lime pie is still up for debate."
+(* From TextCases[WikipediaData["computer"], "Paragraph"] // First *)
+$SampleStringLong = "A computer is a machine that can be programmed to carry out \
+sequences of arithmetic or logical operations automatically. Modern \
+computers can perform generic sets of operations known as programs. \
+These programs enable computers to perform a wide range of tasks. A \
+computer system is a \"complete\" computer that includes the \
+hardware, operating system (main software), and peripheral equipment \
+needed and used for \"full\" operation. This term may also refer to a \
+group of computers that are linked and function together, such as a \
+computer network or computer cluster.
+A broad range of industrial and consumer products use computers as \
+control systems. Simple special-purpose devices like microwave ovens \
+and remote controls are included, as are factory devices like \
+industrial robots and computer-aided design, as well as \
+general-purpose devices like personal computers and mobile devices \
+like smartphones. Computers power the Internet, which links hundreds \
+of millions of other computers and users.
+Early computers were meant to be used only for calculations. Simple \
+manual instruments like the abacus have aided people in doing \
+calculations since ancient times. Early in the Industrial Revolution, \
+some mechanical devices were built to automate long tedious tasks, \
+such as guiding patterns for looms. More sophisticated electrical \
+machines did specialized analog calculations in the early 20th \
+century. The first digital electronic calculating machines were \
+developed during World War II. The first semiconductor transistors in \
+the late 1940s were followed by the silicon-based MOSFET (MOS \
+transistor) and monolithic integrated circuit (IC) chip technologies \
+in the late 1950s, leading to the microprocessor and the \
+microcomputer revolution in the 1970s. The speed, power and \
+versatility of computers have been increasing dramatically ever since \
+then, with transistor counts increasing at a rapid pace (as predicted \
+by Moore's law), leading to the Digital Revolution during the late \
+20th to early 21st centuries.
+Conventionally, a modern computer consists of at least one processing \
+element, typically a central processing unit (CPU) in the form of a \
+microprocessor, along with some type of computer memory, typically \
+semiconductor memory chips. The processing element carries out \
+arithmetic and logical operations, and a sequencing and control unit \
+can change the order of operations in response to stored information. \
+Peripheral devices include input devices (keyboards, mice, joystick, \
+etc.), output devices (monitor screens, printers, etc.), and \
+input/output devices that perform both functions (e.g., the 2000s-era \
+touchscreen). Peripheral devices allow information to be retrieved \
+from an external source and they enable the result of operations to \
+be saved and retrieved."
+$SampleLexicalPattern = LexicalPattern[TextType["Adjective"], " key lime pie"];
+
 End[]
 EndPackage[]

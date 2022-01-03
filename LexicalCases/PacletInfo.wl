@@ -12,18 +12,17 @@ PacletObject[
                     "Root" -> "Kernel",
                     "Context" -> "LexicalCases`"
                 },
-                (* {
-                    "Tests",
+                {
+                    "Resource",
                     "Root" -> "Tests",
                     "Resources" -> {
-                      "LexicalSamples.wl",
-                      "ContentAssociation.wlt",
-                      "ConvertToWikipediaSearchQuery.wlt",
-                      "LexicalPatternStructure.wlt",
-                      "LexicalPatternToStringExpression.wlt",
-                      "LexicalCases.wlt"
+                      {"ContentAssociation", "ContentAssociation.wlt"},
+                      {"ConvertToWikipediaSearchQuery", "ConvertToWikipediaSearchQuery.wlt"},
+                      {"LexicalPatternStructure", "LexicalPatternStructure.wlt"},
+                      {"LexicalPatternToStringExpression", "LexicalPatternToStringExpression.wlt"},
+                      {"LexicalCases", "LexicalCases.wlt"}
                   }
-                }, *)
+                },
                 {
                     "Documentation",
                     "Language" -> "English"

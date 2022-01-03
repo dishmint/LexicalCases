@@ -11,7 +11,72 @@
             ,
             "Hash"
             ->
-            "c3ee2b026ee9b3452215fa0eacc2a34b4cfe819e6f9e499e4683cdd29a982904"
+            "8b7f0760c3bfcf6fdd200bd08cad36c8077e4775931e467255cede7d6b939922"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/ContentAssociation.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "71ac5118f37259aacd221f4c24b986d49e357f996e0a18934d6aeaf3a0becca6"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/ConvertToWikipediaSearchQuery.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "31ba20ed2a01ccb8beec0564cb2524ce2110950a5c84e45d814637df4e638a33"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/LexicalPatternStructure.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "6c1c54fa71384f4787d8b6b746e7a8e00f70e3b1edabfb78e78569b7ebffff88"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/LexicalPatternToStringExpression.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "404f218aa6f2d171043ee80bdf79c553bd968180f3949df4c2fee64951cf9ffb"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/LexicalCases.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "f200d9bfa0d523f8e46502c1df2fd3be207aee6e8e600a5d5782fb8769efe76c"
                 
         |>
         ,
@@ -24,7 +89,7 @@
             ,
             "Hash"
             ->
-            "c528fcaa2516d6d57f899743a533dcffe513049788db62c686f26c07f9cf3b76"
+            "a04113ca237c0789793082a5e988410d7972d345f3cc460c37b1504e9f7268a9"
                 
         |>
         ,
@@ -38,7 +103,7 @@
             ,
             "Hash"
             ->
-            "c970099b66e0c9fae1027e1b521f7eb7810e927c53b37ec667c25bb8745d3d06"
+            "0b7c37d68497f37eba32007f1315fc1d25be3075803c3c6bd70cce919c1156d5"
                 
         |>
         ,
@@ -52,7 +117,7 @@
             ,
             "Hash"
             ->
-            "67ba106e8b5ae49d2448e6a9488e700f7223f13f154dd6c9f5460fa3a6cd6d8d"
+            "d4ddfac6a3dd4e8184170b75928af1bbd23aa3fb4c6aa1a5b39bcc8e288b5695"
                 
         |>
         ,
@@ -66,7 +131,7 @@
             ,
             "Hash"
             ->
-            "26c008736dd65a5ae810a961041ced48aea9a1677301cfa10ee7839e20f2ffc2"
+            "b1b7d5332cfd8e033049d1cc1ef523536506b33ca9455b34d94632b12e3caedb"
                 
         |>
         ,
@@ -80,7 +145,7 @@
             ,
             "Hash"
             ->
-            "56ac8027d954aa0102a085b77c474cad9f11912046b153ec483444108f253d82"
+            "e21d4d4fd661ede26bebf5c3681cc0eb9cd177d48cae0461c6d08f48726d9db7"
                 
         |>
         ,
@@ -94,7 +159,7 @@
             ,
             "Hash"
             ->
-            "a88ff82d12509b14d95324b058d7d57acca4dcf2651bfe92ff25d527b11487f8"
+            "cc064bd005407ba8db02b36d59d6d503b8f7c90ece51cfdefb552b9c56454488"
                 
         |>
         ,
@@ -108,7 +173,7 @@
             ,
             "Hash"
             ->
-            "6825dd428843a765bf3e329aa7f0226d9860ad8b535924c1103a0a80574150b1"
+            "5f9ece28ccd592e70722956f6418d39268f92a9628a3d1bdba6a0c65cf88b4ed"
                 
         |>
         ,
@@ -122,7 +187,7 @@
             ,
             "Hash"
             ->
-            "b90d93899e89e84b5cadda01e76aeb89a477094095a11157205806bbaebbc250"
+            "0c228891f5589cf2291ca11bddad99c714c94ffd8e041eb481c4f7a8b61d94c6"
                 
         |>
         ,
@@ -136,7 +201,7 @@
             ,
             "Hash"
             ->
-            "12a0a0f74a1ac53856eb3890aca35a1aba9411f0901398781003338429bb8ef0"
+            "187e8d39888cace501a505ee82b35e47c6096a87c13d3bde8cd7d42ce61dfe8e"
                 
         |>
         ,
@@ -150,7 +215,7 @@
             ,
             "Hash"
             ->
-            "d90050c617fbace03854e9a98df396fc7ed9684960c4e0269bb56be24583ff7c"
+            "303e92f73a8553b1390ab62d5dd2b0a737afcae952b3890471e6f3518ece6131"
                 
         |>
         ,
@@ -164,7 +229,7 @@
             ,
             "Hash"
             ->
-            "d0703d41c1a066353b5811951d6d0e7564805d6f3167b28522cb8fa88aee282e"
+            "687041016d8853f382f981312fe0216587519160e14498b53a79a99d04c43102"
                 
         |>
         ,
@@ -178,7 +243,7 @@
             ,
             "Hash"
             ->
-            "bbf0340fc2fb253853ad4310dbbbf7faefbbd717795f1c44c406d386783a56cf"
+            "ea8b0d8325bf40b3cb4a67d86ea750bdfecdf00f9daad190c9f964b97cf6d242"
                 
         |>
         ,
@@ -192,7 +257,7 @@
             ,
             "Hash"
             ->
-            "b47e32007a899b57ccebeaefa4b4bda34efaa7574d8ef436c423eddca98a003d"
+            "5261227fad9f74e1825ff0b58841dec898b2229bca1d6b3f39522b5e8a80af1b"
                 
         |>
         ,
@@ -206,7 +271,7 @@
             ,
             "Hash"
             ->
-            "a3cc8eea383a56a55ad642c4e90eedc02837d74e1f122d6ddbcaf8e4dea5884f"
+            "de55d627c8a65e83f13ab86c5ededf952b5fb30fdeb5a1be86036f1bb93dce49"
                 
         |>
         ,
@@ -220,7 +285,7 @@
             ,
             "Hash"
             ->
-            "0e04446bcaed8b5104c065e6347cfa71d1091b8ac490b2a61de6e07658c128e3"
+            "fe1e6d748281364f8b3c3333c9c0325bf6e5d92ae3587d55e0164ab7320b0378"
                 
         |>
         ,
@@ -234,7 +299,7 @@
             ,
             "Hash"
             ->
-            "f0b014c2808c8e1500480ad3119fea794073f6fb78648e4f01937fec4d2d6700"
+            "73c4a4dcb34593e2abf83ec001b97e11eb091641e6299916a7692384c852e62d"
                 
         |>
         ,
@@ -248,7 +313,7 @@
             ,
             "Hash"
             ->
-            "0c1c8b6a921e142f413bb5e8aed88e66dcab93d754aca7e55b26e89f2919836a"
+            "f7e5aa98cf066ae2e271142034e42a76d0d693f955e29216aa97a3ccd97d9a6c"
                 
         |>
         ,
@@ -262,7 +327,7 @@
             ,
             "Hash"
             ->
-            "6f536e9d94a05959f44844f6c980c3d0dfbe1c1f55faf92f0b36f248795ae1b9"
+            "a1487b86e75b140beb673631f087a7641bda8fc296e9388593ca65a62853531f"
                 
         |>
         ,
@@ -276,7 +341,7 @@
             ,
             "Hash"
             ->
-            "8f5fa7fa7fc331a4803a451439c7e03acb83cd8d964d57853200fcd630aa537f"
+            "a9aa52dec929b5678b669c781501d9ae9e446c88d4eeaf1e0e529419bc7d8525"
                 
         |>
         ,
@@ -290,7 +355,7 @@
             ,
             "Hash"
             ->
-            "9e75895f1729b766e65687a019479d16bf679775978f76514248432ae8d579ec"
+            "d6d157473431ac6328bb61d4f56507f684e8549768e013b4333bcb2e299f3ac8"
                 
         |>
     }
