@@ -3,13 +3,13 @@
 Extract substrings matching a lexical pattern.
 
 ## Install
-After cloning this repository or downloading the package files, use `Get` to load definitions
+After cloning this repository or downloading the paclet file, use PacletInstall and Needs to load definitions:
 ```Mathematica
-Get["path/to/LexicalCases.wl"]
-Get["path/to/LexicalCasesTests.wl"]
+PacletInstall["path/to/LexicalCases-0.0.1.paclet"]
+Needs["LexicalCases`"]
 ```
 
-_Note: This functionality was developed in v12.3.1_
+_v12.3+ supported_
 
 ## Usage
 
