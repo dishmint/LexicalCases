@@ -21,6 +21,7 @@ OrderlessLexicalPattern::usage = "OrderlessLexicalPattern[t1, t2, \[Ellipsis], t
 LexicalPatternSequence::usage = "LexicalPatternSequence[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens"
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
 BoundedString::usage = "BoundedString[s] wraps s with WordBoundary\nBoundedString[s1|\[Ellipsis]|si] wraps the si with WordBoundary"
+Words::usage = "Words[n] represents n words separated by spaces"
 
 LexicalPatternToStringExpression::usage = "LexicalPatternToStringExpression[lexpatt] converts LexicalPattern lexpatt to a StringExpression"
 ValidLexicalPatternQ::usage = "ValidLexicalPatternQ[expr] checks if expr consists of allowed heads"
@@ -105,6 +106,9 @@ TextElementFormat[h_, args__] := TextElement[Map[TextElementFormat][{args}], <|"
 LexicalPatternStructure[lp_LexicalPattern] := TextElementFormat[lp];
 LexicalPatternStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[TextElementFormat, StripNamedPattern[lp]];
 
+Words[n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[n] <> "}"]
+Words[m_Integer, n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[m] <> "," <> ToString[n] <> "}"]
+
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
 MatchBoundary[patt_] := Except[WordCharacter,WordBoundary|" "|StartOfString|StartOfLine]~~patt~~Except[WordCharacter,WordBoundary|" "|EndOfString|EndOfLine]
@@ -172,7 +176,8 @@ ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the
 (* Input Handlers *)
 Options[LexicalCases]={
 	"Service" -> "Wikipedia",
-	"StringTrim" -> True
+	"StringTrim" -> True,
+	Overlaps -> False
 };
 Options[LexicalCasesWikipedia] = {
 	MaxItems -> 50,
@@ -239,7 +244,7 @@ LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ, opts:OptionsPatter
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@
 	Transpose@{
 		StringCases[source,RX],
-		StringPosition[source, StripNamedPattern[RX]]
+		StringPosition[source, StripNamedPattern[RX], Overlaps -> OptionValue[Overlaps]]
 	}
 	]
 
