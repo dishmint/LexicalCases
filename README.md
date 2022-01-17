@@ -3,7 +3,7 @@
 Extract substrings matching a lexical pattern.
 
 ## Install
-After cloning this repository or downloading the paclet file, use PacletInstall and Needs to load definitions:
+After cloning this repository or downloading the paclet file, use PacletInstall and Needs to load definitions. The path will be `<installation directory>/LexicalCases/LexicalCases/build/LexicalCases-0.0.1.paclet"`
 ```Mathematica
 PacletInstall["path/to/LexicalCases-0.0.1.paclet"]
 Needs["LexicalCases`"]
