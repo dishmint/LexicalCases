@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9010,        232]
+NotebookOptionsPosition[      6046,        163]
+NotebookOutlinePosition[      8235,        219]
+CellTagsIndexPosition[      8192,        216]
+WindowTitle->LexicalCases Overview
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES TECH NOTE", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "c74a882c-c91e-401f-89d4-cd58ff0c3ab0"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "937888e2-48e0-42db-b9ab-e84699d5e423"],
+        Background->RGBColor[
+         0.3843137254901961, 0.4627450980392157, 0.7019607843137254],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "2fb2cb5a-8084-414e-93cb-36fad7ae24ba"]
+        }],ExpressionUUID->"ddea1085-e94b-4f61-bbc1-72bd275735f9"],
+        StripOnInput->
+         False], {"\<\"LexicalCases/tutorial/LexicalCasesOverview\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/tutorial/LexicalCasesOverview"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/tutorial/\
+LexicalCasesOverview.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$21877], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/tutorial/LexicalCasesOverview" <> ".html"], 
+           None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "933225c5-7cc4-48d4-9cfa-59d3e2e93c2d"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "642154b6-6fe7-4c5f-a7a7-5d6ecf63b7ec"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"6168cefa-d570-425c-9617-88e2e367dbea"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "LexicalCases Overview", "TechNoteTitle",ExpressionUUID->
+      "5eba9d1f-a83f-4f41-9aed-0e992c2686bd"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"2e6d7b91-a6e8-4427-9b6b-88bb01440aee"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "192dc3f8-d123-457d-a9ec-8d9fb9092f1e"]
+    }],ExpressionUUID->"c28e8fd0-21ca-40f0-935b-9a8e5d70b32a"], Cell[BoxData[
+     TooltipBox[
+      StyleBox[
+       TagBox[
+        StyleBox[
+         GraphicsBox[InsetBox[
+           StyleBox["\<\"NEW IN ??\"\>",
+            StripOnInput->False,
+            FontFamily->"Source Sans Pro",
+            FontSize->18,
+            FontWeight->"Bold",
+            FontSlant->"Italic",
+            FontColor->RGBColor[0.968627, 0.466667, 0]], {Right, Center}, {
+           Right, Center}],
+          ImageSize->{125, 24}], "NewInGraphic",
+         StripOnInput->False],
+        Deploy,
+        DefaultBaseStyle->"Deploy"], "NewInGraphic",
+       StripOnInput->False],
+      "New in 12",
+      TooltipDelay->0.3]],
+     Magnification->1,ExpressionUUID->
+     "cb999bfb-8d83-46ab-b42f-df83a29b8bb6"]}
+  }]], "ObjectNameGrid",
+ CacheGraphics->False,ExpressionUUID->"7077561d-ce69-430c-837a-9a666dab05b8"],
+
+Cell["XXXX.", "TechNoteCaption",
+ CellID->589083746,ExpressionUUID->"33c3aaf7-829c-4361-9f2b-174ea3e96bd7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["XXXX"], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2104385270,ExpressionUUID->"b6645fbc-0254-48b2-9f97-4d265460948d"],
+
+Cell[BoxData["XXXX"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1495050447,ExpressionUUID->"dc2438a9-c881-4840-a59f-53a260492676"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",ExpressionUUID->"92fb7bd0-3fdc-473a-b1cb-ced96b15e054"],
+
+Cell[BoxData[""], "Input",ExpressionUUID->"1799e195-1a18-4737-b93d-ada98b7f2931"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"5dbbfeda-392a-45bd-9194-686c7ec2b325"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"LexicalCases Overview",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> {"", ""}, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 1, 17, 17, 29, 28.979773}", 
+    "history" -> {"??", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Tech Note", "language" -> "en", "paclet" -> "LexicalCases",
+     "status" -> "None", "summary" -> " ", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$21848, "title" -> 
+    "LexicalCases Overview", "titlemodifier" -> "", "windowtitle" -> 
+    "LexicalCases Overview", "type" -> "Tech Note", "uri" -> 
+    "LexicalCases/tutorial/LexicalCasesOverview", "WorkflowDockedCell" -> ""},
+   "SearchTextTranslated" -> ""},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"dfaf14b8-4b02-414c-8c94-4190d5dd5fa2"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 3458, 80, 57, "AnchorBarGrid",ExpressionUUID->"6168cefa-d570-425c-9617-88e2e367dbea",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4076, 105, 1296, 35, 61, "ObjectNameGrid",ExpressionUUID->"7077561d-ce69-430c-837a-9a666dab05b8"],
+Cell[5375, 142, 107, 1, 31, "TechNoteCaption",ExpressionUUID->"33c3aaf7-829c-4361-9f2b-174ea3e96bd7",
+ CellID->589083746],
+Cell[CellGroupData[{
+Cell[5507, 147, 129, 2, 29, "Input",ExpressionUUID->"b6645fbc-0254-48b2-9f97-4d265460948d",
+ CellID->2104385270],
+Cell[5639, 151, 130, 2, 37, "Output",ExpressionUUID->"dc2438a9-c881-4840-a59f-53a260492676",
+ CellID->1495050447]
+}, Open  ]],
+Cell[5784, 156, 81, 0, 29, "Input",ExpressionUUID->"92fb7bd0-3fdc-473a-b1cb-ced96b15e054"],
+Cell[5868, 158, 81, 0, 29, "Input",ExpressionUUID->"1799e195-1a18-4737-b93d-ada98b7f2931"]
+}, Open  ]],
+Cell[5964, 161, 78, 0, 40, "FooterCell",ExpressionUUID->"5dbbfeda-392a-45bd-9194-686c7ec2b325"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

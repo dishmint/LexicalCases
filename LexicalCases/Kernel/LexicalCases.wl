@@ -10,30 +10,38 @@
 
 BeginPackage["LexicalCases`"]
 (* Main *)
-LexicalCases::usage="LexicalCases[source, texlpatt] gives the text sequences in source that match the text pattern texlpatt."
+LexicalCases::usage = "LexicalCases[source, lexpatt] extract cases of LexicalPattern lexpatt from Text source"
+$LexicalCasesServices::usage = "List of supported services"
+$LexicalPatternValidHeads::usage = "List of heads allowed in a LexicalPattern"
 
 (* LexicalPatterns *)
-LexicalPattern::usage="LexicalPattern[t1, t2, ...] is a LexicalPattern object matching (t1, t2, ...) in the fixed order given."
-OptionalLexicalPattern::usage="OptionalLexicalPattern[lp] matches 0 or 1 instances of lp"
-OrderlessLexicalPattern::usage="OrderlessLexicalPattern[p1, p2, ...] matches p's in any order"
-LexicalPatternSequence::usage="LexicalPatternSequence[p1, p2, ...] represents a sequence of p's"
-LexicalPatternToStringExpression::usage="LexicalPatternToStringExpression[source, lp] Converts lexical pattern lp to a StringExpression"
-TextType::usage="TextType[type] is a LexicalPattern object representing a type of text content."
-BoundedString::usage="BoundedString[s] wraps s with WordBoundary"
+LexicalPattern::usage = "LexicalPattern[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens t1 \[Ellipsis] ti"
+OptionalLexicalPattern::usage = "OptionalLexicalPattern[lexpatt] matches lexpatt, \" \", or \"\""
+OrderlessLexicalPattern::usage = "OrderlessLexicalPattern[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens t1 \[Ellipsis] ti in any order"
+LexicalPatternSequence::usage = "LexicalPatternSequence[t1, t2, \[Ellipsis], ti] represents a sequence of lexical tokens"
+TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
+BoundedString::usage = "BoundedString[s] wraps s with WordBoundary\nBoundedString[s1|\[Ellipsis]|si] wraps the si with WordBoundary"
+Words::usage = "Words[n] represents n words separated by spaces"
 
-ValidLexicalPatternQ::usage="ValidLexicalPatternQ[input] Returns True if input is a valid LexicalPattern"
-LexicalPatternStructure::usage="LexicalPatternStructure[lp] renders a LexicalPattern using TextElements"
+LexicalPatternToStringExpression::usage = "LexicalPatternToStringExpression[lexpatt] converts LexicalPattern lexpatt to a StringExpression"
+ValidLexicalPatternQ::usage = "ValidLexicalPatternQ[expr] checks if expr consists of allowed heads"
 
-ExpandLexicalPattern::usage="ExpandLexicalPattern[lp] expands a lexical pattern into constructs suitable for StringExpression"
-ContentAssociation::usage="ContentAssociation[source, t] generates an association where a text contetype is the key, and examples from the source text of the content type are the values."
-ExtractContentTypes::usage="ExtractContentTypes[lp] extract content types from a lexical pattern"
-LexicalSummary::usage ="Represents the results of LexicalCases. Use the \"Properties\" subvalue for a list of properties."
-ConvertToWikipediaSearchQuery::usage="For development purposes only, convert LexicalPattern to WikipediaSearch query strings"
-$LexicalCasesSupportedServices::usage="List of supported services"
-$LexicalPatternValidHeads::usage="List of symbols LexicalPattern supports"
-TextElementFormat::usage="TextElementFormat[x] formats x as a TextElement"
-CountSummaryLowercase::usage="CountSummaryLowercase[ds] Makes matches lowercase and merges rows that now have the same match."
-WordListLookup::usage="WordListLookup[type] returns the WordList[type]"
+ExpandLexicalPattern::usage = "ExpandLexicalPattern[lexpatt] expands top level pattern objects"
+ContentAssociation::usage = "ContentAssociation[source, lexpatt] extracts text-types from lexpatt and returns and returns an association of the form \"Type\" \[Rule] example1 | \[Ellipsis] | example$$i"
+ExtractContentTypes::usage = "ExtractContentTypes[lexpatt] extracts text content type specifications from lexpatt"
+LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
+ConvertToWikipediaSearchQuery::usage = "ConvertToWikipediaSearchQuery[lexpatt] converts lexpatt to a form suitable for WikipediaSearch"
+CountSummaryLowercase::usage = "CountSummaryLowercase[LexicalSummary[<>][\"Counts\"]] Converts matches to LowerCase and consolidates results\nCountSummaryLowercase[LexicalSummary[<>][\"CountGroups\"]] Converts matches to LowerCase and consolidates results"
+
+(* Display*)
+LexicalPatternStructure::usage="LexicalPatternStructure[lexpatt] Visualize the structure of lexpatt"
+TextElementFormat::usage = "TextElementFormat[token] formats tokens for LexicalPatternStructure"
+
+(* Samples *)
+$SampleStringShort::usage="A short example string"
+$SampleStringLong::usage="A long example string"
+$SampleLexicalPattern::usage="A sample text pattern used for testing"
+
 Begin["Private`"]
 
 (* Utility *)
@@ -86,6 +94,7 @@ TextElementFormat[LexicalPattern[args___]] := TextElementFormat[LexicalPattern,a
 TextElementFormat[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[OptionalLexicalPattern[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
+TextElementFormat[OrderlessLexicalPattern[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Orderless"|>];
 TextElementFormat[LexicalPatternSequence[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Sequence"|>];
 TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
@@ -96,6 +105,9 @@ TextElementFormat[h_, args__] := TextElement[Map[TextElementFormat][{args}], <|"
 
 LexicalPatternStructure[lp_LexicalPattern] := TextElementFormat[lp];
 LexicalPatternStructure[(Rule|RuleDelayed)[lp_LexicalPattern,_]] := Construct[TextElementFormat, StripNamedPattern[lp]];
+
+Words[n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[n] <> "}"]
+Words[m_Integer, n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[m] <> "," <> ToString[n] <> "}"]
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
@@ -164,14 +176,15 @@ ConvertToWikipediaSearchQuery::novq = "Keyword formulation not supported for the
 (* Input Handlers *)
 Options[LexicalCases]={
 	"Service" -> "Wikipedia",
-	"StringTrim" -> True
+	"StringTrim" -> True,
+	Overlaps -> False
 };
 Options[LexicalCasesWikipedia] = {
 	MaxItems -> 50,
 	Language -> "English"
 };
 
-$LexicalCasesSupportedServices = {"Wikipedia"}
+$LexicalCasesServices = {"Wikipedia"}
 LexicalCases::unsupobj=Import::unsupobj;
 GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
@@ -231,7 +244,7 @@ LexicalCasesOnString[source_String, lp_?ValidLexicalPatternQ, opts:OptionsPatter
 	Map[AssociationThread[{"Match", "Position"} -> #] &]@
 	Transpose@{
 		StringCases[source,RX],
-		StringPosition[source, StripNamedPattern[RX]]
+		StringPosition[source, StripNamedPattern[RX], Overlaps -> OptionValue[Overlaps]]
 	}
 	]
 
@@ -408,7 +421,7 @@ WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[]]:= 
 	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[opts, Except[MaxItems]]]][RULES]
 ]
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
-WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule,"CategoryArticles", Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]
+WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[]]:= Map[WikipediaData["Category" -> #, "CategoryArticles"]&][WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,LexicalCasesWikipedia]]]]
 
 ArticleWithMatchCount["Text", _] := ""
 ArticleWithMatchCount[_String, data_] := (data // DeleteMissing[#, 1, 1]& // Lookup["Article"] // DeleteDuplicates // Length)
@@ -565,6 +578,59 @@ GenerateDashboard[lps_LexicalSummary, params___] := With[
 					}]
 			]
 		]
-		
+
+
+
+(* Samples *)
+
+(* From https://randomwordgenerator.com/sentence.php *)
+$SampleStringShort = "The best key lime pie is still up for debate."
+(* From TextCases[WikipediaData["computer"], "Paragraph"] // First *)
+$SampleStringLong = "A computer is a machine that can be programmed to carry out \
+sequences of arithmetic or logical operations automatically. Modern \
+computers can perform generic sets of operations known as programs. \
+These programs enable computers to perform a wide range of tasks. A \
+computer system is a \"complete\" computer that includes the \
+hardware, operating system (main software), and peripheral equipment \
+needed and used for \"full\" operation. This term may also refer to a \
+group of computers that are linked and function together, such as a \
+computer network or computer cluster.
+A broad range of industrial and consumer products use computers as \
+control systems. Simple special-purpose devices like microwave ovens \
+and remote controls are included, as are factory devices like \
+industrial robots and computer-aided design, as well as \
+general-purpose devices like personal computers and mobile devices \
+like smartphones. Computers power the Internet, which links hundreds \
+of millions of other computers and users.
+Early computers were meant to be used only for calculations. Simple \
+manual instruments like the abacus have aided people in doing \
+calculations since ancient times. Early in the Industrial Revolution, \
+some mechanical devices were built to automate long tedious tasks, \
+such as guiding patterns for looms. More sophisticated electrical \
+machines did specialized analog calculations in the early 20th \
+century. The first digital electronic calculating machines were \
+developed during World War II. The first semiconductor transistors in \
+the late 1940s were followed by the silicon-based MOSFET (MOS \
+transistor) and monolithic integrated circuit (IC) chip technologies \
+in the late 1950s, leading to the microprocessor and the \
+microcomputer revolution in the 1970s. The speed, power and \
+versatility of computers have been increasing dramatically ever since \
+then, with transistor counts increasing at a rapid pace (as predicted \
+by Moore's law), leading to the Digital Revolution during the late \
+20th to early 21st centuries.
+Conventionally, a modern computer consists of at least one processing \
+element, typically a central processing unit (CPU) in the form of a \
+microprocessor, along with some type of computer memory, typically \
+semiconductor memory chips. The processing element carries out \
+arithmetic and logical operations, and a sequencing and control unit \
+can change the order of operations in response to stored information. \
+Peripheral devices include input devices (keyboards, mice, joystick, \
+etc.), output devices (monitor screens, printers, etc.), and \
+input/output devices that perform both functions (e.g., the 2000s-era \
+touchscreen). Peripheral devices allow information to be retrieved \
+from an external source and they enable the result of operations to \
+be saved and retrieved."
+$SampleLexicalPattern = LexicalPattern[TextType["Adjective"], " key lime pie"];
+
 End[]
 EndPackage[]
