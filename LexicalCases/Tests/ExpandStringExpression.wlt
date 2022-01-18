@@ -1,7 +1,7 @@
 BeginTestSection["LexicalPatternToStringExpression"]
 (* LexicalPatternToStringExpression *)
 VerificationTest[
-	LexicalPatternToStringExpression[$SampleStringLong, LexicalPattern["computer" | "computers", " ", TextType["Verb"]]],
+	ExpandStringExpression[$SampleStringLong, StringExpression["computer" | "computers", " ", TextType["Verb"]]],
 		StringExpression[
 			Alternatives["computer","computers"]," ",
 			Except[WordCharacter,Alternatives[WordBoundary," ",StartOfString,StartOfLine]],
@@ -12,6 +12,6 @@ VerificationTest[
 			],
 			Except[WordCharacter,Alternatives[WordBoundary," ",EndOfString,EndOfLine]]
 			],
-	"TestID" -> "LexicalPatternToStringExpressionTest1"
+	"TestID" -> "ExpandStringExpressionTest1"
 ]
 EndTestSection[]

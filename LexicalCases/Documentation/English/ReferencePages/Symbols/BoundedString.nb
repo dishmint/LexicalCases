@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     25733,        703]
-NotebookOptionsPosition[     18691,        548]
-NotebookOutlinePosition[     19423,        573]
-CellTagsIndexPosition[     19344,        568]
+NotebookDataLength[     24194,        650]
+NotebookOptionsPosition[     17446,        503]
+NotebookOutlinePosition[     18180,        528]
+CellTagsIndexPosition[     18101,        523]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -269,28 +269,47 @@ Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
  CellID->2052000948,ExpressionUUID->"ff1dc5b5-2bc4-4905-b49f-d6d3a55fd922"],
 
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["BoundedString",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/BoundedString"]], "InlineFormula",
+  ExpressionUUID->"38f5094a-32a4-4280-a218-dfc8a5641a5e"],
+ " sandwiches its arguments with ",
+ Cell[BoxData[
+  ButtonBox["WordBoundary",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "456faae1-8de5-47ff-af69-ab77364dcd9e"],
+ "."
+}], "ExampleText",
+ CellChangeTimes->{{3.8486167310003223`*^9, 3.848616755207223*^9}},
+ CellID->1512824877,ExpressionUUID->"2e59f2fd-d6e3-4729-aa23-22cd024bda10"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"LexicalCases", "[", 
-   RowBox[{"\"\<the great machines\>\"", ",", 
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{"\"\<great \>\"", ",", 
-      RowBox[{"BoundedString", "[", "\"\<machine\>\"", "]"}]}], "]"}]}], 
-   "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.8486155843608*^9, 3.8486155928265743`*^9}, {
-  3.848615658175408*^9, 3.848615750551427*^9}},
- CellLabel->"In[97]:=",
- CellID->851514261,ExpressionUUID->"3957ac53-b2ad-4b0e-897d-6f020f481967"],
+ RowBox[{"ExpandStringExpression", "[", 
+  RowBox[{
+  "\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
+   RowBox[{
+    RowBox[{"\"\<great\>\"", "|", "\"\<weak\>\""}], "~~", "\"\< \>\"", "~~", 
+    RowBox[{"BoundedString", "[", 
+     RowBox[{"\"\<machine\>\"", "|", "\"\<machines\>\""}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.851459662229609*^9, 3.851459702413649*^9}},
+ CellLabel->"In[27]:=",
+ CellID->740527018,ExpressionUUID->"fe0cc8df-6b83-4036-bd24-8f1f9a8fa7f1"],
 
 Cell[BoxData[
- RowBox[{"{", "}"}]], "Output",
- CellChangeTimes->{
-  3.84861559544654*^9, {3.848615706598406*^9, 3.848615719330566*^9}, 
-   3.84861575161098*^9},
- CellLabel->"Out[97]=",
- CellID->1045083457,ExpressionUUID->"7b4b7f4e-1f92-4972-b24b-fffbdb63531a"]
+ RowBox[{
+  RowBox[{"\<\"great\"\>", "|", "\<\"weak\"\>"}], "~~", "\<\" \"\>", "~~", 
+  "WordBoundary", "~~", 
+  RowBox[{"\<\"machine\"\>", "|", "\<\"machines\"\>"}], "~~", 
+  "WordBoundary"}]], "Output",
+ CellChangeTimes->{{3.851459665094054*^9, 3.851459675894039*^9}, 
+   3.8514597065296373`*^9},
+ CellLabel->"Out[27]=",
+ CellID->1696028753,ExpressionUUID->"75986306-9640-4952-aad4-93e5b571eaf1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -298,29 +317,63 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"LexicalCases", "[", 
-   RowBox[{"\"\<the great machines\>\"", ",", 
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{"\"\<great \>\"", ",", 
-      RowBox[{"BoundedString", "[", "\"\<machines\>\"", "]"}]}], "]"}]}], 
-   "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.848615754833467*^9, 3.848615764695711*^9}},
- CellLabel->"In[100]:=",
+   RowBox[{"\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
+    RowBox[{"\"\<great \>\"", "~~", 
+     RowBox[{"BoundedString", "[", "\"\<machine\>\"", "]"}]}]}], "]"}], "[", 
+  "\"\<Data\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8486155843608*^9, 3.8486155928265743`*^9}, {
+   3.848615658175408*^9, 3.848615750551427*^9}, {3.851459594048398*^9, 
+   3.8514596001898317`*^9}, 3.851459774632636*^9},
+ CellLabel->"In[28]:=",
+ CellID->851514261,ExpressionUUID->"3957ac53-b2ad-4b0e-897d-6f020f481967"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"great machine\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"5", ",", "17"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.84861559544654*^9, {3.848615706598406*^9, 3.848615719330566*^9}, 
+   3.84861575161098*^9, 3.851459601129366*^9, 3.851459779263179*^9},
+ CellLabel->"Out[28]=",
+ CellID->1590170055,ExpressionUUID->"2db5056e-3ca8-459a-aa51-8efd8925477d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
+    RowBox[{"\"\<weak \>\"", "~~", 
+     RowBox[{"BoundedString", "[", "\"\<machines\>\"", "]"}]}]}], "]"}], "[", 
+  "\"\<Data\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.848615754833467*^9, 3.848615764695711*^9}, {
+  3.851459604671424*^9, 3.851459610238288*^9}, {3.851459776821281*^9, 
+  3.851459790198654*^9}},
+ CellLabel->"In[30]:=",
  CellID->964324704,ExpressionUUID->"0142c4ed-94e4-4a47-8fda-a9b2dc0996ab"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"\[LeftAssociation]", 
    RowBox[{
-    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"great machines\"\>"}], ",", 
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"weak machines\"\>"}], ",", 
     RowBox[{"\<\"Position\"\>", "\[Rule]", 
      RowBox[{"{", 
       RowBox[{"{", 
-       RowBox[{"5", ",", "18"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+       RowBox[{"30", ",", "42"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
   "}"}]], "Output",
- CellChangeTimes->{{3.8486157560655746`*^9, 3.8486157652318153`*^9}},
- CellLabel->"Out[100]=",
- CellID->873969633,ExpressionUUID->"595bd54c-3a56-4573-8590-c5114a2c7669"]
-}, Closed]]
+ CellChangeTimes->{{3.8486157560655746`*^9, 3.8486157652318153`*^9}, 
+   3.851459610805316*^9, {3.851459780907632*^9, 3.851459790810577*^9}},
+ CellLabel->"Out[30]=",
+ CellID->409698120,ExpressionUUID->"62c82860-4c5f-46b2-8645-9b0b424180e2"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -357,18 +410,18 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"LexicalCases", "[", 
+  RowBox[{"LexicalCases", "[", "\[IndentingNewLine]", 
    RowBox[{"\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{
-      RowBox[{"\"\<great\>\"", "|", "\"\<weak\>\""}], ",", "\"\< \>\"", ",", 
-      RowBox[{"BoundedString", "[", 
-       RowBox[{"\"\<machine\>\"", "|", "\"\<machines\>\""}], "]"}]}], "]"}]}],
-    "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
+    RowBox[{
+     RowBox[{"\"\<great\>\"", "|", "\"\<weak\>\""}], "~~", "\"\< \>\"", "~~", 
+     
+     RowBox[{"BoundedString", "[", 
+      RowBox[{"\"\<machine\>\"", "|", "\"\<machines\>\""}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.848615754833467*^9, 3.848615764695711*^9}, {
   3.8486158999243193`*^9, 3.848615968014604*^9}, {3.848616540202286*^9, 
-  3.848616548112926*^9}},
- CellLabel->"In[103]:=",
+  3.848616548112926*^9}, {3.851459620662263*^9, 3.8514596351096783`*^9}},
+ CellLabel->"In[24]:=",
  CellID->1009468045,ExpressionUUID->"4f8f34b4-8dfd-4d19-afd7-1cafe76e22d3"],
 
 Cell[BoxData[
@@ -391,9 +444,10 @@ Cell[BoxData[
         RowBox[{"30", ",", "42"}], "}"}], "}"}]}]}], 
     "\[RightAssociation]"}]}], "}"}]], "Output",
  CellChangeTimes->{{3.8486157560655746`*^9, 3.8486157652318153`*^9}, {
-   3.8486159545313807`*^9, 3.848615971031131*^9}, 3.8486165554712*^9},
- CellLabel->"Out[103]=",
- CellID->1769476274,ExpressionUUID->"62d401fe-2ebb-45e8-9cd6-6baeefd9bc75"]
+   3.8486159545313807`*^9, 3.848615971031131*^9}, 3.8486165554712*^9, 
+   3.851459638731257*^9},
+ CellLabel->"Out[24]=",
+ CellID->1294341723,ExpressionUUID->"0e3ee5d2-1d02-4904-944b-962daa28ce5a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -418,111 +472,12 @@ Cell[BoxData[
   $Line = 0; Null]], "ExampleSection",
  CellID->748343364,ExpressionUUID->"a1f8caef-01a2-4a1f-bb67-1452426eeab1"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  InterpretationBox[Cell[
   "Properties & Relations", "ExampleSection",ExpressionUUID->
-   "0e271c8c-87c5-441a-91cc-572a020d94b4"],
+   "969e714f-7ccc-402f-9acb-bd9ff27c4263"],
   $Line = 0; Null]], "ExampleSection",
- CellID->1742681916,ExpressionUUID->"16707a5b-57d0-45bc-8c2a-862f9966320a"],
-
-Cell[TextData[{
- Cell[BoxData[
-  ButtonBox["BoundedString",
-   BaseStyle->"Link",
-   ButtonData->"paclet:LexicalCases/ref/BoundedString"]], "InlineFormula",
-  ExpressionUUID->"85f318e2-5854-466b-8440-aa17b3bdf108"],
- " sandwiches its arguments with ",
- Cell[BoxData[
-  ButtonBox["WordBoundary",
-   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
-  "21c522a8-6097-4ff4-8d76-e711232c179c"],
- "."
-}], "ExampleText",
- CellChangeTimes->{{3.8486167310003223`*^9, 3.848616755207223*^9}},
- CellID->1512824877,ExpressionUUID->"5888ee7a-7c6b-44dd-ab73-2d10edd1ba3f"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"LexicalCases", "[", 
-   RowBox[{"\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{
-      RowBox[{"\"\<great\>\"", "|", "\"\<weak\>\""}], ",", "\"\< \>\"", ",", 
-      RowBox[{"BoundedString", "[", 
-       RowBox[{"\"\<machine\>\"", "|", "\"\<machines\>\""}], "]"}]}], "]"}]}],
-    "]"}], "[", "\"\<Data\>\"", "]"}]], "Input",
- CellLabel->"In[106]:=",
- CellID->1073936560,ExpressionUUID->"6aa9c7f8-d06e-445d-b155-3026221e04d5"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"great machine\"\>"}], ",", 
-     RowBox[{"\<\"Position\"\>", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{"5", ",", "17"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
-   ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"weak machines\"\>"}], ",", 
-     RowBox[{"\<\"Position\"\>", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{"30", ",", "42"}], "}"}], "}"}]}]}], 
-    "\[RightAssociation]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.848616763251697*^9},
- CellLabel->"Out[106]=",
- CellID->742145395,ExpressionUUID->"716b25b3-1ced-44a1-ab39-d93551e161c7"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"LexicalCases", "[", 
-   RowBox[{"\"\<The great machine whirs. The weak machines sputter.\>\"", ",", 
-    RowBox[{"LexicalPattern", "[", 
-     RowBox[{
-      RowBox[{"\"\<great\>\"", "|", "\"\<weak\>\""}], ",", "\"\< \>\"", ",", 
-      RowBox[{"WordBoundary", "~~", 
-       RowBox[{"\"\<machine\>\"", "|", "\"\<machines\>\""}], "~~", 
-       "WordBoundary"}]}], "]"}]}], "]"}], "[", "\"\<Data\>\"", 
-  "]"}]], "Input",
- CellChangeTimes->{{3.848616769917783*^9, 3.8486167788540688`*^9}},
- CellLabel->"In[107]:=",
- CellID->652631989,ExpressionUUID->"711edaf4-33af-4bee-adad-2fe4dac15ec4"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"great machine\"\>"}], ",", 
-     RowBox[{"\<\"Position\"\>", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{"5", ",", "17"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
-   ",", 
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"weak machines\"\>"}], ",", 
-     RowBox[{"\<\"Position\"\>", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"{", 
-        RowBox[{"30", ",", "42"}], "}"}], "}"}]}]}], 
-    "\[RightAssociation]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.8486167805129766`*^9},
- CellLabel->"Out[107]=",
- CellID->669705304,ExpressionUUID->"b5b2b3aa-b035-4a9a-99e7-16c0eb977e99"]
-}, Open  ]]
-}, Open  ]],
+ CellID->1742681916,ExpressionUUID->"d3a85a5b-683d-4760-a1dc-bbeab8ba4122"],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -546,7 +501,7 @@ Cell[BoxData[
  CellID->1337104558,ExpressionUUID->"8a9b1c29-5aec-4129-82d3-43140627fd3d"]
 }, Open  ]]
 },
-WindowSize->{904, 847},
+WindowSize->{Full, Full},
 WindowMargins->{{253, Automatic}, {Automatic, 119}},
 CellContext->"Global`",
 FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
@@ -560,14 +515,14 @@ ExpressionUUID->"006dba17-ca84-4b85-b7fd-0ec6c20d9709"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[10919, 327, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"a8915399-d7c4-4d7f-8133-e4a4d17ca666",
+  Cell[12995, 380, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"a8915399-d7c4-4d7f-8133-e4a4d17ca666",
    CellTags->"ExtendedExamples",
    CellID->1936532682]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 19150, 561}
+ {"ExtendedExamples", 17907, 516}
  }
 *)
 (*NotebookFileOutline
@@ -643,66 +598,58 @@ Cell[8502, 254, 411, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"23eb5537-
  CellID->218351794],
 Cell[8916, 267, 154, 2, 27, "Input",ExpressionUUID->"ff1dc5b5-2bc4-4905-b49f-d6d3a55fd922",
  CellID->2052000948],
+Cell[9073, 271, 562, 14, 26, "ExampleText",ExpressionUUID->"2e59f2fd-d6e3-4729-aa23-22cd024bda10",
+ CellID->1512824877],
 Cell[CellGroupData[{
-Cell[9095, 273, 511, 11, 47, "Input",ExpressionUUID->"3957ac53-b2ad-4b0e-897d-6f020f481967",
+Cell[9660, 289, 516, 11, 66, "Input",ExpressionUUID->"fe0cc8df-6b83-4036-bd24-8f1f9a8fa7f1",
+ CellID->740527018],
+Cell[10179, 302, 412, 9, 27, "Output",ExpressionUUID->"75986306-9640-4952-aad4-93e5b571eaf1",
+ CellID->1696028753]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10628, 316, 574, 11, 47, "Input",ExpressionUUID->"3957ac53-b2ad-4b0e-897d-6f020f481967",
  CellID->851514261],
-Cell[9609, 286, 260, 6, 26, "Output",ExpressionUUID->"7b4b7f4e-1f92-4972-b24b-fffbdb63531a",
- CellID->1045083457]
+Cell[11205, 329, 585, 14, 29, "Output",ExpressionUUID->"2db5056e-3ca8-459a-aa51-8efd8925477d",
+ CellID->1590170055]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9906, 297, 464, 10, 47, "Input",ExpressionUUID->"0142c4ed-94e4-4a47-8fda-a9b2dc0996ab",
+Cell[11827, 348, 548, 11, 47, "Input",ExpressionUUID->"0142c4ed-94e4-4a47-8fda-a9b2dc0996ab",
  CellID->964324704],
-Cell[10373, 309, 497, 12, 29, "Output",ExpressionUUID->"595bd54c-3a56-4573-8590-c5114a2c7669",
- CellID->873969633]
-}, Closed]]
+Cell[12378, 361, 568, 13, 29, "Output",ExpressionUUID->"62c82860-4c5f-46b2-8645-9b0b424180e2",
+ CellID->409698120]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10919, 327, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"a8915399-d7c4-4d7f-8133-e4a4d17ca666",
+Cell[12995, 380, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"a8915399-d7c4-4d7f-8133-e4a4d17ca666",
  CellTags->"ExtendedExamples",
  CellID->1936532682],
 Cell[CellGroupData[{
-Cell[11099, 333, 240, 5, 33, "ExampleSection",ExpressionUUID->"c3011ad4-24d7-4bd2-bd6d-f89ccfd045cd",
+Cell[13175, 386, 240, 5, 33, "ExampleSection",ExpressionUUID->"c3011ad4-24d7-4bd2-bd6d-f89ccfd045cd",
  CellID->42632442],
-Cell[11342, 340, 153, 2, 27, "Input",ExpressionUUID->"8be19a83-7197-460d-abd3-df2e3ee58d94",
+Cell[13418, 393, 153, 2, 27, "Input",ExpressionUUID->"8be19a83-7197-460d-abd3-df2e3ee58d94",
  CellID->921516913],
-Cell[11498, 344, 349, 9, 26, "ExampleText",ExpressionUUID->"b5150af3-cc40-4842-885d-bd4b4e2bca38",
+Cell[13574, 397, 349, 9, 26, "ExampleText",ExpressionUUID->"b5150af3-cc40-4842-885d-bd4b4e2bca38",
  CellID->19476351],
 Cell[CellGroupData[{
-Cell[11872, 357, 695, 14, 67, "Input",ExpressionUUID->"4f8f34b4-8dfd-4d19-afd7-1cafe76e22d3",
+Cell[13948, 410, 749, 14, 86, "Input",ExpressionUUID->"4f8f34b4-8dfd-4d19-afd7-1cafe76e22d3",
  CellID->1009468045],
-Cell[12570, 373, 886, 22, 51, "Output",ExpressionUUID->"62d401fe-2ebb-45e8-9cd6-6baeefd9bc75",
- CellID->1769476274]
+Cell[14700, 426, 911, 23, 51, "Output",ExpressionUUID->"0e3ee5d2-1d02-4904-944b-962daa28ce5a",
+ CellID->1294341723]
 }, Open  ]]
 }, Open  ]],
-Cell[13483, 399, 265, 5, 33, "ExampleSection",ExpressionUUID->"01b74cab-c3ae-4d83-955d-01e180079922",
+Cell[15638, 453, 265, 5, 33, "ExampleSection",ExpressionUUID->"01b74cab-c3ae-4d83-955d-01e180079922",
  CellID->1411398243],
-Cell[13751, 406, 243, 5, 21, "ExampleSection",ExpressionUUID->"88ece361-f69a-452a-a72a-6d096b6bafab",
+Cell[15906, 460, 243, 5, 21, "ExampleSection",ExpressionUUID->"88ece361-f69a-452a-a72a-6d096b6bafab",
  CellID->265905339],
-Cell[13997, 413, 248, 5, 21, "ExampleSection",ExpressionUUID->"a1f8caef-01a2-4a1f-bb67-1452426eeab1",
+Cell[16152, 467, 248, 5, 21, "ExampleSection",ExpressionUUID->"a1f8caef-01a2-4a1f-bb67-1452426eeab1",
  CellID->748343364],
-Cell[CellGroupData[{
-Cell[14270, 422, 259, 5, 21, "ExampleSection",ExpressionUUID->"16707a5b-57d0-45bc-8c2a-862f9966320a",
+Cell[16403, 474, 259, 5, 21, "ExampleSection",ExpressionUUID->"d3a85a5b-683d-4760-a1dc-bbeab8ba4122",
  CellID->1742681916],
-Cell[14532, 429, 562, 14, 26, "ExampleText",ExpressionUUID->"5888ee7a-7c6b-44dd-ab73-2d10edd1ba3f",
- CellID->1512824877],
-Cell[CellGroupData[{
-Cell[15119, 447, 529, 11, 67, "Input",ExpressionUUID->"6aa9c7f8-d06e-445d-b155-3026221e04d5",
- CellID->1073936560],
-Cell[15651, 460, 785, 21, 51, "Output",ExpressionUUID->"716b25b3-1ced-44a1-ab39-d93551e161c7",
- CellID->742145395]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[16473, 486, 620, 13, 67, "Input",ExpressionUUID->"711edaf4-33af-4bee-adad-2fe4dac15ec4",
- CellID->652631989],
-Cell[17096, 501, 787, 21, 51, "Output",ExpressionUUID->"b5b2b3aa-b035-4a9a-99e7-16c0eb977e99",
- CellID->669705304]
-}, Open  ]]
-}, Open  ]],
-Cell[17910, 526, 252, 5, 33, "ExampleSection",ExpressionUUID->"325b7bdd-fd76-4622-b48a-81fb7da2dcf9",
+Cell[16665, 481, 252, 5, 21, "ExampleSection",ExpressionUUID->"325b7bdd-fd76-4622-b48a-81fb7da2dcf9",
  CellID->1872984426],
-Cell[18165, 533, 257, 5, 21, "ExampleSection",ExpressionUUID->"20ab7fe9-1a0b-4241-bc06-5c0892834aa6",
+Cell[16920, 488, 257, 5, 21, "ExampleSection",ExpressionUUID->"20ab7fe9-1a0b-4241-bc06-5c0892834aa6",
  CellID->1433950056],
-Cell[18425, 540, 250, 5, 21, "ExampleSection",ExpressionUUID->"8a9b1c29-5aec-4129-82d3-43140627fd3d",
+Cell[17180, 495, 250, 5, 21, "ExampleSection",ExpressionUUID->"8a9b1c29-5aec-4129-82d3-43140627fd3d",
  CellID->1337104558]
 }, Open  ]]
 }

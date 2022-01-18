@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "2b9a3bac1cad6c31510f6892def5ac783b2e3113b808c09b39c38da0f9600f84"
+            "5ff768b1a8a9addd8b5aeadabcee52130a77324a24716babf7b560ab1cfa595d"
                 
         |>
         ,
@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "71ac5118f37259aacd221f4c24b986d49e357f996e0a18934d6aeaf3a0becca6"
+            "289da969b5d9571d15b7ee98de23029d3f480176a793d9eb50646cafcb09742a"
                 
         |>
         ,
@@ -37,7 +37,7 @@
             ,
             "Hash"
             ->
-            "31ba20ed2a01ccb8beec0564cb2524ce2110950a5c84e45d814637df4e638a33"
+            "5d094aa86dc793abe642ce0f6a64dc90246b7d830a3b23dfe8ef35a19d0ed023"
                 
         |>
         ,
@@ -45,12 +45,12 @@
             "File"
             ->
             File[
-                "Tests/LexicalPatternStructure.wlt"
+                "Tests/Structure.wlt"
             ]
             ,
             "Hash"
             ->
-            "6c1c54fa71384f4787d8b6b746e7a8e00f70e3b1edabfb78e78569b7ebffff88"
+            "b84ff694098dea03dbc900bfa0720adfa096462d6911a9e63f492bdbd444c61b"
                 
         |>
         ,
@@ -58,12 +58,12 @@
             "File"
             ->
             File[
-                "Tests/LexicalPatternToStringExpression.wlt"
+                "Tests/ExpandStringExpression.wlt"
             ]
             ,
             "Hash"
             ->
-            "404f218aa6f2d171043ee80bdf79c553bd968180f3949df4c2fee64951cf9ffb"
+            "ad039fec86daad56a52f866bee7f07948b2760c5db3ed262fdc1dbcf30b8dcda"
                 
         |>
         ,
@@ -76,7 +76,7 @@
             ,
             "Hash"
             ->
-            "f200d9bfa0d523f8e46502c1df2fd3be207aee6e8e600a5d5782fb8769efe76c"
+            "4451e96dd9bda157a91078b509a082e8772dbd9d44de4671465bb2421bb33833"
                 
         |>
         ,
@@ -89,7 +89,7 @@
             ,
             "Hash"
             ->
-            "880a3f532bfdf8be284c0081823f6c0b72a384403c4982318804b00798496afe"
+            "d9a311783dad499ef586cf622c82d223b0d5be6e9a5f4e6c476c47752360cdca"
                 
         |>
         ,
@@ -103,7 +103,7 @@
             ,
             "Hash"
             ->
-            "437a7d3336755d7b3aadd4085c993944669534fa9e5a9c8fa398607c44a46036"
+            "99ab5c608af2e6e2baad6b66c87a57d8f81b5fa7e56d80aa3f78f36ed2c858d1"
                 
         |>
         ,
@@ -117,7 +117,7 @@
             ,
             "Hash"
             ->
-            "9a58e25e90f90f4dd33ddeb09338e282a504b7353b0d9bd7f1589898d0b13ecb"
+            "e618b9103d588dbd5bf1a4fd05719fafe97fb160a2fee7aa0c2fd64b358d06df"
                 
         |>
         ,
@@ -131,7 +131,7 @@
             ,
             "Hash"
             ->
-            "fb51873e53f002f9f634f5d5c6a2d3b5d713b3155bc886233b365efa4045d2e4"
+            "40830050f3374fab5ac595b5e6cac2ca2a95551454528f3ff0276d13079eba9b"
                 
         |>
         ,
@@ -145,7 +145,7 @@
             ,
             "Hash"
             ->
-            "e27ad853c0d9ae735f894e6db43768ecb95ef734a70417fef6ab728d3e51e628"
+            "9a74e27f26c6f0e2b696c01c186922c807a2524181b01d67906ed2ef2195d270"
                 
         |>
         ,
@@ -153,13 +153,27 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/ExpandLexicalPattern.nb"
+                "Documentation/English/ReferencePages/Symbols/ExpandPattern.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "a015d45b40b180fbe5246b12d759e13aa905f5828babf9b536b460b7af9cdf6f"
+            "3143b38ef501c5e7de698ba17daf7b42c9b47d648603bb371d190aa27a845d89"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/ExpandStringExpression.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "632b0edfc0c4ccd78b4e37464246285229816b8b305485ff894fc2dd996942a2"
                 
         |>
         ,
@@ -173,7 +187,7 @@
             ,
             "Hash"
             ->
-            "b31b65f1c727163994a9383149e05dbd3c879a27154c70d9eb5cf5625dbd97aa"
+            "975a5922eb9df1b54809a1ee9a69efebc2064e6194eea717d76100304f563b28"
                 
         |>
         ,
@@ -187,7 +201,7 @@
             ,
             "Hash"
             ->
-            "810dbf4b73fe268572401d44368aa7afef103db928b43a6940df36464fdea4df"
+            "6e8600222f0d543e084aa3dd68eba38a5d6691c0c496e03973cb4c0ffbfbf8a6"
                 
         |>
         ,
@@ -195,13 +209,13 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/LexicalPattern.nb"
+                "Documentation/English/ReferencePages/Symbols/Opt.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "a53ee5c90c139b606612cea9d98ffe96c2e418aa336558feaa3cf20873f72ede"
+            "1d8bdbeea67ce66a54f3809d08348b8b95dd9ced622b2bcf272b87d92b6f83e0"
                 
         |>
         ,
@@ -209,69 +223,13 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/LexicalPatternSequence.nb"
+                "Documentation/English/ReferencePages/Symbols/Structure.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "e6b8725085dc71efc23d8f213859a9bbaa8a63f87a1cff03173cec9e7f2704ce"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/LexicalPatternStructure.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "36579be51e617ae588e0de8df2a368bdf73be0387d7ed1e5683f7cf469e1f568"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/LexicalPatternToStringExpression.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "07c379c4e34457dff623b6c900326c947829c41cb47dbfaf64a4be0b67b0b86e"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/OptionalLexicalPattern.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "6504c1bde6fdefe771134aa7ce4e2b9a20373bfcfbd0840d6af006f830cc13aa"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/OrderlessLexicalPattern.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "e82560c5076399c7982899a08750c8f5b63f3c67630a29da8cf0abe8cb679d87"
+            "32996a782dac96b42660ff1a842b91d94004819f3c1ea5f9d5ec3e101c889beb"
                 
         |>
         ,
@@ -285,7 +243,7 @@
             ,
             "Hash"
             ->
-            "93521a99dcdeefa4491bc2aa31b89a768bebb09edaf08a145102becc10d4abd0"
+            "b870394a29408b5eb67ba3e2c39512c4f18d14e2d66b99de38eeacc73991f475"
                 
         |>
         ,
@@ -299,21 +257,7 @@
             ,
             "Hash"
             ->
-            "6c3b61bb38bcace6b90b73733de880144be298ad7dcbcd80621dc75d9f523439"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/ValidLexicalPatternQ.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "bd87f4c7be20ce7666103fe0ed2b070dec8692b3830ad20cb82f41d63ff8002e"
+            "e1d250a050edca45a2c468bbd6bbcf059209da1ecf51d67bb6d92180ef2602e3"
                 
         |>
         ,
@@ -327,21 +271,7 @@
             ,
             "Hash"
             ->
-            "27870ebc66f12b0065b7d9504d02d9458a8781f45c2de3258ff85b34bd07d3c9"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/$LexicalPatternValidHeads.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "7ec6cde0c1fd408e3652b7964067bed8401383adde86ee22cf9bd1d0e01ae246"
+            "2dc77cd1043991da56503931d5bc323911a3d62eddccfb7fd67d8e621642e5b1"
                 
         |>
         ,
@@ -355,7 +285,7 @@
             ,
             "Hash"
             ->
-            "db3be38f58c23f776d22c728b0142e9528c52815bb18cffcade8f2fa78fd449e"
+            "c56f04e80c3756722f35080f459cdcebf568717810b3e6fce3fa853ed2f8e124"
                 
         |>
     }

@@ -1,7 +1,7 @@
 BeginTestSection["ConvertToWikipediaSearchQuery"]
 
 VerificationTest[(* 1 *)
-	ConvertToWikipediaSearchQuery[$SampleLexicalPattern]
+	ConvertToWikipediaSearchQuery[$SampleStringExpression]
 	,
 	"key lime pie"
 	,
@@ -9,7 +9,7 @@ VerificationTest[(* 1 *)
 ]
 
 VerificationTest[
-	ConvertToWikipediaSearchQuery[LexicalPattern[TextType["Determiner"], "king" | "queen"]],
+	ConvertToWikipediaSearchQuery[StringExpression[TextType["Determiner"], "king" | "queen"]],
 	{"king", "queen"},
 	"TestID" -> "ConvertToWikipediaSearchQueryTest2"
 ]
