@@ -81,7 +81,7 @@ TextElementFormat[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUn
 TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[Opt[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[AnyOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
-TextElementFormat[FixedOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
+TextElementFormat[FixedOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
 TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 TextElementFormat[s_Symbol] := s;
@@ -124,14 +124,15 @@ ExtractContentTypes[se_StringExpression] := Through[{ExtractStringContentTypes, 
 ExtractAlternatives[List[a_Alternatives]] := a
 ExtractAlternatives[a_] := a
 
+ContentAssociation[st_String, (Rule|RuleDelayed)[se_StringExpression,_]] := ContentAssociation[st, se]
 ContentAssociation[sourcetext_String, se_StringExpression] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
 
 ContainsPatternHeadsQ[se_?ValidSeQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 StripNamedPattern[se_?ValidSeQ] := StripNames[ContainsPatternHeadsQ[se], se]
-StripNames[True, se_?ValidSeQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
-StripNames[True, (Rule|RuleDelayed)[se_?ValidSeQ,_]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, se_StringExpression] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, (Rule|RuleDelayed)[se_StringExpression,_]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?ValidSeQ]:= se
 
 ContentAlts[List[a_Alternatives]] := a
@@ -185,8 +186,8 @@ SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtensi
 LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
 LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
 
-LexicalCases[files:(List[__File]),se_StringExpression, opts:OptionsPattern[LexicalCases]] := LexicalCasesFileList[files, se, opts]
-LexicalCases[texts:(List[__String]),se_StringExpression, opts:OptionsPattern[LexicalCases]] := LexicalCasesStringList[texts, se, opts]
+LexicalCases[files:(List[__File]),se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesFileList[files, se, opts]
+LexicalCases[texts:(List[__String]),se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesStringList[texts, se, opts]
 
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, se_?ValidSeQ, opts:OptionsPattern[LexicalCases]]:= Module[
@@ -346,13 +347,13 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 		Flatten[MAC]
 	]
 
-LexicalCasesFileList[files_List,se_StringExpression, opts:OptionsPattern[]] := Module[
+LexicalCasesFileList[files_List,se_?ValidSeQ, opts:OptionsPattern[]] := Module[
 	(* TODO: If Text import fails, Plaintext should be tried, otherwise ignore the file *)
 	{texts = Map[Import[#, "Text"]&][files]},
 	LexicalCasesStringList[texts, se, opts]
 	]
 
-LexicalCasesStringList[texts_List, se_StringExpression, opts:OptionsPattern[]]:= Module[
+LexicalCasesStringList[texts_List, se_?ValidSeQ, opts:OptionsPattern[]]:= Module[
 	{SE = se, LEN = Length[texts], REN, ard, art, arc, acs, mtl, mtc},
 	REN = Range[LEN];
 	ard = <|"Articles" -> Map[ToString][REN], "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>;
