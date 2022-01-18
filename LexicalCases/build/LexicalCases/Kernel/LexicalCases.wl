@@ -189,6 +189,11 @@ LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExten
 LexicalCases[files:(List[__File]),se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesFileList[files, se, opts]
 LexicalCases[texts:(List[__String]),se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := LexicalCasesStringList[texts, se, opts]
 
+LexicalCases[Rule[index_SearchIndexObject, query_], se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := Module[
+	{files = Map[File][TextSearch[index, query][All, "Location"]]},
+	LexicalCasesFileList[files, se, opts]
+	]
+
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, se_?ValidSeQ, opts:OptionsPattern[LexicalCases]]:= Module[
 	{LPC,RES},
