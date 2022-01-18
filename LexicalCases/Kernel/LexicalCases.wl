@@ -96,8 +96,8 @@ ValidSeQ[RuleDelayed[expr_?ValidSeQ,_]]:= True
 ValidSeQ[expr_String]:= True
 ValidSeQ[_]:= False
 
-Structure[se_?ValidSeQ] := TextElementFormat[se];
-Structure[(Rule|RuleDelayed)[se_?ValidSeQ,_]] := Construct[TextElementFormat, StripNamedPattern[se]];
+Structure[se_StringExpression] := TextElementFormat[se];
+Structure[(Rule|RuleDelayed)[se_StringExpression,_]] := Construct[TextElementFormat, StripNamedPattern[se]];
 
 Words[n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[n] <> "}"]
 Words[m_Integer, n_Integer] := RegularExpression["(\\s?\\b\\w+\\b\\s?){" <> ToString[m] <> "," <> ToString[n] <> "}"]
