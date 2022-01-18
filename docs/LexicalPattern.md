@@ -1,16 +1,15 @@
-# LexicalPattern
+# Lexical Patterns
 
-A LexicalPattern describes a string pattern that includes lexical categories. It's essentially implemented on top of [StringExpression](https://reference.wolfram.com/language/ref/StringExpression.html).
+A lexical pattern is a [StringExpression](https://reference.wolfram.com/language/ref/StringExpression.html) that includes lexical categories.
 
 Replacement rules allow for extraction of certain matches:
 ```Mathematica
-LexicalPattern["Alice ", verb:TextType["Verb"], " ", TextType["Preposition"], " ", OptionalLexicalPattern["the"], " ",TextType["Noun"], WordBoundary] :> verb
+StringExpression["Alice ", verb:TextType["Verb"], " ", TextType["Preposition"], " ", OptionalLexicalPattern["the"], " ",TextType["Noun"], WordBoundary] :> verb
 ```
 
-Supported expressions are:
-* [Strings](https://reference.wolfram.com/language/ref/String.html) — Matches a string
-* BoundedString — Matches a string surrounded by explicit WordBoundaries
+LexicalCases will interpret the following alongside valid StringExpression patterns:
+* BoundedString[s] — Matches a string surrounded by explicit WordBoundaries
 * [TextType](./TextType.md) — Matches a lexical category
-* OptionalLexicalPattern — Matches 0 or 1 instances of its arguments
-* OrderlessLexicalPattern — Matches its arguments in any order
-* Most system Pattern symbols work, like `WordCharacter` or `DigitCharacter` for example. Use `$LexicalPatternValidHeads` to see supported symbols.
+* Opt — Matches 0 or 1 instances of its arguments
+* Sandwich — sandwiches expr with some other expr
+* Words — matches n words

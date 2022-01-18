@@ -1,7 +1,7 @@
 BeginTestSection["ContentAssociation"]
 
 VerificationTest[(* 1 *)
-	ContentAssociation[$SampleStringShort, $SampleLexicalPattern]
+	ContentAssociation[$SampleStringShort, $SampleStringExpression]
 	,
 	Association["Adjective"->"best"|"key"]
 	,
