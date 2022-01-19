@@ -17,7 +17,7 @@ PacletObject[
                     "Root" -> "Tests",
                     "Resources" -> {
                       {"ContentAssociation", "ContentAssociation.wlt"},
-                      {"ConvertToWikipediaSearchQuery", "ConvertToWikipediaSearchQuery.wlt"},
+                      {"ToWikipediaSearchQuery", "ToWikipediaSearchQuery.wlt"},
                       {"Structure", "Structure.wlt"},
                       {"ExpandStringExpression", "ExpandStringExpression.wlt"},
                       {"LexicalCases", "LexicalCases.wlt"}

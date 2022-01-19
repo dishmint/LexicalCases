@@ -1,5 +1,4 @@
 BeginTestSection["ContentAssociation"]
-
 VerificationTest[(* 1 *)
 	ContentAssociation[$SampleStringShort, $SampleStringExpression]
 	,

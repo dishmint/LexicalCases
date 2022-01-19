@@ -1,5 +1,5 @@
-BeginTestSection["LexicalPatternToStringExpression"]
-(* LexicalPatternToStringExpression *)
+BeginTestSection["ExpandStringExpression"]
+(* ExpandStringExpression *)
 VerificationTest[
 	ExpandStringExpression[$SampleStringLong, StringExpression["computer" | "computers", " ", TextType["Verb"]]],
 		StringExpression[
