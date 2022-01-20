@@ -312,7 +312,7 @@ iGetWikipediaArticleText[articles_List, articleCount_Integer, articleCountString
 
 
 
-(* Input Handlers *)
+(* LexicalCases *)
 Options[LexicalCases]={
 	"Service" -> "Wikipedia",
 	"StringTrim" -> True,
@@ -325,6 +325,11 @@ GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
 LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
 LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
+
+LexicalCases[input:List[__String],se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Module[
+	{files = Map[File][input]},
+	iLexicalCases[files, se, opts]
+	]
 
 LexicalCases[input:(List[__File]|List[__String]),se_?ValidSeQ, opts:OptionsPattern[LexicalCases]] := iLexicalCases[input, se, opts]
 

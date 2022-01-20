@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "9825d2cedfd2cfe58849bcde9e619a14e704be00a17c5fa851a0879b6730efc6"
+            "ca705019fb31c16238ddcfaf6e812b71b0a8158d6bd356c10a1d0ae8572cabc1"
                 
         |>
         ,
@@ -89,7 +89,7 @@
             ,
             "Hash"
             ->
-            "28c46aed7c12402fc8b18054f6ae0cfe484e3b513af0bd0708ad4d42e8af646e"
+            "e410640350ccde3339a77ac9670755ca437af5d8ffd24017c15093ce7a6ec0a1"
                 
         |>
         ,
@@ -103,7 +103,7 @@
             ,
             "Hash"
             ->
-            "93bf950ae20058e4a2cf2102ad4f55397122ff550d9259b1f6a217a7e2190bf7"
+            "f648004e3fd6c3d48b4a334097429436d718a74ffac5ab41a0e03911f99077d0"
                 
         |>
         ,
@@ -117,21 +117,7 @@
             ,
             "Hash"
             ->
-            "febcda938f16de7309fbd62136335b899d1475796f09a7700fb3c080cc54affa"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/ConvertToWikipediaSearchQuery.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "7a3724db9b7697d34d722a795fc81c6dda15e045ac2d102addecd8c62fbe1532"
+            "fe9b0e46b225d88ed5e6e648430a3c7e5df40b9128c8569606e7584f70cac475"
                 
         |>
         ,
@@ -145,7 +131,7 @@
             ,
             "Hash"
             ->
-            "400c1c5e651f393b5988b447ff2ba93a52c506f9aede67dd59915d44dd32a50f"
+            "738fcea30ce23fac70cd1db754bfa34020985ab6253a1dba15d49f3bcb66f74c"
                 
         |>
         ,
@@ -159,7 +145,7 @@
             ,
             "Hash"
             ->
-            "9e1110196b12e95ff8f5911718f0addc8c91494b14e33543692f5469ec59bfcf"
+            "ecb3e9983b342f29e3c46b8bdf3f9664c3e074df3e3c0047f93504afc9650bca"
                 
         |>
         ,
@@ -173,7 +159,7 @@
             ,
             "Hash"
             ->
-            "0a1cae6b77a33fad6081daa4971c65c182e13b3404080124073d8acf087af35a"
+            "b37c60e75b1252bc309c01cc410cd0b06d6db62e8fb7c2bce047675f173c5760"
                 
         |>
         ,
@@ -187,7 +173,7 @@
             ,
             "Hash"
             ->
-            "83ea61e92ead5a94212b24ecf70b8bcd551e8142d98f6a5cac1e7ec408a70cee"
+            "cbd63022babcf37b791b80e4e1ae9c46b005d84dfd05821a54cfd9367d9960a0"
                 
         |>
         ,
@@ -201,7 +187,7 @@
             ,
             "Hash"
             ->
-            "418112614aca19333293266c48845be254d007f738ec21d09b0b71531f0c3467"
+            "f475319039e72deff8fee22004158c7da2dfed2f4cb8e18a0b4fbd032b628f3f"
                 
         |>
         ,
@@ -215,7 +201,21 @@
             ,
             "Hash"
             ->
-            "1c9b6a5c3d16a7901753edd6fb37d499b19a82760b2acbf14046e7dcbe2396d4"
+            "bd65eeab242c93159373d54a52b8eac9c3dc25f1387654a641b522c74020152a"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/Sandwich.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "c61361df32ec5a911873049fd1ec668fc4d3eeac2daa466c7c6fd8febf0e4a73"
                 
         |>
         ,
@@ -229,7 +229,7 @@
             ,
             "Hash"
             ->
-            "15ad41337c40111a05b74dc3f150cfe62456ecd321042ea76c8a6c600732a149"
+            "b894047a289394ee56bd04714fea59704a3c88cf3d88ce120b147c4b687c15ce"
                 
         |>
         ,
@@ -243,7 +243,7 @@
             ,
             "Hash"
             ->
-            "130e40b54e98914b0b0c44b6e8c814d6823a053d5707005bd7f8b1e77e390339"
+            "4441cd62ceb8887995c82085876f04ee04046277c7cc6165cc0eac88fb4f3b41"
                 
         |>
         ,
@@ -257,7 +257,35 @@
             ,
             "Hash"
             ->
-            "35414704e14ee4a248590f6fbb70d54c68e58d9e75a3e5cd91f415874a20b5a4"
+            "40c1e5317758465bf70a24d73e8b350bf3c61d13893e6a04e12f3cede10f2164"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/ToWikipediaSearchQuery.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "f58dd3391a8bd7c179dc123c99531bed2be771f209689680d8fb7dca0e256ac1"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/Words.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "2b685337a31294d4572a8feb80fd9f658df9f54cd9da3d6f9368b36376b1b1f5"
                 
         |>
         ,
@@ -271,7 +299,7 @@
             ,
             "Hash"
             ->
-            "389b6ed543d395d6477fe627b9dfb59e6bceb2e269137afa2d901b7348806beb"
+            "b916e3ae8e0ac82470113291479bc1c9ba47cba4db708be68312b34e2d99e6ff"
                 
         |>
         ,
@@ -285,7 +313,7 @@
             ,
             "Hash"
             ->
-            "3738c3790e0c9f4d0f5815ca94b7976c2f089635c21d09484269e621f6da7b0f"
+            "2138d9e188f79a5c0ca2cd1d0c0949b19ef814779754a71d6e112c4b5a4bf9a6"
                 
         |>
     }

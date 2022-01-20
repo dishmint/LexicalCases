@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8115,        208]
+NotebookOptionsPosition[      5835,        154]
+NotebookOutlinePosition[      7693,        202]
+CellTagsIndexPosition[      7650,        199]
+WindowTitle->Sandwich
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "b08b5b13-6af8-4c40-ab9f-f85b3accd27c"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "47e4bb9a-8bc8-46a6-9679-868e94ab197e"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "c7936dc1-3d64-4dd5-85c5-452ca5f5ac34"]
+        }],ExpressionUUID->"6fe7cb2b-a497-45fa-8588-40731c3996f5"],
+        StripOnInput->False], {"\<\"LexicalCases/ref/Sandwich\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/Sandwich"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+Sandwich.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17505], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/Sandwich" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "e0859d2e-d626-4dc7-b5bf-aaee45fa20b4"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "ac78bc8b-c12e-4db9-bb80-48130a6df3be"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"6670fcbc-aef5-4230-bea9-77fbad8baaf1"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"be9941d5-4a9c-4a7b-b325-be94017fa84b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "Sandwich", "ObjectName",ExpressionUUID->
+      "4bcbec72-f6ee-4cd1-b49b-9dd47887f0ad"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"46d6f36c-3fe7-426d-abfc-0626665199bf"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "d99af251-f976-4cac-a6d7-fec12488a928"]
+    }],ExpressionUUID->"48728e75-830f-40db-834c-9e69740bc815"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"7008d654-b74c-4f02-a509-\
+858f7d1a8996"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["Sandwich"]], "paclet:LexicalCases/ref/Sandwich", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["bread", "TI"], ",", 
+        StyleBox["expr", "TI"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3a740207-0286-4864-a282-9038e9280ddb"],
+     "\[LineSeparator]sandwiches ",
+     Cell[BoxData[
+      StyleBox["expr", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3ce3bfdc-78cb-4680-af7e-5446347e64ae"],
+     " between ",
+     Cell[BoxData[
+      StyleBox["bread", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "65db4d33-50db-45d3-891f-5f0b21946893"],
+     " like so: bread~~expr~~bread"
+    }],ExpressionUUID->"7ba896ca-5759-4d80-a82d-ca6ba26b687b"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->882729196,ExpressionUUID->"e406aecf-8da6-4d3b-976d-3fdc4811578d"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"010e91ed-67cd-4c3b-a691-09abdc704967"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Sandwich",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}}, 
+  "NewStyles" -> True, "CitationPopupData" -> $Failed, "ShowCitation" -> 
+  False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 1, 20, 0, 49, 56.591701}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "Sandwich[bread, expr] sandwiches expr between bread like so: \
+bread~~expr~~bread", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Sandwich", "titlemodifier" -> "", "windowtitle" -> "Sandwich", "type" -> 
+    "Symbol", "uri" -> "LexicalCases/ref/Sandwich", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"ab79db7d-9c72-4440-8d7f-7156f8c942f4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[580, 21, 3309, 76, 57, "AnchorBarGrid",ExpressionUUID->"6670fcbc-aef5-4230-bea9-77fbad8baaf1",
+ CellID->1],
+Cell[3892, 99, 95, 0, 23, "ContextNameCell",ExpressionUUID->"be9941d5-4a9c-4a7b-b325-be94017fa84b"],
+Cell[CellGroupData[{
+Cell[4012, 103, 551, 14, 60, "ObjectNameGrid",ExpressionUUID->"7008d654-b74c-4f02-a509-858f7d1a8996"],
+Cell[4566, 119, 1172, 30, 114, "Usage",ExpressionUUID->"e406aecf-8da6-4d3b-976d-3fdc4811578d",
+ CellID->882729196]
+}, Open  ]],
+Cell[5753, 152, 78, 0, 40, "FooterCell",ExpressionUUID->"010e91ed-67cd-4c3b-a691-09abdc704967"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
