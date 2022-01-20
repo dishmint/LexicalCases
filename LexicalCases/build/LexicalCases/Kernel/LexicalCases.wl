@@ -195,14 +195,15 @@ Sandwich[bread_][expr_] := Sandwich[bread, expr]
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives]@*Map[TextType]@*Apply[List])[alts]
 
-ExpandPattern[se_?ValidSeQ] := ReplaceAll[se, {
+iExpandPattern[expr_]:= ReplaceAll[expr, {
 	Opt[opt_Alternatives] :> (Map[MatchBoundary][opt]~Join~Alternatives[" ",""]),
 	Opt[opt_] :> (Alternatives[MatchBoundary[opt]]~Join~Alternatives[" ",""]),
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
-	BoundedString[s_String] :> (WordBoundary ~~ s ~~ WordBoundary),
-	BoundedString[a_Alternatives] :> (WordBoundary ~~ a ~~ WordBoundary)
+	BoundedString[s:(_String|_FixedOrder|_StringExpression)] :> (WordBoundary ~~ iExpandPattern[s] ~~ WordBoundary),
+	BoundedString[a_Alternatives] :> (WordBoundary ~~ Map[iExpandPattern][a] ~~ WordBoundary)
 	}]
 
+ExpandPattern[se_?ValidSeQ] := iExpandPattern[se]
 
 ExtractStringContentTypes[se_StringExpression] := Splice[Cases[se, TextType[type_String] :> type, Infinity]];
 ExtractAlternativeContentTypes[se_StringExpression] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
@@ -231,9 +232,9 @@ InsertAnd[l:List[_]] := l;
 InsertAnd[x_List] := Insert[x, "and", -2];
 
 WikipediaKeywordString[{s_String}]:= "\""<>s<>"\"";
-WikipediaKeywordString[l:{_String,_String}]:= StringRiffle[Map[keyWordString][l], ", "];
-WikipediaKeywordString[x_List] := StringRiffle[InsertAnd[Map[keyWordString][x]], ", "];
-WikipediaKeywordString[x_Alternatives] := ToString[Map[keyWordString][x]]
+WikipediaKeywordString[l:{_String,_String}]:= StringRiffle[Map[WikipediaKeywordString][l], ", "];
+WikipediaKeywordString[x_List] := StringRiffle[InsertAnd[Map[WikipediaKeywordString][x]], ", "];
+WikipediaKeywordString[x_Alternatives] := ToString[Map[WikipediaKeywordString][x]]
 WikipediaKeywordString[x_] := "\""<>x<>"\"";
 
 
