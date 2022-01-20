@@ -231,9 +231,9 @@ InsertAnd[l:List[_]] := l;
 InsertAnd[x_List] := Insert[x, "and", -2];
 
 WikipediaKeywordString[{s_String}]:= "\""<>s<>"\"";
-WikipediaKeywordString[l:{_String,_String}]:= StringRiffle[Map[keyWordString][l], ", "];
-WikipediaKeywordString[x_List] := StringRiffle[InsertAnd[Map[keyWordString][x]], ", "];
-WikipediaKeywordString[x_Alternatives] := ToString[Map[keyWordString][x]]
+WikipediaKeywordString[l:{_String,_String}]:= StringRiffle[Map[WikipediaKeywordString][l], ", "];
+WikipediaKeywordString[x_List] := StringRiffle[InsertAnd[Map[WikipediaKeywordString][x]], ", "];
+WikipediaKeywordString[x_Alternatives] := ToString[Map[WikipediaKeywordString][x]]
 WikipediaKeywordString[x_] := "\""<>x<>"\"";
 
 
