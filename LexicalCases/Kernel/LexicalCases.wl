@@ -199,7 +199,7 @@ iExpandPattern[expr_]:= ReplaceAll[expr, {
 	Opt[opt_Alternatives] :> (Map[MatchBoundary][opt]~Join~Alternatives[" ",""]),
 	Opt[opt_] :> (Alternatives[MatchBoundary[opt]]~Join~Alternatives[" ",""]),
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
-	BoundedString[s:(_String|_FixedOrder|_StringExpression)] :> (WordBoundary ~~ iExpandPattern[s] ~~ WordBoundary),
+	BoundedString[s:(_String|_FixedOrder|_StringExpression)] :> (WordBoundary|StartOfString|StartOfLine ~~ iExpandPattern[s] ~~ WordBoundary|EndOfString|EndOfLine),
 	BoundedString[a_Alternatives] :> (WordBoundary ~~ Map[iExpandPattern][a] ~~ WordBoundary)
 	}]
 
