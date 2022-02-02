@@ -43,7 +43,6 @@ $LexicalCasesServices::usage = "List of supported services"
 ToWikipediaSearchQuery::usage = "ConvertToWikipediaSearchQuery[se] converts se to a form suitable for WikipediaSearch"
 
 Begin["Private`"]
-(* Needs["StringPattern`"] *)
 
 (* Samples *)
 $SampleStringExpression = StringExpression[TextType["Adjective"], " key lime pie"];

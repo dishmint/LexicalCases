@@ -43,7 +43,6 @@ $LexicalCasesServices::usage = "List of supported services"
 ToWikipediaSearchQuery::usage = "ConvertToWikipediaSearchQuery[se] converts se to a form suitable for WikipediaSearch"
 
 Begin["Private`"]
-(* Needs["StringPattern`"] *)
 
 (* Samples *)
 $SampleStringExpression = StringExpression[TextType["Adjective"], " key lime pie"];
@@ -209,7 +208,7 @@ ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"
 SetAttributes[Words, Listable]
 Words[1] := RegularExpression["\\b\\w+\\b"]
 Words[n_Integer] := RegularExpression@StringRiffle[Table["\\b\\w+\\b", n], "\\s"]
-Words[m_Integer, n_Integer] := Alternatives@@Words[Range[m,n]]
+Words[m_Integer, n_Integer] := Words[Range[m,n]]
 
 Sandwich[bread_, expr_]:= bread~~expr~~bread
 Sandwich[bread_][expr_] := Sandwich[bread, expr]
