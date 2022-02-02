@@ -285,11 +285,8 @@ ToWikipediaSearchQuery[Rule[se_StringExpression,_]] := ToWikipediaSearchQuery[St
 ToWikipediaSearchQuery[RuleDelayed[se_StringExpression,_]] := ToWikipediaSearchQuery[StripNamedPattern[se]]
 
 ToWikipediaSearchQuery::novq = "Keyword formulation not supported for the StringExpression ``. Consider using the \"Content\" option to supply keywords, or trying a different StringExpression."
-Options[WikipediaArticlesFromRule] = {
-	MaxItems -> 50
-};
 
-WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[]]:= Module[
+WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{LexicalCases}]]:= Module[
 	{KWL = Apply[List][a], RULES},
 	RULES = Thread["Content"-> KWL];
 	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[opts, Except[MaxItems]]]][RULES]
@@ -299,7 +296,7 @@ WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= Wikipe
 
 iGetCategoryArticles[categories_List, n_Integer] := (Take[#, n]&)@*DeleteMissing@*DeleteDuplicates@*Flatten@*Map[WikipediaData["Category" -> #, "CategoryArticles"]&]@categories
 
-WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{WikipediaArticlesFromRule, WikipediaSearch, iSearchWikipedia}]]:= iGetCategoryArticles[
+WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{LexicalCases}]]:= iGetCategoryArticles[
 	WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
 	OptionValue[MaxItems]
 	]
@@ -308,7 +305,7 @@ WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{Wikipedia
 iGetWikipediaArticles[query_Rule, opts___] := Module[
 	{ART, ARC, MTL, SQR = WikipediaKeywordString[Values[query]], TXT},
 	ART = Monitor[
-		WikipediaArticlesFromRule[query, FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
+		WikipediaArticlesFromRule[query, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
 		ArticleSearchIndicator["Wikipedia", SQR]
 		];
 	ARC = Length[ART];
@@ -349,7 +346,9 @@ Options[LexicalCases]={
 	"Service" -> "Wikipedia",
 	"StringTrim" -> True,
 	IgnoreCase -> False,
-	Overlaps -> False
+	Overlaps -> False,
+	MaxItems -> 50,
+	Language -> "English"
 };
 
 LexicalCases::unsupobj=Import::unsupobj;
@@ -371,7 +370,7 @@ LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:Optio
 	iLexicalCases[input, se, opts]
 	]
 
-LexicalCases[Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
+LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[
 			{files = Map[File][TextSearch[index, query][All, "Location"]]},
@@ -487,16 +486,16 @@ Options[iSearchWikipedia] = {
 	Language -> "English"
 };
 
-iSearchWikipedia[se_?LexicalPatternQ, opts:OptionsPattern[{iSearchWikipedia}]] := With[
+iSearchWikipedia[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := With[
 	{wikiquery = StringTrim@ToWikipediaSearchQuery[se]},
-	iSearchWikipedia[wikiquery,se,opts]
+	iSearchWikipedia[wikiquery,se, opts]
 	]
 
 iSearchWikipedia[query_?FailureQ,___] := Return[query, With]
 
-iSearchWikipedia[query_Rule, se_?LexicalPatternQ, opts:OptionsPattern[{iSearchWikipedia}]] := iLexicalCases[query, se, opts]
+iSearchWikipedia[query_Rule, se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := iLexicalCases[query, se, opts]
 		
-iSearchWikipedia[query:(_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[{iSearchWikipedia}]] := iLexicalCases["Content" -> query, se, opts]
+iSearchWikipedia[query:(_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[{iSearchWikipedia, LexicalCases}]] := iLexicalCases["Content" -> query, se, opts]
 
 LexicalCasesFromService["Wikipedia", se_?LexicalPatternQ, opts:OptionsPattern[]] := GenerateLexicalSummary[iSearchWikipedia[se, opts], "Wikipedia", se]
 LexicalCasesFromService["Wikipedia", query:(_Rule|_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[]]:= GenerateLexicalSummary[iSearchWikipedia[query, se, opts], "Wikipedia", se]
