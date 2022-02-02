@@ -1,7 +1,7 @@
-BeginTestSection["LexicalPatternStructure"]
-(* LexicalPatternStructure *)
+BeginTestSection["LexicalStructure"]
+(* LexicalStructure *)
 VerificationTest[
-	Structure[StringExpression["computer" | "computers", TextType["Verb"]]],
+	LexicalStructure[StringExpression["computer" | "computers", TextType["Verb"]]],
 	TextElement[
 		List[
 			TextElement[
@@ -15,6 +15,6 @@ VerificationTest[
 		Association[Rule["GrammaticalUnit","StringExpression"]]
 	]
 ,
-"TestID" -> "LexicalPatternStructureTest1"
+"TestID" -> "LexicalStructureTest1"
 ]
 EndTestSection[]

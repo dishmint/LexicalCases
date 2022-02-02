@@ -33,7 +33,7 @@ Opt::usage = "Opt[se] matches se, \" \", or \"\""
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
 Bounded::usage = "Bounded[expr] sandwiches expr with boundaries\nBounded[s1|\[Ellipsis]|si] sandwiches the set of si with boundaries"
 Words::usage = "Words[n] represents n words separated by spaces\nWords[m,n] represents m to n words separated by spaces"
-Sandwich::usage = "Sandwich[bread, expr] sandwiches expr between bread like so: bread~~expr~~bread"
+Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
 
 (* Format *)
 LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the StringExpression"
@@ -637,13 +637,18 @@ CountGroups[ds_Dataset] := Query[
 		KeyDrop["Count"] /* Values /* (Flatten[#,1]&)
 	][ds]
 
-CountGroupDSQ[ds_Dataset] :=Normal /* First /* KeyMemberQ["CountGroup"]@ds
-CountDSQ[ds_Dataset] := Normal /* First /* KeyMemberQ["Count"]@ds
+CountGroupDSQ[ds_Dataset] /; Normal /* Length /* GreaterThan[0]@ds := Normal /* First /* KeyMemberQ["CountGroup"]@ds
+CountDSQ[ds_Dataset] /; Normal /* Length /* GreaterThan[0]@ds := Normal /* First /* KeyMemberQ["Count"]@ds
+
+CountGroupDSQ[_] := False
+CountDSQ[_] := False
 
 CountSummaryLowercase[ds_Dataset] /; CountDSQ[ds] := ReverseSortBy[#Count&]@Query[
 	GroupBy[ToLowerCase[#Match] &] /* KeyValueMap[<|"Match" -> #1, #2|> &],
 	Total /* KeyDrop["Match"]
 	][ds]
+
+CountSummaryLowercase[ds_Dataset] := ds
 
 ThreadMatchesWithCount[asc_Association] := Apply[Sequence][Map[<|"Matches" -> ToLowerCase[#], "Count" -> asc["CountGroup"]|> &][asc["Matches"]]]
 
