@@ -36,7 +36,7 @@ Words::usage = "Words[n] represents n words separated by spaces\nWords[m,n] repr
 Sandwich::usage = "Sandwich[bread, expr] sandwiches expr between bread like so: bread~~expr~~bread"
 
 (* Format *)
-Structure::usage="Structure[se] Visualize the structure of the StringExpression"
+LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the StringExpression"
 
 (* Services *)
 $LexicalCasesServices::usage = "List of supported services"
@@ -181,9 +181,9 @@ FormatToken[h_, args__] := TextElement[Map[FormatToken][{args}], <|"GrammaticalU
 
 FormatToken::nvld = "`1` is not supported in FormatToken"
 
-SetAttributes[Structure, HoldAll]
-Structure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "FormatToken`InvalidToken"];
-Structure[(Rule|RuleDelayed)[expr_?LexicalPatternQ,_]] := Enclose[Construct[FormatToken, StripNamedPattern[expr]], Identity, "FormatToken`InvalidToken"];
+SetAttributes[LexicalStructure, HoldAll]
+LexicalStructure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "FormatToken`InvalidToken"];
+LexicalStructure[(Rule|RuleDelayed)[expr_?LexicalPatternQ,_]] := Enclose[Construct[FormatToken, StripNamedPattern[expr]], Identity, "FormatToken`InvalidToken"];
 
 (* Service Utils *)
 $LexicalCasesServices = {"Wikipedia"}
@@ -567,7 +567,7 @@ Module[{above, below},
 		form,
 		"Interpretable" -> Automatic]
 		];
-LexicalSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Dataset", "Source", "TotalMatchCount", "Structure"}, KeyExistsQ[asc, #] &]
+LexicalSummaryAscQ[asc_?AssociationQ] := AllTrue[{"Data", "Dataset", "Source", "TotalMatchCount", "LexicalStructure"}, KeyExistsQ[asc, #] &]
 LexicalSummaryAscQ[_] = False;
 
 (* Direct Properties *)
@@ -575,7 +575,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Data"] := asc["Data"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Source"] := asc["Source"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Dataset"] := asc["Dataset"]
 LexicalSummary[asc_?LexicalSummaryAscQ]["TotalMatchCount"] := asc["TotalMatchCount"]
-LexicalSummary[asc_?LexicalSummaryAscQ]["Structure"] := asc["Structure"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["LexicalStructure"] := asc["LexicalStructure"]
 
 (* Dataset Properties *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages"] := PercentDataset[LexicalSummary[asc]["CountGroups"], asc["TotalMatchCount"]]
@@ -614,7 +614,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", DeleteStopwords] 
 LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
 
 LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
-LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","Structure", "Survey"}
+LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","LexicalStructure", "Survey"}
 
 GenerateLexicalSummary[data_?FailureQ, ___] := data
 GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Monitor[
@@ -625,7 +625,7 @@ GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Monitor
 iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Module[
 	{MTC, DS = Dataset[data]},
 	MTC = DeleteMissing[GetDatasetCounts[DS, sourceType], 1, 1][Total, "Count"];
-	Enclose@LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "Structure" -> Structure[StripNamedPattern@se] |>]
+	Enclose@LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "LexicalStructure" -> LexicalStructure[StripNamedPattern@se] |>]
 ]
 
 (* Summary Utils *)
