@@ -358,34 +358,46 @@ SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtensi
 LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
 LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
 
-LexicalCases[input:List[__String],se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Module[
-	{files = Map[File][input]},
-	iLexicalCases[files, se, opts]
+LexicalCases[input:List[__String],se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
+		Module[
+			{files = Map[File][input]},
+			iLexicalCases[files, se, opts]
+			]
+		]
+
+LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
+	iLexicalCases[input, se, opts]
 	]
 
-LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := iLexicalCases[input, se, opts]
-
-LexicalCases[Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Module[
-	{files = Map[File][TextSearch[index, query][All, "Location"]]},
-	iLexicalCases[files, se, opts]
-	]
+LexicalCases[Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
+		Module[
+			{files = Map[File][TextSearch[index, query][All, "Location"]]},
+			iLexicalCases[files, se, opts]
+			]
+		]
 
 (* SourceText and LexicalPattern Input *)
-LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:= Module[
-	{LPC,RES},
-	ArticleIndex=0;
-	(* Find Matches *)
-	LPC = Monitor[
-		LexicalCasesOnString[sourcetext, se, opts],
-		Row[{"Searching", ProgressIndicator[Appearance->"Ellipsis"]}]
-		];
-	(* Generate Summary Object *)
-	RES = Monitor[
-		GenerateLexicalSummary[LPC, "Text", se],
-		Row[{"Generating LexicalSummary", ProgressIndicator[Appearance->"Necklace"]}]
-	];
-	ArticleIndex=.;
-	RES
+LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:= Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
+		Module[
+			{LPC,RES},
+			ArticleIndex=0;
+			(* Find Matches *)
+			LPC = Monitor[
+				LexicalCasesOnString[sourcetext, se, opts],
+				Row[{"Searching", ProgressIndicator[Appearance->"Ellipsis"]}]
+				];
+			(* Generate Summary Object *)
+			RES = Monitor[
+				GenerateLexicalSummary[LPC, "Text", se],
+				Row[{"Generating LexicalSummary", ProgressIndicator[Appearance->"Necklace"]}]
+				];
+			ArticleIndex=.;
+			RES
+			]
 	]
 
 (* SourceText is a string *)
@@ -407,10 +419,16 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[Lex
 	]
 
 (* LexicalPattern on Service *)
-LexicalCases[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts}, Options[iSearchWikipedia]]]
+LexicalCases[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[se, opts], 1]];
+	LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts}, Options[iSearchWikipedia]]]
+	]
 
 (* WikiQueryRyle and LexicalPattern Input *)
-LexicalCases[query_Rule, se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= LexicalCasesFromService[OptionValue["Service"], query, se, FilterRules[{opts}, Options[iSearchWikipedia]]]
+LexicalCases[query_Rule, se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
+	ConfirmAssert[CheckArguments[LexicalCases[query, se, opts], 2]];
+	LexicalCasesFromService[OptionValue["Service"], query, se, FilterRules[{opts}, Options[iSearchWikipedia]]]
+	]
 
 Options[LexicalCasesFromService]={
 
