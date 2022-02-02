@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    128727,       2481]
-NotebookOptionsPosition[    120870,       2310]
-NotebookOutlinePosition[    121602,       2335]
-CellTagsIndexPosition[    121521,       2330]
+NotebookDataLength[    107635,       2242]
+NotebookOptionsPosition[     99801,       2073]
+NotebookOutlinePosition[    100535,       2098]
+CellTagsIndexPosition[    100454,       2093]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -137,7 +137,41 @@ Cell[TextData[{
  " must be Integers."
 }], "Notes",
  CellChangeTimes->{{3.852673651132996*^9, 3.8526736640224533`*^9}},
- CellID->769638996,ExpressionUUID->"5893ab31-3beb-4852-82e2-495cd0eb6500"]
+ CellID->769638996,ExpressionUUID->"5893ab31-3beb-4852-82e2-495cd0eb6500"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Words",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/Words"]], "InlineFormula",
+  ExpressionUUID->"f16e9d4b-98aa-4915-b135-c8676445e131"],
+ " only has meaning in ",
+ Cell[BoxData[
+  ButtonBox["LexicalCases",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/LexicalCases"]], "InlineFormula",
+  ExpressionUUID->"313edb94-6772-4a13-890f-e8c605606ba7"],
+ ", it is otherwise inert."
+}], "Notes",
+ CellChangeTimes->{{3.852754115091982*^9, 3.8527541416599693`*^9}},
+ CellID->362108972,ExpressionUUID->"8fb9c5ee-2468-4ca8-9870-8e37d5fc2e2f"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Words",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/Words"]], "InlineFormula",
+  ExpressionUUID->"74adb324-756d-47ba-8ef2-cc8589d42eec"],
+ " only matches sequences of ",
+ Cell[BoxData[
+  ButtonBox["WordCharacter",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "46041f00-d5d6-44a5-8340-1d417317936f"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.8527542665165863`*^9, 3.852754272738985*^9}, {
+  3.852754352055994*^9, 3.852754368640417*^9}},
+ CellID->790896493,ExpressionUUID->"af528c16-b4e5-4dc6-b240-4ec9062dff19"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -206,952 +240,84 @@ Cell[BoxData[
  CellChangeTimes->{{3.852673679039212*^9, 3.852673684661221*^9}},
  CellID->1816155740,ExpressionUUID->"7896e8df-1be9-413b-bc9c-c577ec7af727"],
 
-Cell["Represent a single word", "ExampleText",
- CellChangeTimes->{{3.85267369860734*^9, 3.85267371685291*^9}},
+Cell["Find bigrams preceding \"computer\"", "ExampleText",
+ CellChangeTimes->{{3.85267369860734*^9, 3.85267371685291*^9}, {
+  3.852754218570733*^9, 3.852754232051381*^9}, {3.852754425993626*^9, 
+  3.8527544811019793`*^9}},
  CellID->1396638090,ExpressionUUID->"ba24964a-6b48-4781-a420-e8cad2e40e02"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Words", "[", "1", "]"}]], "Input",
- CellChangeTimes->{{3.85267372056523*^9, 3.852673722235468*^9}},
- CellLabel->"In[16]:=",
- CellID->206702419,ExpressionUUID->"465093eb-5b71-4f21-8563-8a519be9755c"],
-
-Cell[BoxData[
- RowBox[{"RegularExpression", "[", "\<\"\\\\b\\\\w+\\\\b\"\>", 
-  "]"}]], "Output",
- CellChangeTimes->{3.852673722716723*^9},
- CellLabel->"Out[16]=",
- CellID->1234051995,ExpressionUUID->"92b8070e-c631-496d-bd2f-3f1eeba37f88"]
-}, Open  ]],
-
-Cell["Represent multiple words", "ExampleText",
- CellChangeTimes->{{3.85267369860734*^9, 3.85267373373431*^9}},
- CellID->314817239,ExpressionUUID->"d10c1c7d-df90-45b5-92c1-080b20364b50"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Words", "[", "4", "]"}]], "Input",
- CellChangeTimes->{{3.852673735058173*^9, 3.852673738302699*^9}},
- CellLabel->"In[17]:=",
- CellID->1564015144,ExpressionUUID->"5c265e2e-892b-4eb7-8bb2-2479e0ec45ab"],
-
-Cell[BoxData[
- RowBox[{"RegularExpression", 
-  "[", "\<\"\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\
-\\b\\\\w+\\\\b\"\>", "]"}]], "Output",
- CellChangeTimes->{3.852673738699889*^9},
- CellLabel->"Out[17]=",
- CellID->912662360,ExpressionUUID->"9109f327-5e4e-441a-aec0-007c67ee29e5"]
-}, Open  ]],
-
-Cell["Represent a range of words", "ExampleText",
- CellChangeTimes->{{3.85267369860734*^9, 3.85267373373431*^9}, {
-  3.85267380986158*^9, 3.852673811435958*^9}},
- CellID->1788077646,ExpressionUUID->"6f34bfe1-610f-478c-bc49-8082e6609963"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Words", "[", 
-  RowBox[{"2", ",", "5"}], "]"}]], "Input",
- CellChangeTimes->{{3.852673817878277*^9, 3.852673819246048*^9}},
- CellLabel->"In[18]:=",
- CellID->2049080563,ExpressionUUID->"4a16a071-8367-4fc5-bcf3-aa4f19fbe61b"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-  "RegularExpression", "[", "\<\"\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\"\>", 
-   "]"}], "|", 
-  RowBox[{
-  "RegularExpression", 
-   "[", "\<\"\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\"\>", 
-   "]"}], "|", 
-  RowBox[{
-  "RegularExpression", 
-   "[", "\<\"\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\
-\\b\\\\w+\\\\b\"\>", "]"}], "|", 
-  RowBox[{
-  "RegularExpression", 
-   "[", "\<\"\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\\\\s\\\
-\\b\\\\w+\\\\b\\\\s\\\\b\\\\w+\\\\b\"\>", "]"}]}]], "Output",
- CellChangeTimes->{3.852673819587657*^9},
- CellLabel->"Out[18]=",
- CellID->1835219876,ExpressionUUID->"e4620c90-4f54-4724-9276-36af043b650c"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["More Examples", "ExtendedExamplesSection",
- CellTags->"ExtendedExamples",
- CellID->224074875,ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- InterpretationBox[Cell[
-  "Scope", "ExampleSection",ExpressionUUID->
-   "de0270b2-b270-491a-b648-cf41f3400eb3"],
-  $Line = 0; Null]], "ExampleSection",
- CellID->1487590934,ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89"],
-
-Cell["XXXX", "ExampleText",
- CellID->738405596,ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"$SampleStringLong", ",", 
-   RowBox[{
-    RowBox[{"Words", "[", "1", "]"}], "~~", "\"\< computer \>\"", "~~", 
-    RowBox[{"Words", "[", "1", "]"}]}]}], "]"}]], "Input",
- CellChangeTimes->{{3.852673834704342*^9, 3.852673903421726*^9}},
- CellLabel->"In[20]:=",
- CellID->527026463,ExpressionUUID->"2bcf239c-8dc0-4dfd-8fe2-f2907ded8cb4"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{
-   TagBox["LexicalSummary",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["6", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["6", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  LexicalCases`LexicalSummary[<|
-   "Data" -> {<|"Match" -> "A computer is", "Position" -> {{1, 13}}|>, <|
-      "Match" -> "A computer system", "Position" -> {{263, 279}}|>, <|
-      "Match" -> "a computer network", "Position" -> {{527, 544}}|>, <|
-      "Match" -> "or computer cluster", "Position" -> {{546, 564}}|>, <|
-      "Match" -> "modern computer consists", "Position" -> {{2032, 2055}}|>, <|
-      "Match" -> "of computer memory", "Position" -> {{2189, 2206}}|>}, 
-    "Dataset" -> 
-    Dataset[{<|"Match" -> "A computer is", "Position" -> {{1, 13}}|>, <|
-       "Match" -> "A computer system", "Position" -> {{263, 279}}|>, <|
-       "Match" -> "a computer network", "Position" -> {{527, 544}}|>, <|
-       "Match" -> "or computer cluster", "Position" -> {{546, 564}}|>, <|
-       "Match" -> "modern computer consists", 
-        "Position" -> {{2032, 2055}}|>, <|
-       "Match" -> "of computer memory", "Position" -> {{2189, 2206}}|>}, 
-      TypeSystem`Vector[
-       TypeSystem`Struct[{"Match", "Position"}, {
-         TypeSystem`Atom[String], 
-         TypeSystem`Vector[
-          TypeSystem`Vector[
-           TypeSystem`Atom[Integer], 2], 1]}], 6], <||>], "Source" -> "Text", 
-    "TotalMatchCount" -> 6, "Structure" -> TextElement[{
-       TextElement[{
-         TextElement[{"\\b\\w+\\b"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
-        "GrammaticalUnit" -> "RegularExpression"|>], 
-       TextElement[{" computer "}, <|"GrammaticalUnit" -> "Text"|>], 
-       TextElement[{
-         TextElement[{"\\b\\w+\\b"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
-        "GrammaticalUnit" -> "RegularExpression"|>]}, <|
-      "GrammaticalUnit" -> "StringExpression"|>]|>],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
- CellChangeTimes->{{3.852673895834841*^9, 3.8526739044371557`*^9}},
- CellLabel->"Out[20]=",
- CellID->1895116563,ExpressionUUID->"aeac82d2-ff9e-4359-bfa7-b7b24c532067"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"$SampleStringLong", ",", 
-   RowBox[{"Words", "[", "1", "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.852674236604374*^9, 3.8526742400024023`*^9}},
- CellLabel->"In[14]:=",
- CellID->1894105684,ExpressionUUID->"371ed679-370d-446f-8d0d-df4805f98ead"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{
-   TagBox["LexicalSummary",
-    "SummaryHead"], "[", 
-   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
-    
-    TemplateBox[{
-      PaneSelectorBox[{False -> GridBox[{{
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["416", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            GridBox[{{
-               RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["416", "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
-       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
-     "SummaryPanel"],
-    DynamicModuleValues:>{}], "]"}],
-  LexicalCases`LexicalSummary[<|
-   "Data" -> {<|
-      "Match" -> "A", "Position" -> {{1, 1}, {263, 263}, {567, 567}}|>, <|
-      "Match" -> "computer", 
-       "Position" -> {{3, 10}, {265, 272}, {297, 304}, {529, 536}, {549, 
-        556}, {787, 794}, {2039, 2046}, {2192, 2199}}|>, <|
-      "Match" -> "is", "Position" -> {{12, 13}, {281, 282}}|>, <|
-      "Match" -> "a", 
-       "Position" -> {{15, 15}, {240, 240}, {284, 284}, {459, 459}, {527, 
-        527}, {1890, 1890}, {2030, 2030}, {2103, 2103}, {2150, 2150}, {2321, 
-        2321}}|>, <|"Match" -> "machine", "Position" -> {{17, 23}}|>, <|
-      "Match" -> "that", 
-       "Position" -> {{25, 28}, {306, 309}, {480, 483}, {2572, 2575}}|>, <|
-      "Match" -> "can", 
-       "Position" -> {{30, 32}, {139, 141}, {2351, 2353}}|>, <|
-      "Match" -> "be", 
-       "Position" -> {{34, 35}, {1029, 1030}, {2675, 2676}, {2756, 2757}}|>, <|
-      "Match" -> "programmed", "Position" -> {{37, 46}}|>, <|
-      "Match" -> "to", 
-       "Position" -> {{48, 49}, {229, 230}, {456, 457}, {1026, 1027}, {1234, 
-        1235}, {1687, 1688}, {1942, 1943}, {1989, 1990}, {2398, 2399}, {2672, 
-        2673}, {2753, 2754}}|>, <|
-      "Match" -> "carry", "Position" -> {{51, 55}}|>, <|
-      "Match" -> "out", "Position" -> {{57, 59}, {2278, 2280}}|>, <|
-      "Match" -> "sequences", "Position" -> {{61, 69}}|>, <|
-      "Match" -> "of", 
-       "Position" -> {{71, 72}, {164, 165}, {253, 254}, {467, 468}, {581, 
-        582}, {957, 958}, {969, 970}, {1789, 1790}, {2057, 2058}, {2147, 
-        2148}, {2189, 2190}, {2372, 2373}, {2739, 2740}}|>, <|
-      "Match" -> "arithmetic", "Position" -> {{74, 83}, {2282, 2291}}|>, <|
-      "Match" -> "or", "Position" -> {{85, 86}, {546, 547}}|>, <|
-      "Match" -> "logical", "Position" -> {{88, 94}, {2297, 2303}}|>, <|
-      "Match" -> "operations", 
-       "Position" -> {{96, 105}, {167, 176}, {2305, 2314}, {2375, 2384}, {
-        2742, 2751}}|>, <|
-      "Match" -> "automatically", "Position" -> {{107, 119}}|>, <|
-      "Match" -> "Modern", "Position" -> {{122, 127}}|>, <|
-      "Match" -> "computers", 
-       "Position" -> {{129, 137}, {219, 227}, {470, 478}, {621, 629}, {859, 
-        867}, {978, 986}, {1005, 1013}, {1792, 1800}}|>, <|
-      "Match" -> "perform", 
-       "Position" -> {{143, 149}, {232, 238}, {2577, 2583}}|>, <|
-      "Match" -> "generic", "Position" -> {{151, 157}}|>, <|
-      "Match" -> "sets", "Position" -> {{159, 162}}|>, <|
-      "Match" -> "known", "Position" -> {{178, 182}}|>, <|
-      "Match" -> "as", 
-       "Position" -> {{184, 185}, {524, 525}, {631, 632}, {737, 738}, {810, 
-        811}, {818, 819}, {1271, 1272}, {1904, 1905}}|>, <|
-      "Match" -> "programs", "Position" -> {{187, 194}, {203, 210}}|>, <|
-      "Match" -> "These", "Position" -> {{197, 201}}|>, <|
-      "Match" -> "enable", "Position" -> {{212, 217}, {2721, 2726}}|>, <|
-      "Match" -> "wide", "Position" -> {{242, 245}}|>, <|
-      "Match" -> "range", "Position" -> {{247, 251}, {575, 579}}|>, <|
-      "Match" -> "tasks", "Position" -> {{256, 260}, {1259, 1263}}|>, <|
-      "Match" -> "system", "Position" -> {{274, 279}, {344, 349}}|>, <|
-      "Match" -> "complete", "Position" -> {{287, 294}}|>, <|
-      "Match" -> "includes", "Position" -> {{311, 318}}|>, <|
-      "Match" -> "the", 
-       "Position" -> {{320, 322}, {922, 924}, {1091, 1093}, {1172, 1174}, {
-        1380, 1382}, {1529, 1531}, {1561, 1563}, {1663, 1665}, {1690, 1692}, {
-        1713, 1715}, {1745, 1747}, {1945, 1947}, {1975, 1977}, {2138, 2140}, {
-        2362, 2364}, {2607, 2609}, {2728, 2730}}|>, <|
-      "Match" -> "hardware", "Position" -> {{324, 331}}|>, <|
-      "Match" -> "operating", "Position" -> {{334, 342}}|>, <|
-      "Match" -> "main", "Position" -> {{352, 355}}|>, <|
-      "Match" -> "software", "Position" -> {{357, 364}}|>, <|
-      "Match" -> "and", 
-       "Position" -> {{368, 370}, {400, 402}, {496, 498}, {595, 597}, {703, 
-        705}, {783, 785}, {869, 871}, {988, 990}, {1603, 1605}, {1709, 
-        1711}, {1773, 1775}, {2293, 2295}, {2317, 2319}, {2334, 2336}, {2547, 
-        2549}, {2712, 2714}, {2765, 2767}}|>, <|
-      "Match" -> "peripheral", "Position" -> {{372, 381}}|>, <|
-      "Match" -> "equipment", "Position" -> {{383, 391}}|>, <|
-      "Match" -> "needed", "Position" -> {{393, 398}}|>, <|
-      "Match" -> "used", "Position" -> {{404, 407}, {1032, 1035}}|>, <|
-      "Match" -> "for", 
-       "Position" -> {{409, 411}, {1042, 1044}, {1291, 1293}}|>, <|
-      "Match" -> "full", "Position" -> {{414, 417}}|>, <|
-      "Match" -> "operation", "Position" -> {{420, 428}}|>, <|
-      "Match" -> "This", "Position" -> {{431, 434}}|>, <|
-      "Match" -> "term", "Position" -> {{436, 439}}|>, <|
-      "Match" -> "may", "Position" -> {{441, 443}}|>, <|
-      "Match" -> "also", "Position" -> {{445, 448}}|>, <|
-      "Match" -> "refer", "Position" -> {{450, 454}}|>, <|
-      "Match" -> "group", "Position" -> {{461, 465}}|>, <|
-      "Match" -> "are", 
-       "Position" -> {{485, 487}, {723, 725}, {740, 742}}|>, <|
-      "Match" -> "linked", "Position" -> {{489, 494}}|>, <|
-      "Match" -> "function", "Position" -> {{500, 507}}|>, <|
-      "Match" -> "together", "Position" -> {{509, 516}}|>, <|
-      "Match" -> "such", "Position" -> {{519, 522}, {1266, 1269}}|>, <|
-      "Match" -> "network", "Position" -> {{538, 544}}|>, <|
-      "Match" -> "cluster", "Position" -> {{558, 564}}|>, <|
-      "Match" -> "broad", "Position" -> {{569, 573}}|>, <|
-      "Match" -> "industrial", "Position" -> {{584, 593}, {765, 774}}|>, <|
-      "Match" -> "consumer", "Position" -> {{599, 606}}|>, <|
-      "Match" -> "products", "Position" -> {{608, 615}}|>, <|
-      "Match" -> "use", "Position" -> {{617, 619}}|>, <|
-      "Match" -> "control", "Position" -> {{634, 640}, {2338, 2344}}|>, <|
-      "Match" -> "systems", "Position" -> {{642, 648}}|>, <|
-      "Match" -> "Simple", "Position" -> {{651, 656}, {1060, 1065}}|>, <|
-      "Match" -> "special", "Position" -> {{658, 664}}|>, <|
-      "Match" -> "purpose", "Position" -> {{666, 672}, {829, 835}}|>, <|
-      "Match" -> "devices", 
-       "Position" -> {{674, 680}, {752, 758}, {837, 843}, {880, 886}, {1215, 
-        1221}, {2432, 2438}, {2454, 2460}, {2504, 2510}, {2564, 2570}, {2646, 
-        2652}}|>, <|
-      "Match" -> "like", 
-       "Position" -> {{682, 685}, {760, 763}, {845, 848}, {888, 891}, {1086, 
-        1089}}|>, <|"Match" -> "microwave", "Position" -> {{687, 695}}|>, <|
-      "Match" -> "ovens", "Position" -> {{697, 701}}|>, <|
-      "Match" -> "remote", "Position" -> {{707, 712}}|>, <|
-      "Match" -> "controls", "Position" -> {{714, 721}}|>, <|
-      "Match" -> "included", "Position" -> {{727, 734}}|>, <|
-      "Match" -> "factory", "Position" -> {{744, 750}}|>, <|
-      "Match" -> "robots", "Position" -> {{776, 781}}|>, <|
-      "Match" -> "aided", "Position" -> {{796, 800}, {1107, 1111}}|>, <|
-      "Match" -> "design", "Position" -> {{802, 807}}|>, <|
-      "Match" -> "well", "Position" -> {{813, 816}}|>, <|
-      "Match" -> "general", "Position" -> {{821, 827}}|>, <|
-      "Match" -> "personal", "Position" -> {{850, 857}}|>, <|
-      "Match" -> "mobile", "Position" -> {{873, 878}}|>, <|
-      "Match" -> "smartphones", "Position" -> {{893, 903}}|>, <|
-      "Match" -> "Computers", "Position" -> {{906, 914}}|>, <|
-      "Match" -> "power", "Position" -> {{916, 920}, {1767, 1771}}|>, <|
-      "Match" -> "Internet", "Position" -> {{926, 933}}|>, <|
-      "Match" -> "which", "Position" -> {{936, 940}}|>, <|
-      "Match" -> "links", "Position" -> {{942, 946}}|>, <|
-      "Match" -> "hundreds", "Position" -> {{948, 955}}|>, <|
-      "Match" -> "millions", "Position" -> {{960, 967}}|>, <|
-      "Match" -> "other", "Position" -> {{972, 976}}|>, <|
-      "Match" -> "users", "Position" -> {{992, 996}}|>, <|
-      "Match" -> "Early", "Position" -> {{999, 1003}, {1163, 1167}}|>, <|
-      "Match" -> "were", 
-       "Position" -> {{1015, 1018}, {1223, 1226}, {1454, 1457}, {1544, 
-        1547}}|>, <|"Match" -> "meant", "Position" -> {{1020, 1024}}|>, <|
-      "Match" -> "only", "Position" -> {{1037, 1040}}|>, <|
-      "Match" -> "calculations", 
-       "Position" -> {{1046, 1057}, {1129, 1140}, {1364, 1375}}|>, <|
-      "Match" -> "manual", "Position" -> {{1067, 1072}}|>, <|
-      "Match" -> "instruments", "Position" -> {{1074, 1084}}|>, <|
-      "Match" -> "abacus", "Position" -> {{1095, 1100}}|>, <|
-      "Match" -> "have", "Position" -> {{1102, 1105}, {1802, 1805}}|>, <|
-      "Match" -> "people", "Position" -> {{1113, 1118}}|>, <|
-      "Match" -> "in", 
-       "Position" -> {{1120, 1121}, {1169, 1170}, {1377, 1378}, {1526, 
-        1527}, {1660, 1661}, {1742, 1743}, {2135, 2136}, {2386, 2387}}|>, <|
-      "Match" -> "doing", "Position" -> {{1123, 1127}}|>, <|
-      "Match" -> "since", "Position" -> {{1142, 1146}, {1841, 1845}}|>, <|
-      "Match" -> "ancient", "Position" -> {{1148, 1154}}|>, <|
-      "Match" -> "times", "Position" -> {{1156, 1160}}|>, <|
-      "Match" -> "Industrial", "Position" -> {{1176, 1185}}|>, <|
-      "Match" -> "Revolution", "Position" -> {{1187, 1196}, {1957, 1966}}|>, <|
-      "Match" -> "some", "Position" -> {{1199, 1202}, {2179, 2182}}|>, <|
-      "Match" -> "mechanical", "Position" -> {{1204, 1213}}|>, <|
-      "Match" -> "built", "Position" -> {{1228, 1232}}|>, <|
-      "Match" -> "automate", "Position" -> {{1237, 1244}}|>, <|
-      "Match" -> "long", "Position" -> {{1246, 1249}}|>, <|
-      "Match" -> "tedious", "Position" -> {{1251, 1257}}|>, <|
-      "Match" -> "guiding", "Position" -> {{1274, 1280}}|>, <|
-      "Match" -> "patterns", "Position" -> {{1282, 1289}}|>, <|
-      "Match" -> "looms", "Position" -> {{1295, 1299}}|>, <|
-      "Match" -> "More", "Position" -> {{1302, 1305}}|>, <|
-      "Match" -> "sophisticated", "Position" -> {{1307, 1319}}|>, <|
-      "Match" -> "electrical", "Position" -> {{1321, 1330}}|>, <|
-      "Match" -> "machines", "Position" -> {{1332, 1339}, {1445, 1452}}|>, <|
-      "Match" -> "did", "Position" -> {{1341, 1343}}|>, <|
-      "Match" -> "specialized", "Position" -> {{1345, 1355}}|>, <|
-      "Match" -> "analog", "Position" -> {{1357, 1362}}|>, <|
-      "Match" -> "early", "Position" -> {{1384, 1388}, {1992, 1996}}|>, <|
-      "Match" -> "20th", "Position" -> {{1390, 1393}, {1984, 1987}}|>, <|
-      "Match" -> "century", "Position" -> {{1395, 1401}}|>, <|
-      "Match" -> "The", 
-       "Position" -> {{1404, 1406}, {1490, 1492}, {1756, 1758}, {2247, 
-        2249}}|>, <|
-      "Match" -> "first", "Position" -> {{1408, 1412}, {1494, 1498}}|>, <|
-      "Match" -> "digital", "Position" -> {{1414, 1420}}|>, <|
-      "Match" -> "electronic", "Position" -> {{1422, 1431}}|>, <|
-      "Match" -> "calculating", "Position" -> {{1433, 1443}}|>, <|
-      "Match" -> "developed", "Position" -> {{1459, 1467}}|>, <|
-      "Match" -> "during", "Position" -> {{1469, 1474}, {1968, 1973}}|>, <|
-      "Match" -> "World", "Position" -> {{1476, 1480}}|>, <|
-      "Match" -> "War", "Position" -> {{1482, 1484}}|>, <|
-      "Match" -> "II", "Position" -> {{1486, 1487}}|>, <|
-      "Match" -> "semiconductor", 
-       "Position" -> {{1500, 1512}, {2219, 2231}}|>, <|
-      "Match" -> "transistors", "Position" -> {{1514, 1524}}|>, <|
-      "Match" -> "late", 
-       "Position" -> {{1533, 1536}, {1667, 1670}, {1979, 1982}}|>, <|
-      "Match" -> "1940s", "Position" -> {{1538, 1542}}|>, <|
-      "Match" -> "followed", "Position" -> {{1549, 1556}}|>, <|
-      "Match" -> "by", "Position" -> {{1558, 1559}, {1917, 1918}}|>, <|
-      "Match" -> "silicon", "Position" -> {{1565, 1571}}|>, <|
-      "Match" -> "based", "Position" -> {{1573, 1577}}|>, <|
-      "Match" -> "MOSFET", "Position" -> {{1579, 1584}}|>, <|
-      "Match" -> "MOS", "Position" -> {{1587, 1589}}|>, <|
-      "Match" -> "transistor", "Position" -> {{1591, 1600}, {1858, 1867}}|>, <|
-      "Match" -> "monolithic", "Position" -> {{1607, 1616}}|>, <|
-      "Match" -> "integrated", "Position" -> {{1618, 1627}}|>, <|
-      "Match" -> "circuit", "Position" -> {{1629, 1635}}|>, <|
-      "Match" -> "IC", "Position" -> {{1638, 1639}}|>, <|
-      "Match" -> "chip", "Position" -> {{1642, 1645}}|>, <|
-      "Match" -> "technologies", "Position" -> {{1647, 1658}}|>, <|
-      "Match" -> "1950s", "Position" -> {{1672, 1676}}|>, <|
-      "Match" -> "leading", "Position" -> {{1679, 1685}, {1934, 1940}}|>, <|
-      "Match" -> "microprocessor", 
-       "Position" -> {{1694, 1707}, {2152, 2165}}|>, <|
-      "Match" -> "microcomputer", "Position" -> {{1717, 1729}}|>, <|
-      "Match" -> "revolution", "Position" -> {{1731, 1740}}|>, <|
-      "Match" -> "1970s", "Position" -> {{1749, 1753}}|>, <|
-      "Match" -> "speed", "Position" -> {{1760, 1764}}|>, <|
-      "Match" -> "versatility", "Position" -> {{1777, 1787}}|>, <|
-      "Match" -> "been", "Position" -> {{1807, 1810}}|>, <|
-      "Match" -> "increasing", "Position" -> {{1812, 1821}, {1876, 1885}}|>, <|
-      "Match" -> "dramatically", "Position" -> {{1823, 1834}}|>, <|
-      "Match" -> "ever", "Position" -> {{1836, 1839}}|>, <|
-      "Match" -> "then", "Position" -> {{1847, 1850}}|>, <|
-      "Match" -> "with", "Position" -> {{1853, 1856}, {2174, 2177}}|>, <|
-      "Match" -> "counts", "Position" -> {{1869, 1874}}|>, <|
-      "Match" -> "at", "Position" -> {{1887, 1888}, {2060, 2061}}|>, <|
-      "Match" -> "rapid", "Position" -> {{1892, 1896}}|>, <|
-      "Match" -> "pace", "Position" -> {{1898, 1901}}|>, <|
-      "Match" -> "predicted", "Position" -> {{1907, 1915}}|>, <|
-      "Match" -> "Moore", "Position" -> {{1920, 1924}}|>, <|
-      "Match" -> "s", "Position" -> {{1926, 1926}}|>, <|
-      "Match" -> "law", "Position" -> {{1928, 1930}}|>, <|
-      "Match" -> "Digital", "Position" -> {{1949, 1955}}|>, <|
-      "Match" -> "21st", "Position" -> {{1998, 2001}}|>, <|
-      "Match" -> "centuries", "Position" -> {{2003, 2011}}|>, <|
-      "Match" -> "Conventionally", "Position" -> {{2014, 2027}}|>, <|
-      "Match" -> "modern", "Position" -> {{2032, 2037}}|>, <|
-      "Match" -> "consists", "Position" -> {{2048, 2055}}|>, <|
-      "Match" -> "least", "Position" -> {{2063, 2067}}|>, <|
-      "Match" -> "one", "Position" -> {{2069, 2071}}|>, <|
-      "Match" -> "processing", 
-       "Position" -> {{2073, 2082}, {2113, 2122}, {2251, 2260}}|>, <|
-      "Match" -> "element", "Position" -> {{2084, 2090}, {2262, 2268}}|>, <|
-      "Match" -> "typically", "Position" -> {{2093, 2101}, {2209, 2217}}|>, <|
-      "Match" -> "central", "Position" -> {{2105, 2111}}|>, <|
-      "Match" -> "unit", "Position" -> {{2124, 2127}, {2346, 2349}}|>, <|
-      "Match" -> "CPU", "Position" -> {{2130, 2132}}|>, <|
-      "Match" -> "form", "Position" -> {{2142, 2145}}|>, <|
-      "Match" -> "along", "Position" -> {{2168, 2172}}|>, <|
-      "Match" -> "type", "Position" -> {{2184, 2187}}|>, <|
-      "Match" -> "memory", "Position" -> {{2201, 2206}, {2233, 2238}}|>, <|
-      "Match" -> "chips", "Position" -> {{2240, 2244}}|>, <|
-      "Match" -> "carries", "Position" -> {{2270, 2276}}|>, <|
-      "Match" -> "sequencing", "Position" -> {{2323, 2332}}|>, <|
-      "Match" -> "change", "Position" -> {{2355, 2360}}|>, <|
-      "Match" -> "order", "Position" -> {{2366, 2370}}|>, <|
-      "Match" -> "response", "Position" -> {{2389, 2396}}|>, <|
-      "Match" -> "stored", "Position" -> {{2401, 2406}}|>, <|
-      "Match" -> "information", 
-       "Position" -> {{2408, 2418}, {2660, 2670}}|>, <|
-      "Match" -> "Peripheral", "Position" -> {{2421, 2430}, {2635, 2644}}|>, <|
-      "Match" -> "include", "Position" -> {{2440, 2446}}|>, <|
-      "Match" -> "input", "Position" -> {{2448, 2452}, {2551, 2555}}|>, <|
-      "Match" -> "keyboards", "Position" -> {{2463, 2471}}|>, <|
-      "Match" -> "mice", "Position" -> {{2474, 2477}}|>, <|
-      "Match" -> "joystick", "Position" -> {{2480, 2487}}|>, <|
-      "Match" -> "etc", "Position" -> {{2490, 2492}, {2540, 2542}}|>, <|
-      "Match" -> "output", "Position" -> {{2497, 2502}, {2557, 2562}}|>, <|
-      "Match" -> "monitor", "Position" -> {{2513, 2519}}|>, <|
-      "Match" -> "screens", "Position" -> {{2521, 2527}}|>, <|
-      "Match" -> "printers", "Position" -> {{2530, 2537}}|>, <|
-      "Match" -> "both", "Position" -> {{2585, 2588}}|>, <|
-      "Match" -> "functions", "Position" -> {{2590, 2598}}|>, <|
-      "Match" -> "e", "Position" -> {{2601, 2601}}|>, <|
-      "Match" -> "g", "Position" -> {{2603, 2603}}|>, <|
-      "Match" -> "2000s", "Position" -> {{2611, 2615}}|>, <|
-      "Match" -> "era", "Position" -> {{2617, 2619}}|>, <|
-      "Match" -> "touchscreen", "Position" -> {{2621, 2631}}|>, <|
-      "Match" -> "allow", "Position" -> {{2654, 2658}}|>, <|
-      "Match" -> "retrieved", "Position" -> {{2678, 2686}, {2769, 2777}}|>, <|
-      "Match" -> "from", "Position" -> {{2688, 2691}}|>, <|
-      "Match" -> "an", "Position" -> {{2693, 2694}}|>, <|
-      "Match" -> "external", "Position" -> {{2696, 2703}}|>, <|
-      "Match" -> "source", "Position" -> {{2705, 2710}}|>, <|
-      "Match" -> "they", "Position" -> {{2716, 2719}}|>, <|
-      "Match" -> "result", "Position" -> {{2732, 2737}}|>, <|
-      "Match" -> "saved", "Position" -> {{2759, 2763}}|>}, "Dataset" -> 
-    Dataset[{<|
-       "Match" -> "A", "Position" -> {{1, 1}, {263, 263}, {567, 567}}|>, <|
-       "Match" -> "computer", 
-        "Position" -> {{3, 10}, {265, 272}, {297, 304}, {529, 536}, {549, 
-         556}, {787, 794}, {2039, 2046}, {2192, 2199}}|>, <|
-       "Match" -> "is", "Position" -> {{12, 13}, {281, 282}}|>, <|
-       "Match" -> "a", 
-        "Position" -> {{15, 15}, {240, 240}, {284, 284}, {459, 459}, {527, 
-         527}, {1890, 1890}, {2030, 2030}, {2103, 2103}, {2150, 2150}, {2321, 
-         2321}}|>, <|"Match" -> "machine", "Position" -> {{17, 23}}|>, <|
-       "Match" -> "that", 
-        "Position" -> {{25, 28}, {306, 309}, {480, 483}, {2572, 2575}}|>, <|
-       "Match" -> "can", 
-        "Position" -> {{30, 32}, {139, 141}, {2351, 2353}}|>, <|
-       "Match" -> "be", 
-        "Position" -> {{34, 35}, {1029, 1030}, {2675, 2676}, {2756, 
-         2757}}|>, <|"Match" -> "programmed", "Position" -> {{37, 46}}|>, <|
-       "Match" -> "to", 
-        "Position" -> {{48, 49}, {229, 230}, {456, 457}, {1026, 1027}, {1234, 
-         1235}, {1687, 1688}, {1942, 1943}, {1989, 1990}, {2398, 2399}, {2672,
-          2673}, {2753, 2754}}|>, <|
-       "Match" -> "carry", "Position" -> {{51, 55}}|>, <|
-       "Match" -> "out", "Position" -> {{57, 59}, {2278, 2280}}|>, <|
-       "Match" -> "sequences", "Position" -> {{61, 69}}|>, <|
-       "Match" -> "of", 
-        "Position" -> {{71, 72}, {164, 165}, {253, 254}, {467, 468}, {581, 
-         582}, {957, 958}, {969, 970}, {1789, 1790}, {2057, 2058}, {2147, 
-         2148}, {2189, 2190}, {2372, 2373}, {2739, 2740}}|>, <|
-       "Match" -> "arithmetic", "Position" -> {{74, 83}, {2282, 2291}}|>, <|
-       "Match" -> "or", "Position" -> {{85, 86}, {546, 547}}|>, <|
-       "Match" -> "logical", "Position" -> {{88, 94}, {2297, 2303}}|>, <|
-       "Match" -> "operations", 
-        "Position" -> {{96, 105}, {167, 176}, {2305, 2314}, {2375, 2384}, {
-         2742, 2751}}|>, <|
-       "Match" -> "automatically", "Position" -> {{107, 119}}|>, <|
-       "Match" -> "Modern", "Position" -> {{122, 127}}|>, <|
-       "Match" -> "computers", 
-        "Position" -> {{129, 137}, {219, 227}, {470, 478}, {621, 629}, {859, 
-         867}, {978, 986}, {1005, 1013}, {1792, 1800}}|>, <|
-       "Match" -> "perform", 
-        "Position" -> {{143, 149}, {232, 238}, {2577, 2583}}|>, <|
-       "Match" -> "generic", "Position" -> {{151, 157}}|>, <|
-       "Match" -> "sets", "Position" -> {{159, 162}}|>, <|
-       "Match" -> "known", "Position" -> {{178, 182}}|>, <|
-       "Match" -> "as", 
-        "Position" -> {{184, 185}, {524, 525}, {631, 632}, {737, 738}, {810, 
-         811}, {818, 819}, {1271, 1272}, {1904, 1905}}|>, <|
-       "Match" -> "programs", "Position" -> {{187, 194}, {203, 210}}|>, <|
-       "Match" -> "These", "Position" -> {{197, 201}}|>, <|
-       "Match" -> "enable", "Position" -> {{212, 217}, {2721, 2726}}|>, <|
-       "Match" -> "wide", "Position" -> {{242, 245}}|>, <|
-       "Match" -> "range", "Position" -> {{247, 251}, {575, 579}}|>, <|
-       "Match" -> "tasks", "Position" -> {{256, 260}, {1259, 1263}}|>, <|
-       "Match" -> "system", "Position" -> {{274, 279}, {344, 349}}|>, <|
-       "Match" -> "complete", "Position" -> {{287, 294}}|>, <|
-       "Match" -> "includes", "Position" -> {{311, 318}}|>, <|
-       "Match" -> "the", 
-        "Position" -> {{320, 322}, {922, 924}, {1091, 1093}, {1172, 1174}, {
-         1380, 1382}, {1529, 1531}, {1561, 1563}, {1663, 1665}, {1690, 
-         1692}, {1713, 1715}, {1745, 1747}, {1945, 1947}, {1975, 1977}, {2138,
-          2140}, {2362, 2364}, {2607, 2609}, {2728, 2730}}|>, <|
-       "Match" -> "hardware", "Position" -> {{324, 331}}|>, <|
-       "Match" -> "operating", "Position" -> {{334, 342}}|>, <|
-       "Match" -> "main", "Position" -> {{352, 355}}|>, <|
-       "Match" -> "software", "Position" -> {{357, 364}}|>, <|
-       "Match" -> "and", 
-        "Position" -> {{368, 370}, {400, 402}, {496, 498}, {595, 597}, {703, 
-         705}, {783, 785}, {869, 871}, {988, 990}, {1603, 1605}, {1709, 
-         1711}, {1773, 1775}, {2293, 2295}, {2317, 2319}, {2334, 2336}, {2547,
-          2549}, {2712, 2714}, {2765, 2767}}|>, <|
-       "Match" -> "peripheral", "Position" -> {{372, 381}}|>, <|
-       "Match" -> "equipment", "Position" -> {{383, 391}}|>, <|
-       "Match" -> "needed", "Position" -> {{393, 398}}|>, <|
-       "Match" -> "used", "Position" -> {{404, 407}, {1032, 1035}}|>, <|
-       "Match" -> "for", 
-        "Position" -> {{409, 411}, {1042, 1044}, {1291, 1293}}|>, <|
-       "Match" -> "full", "Position" -> {{414, 417}}|>, <|
-       "Match" -> "operation", "Position" -> {{420, 428}}|>, <|
-       "Match" -> "This", "Position" -> {{431, 434}}|>, <|
-       "Match" -> "term", "Position" -> {{436, 439}}|>, <|
-       "Match" -> "may", "Position" -> {{441, 443}}|>, <|
-       "Match" -> "also", "Position" -> {{445, 448}}|>, <|
-       "Match" -> "refer", "Position" -> {{450, 454}}|>, <|
-       "Match" -> "group", "Position" -> {{461, 465}}|>, <|
-       "Match" -> "are", 
-        "Position" -> {{485, 487}, {723, 725}, {740, 742}}|>, <|
-       "Match" -> "linked", "Position" -> {{489, 494}}|>, <|
-       "Match" -> "function", "Position" -> {{500, 507}}|>, <|
-       "Match" -> "together", "Position" -> {{509, 516}}|>, <|
-       "Match" -> "such", "Position" -> {{519, 522}, {1266, 1269}}|>, <|
-       "Match" -> "network", "Position" -> {{538, 544}}|>, <|
-       "Match" -> "cluster", "Position" -> {{558, 564}}|>, <|
-       "Match" -> "broad", "Position" -> {{569, 573}}|>, <|
-       "Match" -> "industrial", "Position" -> {{584, 593}, {765, 774}}|>, <|
-       "Match" -> "consumer", "Position" -> {{599, 606}}|>, <|
-       "Match" -> "products", "Position" -> {{608, 615}}|>, <|
-       "Match" -> "use", "Position" -> {{617, 619}}|>, <|
-       "Match" -> "control", "Position" -> {{634, 640}, {2338, 2344}}|>, <|
-       "Match" -> "systems", "Position" -> {{642, 648}}|>, <|
-       "Match" -> "Simple", "Position" -> {{651, 656}, {1060, 1065}}|>, <|
-       "Match" -> "special", "Position" -> {{658, 664}}|>, <|
-       "Match" -> "purpose", "Position" -> {{666, 672}, {829, 835}}|>, <|
-       "Match" -> "devices", 
-        "Position" -> {{674, 680}, {752, 758}, {837, 843}, {880, 886}, {1215, 
-         1221}, {2432, 2438}, {2454, 2460}, {2504, 2510}, {2564, 2570}, {2646,
-          2652}}|>, <|
-       "Match" -> "like", 
-        "Position" -> {{682, 685}, {760, 763}, {845, 848}, {888, 891}, {1086, 
-         1089}}|>, <|"Match" -> "microwave", "Position" -> {{687, 695}}|>, <|
-       "Match" -> "ovens", "Position" -> {{697, 701}}|>, <|
-       "Match" -> "remote", "Position" -> {{707, 712}}|>, <|
-       "Match" -> "controls", "Position" -> {{714, 721}}|>, <|
-       "Match" -> "included", "Position" -> {{727, 734}}|>, <|
-       "Match" -> "factory", "Position" -> {{744, 750}}|>, <|
-       "Match" -> "robots", "Position" -> {{776, 781}}|>, <|
-       "Match" -> "aided", "Position" -> {{796, 800}, {1107, 1111}}|>, <|
-       "Match" -> "design", "Position" -> {{802, 807}}|>, <|
-       "Match" -> "well", "Position" -> {{813, 816}}|>, <|
-       "Match" -> "general", "Position" -> {{821, 827}}|>, <|
-       "Match" -> "personal", "Position" -> {{850, 857}}|>, <|
-       "Match" -> "mobile", "Position" -> {{873, 878}}|>, <|
-       "Match" -> "smartphones", "Position" -> {{893, 903}}|>, <|
-       "Match" -> "Computers", "Position" -> {{906, 914}}|>, <|
-       "Match" -> "power", "Position" -> {{916, 920}, {1767, 1771}}|>, <|
-       "Match" -> "Internet", "Position" -> {{926, 933}}|>, <|
-       "Match" -> "which", "Position" -> {{936, 940}}|>, <|
-       "Match" -> "links", "Position" -> {{942, 946}}|>, <|
-       "Match" -> "hundreds", "Position" -> {{948, 955}}|>, <|
-       "Match" -> "millions", "Position" -> {{960, 967}}|>, <|
-       "Match" -> "other", "Position" -> {{972, 976}}|>, <|
-       "Match" -> "users", "Position" -> {{992, 996}}|>, <|
-       "Match" -> "Early", "Position" -> {{999, 1003}, {1163, 1167}}|>, <|
-       "Match" -> "were", 
-        "Position" -> {{1015, 1018}, {1223, 1226}, {1454, 1457}, {1544, 
-         1547}}|>, <|"Match" -> "meant", "Position" -> {{1020, 1024}}|>, <|
-       "Match" -> "only", "Position" -> {{1037, 1040}}|>, <|
-       "Match" -> "calculations", 
-        "Position" -> {{1046, 1057}, {1129, 1140}, {1364, 1375}}|>, <|
-       "Match" -> "manual", "Position" -> {{1067, 1072}}|>, <|
-       "Match" -> "instruments", "Position" -> {{1074, 1084}}|>, <|
-       "Match" -> "abacus", "Position" -> {{1095, 1100}}|>, <|
-       "Match" -> "have", "Position" -> {{1102, 1105}, {1802, 1805}}|>, <|
-       "Match" -> "people", "Position" -> {{1113, 1118}}|>, <|
-       "Match" -> "in", 
-        "Position" -> {{1120, 1121}, {1169, 1170}, {1377, 1378}, {1526, 
-         1527}, {1660, 1661}, {1742, 1743}, {2135, 2136}, {2386, 2387}}|>, <|
-       "Match" -> "doing", "Position" -> {{1123, 1127}}|>, <|
-       "Match" -> "since", "Position" -> {{1142, 1146}, {1841, 1845}}|>, <|
-       "Match" -> "ancient", "Position" -> {{1148, 1154}}|>, <|
-       "Match" -> "times", "Position" -> {{1156, 1160}}|>, <|
-       "Match" -> "Industrial", "Position" -> {{1176, 1185}}|>, <|
-       "Match" -> "Revolution", 
-        "Position" -> {{1187, 1196}, {1957, 1966}}|>, <|
-       "Match" -> "some", "Position" -> {{1199, 1202}, {2179, 2182}}|>, <|
-       "Match" -> "mechanical", "Position" -> {{1204, 1213}}|>, <|
-       "Match" -> "built", "Position" -> {{1228, 1232}}|>, <|
-       "Match" -> "automate", "Position" -> {{1237, 1244}}|>, <|
-       "Match" -> "long", "Position" -> {{1246, 1249}}|>, <|
-       "Match" -> "tedious", "Position" -> {{1251, 1257}}|>, <|
-       "Match" -> "guiding", "Position" -> {{1274, 1280}}|>, <|
-       "Match" -> "patterns", "Position" -> {{1282, 1289}}|>, <|
-       "Match" -> "looms", "Position" -> {{1295, 1299}}|>, <|
-       "Match" -> "More", "Position" -> {{1302, 1305}}|>, <|
-       "Match" -> "sophisticated", "Position" -> {{1307, 1319}}|>, <|
-       "Match" -> "electrical", "Position" -> {{1321, 1330}}|>, <|
-       "Match" -> "machines", "Position" -> {{1332, 1339}, {1445, 1452}}|>, <|
-       "Match" -> "did", "Position" -> {{1341, 1343}}|>, <|
-       "Match" -> "specialized", "Position" -> {{1345, 1355}}|>, <|
-       "Match" -> "analog", "Position" -> {{1357, 1362}}|>, <|
-       "Match" -> "early", "Position" -> {{1384, 1388}, {1992, 1996}}|>, <|
-       "Match" -> "20th", "Position" -> {{1390, 1393}, {1984, 1987}}|>, <|
-       "Match" -> "century", "Position" -> {{1395, 1401}}|>, <|
-       "Match" -> "The", 
-        "Position" -> {{1404, 1406}, {1490, 1492}, {1756, 1758}, {2247, 
-         2249}}|>, <|
-       "Match" -> "first", "Position" -> {{1408, 1412}, {1494, 1498}}|>, <|
-       "Match" -> "digital", "Position" -> {{1414, 1420}}|>, <|
-       "Match" -> "electronic", "Position" -> {{1422, 1431}}|>, <|
-       "Match" -> "calculating", "Position" -> {{1433, 1443}}|>, <|
-       "Match" -> "developed", "Position" -> {{1459, 1467}}|>, <|
-       "Match" -> "during", "Position" -> {{1469, 1474}, {1968, 1973}}|>, <|
-       "Match" -> "World", "Position" -> {{1476, 1480}}|>, <|
-       "Match" -> "War", "Position" -> {{1482, 1484}}|>, <|
-       "Match" -> "II", "Position" -> {{1486, 1487}}|>, <|
-       "Match" -> "semiconductor", 
-        "Position" -> {{1500, 1512}, {2219, 2231}}|>, <|
-       "Match" -> "transistors", "Position" -> {{1514, 1524}}|>, <|
-       "Match" -> "late", 
-        "Position" -> {{1533, 1536}, {1667, 1670}, {1979, 1982}}|>, <|
-       "Match" -> "1940s", "Position" -> {{1538, 1542}}|>, <|
-       "Match" -> "followed", "Position" -> {{1549, 1556}}|>, <|
-       "Match" -> "by", "Position" -> {{1558, 1559}, {1917, 1918}}|>, <|
-       "Match" -> "silicon", "Position" -> {{1565, 1571}}|>, <|
-       "Match" -> "based", "Position" -> {{1573, 1577}}|>, <|
-       "Match" -> "MOSFET", "Position" -> {{1579, 1584}}|>, <|
-       "Match" -> "MOS", "Position" -> {{1587, 1589}}|>, <|
-       "Match" -> "transistor", 
-        "Position" -> {{1591, 1600}, {1858, 1867}}|>, <|
-       "Match" -> "monolithic", "Position" -> {{1607, 1616}}|>, <|
-       "Match" -> "integrated", "Position" -> {{1618, 1627}}|>, <|
-       "Match" -> "circuit", "Position" -> {{1629, 1635}}|>, <|
-       "Match" -> "IC", "Position" -> {{1638, 1639}}|>, <|
-       "Match" -> "chip", "Position" -> {{1642, 1645}}|>, <|
-       "Match" -> "technologies", "Position" -> {{1647, 1658}}|>, <|
-       "Match" -> "1950s", "Position" -> {{1672, 1676}}|>, <|
-       "Match" -> "leading", "Position" -> {{1679, 1685}, {1934, 1940}}|>, <|
-       "Match" -> "microprocessor", 
-        "Position" -> {{1694, 1707}, {2152, 2165}}|>, <|
-       "Match" -> "microcomputer", "Position" -> {{1717, 1729}}|>, <|
-       "Match" -> "revolution", "Position" -> {{1731, 1740}}|>, <|
-       "Match" -> "1970s", "Position" -> {{1749, 1753}}|>, <|
-       "Match" -> "speed", "Position" -> {{1760, 1764}}|>, <|
-       "Match" -> "versatility", "Position" -> {{1777, 1787}}|>, <|
-       "Match" -> "been", "Position" -> {{1807, 1810}}|>, <|
-       "Match" -> "increasing", 
-        "Position" -> {{1812, 1821}, {1876, 1885}}|>, <|
-       "Match" -> "dramatically", "Position" -> {{1823, 1834}}|>, <|
-       "Match" -> "ever", "Position" -> {{1836, 1839}}|>, <|
-       "Match" -> "then", "Position" -> {{1847, 1850}}|>, <|
-       "Match" -> "with", "Position" -> {{1853, 1856}, {2174, 2177}}|>, <|
-       "Match" -> "counts", "Position" -> {{1869, 1874}}|>, <|
-       "Match" -> "at", "Position" -> {{1887, 1888}, {2060, 2061}}|>, <|
-       "Match" -> "rapid", "Position" -> {{1892, 1896}}|>, <|
-       "Match" -> "pace", "Position" -> {{1898, 1901}}|>, <|
-       "Match" -> "predicted", "Position" -> {{1907, 1915}}|>, <|
-       "Match" -> "Moore", "Position" -> {{1920, 1924}}|>, <|
-       "Match" -> "s", "Position" -> {{1926, 1926}}|>, <|
-       "Match" -> "law", "Position" -> {{1928, 1930}}|>, <|
-       "Match" -> "Digital", "Position" -> {{1949, 1955}}|>, <|
-       "Match" -> "21st", "Position" -> {{1998, 2001}}|>, <|
-       "Match" -> "centuries", "Position" -> {{2003, 2011}}|>, <|
-       "Match" -> "Conventionally", "Position" -> {{2014, 2027}}|>, <|
-       "Match" -> "modern", "Position" -> {{2032, 2037}}|>, <|
-       "Match" -> "consists", "Position" -> {{2048, 2055}}|>, <|
-       "Match" -> "least", "Position" -> {{2063, 2067}}|>, <|
-       "Match" -> "one", "Position" -> {{2069, 2071}}|>, <|
-       "Match" -> "processing", 
-        "Position" -> {{2073, 2082}, {2113, 2122}, {2251, 2260}}|>, <|
-       "Match" -> "element", "Position" -> {{2084, 2090}, {2262, 2268}}|>, <|
-       "Match" -> "typically", "Position" -> {{2093, 2101}, {2209, 2217}}|>, <|
-       "Match" -> "central", "Position" -> {{2105, 2111}}|>, <|
-       "Match" -> "unit", "Position" -> {{2124, 2127}, {2346, 2349}}|>, <|
-       "Match" -> "CPU", "Position" -> {{2130, 2132}}|>, <|
-       "Match" -> "form", "Position" -> {{2142, 2145}}|>, <|
-       "Match" -> "along", "Position" -> {{2168, 2172}}|>, <|
-       "Match" -> "type", "Position" -> {{2184, 2187}}|>, <|
-       "Match" -> "memory", "Position" -> {{2201, 2206}, {2233, 2238}}|>, <|
-       "Match" -> "chips", "Position" -> {{2240, 2244}}|>, <|
-       "Match" -> "carries", "Position" -> {{2270, 2276}}|>, <|
-       "Match" -> "sequencing", "Position" -> {{2323, 2332}}|>, <|
-       "Match" -> "change", "Position" -> {{2355, 2360}}|>, <|
-       "Match" -> "order", "Position" -> {{2366, 2370}}|>, <|
-       "Match" -> "response", "Position" -> {{2389, 2396}}|>, <|
-       "Match" -> "stored", "Position" -> {{2401, 2406}}|>, <|
-       "Match" -> "information", 
-        "Position" -> {{2408, 2418}, {2660, 2670}}|>, <|
-       "Match" -> "Peripheral", 
-        "Position" -> {{2421, 2430}, {2635, 2644}}|>, <|
-       "Match" -> "include", "Position" -> {{2440, 2446}}|>, <|
-       "Match" -> "input", "Position" -> {{2448, 2452}, {2551, 2555}}|>, <|
-       "Match" -> "keyboards", "Position" -> {{2463, 2471}}|>, <|
-       "Match" -> "mice", "Position" -> {{2474, 2477}}|>, <|
-       "Match" -> "joystick", "Position" -> {{2480, 2487}}|>, <|
-       "Match" -> "etc", "Position" -> {{2490, 2492}, {2540, 2542}}|>, <|
-       "Match" -> "output", "Position" -> {{2497, 2502}, {2557, 2562}}|>, <|
-       "Match" -> "monitor", "Position" -> {{2513, 2519}}|>, <|
-       "Match" -> "screens", "Position" -> {{2521, 2527}}|>, <|
-       "Match" -> "printers", "Position" -> {{2530, 2537}}|>, <|
-       "Match" -> "both", "Position" -> {{2585, 2588}}|>, <|
-       "Match" -> "functions", "Position" -> {{2590, 2598}}|>, <|
-       "Match" -> "e", "Position" -> {{2601, 2601}}|>, <|
-       "Match" -> "g", "Position" -> {{2603, 2603}}|>, <|
-       "Match" -> "2000s", "Position" -> {{2611, 2615}}|>, <|
-       "Match" -> "era", "Position" -> {{2617, 2619}}|>, <|
-       "Match" -> "touchscreen", "Position" -> {{2621, 2631}}|>, <|
-       "Match" -> "allow", "Position" -> {{2654, 2658}}|>, <|
-       "Match" -> "retrieved", "Position" -> {{2678, 2686}, {2769, 2777}}|>, <|
-       "Match" -> "from", "Position" -> {{2688, 2691}}|>, <|
-       "Match" -> "an", "Position" -> {{2693, 2694}}|>, <|
-       "Match" -> "external", "Position" -> {{2696, 2703}}|>, <|
-       "Match" -> "source", "Position" -> {{2705, 2710}}|>, <|
-       "Match" -> "they", "Position" -> {{2716, 2719}}|>, <|
-       "Match" -> "result", "Position" -> {{2732, 2737}}|>, <|
-       "Match" -> "saved", "Position" -> {{2759, 2763}}|>}, 
-      TypeSystem`Vector[
-       TypeSystem`Struct[{"Match", "Position"}, {
-         TypeSystem`Atom[String], 
-         TypeSystem`Vector[
-          TypeSystem`Vector[
-           TypeSystem`Atom[Integer], 2], TypeSystem`AnyLength]}], 234], <||>],
-     "Source" -> "Text", "TotalMatchCount" -> 416, "Structure" -> 
-    LexicalCases`Structure[
-      RegularExpression["\\b\\w+\\b"]]|>],
-  Editable->False,
-  SelectWithContents->True,
-  Selectable->False]], "Output",
- CellChangeTimes->{3.8526742408370037`*^9, 3.85274715399275*^9},
- CellLabel->"Out[14]=",
- CellID->515290221,ExpressionUUID->"04ba254f-e1b4-4ff3-886a-553cc91408b7"]
-}, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"LexicalCases", "[", 
-   RowBox[{"$SampleStringLong", ",", 
-    RowBox[{"Words", "[", "3", "]"}]}], "]"}], "[", "\"\<CountGroups\>\"", 
-  "]"}]], "Input",
- CellChangeTimes->{{3.8527471734488087`*^9, 3.85274719096924*^9}},
- CellLabel->"In[17]:=",
- CellID->993543782,ExpressionUUID->"7f1e4796-446a-4b5a-b3fa-40ce1e9492a1"],
+   RowBox[{"$SampleStringLong", ",", " ", 
+    RowBox[{
+     RowBox[{"Words", "[", "2", "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+  "[", "\"\<Dataset\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.852754154630471*^9, 3.852754191866053*^9}, {
+  3.852754436648871*^9, 3.852754436961762*^9}},
+ CellLabel->"In[13]:=",
+ CellID->478351208,ExpressionUUID->"d94a8792-dff6-423e-af19-550a884e4c6a"],
 
 Cell[BoxData[
  TagBox[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
     "InitialData" -> {<|
-       "Matches" -> {"purpose devices like", "leading to the"}, "CountGroup" -> 
-        2|>, <|"Matches" -> {
-         "World War II", "with transistor counts", "which links hundreds", 
-          "were developed during", "were built to", "used only for", 
-          "typically semiconductor memory", "typically a central", 
-          "type of computer", "transistors in the", "to early 21st", 
-          "to carry out", "to be saved", "This term may", "they enable the", 
-          "These programs enable", "The processing element", "the late 20th", 
-          "the late 1950s", "The first semiconductor", "The first digital", 
-          "the early 20th", "such as guiding", "such as a", 
-          "some mechanical devices", "since ancient times", 
-          "Simple manual instruments", "sequences of arithmetic", 
-          "robots and computer", "retrieved from an", "result of operations", 
-          "remote controls are", "power and versatility", 
-          "personal computers and", "Peripheral devices include", 
-          "Peripheral devices allow", "perform generic sets", 
-          "perform both functions", "patterns for looms", 
-          "output devices that", "other computers and", 
-          "or logical operations", "order of operations", 
-          "of operations known", "of millions of", "of industrial and", 
-          "of computers have", "of a microprocessor", "needed and used", 
-          "More sophisticated electrical", "Modern computers can", 
-          "mobile devices like", "microwave ovens and", 
-          "microprocessor and the", "microcomputer revolution in", 
-          "meant to be", "machines did specialized", "linked and function", 
-          "like the abacus", "least one processing", "late 1940s were", 
-          "in the form", "in response to", "information to be", 
-          "in doing calculations", "increasing at a", "have aided people", 
-          "followed by the", "external source and", "ever since then", 
-          "electronic calculating machines", "Early in the", 
-          "Early computers were", "Digital Revolution during", 
-          "devices like industrial", "consumer products use", 
-          "consists of at", "computer that includes", "computers to perform", 
-          "computers that are", "Computers power the", "computers as control",
-           "computer network or", "chip technologies in", 
-          "carries out arithmetic", "can change the", "can be programmed", 
-          "been increasing dramatically", "a wide range", 
-          "automate long tedious", "as well as", "as predicted by", 
-          "as are factory", "and peripheral equipment", 
-          "and monolithic integrated", "and logical operations", 
-          "and control unit", "and a sequencing", "analog calculations in", 
-          "a modern computer", "a machine that", "also refer to", 
-          "along with some", "a group of", "A computer system", 
-          "A computer is", "A broad range"}, "CountGroup" -> 1|>}, 
+       "Match" -> "programs enable computer", "Position" -> {{203, 226}}|>, <|
+       "Match" -> "group of computer", "Position" -> {{461, 477}}|>, <|
+       "Match" -> "as a computer", "Position" -> {{524, 536}}|>, <|
+       "Match" -> "network or computer", "Position" -> {{538, 556}}|>, <|
+       "Match" -> "products use computer", "Position" -> {{608, 628}}|>, <|
+       "Match" -> "robots and computer", "Position" -> {{776, 794}}|>, <|
+       "Match" -> "like personal computer", "Position" -> {{845, 866}}|>, <|
+       "Match" -> "of other computer", "Position" -> {{969, 985}}|>, <|
+       "Match" -> "versatility of computer", "Position" -> {{1777, 1799}}|>, <|
+       "Match" -> "a modern computer", "Position" -> {{2030, 2046}}|>, <|
+       "Match" -> "type of computer", "Position" -> {{2184, 2199}}|>}, 
      "AllowEmbedding" -> True, "InitialShape" -> 
-     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
-        1, {All, "CountGroup"} -> 1|>, 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
-            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 2, 
+           "Match" -> TypeSystem`PackageScope`AtomShape[268.8], "Position" -> 
+            TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
         DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
-       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
          TypeSystem`Vector[
-          TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 2], "Meta" -> <||>, "RowTarget" -> 20, 
-     "ColumnTarget" -> 10, "Shape" -> 
-     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
-        1, {All, "CountGroup"} -> 1|>, 
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 11], "Meta" -> <||>, 
+     "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
-            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 2, 
+           "Match" -> TypeSystem`PackageScope`AtomShape[268.8], "Position" -> 
+            TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
         DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
-       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
          TypeSystem`Vector[
-          TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 2], "Path" -> {}, "DisplayedRowCount" -> 
-     2, "DisplayedColumnCount" -> 2, "DataRowCount" -> 2, "DataColumnCount" -> 
-     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
-     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 11], "Path" -> {}, 
+     "DisplayedRowCount" -> 11, "DisplayedColumnCount" -> 2, "DataRowCount" -> 
+     11, "DataColumnCount" -> 2, "SortPaths" -> {}, "SortDirections" -> {}, 
+     "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
     TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
     TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
@@ -1165,9 +331,9 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
-                 Mouseover["Matches", 
+                 Mouseover["Match", 
                   Style[
-                  "Matches", FontColor -> 
+                  "Match", FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1181,11 +347,13 @@ Cell[BoxData[
                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][{All, "Matches"}, 
-                   1]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Match"}, 1]]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{All, "Matches"}, 
-                "ColumnHeader", True], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Match"}, "ColumnHeader", True], "Mouse"], 
               ImageSize -> {{1, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
              GrayLevel[0.95], Alignment -> {Left, Baseline}], 
@@ -1194,9 +362,9 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
-                 Mouseover["CountGroup", 
+                 Mouseover["Position", 
                   Style[
-                  "CountGroup", FontColor -> 
+                  "Position", FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1210,106 +378,376 @@ Cell[BoxData[
                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][{
-                   All, "CountGroup"}, 1]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Position"}, 1]]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{All, "CountGroup"}, 
-                "ColumnHeader", True], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Position"}, "ColumnHeader", False], "Mouse"], 
               ImageSize -> {{1, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
-             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+             GrayLevel[0.95], Alignment -> {Center, Baseline}], 
+            SpanFromLeft}, {
+            Item[
+             Pane[
+              Annotation["programs enable computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  
-                  Style[{"purpose devices like", "leading to the"}, 
-                   ShowStringCharacters -> False], 
-                  Style[
-                   
-                   Style[{"purpose devices like", "leading to the"}, 
-                    ShowStringCharacters -> False], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][{1, 
-                    Key["Matches"]}, 4]]], 
+               RawBoxes["203"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{1, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}]], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["2"], 
+               RawBoxes["226"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{1, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  Style[
-                   Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 107], " }\[ThinSpace]"}], 
-                   GrayLevel[0.5]], 
-                  Style[
-                   Style[
-                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 107], " }\[ThinSpace]"}], 
-                    GrayLevel[0.5]], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][{2, 
-                    Key["Matches"]}, 4]]], 
+              Annotation["group of computer", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{2, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
-               GrayLevel[0.5]}], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["1"], 
+               RawBoxes["461"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "79d9e60d-55b8-423f-98d9-1687268b4fb3"][{2, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["477"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["as a computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["524"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["536"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["network or computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["538"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["556"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["products use computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["608"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["628"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["robots and computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["776"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["794"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["like personal computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["845"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["866"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["of other computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["969"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["985"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["versatility of computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1777"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1799"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["a modern computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2030"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2046"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["type of computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{268.8, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2184"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2199"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}}, 
           BaseStyle -> {
            ContextMenu -> 
             Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
-              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
-                "79d9e60d-55b8-423f-98d9-1687268b4fb3", {}, 
+              Which[
+               TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
@@ -1377,7 +815,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                     TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "remove"]], MenuEvaluator -> Automatic]], 
                     If[
@@ -1407,7 +846,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                     TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    "79d9e60d-55b8-423f-98d9-1687268b4fb3"]][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
                     MenuEvaluator -> Automatic]], Delimiter}, 
                     If[
@@ -1427,7 +867,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "79d9e60d-55b8-423f-98d9-1687268b4fb3"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
                     If[
@@ -1441,7 +882,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "79d9e60d-55b8-423f-98d9-1687268b4fb3"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "Descending"]], MenuEvaluator -> Automatic], Nothing], 
                     If[
@@ -1455,7 +897,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "79d9e60d-55b8-423f-98d9-1687268b4fb3"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
                     MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
                     MenuItem["Copy Position to Clipboard", 
@@ -1508,7 +951,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
               TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
               TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
               TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-              "79d9e60d-55b8-423f-98d9-1687268b4fb3"][
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
              TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
             Not[
              FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
@@ -1587,13 +1031,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{304., {47.3544921875, 52.6455078125}},
+      ImageSizeCache->{363., {168.8544921875, 174.1455078125}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{304., {47.3544921875, 52.6455078125}}],
+     ImageSizeCache->{363., {168.8544921875, 174.1455078125}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -1605,115 +1049,112 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{{3.852747175013953*^9, 3.852747191505595*^9}},
- CellLabel->"Out[17]=",
- CellID->1726348754,ExpressionUUID->"05f266be-bff4-4703-bf2a-5f34e22c68fc"]
+ CellChangeTimes->{{3.852754165953805*^9, 3.852754192296439*^9}, 
+   3.852754437488093*^9},
+ CellLabel->"Out[13]=",
+ CellID->112853783,ExpressionUUID->"67b8c3e9-a65a-4e57-b00a-a63bfcd36306"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->224074875,ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "de0270b2-b270-491a-b648-cf41f3400eb3"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1487590934,ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89"],
+
+Cell["Find bigrams, trigrams and quadgrams preceding \"computer\"", \
+"ExampleText",
+ CellChangeTimes->{3.8527546435850267`*^9},
+ CellID->738405596,ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"LexicalCases", "[", 
-   RowBox[{"$SampleStringLong", ",", 
-    RowBox[{"Words", "[", 
-     RowBox[{"2", ",", "4"}], "]"}]}], "]"}], "[", "\"\<CountGroups\>\"", 
-  "]"}]], "Input",
- CellChangeTimes->{{3.8527472097705097`*^9, 3.852747212745676*^9}},
- CellLabel->"In[18]:=",
- CellID->91953861,ExpressionUUID->"72b2e4aa-8262-4541-b04c-9b3d205a828d"],
+   RowBox[{"$SampleStringLong", ",", " ", 
+    RowBox[{
+     RowBox[{"Words", "[", 
+      RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+  "[", "\"\<Dataset\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.852754384179039*^9, 3.852754395096073*^9}},
+ CellLabel->"In[12]:=",
+ CellID->263298292,ExpressionUUID->"037397d2-0411-455c-a811-4954e9aa764b"],
 
 Cell[BoxData[
  TagBox[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
-    "InitialData" -> {<|"Matches" -> {"in the"}, "CountGroup" -> 5|>, <|
-       "Matches" -> {"to be", "of operations"}, "CountGroup" -> 3|>, <|
-       "Matches" -> {
-         "The first", "such as", "range of", "purpose devices", 
-          "Peripheral devices", "output devices", "leading to", "A computer"},
-         "CountGroup" -> 2|>, <|
-       "Matches" -> {
-         "with transistor", "which links", "were meant", "were followed", 
-          "were developed", "War II", "versatility of", "used only", 
-          "use computers", "typically semiconductor", "typically a", 
-          "to stored", "to perform", "This term", "they enable", "The speed", 
-          "These programs", "the result", "The processing", "the order", 
-          "the microprocessor", "the late", "the Internet", "the Industrial", 
-          "the Digital", "the abacus", "the 2000s", "that perform", 
-          "that are", "tedious tasks", "system is", "source and", "some type",
-           "some mechanical", "s law", "since then", "since ancient", 
-          "Simple special", "Simple manual", "sequencing and", "sequences of",
-           "semiconductor transistors", "saved and", "robots and", 
-          "Revolution during", "retrieved from", "remote controls", 
-          "refer to", "rapid pace", "programmed to", "processing element", 
-          "power and", "people in", "ovens and", "out arithmetic", 
-          "other computers", "operating system", "of computers", 
-          "of computer", "of at", "network or", "MOS transistor", 
-          "More sophisticated", "monitor screens", "Modern computers", 
-          "mobile devices", "millions of", "microcomputer revolution", 
-          "memory chips", "may also", "main software", "machine that", 
-          "logical operations", "linked and", "like smartphones", 
-          "like personal", "like microwave", "like industrial", "least one", 
-          "late 1950s", "late 1940s", "known as", "is a", 
-          "integrated circuit", "instruments like", "in response", 
-          "industrial and", "includes the", "include input", "hundreds of", 
-          "have aided", "guiding patterns", "generic sets", 
-          "function together", "form of", "for looms", "for calculations", 
-          "factory devices", "era touchscreen", "equipment needed", 
-          "enable computers", "element carries", "electrical machines", 
-          "Early in", "Early computers", "early 21st", "early 20th", 
-          "during World", "dramatically ever", "doing calculations", 
-          "digital electronic", "did specialized", "devices were", 
-          "counts increasing", "control unit", "consumer products", 
-          "computer that", "Computers power", "computers have", 
-          "computers and", "computer consists", "computer cluster", 
-          "chip technologies", "central processing", "carry out", 
-          "can perform", "can change", "can be", "calculating machines", 
-          "by the", "by Moore", "built to", "both functions", 
-          "been increasing", "based MOSFET", "a wide", "automate long", 
-          "at a", "as well", "as predicted", "as general", "as control", 
-          "as are", "arithmetic or", "are included", "an external", 
-          "and users", "and used", "and the", "and peripheral", 
-          "and monolithic", "and logical", "and input", "and a", 
-          "analog calculations", "a modern", "a microprocessor", "along with",
-           "allow information", "aided design", "a group", "a computer", 
-          "A broad", "20th to"}, "CountGroup" -> 1|>}, "AllowEmbedding" -> 
-     True, "InitialShape" -> 
-     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
-        1, {All, "CountGroup"} -> 1|>, 
+    "InitialData" -> {<|
+       "Match" -> "These programs enable computer", 
+        "Position" -> {{197, 226}}|>, <|
+       "Match" -> "to a group of computer", "Position" -> {{456, 477}}|>, <|
+       "Match" -> "such as a computer", "Position" -> {{519, 536}}|>, <|
+       "Match" -> "network or computer", "Position" -> {{538, 556}}|>, <|
+       "Match" -> "and consumer products use computer", 
+        "Position" -> {{595, 628}}|>, <|
+       "Match" -> "like industrial robots and computer", 
+        "Position" -> {{760, 794}}|>, <|
+       "Match" -> "purpose devices like personal computer", 
+        "Position" -> {{829, 866}}|>, <|
+       "Match" -> "of millions of other computer", 
+        "Position" -> {{957, 985}}|>, <|
+       "Match" -> "power and versatility of computer", 
+        "Position" -> {{1767, 1799}}|>, <|
+       "Match" -> "a modern computer", "Position" -> {{2030, 2046}}|>, <|
+       "Match" -> "with some type of computer", 
+        "Position" -> {{2174, 2199}}|>}, "AllowEmbedding" -> True, 
+     "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
-            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 4, 
+           "Match" -> TypeSystem`PackageScope`AtomShape[425.6], "Position" -> 
+            TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
         DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
-       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
          TypeSystem`Vector[
-          TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 4], "Meta" -> <||>, "RowTarget" -> 20, 
-     "ColumnTarget" -> 10, "Shape" -> 
-     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
-        1, {All, "CountGroup"} -> 1|>, 
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 11], "Meta" -> <||>, 
+     "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
        TypeSystem`PackageScope`Limited[
         TypeSystem`PackageScope`ColumnShape[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
-            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 4, 
+           "Match" -> TypeSystem`PackageScope`AtomShape[425.6], "Position" -> 
+            TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
         DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
-       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
          TypeSystem`Vector[
-          TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 4], "Path" -> {}, "DisplayedRowCount" -> 
-     4, "DisplayedColumnCount" -> 2, "DataRowCount" -> 4, "DataColumnCount" -> 
-     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
-     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 11], "Path" -> {}, 
+     "DisplayedRowCount" -> 11, "DisplayedColumnCount" -> 2, "DataRowCount" -> 
+     11, "DataColumnCount" -> 2, "SortPaths" -> {}, "SortDirections" -> {}, 
+     "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
     TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
     TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
@@ -1727,9 +1168,9 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
-                 Mouseover["Matches", 
+                 Mouseover["Match", 
                   Style[
-                  "Matches", FontColor -> 
+                  "Match", FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1743,11 +1184,13 @@ Cell[BoxData[
                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{All, "Matches"}, 
-                   1]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Match"}, 1]]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{All, "Matches"}, 
-                "ColumnHeader", True], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Match"}, "ColumnHeader", True], "Mouse"], 
               ImageSize -> {{1, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
              GrayLevel[0.95], Alignment -> {Left, Baseline}], 
@@ -1756,9 +1199,9 @@ Cell[BoxData[
               Annotation[
                EventHandler[
                 MouseAppearance[
-                 Mouseover["CountGroup", 
+                 Mouseover["Position", 
                   Style[
-                  "CountGroup", FontColor -> 
+                  "Position", FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1772,182 +1215,366 @@ Cell[BoxData[
                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{
-                   All, "CountGroup"}, 1]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Position"}, 1]]], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{All, "CountGroup"}, 
-                "ColumnHeader", True], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Position"}, "ColumnHeader", False], "Mouse"], 
               ImageSize -> {{1, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
-             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+             GrayLevel[0.95], Alignment -> {Center, Baseline}], 
+            SpanFromLeft}, {
+            Item[
+             Pane[
+              Annotation["These programs enable computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  Style[{"in the"}, ShowStringCharacters -> False], 
-                  Style[
-                   Style[{"in the"}, ShowStringCharacters -> False], 
-                   FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{1, 
-                    Key["Matches"]}, 4]]], 
+               RawBoxes["197"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{1, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}]], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["5"], 
+               RawBoxes["226"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{1, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  
-                  Style[{"to be", "of operations"}, ShowStringCharacters -> 
-                   False], 
-                  Style[
-                   Style[{"to be", "of operations"}, ShowStringCharacters -> 
-                    False], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{2, 
-                    Key["Matches"]}, 4]]], 
+              Annotation["to a group of computer", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{2, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}]], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["3"], 
+               RawBoxes["456"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{2, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["477"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  
-                  Style[{"The first", "such as", "range of", 
-                    "purpose devices", "Peripheral devices", "output devices",
-                     "leading to", "A computer"}, ShowStringCharacters -> 
-                   False], 
-                  Style[
-                   
-                   Style[{"The first", "such as", "range of", 
-                    "purpose devices", "Peripheral devices", "output devices",
-                     "leading to", "A computer"}, ShowStringCharacters -> 
-                    False], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{3, 
-                    Key["Matches"]}, 4]]], 
+              Annotation["such as a computer", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{3, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}]], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["2"], 
+               RawBoxes["519"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{3, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["536"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  Style[
-                   Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 164], " }\[ThinSpace]"}], 
-                   GrayLevel[0.5]], 
-                  Style[
-                   Style[
-                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 164], " }\[ThinSpace]"}], 
-                    GrayLevel[0.5]], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                   "cb7bed39-ca57-4555-9350-3870023cf584"]][{4, 
-                    Key["Matches"]}, 4]]], 
+              Annotation["network or computer", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{4, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
-               GrayLevel[0.5]}], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["1"], 
+               RawBoxes["538"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-               "cb7bed39-ca57-4555-9350-3870023cf584"][{4, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["556"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["and consumer products use computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["595"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["628"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["like industrial robots and computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["760"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["794"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["purpose devices like personal computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["829"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["866"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["of millions of other computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["957"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["985"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["power and versatility of computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1767"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1799"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["a modern computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2030"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2046"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["with some type of computer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2174"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2199"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}]}}, 
@@ -1955,16 +1582,16 @@ Cell[BoxData[
            ContextMenu -> 
             Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
               Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
-                "cb7bed39-ca57-4555-9350-3870023cf584", {}, 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
                  TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
                 TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
-                 Block[{
-                   TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = {
-                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
                    
                    With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
@@ -2024,7 +1651,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                     TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    "cb7bed39-ca57-4555-9350-3870023cf584"]][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "remove"]], MenuEvaluator -> Automatic]], 
                     If[
@@ -2054,7 +1682,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
                     TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    "cb7bed39-ca57-4555-9350-3870023cf584"]][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
                     MenuEvaluator -> Automatic]], Delimiter}, 
                     If[
@@ -2074,7 +1703,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "cb7bed39-ca57-4555-9350-3870023cf584"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
                     If[
@@ -2088,7 +1718,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "cb7bed39-ca57-4555-9350-3870023cf584"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
                     "Descending"]], MenuEvaluator -> Automatic], Nothing], 
                     If[
@@ -2102,7 +1733,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
                     TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                    "cb7bed39-ca57-4555-9350-3870023cf584"][
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
                     TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
                     MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
                     MenuItem["Copy Position to Clipboard", 
@@ -2155,7 +1787,8 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
               TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
               TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
               TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-              "cb7bed39-ca57-4555-9350-3870023cf584"][
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
              TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
             Not[
              FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
@@ -2234,13 +1867,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{698., {74.3544921875, 79.6455078125}},
+      ImageSizeCache->{520., {168.8544921875, 174.1455078125}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{698., {74.3544921875, 79.6455078125}}],
+     ImageSizeCache->{520., {168.8544921875, 174.1455078125}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -2252,9 +1885,9 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.8527472136219463`*^9},
- CellLabel->"Out[18]=",
- CellID->1627184866,ExpressionUUID->"4be77b50-9297-4b7d-b6b1-7998a819f6de"]
+ CellChangeTimes->{{3.8527543873063993`*^9, 3.852754395645337*^9}},
+ CellLabel->"Out[12]=",
+ CellID->197777060,ExpressionUUID->"e5399f14-5402-4667-8288-6a62e3eeb8c9"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2286,12 +1919,142 @@ Cell[BoxData[
   $Line = 0; Null]], "ExampleSection",
  CellID->1068768148,ExpressionUUID->"648a8349-2768-494f-b566-6930b80221fc"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[Cell[
   "Possible Issues", "ExampleSection",ExpressionUUID->
    "4ad5681e-63ad-4912-8742-3089b69ef1f8"],
   $Line = 0; Null]], "ExampleSection",
  CellID->1233039928,ExpressionUUID->"4fb44852-c93f-4357-bd43-7ab5ace58918"],
+
+Cell["When querying for a range of ngrams overlaps are not counted", \
+"ExampleText",
+ CellChangeTimes->{
+  3.8527546435850267`*^9, {3.852755928028202*^9, 3.852755961309122*^9}, {
+   3.852756106621194*^9, 3.852756110387065*^9}, {3.852756407562726*^9, 
+   3.8527564124826117`*^9}},
+ CellID->729629466,ExpressionUUID->"d1af76a5-3fb9-43a3-8fb3-673ca7527e88"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n24", "=", 
+   RowBox[{
+    RowBox[{"LexicalCases", "[", 
+     RowBox[{"$SampleStringLong", ",", " ", 
+      RowBox[{
+       RowBox[{"Words", "[", 
+        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+    "[", "\"\<Data\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.852756063253397*^9, 3.852756092718904*^9}},
+ CellLabel->"In[24]:=",
+ CellID->298801210,ExpressionUUID->"4d64a676-cedd-4524-a0ef-508306537d39"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "n24", "]"}]], "Input",
+ CellChangeTimes->{{3.852756095648959*^9, 3.852756097699469*^9}},
+ CellLabel->"In[25]:=",
+ CellID->130282444,ExpressionUUID->"bcb741fd-5513-4838-8972-5d61c329621f"],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{3.8527560979248447`*^9},
+ CellLabel->"Out[25]=",
+ CellID->366843636,ExpressionUUID->"f9714eca-8745-4000-823c-7a8d1e7a211f"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n2", "=", 
+   RowBox[{
+    RowBox[{"LexicalCases", "[", 
+     RowBox[{"$SampleStringLong", ",", " ", 
+      RowBox[{
+       RowBox[{"Words", "[", "2", "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+    "[", "\"\<Data\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n3", "=", 
+   RowBox[{
+    RowBox[{"LexicalCases", "[", 
+     RowBox[{"$SampleStringLong", ",", " ", 
+      RowBox[{
+       RowBox[{"Words", "[", "3", "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+    "[", "\"\<Data\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n4", "=", 
+   RowBox[{
+    RowBox[{"LexicalCases", "[", 
+     RowBox[{"$SampleStringLong", ",", " ", 
+      RowBox[{
+       RowBox[{"Words", "[", "4", "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+    "[", "\"\<Data\>\"", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.852755985616756*^9, 3.852756014982707*^9}},
+ CellLabel->"In[18]:=",
+ CellID->2105992981,ExpressionUUID->"80d006e8-ec44-456d-b158-5ff8963f6e1d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{
+   RowBox[{"Join", "@*", "Flatten"}], "@", 
+   RowBox[{"{", 
+    RowBox[{"n2", ",", "n3", ",", "n4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.852756020086458*^9, 3.852756048734756*^9}},
+ CellLabel->"In[21]:=",
+ CellID->1539813279,ExpressionUUID->"18ee6d3c-f877-493d-b7fb-07f89580dc67"],
+
+Cell[BoxData["28"], "Output",
+ CellChangeTimes->{3.852756050361084*^9},
+ CellLabel->"Out[21]=",
+ CellID->1302154141,ExpressionUUID->"ac718c5f-6e75-4146-900b-3969129aa15f"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Set ",
+ Cell[BoxData[
+  ButtonBox["Overlaps",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "1371c81b-b82e-4beb-971e-ec54422dc1cd"],
+ " to ",
+ Cell[BoxData[
+  ButtonBox["True",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "651cedd0-1836-4492-b1a0-520e0ffa467b"],
+ " and delete duplicates to get the unique ngrams"
+}], "ExampleText",
+ CellChangeTimes->{
+  3.8527546435850267`*^9, {3.852755928028202*^9, 3.852755961309122*^9}, {
+   3.852756106621194*^9, 3.852756110387065*^9}, {3.852756250170843*^9, 
+   3.8527562882031803`*^9}, {3.852756431810774*^9, 3.852756434439805*^9}},
+ CellID->327487047,ExpressionUUID->"98bf1010-1dbc-4a5e-ab2c-b41d79aa9554"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"LexicalCases", "[", 
+     RowBox[{"$SampleStringLong", ",", " ", 
+      RowBox[{
+       RowBox[{"Words", "[", 
+        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}], ",", 
+      RowBox[{"Overlaps", "->", "True"}]}], "]"}], "[", "\"\<Data\>\"", "]"}],
+    "//", "DeleteDuplicates"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.852756155827097*^9, 3.852756180763863*^9}, {
+  3.852756359597321*^9, 3.852756372906975*^9}},
+ CellLabel->"In[30]:=",
+ CellID->1978355465,ExpressionUUID->"41502f50-4389-44bf-bd78-8620466447b1"],
+
+Cell[BoxData["29"], "Output",
+ CellChangeTimes->{{3.852756159883581*^9, 3.8527561813069477`*^9}, {
+  3.852756362299769*^9, 3.852756373700961*^9}},
+ CellLabel->"Out[30]=",
+ CellID->986075408,ExpressionUUID->"3ce17a73-c879-4b16-ac95-41db36ba51c6"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -2322,14 +2085,14 @@ ExpressionUUID->"fc5713a8-edda-4e46-bcaa-9039cedea9b0"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[9445, 288, 154, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
+  Cell[50476, 1060, 154, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
    CellTags->"ExtendedExamples",
    CellID->224074875]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 121329, 2323}
+ {"ExtendedExamples", 100260, 2086}
  }
 *)
 (*NotebookFileOutline
@@ -2372,115 +2135,113 @@ Cell[2883, 91, 103, 1, 63, "ObjectName",ExpressionUUID->"937b4b02-8238-4cea-98f9
 Cell[2989, 94, 1238, 32, 116, "Usage",ExpressionUUID->"1507e4d6-b013-40d0-962c-d7364c7841b8",
  CellID->1062607464],
 Cell[4230, 128, 433, 11, 25, "Notes",ExpressionUUID->"5893ab31-3beb-4852-82e2-495cd0eb6500",
- CellID->769638996]
+ CellID->769638996],
+Cell[4666, 141, 607, 15, 28, "Notes",ExpressionUUID->"8fb9c5ee-2468-4ca8-9870-8e37d5fc2e2f",
+ CellID->362108972],
+Cell[5276, 158, 585, 15, 28, "Notes",ExpressionUUID->"af528c16-b4e5-4dc6-b240-4ec9062dff19",
+ CellID->790896493]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4700, 144, 113, 1, 44, "TutorialsSection",ExpressionUUID->"bb1f70a6-df09-4bad-8554-49eee230be69",
+Cell[5898, 178, 113, 1, 44, "TutorialsSection",ExpressionUUID->"bb1f70a6-df09-4bad-8554-49eee230be69",
  CellID->1028599891],
-Cell[4816, 147, 100, 1, 16, "Tutorials",ExpressionUUID->"e74dce76-6e1b-4592-a9c7-21de0dcf66cb",
+Cell[6014, 181, 100, 1, 16, "Tutorials",ExpressionUUID->"e74dce76-6e1b-4592-a9c7-21de0dcf66cb",
  CellID->435009687]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4953, 153, 138, 1, 31, "RelatedDemonstrationsSection",ExpressionUUID->"e3e69768-cf1f-4a33-9f84-7485c1acef51",
+Cell[6151, 187, 138, 1, 31, "RelatedDemonstrationsSection",ExpressionUUID->"e3e69768-cf1f-4a33-9f84-7485c1acef51",
  CellID->1173475021],
-Cell[5094, 156, 112, 1, 16, "RelatedDemonstrations",ExpressionUUID->"f6a900e0-5227-492e-835d-12daa04ae45a",
+Cell[6292, 190, 112, 1, 16, "RelatedDemonstrations",ExpressionUUID->"f6a900e0-5227-492e-835d-12daa04ae45a",
  CellID->104863899]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5243, 162, 120, 1, 31, "RelatedLinksSection",ExpressionUUID->"a1c87ad9-d7c4-4d8f-a3ed-0a85668a83ac",
+Cell[6441, 196, 120, 1, 31, "RelatedLinksSection",ExpressionUUID->"a1c87ad9-d7c4-4d8f-a3ed-0a85668a83ac",
  CellID->1510959953],
-Cell[5366, 165, 103, 1, 16, "RelatedLinks",ExpressionUUID->"ca1fe537-b7f1-4bcc-b96c-220a7ade44af",
+Cell[6564, 199, 103, 1, 16, "RelatedLinks",ExpressionUUID->"ca1fe537-b7f1-4bcc-b96c-220a7ade44af",
  CellID->709804296]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5506, 171, 109, 1, 31, "SeeAlsoSection",ExpressionUUID->"ebacdaab-358a-4cfe-b630-a03088bce8a0",
+Cell[6704, 205, 109, 1, 31, "SeeAlsoSection",ExpressionUUID->"ebacdaab-358a-4cfe-b630-a03088bce8a0",
  CellID->409143787],
-Cell[5618, 174, 98, 1, 16, "SeeAlso",ExpressionUUID->"ec3c04be-1fff-4cfa-9605-35d853113aee",
+Cell[6816, 208, 98, 1, 16, "SeeAlso",ExpressionUUID->"ec3c04be-1fff-4cfa-9605-35d853113aee",
  CellID->236990415]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5753, 180, 184, 2, 31, "MoreAboutSection",ExpressionUUID->"d1e27cf6-f7ca-41db-aa4b-b1f537effaaf",
+Cell[6951, 214, 184, 2, 31, "MoreAboutSection",ExpressionUUID->"d1e27cf6-f7ca-41db-aa4b-b1f537effaaf",
  CellID->1663223367],
-Cell[5940, 184, 97, 1, 16, "MoreAbout",ExpressionUUID->"65e204d0-4547-4ab7-bda2-bd3f68c3c71d",
+Cell[7138, 218, 97, 1, 16, "MoreAbout",ExpressionUUID->"65e204d0-4547-4ab7-bda2-bd3f68c3c71d",
  CellID->496170]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6074, 190, 412, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"de59a555-1b50-460b-b753-dd08d8141d1b",
+Cell[7272, 224, 412, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"de59a555-1b50-460b-b753-dd08d8141d1b",
  CellID->1896678249],
-Cell[6489, 203, 220, 3, 27, "Input",ExpressionUUID->"7896e8df-1be9-413b-bc9c-c577ec7af727",
+Cell[7687, 237, 220, 3, 27, "Input",ExpressionUUID->"7896e8df-1be9-413b-bc9c-c577ec7af727",
  CellID->1816155740],
-Cell[6712, 208, 186, 2, 22, "ExampleText",ExpressionUUID->"ba24964a-6b48-4781-a420-e8cad2e40e02",
+Cell[7910, 242, 298, 4, 22, "ExampleText",ExpressionUUID->"ba24964a-6b48-4781-a420-e8cad2e40e02",
  CellID->1396638090],
 Cell[CellGroupData[{
-Cell[6923, 214, 222, 4, 27, "Input",ExpressionUUID->"465093eb-5b71-4f21-8563-8a519be9755c",
- CellID->206702419],
-Cell[7148, 220, 239, 5, 26, "Output",ExpressionUUID->"92b8070e-c631-496d-bd2f-3f1eeba37f88",
- CellID->1234051995]
-}, Open  ]],
-Cell[7402, 228, 186, 2, 22, "ExampleText",ExpressionUUID->"d10c1c7d-df90-45b5-92c1-080b20364b50",
- CellID->314817239],
-Cell[CellGroupData[{
-Cell[7613, 234, 224, 4, 27, "Input",ExpressionUUID->"5c265e2e-892b-4eb7-8bb2-2479e0ec45ab",
- CellID->1564015144],
-Cell[7840, 240, 303, 6, 26, "Output",ExpressionUUID->"9109f327-5e4e-441a-aec0-007c67ee29e5",
- CellID->912662360]
-}, Open  ]],
-Cell[8158, 249, 237, 3, 22, "ExampleText",ExpressionUUID->"6f34bfe1-610f-478c-bc49-8082e6609963",
- CellID->1788077646],
-Cell[CellGroupData[{
-Cell[8420, 256, 247, 5, 27, "Input",ExpressionUUID->"4a16a071-8367-4fc5-bcf3-aa4f19fbe61b",
- CellID->2049080563],
-Cell[8670, 263, 726, 19, 87, "Output",ExpressionUUID->"e4620c90-4f54-4724-9276-36af043b650c",
- CellID->1835219876]
+Cell[8233, 250, 445, 10, 27, "Input",ExpressionUUID->"d94a8792-dff6-423e-af19-550a884e4c6a",
+ CellID->478351208],
+Cell[8681, 262, 41746, 792, 356, "Output",ExpressionUUID->"67b8c3e9-a65a-4e57-b00a-a63bfcd36306",
+ CellID->112853783]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9445, 288, 154, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
+Cell[50476, 1060, 154, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
  CellTags->"ExtendedExamples",
  CellID->224074875],
 Cell[CellGroupData[{
-Cell[9624, 294, 242, 5, 33, "ExampleSection",ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89",
+Cell[50655, 1066, 242, 5, 33, "ExampleSection",ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89",
  CellID->1487590934],
-Cell[9869, 301, 102, 1, 22, "ExampleText",ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573",
+Cell[50900, 1073, 203, 3, 22, "ExampleText",ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573",
  CellID->738405596],
 Cell[CellGroupData[{
-Cell[9996, 306, 390, 8, 27, "Input",ExpressionUUID->"2bcf239c-8dc0-4dfd-8fe2-f2907ded8cb4",
- CellID->527026463],
-Cell[10389, 316, 4510, 91, 53, "Output",ExpressionUUID->"aeac82d2-ff9e-4359-bfa7-b7b24c532067",
- CellID->1895116563]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[14936, 412, 305, 6, 27, "Input",ExpressionUUID->"371ed679-370d-446f-8d0d-df4805f98ead",
- CellID->1894105684],
-Cell[15244, 420, 37925, 635, 53, "Output",ExpressionUUID->"04ba254f-e1b4-4ff3-886a-553cc91408b7",
- CellID->515290221]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[53206, 1060, 354, 8, 27, "Input",ExpressionUUID->"7f1e4796-446a-4b5a-b3fa-40ce1e9492a1",
- CellID->993543782],
-Cell[53563, 1070, 30159, 539, 112, "Output",ExpressionUUID->"05f266be-bff4-4703-bf2a-5f34e22c68fc",
- CellID->1726348754]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[83759, 1614, 380, 9, 27, "Input",ExpressionUUID->"72b2e4aa-8262-4541-b04c-9b3d205a828d",
- CellID->91953861],
-Cell[84142, 1625, 34895, 631, 166, "Output",ExpressionUUID->"4be77b50-9297-4b7d-b6b1-7998a819f6de",
- CellID->1627184866]
+Cell[51128, 1080, 423, 10, 27, "Input",ExpressionUUID->"037397d2-0411-455c-a811-4954e9aa764b",
+ CellID->263298292],
+Cell[51554, 1092, 41955, 797, 356, "Output",ExpressionUUID->"e5399f14-5402-4667-8288-6a62e3eeb8c9",
+ CellID->197777060]
 }, Open  ]]
 }, Open  ]],
-Cell[119064, 2260, 264, 5, 33, "ExampleSection",ExpressionUUID->"a5e67f23-a8ed-4f4b-9724-1c16fd12b6c3",
+Cell[93536, 1893, 264, 5, 33, "ExampleSection",ExpressionUUID->"a5e67f23-a8ed-4f4b-9724-1c16fd12b6c3",
  CellID->936209364],
-Cell[119331, 2267, 243, 5, 21, "ExampleSection",ExpressionUUID->"cf13964c-54ab-49d1-be9a-3a80068d6b9a",
+Cell[93803, 1900, 243, 5, 21, "ExampleSection",ExpressionUUID->"cf13964c-54ab-49d1-be9a-3a80068d6b9a",
  CellID->258099179],
-Cell[119577, 2274, 248, 5, 21, "ExampleSection",ExpressionUUID->"07d01c1b-9a75-4c60-90fc-e008cbedd9e4",
+Cell[94049, 1907, 248, 5, 21, "ExampleSection",ExpressionUUID->"07d01c1b-9a75-4c60-90fc-e008cbedd9e4",
  CellID->658350956],
-Cell[119828, 2281, 259, 5, 21, "ExampleSection",ExpressionUUID->"648a8349-2768-494f-b566-6930b80221fc",
+Cell[94300, 1914, 259, 5, 21, "ExampleSection",ExpressionUUID->"648a8349-2768-494f-b566-6930b80221fc",
  CellID->1068768148],
-Cell[120090, 2288, 252, 5, 21, "ExampleSection",ExpressionUUID->"4fb44852-c93f-4357-bd43-7ab5ace58918",
+Cell[CellGroupData[{
+Cell[94584, 1923, 252, 5, 21, "ExampleSection",ExpressionUUID->"4fb44852-c93f-4357-bd43-7ab5ace58918",
  CellID->1233039928],
-Cell[120345, 2295, 256, 5, 21, "ExampleSection",ExpressionUUID->"f12730a5-cfb6-4c12-8a8a-57e21223c5c4",
+Cell[94839, 1930, 355, 6, 22, "ExampleText",ExpressionUUID->"d1af76a5-3fb9-43a3-8fb3-673ca7527e88",
+ CellID->729629466],
+Cell[95197, 1938, 476, 12, 27, "Input",ExpressionUUID->"4d64a676-cedd-4524-a0ef-508306537d39",
+ CellID->298801210],
+Cell[CellGroupData[{
+Cell[95698, 1954, 226, 4, 27, "Input",ExpressionUUID->"bcb741fd-5513-4838-8972-5d61c329621f",
+ CellID->130282444],
+Cell[95927, 1960, 172, 3, 26, "Output",ExpressionUUID->"f9714eca-8745-4000-823c-7a8d1e7a211f",
+ CellID->366843636]
+}, Open  ]],
+Cell[96114, 1966, 1013, 27, 66, "Input",ExpressionUUID->"80d006e8-ec44-456d-b158-5ff8963f6e1d",
+ CellID->2105992981],
+Cell[CellGroupData[{
+Cell[97152, 1997, 344, 8, 27, "Input",ExpressionUUID->"18ee6d3c-f877-493d-b7fb-07f89580dc67",
+ CellID->1539813279],
+Cell[97499, 2007, 171, 3, 26, "Output",ExpressionUUID->"ac718c5f-6e75-4146-900b-3969129aa15f",
+ CellID->1302154141]
+}, Open  ]],
+Cell[97685, 2013, 693, 17, 26, "ExampleText",ExpressionUUID->"98bf1010-1dbc-4a5e-ab2c-b41d79aa9554",
+ CellID->327487047],
+Cell[CellGroupData[{
+Cell[98403, 2034, 598, 14, 47, "Input",ExpressionUUID->"41502f50-4389-44bf-bd78-8620466447b1",
+ CellID->1978355465],
+Cell[99004, 2050, 245, 4, 26, "Output",ExpressionUUID->"3ce17a73-c879-4b16-ac95-41db36ba51c6",
+ CellID->986075408]
+}, Open  ]]
+}, Open  ]],
+Cell[99276, 2058, 256, 5, 33, "ExampleSection",ExpressionUUID->"f12730a5-cfb6-4c12-8a8a-57e21223c5c4",
  CellID->484876346],
-Cell[120604, 2302, 250, 5, 21, "ExampleSection",ExpressionUUID->"e10ce060-7acf-49b0-949b-f31f14bdff97",
+Cell[99535, 2065, 250, 5, 21, "ExampleSection",ExpressionUUID->"e10ce060-7acf-49b0-949b-f31f14bdff97",
  CellID->1763790504]
 }, Open  ]]
 }
