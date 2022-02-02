@@ -102,7 +102,7 @@ optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 (* Expressions *)
 extractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 
-$ValidLexicalTokens = (_TextType|_Opt|_Bounded)
+$ValidLexicalTokens = (_TextType|_Opt|_Bounded|_Words)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
 ValidateLexicalToken[TextType[_String]] := True
@@ -111,6 +111,8 @@ ValidateLexicalToken[Opt[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
 ValidateLexicalToken[Opt[opt_]] := LexicalPatternQ[opt]
 ValidateLexicalToken[Bounded[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
 ValidateLexicalToken[Bounded[e:Except[_Alternatives]]] := LexicalPatternQ[e]
+ValidateLexicalToken[Words[n_Integer]] := True
+ValidateLexicalToken[Words[m_Integer, n_Integer]] := True
 ValidateLexicalToken[expr_] := Message[LexicalCases::invld, expr];False
 
 LexicalCases::invld = "`1` is not a valid lexical token"
@@ -163,14 +165,16 @@ TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAltern
 TextElementFormat[Opt[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 TextElementFormat[AnyOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
 TextElementFormat[FixedOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
+TextElementFormat[Words[1]] := TextElement[{args},<|"GrammaticalUnit" -> "Word"|>];
+TextElementFormat[Words[args__]] := TextElement[{Span[args]},<|"GrammaticalUnit" -> "Words"|>];
 TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 TextElementFormat[s_Symbol] := s;
-TextElementFormat[h_] := TextElementFormat[Extract[0][h],Extract[1][h]];
+TextElementFormat[h_] := TextElementFormat[Extract[0][h], ConfirmQuiet[Extract[1][h], All, Null, "TextElementFormat`ExtractPart"]];
 TextElementFormat[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
 TextElementFormat[h_, args__] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
 
-Structure[se_StringExpression] := TextElementFormat[se];
+Structure[se_StringExpression] := Enclose[TextElementFormat[se], Identity, "TextElementFormat`ExtractPart"];
 Structure[(Rule|RuleDelayed)[se_StringExpression,_]] := Construct[TextElementFormat, StripNamedPattern[se]];
 
 (* Service Utils *)
@@ -205,11 +209,6 @@ ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"
 
 (* Patterns *)
 
-SetAttributes[Words, Listable]
-Words[1] := RegularExpression["\\b\\w+\\b"]
-Words[n_Integer] := RegularExpression@StringRiffle[Table["\\b\\w+\\b", n], "\\s"]
-Words[m_Integer, n_Integer] := Alternatives@@Words[Range[m,n]]
-
 Sandwich[bread_, expr_]:= bread~~expr~~bread
 Sandwich[bread_][expr_] := Sandwich[bread, expr]
 
@@ -220,12 +219,19 @@ $EndTokenBoundary = (WordBoundary | " " | EndOfString | EndOfLine)
 
 ApplyTokenBoundary[expr_] := $StartTokenBoundary~~expr~~$EndTokenBoundary
 
+$WordToken = ApplyTokenBoundary[WordCharacter..]
+
+iGetRegEx[expr_] := First[StringPattern`PatternConvert[expr]]
+
 iExpandPattern[expr_]:= ReplaceAll[expr, {
 	Opt[opt_Alternatives] :> (Map[iExpandPattern /* ApplyTokenBoundary][opt]~Join~Alternatives[" ",""]),
 	Opt[opt_] :> (Alternatives[ApplyTokenBoundary[iExpandPattern[opt]]]~Join~Alternatives[" ",""]),
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
 	Bounded[s:Except[_Alternatives]] :> (ApplyTokenBoundary[iExpandPattern[s]]),
-	Bounded[a_Alternatives] :> ApplyTokenBoundary[Map[iExpandPattern, a]]
+	Bounded[a_Alternatives] :> ApplyTokenBoundary[Map[iExpandPattern, a]],
+	Words[1] :> $WordToken,
+	Words[n_Integer] :> StringExpression[$WordToken, Sequence@@ConstantArray[$WordToken, n-1]],
+	Words[m_Integer, n_Integer] :> Alternatives@@Array[iExpandPattern@*Words, n - 1, m]
 	}]
 
 ExpandPattern[se_?LexicalPatternQ] := iExpandPattern[se]
@@ -594,7 +600,7 @@ GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Monitor
 iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Module[
 	{MTC, DS = Dataset[data]},
 	MTC = DeleteMissing[GetDatasetCounts[DS, sourceType], 1, 1][Total, "Count"];
-	LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "Structure" -> Structure[StripNamedPattern@se] |>]
+	Enclose@LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "Structure" -> Structure[StripNamedPattern@se] |>]
 ]
 
 (* Summary Utils *)
