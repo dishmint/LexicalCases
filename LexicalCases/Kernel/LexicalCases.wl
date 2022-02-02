@@ -158,24 +158,32 @@ articlePluralize[1] := "article"
 articlePluralize[_Integer?Positive] := "articles"
 
 (* Format *)
-SetAttributes[TextElementFormat, HoldAll]
-TextElementFormat[StringExpression[args___]] := TextElementFormat[StringExpression, args];
-TextElementFormat[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
-TextElementFormat[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[TextElementFormat][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
-TextElementFormat[Opt[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "Optional"|>];
-TextElementFormat[AnyOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
-TextElementFormat[FixedOrder[args__]] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
-TextElementFormat[Words[1]] := TextElement[{args},<|"GrammaticalUnit" -> "Word"|>];
-TextElementFormat[Words[args__]] := TextElement[{Span[args]},<|"GrammaticalUnit" -> "Words"|>];
-TextElementFormat[a_Alternatives] := TextElement[PostProcessAlternatives[Map[TextElementFormat][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
-TextElementFormat[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
-TextElementFormat[s_Symbol] := s;
-TextElementFormat[h_] := TextElementFormat[Extract[0][h], ConfirmQuiet[Extract[1][h], All, Null, "TextElementFormat`ExtractPart"]];
-TextElementFormat[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
-TextElementFormat[h_, args__] := TextElement[Map[TextElementFormat][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
+SetAttributes[FormatToken, HoldAll]
+FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args];
+FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[Opt[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
+FormatToken[AnyOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
+FormatToken[FixedOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
+FormatToken[Words[1]] := TextElement[{args},<|"GrammaticalUnit" -> "Word"|>];
+FormatToken[Words[args__]] := TextElement[{Span[args]},<|"GrammaticalUnit" -> "Words"|>];
+FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"|>];
+FormatToken[HoldPattern[__]] := TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
+FormatToken[HoldPattern[___]] := TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
+FormatToken[HoldPattern[h:(Blank|BlankSequence|BlankNullSequence)[type_]]] := TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
+FormatToken[a_Alternatives] := TextElement[PostProcessAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
+FormatToken[s_Symbol] := s;
+FormatToken[h:Except[_Blank|_BlankSequence|_BlankNullSequence]] := With[{head = Head[h], arg = Check[Extract[1][h], $Failed, {Extract::partw}]}, FormatToken[head, arg]];
+FormatToken[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[t_, $Failed] := Confirm[$Failed, Message[FormatToken::nvld, t], "FormatToken`InvalidToken"]
+FormatToken[h_, args__] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
 
-Structure[se_StringExpression] := Enclose[TextElementFormat[se], Identity, "TextElementFormat`ExtractPart"];
-Structure[(Rule|RuleDelayed)[se_StringExpression,_]] := Construct[TextElementFormat, StripNamedPattern[se]];
+FormatToken::nvld = "`1` is not supported in FormatToken"
+
+SetAttributes[Structure, HoldAll]
+Structure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "FormatToken`InvalidToken"];
+Structure[(Rule|RuleDelayed)[expr_?LexicalPatternQ,_]] := Enclose[Construct[FormatToken, StripNamedPattern[expr]], Identity, "FormatToken`InvalidToken"];
 
 (* Service Utils *)
 $LexicalCasesServices = {"Wikipedia"}
