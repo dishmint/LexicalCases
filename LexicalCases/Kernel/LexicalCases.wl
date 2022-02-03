@@ -385,6 +385,11 @@ LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:Optio
 		]
 	]
 
+exprMsg[expr_String]:= "\""<> expr <> "\""
+exprMsg[expr:Except[_String]]:= expr
+
+LexicalCases::nofl = "No files found with query `1`"
+
 LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[
@@ -392,6 +397,7 @@ LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, o
 				files = Map[File][TextSearch[index, query][All, "Location"]],
 				LPC
 				},
+			ConfirmAssert[Not@*MatchQ[{}]@files, Message[LexicalCases::nofl, exprMsg[query]]];
 			LPC = iLexicalCases[files, se, opts];
 			GenerateLexicalSummary[LPC, "SearchIndex", se]
 			]
