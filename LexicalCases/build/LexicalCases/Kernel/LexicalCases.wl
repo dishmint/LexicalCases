@@ -368,21 +368,32 @@ LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExten
 LexicalCases[input:List[__String],se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[
-			{files = Map[File][input]},
-			iLexicalCases[files, se, opts]
+			{files = Map[File][input], LPC},
+			LPC = iLexicalCases[files, se, opts];
+			GenerateLexicalSummary[LPC, "File", se]
 			]
 		]
 
+oSourceType[List[__File]] := "File"
+oSourceType[List[__String]] := "Text"
+
 LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
-	iLexicalCases[input, se, opts]
+	Module[
+		{LPC = iLexicalCases[input, se, opts], sourcetype = oSourceType[input]},
+		GenerateLexicalSummary[LPC, sourcetype, se]
+		]
 	]
 
 LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[
-			{files = Map[File][TextSearch[index, query][All, "Location"]]},
-			iLexicalCases[files, se, opts]
+			{
+				files = Map[File][TextSearch[index, query][All, "Location"]],
+				LPC
+				},
+			LPC = iLexicalCases[files, se, opts];
+			GenerateLexicalSummary[LPC, "SearchIndex", se]
 			]
 		]
 
@@ -630,7 +641,7 @@ iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Module
 
 (* Summary Utils *)
 GetDatasetCounts[ds_Dataset,"Text"] := ds[All, <|"Match" -> "Match", "Count" -> "Position" /* Length|>]
-GetDatasetCounts[ds_Dataset, "Wikipedia"] := ds[GroupBy["Match"], Map[KeyDrop[{"Article", "Match"}]]][All, Total@*Map[Length], "Position"] // KeyValueMap[<|"Match" -> #1, "Count" -> #2|> &]
+GetDatasetCounts[ds_Dataset, "Wikipedia"|"SearchIndex"] := ds[GroupBy["Match"], Map[KeyDrop[{"Article", "Match"}]]][All, Total@*Map[Length], "Position"] // KeyValueMap[<|"Match" -> #1, "Count" -> #2|> &]
 
 CountGroups[ds_Dataset] := Query[
 		GroupBy[#Count&] /* KeyValueMap[<|"Matches" -> #2, "CountGroup" -> #1|> &],
