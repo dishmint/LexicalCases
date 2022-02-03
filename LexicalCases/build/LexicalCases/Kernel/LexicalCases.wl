@@ -362,8 +362,10 @@ Options[LexicalCases]={
 LexicalCases::unsupobj=Import::unsupobj;
 GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
-LexicalCases[file_File, args___] /; SupportedFileQ[file] := Module[{data = Import[file]}, LexicalCases[data, args]]
-LexicalCases[file_File, args___] := Message[LexicalCases::unsupobj, GetFileExtension[file]]
+LexicalCases[file_File, args___] := Enclose[
+	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupobj, GetFileExtension[file]]];
+	Module[{data = Import[file]}, LexicalCases[data, args]]
+]
 
 LexicalCases[input:List[__String],se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
@@ -392,14 +394,27 @@ LexicalCases::nofl = "No files found with query `1`"
 
 LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
-		Module[
-			{
-				files = Map[File][TextSearch[index, query][All, "Location"]],
-				LPC
-				},
-			ConfirmAssert[Not@*MatchQ[{}]@files, Message[LexicalCases::nofl, exprMsg[query]]];
-			LPC = iLexicalCases[files, se, opts];
-			GenerateLexicalSummary[LPC, "SearchIndex", se]
+		Enclose[
+			Module[
+				{
+					files = Map[File][TextSearch[index, query][All, "Location"]],
+					LPC
+					},
+				ConfirmAssert[Not@*MatchQ[{}]@files, Message[LexicalCases::nofl, exprMsg[query]]];
+				LPC = iLexicalCases[files, se, opts];
+				GenerateLexicalSummary[LPC, "SearchIndex", se]
+				],
+				Failure[
+					"NoFilesFound",
+					<|
+						"MessageTemplate" -> StringTemplate["No files found using `Query`. Try adjusting the query or using SearchQueryString"],
+						"MessageParameters" -> <|"Query" -> exprMsg[query]|>,
+						"Tag" -> #["Tag"],
+						"ConfirmationType" -> #["ConfirmationType"],
+						"HeldTest" -> #["HeldTest"]
+					|>
+				
+				]&
 			]
 		]
 
