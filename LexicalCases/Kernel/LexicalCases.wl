@@ -243,12 +243,12 @@ iExpand[expr_]:= ReplaceAll[expr, {
 
 iExpandPattern[se_?LexicalPatternQ] := iExpand[se]
 
-ExtractStringContentTypes[se_] := Splice[Cases[se, TextType[type_String] :> type, Infinity]];
-ExtractAlternativeContentTypes[se_] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
+ExtractStringContentTypes[se_] := Splice[Cases[se, TextType[type_String] :> type, {0, Infinity}]];
+ExtractAlternativeContentTypes[se_] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], {0, Infinity}]];
 
 ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[se]]
 
-ContentAssociation[st_String, (Rule|RuleDelayed)[se_?LexicalPatternQ,_]] := ContentAssociation[st, se]
+ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
 ContentAssociation[sourcetext_String, se_] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
 
