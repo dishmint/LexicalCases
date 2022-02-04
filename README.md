@@ -13,7 +13,7 @@ _v12.3+ supported_
 
 ## Usage
 
-LexicalCases takes a strings, files, or wiki-keywords as its first argument, and a lexical pattern to search for as its second argument. See the included documentation for more information.
+LexicalCases can search strings, files or wikipedia articles for a lexical pattern. See the included documentation for more information.
 
 <img width="992" alt="Screen Shot 2022-02-04 at 5 21 50 AM" src="https://user-images.githubusercontent.com/18143853/152512756-d19d2b1b-6472-45b1-b5d7-a73351021bc6.png">
 
