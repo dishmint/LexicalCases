@@ -13,11 +13,8 @@ _v12.3+ supported_
 
 ## Usage
 
-[LexicalCases](https://dishmint.github.io/LexicalCases/LexicalCases.html) takes a string as its first argument, and a lexical pattern (a [StringExpression](https://reference.wolfram.com/language/ref/StringExpression.html) including TextTypes) as its second argument. A [LexicalSummary](https://dishmint.github.io/LexicalCases/LexicalSummary.html) object is returned with properties to access and manipulate the results.
+LexicalCases takes a strings, files, or wiki-keywords as its first argument, and a lexical pattern to search for as its second argument. See the included documentation for more information.
 
-```Mathematica
-LexicalCases["This is a cool string", "This is a "~~TextType["Adjective"]~~" string"]]
-```
+<img width="992" alt="Screen Shot 2022-02-04 at 5 21 50 AM" src="https://user-images.githubusercontent.com/18143853/152512756-d19d2b1b-6472-45b1-b5d7-a73351021bc6.png">
 
-See the included documentation for more information.
 
