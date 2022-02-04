@@ -19,5 +19,5 @@ _v12.3+ supported_
 LexicalCases["This is a cool string", "This is a "~~TextType["Adjective"]~~" string"]]
 ```
 
-Visit the [documentation](https://dishmint.github.io/LexicalCases/) for additional examples.
+See the included documentation for more information.
 
