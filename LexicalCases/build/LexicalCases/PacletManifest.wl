@@ -11,33 +11,7 @@
             ,
             "Hash"
             ->
-            "95c8f04ee3ca1e818346404e8c686bf7aa15a308b553d340f44332f68519e8be"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Tests/ContentAssociation.wlt"
-            ]
-            ,
-            "Hash"
-            ->
-            "703ba5ad71a1907e65d1aab086a98822804e422aee7eb0410903960988313068"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Tests/ToWikipediaSearchQuery.wlt"
-            ]
-            ,
-            "Hash"
-            ->
-            "19825b088cb28fa50a35d9ee85634bcada7d5b075a911ac479c4d5398aebb1a4"
+            "8801fd3f3851e6b0a6b92440517f99d0f0f4756ab3b27cd05138ca965fa4c0f9"
                 
         |>
         ,
@@ -51,19 +25,6 @@
             "Hash"
             ->
             "809f307ec7b8c1e9cbc49b502be01d1021fdaf48745985db47b875bd0663f62a"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Tests/ExpandStringExpression.wlt"
-            ]
-            ,
-            "Hash"
-            ->
-            "3b49754631f5ebcd84aa37d4c1ec92b9ddfa3651159ad8ea92bfe3a469760d58"
                 
         |>
         ,
@@ -89,7 +50,7 @@
             ,
             "Hash"
             ->
-            "fe1d3a444bdb6edd5880d9c110efd629139bb561b1571cff2c3e13ac195a3c68"
+            "3b02c31030353a04a6c5f5bebafc43773415cb5876572204ec9d4a3f196e2086"
                 
         |>
         ,
@@ -97,27 +58,13 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/Bounded.nb"
+                "Documentation/English/ReferencePages/Symbols/BoundToken.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "3a26e83082c3dd7631db4572fcdcb075394e299feddfe82b6b4570d7c74eab02"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/ContentAssociation.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "1a731c8965947c9ab89bb83c43447b3a3723adc52c22d7e29d5e7eb22fb5cee8"
+            "89a682a46ebbbc9ab6869872221418a2b3bde189b60d084ca8b2bf17dd961eb7"
                 
         |>
         ,
@@ -131,7 +78,7 @@
             ,
             "Hash"
             ->
-            "a34ad716dc007833e3bf117c0ed67039f4fe50da6a3fd646ce43b3ebf92187fe"
+            "54004faee78cf24abf23c4b25853b93b126e1416f34ab60d0ad3a200903e99b8"
                 
         |>
         ,
@@ -145,35 +92,7 @@
             ,
             "Hash"
             ->
-            "328232f9fbb105a799eb31b3db38f6e77741262b1532ae95669528975a108e0d"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/ExpandStringExpression.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "d45469a7c8b5d5d746f2cd7e05009254146f31716b5ce5a7b84ddaacbb545e17"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/ExtractContentTypes.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "cbf6e0e3a4fe8e444041a7fbfd220b9ce86f40b78ea68816caaeda0606547f56"
+            "4c77815a96783f41e9cd775dc87b7e0b07869061e1af152880a3b6cca3d756e3"
                 
         |>
         ,
@@ -187,7 +106,7 @@
             ,
             "Hash"
             ->
-            "25e49758b33684eea4d5e4ac5d2af323a4d7c2a5cd3165af695ceb0c1274268f"
+            "61a3e4ca7aa45bf11cc85c4eaee72f84c4e4b2b9bb2d6b802438c9793e9fae77"
                 
         |>
         ,
@@ -201,7 +120,7 @@
             ,
             "Hash"
             ->
-            "97e1ef4163373230a5d674411177ec8e60fe9b2cc568ce37d1fe58da0b96846e"
+            "cc6c214359504ec3fa6cae4d9fda2196510d310333a086080f5ed4813d0b0948"
                 
         |>
         ,
@@ -209,13 +128,13 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/Opt.nb"
+                "Documentation/English/ReferencePages/Symbols/OptionalToken.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "068de5176376daa6fadf56f17d0eb61b2c574e5e29bab5815822b36f345a31d8"
+            "5c942658ef9c6cdb78748fd68a55acd09750e01751a0907ba77293f102bc19e0"
                 
         |>
         ,
@@ -229,21 +148,7 @@
             ,
             "Hash"
             ->
-            "662dde0aba06f9213de12699962807d460429302ddb09ee8ec536899c8b921f7"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/TextElementFormat.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "cd97efadaa2bd734a8b9c74e64833f2fdd617bea4fa1a78a7a1eadda0e99502b"
+            "c586851c227a03f85c9bb8d228e45d4002e6723b79eb43ae4cb6c8707fe8850d"
                 
         |>
         ,
@@ -257,7 +162,7 @@
             ,
             "Hash"
             ->
-            "d4a73514241e7b3f70f3e22f5bc20d2b053628b27873c0f03379884436effa2d"
+            "b694efd31f8153d71a6b9b1382429feef6be764d01c73b72749d0f50a7cae011"
                 
         |>
         ,
@@ -265,27 +170,13 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/ToWikipediaSearchQuery.nb"
+                "Documentation/English/ReferencePages/Symbols/WordToken.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "a5f68e9d7e0eb1b496eaf62ae96beaaa9214baab4796cf3905beacb68fae36ad"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
-                "Documentation/English/ReferencePages/Symbols/Words.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "a48c183e1daa469c87032462cc229f4cabea0090a70b8a8126afcc25ad934d04"
+            "0543939d0e65b095e0900cf14c4511cbb144786d9858975c9970e3d868d7bcb6"
                 
         |>
         ,
@@ -299,7 +190,7 @@
             ,
             "Hash"
             ->
-            "13d7ae9beb66696ca1a15b3644bb540d580858cad030803cd5b7bf5d13f9407b"
+            "7019e6739f1060432f113802bd952b12a645d226a3c6efd59f764a717c620772"
                 
         |>
         ,
@@ -313,7 +204,7 @@
             ,
             "Hash"
             ->
-            "5ed7d6bf662b4133c5536f48a6ed5d3876a53b8a4c81065228d984f933efafb4"
+            "253e128da347455514301d1b4c345da6962f7af0a29367931f2012f8db65b359"
                 
         |>
     }
