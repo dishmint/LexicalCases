@@ -22,25 +22,20 @@ LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<
 CountSummaryLowercase::usage = "CountSummaryLowercase[LexicalSummary[<>][\"Counts\"]] Converts matches to LowerCase and consolidates results\nCountSummaryLowercase[LexicalSummary[<>][\"CountGroups\"]] Converts matches to LowerCase and consolidates results"
 
 (* Patterns *)
-ExpandPattern::usage = "ExpandPattern[se] expands top level pattern objects in StringExpression se"
 
-ExpandStringExpression::usage = "ExpandStringExpression[se] expands symbols and patterns into final form for searching"
-
-ContentAssociation::usage = "ContentAssociation[source, se] extracts text-types from se and returns and returns an association of the form \"Type\" \[Rule] example1 | \[Ellipsis] | example$$i"
-ExtractContentTypes::usage = "ExtractContentTypes[se] extracts text content type specifications from se"
-
-Opt::usage = "Opt[se] matches se, \" \", or \"\""
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
-Bounded::usage = "Bounded[expr] sandwiches expr with boundaries\nBounded[s1|\[Ellipsis]|si] sandwiches the set of si with boundaries"
-Words::usage = "Words[n] represents n words separated by spaces\nWords[m,n] represents m to n words separated by spaces"
+OptionalToken::usage = "OptionalToken[se] matches se, \" \", or \"\""
+BoundToken::usage = "BoundToken[expr] sandwiches expr with boundaries\nBounded[s1|\[Ellipsis]|si] sandwiches the set of si with boundaries"
+WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces"
 Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
+
+ExpandPattern::usage = "ExpandPattern[patt] expands patt into a valid StringExpression"
 
 (* Format *)
 LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the StringExpression"
 
 (* Services *)
 $LexicalCasesServices::usage = "List of supported services"
-ToWikipediaSearchQuery::usage = "ConvertToWikipediaSearchQuery[se] converts se to a form suitable for WikipediaSearch"
 
 Begin["Private`"]
 
@@ -107,12 +102,12 @@ extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
 ValidateLexicalToken[TextType[_String]] := True
 ValidateLexicalToken[TextType[a_Alternatives]] := AllTrue[StringQ][List @@ a]
-ValidateLexicalToken[Opt[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[Opt[opt_]] := LexicalPatternQ[opt]
-ValidateLexicalToken[Bounded[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[Bounded[e:Except[_Alternatives]]] := LexicalPatternQ[e]
-ValidateLexicalToken[Words[n_Integer]] := True
-ValidateLexicalToken[Words[m_Integer, n_Integer]] := True
+ValidateLexicalToken[OptionalToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
+ValidateLexicalToken[OptionalToken[opt_]] := LexicalPatternQ[opt]
+ValidateLexicalToken[BoundToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
+ValidateLexicalToken[BoundToken[e:Except[_Alternatives]]] := LexicalPatternQ[e]
+ValidateLexicalToken[WordToken[n_Integer]] := True
+ValidateLexicalToken[WordToken[m_Integer, n_Integer]] := True
 ValidateLexicalToken[expr_] := Message[LexicalCases::invld, expr];False
 
 LexicalCases::invld = "`1` is not a valid lexical token"
@@ -124,7 +119,7 @@ LexicalPatternQ[expr_]:= Module[
 		se = Replace[expr, $ValidLexicalTokens :> " ", Infinity],
 		lt = extractLexicalTokens[expr]
 		},
-	Check[StringPattern`StringPatternQ[se] \[And] AllTrue[ValidateLexicalToken, lt], $Failed]
+	Check[StringPattern`StringPatternQ[se] \[Or] AllTrue[ValidateLexicalToken, lt], $Failed]
 		];
 LexicalPatternQ[Rule[expr_?LexicalPatternQ,_]]:= True;
 LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
@@ -132,9 +127,10 @@ LexicalPatternQ[expr_?StringPattern`StringPatternQ]:= True;
 
 
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pattern}]
+
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
-StripNames[True, se_StringExpression] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
-StripNames[True, (Rule|RuleDelayed)[se_StringExpression,_]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, HoldPattern[(Rule|RuleDelayed)[se_?LexicalPatternQ,_]]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
 
 ExtractAlternatives[List[a_Alternatives]] := a
@@ -158,15 +154,15 @@ articlePluralize[1] := "article"
 articlePluralize[_Integer?Positive] := "articles"
 
 (* Format *)
-SetAttributes[FormatToken, HoldAll]
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args];
 FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
 FormatToken[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
-FormatToken[Opt[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
+FormatToken[OptionalToken[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 FormatToken[AnyOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
 FormatToken[FixedOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
-FormatToken[Words[1]] := TextElement[{args},<|"GrammaticalUnit" -> "Word"|>];
-FormatToken[Words[args__]] := TextElement[{Span[args]},<|"GrammaticalUnit" -> "Words"|>];
+FormatToken[HoldPattern[WordToken[1]]] := TextElement[{1},<|"GrammaticalUnit" -> "Word"|>];
+FormatToken[HoldPattern[WordToken[n_Integer]]] := TextElement[{n},<|"GrammaticalUnit" -> "Words"|>];
+FormatToken[WordToken[args__Integer]] := TextElement[{Span[args]},<|"GrammaticalUnit" -> "Words"|>];
 FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"|>];
 FormatToken[HoldPattern[__]] := TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
 FormatToken[HoldPattern[___]] := TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
@@ -174,15 +170,16 @@ FormatToken[HoldPattern[h:(Blank|BlankSequence|BlankNullSequence)[type_]]] := Te
 FormatToken[a_Alternatives] := TextElement[PostProcessAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 FormatToken[s_Symbol] := s;
-FormatToken[h:Except[_Blank|_BlankSequence|_BlankNullSequence]] := With[{head = Head[h], arg = Check[Extract[1][h], $Failed, {Extract::partw}]}, FormatToken[head, arg]];
+FormatToken[atom_?AtomQ] := atom;
+FormatToken[h:Except[_Blank|_BlankSequence|_BlankNullSequence|_Words]] := With[{head = Head[h], arg = Check[Extract[1][h], $Failed, {Extract::partw, Extract::partd}]}, FormatToken[head, arg]];
 FormatToken[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
-FormatToken[t_, $Failed] := Confirm[$Failed, Message[FormatToken::nvld, t], "FormatToken`InvalidToken"]
+FormatToken[t_, $Failed] := Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]
 FormatToken[h_, args__] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
 
 FormatToken::nvld = "`1` is not supported in FormatToken"
 
 SetAttributes[LexicalStructure, HoldAll]
-LexicalStructure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "FormatToken`InvalidToken"];
+LexicalStructure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "InvalidToken"];
 LexicalStructure[(Rule|RuleDelayed)[expr_?LexicalPatternQ,_]] := Enclose[Construct[FormatToken, StripNamedPattern[expr]], Identity, "FormatToken`InvalidToken"];
 
 (* Service Utils *)
@@ -227,44 +224,46 @@ $EndTokenBoundary = (WordBoundary | " " | EndOfString | EndOfLine)
 
 ApplyTokenBoundary[expr_] := $StartTokenBoundary~~expr~~$EndTokenBoundary
 
+$WordAndContractionToken = ApplyTokenBoundary[(WordCharacter | "'")..]
 $WordToken = ApplyTokenBoundary[WordCharacter..]
 
-iGetRegEx[expr_] := First[StringPattern`PatternConvert[expr]]
-
-iExpandPattern[expr_]:= ReplaceAll[expr, {
-	Opt[opt_Alternatives] :> (Map[iExpandPattern /* ApplyTokenBoundary][opt]~Join~Alternatives[" ",""]),
-	Opt[opt_] :> (Alternatives[ApplyTokenBoundary[iExpandPattern[opt]]]~Join~Alternatives[" ",""]),
+iExpand[expr_]:= ReplaceAll[expr, {
+	OptionalToken[opt_Alternatives] :> (Map[iExpand /* ApplyTokenBoundary][opt]~Join~Alternatives[" ",""]),
+	OptionalToken[opt_] :> (Alternatives[ApplyTokenBoundary[iExpand[opt]]]~Join~Alternatives[" ",""]),
 	TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
-	Bounded[s:Except[_Alternatives]] :> (ApplyTokenBoundary[iExpandPattern[s]]),
-	Bounded[a_Alternatives] :> ApplyTokenBoundary[Map[iExpandPattern, a]],
-	Words[1] :> $WordToken,
-	Words[n_Integer] :> StringExpression[$WordToken, Sequence@@ConstantArray[$WordToken, n-1]],
-	Words[m_Integer, n_Integer] :> Alternatives@@Array[iExpandPattern@*Words, n - 1, m]
+	BoundToken[s:Except[_Alternatives]] :> (ApplyTokenBoundary[iExpand[s]]),
+	BoundToken[a_Alternatives] :> ApplyTokenBoundary[Map[iExpand, a]],
+	WordToken[1] :> $WordToken,
+	WordToken[n_Integer] :> StringExpression[$WordToken, Sequence@@ConstantArray[$WordToken, n-1]],
+	WordToken[m_Integer, n_Integer] :> Alternatives@@Array[iExpand@*WordToken, n - 1, m],
+	WordToken[1, "KeepContractions"] :> $WordAndContractionToken,
+	WordToken[n_Integer, "KeepContractions"] :> StringExpression[$WordAndContractionToken, Sequence@@ConstantArray[$WordAndContractionToken, n-1]],
+	WordToken[m_Integer, n_Integer, "KeepContractions"] :> Alternatives@@Array[iExpand@*(WordToken[#, "KeepContractions"]&), n - 1, m]
 	}]
 
-ExpandPattern[se_?LexicalPatternQ] := iExpandPattern[se]
+iExpandPattern[se_?LexicalPatternQ] := iExpand[se]
 
-ExtractStringContentTypes[se_StringExpression] := Splice[Cases[se, TextType[type_String] :> type, Infinity]];
-ExtractAlternativeContentTypes[se_StringExpression] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
+ExtractStringContentTypes[se_] := Splice[Cases[se, TextType[type_String] :> type, Infinity]];
+ExtractAlternativeContentTypes[se_] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], Infinity]];
 
-ExtractContentTypes[se_StringExpression] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[se]]
+ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[se]]
 
-ContentAssociation[st_String, (Rule|RuleDelayed)[se_StringExpression,_]] := ContentAssociation[st, se]
-ContentAssociation[sourcetext_String, se_StringExpression] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
+ContentAssociation[st_String, (Rule|RuleDelayed)[se_?LexicalPatternQ,_]] := ContentAssociation[st, se]
+ContentAssociation[sourcetext_String, se_] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
 
 ContentAlts[List[a_Alternatives]] := a
 ContentAlts[a_Alternatives] := a
 
-ExpandStringExpression[sourcetext_String, se_?LexicalPatternQ] :=
+ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
-		TRX = ExpandPattern[se];
+		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type_] :> ApplyTokenBoundary[ContentAlts[CA[type]]], Infinity]
+		Replace[TRX, TextType[type_String] :> ApplyTokenBoundary[ContentAlts[CA[type]]], Infinity]
 		]
 
-ExpandStringExpression[sourcetext_String, Rule[se_StringExpression, expr_]] := Rule[ExpandStringExpression[sourcetext, se], expr]
-ExpandStringExpression[sourcetext_String, RuleDelayed[se_StringExpression, expr_]] := RuleDelayed[ExpandStringExpression[sourcetext, se], expr]
+ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
+ExpandPattern[sourcetext_String, RuleDelayed[se_?LexicalPatternQ, expr_]] := RuleDelayed[ExpandPattern[sourcetext, se], expr]
 
 (* Wikipedia *)
 InsertAnd[l:List[_]] := l;
@@ -285,7 +284,7 @@ WikipediaSearchQuery[wsq_List,se_StringExpression] := Cases[List[(_List|_String)
 ToWikipediaSearchQuery[se_StringExpression]:= Module[
 	{cleanLexicalPattern, stage1},
 	cleanLexicalPattern = DeleteCases[List@@se, (_TextType | _Opt | _AnyOrder), All];
-	stage1 = ReplaceAll[cleanLexicalPattern, {Bounded[s_] :> s, Alternatives -> List}] // DeleteCases[" "];
+	stage1 = ReplaceAll[cleanLexicalPattern, {BoundToken[s_] :> s, Alternatives -> List}] // DeleteCases[" "];
 	Check[WikipediaSearchQuery[stage1, se] // StringReplace[(" " ..) -> " "] // StringTrim, Return[$Failed, Module]]
 	]
 
@@ -302,10 +301,10 @@ WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{Lexi
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]]
 
 
-iGetCategoryArticles[categories_List, n_Integer] := (Take[#, n]&)@*DeleteMissing@*DeleteDuplicates@*Flatten@*Map[WikipediaData["Category" -> #, "CategoryArticles"]&]@categories
+iGetCategoryArticles[categories_List, n_Integer] := (Take[#, UpTo[n]]&)@*DeleteMissing@*DeleteDuplicates@*Flatten@ParallelMap[WikipediaData["Category" -> #, "CategoryArticles"]&, categories]
 
 WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{LexicalCases}]]:= iGetCategoryArticles[
-	WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
+	WikipediaSearch[rule, MaxItems -> OptionValue[MaxCategories], Language -> OptionValue[Language]],
 	OptionValue[MaxItems]
 	]
 
@@ -356,6 +355,7 @@ Options[LexicalCases]={
 	IgnoreCase -> False,
 	Overlaps -> False,
 	MaxItems -> 50,
+	MaxCategories -> 5,
 	Language -> "English"
 };
 
@@ -392,6 +392,10 @@ exprMsg[expr:Except[_String]]:= expr
 
 LexicalCases::nofl = "No files found with query `1`"
 
+
+LexicalCases::nvsi = "`` has no value. It should be a SearchIndexObject."
+LexicalCases[Rule[x_Symbol?(Not@*ValueQ),_],___] := (Message[LexicalCases::nvsi, x];$Failed)
+
 LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Enclose[
@@ -419,6 +423,11 @@ LexicalCases[input:Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ, o
 			]
 		]
 
+$stage = "";
+lcStageMonitor[0] := ($stage = "")
+lcStageMonitor[1] := ($stage = "Expanding Pattern")
+lcStageMonitor[2] := ($stage = "Searching")
+
 (* SourceText and LexicalPattern Input *)
 LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:= Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
@@ -427,8 +436,8 @@ LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[Lexical
 			ArticleIndex=0;
 			(* Find Matches *)
 			LPC = Monitor[
-				LexicalCasesOnString[sourcetext, se, opts],
-				Row[{"Searching", ProgressIndicator[Appearance->"Ellipsis"]}]
+				Confirm[LexicalCasesOnString[sourcetext, se, opts]],
+				Row[{$stage, ProgressIndicator[Appearance->"Ellipsis"]}]
 				];
 			(* Generate Summary Object *)
 			RES = Monitor[
@@ -441,21 +450,26 @@ LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[Lexical
 	]
 
 (* SourceText is a string *)
-LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:=Module[
-	{RX, S = EscapePunctuation[source]},
-	++ArticleIndex;
-	RX = ExpandStringExpression[S, se];
-	
-	MatchTrim[OptionValue["StringTrim"]]@
-	Query[
-		GroupBy[#Match &] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|> &]),
-		KeyDrop["Match"] /* Values /* (Flatten[#, 1] &)
-		]@
-	Map[AssociationThread[{"Match", "Position"} -> #] &]@
-	Transpose@{
-		StringCases[source,RX, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
-		StringPosition[source, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
-	}
+LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:=Enclose[
+	Module[
+		{RX, S = EscapePunctuation[source], RES},
+		++ArticleIndex;
+		lcStageMonitor[1];
+		RX = ConfirmQuiet[ExpandPattern[S, se], {Java::excptn, JavaNew::fail}];
+		lcStageMonitor[2];
+		RES = MatchTrim[OptionValue["StringTrim"]]@
+			Query[
+				GroupBy[#Match &] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|> &]),
+				KeyDrop["Match"] /* Values /* (Flatten[#, 1] &)
+				]@
+			Map[AssociationThread[{"Match", "Position"} -> #] &]@
+			Transpose@{
+				StringCases[source,RX, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
+				StringPosition[source, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
+			};
+		lcStageMonitor[0];
+		RES
+		]
 	]
 
 (* LexicalPattern on Service *)
@@ -476,7 +490,7 @@ Options[LexicalCasesFromService]={
 
 StringSearch[text_,pattern_] := Module[
 	{RES = LexicalCasesOnString[text, pattern]},
-		MatchCount+=Length[Replace[_Missing -> {}]@Flatten[Lookup[RES,"Position"], 1]];
+		CriticalSection[lclock, MatchCount+=Length[Replace[_Missing -> {}]@Flatten[Lookup[RES,"Position"], 1]]];
 		RES
 		]
 
@@ -485,6 +499,7 @@ SearchArticles[texts_List, se_?LexicalPatternQ, articles_List, articleCount_Inte
 		ArticleIndex=0;
 		MatchCount=0;
 		SetSharedVariable[se,MatchCount];
+		SetSharedFunction[StringSearch];
 		MAT = Monitor[
 			ParallelMap[(StringSearch[#,se])&, texts],
 			Row[{
@@ -524,6 +539,7 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 
 Options[iSearchWikipedia] = {
 	MaxItems -> 50,
+	MaxCategories -> 5,
 	Language -> "English"
 };
 
@@ -650,15 +666,20 @@ LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","LexicalStructure", "Survey"}
 
 GenerateLexicalSummary[data_?FailureQ, ___] := data
-GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Monitor[
-	iGenerateLexicalSummary[data, sourceType, se],
-	Row[{"Generating Summary", ProgressIndicator[Appearance->"Ellipsis"]}]
+GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Enclose[
+	Monitor[
+		iGenerateLexicalSummary[data, sourceType, se],
+		Row[{"Generating Summary", ProgressIndicator[Appearance->"Ellipsis"]}]
+	],
+	Identity,
+	"LexicalSummaryFailed"
 	]
 
 iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] := Module[
-	{MTC, DS = Dataset[data]},
+	{MTC, DS = Dataset[data], cse = StripNamedPattern@se, STC},
+	STC = LexicalStructure[cse];
 	MTC = DeleteMissing[GetDatasetCounts[DS, sourceType], 1, 1][Total, "Count"];
-	Enclose@LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "LexicalStructure" -> LexicalStructure[StripNamedPattern@se] |>]
+	Confirm[LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "LexicalStructure" -> STC |>], Null, "LexicalSummaryFailed"]
 ]
 
 (* Summary Utils *)
@@ -713,7 +734,8 @@ GetWordStemCounts[ds_Dataset] := (ds[All, "Matches"] // Normal // Flatten // (St
 WordStemGroups[ds_Dataset] := (GetWordStemCounts[ds] // KeyValueMap[<|"Stem" -> #1, "Count" -> #2|> &] // Dataset // ReverseSortBy[#Count &]) // Query[GroupBy[#Count &], KeyDrop["Count"] /* Values /* (Flatten[#, 1]&)] // KeyValueMap[<|"WordStem" -> #2, "CountGroup" -> #1|> &]
 
 PercentDataset[ds_Dataset, matchcount_Integer] := (ds[
-	All, <|"Matches" -> #Matches, "Percentage" ->Interpreter["Percent"]@*ToString@*PercentForm@*N@((#CountGroup Length[#Matches])/matchcount)|> &][ReverseSortBy["Percentage"]])
+	All,
+	<|"Matches" -> #Matches, "Percentage" -> Quantity[100. N[((#CountGroup Length[#Matches])/matchcount)], "Percent"]|> &][ReverseSortBy["Percentage"]])
 
 GenerateDashboard[lps_LexicalSummary, params___] := With[
 	{
