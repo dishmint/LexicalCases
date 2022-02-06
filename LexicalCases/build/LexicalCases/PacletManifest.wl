@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "6bf3cf6c6c8b0a396c9751a0cf849f7b9aa25c6661ad892397c98ef3e2d49129"
+            "e5ecf5182a62923bfe3e79dcf08b865c18e1543503e027c3680dbe3732306d64"
                 
         |>
         ,
@@ -50,7 +50,7 @@
             ,
             "Hash"
             ->
-            "22cdc4c3086b97c4773ee7f9d9a5ae774f4b3608e0fb3306478a203ddbba3051"
+            "9b480edced367c313aaee87cc81c1f8a6fd7fad92a6e136dd8ac71e86b3de826"
                 
         |>
         ,
@@ -64,7 +64,7 @@
             ,
             "Hash"
             ->
-            "ad4edaec5260921aa5bfb7d8a8f90f50d3cb8a3645ae44c6e4b3bd603aee5490"
+            "15eb588141d3d2f3836a5e5ae97cb6637b96ffcfdb76c85df44fbfc8df50a971"
                 
         |>
         ,
@@ -78,7 +78,7 @@
             ,
             "Hash"
             ->
-            "39436d31ba4b79e8e521f5be2211b377cc6872a52412bd800c2e0825e5048878"
+            "9ca6ce5fb4a2aad52321ec68880667ffce5038a6b5acb84cb7e9379079dafecb"
                 
         |>
         ,
@@ -92,7 +92,7 @@
             ,
             "Hash"
             ->
-            "1e790ceaaad02132fba7534396072467e5e827101525ceadf7ff9d93a68591ff"
+            "7864ce235ecb63077b9d76164568406f9e1c3de1b6d3059564f2102e90d86f4f"
                 
         |>
         ,
@@ -106,7 +106,21 @@
             ,
             "Hash"
             ->
-            "47304825be5fc040a160aef3a5dfd88afd4f82a8da47be41210296df1b8f2ffe"
+            "801664917c22cf4c6592f754a4609117e0ac06a9905361bb07298f6742a32f14"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexicalDispersionPlot.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "3432938f343dea24b33544e9d0bd1a2863f0990810e4960c972cd6cac9fe2b7e"
                 
         |>
         ,
@@ -120,7 +134,7 @@
             ,
             "Hash"
             ->
-            "8281163300d2bc0ba81cbd836ecbef1de2b6d5ebeefd04b18365d4b829996bf8"
+            "9b8f0f2747e8574b5e1fc7c78ec9db44347a2eacd859c0975099d6a129df2b8b"
                 
         |>
         ,
@@ -134,7 +148,7 @@
             ,
             "Hash"
             ->
-            "9aae95a13c31cb8a9280feb29154cdf04698a15a09b48ccf81f8c631fa1b1c9f"
+            "0f2c1407a403d44704fe93691167c6b9225c9b2e5b7d75b9f7ebe9cce6f3f4fa"
                 
         |>
         ,
@@ -148,7 +162,7 @@
             ,
             "Hash"
             ->
-            "89a30de6dae3ff46ac0a786618f77bc525a4b8ea7bf5d08d16c38385f26b083f"
+            "be2e94efe3abadc3a409ee8ff0937bb85817bf1c644733a53e7f8c700c013dbe"
                 
         |>
         ,
@@ -162,7 +176,7 @@
             ,
             "Hash"
             ->
-            "3df9d7bcb1130c4013a51477f86cebd668f6a3817ffcc0ff8896fb8b08c01b38"
+            "d6f64d1c74c8bbbadbaf4fa69948f391346f83b3156bfc0fb24951da25ef74ac"
                 
         |>
         ,
@@ -176,7 +190,7 @@
             ,
             "Hash"
             ->
-            "e56886cb4372f810538d4fc0ba0036b8151addd8747608c3a68277d40ee29eb5"
+            "f14df64c14dfe205c9bfb372582f60bbf5681fb30e840d0855b98c4c0e38b022"
                 
         |>
         ,
@@ -190,7 +204,7 @@
             ,
             "Hash"
             ->
-            "4764a01238ab55cb368c49e442f259d97b09014996cd4a3feb4b5e9b427f799f"
+            "7957ccb3bed1ad0cf6bc503e67c3b207229af68c09117bab5febbc1119fdc8a1"
                 
         |>
         ,
@@ -204,7 +218,7 @@
             ,
             "Hash"
             ->
-            "75fd638f783906632b3e0e0cf468dd54e2a73b589dc0e86826ad6fc648a1e8e6"
+            "e04004eee0ccd7bd7ac3c1319260e215d25530d5290d279b625beed5d9dc2359"
                 
         |>
     }

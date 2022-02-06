@@ -1,0 +1,546 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21441,        536]
+NotebookOptionsPosition[     17176,        446]
+NotebookOutlinePosition[     19556,        504]
+CellTagsIndexPosition[     19471,        499]
+WindowTitle->LexicalDispersionPlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "51af0339-9dbb-4eb6-b8d5-e32687621ed9"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "3d66eff3-5c54-4090-a6cf-38a10c98268b"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "c324c87f-063f-4ee3-9c55-82ca3121bbba"]
+        }],ExpressionUUID->"e67aa09e-97e3-4de0-9f98-73601f88518a"],
+        StripOnInput->
+         False], {"\<\"LexicalCases/ref/LexicalDispersionPlot\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["LexicalCases/ref/LexicalDispersionPlot"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/LexicalCases/ref/\
+LexicalDispersionPlot.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15796], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"] <> 
+            "LexicalCases/ref/LexicalDispersionPlot" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "858125d2-ff46-469c-8361-9055e8a3dda6"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "a1214cfc-28c4-48b4-83c5-19ec0567a271"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"1cbd3094-48f6-4914-ab36-5c56d208102e"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"025ddc3b-270e-4cf0-a92b-c23b8d03ea3f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "LexicalDispersionPlot", "ObjectName",ExpressionUUID->
+      "cf760fc1-4228-4299-8a0f-d6163b969235"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"c7c10988-7315-425f-beec-b42cd5eb10bf"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "a7e33da2-d562-436d-a8ab-936044415a28"]
+    }],ExpressionUUID->"6e01539d-2619-4928-b205-c2efb845a2e4"], Cell[BoxData[
+     TooltipBox[
+      StyleBox[
+       TagBox[
+        StyleBox[
+         GraphicsBox[InsetBox[
+           StyleBox["\<\"NEW IN ??\"\>",
+            StripOnInput->False,
+            FontFamily->"Source Sans Pro",
+            FontSize->18,
+            FontWeight->"Bold",
+            FontSlant->"Italic",
+            FontColor->RGBColor[0.968627, 0.466667, 0]], {Right, Center}, {
+           Right, Center}],
+          ImageSize->{125, 24}], "NewInGraphic",
+         StripOnInput->False],
+        Deploy,
+        DefaultBaseStyle->"Deploy"], "NewInGraphic",
+       StripOnInput->False],
+      "New in 12",
+      TooltipDelay->0.3]],
+     Magnification->1,ExpressionUUID->
+     "41a3ccc6-010c-4c99-b89a-fa8add2c4f37"]}
+  }]], "ObjectNameGrid",
+ CacheGraphics->False,ExpressionUUID->"25fafb85-3135-48b9-832f-502f9d3f3c6d"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["LexicalDispersionPlot"]], 
+         "paclet:LexicalCases/ref/LexicalDispersionPlot", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["text", "TI"], ",", " ", 
+        StyleBox["word", "TI"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b76555de-1b5b-4bb4-a446-0b1c530833ae"],
+     " \[LineSeparator]plots the dispersion of word across text"
+    }],ExpressionUUID->"7a981af0-ab36-435e-ba82-7310e557ad4b"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["LexicalDispersionPlot"]], 
+         "paclet:LexicalCases/ref/LexicalDispersionPlot", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["text", "TI"], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["w", "TI"], 
+           SubscriptBox[
+            StyleBox["", "TR"], 
+            StyleBox["1", "TR"]]], ",", " ", 
+          StyleBox["\[Ellipsis]", "TR"], ",", " ", 
+          SubscriptBox[
+           StyleBox["w", "TI"], 
+           SubscriptBox[
+            StyleBox["", "TR"], 
+            StyleBox["i", "TR"]]]}], "}"}]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d35d8732-67d4-43d6-83fb-b0f6d9fcf653"],
+     "\[LineSeparator]plots the dispersion of the ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["w", "TI"], 
+       SubscriptBox[
+        StyleBox["", "TR"], 
+        StyleBox["i", "TR"]]]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "06e74400-8f9a-4fb4-b0d4-79aaea0df40e"],
+     " across text"
+    }],ExpressionUUID->"8956a024-a24e-4bb2-9b28-d93325dc0929"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->1651689794,ExpressionUUID->"91cd79dd-ecc9-4a99-b347-6a0fe0b549ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+    ExpressionUUID->"25fea699-2643-4353-b8ec-dbc4f4706973"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"5048bae8-fb9b-481d-b089-0748ce8c0723"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"24276add-da9f-43c7-b647-b47957fd9e7f"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"d20b361a-b6de-4970-8ab0-a8b6a862c9d0"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->1418361858,ExpressionUUID->"1b2914c5-6be4-4eb5-a986-e99099f47f04"],
+
+Cell["LexicalDispersionPlot currently only works on words.", "Notes",
+ CellID->1576746636,ExpressionUUID->"07c61eae-370b-4fc1-86d8-59b88428d3f3"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "ec8c4900-65cd-47ad-a192-9a81f9c4a02f"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"f872ef1e-4d5e-4a9e-ad6e-3c051e60b124"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "55f4dd77-ea2e-49b9-835c-6a78ca0fc65a"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1339265706,ExpressionUUID->"c8093ed3-294b-47eb-b231-00e39e3dd6fe"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "a6c93f9f-6f95-4496-a668-3fe399cbd982"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"9598e0a0-8022-45cd-a66f-b2cc78168b81"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "0b07db33-bfa6-491c-8d42-22ae217623f7"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->1262616535,ExpressionUUID->"3f02bef9-1332-4ff5-848d-be73837976a6"],
+
+Cell["Visualize the occurrence of common words from a text", "ExampleText",
+ CellID->1878552744,ExpressionUUID->"143c4828-4d96-4d49-be64-807d4fc88e48"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"oosp", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Text\>\"", ",", "\"\<OriginOfSpecies\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->761225457,ExpressionUUID->"ddbbec41-9881-4b67-8a4e-49a83187a1e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LexicalDispersionPlot", "[", 
+  RowBox[{"oosp", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<species\>\"", ",", "\"\<plants\>\"", ",", "\"\<animals\>\"", ",", 
+     "\"\<life\>\""}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1653445482,ExpressionUUID->"eb8c7d8a-b68f-4f16-81f7-ecc489874a27"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzFWmtQlGUUplwVwhA1BQXHUMPkol1sFJo4ChqGmhcugiEgajNIziY6xqJI
+6ihj4YCEIgJCiJgYpDAoZKEMzCqKOmqgOIssuyx7BTGVvGE5Tfn9quebOX3t
+zjD745nzvud9zv2wbrHyJasH2NjYyJ7/rfrr+7rrq/LBB7tp93lZyuJLZnoS
+2OnYvNFINn9+esnNd0KpMcpMa1ySSg7ZmujYTxs6ViwScPfia/3k0E2zx2ps
+3SPNNGm17ZwZawX837///vwznrI3UH3Zu4d+WT/pwWY/C13xOKta96Vwfnbf
+2HkLRt2hZduj125+YKGDF04O7E8Xfz/SH93PfZ9Mnm9+7ZyBhrxy66LbMz3F
+bDCF2EwUzk/y3J+WuMVCT9edyXxsMlHwNi9F7krx/CP72rXOp/iNJtLZ+08p
+XmwkleuW6paZAl6hvxGpCjNSaNXTWQvkBpq2VPl6vrd4/rn2uVSx3OVEj5kq
+lHmuVxQmSilYVPYsQvz7kP249kX8IP2590stz7UvN7648lwcxV9UzPDLh7qM
+lB8zrjpRbSBb3yKLz/T/L39wcW58oviTWn/EP9KPiyP9kP8i/pH/cfVH56P8
+hfoD7v3c/CJ1fyI1zvU/bv7m5k/kH8j+6H1c/RC/yH/Q+7j1gRuf3PyI7kf6
+j0jwbIu2mGjnDNm0zeVG2jdw9tc1c8XLo/4K2Qfxw/UvxC/Sj8sv0h/hyP6I
+f6Q/931S5xeEo/kI5U8kz7Uft3/OpTEO23M01FsWWR3gpqWAqi8yA340iH4f
+Vz/u+xGO9Of2T1z/RfnJ2vOT1Pbh3s/t/7jxye1fuf0Pl19rz0cIl7p/5e7P
+uPEv9fzNnR+l3v9w52Muf1x+ufLc/p+bf6SOX6nzD/KfkkZPk66mh9T1TsPr
+vrdQQ+GgHVd2iecH7ee5+iH+kH6of0D1Ter9OpqPUP9+LPlNu51H9LSpMqv9
+goueTpW/87PS8b+bv7nv49Z3pD+3vixJq3T/LbWLTJEL76336aKhxqQ3dvcb
+RPsf1z+59Unq/Gbt/pfLL7f/4cpbmx9r49z8y60fUstLzZ+1+zup9Ufy1t7v
+If1LRiiqpj7UUdEJr+S553X0/qCCiN57Qv1A+0FU38L7YpMWTDdQQ9Sp0L40
+PaXtcdi1coz4/I/ij7s/5v7+AtlH6v5c6vkN3Y9wqc+Xer7mzh+oP0U4qi+F
+RxtXtM7tpMYfGsYoN3TSmeX2faNvCPGL4g/139z9Cro/IXXd1UfVt+nzc1lb
+T2epKf7J0ZqWbYL+zvue9qzJaSN31wT7jAlqyna+3O2jEPBhPskfRFdeo5Eh
+If1B+ma6Hb7IOStO+wIPmdPk71qppiGr9R1xRR3U3TX+bG2OIP+7rCe71klP
+79omxBWUdpH2YtjdyYPF84Pkpd7/Iv9G988fL7teeLOThn2iz7ir66RvZurr
+TqoFfnqV7Xmn7TT03cu+/s7HNSS/lqssOS7ev4407bka8txu9TUN8X5vd9Bo
+WeB9twxB/mHeSy3jDzdTVXmZ88RlrbQ9etzVgYldL/DA6pCUoMlamhGRMkWe
+qSWn/cFR6nrx9kP1AfGL4g/5F8JR/UX8o/PRfgO9j7u/Q/Lc/QF6H/f3Ldz9
+PeKHux9B/oHy51ffxoTnN7XSjpJHcZ991Eb+QQqXqnDx8Y3iE8U/2l8g/pD/
+3H8rvXdYjZa2yoqKDwzoJHPSVI/kS+LjC+VHFL+l6eU7u/1uUltdzt5PHVWU
+NUuljpsn4GeLU4eoFCqq7Tjo0biqnerf+9UtXy7g3PqOcMQPyg+IP+Qf3P0a
+0g/lB1Qf0PkoPtH5qH5pMpt9vSy3aGS/X1i9520a5R2qXxwr8Of/8WHP+4oO
+il7q1GTx09CBO2ce2x0RcG7+RP7H3Z9z/3+F7kfvR/ZBv59A+RXlP3Q/qu8W
+TeKHCat0lJdzV/8sWEcLN3nXDzUJ+B8OU+LW
+   "], {{0, 0}, {100, 4}}, {0, 1}],
+  AspectRatio->NCache[
+    Rational[1, 5], 0.2],
+  Axes->False,
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameStyle->Automatic,
+  FrameTicks->{{{{3.5, 
+       FormBox["\"species\"", TraditionalForm]}, {2.5, 
+       FormBox["\"plants\"", TraditionalForm]}, {1.5, 
+       FormBox["\"animals\"", TraditionalForm]}, {0.5, 
+       FormBox["\"life\"", TraditionalForm]}}, None}, {{{33.0673588836348, 
+       FormBox["50000", TraditionalForm]}, {66.13504844416521, 
+       FormBox["100000", TraditionalForm]}, {99.20273800469562, 
+       FormBox["150000", TraditionalForm]}}, None}},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  LabelStyle->{FontFamily -> "Times"},
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]},
+  PlotLabel->FormBox[
+   "\"Lexical Dispersion Plot\"", TraditionalForm]]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->728558958,ExpressionUUID->"518f4f23-5fb6-4365-9111-26b4bfb6800b"]
+}, Open  ]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0493b66a-0b5b-4c6a-84b2-8fd540e6fc6a"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"LexicalDispersionPlot",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "NotesSection" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2022, 2, 6, 3, 6, 54.120787}", 
+    "history" -> {"??", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {
+     "lexical dispersion plot", "lexical", "dispersion", "plot"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Lexical Cases Symbol", "language" -> "en", "paclet" -> 
+    "LexicalCases", "status" -> "None", "summary" -> 
+    "LexicalDispersionPlot[text, word] plots the dispersion of word across \
+text LexicalDispersionPlot[text, {w Subscript[ , 1], ..., w Subscript[ , i]}] \
+plots the dispersion of the w Subscript[ , i] across text", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "LexicalDispersionPlot", "titlemodifier" -> 
+    "", "windowtitle" -> "LexicalDispersionPlot", "type" -> "Symbol", "uri" -> 
+    "LexicalCases/ref/LexicalDispersionPlot", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.0 for Mac OS X ARM (64-bit) (December 2, 2021)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"51094370-bc56-471d-8cff-151e402cc717"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9767, 262, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"c8093ed3-294b-47eb-b231-00e39e3dd6fe",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1339265706]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19271, 492}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 3387, 78, 57, "AnchorBarGrid",ExpressionUUID->"1cbd3094-48f6-4914-ab36-5c56d208102e",
+ CellID->1],
+Cell[3983, 101, 95, 0, 23, "ContextNameCell",ExpressionUUID->"025ddc3b-270e-4cf0-a92b-c23b8d03ea3f"],
+Cell[CellGroupData[{
+Cell[4103, 105, 1293, 35, 60, "ObjectNameGrid",ExpressionUUID->"25fafb85-3135-48b9-832f-502f9d3f3c6d"],
+Cell[5399, 142, 2169, 59, 196, "Usage",ExpressionUUID->"91cd79dd-ecc9-4a99-b347-6a0fe0b549ad",
+ CellID->1651689794]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7605, 206, 1887, 47, 37, "NotesSection",ExpressionUUID->"1b2914c5-6be4-4eb5-a986-e99099f47f04",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1418361858],
+Cell[9495, 255, 145, 1, 70, "Notes",ExpressionUUID->"07c61eae-370b-4fc1-86d8-59b88428d3f3",
+ CellID->1576746636]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[9767, 262, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"c8093ed3-294b-47eb-b231-00e39e3dd6fe",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1339265706],
+Cell[CellGroupData[{
+Cell[11182, 303, 1368, 36, 31, "ExampleSection",ExpressionUUID->"3f02bef9-1332-4ff5-848d-be73837976a6",
+ CellID->1262616535],
+Cell[12553, 341, 151, 1, 38, "ExampleText",ExpressionUUID->"143c4828-4d96-4d49-be64-807d4fc88e48",
+ CellID->1878552744],
+Cell[12707, 344, 294, 8, 29, "Input",ExpressionUUID->"ddbbec41-9881-4b67-8a4e-49a83187a1e4",
+ CellID->761225457],
+Cell[CellGroupData[{
+Cell[13026, 356, 331, 8, 29, "Input",ExpressionUUID->"eb8c7d8a-b68f-4f16-81f7-ecc489874a27",
+ CellID->1653445482],
+Cell[13360, 366, 3492, 69, 156, "Output",ExpressionUUID->"518f4f23-5fb6-4365-9111-26b4bfb6800b",
+ CellID->728558958]
+}, Open  ]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[17094, 444, 78, 0, 40, "FooterCell",ExpressionUUID->"0493b66a-0b5b-4c6a-84b2-8fd540e6fc6a"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
