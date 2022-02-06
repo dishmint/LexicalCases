@@ -37,6 +37,9 @@ LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the Str
 (* Services *)
 $LexicalCasesServices::usage = "List of supported services"
 
+(* Analysis / Visualization *)
+LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispersion of word w across text\nLexicalDispersionPlot[text, {w$$1, $$, w$$i}] plots the dispersion of the w$$i across text"
+
 Begin["Private`"]
 
 (* Samples *)
@@ -736,6 +739,45 @@ WordStemGroups[ds_Dataset] := (GetWordStemCounts[ds] // KeyValueMap[<|"Stem" -> 
 PercentDataset[ds_Dataset, matchcount_Integer] := (ds[
 	All,
 	<|"Matches" -> #Matches, "Percentage" -> Quantity[100. N[((#CountGroup Length[#Matches])/matchcount)], "Percent"]|> &][ReverseSortBy["Percentage"]])
+
+Options[LexicalDispersionPlot] = {
+	AspectRatio -> 1/5,
+	ImageSize -> Large,
+	PlotRange -> All,
+	PlotTheme -> "Scientific",
+	PlotLabel -> "Lexical Dispersion Plot"
+};
+LexicalDispersionPlot[text_String, word_String, opts:OptionsPattern[{LexicalDispersionPlot}]] := LexicalDispersionPlot[text, {word}, opts]
+LexicalDispersionPlot[text_String, words:{__String}, opts:OptionsPattern[{LexicalDispersionPlot}]] := Module[
+	{
+		tokens = Monitor[
+			(* TextWords is slow for what I want it to do, using StringCases instead *)
+			(*TextWords[text]*)
+			StringCases[text, RegularExpression["\\b\\w+\\b"]],
+			Row[{"Tokenizing text",ProgressIndicator[Appearance->"Ellipsis"]}]
+			], textevents, events,
+		rowIndex = AssociationThread[words -> Range[Length[words]]],
+		sparr, ticks
+		},
+		(* 1 — Generate discrete indices for the tokenized text *)
+		textevents = Monitor[PositionIndex[tokens], Row[{"Indexing tokens", ProgressIndicator[Appearance->"Ellipsis"]}]];
+		events = Monitor[
+			KeyTake[words][textevents] // KeyValueMap[Thread[Thread[{rowIndex[#1], #2}] -> 1] &] /* Flatten,
+			Row[{"Generating sparse elements", ProgressIndicator[Appearance->"Ellipsis"]}]
+			];
+		sparr = SparseArray[events, {Length[words], Length[tokens]}];
+		
+		ticks = KeyValueMap[{#2, #1}&, rowIndex];
+		MatrixPlot[
+			sparr,
+			FrameTicks -> {{ticks, None}, {Automatic, None}},
+			AspectRatio -> OptionValue[AspectRatio],
+			ImageSize -> OptionValue[ImageSize],
+			PlotRange -> OptionValue[PlotRange],
+			PlotTheme -> OptionValue[PlotTheme],
+			PlotLabel -> OptionValue[PlotLabel]
+			]
+		]
 
 GenerateDashboard[lps_LexicalSummary, params___] := With[
 	{
