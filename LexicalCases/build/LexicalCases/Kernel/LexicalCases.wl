@@ -561,13 +561,13 @@ LexicalCasesFromService["Wikipedia", se_?LexicalPatternQ, opts:OptionsPattern[]]
 LexicalCasesFromService["Wikipedia", query:(_Rule|_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[]]:= GenerateLexicalSummary[iSearchWikipedia[query, se, opts], "Wikipedia", se]
 
 GetText[input:List[__string], opts:OptionsPattern[]] := Module[
-	{SE = se, LEN = Length[texts], REN, ard, art, arc, acs, mtl, mtc},
+	{LEN = Length[texts], REN},
 	REN = Range[LEN];
 	<|"Text" -> input, "Articles" -> Map[ToString][REN], "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>
 	]
 
 GetText[input:List[__File], opts:OptionsPattern[]] := Module[
-	{SE = se, LEN = Length[input], REN = Map[FileNameTake][input], ard, art, arc, acs, mtl, mtc},
+	{LEN = Length[input], REN = Map[FileNameTake][input]},
 	<|"Text" -> Map[Import[#, "Text"]&][input], "Articles" -> REN, "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>
 	]
 
@@ -759,7 +759,7 @@ LexicalDispersionPlot[text_String, words:{__String}, opts:OptionsPattern[{Lexica
 		rowIndex = AssociationThread[words -> Range[Length[words]]],
 		sparr, ticks
 		},
-		(* 1 — Generate discrete indices for the tokenized text *)
+		(* 1 \[LongDash] Generate discrete indices for the tokenized text *)
 		textevents = Monitor[PositionIndex[tokens], Row[{"Indexing tokens", ProgressIndicator[Appearance->"Ellipsis"]}]];
 		events = Monitor[
 			KeyTake[words][textevents] // KeyValueMap[Thread[Thread[{rowIndex[#1], #2}] -> 1] &] /* Flatten,
