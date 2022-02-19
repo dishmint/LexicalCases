@@ -132,8 +132,8 @@ LexicalPatternQ[expr_?StringPattern`StringPatternQ]:= True;
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pattern}]
 
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
-StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[True, HoldPattern[(Rule|RuleDelayed)[se_?LexicalPatternQ,_]]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
 
 ExtractAlternatives[List[a_Alternatives]] := a
