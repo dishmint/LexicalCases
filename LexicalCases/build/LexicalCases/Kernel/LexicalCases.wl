@@ -287,22 +287,36 @@ WikipediaKeywordString[x_Alternatives] := ToString[Map[WikipediaKeywordString][x
 WikipediaKeywordString[x_] := "\""<>x<>"\"";
 
 
-WikipediaSearchQuery[List[],se_StringExpression] := Message[ToWikipediaSearchQuery::novq, se]
-WikipediaSearchQuery[wsq:List[__String],se_StringExpression] := StringRiffle[wsq]
-WikipediaSearchQuery[wsq:List[List[__String]],se_StringExpression] := Flatten[wsq]
-WikipediaSearchQuery[wsq_List,se_StringExpression] := Cases[List[(_List|_String)..]][wsq] // Map[StringRiffle]
+WikipediaSearchQuery[List[],lp_] := $Failed
+WikipediaSearchQuery[wsq:List[__String], _] := StringRiffle[wsq]
+WikipediaSearchQuery[wsq:List[List[__String]], _] := Flatten[wsq]
+WikipediaSearchQuery[wsq_List,_] := Cases[List[(_List|_String)..]][wsq] // Map[StringRiffle]
 
-ToWikipediaSearchQuery[se_StringExpression]:= Module[
-	{cleanLexicalPattern, stage1},
-	cleanLexicalPattern = DeleteCases[List@@se, (_TextType | _Opt | _AnyOrder), All];
-	stage1 = ReplaceAll[cleanLexicalPattern, {BoundToken[s_] :> s, Alternatives -> List}] // DeleteCases[" "];
-	Check[WikipediaSearchQuery[stage1, se] // StringReplace[(" " ..) -> " "] // StringTrim, Return[$Failed, Module]]
+twsqErrorInfo[expr_TextType] := StringForm["TextType's do not produce keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
+twsqErrorInfo[expr_] := StringForm["`` did not produce any keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
+
+ToWikipediaSearchQuery[lp_?LexicalPatternQ] := Enclose[
+	Confirm[
+		iToWikipediaSearchQuery[lp],
+		Message[ToWikipediaSearchQuery::novq, lp];twsqErrorInfo[lp]
+		]
 	]
 
-ToWikipediaSearchQuery[Rule[se_StringExpression,_]] := ToWikipediaSearchQuery[StripNamedPattern[se]]
-ToWikipediaSearchQuery[RuleDelayed[se_StringExpression,_]] := ToWikipediaSearchQuery[StripNamedPattern[se]]
+iToWikipediaSearchQuery[Rule[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
+iToWikipediaSearchQuery[RuleDelayed[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
 
-ToWikipediaSearchQuery::novq = "Keyword formulation not supported for the StringExpression ``. Consider using the \"Content\" option to supply keywords, or trying a different StringExpression."
+iToWikipediaSearchQuery[lp:Except[_TextType]]:= Enclose[
+	Module[
+		{CLP, WSQ},
+		CLP = DeleteCases[List @@ lp, Except[_String] | (s_String /; StringMatchQ[s, Whitespace])];
+		WSQ = Confirm[WikipediaSearchQuery[CLP, lp]];
+		WSQ // StringReplace[(" " ..) -> " "] // StringTrim
+		]
+	]
+
+iToWikipediaSearchQuery[lp_] := $Failed
+
+ToWikipediaSearchQuery::novq = "`` did not produce any keywords."
 
 WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{LexicalCases}]]:= Module[
 	{KWL = Apply[List][a], RULES},
@@ -556,9 +570,11 @@ Options[iSearchWikipedia] = {
 	Language -> "English"
 };
 
-iSearchWikipedia[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := With[
-	{wikiquery = StringTrim@ToWikipediaSearchQuery[se]},
-	iSearchWikipedia[wikiquery,se, opts]
+iSearchWikipedia[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := Enclose[
+	With[
+		{wikiquery = StringTrim@Confirm[ToWikipediaSearchQuery[se]]},
+		iSearchWikipedia[wikiquery,se, opts]
+		]
 	]
 
 iSearchWikipedia[query_?FailureQ,___] := Return[query, With]
