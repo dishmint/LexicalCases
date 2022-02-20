@@ -621,7 +621,10 @@ iLexicalCases[input:(List[__String]|List[__File]|_Rule), se_?LexicalPatternQ, op
 
 (* LexicalSummary *)
 ArticleWithMatchCount["Text", _] := ""
-ArticleWithMatchCount[_String, data_] := (data // DeleteMissing[#, 1, 1]& // Lookup["Article"] // DeleteDuplicates // Length)
+
+GetArticleCount[{}] := 0
+GetArticleCount[data_] := (Lookup["Article"] /* DeleteDuplicates /* Length)[data]
+ArticleWithMatchCount[_String, data_] := (data // DeleteMissing[#, 1, 1]& // GetArticleCount)
 
 DisplayArticlesWithMatch["Text",_]:= Nothing
 DisplayArticlesWithMatch[source_,data_]:= {BoxForm`SummaryItem[{"Articles: ", ArticleWithMatchCount[source, data]}]}
