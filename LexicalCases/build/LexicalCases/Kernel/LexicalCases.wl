@@ -204,10 +204,18 @@ mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*St
 
 mTrimPositions[_,p_]:= p
 
-MatchTrim[True, matches_List]:= Query[
-	All,
-	<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
-	][matches]
+consolidateMatches = Query[
+	GroupBy[#Match &]/*(KeyValueMap[<|"Match" -> #1,"Position" -> #2|> &]),
+	KeyDrop["Match"]/*Values/*(Flatten[#, 2] &)
+	]
+
+trimMatches = Query[
+		All,
+		<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
+		]
+
+MatchTrim[True, matches_List]:=
+	consolidateMatches@trimMatches[matches]
 		
 MatchTrim[False, matches_List]:= matches
 
@@ -370,7 +378,7 @@ LexicalCases[file_File, args___] := Enclose[
 	Module[{data = Import[file]}, LexicalCases[data, args]]
 ]
 
-LexicalCases[input:List[__String],se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Enclose[
+LexicalCases[input:List[__String], se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[
 			{files = Map[File][input], LPC},
@@ -385,8 +393,10 @@ oSourceType[List[__String]] := "Text"
 LexicalCases[input:(List[__File]|List[__String]),se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]] := Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 	Module[
-		{LPC = iLexicalCases[input, se, opts], sourcetype = oSourceType[input]},
-		GenerateLexicalSummary[LPC, sourcetype, se]
+		{LPC, OST},
+		LPC = iLexicalCases[input, se, opts];
+		OST = oSourceType[input];
+		GenerateLexicalSummary[LPC, OST, se]
 		]
 	]
 
@@ -560,8 +570,8 @@ iSearchWikipedia[query:(_String|_List), se_?LexicalPatternQ, opts:OptionsPattern
 LexicalCasesFromService["Wikipedia", se_?LexicalPatternQ, opts:OptionsPattern[]] := GenerateLexicalSummary[iSearchWikipedia[se, opts], "Wikipedia", se]
 LexicalCasesFromService["Wikipedia", query:(_Rule|_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[]]:= GenerateLexicalSummary[iSearchWikipedia[query, se, opts], "Wikipedia", se]
 
-GetText[input:List[__string], opts:OptionsPattern[]] := Module[
-	{LEN = Length[texts], REN},
+GetText[input:List[__String], opts:OptionsPattern[]] := Module[
+	{LEN = Length[input], REN},
 	REN = Range[LEN];
 	<|"Text" -> input, "Articles" -> Map[ToString][REN], "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>
 	]
@@ -577,7 +587,7 @@ GetText[input:List[__File], opts:OptionsPattern[]] := Module[
 		*)
 GetText[input_Rule, opts:OptionsPattern[]] := iGetWikipediaArticles[input, opts]
 
-iLexicalCases[input:(List[__String]|List[__File]|_Rule), se_?LexicalPatternQ, opts:OptionsPattern[]] := Module[
+iLexicalCases[input:(List[__String]|List[__File]|_Rule), se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := Module[
 	{ard, src, art, arc, acs, mtl, mtc},
 		ard = GetText[input, opts];
 		
