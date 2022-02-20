@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "ad9c515fabf02749a115d5e6df82be829162e9f1ebf40566c5ed5dd2935d7c09"
+            "2b217e7f7d9e7a1a496820c92e6a8cc98ce8d8239b12d28e4daab680f28eb188"
                 
         |>
         ,
@@ -50,7 +50,7 @@
             ,
             "Hash"
             ->
-            "db135e861f1c24a1556512404055056a4d2889053b66da4fec38197342d6221d"
+            "6ff51e4a69cc1366fa2a4a25767edf5cc5070e8fef495c1b999a906aa3591a02"
                 
         |>
         ,
@@ -64,7 +64,7 @@
             ,
             "Hash"
             ->
-            "1f7dc75f5c9aecccfdeaff593a2bbdc9f34cfcf67665835cc772ad1db2a6c023"
+            "210a426dca70544ed35d4a6c54cfd5c04bb0f8be951159041bf58c642d254f3b"
                 
         |>
         ,
@@ -78,7 +78,7 @@
             ,
             "Hash"
             ->
-            "2fe7a42004500dd62e2b843c299ba7ef31e6e59bf10f7126bc6a3f0627dc834f"
+            "8f9e92224406c6e55a70f738340efa527e74a84e96edcf9e8d54b587d642ce4c"
                 
         |>
         ,
@@ -92,7 +92,7 @@
             ,
             "Hash"
             ->
-            "88e3c6916593697130cc1e6bdde95105ee6dd8ee27ef5d4390134553a6525870"
+            "4c2648097c74bbe204cb413bdd2379111462259820ee1096cdee6b06974e783e"
                 
         |>
         ,
@@ -106,7 +106,7 @@
             ,
             "Hash"
             ->
-            "83ab6ffe8a7085650469f307fffc1302271774fdd004fedc1e658110fefbb4c6"
+            "d9729f66528ca3eea8754e7eaa9d48359fcedecf825b5867208a840987e8d8c7"
                 
         |>
         ,
@@ -120,7 +120,7 @@
             ,
             "Hash"
             ->
-            "4abc060b1a040fef61159974eecdd014cbc067247340f68a583b1c2bfa1d3852"
+            "0db77b6720a282368eae66929faf582eac69174003d237ff7a7abe87ecfbbb32"
                 
         |>
         ,
@@ -134,7 +134,21 @@
             ,
             "Hash"
             ->
-            "f46db870b9eb8b926373e9abe61f016d7a962c736c76eadf9c26b2e2bdb2e481"
+            "980751c7ed0c1b89575d720adff4bcefa5fdb83c1f254d22f487b217f4f00107"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexicalSummary.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "fb1d507ea4ca541d91f9a322a7321f6e084b7b8346c703ea593d9f7760fbd544"
                 
         |>
         ,
@@ -148,7 +162,7 @@
             ,
             "Hash"
             ->
-            "ff3e1777b6411039bf65886c4cfe50c5561d1a39207e2814e9a25953e8c05612"
+            "5f805d5235a679d93d4e118ce01ad5239f2843f9377501904a6a720315f369e7"
                 
         |>
         ,
@@ -162,7 +176,7 @@
             ,
             "Hash"
             ->
-            "f929f3d4b520a7e00683d2645d7566daa77170302919c0288ad3adf67dc10eb1"
+            "081bce6ff0513e57bdb8b6d837fb22de3eb7d4d3aec7c2a103f50bc8a1d17f25"
                 
         |>
         ,
@@ -176,7 +190,7 @@
             ,
             "Hash"
             ->
-            "eadada90672053069fda888254ea1b18778f30a0729392edc7b82e4aadb18b5b"
+            "5686a7961da7ba323c4ed73e37c5e5f393776db0300adabf5b89c16cb8a114c0"
                 
         |>
         ,
@@ -190,7 +204,7 @@
             ,
             "Hash"
             ->
-            "dfd6ecef0e0b43c267986fa480336c3d1d2dda3a703c16b6a401f156c0910263"
+            "53a180982b43da7741a63ddcc0edc1b5685246ed143c9fc1c13c8fd981c92f97"
                 
         |>
         ,
@@ -204,7 +218,7 @@
             ,
             "Hash"
             ->
-            "b0f261d335c93ea2aa65d7bb761b5cf7e3725aa7465497a225c3c54330aac6fc"
+            "c369dc1cab3e54baa1c701221c5e61d6a23f3250c966849505576507b9e15df2"
                 
         |>
         ,
@@ -218,7 +232,7 @@
             ,
             "Hash"
             ->
-            "29499789e2881a189af8e60a72fa0aecbd42c41fd5fa73aa4900171d6e5756cf"
+            "0e76e930c3316926f3de9ab4b9be378f3b8218fe768a911a7479956a8a94cf82"
                 
         |>
     }
