@@ -560,8 +560,8 @@ iSearchWikipedia[query:(_String|_List), se_?LexicalPatternQ, opts:OptionsPattern
 LexicalCasesFromService["Wikipedia", se_?LexicalPatternQ, opts:OptionsPattern[]] := GenerateLexicalSummary[iSearchWikipedia[se, opts], "Wikipedia", se]
 LexicalCasesFromService["Wikipedia", query:(_Rule|_String|_List), se_?LexicalPatternQ, opts:OptionsPattern[]]:= GenerateLexicalSummary[iSearchWikipedia[query, se, opts], "Wikipedia", se]
 
-GetText[input:List[__string], opts:OptionsPattern[]] := Module[
-	{LEN = Length[texts], REN},
+GetText[input:List[__String], opts:OptionsPattern[]] := Module[
+	{LEN = Length[input], REN},
 	REN = Range[LEN];
 	<|"Text" -> input, "Articles" -> Map[ToString][REN], "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>
 	]
