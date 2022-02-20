@@ -20,7 +20,7 @@ $SampleStringExpression::usage="A sample text pattern used for testing"
 (* Summary *)
 LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
 CountSummaryLowercase::usage = "CountSummaryLowercase[LexicalSummary[<>][\"Counts\"]] Converts matches to LowerCase and consolidates results\nCountSummaryLowercase[LexicalSummary[<>][\"CountGroups\"]] Converts matches to LowerCase and consolidates results"
-
+StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 (* Patterns *)
 
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
@@ -307,7 +307,7 @@ ToWikipediaSearchQuery::novq = "Keyword formulation not supported for the String
 WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{LexicalCases}]]:= Module[
 	{KWL = Apply[List][a], RULES},
 	RULES = Thread["Content"-> KWL];
-	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[opts, Except[MaxItems]]]][RULES]
+	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[{opts}, Except[MaxItems]]]][RULES]
 ]
 WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]]
 
@@ -644,19 +644,19 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages"] := PercentDatas
 LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages"] := PercentDataset[LexicalSummary[asc]["CountGroups"] // CountSummaryLowercase, asc["TotalMatchCount"]]
 (* Dataset Properties Filtered *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages", n_Integer] := LexicalSummary[asc]["CountGroupPercentages"][;;UpTo[n]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages", DeleteStopwords] := LexicalSummary[asc]["CountGroupPercentages"][Select[Not@StopWordQ[#Matches]&]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages", n_Integer, DeleteStopwords] := LexicalSummary[asc]["CountGroupPercentages", n][Select[Not@StopWordQ[#Matches]&]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages", DeleteStopwords] := FilterOutStopWordRows@LexicalSummary[asc]["CountGroupPercentages"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroupPercentages", n_Integer, DeleteStopwords] := FilterOutStopWordRows@LexicalSummary[asc]["CountGroupPercentages", n]
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages", n_Integer] := LexicalSummary[asc]["LowercaseCountGroupPercentages"][;;UpTo[n]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages", DeleteStopwords] := LexicalSummary[asc]["LowercaseCountGroupPercentages"][Select[Not@StopWordQ[#Matches]&]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages", n_Integer, DeleteStopwords] := LexicalSummary[asc]["LowercaseCountGroupPercentages", n][Select[Not@StopWordQ[#Matches]&]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages", DeleteStopwords] := FilterOutStopWordRows@LexicalSummary[asc]["LowercaseCountGroupPercentages"]
+LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages", n_Integer, DeleteStopwords] := FilterOutStopWordRows@LexicalSummary[asc]["LowercaseCountGroupPercentages", n]
 
 (* Count Properties *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["Counts"] := GetDatasetCounts[LexicalSummary[asc]["Dataset"], asc["Source"]] // DeleteMissing[#, 1, 1] & // ReverseSortBy[#Count&]
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups"] := (LexicalSummary[asc]["Counts"] // CountGroups)
 (* Count Properties Filtered *)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer] := (LexicalSummary[asc]["CountGroups"][;;UpTo[n]])
-LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", DeleteStopwords] := (LexicalSummary[asc]["Counts"] // FilterOutStopwordRows // CountGroups)
+LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", DeleteStopwords] := (LexicalSummary[asc]["Counts"] // CountGroups // FilterOutStopWordRows)
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer, DeleteStopwords] := (LexicalSummary[asc]["CountGroups", DeleteStopwords][;;UpTo[n]])
 
 
@@ -666,14 +666,14 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", DeleteStopwords] := GenerateDa
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey", n_Integer, DeleteStopwords] := GenerateDashboard[LexicalSummary[asc], n, DeleteStopwords]
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups"] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups"]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups"]][;;UpTo[n]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["PartOfSpeechGroups", n_Integer,  DeleteStopwords] := PartOfSpeechGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]][;;UpTo[n]]
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups"] := WordStemGroups[LexicalSummary[asc]["CountGroups"]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer] := WordStemGroups[LexicalSummary[asc]["CountGroups", n]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer] := WordStemGroups[LexicalSummary[asc]["CountGroups"]][;;UpTo[n]]
 LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]]
-LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", n, DeleteStopwords]]
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordStemCountGroups", n_Integer,  DeleteStopwords] := WordStemGroups[LexicalSummary[asc]["CountGroups", DeleteStopwords]][;;UpTo[n]]
 
 LexicalSummary[asc_?LexicalSummaryAscQ][invalidkey_] := asc[invalidkey]
 LexicalSummary[asc_?LexicalSummaryAscQ]["Properties"] := {"Data","Dataset","Counts","CountGroups","CountGroupPercentages", "LowercaseCountGroupPercentages","PartOfSpeechGroups", "WordStemCountGroups", "Source","TotalMatchCount","LexicalStructure", "Survey"}
@@ -730,10 +730,16 @@ CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] := ReverseSortBy[#CountGr
 		][ds[All, ThreadMatchesWithCount]]
 	]
 
-StopWordQ[s_String] := StringMatchQ[Alternatives @@ WordList["Stopwords"]][s]
-StopWordQ[l : List[__String]] := AnyTrue[l, StopWordQ]
+stopwords = Monitor[
+	Alternatives@@WordList["Stopwords"],
+	Row[{"Getting stopwords",ProgressIndicator[Appearance->"Ellipsis"]}]
+]
 
-FilterOutStopwordRows[ds_Dataset] := Select[\[Not]StopWordQ[#Match] &][ds]
+
+StopWordQ[s_String] := StringMatchQ[stopwords][ToLowerCase[s]]
+
+
+FilterOutStopWordRows[ds_Dataset] := ds[(DeleteCases[#, _String?StopWordQ, 3] &) /* Select[Not@SameQ[{}, #Matches] &]]
 
 PartOfSpeechKey[word_String] := ProcessWordData[WordData[word, "PartsOfSpeech"]]
 ProcessWordData[w_WordData] := None
