@@ -109,6 +109,7 @@ articlePluralize[_Integer?Positive] := "articles"
 (* Format *)
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args];
 FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[TextType[Containing[outer_,inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>];
 FormatToken[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[OptionalToken[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 FormatToken[AnyOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
@@ -206,8 +207,9 @@ iExpandPattern[se_?LexicalPatternQ] := iExpand[se]
 
 ExtractStringContentTypes[se_] := Splice[Cases[se, TextType[type_String] :> type, {0, Infinity}]];
 ExtractAlternativeContentTypes[se_] := Splice[Cases[se, TextType[type_Alternatives] :> Splice[List@@type], {0, Infinity}]];
+ExtractContainingContentTypes[se_] := Splice[Cases[se, TextType[type_Containing] :> type, {0, Infinity}]];
 
-ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractAlternativeContentTypes}[se]]
+ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes}[se]]
 
 ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
 ContentAssociation[sourcetext_String, se_] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
@@ -220,7 +222,7 @@ ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
 		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type_String] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
+		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
 		]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
