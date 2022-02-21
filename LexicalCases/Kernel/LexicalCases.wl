@@ -220,7 +220,7 @@ ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
 		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type_String] :> ApplyTokenBoundary[ContentAlts[CA[type]]], Infinity]
+		Replace[TRX, TextType[type_String] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
 		]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
