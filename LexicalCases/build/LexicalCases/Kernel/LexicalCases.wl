@@ -43,8 +43,6 @@ LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispers
 Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 
-(* Samples *)
-
 (* Utils *)
 optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
@@ -52,7 +50,7 @@ optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 (* Expressions *)
 extractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 
-$ValidLexicalTokens = (_TextType|_Opt|_Bounded|_Words)
+$ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
 ValidateLexicalToken[TextType[_String]] := True
@@ -257,10 +255,11 @@ ToWikipediaSearchQuery[lp_?LexicalPatternQ] := Enclose[
 iToWikipediaSearchQuery[Rule[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
 iToWikipediaSearchQuery[RuleDelayed[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
 
-iToWikipediaSearchQuery[lp:Except[_TextType]]:= Enclose[
+iToWikipediaSearchQuery[lp:Except[_TextType|_WordToken]]:= Enclose[
 	Module[
 		{CLP, WSQ},
-		CLP = DeleteCases[List @@ lp, Except[_String] | (s_String /; StringMatchQ[s, Whitespace])];
+		(* CLP = DeleteCases[List @@ lp, Except[_String] | (s_String /; StringMatchQ[s, Whitespace])]; *)
+		CLP = Cases[List @@lp, (h : Except[TextType | WordToken])[args__] :> Cases[{args}, _String, {0, Infinity}]];
 		WSQ = Confirm[WikipediaSearchQuery[CLP, lp]];
 		WSQ // StringReplace[(" " ..) -> " "] // StringTrim
 		]
@@ -452,14 +451,16 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[Lex
 	]
 
 (* LexicalPattern on Service *)
-LexicalCases[se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
+LexicalCases[se_, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[se, opts], 1]];
+	ConfirmAssert[LexicalPatternQ[se]];
 	LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts}, Options[iSearchWikipedia]]]
 	]
 
 (* WikiQueryRyle and LexicalPattern Input *)
-LexicalCases[query_Rule, se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
+LexicalCases[query_Rule, se_, opts:OptionsPattern[{LexicalCases, iSearchWikipedia}]]:= Enclose[
 	ConfirmAssert[CheckArguments[LexicalCases[query, se, opts], 2]];
+	ConfirmAssert[LexicalPatternQ[se]];
 	LexicalCasesFromService[OptionValue["Service"], query, se, FilterRules[{opts}, Options[iSearchWikipedia]]]
 	]
 

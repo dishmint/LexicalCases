@@ -50,7 +50,7 @@ optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 (* Expressions *)
 extractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
 
-$ValidLexicalTokens = (_TextType|_Opt|_Bounded|_Words)
+$ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
 ValidateLexicalToken[TextType[_String]] := True
@@ -255,10 +255,10 @@ ToWikipediaSearchQuery[lp_?LexicalPatternQ] := Enclose[
 iToWikipediaSearchQuery[Rule[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
 iToWikipediaSearchQuery[RuleDelayed[lp_,_]] := iToWikipediaSearchQuery[StripNamedPattern[lp]]
 
-iToWikipediaSearchQuery[lp:Except[_TextType]]:= Enclose[
+iToWikipediaSearchQuery[lp:Except[_TextType|_WordToken]]:= Enclose[
 	Module[
 		{CLP, WSQ},
-		CLP = DeleteCases[List @@ lp, Except[_String] | (s_String /; StringMatchQ[s, Whitespace])];
+		CLP = Cases[List @@lp, (h : Except[TextType | WordToken])[args__] :> Cases[{args}, _String, {0, Infinity}]];
 		WSQ = Confirm[WikipediaSearchQuery[CLP, lp]];
 		WSQ // StringReplace[(" " ..) -> " "] // StringTrim
 		]
