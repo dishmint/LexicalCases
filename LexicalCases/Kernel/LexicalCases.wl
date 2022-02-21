@@ -429,7 +429,7 @@ LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[Lexical
 (* SourceText is a string *)
 LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:=Enclose[
 	Module[
-		{RX, S = EscapePunctuation[source], RES},
+		{RX, S = source, RES},
 		++ArticleIndex;
 		lcStageMonitor[1];
 		RX = ConfirmQuiet[ExpandPattern[S, se], {Java::excptn, JavaNew::fail}];
@@ -441,8 +441,8 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[Lex
 				]@
 			Map[AssociationThread[{"Match", "Position"} -> #] &]@
 			Transpose@{
-				StringCases[source,RX, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
-				StringPosition[source, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
+				StringCases[S,RX, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
+				StringPosition[S, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 			};
 		lcStageMonitor[0];
 		RES
