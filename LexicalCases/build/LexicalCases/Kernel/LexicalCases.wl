@@ -83,6 +83,7 @@ ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pat
 
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
 StripNames[True, HoldPattern[(Rule|RuleDelayed)[se_?LexicalPatternQ,_]]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
+StripNames[True, c_Condition] := c
 StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
 
@@ -431,7 +432,6 @@ LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts:OptionsPattern[Lexical
 (* SourceText is a string *)
 LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts:OptionsPattern[LexicalCases]]:=Enclose[
 	Module[
-	(* {RX, S = EscapePunctuation[source], RES}, *)
 		{RX, S = source, RES},
 		++ArticleIndex;
 		lcStageMonitor[1];
