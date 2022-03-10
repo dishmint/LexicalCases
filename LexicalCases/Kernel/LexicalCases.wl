@@ -72,11 +72,11 @@ LexicalPatternQ[expr_]:= Module[
 		se = Replace[expr, $ValidLexicalTokens :> " ", Infinity],
 		lt = extractLexicalTokens[expr]
 		},
-	Check[StringPattern`StringPatternQ[se] \[Or] AllTrue[ValidateLexicalToken, lt], $Failed]
+	Check[GeneralUtilities`StringPatternQ[se] \[Or] AllTrue[ValidateLexicalToken, lt], $Failed]
 		];
 LexicalPatternQ[Rule[expr_?LexicalPatternQ,_]]:= True;
 LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
-LexicalPatternQ[expr_?StringPattern`StringPatternQ]:= True;
+LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True;
 
 
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pattern}]
