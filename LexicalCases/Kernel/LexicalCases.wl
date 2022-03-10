@@ -102,7 +102,7 @@ articlePluralize[_Integer?Positive] := "articles"
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args];
 FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
 FormatToken[TextType[Containing[outer_,inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>];
-FormatToken[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[TextType[types_Alternatives]] := TextElement[WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[OptionalToken[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 FormatToken[AnyOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
 FormatToken[FixedOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
@@ -113,7 +113,7 @@ FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"
 FormatToken[HoldPattern[__]] := TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
 FormatToken[HoldPattern[___]] := TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
 FormatToken[HoldPattern[h:(Blank|BlankSequence|BlankNullSequence)[type_]]] := TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
-FormatToken[a_Alternatives] := TextElement[PostProcessAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[a_Alternatives] := TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 FormatToken[s_Symbol] := s;
 FormatToken[atom_?AtomQ] := atom;
@@ -204,7 +204,7 @@ ExtractContainingContentTypes[se_] := Splice[Cases[se, TextType[type_Containing]
 ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes}[se]]
 
 ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
-ContentAssociation[sourcetext_String, se_] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
+ContentAssociation[sourcetext_String, se_] := Map[UnwrapAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
 
 ContentAlts[List[a_Alternatives]] := a
