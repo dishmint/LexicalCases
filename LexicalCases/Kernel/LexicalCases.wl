@@ -44,9 +44,7 @@ Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
 
-(* Expressions *)
-
-
+(* Validation *)
 $ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
