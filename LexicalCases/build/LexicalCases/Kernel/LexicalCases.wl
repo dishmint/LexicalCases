@@ -42,13 +42,10 @@ LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispers
 
 Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
-
-(* Utils *)
-optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
-
+Needs["LexicalCases`Utilities`"]
 
 (* Expressions *)
-extractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
+
 
 $ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
@@ -79,7 +76,7 @@ LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
 LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True;
 
 
-ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pattern}]
+ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
 StripNames[True, HoldPattern[(Rule|RuleDelayed)[se_?LexicalPatternQ,_]]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
@@ -276,7 +273,7 @@ WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{Lexi
 	RULES = Thread["Content"-> KWL];
 	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[{opts}, Except[MaxItems]]]][RULES]
 ]
-WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]]
+WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,iSearchWikipedia]]]
 
 
 iGetCategoryArticles[categories_List, n_Integer] := (Take[#, UpTo[n]]&)@*DeleteMissing@*DeleteDuplicates@*Flatten@ParallelMap[WikipediaData["Category" -> #, "CategoryArticles"]&, categories]
@@ -290,7 +287,7 @@ WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{LexicalCa
 iGetWikipediaArticles[query_Rule, opts___] := Module[
 	{ART, ARC, MTL, SQR = WikipediaKeywordString[Values[query]], TXT},
 	ART = Monitor[
-		WikipediaArticlesFromRule[query, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
+		WikipediaArticlesFromRule[query, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,iSearchWikipedia]]],
 		ArticleSearchIndicator["Wikipedia", SQR]
 		];
 	ARC = Length[ART];
