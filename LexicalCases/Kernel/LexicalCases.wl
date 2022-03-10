@@ -84,9 +84,6 @@ StripNames[True, c_Condition] := c
 StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
 
-ExtractAlternatives[List[a_Alternatives]] := a
-ExtractAlternatives[a_] := a
-
 PostProcessAlternatives[alts_Alternatives] := {alts}
 PostProcessAlternatives[te_] := te
 
