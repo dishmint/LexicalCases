@@ -44,9 +44,7 @@ Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
 
-(* Expressions *)
-
-
+(* Validation *)
 $ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
@@ -328,11 +326,9 @@ Options[LexicalCases]={
 	Language -> "English"
 };
 
-LexicalCases::unsupobj=Import::unsupobj;
-GetFileExtension[file_File] := Information[file, "FileExtension"]
-SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
+LexicalCases::unsupfmt="`` is not supported. One of the following should be used: .txt, .md, .csv, .tsv";
 LexicalCases[file_File, args___] := Enclose[
-	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupobj, GetFileExtension[file]]];
+	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupfmt, GetFileExtension[file]]];
 	Module[{data = Import[file]}, LexicalCases[data, args]]
 ]
 

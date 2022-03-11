@@ -15,6 +15,9 @@ ExtractHeads::usage = "ExtractHeads[expr] extracts all heads found in expr"
 UnwrapAlternatives::usage = "UnwrapAlternatives[expr] if expr is a list of alternatives return the alternatives"
 WrapAlternatives::usage = "WrapAlternatives[expr] if expr is an alternatives retun expr in a list"
 
+GetFileExtension::usage = "GetFileExtension[file] extract \"FileExtension\" from Information[file]"
+SupportedFileQ::usage = "SupportedFileQ[file] returns True if file is a plain text document"
+
 Begin["`Private`"]
 
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
@@ -28,6 +31,9 @@ UnwrapAlternatives[else_] := else
 
 WrapAlternatives[expr_Alternatives] := {expr}
 WrapAlternatives[else_] := else
+
+GetFileExtension[file_File] := Information[file, "FileExtension"]
+SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
 
 End[]
 EndPackage[]

@@ -326,11 +326,9 @@ Options[LexicalCases]={
 	Language -> "English"
 };
 
-LexicalCases::unsupobj=Import::unsupobj;
-GetFileExtension[file_File] := Information[file, "FileExtension"]
-SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
+LexicalCases::unsupfmt="`` is not a supported format. Valid formats are: .txt, .md, .csv and .tsv";
 LexicalCases[file_File, args___] := Enclose[
-	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupobj, GetFileExtension[file]]];
+	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupfmt, GetFileExtension[file]]];
 	Module[{data = Import[file]}, LexicalCases[data, args]]
 ]
 
