@@ -136,31 +136,6 @@ ArticleSearchIndicator[service_String, query_] := Row[{
 	}]
 
 (* Match Utils *)
-startTrim[True] := 1
-startTrim[False] := 0
-endTrim[True] := -1
-endTrim[False] := 0
-
-mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
-
-mTrimPositions[_,p_]:= p
-
-consolidateMatches = Query[
-	GroupBy[#Match &]/*(KeyValueMap[<|"Match" -> #1,"Position" -> #2|> &]),
-	KeyDrop["Match"]/*Values/*(Flatten[#, 2] &)
-	]
-
-trimMatches = Query[
-		All,
-		<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
-		]
-
-MatchTrim[True, matches_List]:=
-	consolidateMatches@trimMatches[matches]
-		
-MatchTrim[False, matches_List]:= matches
-
-MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
 
 ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
@@ -204,15 +179,11 @@ ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractContainin
 ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
 ContentAssociation[sourcetext_String, se_] := Map[UnwrapAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
-
-ContentAlts[List[a_Alternatives]] := a
-ContentAlts[a_Alternatives] := a
-
 ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
 		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
+		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[UnwrapAlternatives[CA[type]]], {0, Infinity}]
 		]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
@@ -326,7 +297,7 @@ Options[LexicalCases]={
 	Language -> "English"
 };
 
-LexicalCases::unsupfmt="`` is not supported. One of the following should be used: .txt, .md, .csv, .tsv";
+LexicalCases::unsupfmt="`` is not a supported format. Valid formats are: .txt, .md, .csv and .tsv";
 LexicalCases[file_File, args___] := Enclose[
 	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupfmt, GetFileExtension[file]]];
 	Module[{data = Import[file]}, LexicalCases[data, args]]

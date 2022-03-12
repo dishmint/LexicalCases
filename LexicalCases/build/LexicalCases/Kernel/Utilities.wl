@@ -18,6 +18,8 @@ WrapAlternatives::usage = "WrapAlternatives[expr] if expr is an alternatives ret
 GetFileExtension::usage = "GetFileExtension[file] extract \"FileExtension\" from Information[file]"
 SupportedFileQ::usage = "SupportedFileQ[file] returns True if file is a plain text document"
 
+MatchTrim::usage = "MatchTrim[boole, matches] trims white space from each match and updates the match positions if boole is True"
+
 Begin["`Private`"]
 
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
@@ -34,6 +36,34 @@ WrapAlternatives[else_] := else
 
 GetFileExtension[file_File] := Information[file, "FileExtension"]
 SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
+
+
+(* match operations *)
+startTrim[True] := 1
+startTrim[False] := 0
+endTrim[True] := -1
+endTrim[False] := 0
+
+TrimMatchPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
+
+TrimMatchPositions[_,p_]:= p
+
+consolidateMatches = Query[
+	GroupBy[#Match &]/*(KeyValueMap[<|"Match" -> #1,"Position" -> #2|> &]),
+	KeyDrop["Match"]/*Values/*(Flatten[#, 2] &)
+	]
+
+trimMatches = Query[
+		All,
+		<|"Match" -> StringTrim[#Match],"Position" -> (TrimMatchPositions[#Match, #Position])|> &
+		]
+
+MatchTrim[True, matches_List]:= consolidateMatches@trimMatches[matches]
+
+MatchTrim[False, matches_List]:= matches
+
+MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
+
 
 End[]
 EndPackage[]

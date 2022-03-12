@@ -136,31 +136,6 @@ ArticleSearchIndicator[service_String, query_] := Row[{
 	}]
 
 (* Match Utils *)
-startTrim[True] := 1
-startTrim[False] := 0
-endTrim[True] := -1
-endTrim[False] := 0
-
-mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
-
-mTrimPositions[_,p_]:= p
-
-consolidateMatches = Query[
-	GroupBy[#Match &]/*(KeyValueMap[<|"Match" -> #1,"Position" -> #2|> &]),
-	KeyDrop["Match"]/*Values/*(Flatten[#, 2] &)
-	]
-
-trimMatches = Query[
-		All,
-		<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
-		]
-
-MatchTrim[True, matches_List]:=
-	consolidateMatches@trimMatches[matches]
-		
-MatchTrim[False, matches_List]:= matches
-
-MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
 
 ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
