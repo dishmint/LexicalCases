@@ -204,15 +204,11 @@ ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractContainin
 ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
 ContentAssociation[sourcetext_String, se_] := Map[UnwrapAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
-
-ContentAlts[List[a_Alternatives]] := a
-ContentAlts[a_Alternatives] := a
-
 ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
 		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
+		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[UnwrapAlternatives[CA[type]]], {0, Infinity}]
 		]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
