@@ -42,14 +42,9 @@ LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispers
 
 Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
+Needs["LexicalCases`Utilities`"]
 
-(* Utils *)
-optionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
-
-
-(* Expressions *)
-extractHeads[expr_] := Cases[expr, h_[___] :> h, {0, Infinity}]
-
+(* Validation *)
 $ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
@@ -79,19 +74,13 @@ LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
 LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True;
 
 
-ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[extractHeads[se], {Pattern}]
+ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
 StripNames[True, HoldPattern[(Rule|RuleDelayed)[se_?LexicalPatternQ,_]]] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[True, c_Condition] := c
 StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
-
-ExtractAlternatives[List[a_Alternatives]] := a
-ExtractAlternatives[a_] := a
-
-PostProcessAlternatives[alts_Alternatives] := {alts}
-PostProcessAlternatives[te_] := te
 
 PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
@@ -111,7 +100,7 @@ articlePluralize[_Integer?Positive] := "articles"
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args];
 FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
 FormatToken[TextType[Containing[outer_,inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>];
-FormatToken[TextType[types_Alternatives]] := TextElement[PostProcessAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[TextType[types_Alternatives]] := TextElement[WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[OptionalToken[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"|>];
 FormatToken[AnyOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"|>]
 FormatToken[FixedOrder[args__]] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "FixedOrder"|>]
@@ -122,7 +111,7 @@ FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"
 FormatToken[HoldPattern[__]] := TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
 FormatToken[HoldPattern[___]] := TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
 FormatToken[HoldPattern[h:(Blank|BlankSequence|BlankNullSequence)[type_]]] := TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
-FormatToken[a_Alternatives] := TextElement[PostProcessAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[a_Alternatives] := TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit" -> "Alternatives"|>];
 FormatToken[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 FormatToken[s_Symbol] := s;
 FormatToken[atom_?AtomQ] := atom;
@@ -146,34 +135,6 @@ ArticleSearchIndicator[service_String, query_] := Row[{
 	"Searching "<>service<>" for ", query, ProgressIndicator[Appearance->"Ellipsis"]
 	}]
 
-(* Match Utils *)
-startTrim[True] := 1
-startTrim[False] := 0
-endTrim[True] := -1
-endTrim[False] := 0
-
-mTrimPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
-
-mTrimPositions[_,p_]:= p
-
-consolidateMatches = Query[
-	GroupBy[#Match &]/*(KeyValueMap[<|"Match" -> #1,"Position" -> #2|> &]),
-	KeyDrop["Match"]/*Values/*(Flatten[#, 2] &)
-	]
-
-trimMatches = Query[
-		All,
-		<|"Match" -> StringTrim[#Match],"Position" -> (mTrimPositions[#Match, #Position])|> &
-		]
-
-MatchTrim[True, matches_List]:=
-	consolidateMatches@trimMatches[matches]
-		
-MatchTrim[False, matches_List]:= matches
-
-MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
-
-ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
 (* Patterns *)
 
@@ -213,17 +174,13 @@ ExtractContainingContentTypes[se_] := Splice[Cases[se, TextType[type_Containing]
 ExtractContentTypes[se_] := Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes}[se]]
 
 ContentAssociation[st_String, (Rule|RuleDelayed)[se_,_]] := ContentAssociation[st, se]
-ContentAssociation[sourcetext_String, se_] := Map[ExtractAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
-
-
-ContentAlts[List[a_Alternatives]] := a
-ContentAlts[a_Alternatives] := a
+ContentAssociation[sourcetext_String, se_] := Map[UnwrapAlternatives]@Merge[Identity]@KeyValueMap[<|#1 -> Alternatives@@DeleteDuplicates@#2|> &][TextCases[sourcetext, ExtractContentTypes[se]]]
 
 ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 	Module[{TRX, CA},
 		TRX = iExpandPattern[se];
 		CA  = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[ContentAlts[CA[type]]], {0, Infinity}]
+		Replace[TRX, TextType[type:(_String|_Containing)] :> ApplyTokenBoundary[UnwrapAlternatives[CA[type]]], {0, Infinity}]
 		]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
@@ -276,7 +233,7 @@ WikipediaArticlesFromRule["Content" -> a_Alternatives, opts:OptionsPattern[{Lexi
 	RULES = Thread["Content"-> KWL];
 	Flatten@Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[OptionValue[MaxItems]/Length[KWL]]), FilterRules[{opts}, Except[MaxItems]]]][RULES]
 ]
-WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]]
+WikipediaArticlesFromRule[rule:("Content" -> _), opts:OptionsPattern[]]:= WikipediaSearch[rule, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,iSearchWikipedia]]]
 
 
 iGetCategoryArticles[categories_List, n_Integer] := (Take[#, UpTo[n]]&)@*DeleteMissing@*DeleteDuplicates@*Flatten@ParallelMap[WikipediaData["Category" -> #, "CategoryArticles"]&, categories]
@@ -290,7 +247,7 @@ WikipediaArticlesFromRule[rule:("Category" -> _), opts:OptionsPattern[{LexicalCa
 iGetWikipediaArticles[query_Rule, opts___] := Module[
 	{ART, ARC, MTL, SQR = WikipediaKeywordString[Values[query]], TXT},
 	ART = Monitor[
-		WikipediaArticlesFromRule[query, Sequence@@FilterRules[{opts}, optionsJoin[WikipediaSearch,iSearchWikipedia]]],
+		WikipediaArticlesFromRule[query, Sequence@@FilterRules[{opts}, OptionsJoin[WikipediaSearch,iSearchWikipedia]]],
 		ArticleSearchIndicator["Wikipedia", SQR]
 		];
 	ARC = Length[ART];
@@ -337,11 +294,9 @@ Options[LexicalCases]={
 	Language -> "English"
 };
 
-LexicalCases::unsupobj=Import::unsupobj;
-GetFileExtension[file_File] := Information[file, "FileExtension"]
-SupportedFileQ[file_File] := MemberQ[{"txt", "md", "csv", "tsv"}, GetFileExtension[file]]
+LexicalCases::unsupfmt="`` is not a supported format. Valid formats are: .txt, .md, .csv and .tsv";
 LexicalCases[file_File, args___] := Enclose[
-	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupobj, GetFileExtension[file]]];
+	ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupfmt, GetFileExtension[file]]];
 	Module[{data = Import[file]}, LexicalCases[data, args]]
 ]
 
