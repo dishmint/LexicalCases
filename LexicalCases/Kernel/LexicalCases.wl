@@ -135,9 +135,6 @@ ArticleSearchIndicator[service_String, query_] := Row[{
 	"Searching "<>service<>" for ", query, ProgressIndicator[Appearance->"Ellipsis"]
 	}]
 
-(* Match Utils *)
-
-ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1];
 
 (* Patterns *)
 

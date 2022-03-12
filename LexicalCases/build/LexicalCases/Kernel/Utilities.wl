@@ -20,6 +20,8 @@ SupportedFileQ::usage = "SupportedFileQ[file] returns True if file is a plain te
 
 MatchTrim::usage = "MatchTrim[boole, matches] trims white space from each match and updates the match positions if boole is True"
 
+ReplaceEmptyListWithMissing::usage = "ReplaceEmptyListWithMissing[result] Replaces empty lists in result with Missing[\"NoMatches\"]"
+
 Begin["`Private`"]
 
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
@@ -64,6 +66,7 @@ MatchTrim[False, matches_List]:= matches
 
 MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
 
+ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1]
 
 End[]
 EndPackage[]
