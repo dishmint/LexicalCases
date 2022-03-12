@@ -505,10 +505,6 @@ GetText[input:List[__File], opts:OptionsPattern[]] := Module[
 	<|"Text" -> Map[Import[#, "Text"]&][input], "Articles" -> REN, "ArticleCount" -> LEN, "ArticleCountString" -> ToString[LEN], "MaxTitleLength" -> (First@TakeLargestBy[REN -> "Value", IntegerDigits /* Length,1])|>
 	]
 
-	(*
-	TODO: Add the following services
-		{"ArXiv","CrossRef","Dropbox","Facebook","GoogleCustomSearch","Instagram","OpenLibrary","PubMed","Reddit","SurveyMonkey","Twilio","Twitter","Wikipedia"}
-		*)
 GetText[input_Rule, opts:OptionsPattern[]] := iGetWikipediaArticles[input, opts]
 
 iLexicalCases[input:(List[__String]|List[__File]|_Rule), se_?LexicalPatternQ, opts:OptionsPattern[{LexicalCases}]] := Module[
