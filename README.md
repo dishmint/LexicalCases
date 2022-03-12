@@ -3,10 +3,10 @@
 Extract substrings matching a lexical pattern.
 
 ## Install
-After cloning this repository or downloading the paclet file, use PacletInstall and Needs to load definitions.
+Either clone this repository or download the latest [release](https://github.com/dishmint/LexicalCases/releases/) , then use PacletInstall and Get to load definitions.
 ```Mathematica
-PacletInstall["path/to/LexicalCases-0.0.1.paclet"]
-Needs["LexicalCases`"]
+PacletInstall["path/to/LexicalCases-1.0.22.paclet"]
+<<LexicalCases`
 ```
 
 _v12.3+ supported_
