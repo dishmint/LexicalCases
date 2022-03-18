@@ -31,6 +31,8 @@ Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
 
 ExpandPattern::usage = "ExpandPattern[patt] expands patt into a valid StringExpression"
 
+LexicalPattern::usage = "LexicalPattern[se] A wrapper for using lexical patterns in string functions"
+
 (* Format *)
 LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the StringExpression"
 
@@ -43,6 +45,7 @@ LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispers
 Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
+Needs["LexicalCases`LexicalPattern`"]
 
 (* Validation *)
 $ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
