@@ -5,7 +5,7 @@ Extract substrings matching a lexical pattern.
 ## Install
 Either clone this repository or download the latest [release](https://github.com/dishmint/LexicalCases/releases/) , then use PacletInstall and Get to load definitions.
 ```Mathematica
-PacletInstall["path/to/LexicalCases-1.0.22.paclet"]
+PacletInstall["path/to/LexicalCases-1.1.22.paclet"]
 <<LexicalCases`
 ```
 
