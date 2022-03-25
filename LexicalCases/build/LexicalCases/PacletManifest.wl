@@ -89,7 +89,7 @@
             ,
             "Hash"
             ->
-            "f2c108d3201cf81efc3bebf40d4b51d99e0cb0396e62a3b7d3c4bd19ecdaad5d"
+            "8c385a4a6294145dbd297da3560723b9bd852c99b5d367db2bd9399533fe61c6"
                 
         |>
         ,
@@ -103,7 +103,7 @@
             ,
             "Hash"
             ->
-            "59e9001eaa081bb94c17edc073761a6cd7c7f9de4f30c47d0bdbcd1f85072d07"
+            "0adb34168210fc543808a603a9f04365409745e9a3457b596843f7911455bb64"
                 
         |>
         ,
@@ -117,7 +117,7 @@
             ,
             "Hash"
             ->
-            "f74a5d2413442a59251df5288b2453b328facdd277de6f7294f4d76fa70eaefe"
+            "074ed10dde0d56accaa0ebfecb0a8a84848f000b16b7b05aba5120fbe3d34f7e"
                 
         |>
         ,
@@ -131,7 +131,7 @@
             ,
             "Hash"
             ->
-            "d278bec405a2727a2e979b272bbca35dc257930781f760ba6572d4b99d8e64c1"
+            "7e8c15172ed64e9cbe94a4006d6d5590c64e8667187d640176de91f1da4c244b"
                 
         |>
         ,
@@ -145,7 +145,7 @@
             ,
             "Hash"
             ->
-            "09847b6d6a57628f8229b7f6bd5961fef225e531dc80bfb180b0862eaf466109"
+            "6a057a01b435538d07018c6427753adc4e66b721bd9ef28973a4f5cb730edfe7"
                 
         |>
         ,
@@ -159,7 +159,21 @@
             ,
             "Hash"
             ->
-            "0dc5bf540c1d9b8984b16d003ed889c7b407e11081bbd0ad6a1b3c27cac34051"
+            "0d5410b55423f3d17d15f2735f9293eabe286d7874bab409922be1e2d62377e6"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexicalPattern.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "b4c3370ea9a1f9c1ff99f9d5b28654b4a5a59dd76a8685f0d226402d06111c37"
                 
         |>
         ,
@@ -173,7 +187,7 @@
             ,
             "Hash"
             ->
-            "fd8ef170dc3e7aa3304e34072cb13813dfa174be91c1f0883a3b9e246a58a051"
+            "8264c9051c087b04e4e005fdfe7be7d29ec6fae482c4a9898426d0bf322d604b"
                 
         |>
         ,
@@ -187,7 +201,7 @@
             ,
             "Hash"
             ->
-            "ac6225953984401c8dc9a94239cca96a623a876bb1d7ca2dda5b3d6cbb78d26c"
+            "21156bf3b2397e0e01432fe1d549a498fbf6239f78606f981d7b6d551b13e5fc"
                 
         |>
         ,
@@ -201,7 +215,7 @@
             ,
             "Hash"
             ->
-            "6fd5f9d3876cbdeed28a31704cd403736da6de32f34bd31e76c5b484b2e06753"
+            "9bd672901c27ca977cbde6e124c985be3ffc1e38e18329abd6e8d4fc2be389d3"
                 
         |>
         ,
@@ -215,7 +229,7 @@
             ,
             "Hash"
             ->
-            "6898973d8c298166bd33a6d59a299cf612cb0046a72bddd6f7b801059c57f2af"
+            "4cdab4e154ee0de8cc7331aae20a442f929092415e6634a811e36e0fc2db5cb9"
                 
         |>
         ,
@@ -229,7 +243,7 @@
             ,
             "Hash"
             ->
-            "f1d6e89ca654d001ac03388d995f269f098423bde3150a71d82cb5c3966576a6"
+            "347d53d56f19cbcec9155f40636acc748d59df8c714224b6745692b4c2439c8b"
                 
         |>
         ,
@@ -243,7 +257,7 @@
             ,
             "Hash"
             ->
-            "c7e187d564c9f863f328d36a0a19b1fd458bad5adfa08d5136c0a44ac6e3f71f"
+            "45bb1ebed65a3e3a43d5b12f4605747a0ef17e7936d477a59b0b85f32bdea9e0"
                 
         |>
         ,
@@ -257,7 +271,7 @@
             ,
             "Hash"
             ->
-            "e65735e5d0ea4fe7214cd6dd711ccb60efaacf6135655da77a7f9d38c5c1fd74"
+            "7de948b7670065bed61dfb06571d2f668b28d4d588b9a71d352de99850f9cc2c"
                 
         |>
         ,
@@ -271,7 +285,7 @@
             ,
             "Hash"
             ->
-            "f58365752f0c87358999cd40aa54296b253e511a3a22e0259413c01117b139a6"
+            "7b25897e3f0b78bd6785847f4bb8281d69245ca530845712f4159a2433296a09"
                 
         |>
     }
