@@ -438,7 +438,7 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "Caption",
+		"Name" -> "MathCaption",
 		"Type" -> "Text",
 		"Tokenized" -> True,
 		"Stored" -> False,
@@ -453,7 +453,7 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "MathCaption",
+		"Name" -> "Caption",
 		"Type" -> "Text",
 		"Tokenized" -> True,
 		"Stored" -> False,
