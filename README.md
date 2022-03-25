@@ -27,7 +27,7 @@ oospResults = LexicalCases[oosp, oospPattern]
 
 ---
 
-Lexical patterns can contain interpretatble types, in this case parts of speech. The results can be grouped by their count with the `"CountGroups"` property.
+Lexical patterns can contain interpretable types, in this case parts of speech. The results can be grouped by their count with the `"CountGroups"` property.
 
 <img width="735" alt="Screen Shot 2022-03-25 at 1 05 59 AM" src="https://user-images.githubusercontent.com/18143853/160058221-cb27304b-b1c0-4f78-8e4d-421622aac264.png">
 
