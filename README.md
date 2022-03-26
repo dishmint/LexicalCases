@@ -44,7 +44,7 @@ Patterns can be used in `StringCases`, `StringPosition` and `StringmatchQ` by wr
 
 <img width="1642" alt="Screen Shot 2022-03-25 at 1 10 31 AM" src="https://user-images.githubusercontent.com/18143853/160058465-f7630599-80a3-4ce6-bc82-407e6d216385.png">
 
-LexicalPattern can be used to define operator forms as well.
+Use LexicalPattern in operator forms of string functions.
 ```Mathematica
 aliceOp = StringCases[LexicalPattern["Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"]]];
 ```
