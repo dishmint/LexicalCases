@@ -189,6 +189,9 @@ ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] := Rule[ExpandPattern[sourcetext, se], expr]
 ExpandPattern[sourcetext_String, RuleDelayed[se_?LexicalPatternQ, expr_]] := RuleDelayed[ExpandPattern[sourcetext, se], expr]
 
+(* Naive solution for list inputs to ExpandPattern *)
+ExpandPattern[sources:List[__String], se_?LexicalPatternQ] := Map[ExpandPattern[#, se]&][sources]
+
 (* Wikipedia *)
 InsertAnd[l:List[_]] := l;
 InsertAnd[x_List] := Insert[x, "and", -2];
