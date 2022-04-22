@@ -42,6 +42,9 @@ $LexicalCasesServices::usage = "List of supported services"
 (* Analysis / Visualization *)
 LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispersion of word w across text\nLexicalDispersionPlot[text, {w$$1, $$, w$$i}] plots the dispersion of the w$$i across text"
 
+(* Options *)
+MaxCategories::usage = "MaxCategories is an option to LexicalCases restricting the number of Wikipedia categories to get articles from"
+
 Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
