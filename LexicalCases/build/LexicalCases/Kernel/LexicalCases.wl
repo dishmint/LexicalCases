@@ -89,10 +89,10 @@ StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p],
 StripNames[False,se_?LexicalPatternQ]:= se
 
 PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
-PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data|>
+PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data, "Position" -> {}|>
 
 PrependArticleKey[{article_Integer, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
-PrependArticleKey[{article_Integer, data_Missing}] := <|"Article" -> article, "Match" -> data|>
+PrependArticleKey[{article_Integer, data_Missing}] := <|"Article" -> article, "Match" -> data, "Position" -> {}|>
 
 (* Text Cleanup *)
 EscapePunctuation[s_String] := StringReplace[s, pc : PunctuationCharacter :> "\\" <> pc]
