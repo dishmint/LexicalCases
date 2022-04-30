@@ -10,11 +10,11 @@
 
 BeginPackage["LexicalCases`"]
 (* Main *)
-LexicalCases::usage = "LexicalCases[source, se] extract cases of LexicalPattern se from Text source"
-LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is valid input for LexicalCases"
+LexicalCases::usage = "LexicalCases[source, lp] extract cases of LexicalPattern lp from Text source"
+LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid lexical pattern"
 (* Samples *)
-$SampleStringShort::usage="A short example string"
-$SampleStringLong::usage="A long example string"
+$SampleSentence::usage="A short example string"
+$SampleParagraph::usage="A long example string"
 $SampleStringExpression::usage="A sample text pattern used for testing"
 
 (* Summary *)
@@ -24,23 +24,23 @@ StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 (* Patterns *)
 
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
-OptionalToken::usage = "OptionalToken[se] matches se, \" \", or \"\""
+OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\""
 BoundToken::usage = "BoundToken[expr] sandwiches expr with boundaries\nBounded[s1|\[Ellipsis]|si] sandwiches the set of si with boundaries"
 WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces"
 Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
 
 ExpandPattern::usage = "ExpandPattern[patt] expands patt into a valid StringExpression"
 
-LexicalPattern::usage = "LexicalPattern[se] A wrapper for using lexical patterns in string functions"
+LexicalPattern::usage = "LexicalPattern[patt] A wrapper for using lexical patterns in string functions"
 
 (* Format *)
-LexicalStructure::usage="LexicalStructure[se] Visualize the structure of the StringExpression"
+LexicalStructure::usage="LexicalStructure[lp] Visualize lexical pattern structure"
 
 (* Services *)
 $LexicalCasesServices::usage = "List of supported services"
 
 (* Analysis / Visualization *)
-LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispersion of word w across text\nLexicalDispersionPlot[text, {w$$1, $$, w$$i}] plots the dispersion of the w$$i across text"
+LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispersion of word w across text\nLexicalDispersionPlot[text, {w1, \[Ellipsis], wi}] plots the dispersion of the wi across text"
 
 (* Options *)
 MaxCategories::usage = "MaxCategories is an option to LexicalCases restricting the number of Wikipedia categories to get articles from"
