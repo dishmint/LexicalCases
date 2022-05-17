@@ -25,7 +25,7 @@ StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
 OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\""
-BoundToken::usage = "BoundToken[expr] sandwiches expr with boundaries\nBounded[s1|\[Ellipsis]|si] sandwiches the set of si with boundaries"
+BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi"
 WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces"
 Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
 
