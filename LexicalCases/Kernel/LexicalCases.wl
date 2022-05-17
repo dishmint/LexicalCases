@@ -19,7 +19,7 @@ $SampleStringExpression::usage="A sample text pattern used for testing"
 
 (* Summary *)
 LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
-CountSummaryLowercase::usage = "CountSummaryLowercase[LexicalSummary[<>][\"Counts\"]] Converts matches to LowerCase and consolidates results\nCountSummaryLowercase[LexicalSummary[<>][\"CountGroups\"]] Converts matches to LowerCase and consolidates results"
+CountSummaryLowercase::usage = "CountSummaryLowercase[ds] lowercase matches in ds and merge rows with the same match"
 StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 (* Patterns *)
 
