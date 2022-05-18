@@ -10,26 +10,26 @@
 
 BeginPackage["LexicalCases`"]
 (* Main *)
-LexicalCases::usage = "LexicalCases[source, lp] extract cases of LexicalPattern lp from Text source"
-LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid lexical pattern"
+LexicalCases::usage = "LexicalCases[source, lp] extract cases of LexicalPattern lp from Text source."
+LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid lexical pattern."
 (* Samples *)
-$SampleSentence::usage="A short example string"
-$SampleParagraph::usage="A long example string"
-$SampleStringExpression::usage="A sample text pattern used for testing"
+$SampleSentence::usage="A short example string."
+$SampleParagraph::usage="A long example string."
+$SampleStringExpression::usage="A sample pattern used for testing."
 
 (* Summary *)
 LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
-CountSummaryLowercase::usage = "CountSummaryLowercase[ds] lowercase matches in ds and merge rows with the same match"
+CountSummaryLowercase::usage = "CountSummaryLowercase[ds] lowercase matches in ds and merge rows with the same match."
 StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 (* Patterns *)
 
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
-OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\""
-BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi"
-WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces"
-Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer"
+OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\"."
+BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi."
+WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces."
+Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer."
 
-ExpandPattern::usage = "ExpandPattern[patt] expands patt into a valid StringExpression"
+ExpandPattern::usage = "ExpandPattern[source, lp] expands lexical pattern lp into a valid StringExpression with content from source."
 
 LexicalPattern::usage = "LexicalPattern[patt] A wrapper for using lexical patterns in string functions"
 
