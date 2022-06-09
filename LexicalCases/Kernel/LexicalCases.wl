@@ -62,7 +62,7 @@ ValidateLexicalToken[BoundToken[a_Alternatives]] := AllTrue[LexicalPatternQ][Lis
 ValidateLexicalToken[BoundToken[e:Except[_Alternatives]]] := LexicalPatternQ[e]
 ValidateLexicalToken[WordToken[n_Integer]] := True
 ValidateLexicalToken[WordToken[m_Integer, n_Integer]] := True
-ValidateLexicalToken[expr_] := Message[LexicalCases::invld, expr];False
+ValidateLexicalToken[expr_] := (Message[LexicalCases::invld, expr];False)
 
 LexicalCases::invld = "`1` is not a valid lexical token"
 
