@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    105133,       2255]
-NotebookOptionsPosition[     96858,       2078]
-NotebookOutlinePosition[     97592,       2103]
-CellTagsIndexPosition[     97512,       2098]
+NotebookDataLength[     95580,       2039]
+NotebookOptionsPosition[     87067,       1858]
+NotebookOutlinePosition[     87795,       1883]
+CellTagsIndexPosition[     87715,       1878]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -114,46 +114,40 @@ Cell["WordToken", "ObjectName",
  CellID->1565923407],
 
 Cell[TextData[{
- Cell["   ", "ModInfo"],
+ Cell["   ", "ModInfo",ExpressionUUID->"6a1b0ecf-6884-4ca3-97c2-2a7bbb82ff6b"],
  Cell[BoxData[
   RowBox[{
    ButtonBox["WordToken",
     BaseStyle->"Link",
     ButtonData->"paclet:LexicalCases/ref/WordToken"], "[", 
-   StyleBox["n", "TI"], "]"}]], "InlineFormula"],
+   StyleBox["n", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "0ab87569-ff01-4fe3-88f9-10e4208a0482"],
  "\[LineSeparator]represents n words separated by spaces\n",
- Cell["   ", "ModInfo"],
+ Cell["   ", "ModInfo",ExpressionUUID->"ba182e8a-a787-443e-bb09-ddb3f68f7960"],
  Cell[BoxData[
   RowBox[{
    ButtonBox["WordToken",
     BaseStyle->"Link",
     ButtonData->"paclet:LexicalCases/ref/WordToken"], "[", 
    RowBox[{
-    StyleBox["m", "TI"], ",", " ", 
-    StyleBox["n", "TI"]}], "]"}]], "InlineFormula"],
+    StyleBox["n", "TI"], ",", " ", 
+    StyleBox["m", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "cb46b82d-ff71-4550-99b1-da0c27ec3bf9"],
  "\[LineSeparator]represents ",
  Cell[BoxData[
-  StyleBox["m", "TI"]], "InlineFormula"],
+  StyleBox["n", "TI"]], "InlineFormula",ExpressionUUID->
+  "c91e0eb4-e030-4511-87a3-42b6fa5cf0ba"],
  " to ",
  Cell[BoxData[
-  StyleBox["n", "TI"]], "InlineFormula"],
- " words separated by spaces\n",
- Cell["   ", "ModInfo"],
- Cell[BoxData[
-  RowBox[{
-   ButtonBox["WordToken",
-    BaseStyle->"Link",
-    ButtonData->"paclet:LexicalCases/ref/WordToken"], "[", 
-   RowBox[{
-    StyleBox["spec", "TI"], ",", " ", "\"\<KeepContractions\>\""}], "]"}]], 
-  "InlineFormula"],
- "\[LineSeparator]represents words and contractions"
+  StyleBox["m", "TI"]], "InlineFormula",ExpressionUUID->
+  "2ef47f0b-633d-4978-a421-d712ddad416d"],
+ " words separated by spaces"
 }], "Usage",
  CellChangeTimes->{
   3.851646245757251*^9, {3.852673609323112*^9, 3.852673641040152*^9}, {
    3.852935458496366*^9, 3.852935589476775*^9}, {3.85293562356798*^9, 
-   3.852935628292389*^9}},
- CellID->1062607464],
+   3.852935628292389*^9}, {3.864432792862926*^9, 3.8644328340399847`*^9}},
+ CellID->1062607464,ExpressionUUID->"1507e4d6-b013-40d0-962c-d7364c7841b8"],
 
 Cell[TextData[{
  Cell[BoxData[
@@ -194,7 +188,22 @@ Cell[TextData[{
 }], "Notes",
  CellChangeTimes->{{3.8527542665165863`*^9, 3.852754272738985*^9}, {
   3.852754352055994*^9, 3.852754368640417*^9}},
- CellID->790896493]
+ CellID->790896493],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["WordToken",
+    BaseStyle->"Link",
+    ButtonData->"paclet:LexicalCases/ref/WordToken"], "[", 
+   RowBox[{
+    StyleBox["spec", "TI"], ",", " ", "\"\<KeepContractions\>\""}], "]"}]], 
+  "InlineFormula",ExpressionUUID->"2b03835b-954e-41be-86ff-9ce181357403"],
+ " to consider contractions as single words."
+}], "Notes",
+ CellChangeTimes->{{3.8644328402211523`*^9, 3.864432905010622*^9}},
+ CellID->1046094008,ExpressionUUID->"306cb68d-1081-4d72-852a-c09b0f2a656a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -202,8 +211,12 @@ Cell[CellGroupData[{
 Cell["Tutorials", "TutorialsSection",
  CellID->1028599891],
 
-Cell["XXXX", "Tutorials",
- CellID->435009687]
+Cell[TextData[ButtonBox["LexicalCases Overview",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:LexicalCases/tutorial/LexicalCasesOverview"]], "Tutorials",
+ CellChangeTimes->{{3.849883260102805*^9, 3.849883266135909*^9}},
+ CellID->1439213037,ExpressionUUID->"9b68a3cf-cb24-44b5-a677-17ff897b4cd0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -220,8 +233,12 @@ Cell[CellGroupData[{
 Cell["Related Links", "RelatedLinksSection",
  CellID->1510959953],
 
-Cell["XXXX", "RelatedLinks",
- CellID->709804296]
+Cell[TextData[ButtonBox["LexicalCases GitHub Repository",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://github.com/dishmint/LexicalCases"], None}]], "RelatedLinks",
+ CellChangeTimes->{{3.8498832707912083`*^9, 3.84988329540683*^9}},
+ CellID->614176243,ExpressionUUID->"76bf68a1-993c-4e58-8acf-43283d161718"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -229,8 +246,27 @@ Cell[CellGroupData[{
 Cell["See Also", "SeeAlsoSection",
  CellID->409143787],
 
-Cell["XXXX", "SeeAlso",
- CellID->236990415]
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["LexicalCases",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/LexicalCases"]], "InlineFormula",
+  ExpressionUUID->"778e9333-b579-4388-8ea1-b81b7592079a"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["BoundToken",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/BoundToken"]], "InlineFormula",
+  ExpressionUUID->"d49e4b1c-f2b5-4d58-8742-f9846500b33b"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["OptionalToken",
+   BaseStyle->"Link",
+   ButtonData->"paclet:LexicalCases/ref/OptionalToken"]], "InlineFormula",
+  ExpressionUUID->"eab7552f-3d12-4562-b7c9-6eb298231a1f"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.86443398738894*^9, 3.8644340296179333`*^9}},
+ CellID->236990415,ExpressionUUID->"ec3c04be-1fff-4cfa-9605-35d853113aee"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -239,8 +275,11 @@ Cell["Related Guides", "MoreAboutSection",
  CellChangeTimes->{{3.843042374232973*^9, 3.843042375545676*^9}},
  CellID->1663223367],
 
-Cell["XXXX", "MoreAbout",
- CellID->496170]
+Cell[TextData[ButtonBox["LexicalCases",
+ BaseStyle->"Link",
+ ButtonData->"paclet:LexicalCases/guide/LexicalCases"]], "MoreAbout",
+ CellChangeTimes->{{3.8498833581177673`*^9, 3.849883377929474*^9}},
+ CellID->1881621836,ExpressionUUID->"c8934ea8-e8f7-4a32-bc60-536235ab6b99"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1097,44 +1136,36 @@ Cell["Find bigrams, trigrams and quadgrams preceding \"computer\"", \
  CellChangeTimes->{3.8527546435850267`*^9},
  CellID->738405596],
 
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.864432940728265*^9, 3.8644329465449677`*^9}},
+ CellLabel->"In[3]:=",
+ CellID->2115714097,ExpressionUUID->"ed4df6e2-b5ef-4c66-90c2-80f4529ec6b8"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"LexicalCases", "[", 
-   RowBox[{"$SampleStringLong", ",", " ", 
+   RowBox[{"$SampleParagraph", ",", " ", 
     RowBox[{
      RowBox[{"WordToken", "[", 
-      RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
-  "[", "\"\<Dataset\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.852754384179039*^9, 3.852754395096073*^9}},
- CellLabel->"In[12]:=",
- CellID->263298292],
+      RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<screen\>\""}]}], "]"}], "[", 
+  "\"\<Dataset\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.852754384179039*^9, 3.852754395096073*^9}, {
+  3.8644329541094418`*^9, 3.864432971795541*^9}},
+ CellLabel->"In[5]:=",
+ CellID->263298292,ExpressionUUID->"037397d2-0411-455c-a811-4954e9aa764b"],
 
 Cell[BoxData[
  TagBox[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
     "InitialData" -> {<|
-       "Match" -> "These programs enable computer", 
-        "Position" -> {{197, 226}}|>, <|
-       "Match" -> "to a group of computer", "Position" -> {{456, 477}}|>, <|
-       "Match" -> "such as a computer", "Position" -> {{519, 536}}|>, <|
-       "Match" -> "network or computer", "Position" -> {{538, 556}}|>, <|
-       "Match" -> "and consumer products use computer", 
-        "Position" -> {{595, 628}}|>, <|
-       "Match" -> "like industrial robots and computer", 
-        "Position" -> {{760, 794}}|>, <|
-       "Match" -> "purpose devices like personal computer", 
-        "Position" -> {{829, 866}}|>, <|
-       "Match" -> "of millions of other computer", 
-        "Position" -> {{957, 985}}|>, <|
-       "Match" -> "power and versatility of computer", 
-        "Position" -> {{1767, 1799}}|>, <|
-       "Match" -> "a modern computer", "Position" -> {{2030, 2046}}|>, <|
-       "Match" -> "with some type of computer", 
-        "Position" -> {{2174, 2199}}|>}, "AllowEmbedding" -> True, 
-     "InitialShape" -> 
+       "Match" -> "sat with a blank screen", "Position" -> {{135, 157}}|>, <|
+       "Match" -> "That blank screen", "Position" -> {{176, 192}}|>, <|
+       "Match" -> "would end with the screen", "Position" -> {{470, 494}}|>}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
         1, {All, "Position"} -> 2|>, 
        TypeSystem`PackageScope`Limited[
@@ -1142,17 +1173,17 @@ Cell[BoxData[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Match" -> TypeSystem`PackageScope`AtomShape[425.6], "Position" -> 
+           "Match" -> TypeSystem`PackageScope`AtomShape[280.], "Position" -> 
             TypeSystem`PackageScope`Limited[
               TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
               All, "Position", All}]|>], 
-          DirectedInfinity[1], 2, {All}]], 11, 
+          DirectedInfinity[1], 2, {All}]], 3, 
         DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Match", "Position"}, {
          TypeSystem`Atom[String], 
          TypeSystem`Vector[
           TypeSystem`Vector[
-           TypeSystem`Atom[Integer], 2], 1]}], 11], "Meta" -> <||>, 
+           TypeSystem`Atom[Integer], 2], 1]}], 3], "Meta" -> <||>, 
      "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
         1, {All, "Position"} -> 2|>, 
@@ -1161,19 +1192,19 @@ Cell[BoxData[
          TypeSystem`PackageScope`Limited[
           
           TypeSystem`PackageScope`RowShape[<|
-           "Match" -> TypeSystem`PackageScope`AtomShape[425.6], "Position" -> 
+           "Match" -> TypeSystem`PackageScope`AtomShape[280.], "Position" -> 
             TypeSystem`PackageScope`Limited[
               TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
               All, "Position", All}]|>], 
-          DirectedInfinity[1], 2, {All}]], 11, 
+          DirectedInfinity[1], 2, {All}]], 3, 
         DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Match", "Position"}, {
          TypeSystem`Atom[String], 
          TypeSystem`Vector[
           TypeSystem`Vector[
-           TypeSystem`Atom[Integer], 2], 1]}], 11], "Path" -> {}, 
-     "DisplayedRowCount" -> 11, "DisplayedColumnCount" -> 2, "DataRowCount" -> 
-     11, "DataColumnCount" -> 2, "SortPaths" -> {}, "SortDirections" -> {}, 
+           TypeSystem`Atom[Integer], 2], 1]}], 3], "Path" -> {}, 
+     "DisplayedRowCount" -> 3, "DisplayedColumnCount" -> 2, "DataRowCount" -> 
+     3, "DataColumnCount" -> 2, "SortPaths" -> {}, "SortDirections" -> {}, 
      "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
     TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
     TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
@@ -1249,18 +1280,18 @@ Cell[BoxData[
             SpanFromLeft}, {
             Item[
              Pane[
-              Annotation["These programs enable computer", 
+              Annotation["sat with a blank screen", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
                  Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageSize -> {{280., Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["197"], 
+               RawBoxes["135"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
@@ -1271,7 +1302,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["226"], 
+               RawBoxes["157"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
@@ -1281,18 +1312,18 @@ Cell[BoxData[
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation["to a group of computer", 
+              Annotation["That blank screen", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
                  Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageSize -> {{280., Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["456"], 
+               RawBoxes["176"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
@@ -1303,7 +1334,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["477"], 
+               RawBoxes["192"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
@@ -1313,18 +1344,18 @@ Cell[BoxData[
              ItemSize -> {Full, Automatic}]}, {
             Item[
              Pane[
-              Annotation["such as a computer", 
+              Annotation["would end with the screen", 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
                  Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
+              ImageSize -> {{280., Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
              ItemSize -> {Full, Automatic}], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["519"], 
+               RawBoxes["470"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
@@ -1335,266 +1366,10 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["536"], 
+               RawBoxes["494"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["network or computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["538"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["556"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["and consumer products use computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["595"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["628"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["like industrial robots and computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["760"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["794"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["purpose devices like personal computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["829"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["866"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["of millions of other computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["957"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["985"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["power and versatility of computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["1767"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["1799"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["a modern computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["2030"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["2046"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
-                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation["with some type of computer", 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
-                 Key["Match"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{425.6, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["2174"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
-                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}], 
-            Item[
-             Pane[
-              Annotation[
-               RawBoxes["2199"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
                  Key["Position"], 1, 2}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
@@ -1888,13 +1663,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{520., {168.3544921875, 173.6455078125}},
+      ImageSizeCache->{374., {60.8544921875, 66.1455078125}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{520., {168.3544921875, 173.6455078125}}],
+     ImageSizeCache->{374., {60.8544921875, 66.1455078125}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -1906,9 +1681,10 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{{3.8527543873063993`*^9, 3.852754395645337*^9}},
- CellLabel->"Out[12]=",
- CellID->197777060]
+ CellChangeTimes->{{3.8527543873063993`*^9, 3.852754395645337*^9}, {
+  3.8644329633859167`*^9, 3.86443297242879*^9}},
+ CellLabel->"Out[5]=",
+ CellID->752413934,ExpressionUUID->"37d3d26f-3019-44ab-bb36-bdc441b07fa5"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1952,27 +1728,28 @@ Cell[BoxData[
   RowBox[{"n24", "=", 
    RowBox[{
     RowBox[{"LexicalCases", "[", 
-     RowBox[{"$SampleStringLong", ",", " ", 
+     RowBox[{"$SampleParagraph", ",", " ", 
       RowBox[{
        RowBox[{"WordToken", "[", 
-        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}]}], "]"}], 
+        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<screen\>\""}]}], "]"}], 
     "[", "\"\<Data\>\"", "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.852756063253397*^9, 3.852756092718904*^9}},
- CellLabel->"In[24]:=",
- CellID->298801210],
+ CellChangeTimes->{{3.852756063253397*^9, 3.852756092718904*^9}, {
+  3.864432990872294*^9, 3.864432994391448*^9}},
+ CellLabel->"In[6]:=",
+ CellID->298801210,ExpressionUUID->"4d64a676-cedd-4524-a0ef-508306537d39"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Length", "[", "n24", "]"}]], "Input",
  CellChangeTimes->{{3.852756095648959*^9, 3.852756097699469*^9}},
- CellLabel->"In[25]:=",
- CellID->130282444],
+ CellLabel->"In[7]:=",
+ CellID->130282444,ExpressionUUID->"bcb741fd-5513-4838-8972-5d61c329621f"],
 
-Cell[BoxData["11"], "Output",
- CellChangeTimes->{3.8527560979248447`*^9},
- CellLabel->"Out[25]=",
- CellID->366843636]
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.8527560979248447`*^9, 3.864432997054796*^9},
+ CellLabel->"Out[7]=",
+ CellID->661146320,ExpressionUUID->"42314dbd-2cdc-473b-b0c2-e6dbfab87065"]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -1980,29 +1757,31 @@ Cell[BoxData[{
   RowBox[{"n2", "=", 
    RowBox[{
     RowBox[{"LexicalCases", "[", 
-     RowBox[{"$SampleStringLong", ",", " ", 
+     RowBox[{"$SampleParagraph", ",", " ", 
       RowBox[{
-       RowBox[{"WordToken", "[", "2", "]"}], "~~", "\"\<computer\>\""}]}], 
+       RowBox[{"WordToken", "[", "2", "]"}], "~~", "\"\<screen\>\""}]}], 
      "]"}], "[", "\"\<Data\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"n3", "=", 
    RowBox[{
     RowBox[{"LexicalCases", "[", 
-     RowBox[{"$SampleStringLong", ",", " ", 
+     RowBox[{"$SampleParagraph", ",", " ", 
       RowBox[{
-       RowBox[{"WordToken", "[", "3", "]"}], "~~", "\"\<computer\>\""}]}], 
+       RowBox[{"WordToken", "[", "3", "]"}], "~~", "\"\<screen\>\""}]}], 
      "]"}], "[", "\"\<Data\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"n4", "=", 
    RowBox[{
     RowBox[{"LexicalCases", "[", 
-     RowBox[{"$SampleStringLong", ",", " ", 
+     RowBox[{"$SampleParagraph", ",", " ", 
       RowBox[{
-       RowBox[{"WordToken", "[", "4", "]"}], "~~", "\"\<computer\>\""}]}], 
+       RowBox[{"WordToken", "[", "4", "]"}], "~~", "\"\<screen\>\""}]}], 
      "]"}], "[", "\"\<Data\>\"", "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.852755985616756*^9, 3.852756014982707*^9}},
- CellLabel->"In[18]:=",
- CellID->2105992981],
+ CellChangeTimes->{{3.852755985616756*^9, 3.852756014982707*^9}, {
+  3.864433005269005*^9, 3.864433006948481*^9}, {3.864433038274823*^9, 
+  3.864433040496214*^9}},
+ CellLabel->"In[10]:=",
+ CellID->2105992981,ExpressionUUID->"80d006e8-ec44-456d-b158-5ff8963f6e1d"],
 
 Cell[CellGroupData[{
 
@@ -2013,13 +1792,13 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"n2", ",", "n3", ",", "n4"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.852756020086458*^9, 3.852756048734756*^9}},
- CellLabel->"In[21]:=",
- CellID->1539813279],
+ CellLabel->"In[13]:=",
+ CellID->1539813279,ExpressionUUID->"18ee6d3c-f877-493d-b7fb-07f89580dc67"],
 
-Cell[BoxData["28"], "Output",
- CellChangeTimes->{3.852756050361084*^9},
- CellLabel->"Out[21]=",
- CellID->1302154141]
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{3.852756050361084*^9, 3.864433044303183*^9},
+ CellLabel->"Out[13]=",
+ CellID->2030262305,ExpressionUUID->"070e1282-5cca-4d4e-b7ce-ad7ea3654ac3"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -2046,22 +1825,23 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"LexicalCases", "[", 
-     RowBox[{"$SampleStringLong", ",", " ", 
+     RowBox[{"$SampleParagraph", ",", " ", 
       RowBox[{
        RowBox[{"WordToken", "[", 
-        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<computer\>\""}], ",", 
+        RowBox[{"2", ",", "4"}], "]"}], "~~", "\"\<screen\>\""}], ",", 
       RowBox[{"Overlaps", "->", "True"}]}], "]"}], "[", "\"\<Data\>\"", "]"}],
     "//", "DeleteDuplicates"}], "//", "Length"}]], "Input",
  CellChangeTimes->{{3.852756155827097*^9, 3.852756180763863*^9}, {
-  3.852756359597321*^9, 3.852756372906975*^9}},
- CellLabel->"In[30]:=",
- CellID->1978355465],
+  3.852756359597321*^9, 3.852756372906975*^9}, {3.864433057839583*^9, 
+  3.864433060898011*^9}},
+ CellLabel->"In[14]:=",
+ CellID->1978355465,ExpressionUUID->"41502f50-4389-44bf-bd78-8620466447b1"],
 
-Cell[BoxData["29"], "Output",
+Cell[BoxData["7"], "Output",
  CellChangeTimes->{{3.852756159883581*^9, 3.8527561813069477`*^9}, {
-  3.852756362299769*^9, 3.852756373700961*^9}},
- CellLabel->"Out[30]=",
- CellID->986075408]
+   3.852756362299769*^9, 3.852756373700961*^9}, 3.86443306469201*^9},
+ CellLabel->"Out[14]=",
+ CellID->1738222765,ExpressionUUID->"147cf056-7b85-4457-80dc-9886f68909ad"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2076,8 +1856,8 @@ Cell[BoxData[
  CellID->1763790504]
 }, Open  ]]
 },
-WindowSize->{Full, Full},
-WindowMargins->{{573, Automatic}, {Automatic, 153}},
+WindowSize->{720, 410},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 CellContext->"Global`",
 FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
@@ -2090,14 +1870,14 @@ ExpressionUUID->"d689f1e9-3e34-47e2-9593-9237dbdc9c43"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[49328, 1083, 99, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
+  Cell[51505, 1122, 99, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
    CellTags->"ExtendedExamples",
    CellID->224074875]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 97319, 2091}
+ {"ExtendedExamples", 87522, 1871}
  }
 *)
 (*NotebookFileOutline
@@ -2145,116 +1925,120 @@ Cell[2885, 105, 83, 2, 27, "Template",ExpressionUUID->"9528d7f5-f49d-4709-b3ab-b
 Cell[CellGroupData[{
 Cell[3005, 112, 52, 1, 63, "ObjectName",ExpressionUUID->"937b4b02-8238-4cea-98f9-f0fa8a36dcc6",
  CellID->1565923407],
-Cell[3060, 115, 1281, 40, 154, "Usage",ExpressionUUID->"1507e4d6-b013-40d0-962c-d7364c7841b8",
+Cell[3060, 115, 1401, 34, 116, "Usage",ExpressionUUID->"1507e4d6-b013-40d0-962c-d7364c7841b8",
  CellID->1062607464],
-Cell[4344, 157, 262, 9, 25, "Notes",ExpressionUUID->"5893ab31-3beb-4852-82e2-495cd0eb6500",
+Cell[4464, 151, 262, 9, 25, "Notes",ExpressionUUID->"5893ab31-3beb-4852-82e2-495cd0eb6500",
  CellID->769638996],
-Cell[4609, 168, 444, 13, 28, "Notes",ExpressionUUID->"8fb9c5ee-2468-4ca8-9870-8e37d5fc2e2f",
+Cell[4729, 162, 444, 13, 28, "Notes",ExpressionUUID->"8fb9c5ee-2468-4ca8-9870-8e37d5fc2e2f",
  CellID->362108972],
-Cell[5056, 183, 422, 13, 28, "Notes",ExpressionUUID->"af528c16-b4e5-4dc6-b240-4ec9062dff19",
- CellID->790896493]
+Cell[5176, 177, 422, 13, 28, "Notes",ExpressionUUID->"af528c16-b4e5-4dc6-b240-4ec9062dff19",
+ CellID->790896493],
+Cell[5601, 192, 526, 13, 28, "Notes",ExpressionUUID->"306cb68d-1081-4d72-852a-c09b0f2a656a",
+ CellID->1046094008]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5515, 201, 58, 1, 44, "TutorialsSection",ExpressionUUID->"bb1f70a6-df09-4bad-8554-49eee230be69",
+Cell[6164, 210, 58, 1, 44, "TutorialsSection",ExpressionUUID->"bb1f70a6-df09-4bad-8554-49eee230be69",
  CellID->1028599891],
-Cell[5576, 204, 45, 1, 16, "Tutorials",ExpressionUUID->"e74dce76-6e1b-4592-a9c7-21de0dcf66cb",
- CellID->435009687]
+Cell[6225, 213, 294, 5, 16, "Tutorials",ExpressionUUID->"9b68a3cf-cb24-44b5-a677-17ff897b4cd0",
+ CellID->1439213037]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5658, 210, 83, 1, 31, "RelatedDemonstrationsSection",ExpressionUUID->"e3e69768-cf1f-4a33-9f84-7485c1acef51",
+Cell[6556, 223, 83, 1, 31, "RelatedDemonstrationsSection",ExpressionUUID->"e3e69768-cf1f-4a33-9f84-7485c1acef51",
  CellID->1173475021],
-Cell[5744, 213, 57, 1, 16, "RelatedDemonstrations",ExpressionUUID->"f6a900e0-5227-492e-835d-12daa04ae45a",
+Cell[6642, 226, 57, 1, 16, "RelatedDemonstrations",ExpressionUUID->"f6a900e0-5227-492e-835d-12daa04ae45a",
  CellID->104863899]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5838, 219, 65, 1, 31, "RelatedLinksSection",ExpressionUUID->"a1c87ad9-d7c4-4d8f-a3ed-0a85668a83ac",
+Cell[6736, 232, 65, 1, 31, "RelatedLinksSection",ExpressionUUID->"a1c87ad9-d7c4-4d8f-a3ed-0a85668a83ac",
  CellID->1510959953],
-Cell[5906, 222, 48, 1, 16, "RelatedLinks",ExpressionUUID->"ca1fe537-b7f1-4bcc-b96c-220a7ade44af",
- CellID->709804296]
+Cell[6804, 235, 316, 5, 16, "RelatedLinks",ExpressionUUID->"76bf68a1-993c-4e58-8acf-43283d161718",
+ CellID->614176243]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5991, 228, 54, 1, 31, "SeeAlsoSection",ExpressionUUID->"ebacdaab-358a-4cfe-b630-a03088bce8a0",
+Cell[7157, 245, 54, 1, 31, "SeeAlsoSection",ExpressionUUID->"ebacdaab-358a-4cfe-b630-a03088bce8a0",
  CellID->409143787],
-Cell[6048, 231, 43, 1, 16, "SeeAlso",ExpressionUUID->"ec3c04be-1fff-4cfa-9605-35d853113aee",
+Cell[7214, 248, 823, 20, 22, "SeeAlso",ExpressionUUID->"ec3c04be-1fff-4cfa-9605-35d853113aee",
  CellID->236990415]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6128, 237, 129, 2, 31, "MoreAboutSection",ExpressionUUID->"d1e27cf6-f7ca-41db-aa4b-b1f537effaaf",
+Cell[8074, 273, 129, 2, 31, "MoreAboutSection",ExpressionUUID->"d1e27cf6-f7ca-41db-aa4b-b1f537effaaf",
  CellID->1663223367],
-Cell[6260, 241, 42, 1, 16, "MoreAbout",ExpressionUUID->"65e204d0-4547-4ab7-bda2-bd3f68c3c71d",
- CellID->496170]
+Cell[8206, 277, 273, 4, 16, "MoreAbout",ExpressionUUID->"c8934ea8-e8f7-4a32-bc60-536235ab6b99",
+ CellID->1881621836]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6339, 247, 357, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"de59a555-1b50-460b-b753-dd08d8141d1b",
+Cell[8516, 286, 357, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"de59a555-1b50-460b-b753-dd08d8141d1b",
  CellID->1896678249],
-Cell[6699, 260, 165, 3, 27, "Input",ExpressionUUID->"7896e8df-1be9-413b-bc9c-c577ec7af727",
+Cell[8876, 299, 165, 3, 27, "Input",ExpressionUUID->"7896e8df-1be9-413b-bc9c-c577ec7af727",
  CellID->1816155740],
-Cell[6867, 265, 243, 4, 22, "ExampleText",ExpressionUUID->"ba24964a-6b48-4781-a420-e8cad2e40e02",
+Cell[9044, 304, 243, 4, 22, "ExampleText",ExpressionUUID->"ba24964a-6b48-4781-a420-e8cad2e40e02",
  CellID->1396638090],
 Cell[CellGroupData[{
-Cell[7135, 273, 395, 10, 27, "Input",ExpressionUUID->"d94a8792-dff6-423e-af19-550a884e4c6a",
+Cell[9312, 312, 395, 10, 27, "Input",ExpressionUUID->"d94a8792-dff6-423e-af19-550a884e4c6a",
  CellID->478351208],
-Cell[7533, 285, 41746, 792, 356, "Output",ExpressionUUID->"67b8c3e9-a65a-4e57-b00a-a63bfcd36306",
+Cell[9710, 324, 41746, 792, 356, "Output",ExpressionUUID->"67b8c3e9-a65a-4e57-b00a-a63bfcd36306",
  CellID->112853783]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49328, 1083, 99, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
+Cell[51505, 1122, 99, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"06371771-a059-4e5f-8418-c5f65ee03ee4",
  CellTags->"ExtendedExamples",
  CellID->224074875],
 Cell[CellGroupData[{
-Cell[49452, 1089, 125, 3, 70, "ExampleSection",ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89",
+Cell[51629, 1128, 125, 3, 33, "ExampleSection",ExpressionUUID->"5053b488-1af6-406f-a254-b21dd6166c89",
  CellID->1487590934],
-Cell[49580, 1094, 148, 3, 70, "ExampleText",ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573",
+Cell[51757, 1133, 148, 3, 22, "ExampleText",ExpressionUUID->"33f900db-9468-462e-955f-7a3ecab04573",
  CellID->738405596],
+Cell[51908, 1138, 245, 4, 27, "Input",ExpressionUUID->"ed4df6e2-b5ef-4c66-90c2-80f4529ec6b8",
+ CellID->2115714097],
 Cell[CellGroupData[{
-Cell[49753, 1101, 372, 10, 70, "Input",ExpressionUUID->"037397d2-0411-455c-a811-4954e9aa764b",
+Cell[52178, 1146, 474, 11, 27, "Input",ExpressionUUID->"037397d2-0411-455c-a811-4954e9aa764b",
  CellID->263298292],
-Cell[50128, 1113, 41900, 797, 70, "Output",ExpressionUUID->"e5399f14-5402-4667-8288-6a62e3eeb8c9",
- CellID->197777060]
+Cell[52655, 1159, 28900, 527, 140, "Output",ExpressionUUID->"37d3d26f-3019-44ab-bb36-bdc441b07fa5",
+ CellID->752413934]
 }, Open  ]]
 }, Open  ]],
-Cell[92055, 1914, 147, 3, 70, "ExampleSection",ExpressionUUID->"a5e67f23-a8ed-4f4b-9724-1c16fd12b6c3",
+Cell[81582, 1690, 147, 3, 33, "ExampleSection",ExpressionUUID->"a5e67f23-a8ed-4f4b-9724-1c16fd12b6c3",
  CellID->936209364],
-Cell[92205, 1919, 126, 3, 70, "ExampleSection",ExpressionUUID->"cf13964c-54ab-49d1-be9a-3a80068d6b9a",
+Cell[81732, 1695, 126, 3, 21, "ExampleSection",ExpressionUUID->"cf13964c-54ab-49d1-be9a-3a80068d6b9a",
  CellID->258099179],
-Cell[92334, 1924, 131, 3, 70, "ExampleSection",ExpressionUUID->"07d01c1b-9a75-4c60-90fc-e008cbedd9e4",
+Cell[81861, 1700, 131, 3, 21, "ExampleSection",ExpressionUUID->"07d01c1b-9a75-4c60-90fc-e008cbedd9e4",
  CellID->658350956],
-Cell[92468, 1929, 142, 3, 70, "ExampleSection",ExpressionUUID->"648a8349-2768-494f-b566-6930b80221fc",
+Cell[81995, 1705, 142, 3, 21, "ExampleSection",ExpressionUUID->"648a8349-2768-494f-b566-6930b80221fc",
  CellID->1068768148],
 Cell[CellGroupData[{
-Cell[92635, 1936, 135, 3, 70, "ExampleSection",ExpressionUUID->"4fb44852-c93f-4357-bd43-7ab5ace58918",
+Cell[82162, 1712, 135, 3, 21, "ExampleSection",ExpressionUUID->"4fb44852-c93f-4357-bd43-7ab5ace58918",
  CellID->1233039928],
-Cell[92773, 1941, 300, 6, 70, "ExampleText",ExpressionUUID->"d1af76a5-3fb9-43a3-8fb3-673ca7527e88",
+Cell[82300, 1717, 300, 6, 22, "ExampleText",ExpressionUUID->"d1af76a5-3fb9-43a3-8fb3-673ca7527e88",
  CellID->729629466],
-Cell[93076, 1949, 425, 12, 70, "Input",ExpressionUUID->"4d64a676-cedd-4524-a0ef-508306537d39",
+Cell[82603, 1725, 525, 13, 27, "Input",ExpressionUUID->"4d64a676-cedd-4524-a0ef-508306537d39",
  CellID->298801210],
 Cell[CellGroupData[{
-Cell[93526, 1965, 171, 4, 70, "Input",ExpressionUUID->"bcb741fd-5513-4838-8972-5d61c329621f",
+Cell[83153, 1742, 225, 4, 27, "Input",ExpressionUUID->"bcb741fd-5513-4838-8972-5d61c329621f",
  CellID->130282444],
-Cell[93700, 1971, 117, 3, 70, "Output",ExpressionUUID->"f9714eca-8745-4000-823c-7a8d1e7a211f",
- CellID->366843636]
+Cell[83381, 1748, 192, 3, 26, "Output",ExpressionUUID->"42314dbd-2cdc-473b-b0c2-e6dbfab87065",
+ CellID->661146320]
 }, Open  ]],
-Cell[93832, 1977, 973, 27, 70, "Input",ExpressionUUID->"80d006e8-ec44-456d-b158-5ff8963f6e1d",
+Cell[83588, 1754, 1117, 29, 66, "Input",ExpressionUUID->"80d006e8-ec44-456d-b158-5ff8963f6e1d",
  CellID->2105992981],
 Cell[CellGroupData[{
-Cell[94830, 2008, 289, 8, 70, "Input",ExpressionUUID->"18ee6d3c-f877-493d-b7fb-07f89580dc67",
+Cell[84730, 1787, 344, 8, 27, "Input",ExpressionUUID->"18ee6d3c-f877-493d-b7fb-07f89580dc67",
  CellID->1539813279],
-Cell[95122, 2018, 116, 3, 70, "Output",ExpressionUUID->"ac718c5f-6e75-4146-900b-3969129aa15f",
- CellID->1302154141]
+Cell[85077, 1797, 192, 3, 26, "Output",ExpressionUUID->"070e1282-5cca-4d4e-b7ce-ad7ea3654ac3",
+ CellID->2030262305]
 }, Open  ]],
-Cell[95253, 2024, 522, 15, 70, "ExampleText",ExpressionUUID->"98bf1010-1dbc-4a5e-ab2c-b41d79aa9554",
+Cell[85284, 1803, 522, 15, 26, "ExampleText",ExpressionUUID->"98bf1010-1dbc-4a5e-ab2c-b41d79aa9554",
  CellID->327487047],
 Cell[CellGroupData[{
-Cell[95800, 2043, 547, 14, 70, "Input",ExpressionUUID->"41502f50-4389-44bf-bd78-8620466447b1",
+Cell[85831, 1822, 648, 15, 47, "Input",ExpressionUUID->"41502f50-4389-44bf-bd78-8620466447b1",
  CellID->1978355465],
-Cell[96350, 2059, 190, 4, 70, "Output",ExpressionUUID->"3ce17a73-c879-4b16-ac95-41db36ba51c6",
- CellID->986075408]
+Cell[86482, 1839, 267, 4, 26, "Output",ExpressionUUID->"147cf056-7b85-4457-80dc-9886f68909ad",
+ CellID->1738222765]
 }, Open  ]]
 }, Open  ]],
-Cell[96567, 2067, 139, 3, 70, "ExampleSection",ExpressionUUID->"f12730a5-cfb6-4c12-8a8a-57e21223c5c4",
+Cell[86776, 1847, 139, 3, 33, "ExampleSection",ExpressionUUID->"f12730a5-cfb6-4c12-8a8a-57e21223c5c4",
  CellID->484876346],
-Cell[96709, 2072, 133, 3, 70, "ExampleSection",ExpressionUUID->"e10ce060-7acf-49b0-949b-f31f14bdff97",
+Cell[86918, 1852, 133, 3, 21, "ExampleSection",ExpressionUUID->"e10ce060-7acf-49b0-949b-f31f14bdff97",
  CellID->1763790504]
 }, Open  ]]
 }
