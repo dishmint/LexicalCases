@@ -49,37 +49,8 @@ Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
 Needs["LexicalCases`LexicalPattern`"]
+Needs["LexicalCases`Validation`"]
 Needs["LexicalCases`Plots`"]
-
-(* Validation *)
-$ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
-extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
-
-ValidateLexicalToken[TextType[_String]] := True
-ValidateLexicalToken[TextType[a_Alternatives]] := AllTrue[StringQ][List @@ a]
-ValidateLexicalToken[OptionalToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[OptionalToken[opt_]] := LexicalPatternQ[opt]
-ValidateLexicalToken[BoundToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[BoundToken[e:Except[_Alternatives]]] := LexicalPatternQ[e]
-ValidateLexicalToken[WordToken[n_Integer]] := True
-ValidateLexicalToken[WordToken[m_Integer, n_Integer]] := True
-ValidateLexicalToken[expr_] := (Message[LexicalCases::invld, expr];False)
-
-LexicalCases::invld = "`1` is not a valid lexical token"
-
-SetAttributes[LexicalPatternQ, HoldAll]
-
-LexicalPatternQ[expr_]:= Module[
-	{
-		se = Replace[expr, $ValidLexicalTokens :> " ", Infinity],
-		lt = extractLexicalTokens[expr]
-		},
-	Check[GeneralUtilities`StringPatternQ[se] \[Or] AllTrue[ValidateLexicalToken, lt], $Failed]
-		];
-LexicalPatternQ[Rule[expr_?LexicalPatternQ,_]]:= True;
-LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
-LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True;
-
 
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 
