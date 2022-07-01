@@ -49,36 +49,8 @@ Begin["`Private`"]
 Needs["LexicalCases`Samples`"]
 Needs["LexicalCases`Utilities`"]
 Needs["LexicalCases`LexicalPattern`"]
-
-(* Validation *)
-$ValidLexicalTokens = (_TextType|_OptionalToken|_BoundToken|_WordToken)
-extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
-
-ValidateLexicalToken[TextType[_String]] := True
-ValidateLexicalToken[TextType[a_Alternatives]] := AllTrue[StringQ][List @@ a]
-ValidateLexicalToken[OptionalToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[OptionalToken[opt_]] := LexicalPatternQ[opt]
-ValidateLexicalToken[BoundToken[a_Alternatives]] := AllTrue[LexicalPatternQ][List @@ a]
-ValidateLexicalToken[BoundToken[e:Except[_Alternatives]]] := LexicalPatternQ[e]
-ValidateLexicalToken[WordToken[n_Integer]] := True
-ValidateLexicalToken[WordToken[m_Integer, n_Integer]] := True
-ValidateLexicalToken[expr_] := (Message[LexicalCases::invld, expr];False)
-
-LexicalCases::invld = "`1` is not a valid lexical token"
-
-SetAttributes[LexicalPatternQ, HoldAll]
-
-LexicalPatternQ[expr_]:= Module[
-	{
-		se = Replace[expr, $ValidLexicalTokens :> " ", Infinity],
-		lt = extractLexicalTokens[expr]
-		},
-	Check[GeneralUtilities`StringPatternQ[se] \[Or] AllTrue[ValidateLexicalToken, lt], $Failed]
-		];
-LexicalPatternQ[Rule[expr_?LexicalPatternQ,_]]:= True;
-LexicalPatternQ[RuleDelayed[expr_?LexicalPatternQ,_]]:= True;
-LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True;
-
+Needs["LexicalCases`Validation`"]
+Needs["LexicalCases`Plots`"]
 
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 
@@ -687,45 +659,6 @@ WordStemGroups[ds_Dataset] := (GetWordStemCounts[ds] // KeyValueMap[<|"Stem" -> 
 PercentDataset[ds_Dataset, matchcount_Integer] := (ds[
 	All,
 	<|"Matches" -> #Matches, "Percentage" -> Quantity[100. N[((#CountGroup Length[#Matches])/matchcount)], "Percent"]|> &][ReverseSortBy["Percentage"]])
-
-Options[LexicalDispersionPlot] = {
-	AspectRatio -> 1/5,
-	ImageSize -> Large,
-	PlotRange -> All,
-	PlotTheme -> "Scientific",
-	PlotLabel -> "Lexical Dispersion Plot"
-};
-LexicalDispersionPlot[text_String, word_String, opts:OptionsPattern[{LexicalDispersionPlot}]] := LexicalDispersionPlot[text, {word}, opts]
-LexicalDispersionPlot[text_String, words:{__String}, opts:OptionsPattern[{LexicalDispersionPlot}]] := Module[
-	{
-		tokens = Monitor[
-			(* TextWords is slow for what I want it to do, using StringCases instead *)
-			(*TextWords[text]*)
-			StringCases[text, RegularExpression["\\b\\w+\\b"]],
-			Row[{"Tokenizing text",ProgressIndicator[Appearance->"Ellipsis"]}]
-			], textevents, events,
-		rowIndex = AssociationThread[words -> Range[Length[words]]],
-		sparr, ticks
-		},
-		(* 1 \[LongDash] Generate discrete indices for the tokenized text *)
-		textevents = Monitor[PositionIndex[tokens], Row[{"Indexing tokens", ProgressIndicator[Appearance->"Ellipsis"]}]];
-		events = Monitor[
-			KeyTake[words][textevents] // KeyValueMap[Thread[Thread[{rowIndex[#1], #2}] -> 1] &] /* Flatten,
-			Row[{"Generating sparse elements", ProgressIndicator[Appearance->"Ellipsis"]}]
-			];
-		sparr = SparseArray[events, {Length[words], Length[tokens]}];
-		
-		ticks = KeyValueMap[{#2, #1}&, rowIndex];
-		MatrixPlot[
-			sparr,
-			FrameTicks -> {{ticks, None}, {Automatic, None}},
-			AspectRatio -> OptionValue[AspectRatio],
-			ImageSize -> OptionValue[ImageSize],
-			PlotRange -> OptionValue[PlotRange],
-			PlotTheme -> OptionValue[PlotTheme],
-			PlotLabel -> OptionValue[PlotLabel]
-			]
-		]
 
 GenerateDashboard[lps_LexicalSummary, params___] := With[
 	{
