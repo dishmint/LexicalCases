@@ -17,7 +17,8 @@ PacletObject[
                     "Root" -> "Tests",
                     "Resources" -> {
                       {"LexicalStructure", "LexicalStructure.wlt"},
-                      {"LexicalCases", "LexicalCases.wlt"}
+                      {"LexicalCases", "LexicalCases.wlt"},
+                      {"Validation", "Validation.wlt"}
                   }
                 },
                 {
