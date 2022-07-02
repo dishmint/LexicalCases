@@ -1,4 +1,7 @@
+(* Test if a pattern is a lexical pattern *)
+
 BeginTestSection["Validation"]
+
 (* LexicalPattern Validation *)
 VerificationTest[
 	LexicalPatternQ[$SampleStringExpression],
@@ -75,20 +78,30 @@ VerificationTest[
 
 (* OptionalToken *)
 VerificationTest[
-	LexicalPatternQ["pattern" ~~ OptionalToken["matching"]],
-    "TestID" -> "LexicalPatternQ-WordToken-Test1"
+	LexicalPatternQ["this is a" ~~ OptionalToken[TextType["Adjective"]] ~~ "string"],
+    "TestID" -> "LexicalPatternQ-OptionalToken-Test1"
 ]
 
 VerificationTest[
 	LexicalPatternQ["cool" ~~ OptionalToken["crazy"] ~~ "computer"],
-    "TestID" -> "LexicalPatternQ-WordToken-Test2"
+    "TestID" -> "LexicalPatternQ-OptionalToken-Test2"
 ]
 
 VerificationTest[
-	LexicalPatternQ["this" ~~ "is" ~~ WordToken[1, "KeepContractions"] ~~ "place"],
-    "TestID" -> "LexicalPatternQ-WordToken-Test3"
+	LexicalPatternQ["this" ~~ OptionalToken[WordToken[1] ~~ TextType["Adjective"]] ~~ "place"],
+    "TestID" -> "LexicalPatternQ-OptionalToken-Test3"
 ]
 
+(* Sandwich *)
+VerificationTest[
+	LexicalPatternQ[Sandwich[WordToken[1], BoundToken["car"]]],
+    "TestID" -> "LexicalPatternQ-Sandwich-Test1"
+]
 
+(* TextType *)
+VerificationTest[
+	LexicalPatternQ[adjective : TextType["Adjective"] ~~ "sentence" :> adjective],
+    "TestID" -> "LexicalPatternQ-TextType-Test1"
+]
 
 EndTestSection[]
