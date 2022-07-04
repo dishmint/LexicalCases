@@ -48,8 +48,8 @@
    "FileHash" -> "5njlDZQTj4MnHHuM17Y+UZv1kGfgFKaSO1chd5NFcEM="|>, 
  "English/ReferencePages/Symbols/WordToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.292657, "Seconds"]|>], 
-   "FileHash" -> "a/bq8DVAbj9ga7usrXz4BKPzrpSEWmumMFMzB2FC0/g="|>, 
+     <|"Time" -> Quantity[1.491302, "Seconds"]|>], 
+   "FileHash" -> "hNczkonVhvTLeRrVUL1KZ3acP5XhLM/52LvpuMmhHD8="|>, 
  "English/ReferencePages/Symbols/$LexicalCasesServices.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.894107, "Seconds"]|>], 
