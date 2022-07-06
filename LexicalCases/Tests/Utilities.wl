@@ -1,5 +1,24 @@
 BeginTestSection["Utilities"]
 (* ExtractHeads *)
+
+VerificationTest[
+    LexicalCases`Utilities`ExtractHeads[TextType["Adverb"] ~~ TextType["Adjective"] ~~ BoundToken["specie" | "species"]],
+    {TextType, TextType, Alternatives, BoundToken, StringExpression},
+    "TestID" -> "Utilities-ExtractHeads-Test1"
+]
+
+VerificationTest[
+    LexicalCases`Utilities`ExtractHeads[TextType["Adjective" | "Determiner"] ~~ "screen"],
+    {Alternatives, TextType, StringExpression},
+    "TestID" -> "Utilities-ExtractHeads-Test2"
+]
+
+VerificationTest[
+    LexicalCases`Utilities`ExtractHeads[$SampleStringExpression],
+    {TextType, StringExpression},
+    "TestID" -> "Utilities-ExtractHeads-Test3"
+]
+
 (* GetFileExtension *)
 (* MatchTrim *)
 (* OptionsJoin *)
