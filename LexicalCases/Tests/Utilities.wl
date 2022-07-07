@@ -36,15 +36,17 @@ VerificationTest[
 		(
 			(WordBoundary | " " | StartOfString | StartOfLine)
 			~~ ("past" | "few" | "blank" | "single")
-			~~ (WordBoundary | " " | EndOfString | EndOfLine) | (WordBoundary | " " | StartOfString | StartOfLine)
+			~~ ((WordBoundary | " " | EndOfString | EndOfLine) | (WordBoundary | " " | StartOfString | StartOfLine))
 			~~ ("words" | "fingers" | "weeks" | "writer" | "block" | "screen" | "front" | "day" | "mind" | "type" | "word" | "process" | "hours" | "computer" | "today" | "blank")
 			~~ (WordBoundary | " " | EndOfString | EndOfLine)
 	 	)
 		~~ "computer"
-		~~ (WordBoundary | " " | StartOfString |StartOfLine ~~ ("past" | "few" | "blank" | "single")
-		~~ (WordBoundary | " " | EndOfString | EndOfLine) | (WordBoundary | " " | StartOfString | StartOfLine)
+		~~ (
+            (WordBoundary | " " | StartOfString |StartOfLine) ~~ ("past" | "few" | "blank" | "single")
+		~~ ((WordBoundary | " " | EndOfString | EndOfLine) | (WordBoundary | " " | StartOfString | StartOfLine))
 		~~ ("words" | "fingers" | "weeks" | "writer" | "block" | "screen" | "front" | "day" | "mind" | "type" | "word" | "process" | "hours" | "computer" | "today" | "blank")
-		~~ (WordBoundary | " " | EndOfString | EndOfLine))
+		~~ (WordBoundary | " " | EndOfString | EndOfLine)
+        )
 	),
     "TestID" -> "Utlities-ExpandPattern-Test1"
 ]
