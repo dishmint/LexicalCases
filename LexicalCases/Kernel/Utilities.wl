@@ -68,5 +68,9 @@ MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
 
 ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1]
 
+stopwords = Monitor[Alternatives @@ WordList["Stopwords"], Row[{"Getting stopwords", ProgressIndicator[Appearance -> "Ellipsis"]}]]
+
+LexicalCases`StopWordQ[s_String] := StringMatchQ[stopwords][ToLowerCase[s]]
+
 End[]
 EndPackage[]

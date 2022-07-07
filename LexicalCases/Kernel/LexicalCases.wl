@@ -963,12 +963,6 @@ CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] :=
 					][ds[All, ThreadMatchesWithCount]]
 					]
 
-stopwords = Monitor[Alternatives @@ WordList["Stopwords"], Row[{"Getting stopwords",
-	 ProgressIndicator[Appearance -> "Ellipsis"]}]]
-
-StopWordQ[s_String] :=
-	StringMatchQ[stopwords][ToLowerCase[s]]
-
 FilterOutStopWordRows[ds_Dataset] :=
 	ds[(DeleteCases[#, _String?StopWordQ, 3]&) /* Select[Not @ SameQ[{}, #Matches]&]]
 
