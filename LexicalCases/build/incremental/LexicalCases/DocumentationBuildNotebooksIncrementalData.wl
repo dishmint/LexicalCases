@@ -4,20 +4,20 @@
    "FileHash" -> "aNLdffK4VBRZwTLc7vwXiVWO/FOqNILzKWP4jSLKjF0="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.294112, "Seconds"]|>], 
-   "FileHash" -> "zHNtTTiga+GqEhr6tnQa1ldDf9unzgDcCloBOQs5CAY="|>, 
+     <|"Time" -> Quantity[1.555, "Seconds"]|>], 
+   "FileHash" -> "aJzZ0e6tJvMu57qbRKEx7xHbl0xF49u+/TL7eh05CDM="|>, 
  "English/ReferencePages/Symbols/CountSummaryLowercase.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.389812, "Seconds"]|>], 
    "FileHash" -> "kkF4Ju9PVUrUgsw1EVhzEtf/+ouyQ6JkQnp+vtRcIbw="|>, 
  "English/ReferencePages/Symbols/ExpandPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[0.955828, "Seconds"]|>], 
-   "FileHash" -> "yKknHwzX/yoMQTLDwdfq86j/fvh4flLDcPGGt1cDyhc="|>, 
+     <|"Time" -> Quantity[0.991634, "Seconds"]|>], 
+   "FileHash" -> "u7jTbPd+vYCSFJGTDK0lEmg2vgP+teR+ERYNeE3RBlU="|>, 
  "English/ReferencePages/Symbols/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[2.105936, "Seconds"]|>], 
-   "FileHash" -> "6Cu7p2FzxD+oyKM7/hXFf59f4HOU+oKBaFhKuWAF/Tc="|>, 
+     <|"Time" -> Quantity[2.499908, "Seconds"]|>], 
+   "FileHash" -> "scQm3EVgxgoyvvtN9JEPGSohbKjXeWuoJKAszQr48wc="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionPlot.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.980729, "Seconds"]|>], 
@@ -48,8 +48,8 @@
    "FileHash" -> "5njlDZQTj4MnHHuM17Y+UZv1kGfgFKaSO1chd5NFcEM="|>, 
  "English/ReferencePages/Symbols/WordToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.292657, "Seconds"]|>], 
-   "FileHash" -> "a/bq8DVAbj9ga7usrXz4BKPzrpSEWmumMFMzB2FC0/g="|>, 
+     <|"Time" -> Quantity[1.491302, "Seconds"]|>], 
+   "FileHash" -> "hNczkonVhvTLeRrVUL1KZ3acP5XhLM/52LvpuMmhHD8="|>, 
  "English/ReferencePages/Symbols/$LexicalCasesServices.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.894107, "Seconds"]|>], 
