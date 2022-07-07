@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "5f110dbcda5cc81ad721d5afc612a88d6e431eff6b72af3d5547e5aa2be7f4f0"
+            "f92beb6719433ba83e0250efcbcb5d032610f35d8d596ace6a831c00fa64c83a"
                 
         |>
         ,
@@ -63,7 +63,7 @@
             ,
             "Hash"
             ->
-            "9a732e61ed40005be85eb755fbba6ca60fb95b345a45c64a9c33dc8257f1b0e8"
+            "8ee2b6fdf85b9bc326249d818a198f1b9e641fcd27c812df610984288bd84c9b"
                 
         |>
         ,
@@ -102,7 +102,7 @@
             ,
             "Hash"
             ->
-            "9d8d2d35b779e644727946d1bfe1072d741620bcc582bd155d6cfba40e6e3622"
+            "b2d7f6e2957d4e533c3f2e99aab8d1827a4a8b4a74c6dbb4901fb61cf7e955b8"
                 
         |>
         ,
@@ -115,7 +115,33 @@
             ,
             "Hash"
             ->
-            "917da9212acc206960624c81bd70f7a453fa0afce3df76d919cb7381e8146810"
+            "5a1928581a7c27b50fa9feeb72332b518256be0dd88b219b0c6215509b7549f1"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/Patterns.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "b978db651f5edffed0fc5ed0d335aaf24a5f1d51d42b67511f6b2f0513892f3b"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/Utilities.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "c4b400a8c68faab869d6ca79ce13250440ec269693fa3e38d25ac8badb08ba4a"
                 
         |>
         ,
@@ -142,7 +168,7 @@
             ,
             "Hash"
             ->
-            "729d808c73d01dd87b4325cbcde57a26fe7aac27090d90d36e64e13e4ba8b021"
+            "04c004c040f96233584060fe08fcfc82fa1aa247933731f4c03441264f934de1"
                 
         |>
         ,
@@ -170,7 +196,7 @@
             ,
             "Hash"
             ->
-            "2bfcefe12026202985a87bc7bb63a60a77a8233b9067bff9b7fd54a84cf90564"
+            "9dc241af7d3b836a950a1946b5570e6a02d36f246303cc0bdda94ca980dbdc95"
                 
         |>
         ,
@@ -184,7 +210,7 @@
             ,
             "Hash"
             ->
-            "9bbf81ed3720bd60845a866964fb4e91eb4892ecf9c98897e12440ae7594d31e"
+            "1208f73a1a50f85df61d6e814f2433ba8d6e6729c738e4a928f4ea9cd4504ec8"
                 
         |>
         ,
@@ -296,7 +322,7 @@
             ,
             "Hash"
             ->
-            "82dbc917d482e0df9fbd480e2b8a407057fd8a6d73d7679a26cbcd36d84608d9"
+            "88bff368ac45089cec8d7055e25d856933afa5af97993af8da30a7bc6f35ca91"
                 
         |>
         ,

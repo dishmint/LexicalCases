@@ -1,7 +1,7 @@
 PacletObject[
     <|
         "Name" -> "LexicalCases",
-        "Version" -> "1.2.28",
+        "Version" -> "1.2.29",
         "WolframVersion" -> "12.3+",
         "Creator" -> "Faizon Zaman",
         "Description" -> "Extract lexical patterns from text",
@@ -18,7 +18,9 @@ PacletObject[
                     "Resources" -> {
                       {"LexicalStructure", "LexicalStructure.wlt"},
                       {"LexicalCases", "LexicalCases.wlt"},
-                      {"Validation", "Validation.wlt"}
+                      {"Validation", "Validation.wlt"},
+                      {"Patterns", "Patterns.wlt"},
+                      {"Utilities", "Utilities.wlt"}
                   }
                 },
                 {
