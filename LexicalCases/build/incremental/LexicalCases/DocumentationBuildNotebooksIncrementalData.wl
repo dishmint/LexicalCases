@@ -4,8 +4,8 @@
    "FileHash" -> "aNLdffK4VBRZwTLc7vwXiVWO/FOqNILzKWP4jSLKjF0="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.555, "Seconds"]|>], 
-   "FileHash" -> "aJzZ0e6tJvMu57qbRKEx7xHbl0xF49u+/TL7eh05CDM="|>, 
+     <|"Time" -> Quantity[1.338779, "Seconds"]|>], 
+   "FileHash" -> "9chClll9r314Fk5vo8ianQ3SbtSahhx+mLM2ugqeQ78="|>, 
  "English/ReferencePages/Symbols/CountSummaryLowercase.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.389812, "Seconds"]|>], 
@@ -56,5 +56,5 @@
    "FileHash" -> "Fq3ggdwISzrNBKHUbdt3ajl+/aEZuSdNPXsZAyAMZBM="|>, 
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.617285, "Seconds"]|>], 
-   "FileHash" -> "AABGL3gwQAY+lse8bzhD1UIJ2W6DxQePAajcSZm4MR4="|>|>
+     <|"Time" -> Quantity[1.29044, "Seconds"]|>], 
+   "FileHash" -> "GzVggAWISZsWuFI3ijfMKgmsqdqsU3KMNH9Ykn8pJD0="|>|>
