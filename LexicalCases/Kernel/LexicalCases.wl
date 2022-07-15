@@ -541,10 +541,11 @@ lcStageMonitor[2] :=
 
 (* SourceText and LexicalPattern Input *)
 
-LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts : OptionsPattern[
+LexicalCases[sourcetext_String, se_, opts : OptionsPattern[
 	LexicalCases]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
+		ConfirmBy[se,LexicalPatternQ];
 		Module[{LPC, RES},
 			ArticleIndex = 0;
 			(* Find Matches *)
