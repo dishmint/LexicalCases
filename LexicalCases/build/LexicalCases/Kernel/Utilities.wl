@@ -72,5 +72,14 @@ stopwords = Monitor[Alternatives @@ WordList["Stopwords"], Row[{"Getting stopwor
 
 LexicalCases`StopWordQ[s_String] := StringMatchQ[stopwords][ToLowerCase[s]]
 
+(* ToLexicalPattern *)
+
+LexicalCases`ToLexicalPattern[string_String]:= Block[
+	{structure, components},
+	structure = Normal@TextStructure[string, "PartsOfSpeech"];
+	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> LexicalCases`TextType[gu], Infinity];
+	StringExpression @@ components
+  ]
+
 End[]
 EndPackage[]

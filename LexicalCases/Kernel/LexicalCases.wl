@@ -16,6 +16,8 @@ LexicalCases::usage = "LexicalCases[source, lp] extract cases of LexicalPattern 
 
 LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid lexical pattern."
 
+ToLexicalPattern::usage = "ToLexicalPattern[s] converts string s to a lexical pattern."
+
 (* Samples *)
 
 $SampleSentence::usage = "A short example string."

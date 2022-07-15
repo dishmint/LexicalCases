@@ -57,4 +57,8 @@
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.29044, "Seconds"]|>], 
-   "FileHash" -> "GzVggAWISZsWuFI3ijfMKgmsqdqsU3KMNH9Ykn8pJD0="|>|>
+   "FileHash" -> "GzVggAWISZsWuFI3ijfMKgmsqdqsU3KMNH9Ykn8pJD0="|>, 
+ "English/ReferencePages/Symbols/ToLexicalPattern.nb" -> 
+  <|"Result" -> Success["BuildDocumentationNotebook", 
+     <|"Time" -> Quantity[1.377132, "Seconds"]|>], 
+   "FileHash" -> "Uhxur9qSIg3xqgttV75btC4uwla5SoAe0weJG39kIq8="|>|>
