@@ -5,9 +5,24 @@ BeginTestSection["Validation"]
 (* LexicalPattern Validation *)
 VerificationTest[
 	LexicalPatternQ[$SampleStringExpression],
-	True
-,
-"TestID" -> "LexicalPatternQTest1"
+	True,
+	"TestID" -> "LexicalPatternQTest1"
+]
+
+(* LexicalPatternQ unvalued symbols *)
+VerificationTest[
+	LexicalPatternQ["Alice" ~~ xxx ~~ TextType["Adverb"]],
+	Failure["ConfirmationFailed",
+		<|
+			"MessageTemplate" -> "``[``] did not return True.", 
+			"MessageParameters" -> {GeneralUtilities`StringPatternQ, StringExpression["Alice", xxx, " "]},
+			"ConfirmationType" -> "ConfirmBy",
+			"Expression" -> StringExpression["Alice", xxx, " "],
+			"Function" -> GeneralUtilities`StringPatternQ,
+			"Information" -> StringForm["`1` contains invalid string patterns", StringExpression["Alice", xxx, " "]]
+			|>
+		],
+	"TestID" -> "LexicalPatternQ-UnvaluedSymbols-Test1"
 ]
 
 (* BoundToken *)
