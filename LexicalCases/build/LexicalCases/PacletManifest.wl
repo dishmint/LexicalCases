@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "f92beb6719433ba83e0250efcbcb5d032610f35d8d596ace6a831c00fa64c83a"
+            "e004e3446f8c9857e0a53a199b3f41f875a53fe92583bd50dc0f04618c7bb9c4"
                 
         |>
         ,
@@ -63,7 +63,7 @@
             ,
             "Hash"
             ->
-            "8ee2b6fdf85b9bc326249d818a198f1b9e641fcd27c812df610984288bd84c9b"
+            "e1a1f614d89032cec42aa112eda45c68f5099d915352bd6d2714449232592e8d"
                 
         |>
         ,
@@ -309,6 +309,20 @@
             "Hash"
             ->
             "3ad6d71b84eb689fa937d63cf101e68313915c80359ae2e5d823cbfe4aaf2ed1"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/ToLexicalPattern.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "79bda03d5b484a25cbe437635f9b0479fb5fa059b961c9889a1a4dd7d8a444c1"
                 
         |>
         ,
