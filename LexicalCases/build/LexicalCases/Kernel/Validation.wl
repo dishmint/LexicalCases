@@ -23,15 +23,6 @@ LexicalCases`LexicalCases::uvsym = "Symbols `1` are unvalued"
 
 SetAttributes[LexicalCases`LexicalPatternQ, HoldAll]
 
-(* getUVS[expr_] := Cases[expr, s_Symbol /; ! ValueQ[s]]
-
-$uvs = {}
-
-LexicalCases`UnvaluedSymbolsFreeQ[expr_] := iuvsq[$uvs = getUVS[expr]]
-
-iuvsq[{}] := True
-iuvsq[_] := False *)
-
 LexicalCases`LexicalPatternQ[expr_]:= Module[
 	{
 		se = Replace[expr, $ValidLexicalTokens :> " ", {0, Infinity}],
@@ -45,7 +36,6 @@ LexicalCases`LexicalPatternQ[expr_]:= Module[
 		]
 LexicalCases`LexicalPatternQ[Rule[expr_?LexicalCases`LexicalPatternQ,_]]:= True;
 LexicalCases`LexicalPatternQ[RuleDelayed[expr_?LexicalCases`LexicalPatternQ,_]]:= True;
-(* LexicalCases`LexicalPatternQ[expr_?GeneralUtilities`StringPatternQ]:= True; *)
 
 End[]
 
