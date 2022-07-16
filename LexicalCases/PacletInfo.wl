@@ -1,7 +1,7 @@
 PacletObject[
     <|
         "Name" -> "LexicalCases",
-        "Version" -> "1.2.31",
+        "Version" -> "1.2.32",
         "WolframVersion" -> "12.3+",
         "Creator" -> "Faizon Zaman",
         "Description" -> "Extract lexical patterns from text",
