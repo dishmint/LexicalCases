@@ -528,17 +528,6 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 		]
 	]
 
-$stage = "";
-
-lcStageMonitor[0] :=
-	($stage = "")
-
-lcStageMonitor[1] :=
-	($stage = "Expanding Pattern")
-
-lcStageMonitor[2] :=
-	($stage = "Searching")
-
 (* SourceText and LexicalPattern Input *)
 
 LexicalCases[sourcetext_String, se_, opts : OptionsPattern[
@@ -549,11 +538,10 @@ LexicalCases[sourcetext_String, se_, opts : OptionsPattern[
 		Module[{LPC, RES},
 			ArticleIndex = 0;
 			(* Find Matches *)
-			LPC = Monitor[Confirm[LexicalCasesOnString[sourcetext, se, opts]],
-				 Row[{$stage, ProgressIndicator[Appearance -> "Ellipsis"]}]];
+			LPC = Confirm[LexicalCasesOnString[sourcetext, se, opts]];
 			(* Generate Summary Object *)
-			RES = Monitor[GenerateLexicalSummary[LPC, "Text", se], Row[{"Generating LexicalSummary",
-				 ProgressIndicator[Appearance -> "Necklace"]}]];
+			RES = GenerateLexicalSummary[LPC, "Text", se];
+			(* Clear Article Index *)
 			ArticleIndex =.;
 			RES
 		]
@@ -566,10 +554,10 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[
 	Enclose[
 		Module[{RX, S = source, RES},
 			++ArticleIndex;
-			lcStageMonitor[1];
+			(* lcStageMonitor[1]; *)
 			RX = ConfirmQuiet[ExpandPattern[S, se], {Java::excptn, JavaNew::fail
 				}];
-			lcStageMonitor[2];
+			(* lcStageMonitor[2]; *)
 			RES = MatchTrim[OptionValue["StringTrim"]] @ Query[
 				GroupBy[#Match&] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|>&]),
 				KeyDrop["Match"] /* Values /* (Flatten[#, 1]&)
@@ -577,7 +565,7 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[
 					StringCases[S, RX, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
 					StringPosition[S, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 					};
-			lcStageMonitor[0];
+			(* lcStageMonitor[0]; *)
 			RES
 		]
 	]
@@ -901,8 +889,7 @@ GenerateLexicalSummary[data_?FailureQ, ___] := data
 
 GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] :=
 	Enclose[
-		Monitor[iGenerateLexicalSummary[data, sourceType, se], Row[{
-		"Generating Summary", ProgressIndicator[Appearance -> "Ellipsis"]}]],
+		iGenerateLexicalSummary[data, sourceType, se],
 		Identity,
 		"LexicalSummaryFailed"
 		]

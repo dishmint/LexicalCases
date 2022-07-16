@@ -68,17 +68,30 @@ MatchTrim[boole:(True|False)][matches_List] := MatchTrim[boole,matches]
 
 ReplaceEmptyListWithMissing[result_]:= Replace[result, {} -> Missing["NoMatches"], 1]
 
-stopwords = Monitor[Alternatives @@ WordList["Stopwords"], Row[{"Getting stopwords", ProgressIndicator[Appearance -> "Ellipsis"]}]]
+stopwords = Alternatives@@WordList["Stopwords"]
 
 LexicalCases`StopWordQ[s_String] := StringMatchQ[stopwords][ToLowerCase[s]]
 
 (* ToLexicalPattern *)
+
 
 LexicalCases`ToLexicalPattern[string_String]:= Block[
 	{structure, components},
 	structure = Normal@TextStructure[string, "PartsOfSpeech"];
 	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> LexicalCases`TextType[gu], Infinity];
 	StringExpression @@ components
+  ]
+
+LexicalCases`ToLexicalPattern[string_String, preserve_List]:= Block[
+  {
+   structure = Normal[TextStructure[string, "PartsOfSpeech"]],
+   components,
+   keypos, newpos
+   },
+  components = Cases[structure, TextElement[s_String, {"GrammaticalUnit" -> e : Entity["GrammaticalUnit", _]}] :> {s -> e["TagName"]}, Infinity];
+  keypos = Position[components, Alternatives @@ Cases[pos, _String]] // Extract[{All, 1}];
+  newpos = Union[Cases[pos, _Integer]~Join~keypos];
+  StringExpression @@ DualSubsetMap[First/*Keys, First/*Values/*TextType, components, newpos]
   ]
 
 End[]
