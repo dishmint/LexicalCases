@@ -554,10 +554,8 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[
 	Enclose[
 		Module[{RX, S = source, RES},
 			++ArticleIndex;
-			(* lcStageMonitor[1]; *)
 			RX = ConfirmQuiet[ExpandPattern[S, se], {Java::excptn, JavaNew::fail
 				}];
-			(* lcStageMonitor[2]; *)
 			RES = MatchTrim[OptionValue["StringTrim"]] @ Query[
 				GroupBy[#Match&] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|>&]),
 				KeyDrop["Match"] /* Values /* (Flatten[#, 1]&)
@@ -565,7 +563,6 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[
 					StringCases[S, RX, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
 					StringPosition[S, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 					};
-			(* lcStageMonitor[0]; *)
 			RES
 		]
 	]
