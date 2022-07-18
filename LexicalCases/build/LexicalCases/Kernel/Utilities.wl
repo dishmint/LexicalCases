@@ -22,7 +22,11 @@ MatchTrim::usage = "MatchTrim[boole, matches] trims white space from each match 
 
 ReplaceEmptyListWithMissing::usage = "ReplaceEmptyListWithMissing[result] Replaces empty lists in result with Missing[\"NoMatches\"]"
 
+DebugTiming::usage = "DebugTiming[label][expr] applies EchoTiming to expr prepending label."
+
 Begin["`Private`"]
+
+DebugTiming[label_String][expr_]:= EchoTiming[expr,label]
 
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
@@ -81,7 +85,7 @@ DualSubsetMap[f1_, f2_, list_, pos_] := Module[
   SubsetMap[Map[f2], l1, apos]
   ]
 
-LexicalCases`ToLexicalPattern[string_String]:= Block[
+LexicalCases`ToLexicalPattern[string_String]:= LexicalCases`ToLexicalPattern[string] = Block[
 	{structure, components},
 	structure = Normal@TextStructure[string, "PartsOfSpeech"];
 	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> LexicalCases`TextType[gu], Infinity];

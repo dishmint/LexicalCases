@@ -22,7 +22,11 @@ MatchTrim::usage = "MatchTrim[boole, matches] trims white space from each match 
 
 ReplaceEmptyListWithMissing::usage = "ReplaceEmptyListWithMissing[result] Replaces empty lists in result with Missing[\"NoMatches\"]"
 
+DebugTiming::usage = "DebugTiming[label][expr] applies EchoTiming to expr prepending label."
+
 Begin["`Private`"]
+
+DebugTiming[label_String][expr_]:= EchoTiming[expr,label]
 
 OptionsJoin[sym__Symbol]:=(Map[Options]/*Apply[Join])[{sym}]
 
