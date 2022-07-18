@@ -60,5 +60,5 @@
    "FileHash" -> "GzVggAWISZsWuFI3ijfMKgmsqdqsU3KMNH9Ykn8pJD0="|>, 
  "English/ReferencePages/Symbols/ToLexicalPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.476065, "Seconds"]|>], 
-   "FileHash" -> "/W39+uqTWcf52+yK5gtEhlT8BXGBmadhehZil95OVIc="|>|>
+     <|"Time" -> Quantity[1.520077, "Seconds"]|>], 
+   "FileHash" -> "MaygbTPwm3PqDD+wL+SQciqZ2lSA7WBz1AuCcH04Iqs="|>|>
