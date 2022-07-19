@@ -1,0 +1,2423 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    122951,       2414]
+NotebookOptionsPosition[    114496,       2234]
+NotebookOutlinePosition[    115196,       2258]
+CellTagsIndexPosition[    115115,       2253]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["ToLexicalPattern", "ObjectName",
+ CellID->1954862474],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["ToLexicalPattern",
+    BaseStyle->"Link",
+    ButtonData->"paclet:FaizonZaman/LexicalCases/ref/ToLexicalPattern"], "[", 
+   
+   StyleBox["s", "TI"], "]"}]], "InlineFormula"],
+ " \[LineSeparator]converts string ",
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula"],
+ " to a lexical pattern.\n",
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["ToLexicalPattern",
+    BaseStyle->"Link",
+    ButtonData->"paclet:FaizonZaman/LexicalCases/ref/ToLexicalPattern"], "[", 
+   
+   RowBox[{
+    StyleBox["s", "TI"], ",", 
+    StyleBox["pos", "TI"]}], "]"}]], "InlineFormula"],
+ "\[LineSeparator]preserves tokens in string ",
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula"],
+ " at positions ",
+ Cell[BoxData[
+  StyleBox["pos", "TI"]], "InlineFormula"]
+}], "Usage",
+ CellChangeTimes->{{3.866892145016012*^9, 3.8668921759574347`*^9}, {
+  3.866932357266623*^9, 3.866932468026721*^9}},
+ CellID->1021285065],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula"],
+ " must be a string."
+}], "Notes",
+ CellChangeTimes->{{3.866892188227062*^9, 3.866892243404621*^9}},
+ CellID->2048780631],
+
+Cell[TextData[{
+ "There is currently a bottleneck when extracting the content type identifier \
+from TextStructure output. It can take a few seconds for short ",
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula"],
+ ", it might take much longer for longer ",
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula"]
+}], "Notes",
+ CellChangeTimes->{{3.8671530210120792`*^9, 3.867153134573763*^9}, {
+  3.86715382079021*^9, 3.867153941624323*^9}},
+ CellID->174693548]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Tech Notes",
+ Cell[BoxData[
+  TemplateBox[{"TechNotes", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Insert links to related tech notes.", "MoreInfoText"], BaseStyle -> 
+       "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "TechNotesSection",
+ CellID->1103269219],
+
+Cell[TextData[ButtonBox["LexicalCases Tutorial",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.8668937087970963`*^9, 3.866893718387259*^9}},
+ CellID->1012529679]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Related Links",
+ Cell[BoxData[
+  TemplateBox[{"RelatedLinks", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related page, including web pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "RelatedLinksSection",
+ CellID->1704454507],
+
+Cell[TextData[ButtonBox["LexicalCases Github Repository",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://github.com/dishmint/LexicalCases"], None}]], "RelatedLinks",
+ CellChangeTimes->{{3.866893721935667*^9, 3.86689375683782*^9}},
+ CellID->1482531816]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "See Also",
+ Cell[BoxData[
+  TemplateBox[{"SeeAlso", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related reference (function) pages. Type a space, \
+a period and then another space between function names. Then click the \
+palette's Inline Listing Toggle button.", "MoreInfoText"], BaseStyle -> 
+       "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "SeeAlsoSection",
+ CellID->1806959018],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["LexicalPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"]], 
+  "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["LexicalCases",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalCases"]], 
+  "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["TextType",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/TextType"]], 
+  "InlineFormula"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.866893780206905*^9, 3.8668938159496193`*^9}},
+ CellID->1993963299]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "MoreAboutSection",
+ CellChangeTimes->{{3.843042374232973*^9, 3.843042375545676*^9}},
+ CellID->1058854858],
+
+Cell[TextData[ButtonBox["LexicalCases Overview",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:FaizonZaman/LexicalCases/guide/LexicalCases"]], "MoreAbout",
+ CellChangeTimes->{{3.866893825406157*^9, 3.8668938460202227`*^9}},
+ CellID->2124099364]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Examples Initialization",
+ Cell[BoxData[
+  TemplateBox[{"ExamplesInitialization", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Input that is to be evaluated before any examples are run, e.g. \
+Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]], 
+     "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "ExamplesInitializationSection",
+ CellID->2117346667],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", 
+  "]"}]], "ExampleInitialization",
+ CellChangeTimes->{{3.866893150593525*^9, 3.8668931570236893`*^9}, {
+  3.866893855678603*^9, 3.866893858909782*^9}},
+ CellID->293917832]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox[
+      RowBox[{"Basic", " ", "Examples"}], "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->664614324],
+
+Cell["Search text for similar phrases", "ExampleText",
+ CellChangeTimes->{{3.866894020435421*^9, 3.8668940260048018`*^9}},
+ CellID->320500247],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"oosp", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Text\>\"", ",", "\"\<OriginOfSpecies\>\""}], "}"}], "]"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.866893999009224*^9, 3.8668939993254433`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->1761877708],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lp", "=", 
+  RowBox[{
+  "ToLexicalPattern", "[", "\"\<species developed poorly\>\"", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8668938506777477`*^9, 3.8668938529562597`*^9}, {
+   3.8668939368676977`*^9, 3.866893944189932*^9}, 3.866893974726268*^9, {
+   3.8668940454475183`*^9, 3.866894057960343*^9}},
+ CellLabel->"In[3]:=",
+ CellID->707256129],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TextType", "[", "\<\"Noun\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Verb\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Adverb\"\>", "]"}]}]], "Output",
+ CellChangeTimes->{3.8668940648531427`*^9},
+ CellLabel->"Out[3]=",
+ CellID->1457391360]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"oosp", ",", "lp"}], "]"}], "[", "\"\<CountGroups\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8668940678782454`*^9, 3.866894082966364*^9}},
+ CellLabel->"In[4]:=",
+ CellID->2047326995],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Matches" -> {"selection will always"}, "CountGroup" -> 7|>, <|
+       "Matches" -> {"will be much"}, "CountGroup" -> 5|>, <|
+       "Matches" -> {"selection acts solely"}, "CountGroup" -> 4|>, <|
+       "Matches" -> {
+         "will give only", "will be no", "will be more", 
+          "varieties will generally", "struggle will generally", 
+          "species are only", "species are generally", "one would ever", 
+          "characters are more", "being grafted together"}, "CountGroup" -> 
+        3|>, <|"Matches" -> {
+         "world would not", "will make only", "will be nearly", 
+          "will be most", "will be little", "will be less", "will appear as", 
+          "varieties do not", "system being eminently", "stripes is not", 
+          "species would thus", "species would not", "species vary most", 
+          "species spreading widely", "species range very", "species is so", 
+          "species is quite", "species has once", "species does not", 
+          "species branched off", "species are more", "selection will often", 
+          "selection will not", "sediment was not", "organ could not", 
+          "nothing is more", "nature is not", "nature are more", 
+          "naturalists rank as", "mongrels are more", "life will generally", 
+          "inhabitants becoming slowly", "holly-trees bear only", 
+          "group is generally", "genera have all", "genera are now", 
+          "forms have not", "forms are more", "formations are more", 
+          "competition will generally", "characters do not", "case is very", 
+          "breeds have once", "botanists rank as", "being is constantly", 
+          "bees do not", "area is already"}, "CountGroup" -> 2|>, <|
+       "Matches" -> {
+         "year harvested separately", "year blown there", 
+          "world will obviously", "world were specifically", 
+          "Worlds lived further", "world have always", "world has recently", 
+          "world are very", "work was already", "work is now", 
+          "work had hardly", "work grinding down", "wolf is hardest", 
+          "wing weigh less", "wind are extraordinarily", "will turn out", 
+          "will suffice merely", "will suffer most", "will starve out", 
+          "will spread most", "will spread more", "will speak infallibly", 
+          "will select only", "will rise immensely", "will rise greatly", 
+          "will recognise as", "will produce unusually", "will produce more", 
+          "will pick out", "will make no", "will leave most", 
+          "will have only", "will go thus", "will give longer", 
+          "will gain so", "will fulfil all", "will differ widely", 
+          "will differ greatly", "will depend not", "will concur only", 
+          "will breed most", "will be widely", "will be utterly", 
+          "will be universally", "will be strongly", "will be simply", 
+          "will be often", "will be infinitely", "will be hereafter", 
+          "will be far", "will be eminently", "will be dimly", 
+          "will become widely", "will become utterly", "will become still", 
+          "will become rarer", "will be almost", "will be alike", 
+          "will be again", "whole is nearly", "well marbled together", 
+          "weight extend very", "wedges packed close", "ways will everywhere",
+           "wax was so", "water-ouzel would never", "water-hen is nearly", 
+          "water-birds did not", "wasp-combs are sometimes", 
+          "warmth had fully", "vulture is generally", "views would naturally",
+           "views are generally", "view is now", "view have more", 
+          "view are as", "variety will usually", "variety will often", 
+          "variety can sometimes", "varieties would merely", 
+          "varieties will not", "varieties will invariably", 
+          "varieties will inevitably", "varieties were continually", 
+          "varieties should not", "varieties might slowly", 
+          "varieties may hereafter", "varieties is thus", 
+          "varieties have very", "varieties have not", 
+          "varieties growing near", "varieties does not", 
+          "varieties differ more", "varieties could not", 
+          "varieties are very", "varieties are still", "varieties are often", 
+          "varieties are habitually", "varieties are generally", 
+          "variations will generally", "variations can only", 
+          "variations are here", "variation is not", 
+          "variation is infinitely", "variability would often", 
+          "variability will seldom", "variability is simply", 
+          "variability is obviously", "variability graduates away", 
+          "value is widely", "valuation has hitherto", "valleys were lately", 
+          "union is often", "turn been similarly", "turkey is likewise", 
+          "tumbler differs immensely", "truth are simply", 
+          "tropics supported as", "tree will not", "trees must here", 
+          "trees had not", "transport are sometimes", "toes are only", 
+          "tobacco is more", "time will not", "time travel southward", 
+          "times having largely", "times being nearly", "time is probably", 
+          "time having apparently", "time being thus", 
+          "thousands are annually", "things have thus", "things have much", 
+          "theory would absolutely", "theory have all", "theory be strictly", 
+          "tendency was once", "telescope is there", "tarsi are so", 
+          "tarsi are almost", "tables show even", "system was first", 
+          "system is eminently", "system has not", 
+          "system being functionally", "systematists are far", 
+          "swim-bladder has apparently", "surface will then", 
+          "surfaces would wholly", "sufferers may often", 
+          "success will often", "sub-varieties differ slightly", 
+          "subsidence will often", "subsidence is probably", 
+          "subject is somewhat", "subject is here", "sub-groups will finally",
+           "sub-breed are once", "style remains well", "struggle will often", 
+          "structure would probably", "structure will seldom", 
+          "structure will always", "structure used only", 
+          "structure is merely", "structure has primarily", 
+          "structure could not", "structure are truly", "stripes occur far", 
+          "stripes are sometimes", "stripes are either", "stripe is much", 
+          "stripe is certainly", "stress ought not", 
+          "strength is continually", "stream is first", 
+          "strawberry had always", "strata must somewhere", "story is still", 
+          "stone are annually", "stocks must either", "stocks must all", 
+          "stock be fully", "sting should so", "sternum are highly", 
+          "sterility is not", "sterility is no", "sterility is innately", 
+          "sterility does not", "sterility be so", "sterility be innately", 
+          "stations will often", "stations are so", "States would likewise", 
+          "States are more", "statements are fairly", "statement is indeed", 
+          "statement is hardly", "statement is clearly", "statement has so", 
+          "stamens producing rather", "stages were more", "spine is always", 
+          "spheres being nearly", "specimens showing clearly", 
+          "specimen has as", "species would certainly", "species will thus", 
+          "species will generally", "species will consequently", 
+          "species will almost", "species were so", "species were not", 
+          "species were invariably", "species were formerly", 
+          "species was long", "species was independently", 
+          "species was first", "species ranges widely", "species must either",
+           "species may then", "species may often", 
+          "species may occasionally", "species may now", 
+          "species may elsewhere", "species is thus", "species is sometimes", 
+          "species is often", "species is not", "species is more", 
+          "species is identically", "species is generally", 
+          "species is first", "species having very", 
+          "species having formerly", "species having first", 
+          "species have very", "species have suddenly", 
+          "species have specially", "species have rapidly", 
+          "species have once", "species has not", "species has hitherto", 
+          "species had thus", "species had not", "species found elsewhere", 
+          "species disappearing before", "species could possibly", 
+          "species could not", "species can most", "species can actually", 
+          "species be only", "species being thus", "species being sometimes", 
+          "species being quite", "species being only", "species are very", 
+          "species are so", "species are really", "species are now", 
+          "species are not", "species are most", "species are identically", 
+          "species are already", "species appeared somewhat", 
+          "space could not", "source graduates away", 
+          "something might perhaps", "slaves work energetically", 
+          "slaves feel quite", "slaves are very", 
+          "sizes differed wonderfully", "sisters have usually", 
+          "sides bevelled so", "side are very", 
+          "shoulder-stripe may sometimes", "shoulder is sometimes", 
+          "shells underwent scarcely", "shells may still", "shells had never",
+           "sheep is so", "sheep fitted either", "setter is directly", 
+          "series is far", "self-fertilisation seems almost", 
+          "selection would thus", "selection would probably", 
+          "selection would often", "selection would constantly", 
+          "selection works solely", "selection will then", 
+          "selection will probably", "selection will never", 
+          "selection will generally", "selection will continually", 
+          "selection will also", "selection tends only", 
+          "selection might easily", "selection may readily", 
+          "selection may perfectly", "selection is still", 
+          "selection is rapidly", "selection is not", "selection is far", 
+          "selection is daily", "selection is continually", 
+          "selection having no", "selection having more", 
+          "selection has really", "selection has actually", 
+          "selection had not", "selection could not", 
+          "selection consisted merely", "selection can certainly", 
+          "selection being less", "selection are greatly", 
+          "selection acts only", "seed were never", 
+          "seeds might occasionally", "seeds germinated after", 
+          "seeds do not", "seeds could not", "seeds are never", 
+          "seed-raisers do not", "seedlings would probably", 
+          "seedling growing wild", "sediment must nearly", "sediment is not", 
+          "sediment did not", "section would not", "sea was either", 
+          "sea was about", "seas are generally", "seal had not", 
+          "sea is more", "sea is apparently", "sea are not", 
+          "savages have more", "savages do not", "savages are so", 
+          "sanguinea was likewise", "runts have very", "rule would not", 
+          "rule will probably", "rule is not", "rule is generally", 
+          "rule does not", "rule being so", "rule are so", 
+          "rule applies very", "rock-pigeon were also", "rock-pigeon was not",
+           "result was as", "result is thus", "result is not", 
+          "respects is not", "resemblances will not", 
+          "resemblances seem chiefly", "resemblance is only", 
+          "resemblance is often", "research has much", 
+          "remarks are apparently", "remark is indeed", "remark is here", 
+          "remains will probably", "remains must not", "remains can anywhere",
+           "remains afford plain", "relations will thus", 
+          "relations will not", "relationship is even", "relations have not", 
+          "relations can ever", "relations are more", "relation can hardly", 
+          "regions have not", "region is as", "region has as", 
+          "region are almost", "record would then", "record will almost", 
+          "record is so", "record is far", "record is extremely", 
+          "record being incomparably", "record being chiefly", "record be as",
+           "reader will perhaps", "reader will best", "range may often", 
+          "range are so", "race varies slightly", "races do not", 
+          "racehorses differ slightly", "race-horses differed as", 
+          "racehorse is hardly", "rabbits have ever", "question is not", 
+          "question can easily", "qualities is so", "quadrupeds have not", 
+          "quadrupeds are actually", "quadruped could possibly", 
+          "puppies had not", "progenitor will generally", 
+          "progenitor having well", "progenitor have generally", 
+          "productions would not", "productions were as", 
+          "productions was almost", "productions have recently", 
+          "productions have everywhere", "productions are nearly", 
+          "process will often", "processes are often", "process could not", 
+          "prisms united together", "prepotency runs more", 
+          "pre-occupation has probably", "powers do not", 
+          "pouter-pigeon did not", "pollen was regularly", "pollen is as", 
+          "pollen is always", "pollen is already", "pollen could seldom", 
+          "pollen could not", "pollen being occasionally", 
+          "points were incomparably", "points are not", 
+          "pointer have apparently", "pointer can no", "point do not", 
+          "plums suffer far", "plant undergoing further", "plants was not", 
+          "plants seem extremely", "plants ranging widely", "plants is once", 
+          "plants is much", "plants have not", "plants have generally", 
+          "plants have beautifully", "plants had not", 
+          "plants growing vigorously", "plants differ considerably", 
+          "plants created as", "plants being sometimes", 
+          "plants are identically", "plant produced only", 
+          "plant depends only", "places will often", "places will commonly", 
+          "places are apparently", "pistil are essentially", 
+          "pigs are differently", "Pigeons were much", 
+          "pigeons are perfectly", "phascolomys resembles most", 
+          "period will seldom", "periods undergone much", 
+          "period lived further", "period differ widely", 
+          "period been continuously", "period are not", "perfection have not",
+           "perfection be everywhere", "peculiarity is often", 
+          "peculiarities go together", "peacock was eminently", 
+          "part will often", "parts being perhaps", "parts are very", 
+          "parts are necessarily", "parts are also", "part is largely", 
+          "part being largely", "parents were first", 
+          "parent-species will still", "parents differ much", 
+          "parent-form will generally", "parent-forms having occasionally", 
+          "parent do not", "parallelism has sometimes", 
+          "palaeontologists seems frequently", "ox could ever", "ova are not",
+           "ostrich has not", "organ will not", "organ used exclusively", 
+          "organs is thus", "organs is often", "organs having generally", 
+          "organs being still", "organs become more", "organs are more", 
+          "organs are generally", "organs are extremely", 
+          "organs are exquisitely", "organ is so", "organisms ranging more", 
+          "organisms differ little", "organisation is universally", 
+          "organisation is so", "organisation has once", 
+          "organisation has generally", "organisation are generally", 
+          "organ does not", "organ be ever", "order would falsely", 
+          "orders are very", "one will often", "one ranges twice", 
+          "one may well", "one may readily", "one is so", "one have vainly", 
+          "one has sometimes", "one has ever", "one had even", "one form as", 
+          "one finished up", "one can safely", "one becomes rarer", 
+          "oil-gland is quite", "oftenest produce well", "offspring was much",
+           "offspring being perfectly", "offspring are very", 
+          "oceans are still", "oceans are now", "observations be widely", 
+          "objection is probably", "object had better", "oaks are either", 
+          "nutriment laid up", "number varies greatly", 
+          "numbers would quickly", "numbers will always", 
+          "numbers are probably", "number is most", "number are only", 
+          "nothing is thus", "Nothing is more", "nest is slightly", 
+          "nest is much", "nectary is quite", "nectary is only", 
+          "nature will generally", "nature will assuredly", 
+          "nature presenting well", "Nature may almost", "nature has largely",
+           "Nature does not", "nature be not", "nature be highly", 
+          "nature are far", "Nature acts uniformly", 
+          "naturalist would hardly", "naturalists have not", 
+          "naturalists have no", "naturalists have honestly", 
+          "naturalists do not", "naturalists differ most", 
+          "naturalists consider as", "naturalists come very", 
+          "naturalists can hardly", "naturalist knows vaguely", 
+          "naturalist includes as", "natives have not", "Myrmica have not", 
+          "mutilations are ever", "museums is absolutely", "mud was all", 
+          "mountain-range are more", "mountain floras really", 
+          "mother-hen has almost", "mongrels compared independently", 
+          "modification will not", "modification will generally", 
+          "modifications will no", "modifications may not", 
+          "modifications have not", "modifications accumulated solely", 
+          "modification is necessarily", "modification has necessarily", 
+          "modification embraces all", "modification did not", 
+          "migration would probably", "mice is largely", "method was never", 
+          "metamorphosis is perhaps", "men have sometimes", 
+          "members having very", "members have continuously", 
+          "member might long", "masters work together", "masters are much", 
+          "Marsupials branched off", "marks do not", "marks are eminently", 
+          "mariners shipwrecked near", "man would ever", "Man selects only", 
+          "man selecting only", "manner linked together", 
+          "manner become curiously", "manner are highly", "man is slowly", 
+          "man having formerly", "man have undoubtedly", 
+          "man has unintentionally", "Man does not", "Man can hardly", 
+          "man can certainly", "man appear only", "mammals was formerly", 
+          "mammals was always", "mammals have not", "mammals do not", 
+          "mammae are very", "majority sank quickly", "Lobelia growing close",
+           "list could easily", "links have not", "links have actually", 
+          "links do not", "line will sometimes", "line has hitherto", 
+          "line form together", "limbs serve as", "limbs are only", 
+          "limbs are almost", "likeness running more", "light can apparently",
+           "life will rarely", "life were so", "life were probably", 
+          "life was first", "life is just", "life is almost", 
+          "life have seldom", "life have not", "life do not", "life did not", 
+          "life could not", "life changing simultaneously", 
+          "LIFE CHANGING ALMOST", "life change most", 
+          "life change insensibly", "life change almost", "life are now", 
+          "life are nearly", "life are infinitely", "life are apparently", 
+          "legs were much", "legs are now", "legs are not", 
+          "legs are generally", "laws acting around", "larva will almost", 
+          "larvae might easily", "larvae are sometimes", 
+          "land would generally", "lands were long", "land-shells are very", 
+          "land must also", "land is almost", "land being already", 
+          "Kolreuter tried more", "kind would often", "kinds will steadily", 
+          "kinds are only", "kind could never", "jalappa can easily", 
+          "isolation will generally", "islands will not", "islands have not", 
+          "islands have everywhere", "islands are sufficiently", 
+          "islands are sometimes", "islands are peculiarly", 
+          "islands are now", "islands are far", "island is as", 
+          "island has not", "intervals existed as", "interval might easily", 
+          "intercrossing will wholly", "intercrossing will most", 
+          "intercrossing can hardly", "interbreeding is thus", 
+          "instrument might thus", "instinct was once", "instinct was first", 
+          "instincts vary slightly", "instincts have generally", 
+          "instincts being apparently", "instincts are sometimes", 
+          "instincts are not", "instincts are as", "instinct may sometimes", 
+          "instinct may probably", "instinct could possibly", 
+          "instinct can possibly", "instinct becomes so", 
+          "instance has lately", "insects is often", "insects flitting about",
+           "insects are very", "insect differing greatly", 
+          "inheritance are quite", "inhabitant would often", 
+          "inhabitants would almost", "inhabitants being widely", 
+          "inhabitants being thus", "inhabitants are now", 
+          "inhabitants are closely", "inhabitants are all", 
+          "influence will mainly", "influences will naturally", 
+          "individuals would occasionally", "individuals work even", 
+          "individuals will greatly", "individuals taken out", 
+          "individuals must always", "individual is occasionally", 
+          "increase be still", "importance have probably", 
+          "importance has often", "importance does not", 
+          "immigrants were probably", "hybrids will generally", 
+          "hybrids is simply", "hybrids is not", "hybrids do not", 
+          "hybrids does not", "hybrids could not", "hybrids be artificially", 
+          "hybrids are widely", "hybrids are very", "Hybrids are seldom", 
+          "hybrids are remarkably", "hybrids are perfectly", 
+          "hybrids are almost", "hybrid-offspring should generally", 
+          "horse would certainly", "horses is so", "horse is particularly", 
+          "horse being first", "horse been still", "horns are very", 
+          "horns are much", "hooks clustered around", "hive-bee can easily", 
+          "hermaphrodites do occasionally", "herbage can thus", 
+          "hemionus has no", "heath was so", "heath was most", 
+          "heath-plants were wholly", "health is far", "head would probably", 
+          "head produced only", "head is generally", 
+          "hazel-nuts sank immediately", "hammock made up", 
+          "hammock completed up", "half was formerly", "growth has no", 
+          "group will sometimes", "group will slowly", 
+          "groups will ultimately", "group is strictly", 
+          "group having generally", "group has once", "group does not", 
+          "group appeared suddenly", "grass would always", 
+          "grass is annually", "grains do not", "gradations were not", 
+          "goose has not", "geometer has kindly", "geology has almost", 
+          "genus would occasionally", "genus will not", 
+          "genus will manifestly", "genus should still", 
+          "genus inhabiting very", "genus have well", "genus have usually", 
+          "genus branched off", "genus are not", "genus are equally", 
+          "gentlemen is so", "generation would soon", 
+          "generations are eminently", "generation has once", 
+          "generation has never", "genera having more", "genera have often", 
+          "genera have more", "genera have also", "genera are often", 
+          "genera are not", "genera are merely", "gardeners picked out", 
+          "fruits suffer far", "fruit could hardly", "Fries has well", 
+          "fragments fall down", "fossils differ most", 
+          "Fossil remains sometimes", "form will ultimately", 
+          "forms would naturally", "forms would certainly", 
+          "forms will largely", "forms will generally", "forms were widely", 
+          "forms may still", "forms may almost", "forms have permanently", 
+          "forms have apparently", "forms has not", "forms could not", 
+          "forms can sometimes", "forms can seldom", "forms being very", 
+          "forms being specifically", "forms are still", "forms are seldom", 
+          "forms are intimately", "forms are generally", 
+          "forms are continually", "forms are clearly", 
+          "form might occasionally", "form may often", "form is directly", 
+          "form be sufficiently", "formations is not", 
+          "formations have often", "formations are far", "formation is twice",
+           "formation has often", "formation has not", 
+          "formation has indisputably", "formation can only", 
+          "foreigners have thus", "forces are so", "food are thus", 
+          "flower were perfectly", "flowers present very", "flower is well", 
+          "flower is never", "flower be more", "flora would certainly", 
+          "flight would often", "flight differs remarkably", 
+          "flexures may sometimes", "fish might formerly", 
+          "fishes confined exclusively", "fish are frequently", 
+          "firs are now", "fire do not", "fertility is often", 
+          "fertility is likewise", "fertility is greatly", "females do no", 
+          "feet would sometimes", "faunas will probably", "faunas will now", 
+          "faunas range far", "faunas are more", "fauna is not", 
+          "fantails had only", "fantail-pigeons were all", "fanciers do not", 
+          "family had originally", "family are strictly", "families have not",
+           "fact would certainly", "facts will certainly", "facts receive no",
+           "facts do not", "facts can here", "facts accord well", 
+          "fact is well", "fact is more", "eyes is probably", "eyes has much",
+           "eyes are now", "eyes are invariably", "eyes are far", 
+          "eyes are certainly", "Extinction has only", 
+          "explanation is partly", "explanation is not", 
+          "experiments published elsewhere", "experiments appeared perfectly",
+           "excretion is extremely", "exceptions are surprisingly", 
+          "estate depends chiefly", "epoch was strictly", 
+          "enemy is certainly", "embryo would closely", 
+          "Embryology rises greatly", "embryo is even", "embryo does not", 
+          "elements are imperfectly", "eggs lying loose", 
+          "effect is extremely", "earth would soon", "earth were suddenly", 
+          "earth are very", "duck flying much", "drawings made only", 
+          "doubt were somewhere", "doubt were as", "doubt was originally", 
+          "doubt could not", "domestication should not", "dog unites more", 
+          "dogs have ever", "dogs do not", "dog may perhaps", 
+          "doctrine is very", "doctrine has very", "disuse have probably", 
+          "disuse have often", "districts will almost", 
+          "distribution may sometimes", "distribution has often", 
+          "distribution apply not", "distinction has probably", 
+          "distance are equally", "dislocations is externally", 
+          "discovery is more", "dirt would not", "diffusion may often", 
+          "difficulty is not", "difficulty is as", "difficulties have very", 
+          "difficulties be not", "differences would effectually", 
+          "differences must either", "differences correlated not", 
+          "differences be sufficiently", "differences being so", 
+          "differences are very", "differences are not", 
+          "differences are highly", "differences are generally", 
+          "difference might indeed", "difference is often", 
+          "difference does not", "difference can generally", 
+          "diagram would still", "diagram is much", "diagram had not", 
+          "deviation appears not", "development has assuredly", 
+          "descent is almost", "descent has universally", 
+          "descendants would probably", "descendants will often", 
+          "descendants will not", "descendants are highly", 
+          "depth graduate away", "deposit will generally", 
+          "deposits could not", "deposits are usually", 
+          "deposits are continually", "demarcation has as", 
+          "degree would generally", "definition has hitherto", 
+          "definition has as", "death is generally", "days perished entirely",
+           "day crowded together", "curvature differs enormously", 
+          "cuckoo has not", "crust has elsewhere", "cross will naturally", 
+          "cross is often", "crosses is extremely", "crops might thus", 
+          "creation are utterly", "course include all", 
+          "country would probably", "country would oftener", 
+          "country vary more", "country receive much", "country has long", 
+          "country could hardly", "countries do not", "countries could not", 
+          "countries are not", "countries are almost", "correlation is very", 
+          "correlation are quite", "coots are eminently", 
+          "contrivances are less", "continent will again", 
+          "continents would not", "continents have long", 
+          "continents are not", "contest is often", 
+          "constitutions can hardly", "constitution may well", 
+          "condition will always", "conditions will generally", 
+          "conditions should often", "condition does not", 
+          "condition are often", "conclusions are chiefly", 
+          "conchologists are now", "competitors did not", 
+          "competition will probably", "community could possibly", 
+          "commencement having always", "colour was most", 
+          "colonists could most", "collections were nearly", 
+          "collections are very", "cold was most", "cold came slowly", 
+          "cockroach has everywhere", "coast destroyed so", 
+          "climate would clearly", "climate is now", "climate became less", 
+          "classifications have probably", "classifications are sometimes", 
+          "classifications are often", "classification is evidently", 
+          "class have sometimes", "classes have often", "classes have not", 
+          "classes do not", "classes are plainly", "class are so", 
+          "class are plainly", "class are often", "cirripedes have no", 
+          "circumstances would generally", "circumstances see no", 
+          "circumstances are most", "check is always", 
+          "characters should not", "characters is very", "characters is not", 
+          "characters is clearly", "characters differ much", 
+          "characters be ever", "characters are very", 
+          "characters are strongly", "characters are so", 
+          "characters are highly", "characters are fully", 
+          "characters are far", "characters are always", "character is fully",
+           "character are not", "chapter do not", "channels are more", 
+          "change was probably", "changes will obviously", 
+          "changes requiring much", "changes are slowly", "chance picked out",
+           "chance is very", "cells will probably", "cells are not", 
+          "cells are nearly", "cells are always", "caves were closely", 
+          "cave-insects are very", "causes taken conjointly", 
+          "causes are amply", "cause lies quite", "cattle might not", 
+          "cattle could not", "cattle are quite", "case will then", 
+          "cases be mutually", "cases are quite", "cases are often", 
+          "cases are highly", "cases are generally", 
+          "cases are fundamentally", "cases are certainly", 
+          "case presents no", "case is widely", "case is more", "case is far",
+           "case is exactly", "case is especially", "case is eminently", 
+          "case is directly", "case could not", "case be no", 
+          "care be slowly", "cabbage do not", "breed would assuredly", 
+          "breed will then", "breed will soon", "breeds were suddenly", 
+          "breeds originated there", "breeds is tolerably", 
+          "breeds have longer", "breeds could not", "breeds are often", 
+          "breeds are not", "breed might surely", "breed kept up", 
+          "breed has nearly", "breeders have actually", 
+          "breeders could never", "breeders are strongly", 
+          "branchiae have wholly", "branches may well", 
+          "boulders transported far", "botanists have further", 
+          "bizcacha is most", "birds were very", "birds were formerly", 
+          "birds living there", "birds do not", "birds can hardly", 
+          "birds are not", "birds are generally", "birds are almost", 
+          "being washed out", "being vary ever", "beings seem eminently", 
+          "being is simply", "being is extremely", "being is either", 
+          "being considered as", "being blown out", "beetles is mainly", 
+          "beetles are very", "beet grew after", "beet germinated after", 
+          "bees would thus", "bees would entirely", "bees have practically", 
+          "bees have not", "bees building perfectly", "bees are often", 
+          "bee might slowly", "beds had once", "beds are so", 
+          "beaks would inevitably", "beak originated earlier", 
+          "battle must ever", "bats found nowhere", "basis being about", 
+          "A were strictly", "average vary most", "average are now", 
+          "authors seem no", "authors have thus", "authors have even", 
+          "authors have ably", "authors are right", "author makes more", 
+          "authority could not", "assertion is quite", 
+          "arrangement would still", "arrangement would not", 
+          "ARRANGEMENT remains strictly", "arrangement is only", 
+          "arguments fall away", "area will first", "area was not", 
+          "areas will inevitably", "areas having nearly", 
+          "areas have invariably", "area is now", "area be very", 
+          "appearances are all", "appearance is very", "aphides do not", 
+          "ants differing widely", "ant is absolutely", "answer is not", 
+          "animals would thus", "animals were strictly", 
+          "animals were originally", "animals were often", 
+          "animals was carefully", "animals vary less", 
+          "animals seem generally", "animals range so", 
+          "animals migrated southward", "animals is sometimes", 
+          "animals having nearly", "animals have so", "animals have not", 
+          "animals have nearly", "animals displaying early", 
+          "animals breeding freely", "animals are still", "animals are now", 
+          "animals are as", "animals are already", "animal is more", 
+          "animal is generally", "animal can long", "analogies are utterly", 
+          "alternative has not", "air like really", "age will generally", 
+          "agency is perhaps", "agency is highly", "agencies are amply", 
+          "age is less", "affinities are as", "advantage were thus", 
+          "adult will probably", "admission will often", 
+          "adaptation be generally", "actions differ essentially", 
+          "actions are commonly", "abodes will probably"}, "CountGroup" -> 
+        1|>}, "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 6, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 6], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 6, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 6], "Path" -> {}, "DisplayedRowCount" -> 
+     6, "DisplayedColumnCount" -> 2, "DataRowCount" -> 6, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Matches", 
+                  Style[
+                  "Matches", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Matches"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Matches"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["CountGroup", 
+                  Style[
+                  "CountGroup", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "CountGroup"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "CountGroup"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"selection will always"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"selection will always"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{1, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["7"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"will be much"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"will be much"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{2, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["5"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"selection acts solely"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"selection acts solely"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{3, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["4"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{4, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["3"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 47], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 47], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{5, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 1228], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 1228], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{6, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{218., {100.8544921875, 106.1455078125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{218., {100.8544921875, 106.1455078125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.866894128219331*^9},
+ CellLabel->"Out[4]=",
+ CellID->1670083743]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "More Examples",
+ Cell[BoxData[
+  TemplateBox[{"MoreExamples", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Extended examples in standardized sections.", "MoreInfoText"], 
+       BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1110495421],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->316164670],
+
+Cell["Preserve Proper Nouns in the conversion", "ExampleText",
+ CellChangeTimes->{{3.8669323096389503`*^9, 3.866932349334978*^9}, {
+  3.867152821079072*^9, 3.8671528389109077`*^9}, {3.867152873527914*^9, 
+  3.867152874507165*^9}, {3.867152921441496*^9, 3.86715295008101*^9}},
+ CellID->1964127073],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"patt", "=", 
+  RowBox[{"ToLexicalPattern", "[", 
+   RowBox[{"\"\<The Joker tossed Batman around the room.\>\"", ",", 
+    RowBox[{"{", "\"\<Proper Noun\>\"", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8669323379377813`*^9, 3.866932339505377*^9}, {
+  3.866932583642275*^9, 3.8669325841909246`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1628377366],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TextType", "[", "\<\"Determiner\"\>", "]"}], "~~", "\<\"Joker\"\>",
+   "~~", 
+  RowBox[{"TextType", "[", "\<\"Verb\"\>", "]"}], "~~", "\<\"Batman\"\>", "~~", 
+  RowBox[{"TextType", "[", "\<\"Preposition\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Determiner\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Noun\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Punctuation\"\>", "]"}]}]], "Output",
+ CellChangeTimes->{3.866932609088204*^9, 3.866932746994218*^9, 
+  3.866932877016486*^9},
+ CellLabel->"Out[1]=",
+ CellID->1187578117]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{
+   "\"\<The Joker tossed Batman around the room. Then the Joker froze Batman \
+inside a freezer.\>\"", ",", "patt"}], "]"}], "[", "\"\<Dataset\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.866932486568527*^9, 3.866932520486043*^9}, {
+  3.866932554924618*^9, 3.866932623942211*^9}},
+ CellLabel->"In[2]:=",
+ CellID->992114932],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Match" -> "The Joker tossed Batman around the room.", 
+        "Position" -> {{1, 40}}|>, <|
+       "Match" -> "the Joker froze Batman inside a freezer.", 
+        "Position" -> {{47, 86}}|>}, "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Match" -> TypeSystem`PackageScope`AtomShape[448.00000000000006`], 
+            "Position" -> TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 2, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Vector[
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 2], "Meta" -> <||>, 
+     "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Match"} -> 
+        1, {All, "Position"} -> 2|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Match" -> TypeSystem`PackageScope`AtomShape[448.00000000000006`], 
+            "Position" -> TypeSystem`PackageScope`Limited[
+              TypeSystem`PackageScope`MatrixShape[1, 2], 1, 2, {
+              All, "Position", All}]|>], 
+          DirectedInfinity[1], 2, {All}]], 2, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Match", "Position"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Vector[
+          TypeSystem`Vector[
+           TypeSystem`Atom[Integer], 2], 1]}], 2], "Path" -> {}, 
+     "DisplayedRowCount" -> 2, "DisplayedColumnCount" -> 2, "DataRowCount" -> 
+     2, "DataColumnCount" -> 2, "SortPaths" -> {}, "SortDirections" -> {}, 
+     "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Match", 
+                  Style[
+                  "Match", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Match"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Match"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Position", 
+                  Style[
+                  "Position", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Position"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Position"}, "ColumnHeader", False], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Center, Baseline}], 
+            SpanFromLeft}, {
+            Item[
+             Pane[
+              Annotation["The Joker tossed Batman around the room.", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{448.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["40"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["the Joker froze Batman inside a freezer.", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Match"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{448.00000000000006`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["47"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 1}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["86"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Position"], 1, 2}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{0., {0., 0.}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{0., {0., 0.}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.866932619088235*^9, 3.866932624406864*^9}, 
+   3.866932756594174*^9, 3.866932879961512*^9},
+ CellLabel->"Out[2]=",
+ CellID->1562414326]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->605148308],
+
+Cell["Preserve Proper Nouns and the token at position 7", "ExampleText",
+ CellChangeTimes->{{3.8671529644616137`*^9, 3.867152972812478*^9}},
+ CellID->245060364],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToLexicalPattern", "[", 
+  RowBox[{"\"\<The Joker tossed Batman around the room.\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "\"\<Proper Noun\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.867152937873322*^9, 3.867152938062531*^9}, 
+   3.867152978042639*^9},
+ CellLabel->"In[1]:=",
+ CellID->1049173756],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TextType", "[", "\<\"Determiner\"\>", "]"}], "~~", "\<\"Joker\"\>",
+   "~~", 
+  RowBox[{"TextType", "[", "\<\"Verb\"\>", "]"}], "~~", "\<\"Batman\"\>", "~~", 
+  RowBox[{"TextType", "[", "\<\"Preposition\"\>", "]"}], "~~", 
+  RowBox[{"TextType", "[", "\<\"Determiner\"\>", "]"}], "~~", "\<\"room\"\>", 
+  "~~", 
+  RowBox[{"TextType", "[", "\<\"Punctuation\"\>", "]"}]}]], "Output",
+ CellChangeTimes->{3.867153003808464*^9},
+ CellLabel->"Out[1]=",
+ CellID->492669910]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->905066012],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->817791983],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->734517481],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1299300211]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1724923581],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1908875014],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1204157765],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->393667027],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2112090029]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->2139916140],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Categorization",
+ Cell[BoxData[
+  TemplateBox[{"Metadata", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Metadata such as page URI, context, and type of documentation page.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]]]
+}], "CategorizationSection",
+ CellID->1661928671],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1862860615],
+
+Cell["FaizonZaman/LexicalCases", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->934266692],
+
+Cell["FaizonZaman`LexicalCases`", "Categorization",
+ CellLabel->"Context",
+ CellID->1967349227],
+
+Cell["FaizonZaman/LexicalCases/ref/ToLexicalPattern", "Categorization",
+ CellLabel->"URI",
+ CellID->432745330]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1771132568],
+
+Cell["lexical pattern", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.866894175052032*^9}},
+ CellID->1154239309],
+
+Cell["lexical patterns", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.866894177644534*^9}},
+ CellID->1378306742],
+
+Cell["to lexical pattern", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.8668941810419207`*^9}},
+ CellID->910080008],
+
+Cell["tolexicalpattern", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.866894183876774*^9}},
+ CellID->1214162412],
+
+Cell["convert to lexical pattern", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.866894189158279*^9}},
+ CellID->685289543],
+
+Cell["string to lexical pattern", "Keywords",
+ CellChangeTimes->{{3.866894171898093*^9, 3.866894198588604*^9}},
+ CellID->310747265]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1080283012],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1489830946],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->2076869049],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->738908205],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->2079754481]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{316, Automatic}, {Automatic, 50}},
+TaggingRules-><|"Paclet" -> "LexicalCases"|>,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[80200, 1489, 375, 12, 70, "ExtendedExamplesSection",ExpressionUUID->"5901d4be-d995-434f-968f-bc05bdf69a0c",
+   CellTags->"ExtendedExamples",
+   CellID->1110495421]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 114919, 2246}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 59, 1, 70, "ObjectName",ExpressionUUID->"7607a9fd-28db-4d20-9b1f-72da77dfb6d0",
+ CellID->1954862474],
+Cell[642, 25, 1000, 32, 70, "Usage",ExpressionUUID->"a1e4e610-bc11-4f95-b431-b3d0f2c381d0",
+ CellID->1021285065],
+Cell[1645, 59, 194, 6, 70, "Notes",ExpressionUUID->"87cf7dde-c3e0-447e-afe7-b6c72cebb788",
+ CellID->2048780631],
+Cell[1842, 67, 467, 11, 70, "Notes",ExpressionUUID->"ae2634fe-f063-401f-b973-e4908b22ab4d",
+ CellID->174693548]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2346, 83, 323, 11, 70, "TechNotesSection",ExpressionUUID->"7b7cf633-453e-4c7f-8a55-47b182a49ef9",
+ CellID->1103269219],
+Cell[2672, 96, 258, 6, 70, "RelatedLinks",ExpressionUUID->"878b975e-082b-42cf-ba08-9b208cb6f6b9",
+ CellID->1012529679]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2967, 107, 360, 12, 70, "RelatedLinksSection",ExpressionUUID->"e06f0325-9492-4c07-b06c-c0c0b37a0fdb",
+ CellID->1704454507],
+Cell[3330, 121, 260, 5, 70, "RelatedLinks",ExpressionUUID->"103c896a-d67c-4053-982d-e36c337c3d73",
+ CellID->1482531816]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3627, 131, 474, 14, 70, "SeeAlsoSection",ExpressionUUID->"a29f922c-b94a-4d1b-a4d0-9e3669ef4714",
+ CellID->1806959018],
+Cell[4104, 147, 639, 20, 70, "SeeAlso",ExpressionUUID->"5f9aa3c0-d46e-4c5a-9647-488df2ee78c6",
+ CellID->1993963299]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4780, 172, 129, 2, 70, "MoreAboutSection",ExpressionUUID->"42b47903-dd12-4e80-b52d-48addc2abba4",
+ CellID->1058854858],
+Cell[4912, 176, 242, 5, 70, "MoreAbout",ExpressionUUID->"10c75117-9652-4727-8d8a-90d880cf4035",
+ CellID->2124099364]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5191, 186, 418, 13, 70, "ExamplesInitializationSection",ExpressionUUID->"125e0027-ac41-4a4e-985f-6e4d1325e835",
+ CellID->2117346667],
+Cell[5612, 201, 234, 5, 70, "ExampleInitialization",ExpressionUUID->"c3d9f540-27f9-4d17-b8c0-39995857a90e",
+ CellID->293917832]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5883, 211, 387, 12, 70, "PrimaryExamplesSection",ExpressionUUID->"8f43c794-01d0-4007-a851-161fa7e9012c",
+ CellID->664614324],
+Cell[6273, 225, 142, 2, 70, "ExampleText",ExpressionUUID->"612e270e-df9a-4d53-9d1e-f41936b6a2e9",
+ CellID->320500247],
+Cell[6418, 229, 308, 9, 70, "Input",ExpressionUUID->"cf29cfee-8d6b-4b7f-9901-6f14578d5661",
+ CellID->1761877708],
+Cell[CellGroupData[{
+Cell[6751, 242, 370, 9, 70, "Input",ExpressionUUID->"ee68555c-1467-477a-a13c-d75a873f4d5f",
+ CellID->707256129],
+Cell[7124, 253, 290, 7, 70, "Output",ExpressionUUID->"4c853bf4-7206-4eb9-81ff-50fd9aa7a974",
+ CellID->1457391360]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7451, 265, 254, 7, 70, "Input",ExpressionUUID->"1ff12d60-76c0-4f55-9747-ba9d8122201b",
+ CellID->2047326995],
+Cell[7708, 274, 72443, 1209, 70, "Output",ExpressionUUID->"4377300c-19fb-4da1-bdf2-bba9c4042514",
+ CellID->1670083743]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80200, 1489, 375, 12, 70, "ExtendedExamplesSection",ExpressionUUID->"5901d4be-d995-434f-968f-bc05bdf69a0c",
+ CellTags->"ExtendedExamples",
+ CellID->1110495421],
+Cell[CellGroupData[{
+Cell[80600, 1505, 124, 3, 70, "ExampleSection",ExpressionUUID->"97923298-478f-4066-92f7-8a5082cf73d9",
+ CellID->316164670],
+Cell[80727, 1510, 296, 4, 70, "ExampleText",ExpressionUUID->"4b461d6f-888d-4e53-8a41-dfaa2a629207",
+ CellID->1964127073],
+Cell[CellGroupData[{
+Cell[81048, 1518, 372, 8, 70, "Input",ExpressionUUID->"b57d9691-f335-4d2a-a7b2-c5406af9bd5a",
+ CellID->1628377366],
+Cell[81423, 1528, 580, 12, 70, "Output",ExpressionUUID->"504e6c6c-e662-440e-976b-b0d9b6586517",
+ CellID->1187578117]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82040, 1545, 394, 10, 70, "Input",ExpressionUUID->"f3d0c075-ec4a-494f-9b50-59392ab8dd00",
+ CellID->992114932],
+Cell[82437, 1557, 27320, 495, 70, "Output",ExpressionUUID->"4f6a1087-b955-44df-b0aa-897cd8ed1aba",
+ CellID->1562414326]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109794, 2057, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"b72f99d6-374f-4187-90e7-52a8608105a5",
+ CellID->605148308],
+Cell[109922, 2062, 160, 2, 70, "ExampleText",ExpressionUUID->"ed277183-536f-4f18-a41c-9a571482ddcc",
+ CellID->245060364],
+Cell[CellGroupData[{
+Cell[110107, 2068, 342, 8, 70, "Input",ExpressionUUID->"aac8e6f4-cc3e-4f38-9e9f-05d28ae2dfa4",
+ CellID->1049173756],
+Cell[110452, 2078, 500, 11, 70, "Output",ExpressionUUID->"e8f87a40-3ab6-4349-8e15-b171d407d33d",
+ CellID->492669910]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[110991, 2094, 147, 3, 70, "ExampleSection",ExpressionUUID->"eb031208-7a53-449b-95ad-827d44d5b594",
+ CellID->905066012],
+Cell[CellGroupData[{
+Cell[111163, 2101, 126, 3, 70, "ExampleSection",ExpressionUUID->"cb48ef6b-2bcc-4e7c-8bf7-7296e4f5c18a",
+ CellID->817791983],
+Cell[111292, 2106, 129, 3, 70, "ExampleSubsection",ExpressionUUID->"f4d29fcb-9b1f-41ab-96cb-710bfab96b61",
+ CellID->734517481],
+Cell[111424, 2111, 130, 3, 70, "ExampleSubsection",ExpressionUUID->"d8e7ee8a-4a73-4028-8779-dd7673f4dd51",
+ CellID->1299300211]
+}, Open  ]],
+Cell[111569, 2117, 132, 3, 70, "ExampleSection",ExpressionUUID->"839ecc27-938b-4f4b-845b-9903d9d78d3d",
+ CellID->1724923581],
+Cell[111704, 2122, 142, 3, 70, "ExampleSection",ExpressionUUID->"d9667e14-1f10-4415-aecd-c1c850eb64a2",
+ CellID->1908875014],
+Cell[111849, 2127, 135, 3, 70, "ExampleSection",ExpressionUUID->"509fa358-55ff-4f98-bfd3-73f40a2122d2",
+ CellID->1204157765],
+Cell[111987, 2132, 139, 3, 70, "ExampleSection",ExpressionUUID->"95a38692-78f0-4a2b-a719-22aa54c5529c",
+ CellID->393667027],
+Cell[112129, 2137, 133, 3, 70, "ExampleSection",ExpressionUUID->"81bb9a94-f849-4d6e-acd8-2b0819bd7f4f",
+ CellID->2112090029]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112299, 2145, 56, 1, 70, "MetadataSection",ExpressionUUID->"6dd81f7a-00c1-4549-8f15-5149060d4807",
+ CellID->2139916140],
+Cell[CellGroupData[{
+Cell[112380, 2150, 372, 12, 70, "CategorizationSection",ExpressionUUID->"292e04e3-2a1a-4910-9420-82b6444eebcd",
+ CellID->1661928671],
+Cell[112755, 2164, 80, 2, 70, "Categorization",ExpressionUUID->"e07bf9cc-db18-4e75-9d18-32b7de694db5",
+ CellID->1862860615],
+Cell[112838, 2168, 97, 2, 70, "Categorization",ExpressionUUID->"0f5eecb5-33cc-45b4-9a30-26f4611af983",
+ CellID->934266692],
+Cell[112938, 2172, 95, 2, 70, "Categorization",ExpressionUUID->"87b881c7-6338-4955-9bf9-acfb5f69c8aa",
+ CellID->1967349227],
+Cell[113036, 2176, 110, 2, 70, "Categorization",ExpressionUUID->"6db564ac-0414-4025-acc6-cb04ba32d99a",
+ CellID->432745330]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[113183, 2183, 56, 1, 70, "KeywordsSection",ExpressionUUID->"84da64b6-e919-4318-84ab-5fc2fece83d1",
+ CellID->1771132568],
+Cell[113242, 2186, 122, 2, 70, "Keywords",ExpressionUUID->"ff62bc56-4143-43bb-adea-b42dac4d3368",
+ CellID->1154239309],
+Cell[113367, 2190, 123, 2, 70, "Keywords",ExpressionUUID->"570b0dd4-e99c-47d4-b2e4-d72b88429b61",
+ CellID->1378306742],
+Cell[113493, 2194, 126, 2, 70, "Keywords",ExpressionUUID->"6d3d6f6c-984e-4da3-b5cd-f7c58691c74d",
+ CellID->910080008],
+Cell[113622, 2198, 123, 2, 70, "Keywords",ExpressionUUID->"2f3ef573-b27c-4403-a7bb-30899b4d65c1",
+ CellID->1214162412],
+Cell[113748, 2202, 132, 2, 70, "Keywords",ExpressionUUID->"7e0c4528-349d-4f65-908a-a200ff311b93",
+ CellID->685289543],
+Cell[113883, 2206, 131, 2, 70, "Keywords",ExpressionUUID->"6d9b43dc-a832-47ca-9d59-01c31c992fed",
+ CellID->310747265]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[114051, 2213, 65, 1, 70, "TemplatesSection",ExpressionUUID->"53d50b62-0e99-4da2-8cf8-b15621d7353b",
+ CellID->1080283012],
+Cell[114119, 2216, 94, 2, 70, "Template",ExpressionUUID->"3345a5b1-680b-45f2-abdc-b48012eb61a7",
+ CellID->1489830946],
+Cell[114216, 2220, 83, 2, 70, "Template",ExpressionUUID->"cad98a34-0d90-4ac0-bc2c-6dd0b06831d2",
+ CellID->2076869049],
+Cell[114302, 2224, 80, 2, 70, "Template",ExpressionUUID->"8999b1bb-65e4-4490-8557-70942c79be5f",
+ CellID->738908205],
+Cell[114385, 2228, 83, 2, 70, "Template",ExpressionUUID->"62400cae-4a75-4b8d-ae5f-ff1358f6b2e2",
+ CellID->2079754481]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

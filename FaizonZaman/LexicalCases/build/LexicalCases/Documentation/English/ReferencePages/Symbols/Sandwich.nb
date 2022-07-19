@@ -1,0 +1,2189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    104606,       2179]
+NotebookOptionsPosition[     98091,       2047]
+NotebookOutlinePosition[    100366,       2105]
+CellTagsIndexPosition[    100279,       2100]
+WindowTitle->Sandwich
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "9dc52a64-d5a9-4e46-98ee-4ad6fdb43f2b"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "29c1ce0f-4c1d-4265-a274-086464f34d71"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[{
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "See Also",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "bf2c9885-8121-4474-a870-ec05ba7025e6"]
+         }],ExpressionUUID->"81fee235-163c-4b02-851f-82babdd4345a"],
+         StripOnInput->False], {"\<\"WordBoundary\"\>":>
+        Documentation`HelpLookup[
+        "paclet:ref/WordBoundary"], "\<\"StartOfString\"\>":>
+        Documentation`HelpLookup[
+        "paclet:ref/StartOfString"], "\<\"EndOfString\"\>":>
+        Documentation`HelpLookup["paclet:ref/EndOfString"], Delimiter, 
+        StyleBox["\<\"Functions\"\>", "SeeAlsoSection",
+         StripOnInput->False,
+         FontSize->14,
+         FontSlant->"Italic"]:>NotebookFind[
+         EvaluationNotebook[], "SeeAlsoSection", All, CellStyle], 
+        StyleBox["\<\"LexicalCases\"\>", "SeeAlsoRelated",
+         StripOnInput->False]:>Documentation`HelpLookup[
+        "paclet:LexicalCases/ref/LexicalCases"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"SeeAlso"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "84160f62-2e39-409d-900d-df7ed0b871a7"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Related Guides",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "9dd7df95-e314-46ee-972b-7942959e8f8f"]
+         }],ExpressionUUID->"0466d2ec-752b-42f1-aee6-a28b55faa72c"],
+         StripOnInput->False], {"\<\"LexicalCases\"\>":>
+        Documentation`HelpLookup["paclet:LexicalCases/guide/LexicalCases"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"MoreAbout"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f1dfe014-5309-4d4d-ad15-0f1df06a3c95"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "Tech Notes",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "a2fc38f8-dbc5-4499-ba96-34e66e484c60"]
+         }],ExpressionUUID->"dacb0369-97f1-4d73-b9cb-032beba76fd4"],
+         StripOnInput->False], {"\<\"LexicalCases Overview\"\>":>
+        Documentation`HelpLookup[
+        "paclet:LexicalCases/tutorial/LexicalCasesOverview"]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"Tutorials"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "73e1abc3-3cb4-436c-a7ae-eb3c0d176e02"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      TagBox[
+       ActionMenuBox[
+        FrameBox[Cell[TextData[{
+          "URL",
+          " ",
+          Cell[BoxData[
+           GraphicsBox[
+            {GrayLevel[0.66667], Thickness[0.13], 
+             LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+            AspectRatio->1,
+            ImageSize->20,
+            PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+           "bfdbc2b9-6e41-42f1-9392-16723b6e1018"]
+         }],ExpressionUUID->"8dc1c19f-cb91-437e-8c6b-40b4218f7e98"],
+         StripOnInput->False], {"\<\"LexicalCases/ref/Sandwich\"\>":>
+        None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell["LexicalCases/ref/Sandwich"]}, Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        Delimiter, "\<\"Copy web URL\"\>":>
+        Module[{DocumentationSearch`Private`nb$}, 
+         DocumentationSearch`Private`nb$ = NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                 "http://reference.wolfram.com/language/LexicalCases/ref/\
+Sandwich.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+             Visible -> False]]; 
+         SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+         FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+         NotebookClose[DocumentationSearch`Private`nb$]; 
+         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$23601], 
+               "http://reference.wolfram.com/system-modeler/", 
+               "http://reference.wolfram.com/language/"] <> 
+             "LexicalCases/ref/Sandwich" <> ".html"], None}]}]},
+        Appearance->None,
+        MenuAppearance->Automatic,
+        MenuStyle->"URLMenu"],
+       MouseAppearanceTag["LinkHand"]]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e072440b-80eb-40dd-9201-d4fbe3d6e249"]
+    }], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "ba7bf3ab-77bd-433c-b629-77d67a06239f"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"16b78334-c435-4b24-a12c-b00bf4e32a20"],
+
+Cell["LexicalCases`", "ContextNameCell",ExpressionUUID->"214d96e4-d038-4b9f-84e0-41b030e27789"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "Sandwich", "ObjectName",ExpressionUUID->
+      "f1a33689-b941-4d71-b092-40ab98c48a61"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"c4c546f1-6d97-4760-bde1-24bc282ae901"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "0ff7bec0-9548-40c2-89da-865deb1df7f2"]
+    }],ExpressionUUID->"e0396298-b12a-4da9-ba38-4d6dd21287e0"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"b037af29-c7fd-4522-873b-\
+057a31ec00ba"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["Sandwich"]], "paclet:LexicalCases/ref/Sandwich", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       RowBox[{
+        StyleBox["outer", "TI"], ",", 
+        StyleBox["inner", "TI"]}], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2971971e-b945-4096-87f5-31e7caab7f3a"],
+     "\[LineSeparator]sandwiches ",
+     Cell[BoxData[
+      StyleBox["inner", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d8ee3773-48ae-488b-af97-9d2160c91cf7"],
+     " between ",
+     Cell[BoxData[
+      StyleBox["outer", "TI"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3a98c47c-d413-41ba-a70a-30a4ef0f713e"]
+    }],ExpressionUUID->"d3ac2d67-60fc-43ff-9b1c-91bef392bced"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["Sandwich"]], "paclet:LexicalCases/ref/Sandwich", 
+         "LexicalCases Package Symbol"},
+        "PackageLink",
+        BaseStyle->"InlineFormula"], "[", 
+       StyleBox["outer", "TI"], "]"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "e5f5aad3-3c84-46bc-9014-0b55ea35fac5"],
+     "\[LineSeparator]Represents an operator form that can be applied to an \
+expression"
+    }],ExpressionUUID->"2ee153f4-dfe6-4a6d-8580-32e873733ba9"]}
+  }]], "Usage",
+ CellID->882729196,ExpressionUUID->"c402ace1-2174-42db-968f-4fb483386163"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+    ExpressionUUID->"575809e4-5fca-4a97-b459-a1c164f67bf5"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"566c56a7-c9d3-49a0-8c68-91888b414ace"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"b99528d0-830f-4585-891e-279dffb14350"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"5fe01c76-9228-4451-add2-4bf70e98136d"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->170291507,ExpressionUUID->"d2daeb14-864c-4da0-8c23-81b7ec5d6c50"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Sandwich"]], "paclet:LexicalCases/ref/Sandwich", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7d521883-6237-41c7-ad45-319c94bcf136"],
+ " returns a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StringExpression"]], "paclet:ref/StringExpression"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "57bd49ca-07f4-4a4d-9b1d-c3af49aba6ba"],
+ ", unlike other patterns in this package (",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["WordToken"]], "paclet:LexicalCases/ref/WordToken", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "43e73a90-b210-4342-945d-bfab6c450897"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BoundToken"]], "paclet:LexicalCases/ref/BoundToken", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d6165e96-8f58-458a-8260-80803c8deff7"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["OptionalToken"]], "paclet:LexicalCases/ref/OptionalToken", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8776f455-3b1c-403c-93a9-0349f857c0d3"],
+ " etc. which are inert)"
+}], "Notes",
+ CellID->1756933914,ExpressionUUID->"26bcfff6-67e6-4284-966c-dfbfe94b39bf"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "1ad799e7-faa8-4055-9f84-486c09fc71d1"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"379ea6f6-bafe-40d7-a4db-6f72e3e1f8e2"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "f3244066-f9ac-45a8-b262-464b010185cc"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1641140345,ExpressionUUID->"8bfc889c-e81a-4b66-a23e-a3d69ef2d657"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "95c08394-65b9-4dea-ab01-0cf79447df23"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"3e1edcfc-582c-4da0-861c-89f168c2f873"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "6428ab14-6fb8-4a17-9df0-cd534eb6e46c"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->365816347,ExpressionUUID->"3fa91258-e7a8-479d-a130-87cec5b273eb"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Sandwich"]], "paclet:LexicalCases/ref/Sandwich", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "879da206-72eb-4239-9c92-e33081e8c611"],
+ " \"car\" with a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["WordToken"]], "paclet:LexicalCases/ref/WordToken", 
+    "LexicalCases Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8dbd22cb-ca90-4bf4-9d45-30be67badec2"],
+ " pattern"
+}], "ExampleText",
+ CellID->1881708440,ExpressionUUID->"0a0846f5-81ad-48d6-97b2-ca8cde1f0d82"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lexpatt", "=", 
+  RowBox[{"Sandwich", "[", 
+   RowBox[{
+    RowBox[{"WordToken", "[", "1", "]"}], ",", " ", 
+    RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->632206651,ExpressionUUID->"4f1827a3-4f72-4da3-98f1-5f83c542c77a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WordToken", "[", "1", "]"}], "~~", 
+  RowBox[{"BoundToken", "[", "\<\"car\"\>", "]"}], "~~", 
+  RowBox[{"WordToken", "[", "1", "]"}]}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->533614290,ExpressionUUID->"cf861614-52af-4399-b98c-b945092f5777"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sndwchCases", "=", 
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{
+    RowBox[{"\"\<Content\>\"", "->", "\"\<cars\>\""}], ",", "lexpatt"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->569953902,ExpressionUUID->"05e10c4b-4b58-4306-9472-8aad7e4b7de0"],
+
+Cell[BoxData[
+ TagBox[
+  TemplateBox[{
+    RowBox[{
+      StyleBox[
+       TagBox["LexicalSummary", "SummaryHead"], "NonInterpretableSummary"], 
+      StyleBox["[", "NonInterpretableSummary"], 
+      DynamicModuleBox[{
+       Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+       TemplateBox[{
+         TemplateBox[{
+           PaneSelectorBox[{False -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["39", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["805", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}], True -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Wikipedia\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["39", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["805", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}]}, 
+            Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+          "SummaryPanel"], 
+         ButtonBox[
+          DynamicBox[
+           ToBoxes[
+            If[
+             
+             Or[$VersionNumber < 11.2, CurrentValue["RunningEvaluator"] =!= 
+              "Local"], 
+             Style["This object cannot be used as input.", "SummaryEmbed"], 
+             BoxForm`EmbedSummaryLabel[LexicalCases`LexicalSummary, 1113696, 
+              Dynamic[Typeset`embedState$$], Automatic]], StandardForm]], 
+          ButtonFunction :> 
+          BoxForm`EmbedSummaryInterpretation[
+           "Choose", LexicalCases`LexicalSummary, 1113696, 
+            7825646996666611676413403774667612267733389426861756355456, 
+            EvaluationBox[], 
+            Dynamic[Typeset`embedState$$], StandardForm, 
+            ElisionsDump`embedSummaryBoxes], DefaultBaseStyle -> 
+          "SummaryEmbedButton", ImageSize -> Inherited, 
+          BaseStyle -> {"DialogStyle"}, Enabled -> Dynamic[
+            
+            And[$VersionNumber >= 11.2, CurrentValue["RunningEvaluator"] === 
+             "Local", Typeset`embedState$$ === "Ready"]], Appearance -> 
+          Inherited, Method -> Inherited, Evaluator -> Automatic]}, 
+        "SummaryEmbedGrid"], DynamicModuleValues :> {}], 
+      StyleBox["]", "NonInterpretableSummary"]}]},
+   "CopyTag",
+   DisplayFunction->(#& ),
+   InterpretationFunction->(
+    "LexicalSummary[<|Data -> {<|Article -> Car, Match -> the car when, \
+Position -> {{366, 377}, {6528, 6539}}|>, <|Article -> Car, Match -> American \
+car manufactured, Position -> {{570, 594}}|>, <|Article -> Car, Match -> to \
+car use, Position -> {{1649, 1658}}|>, <<697>>, <|<<3>>|>, <|Article -> \
+Police car, Match -> the car doors, Position -> {{22570, 22582}}|>}, \
+<<4>>|>]"& )],
+  False,
+  BoxID -> 7825646996666611676413403774667612267733389426861756355456,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1361395789,ExpressionUUID->"d4f59f47-5ae2-47a7-bab5-9a7ad2e9aac8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sndwchCases", "[", "\"\<CountGroups\>\"", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->609527042,ExpressionUUID->"6c45740d-6a3f-4b56-9cb5-bcd92d55b1f4"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Matches" -> {"sports car racing"}, "CountGroup" -> 28|>, <|
+       "Matches" -> {"a car that"}, "CountGroup" -> 11|>, <|
+       "Matches" -> {"the car is"}, "CountGroup" -> 10|>, <|
+       "Matches" -> {"a car with"}, "CountGroup" -> 8|>, <|
+       "Matches" -> {"The car was", "the car to", "race car who"}, 
+        "CountGroup" -> 7|>, <|
+       "Matches" -> {
+         "sports car was", "luxury car is", "European car classification"}, 
+        "CountGroup" -> 6|>, <|
+       "Matches" -> {"electric car in"}, "CountGroup" -> 5|>, <|
+       "Matches" -> {
+         "touring car racing", "the car as", "the car and", 
+          "stock car racing", "Sports car racing", "sports car races", 
+          "sports car market", "of car manufacturers", "electric car to", 
+          "a car in"}, "CountGroup" -> 4|>, <|
+       "Matches" -> {
+         "wheel car racing", "tuner car and", "Touring car racing", 
+          "touring car class", "the car when", "the car was", 
+          "Stock car racing", "sports car based", "rally car who", 
+          "race car and", "production car is", "premium car larger", 
+          "luxury car brands", "Indy car racing", "first car in", 
+          "derby car who"}, "CountGroup" -> 3|>, <|
+       "Matches" -> {
+         "used car lot", "touring car championships", "The car is", 
+          "The car has", "the car had", "the car from", "the car characters", 
+          "the car at", "the car are", "sports car since", 
+          "sports car series", "sports car of", "sports car manufacturer", 
+          "sports car is", "sports car competition", "sports car called", 
+          "sports car and", "size car sold", "s car for", "racing car in", 
+          "race car with", "race car drivers", "race car driver", 
+          "police car may", "Passenger car gallery", 
+          "other car manufacturers", "of car use", "of car it", "of car is", 
+          "Muscle car performance", "Muscle car is", "muscle car era", 
+          "luxury car sales", "LMP car that", "is car that", "into car world",
+           "executive car or", "electric car is", "electric car at", 
+          "driving car is", "driving car industry", "derby car with", 
+          "cable car lines", "bumper car floor", "blue car who", 
+          "based car is", "autonomous car liability", "automated car was", 
+          "and car paint", "American car makers", "a car to"}, "CountGroup" -> 
+        2|>, <|"Matches" -> {
+         "young car who", "word car is", "with car alarms", "winning car for",
+           "why car manufacturers", "whole car could", "which car weights", 
+          "which car was", "Well car or", "wealthy car owners", 
+          "Volvo car left", "volume car theft", "vintage car selected", 
+          "V8 car in", "used car salesman", "ultimate car of", 
+          "tuner car who", "traffic car may", "traditional car lines", 
+          "touring car series", "touring car group", "touring car from", 
+          "touring car and", "total car sales", "top car builder", 
+          "to car use", "to car production", "through car share", 
+          "through car magazines", "this car were", "this car used", 
+          "This car model", "this car have", "This car has", "their car to", 
+          "their car models", "their car forms", "their car as", 
+          "the car yet", "the car within", "the car with", "the car were", 
+          "the car visible", "the car upon", "the car up", "The car that", 
+          "the car that", "the car stable", "the car since", 
+          "the car sensors", "the car seems", "The car returned", 
+          "the car or", "the car on", "the car navigation", "the car models", 
+          "the car market", "the car manufacturer", "the car manually", 
+          "the car maker", "the car looked", "The car industry", "the car in",
+           "the car if", "the car have", "the car hacked", "the car feels", 
+          "the car failed", "the car equally", "The car drove", 
+          "the car drive", "the car doors", "the car design", 
+          "the car crashes", "The car continued", "the car closely", 
+          "the car can", "the car but", "The car attempted", "the car around",
+           "The car also", "the car allowed", "that car use", "tank car with",
+           "tank car for", "supertouring car were", "superspy car named", 
+          "subcompact car market", "Subcompact car is", "subcompact car is", 
+          "subcompact car for", "styled car with", "stroke car engine", 
+          "stock car tracks", "Stock car race", "stock car in", 
+          "stock car governing", "stock car as", "stock car and", 
+          "steel car bodies", "States car industry", "sprint car ranks", 
+          "sports car with", "sports car which", "sports car to", 
+          "sports car that", "sports car scene", "Sports car races", 
+          "sports car production", "Sports car ownership", "Sports car only", 
+          "sports car models", "sports car manufacturers", 
+          "sports car manufacture", "sports car designed", 
+          "sports car concept", "sports car company", "sports car career", 
+          "Some car makers", "Some car hacking", "smart car it", 
+          "smaller car was", "small car who", "small car segment", 
+          "small car lineups", "small car and", "slower car getting", 
+          "sized car to", "sized car fitted", "size car with", 
+          "size car that", "size car or", "size car offered", 
+          "size car nameplate", "size car lines", "size car line", 
+          "size car from", "size car as", "significant car from", 
+          "Several car classification", "second car for", "seater car in", 
+          "seat car without", "s car model", "s car claiming", 
+          "saloon car which", "saloon car available", "rusty car with", 
+          "rusty car who", "Rotary car dumper", "road car not", 
+          "response car is", "reporter car voiced", "regarding car contact", 
+          "Refrigerator car or", "red car named", "red car displaying", 
+          "rally car painted", "rally car of", "rally car in", 
+          "rally car from", "rally car during", "railroad car manufacturers", 
+          "Rail car manufacturing", "racing car was", "racing car that", 
+          "racing car series", "racing car for", "racing car being", 
+          "racing car and", "race car that", "race car Francesco", 
+          "race car featuring", "race car engineering", "race car described", 
+          "race car built", "race car at", "race car around", "race car are", 
+          "purple car with", "purple car holding", "production car top", 
+          "Production car speed", "production car speed", 
+          "production car records", "production car race", 
+          "production car made", "production car in", 
+          "Production car definition", "production car definition", 
+          "production car achieved", "private car ownership", 
+          "previous car that", "powered car in", "powered car based", 
+          "popular car in", "pony car that", "Pony car is", "Pony car era", 
+          "pony car class", "police car would", "police car with", 
+          "police car was", "police car plays", "police car or", 
+          "police car might", "police car include", "police car can", 
+          "police car behind", "police car approaches", "police car and", 
+          "physical car form", "photo car voiced", "Phantom car watching", 
+          "permanent car manufacturing", "performance car was", 
+          "performance car of", "per car using", "pedestrian car casualties", 
+          "patrol car used", "passenger car with", "passenger car only", 
+          "passenger car models", "passenger car market", 
+          "passenger car exist", "passenger car division", 
+          "passenger car classification", "passenger car and", 
+          "parking car system", "pace car at", "overall car industry", 
+          "our car hadn", "Our car characters", "other car propulsion", 
+          "or car setup", "or car manufacturer", "or car in", "or car based", 
+          "only car with", "only car maker", "One car driven", 
+          "oldest car racing", "old car resembling", "of car was", 
+          "of car used", "of car usage", "of car radios", "of car production",
+           "of car may", "of car customizer", "of car and", "no car can", 
+          "new car sales", "new car one", "new car ever", "new car at", 
+          "Neither car reached", "muscle car with", "muscle car vary", 
+          "Muscle car series", "muscle car produced", "muscle car models", 
+          "muscle car lists", "muscle car is", "muscle car in", 
+          "muscle car heritage", "muscle car from", "muscle car formula", 
+          "muscle car due", "muscle car came", 
+          "multinational car manufacturer", "multi car crash", "motor car to",
+           "motor car in", "modern car rallies", "miniature car that", 
+          "MG car production", "massive car pile", "many car rental", 
+          "Mans car with", "Malaysian car company", "luxury car trim", 
+          "luxury car tax", "luxury car phenomenon", "luxury car marque", 
+          "luxury car market", "luxury car manufacturers", "luxury car in", 
+          "luxury car emerged", "Luxury car companies", "luxury car buyers", 
+          "luxury car at", "luxury car 98", "Lotus car models", 
+          "Lotus car manufacturing", "Lotus car fan", "LMP car she", 
+          "LMP car at", "LMP675 car was", "LMP2 car in", "like car sharing", 
+          "Liaison car for", "last car which", "last car built", 
+          "largest car company", "large car by", "kit car era", 
+          "kei car with", "Kei car specifications", "Japanese car who", 
+          "Jaguar car to", "its car naming", "is car service", 
+          "intermediate car manufactures", "influenced car design", 
+          "Indy car project", "in car entertainment", "in car accidents", 
+          "imported car to", "if car insurance", "ICE car fires", 
+          "hybrid car based", "hopper car with", "Historic car models", 
+          "her car to", "GT car started", "GT car racing", "grip car or", 
+          "green car seen", "green car in", "green car beside", 
+          "green car and", "GpC car histories", "government car size", 
+          "fuel car can", "from car radios", "French car industry", 
+          "Freight car gallery", "freight car gallery", "for car safety", 
+          "flat car or", "first car to", "first car that", "fiber car was", 
+          "Ferrari car manufacturer", "family car in", "F1 car that", 
+          "executive car launched", "Executive car is", "executive car is", 
+          "executive car introduced", "everyday car to", "every car she", 
+          "endurance car championship", "encouraging car users", 
+          "enclosed car with", "Emerging car technologies", 
+          "electric car works", "electric car will", "electric car was", 
+          "electric car stock", "electric car some", "electric car purchase", 
+          "electric car or", "electric car on", "electric car manufacturer", 
+          "electric car living", "electric car has", "electric car for", 
+          "electric car fleet", "electric car depends", "electric car can", 
+          "electric car and", "each car will", "each car on", 
+          "each car moves", "each car makes", "Each car is", "each car had", 
+          "DTM car with", "driving car that", "driving car project", 
+          "driving car liability", "driving car in", "driving car control", 
+          "driving car at", "driving car as", "Driverless car designers", 
+          "driven car is", "drive car to", "drive car that", "drift car and", 
+          "dominant car and", "documented car fatalities", "DMG car was", 
+          "dining car and", "diesel car has", "developed car classification", 
+          "designed car was", "designed car to", "derby car whose", 
+          "Derby car made", "cunning car salesman", "controlled car that", 
+          "connected car systems", "concept car with", "concept car was", 
+          "concept car that", "concept car for", "concept car based", 
+          "concept car at", "concept car and", "competition car production", 
+          "compact car was", "compact car platforms", "compact car or", 
+          "Compact car is", "compact car is", "compact car in", 
+          "compact car body", "commercial car are", "class car 444", 
+          "city car concept", "city car category", "Chinese car Roewe", 
+          "camera car voiced", "camera car in", "camera car at", 
+          "cable car systems", "cable car line", "cable car it", 
+          "cable car following", "cable car 72", "by car resulting", 
+          "business car and", "bumper car setup", "bumper car riders", 
+          "brown car who", "brown car towed", "brown car leaving", 
+          "British car production", "box car for", "blue car with", 
+          "blue car on", "blue car behind", "between car and", 
+          "best car achieving", "Benz car to", "because car ads", 
+          "average car weights", "average car the", "autonomous car lawsuit", 
+          "autonomous car in", "autonomous car appeared", 
+          "automated car that", "automated car testing", 
+          "automated car technology", "automated car technologies", 
+          "automated car needs", "automated car in", "automated car causes", 
+          "Australian car to", "at car shows", "as car racing", 
+          "as car manufacturers", "area car and", "any car model", 
+          "any car accident", "another car failed", 
+          "animating car characters", "and car seemed", "and car production", 
+          "and car manufacturers", "and car enthusiast", "American car with", 
+          "American car was", "American car manufactured", 
+          "American car classification", "all car classes", "a car whose", 
+          "a car who", "a car which", "a car used", "a car tire", 
+          "a car should", "a car satisfying", "a car registered", 
+          "a car parts", "a car partially", "a car on", "a car notorious", 
+          "a car may", "a car mater", "a car manufacturing", "a car made", 
+          "a car like", "a car is", "a car influences", "a car incorporating",
+           "a car for", "a car especially", "a car designed", "a car crashes",
+           "a car crash", "a car controlled", "A car considered", 
+          "a car built", "a car based", "a car at", "a car as", "a car and", 
+          "36 car pack", "1970s car standing", "1955 car from"}, "CountGroup" -> 
+        1|>}, "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 11], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
+        1, {All, "CountGroup"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
+            "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 11, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Matches", "CountGroup"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[String], TypeSystem`AnyLength], 
+         TypeSystem`Atom[Integer]}], 11], "Path" -> {}, "DisplayedRowCount" -> 
+     11, "DisplayedColumnCount" -> 2, "DataRowCount" -> 11, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Matches", 
+                  Style[
+                  "Matches", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Matches"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Matches"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["CountGroup", 
+                  Style[
+                  "CountGroup", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "CountGroup"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "CountGroup"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"sports car racing"}, ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"sports car racing"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{1, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["28"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"a car that"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"a car that"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{2, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["11"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"the car is"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"the car is"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{3, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["10"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"a car with"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"a car with"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{4, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["8"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"The car was", "the car to", "race car who"}, 
+                   ShowStringCharacters -> False], 
+                  Style[
+                   
+                   Style[{"The car was", "the car to", "race car who"}, 
+                    ShowStringCharacters -> False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{5, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["7"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  
+                  Style[{"sports car was", "luxury car is", 
+                    "European car classification"}, ShowStringCharacters -> 
+                   False], 
+                  Style[
+                   
+                   Style[{"sports car was", "luxury car is", 
+                    "European car classification"}, ShowStringCharacters -> 
+                    False], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{6, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["6"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[{"electric car in"}, ShowStringCharacters -> False], 
+                  Style[
+                   Style[{"electric car in"}, ShowStringCharacters -> False], 
+                   FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{7, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["5"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{8, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["4"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 16], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 16], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{9, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["3"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 51], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 51], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{10, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 514], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 514], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{11, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{421., {168.8544921875, 174.1455078125}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{421., {168.8544921875, 174.1455078125}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->834939145,ExpressionUUID->"1ccc026c-ea87-4bcc-b3e3-452cc82704cb"]
+}, Open  ]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "2"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {0.45000000000000107`, 13.549999999999999`}}]],
+  ExpressionUUID->"a4fa4875-bd80-4f9d-8f22-9f5bdda62962"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"7442da8a-4de0-4f62-aa10-738cd533dee1"],
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "c5a5215a-e14f-419b-81f2-c0713ac16cd3"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->1233549862,ExpressionUUID->"43036fed-6065-4de2-89b1-dfaf8209b3e9"],
+
+Cell["\<\
+Naming the pattern outer will not work since it will produce the same name \
+for the left flanking pattern and right flanking pattern. This may change in \
+the future.\
+\>", "ExampleText",
+ CellID->1504242725,ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LexicalCases", "[", 
+  RowBox[{"\"\<a nice car is good.\>\"", ",", 
+   RowBox[{
+    RowBox[{"Sandwich", "[", 
+     RowBox[{
+      RowBox[{"w", ":", 
+       RowBox[{"WordToken", "[", "1", "]"}]}], ",", " ", 
+      RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}]}], "]"}], ":>", "w"}]}],
+   "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->187057416,ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression", "cond", 
+   "\"Warning: restrictions on pattern variable \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
+RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
+as they are not associated with the first occurrence of \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 2, 23008128130180833061, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1615823357,ExpressionUUID->"d882d90f-8e85-4753-9619-2d3d71fb536c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression", "cond", 
+   "\"Warning: restrictions on pattern variable \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
+RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
+as they are not associated with the first occurrence of \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 3, 23008128130180833061, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->64961137,ExpressionUUID->"8f7984ed-8ad5-4508-a398-7c9eeb339924"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression", "cond", 
+   "\"Warning: restrictions on pattern variable \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
+RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
+as they are not associated with the first occurrence of \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 4, 23008128130180833061, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->880136883,ExpressionUUID->"7598982c-6169-4133-a771-c2abf760b62d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringExpression", "cond", 
+   "\"Warning: restrictions on pattern variable \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
+RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
+as they are not associated with the first occurrence of \
+\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 5, 23008128130180833061, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->593232045,ExpressionUUID->"438e68b3-8ea7-42b8-9931-a13153e884b8"],
+
+Cell[BoxData[
+ RowBox[{"LexicalCases", "[", 
+  RowBox[{"\<\"a nice car is good.\"\>", ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"w", ":", 
+      RowBox[{"WordToken", "[", "1", "]"}]}], "~~", 
+     RowBox[{"BoundToken", "[", "\<\"car\"\>", "]"}], "~~", 
+     RowBox[{"w", ":", 
+      RowBox[{"WordToken", "[", "1", "]"}]}]}], "\[RuleDelayed]", "w"}]}], 
+  "]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1831890941,ExpressionUUID->"63c2ffdc-b28d-4f4b-87a5-f1bc0d0a56cb"]
+}, Open  ]],
+
+Cell["For now, explicitly name each pattern.", "ExampleText",
+ CellID->518202502,ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LexicalCases", "[", 
+   RowBox[{"\"\<a nice car is good.\>\"", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"w1", ":", 
+       RowBox[{"WordToken", "[", "1", "]"}]}], "~~", 
+      RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}], "~~", 
+      RowBox[{"w2", ":", 
+       RowBox[{"WordToken", "[", "1", "]"}]}]}], ":>", 
+     RowBox[{"w1", "<>", "w2"}]}]}], "]"}], "[", "\"\<Data\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1364137182,ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{
+    RowBox[{"\<\"Match\"\>", "\[Rule]", "\<\"nice is\"\>"}], ",", 
+    RowBox[{"\<\"Position\"\>", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "13"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1100793678,ExpressionUUID->"87bdd423-d95f-47a9-9d2e-195e1b12864e"]
+}, Open  ]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "2"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]},
+      {Cell[TextData[{
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases"]], "paclet:LexicalCases/ref/LexicalCases",
+            "LexicalCases Package Symbol"},
+          "PackageLink",
+          BaseStyle->"InlineFormula"]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "05ff3e77-459b-4f1f-b360-f659f54fe4cd"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["WordBoundary"]], "paclet:ref/WordBoundary"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "3cb198a4-94bf-4a9c-bc70-9e9db366133c"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["StartOfString"]], "paclet:ref/StartOfString"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "392d50ca-234c-4a01-95a8-bf0d76bbe74d"],
+        "\[NonBreakingSpace]",
+        StyleBox[
+        "\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+         "InlineSeparator"],
+        " ",
+        Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["EndOfString"]], "paclet:ref/EndOfString"},
+          "RefLink",
+          BaseStyle->{"InlineFormula"}]], "InlineFormula",
+         FontFamily->"Source Sans Pro",ExpressionUUID->
+         "b1f50097-6f67-4103-b530-69f7c75abe71"]
+       }], "SeeAlso",ExpressionUUID->"169a4b0f-da7e-443e-8345-126b6329630f"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"257cf3c6-153c-4f2a-b123-\
+dce3300bc34c"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedTutorial.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Tech", " ", "Notes"}], "TutorialsSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases Overview"]], 
+           "paclet:LexicalCases/tutorial/LexicalCasesOverview"},
+          "RefLinkPlain",
+          BaseStyle->{"Tutorials"}]], "Tutorials",ExpressionUUID->
+         "786b2c20-2b81-415e-9954-ceec98054591"]}]}
+     }]}
+  }]], "TutorialsSection",ExpressionUUID->"6eac7a3b-9e1c-4dc3-8911-\
+ab3bf5e013ec"],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, "RelatedGuide.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"Related", " ", "Guides"}], "MoreAboutSection"]},
+      {
+       RowBox[{"\[FilledVerySmallSquare]", Cell[BoxData[
+         TemplateBox[{
+           Cell[
+            TextData["LexicalCases"]], 
+           "paclet:LexicalCases/guide/LexicalCases"},
+          "RefLinkPlain",
+          BaseStyle->{"MoreAbout"}]], "MoreAbout",ExpressionUUID->
+         "9c706e18-8a31-4bf7-be23-a89e14024527"]}]}
+     }]}
+  }]], "MoreAboutSection",ExpressionUUID->"f6812309-eb56-4ce1-a83f-\
+e72638dd63cc"],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{29},
+     "Spacer1"], GridBox[{
+      {
+       RowBox[{
+        TemplateBox[{17},
+         "Spacer1"], 
+        StyleBox[
+         RowBox[{"Related", " ", "Links"}], "RelatedLinksSection"]}]},
+      {Cell[TextData[Cell[BoxData[
+        RowBox[{
+         TemplateBox[{16},
+          "Spacer1"], "\[FilledVerySmallSquare]", Cell[BoxData[
+          TemplateBox[{
+            Cell[
+             TextData[
+              Cell[
+               TextData[{
+                 Cell[
+                  BoxData[
+                   TemplateBox[{2}, "Spacer1"]]], 
+                 "LexicalCases GitHub Repository"}]]]], 
+            "https://github.com/dishmint/LexicalCases"},
+           "WebLink",
+           BaseStyle->{"RelatedLinks"}]],ExpressionUUID->
+          "b6856048-4b57-48aa-8864-50c96833b238"]}]],ExpressionUUID->
+        "eb1bfcde-06ef-4c3a-b895-7e529198d317"]], "RelatedLinks",
+        ExpressionUUID->"c197d4da-5f5a-4def-99c0-07ea31fae55a"]}
+     }]}
+  }]], "RelatedLinksSection",ExpressionUUID->"b6fa9b36-b0f0-48d2-9024-\
+dd6db42eb38c"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"d7cb5d6e-0387-4d3e-8d88-aa157a6d5da0"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Sandwich",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "HasOptions" -> True, "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, 
+    "ExampleSection" -> {"0" -> Open, "2" -> Closed}, "NotesSection" -> 
+    Closed}, "NewStyles" -> True, "CitationPopupData" -> $Failed, 
+  "ShowCitation" -> False, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 6, 30, 23, 8, 9.777401}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LexicalCases`", 
+    "keywords" -> {
+     "sandwich", "lexical sandwich", "surround", "lexical surroundings", 
+      "lexical surround words"}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Lexical Cases Symbol", "language" -> "en", "paclet" -> "LexicalCases", 
+    "status" -> "None", "summary" -> 
+    "Sandwich[outer, inner] sandwiches inner between outer Sandwich[outer] \
+Represents an operator form that can be applied to an expression", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "Sandwich", 
+    "titlemodifier" -> "", "windowtitle" -> "Sandwich", "type" -> "Symbol", 
+    "uri" -> "LexicalCases/ref/Sandwich"}},
+CellContext->"Global`",
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "13.1 for Mac OS X ARM (64-bit) (June 16, 2022)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"e6ae76b5-5261-4891-a494-bd272cb8b500"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[13374, 358, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"8bfc889c-e81a-4b66-a23e-a3d69ef2d657",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1641140345]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 100078, 2093}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[580, 21, 6720, 162, 57, "AnchorBarGrid",ExpressionUUID->"16b78334-c435-4b24-a12c-b00bf4e32a20",
+ CellID->1],
+Cell[7303, 185, 95, 0, 23, "ContextNameCell",ExpressionUUID->"214d96e4-d038-4b9f-84e0-41b030e27789"],
+Cell[CellGroupData[{
+Cell[7423, 189, 551, 14, 60, "ObjectNameGrid",ExpressionUUID->"b037af29-c7fd-4522-873b-057a31ec00ba"],
+Cell[7977, 205, 1635, 42, 192, "Usage",ExpressionUUID->"c402ace1-2174-42db-968f-4fb483386163",
+ CellID->882729196]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9649, 252, 1898, 47, 37, "NotesSection",ExpressionUUID->"d2daeb14-864c-4da0-8c23-81b7ec5d6c50",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->170291507],
+Cell[11550, 301, 1697, 51, 70, "Notes",ExpressionUUID->"26bcfff6-67e6-4284-966c-dfbfe94b39bf",
+ CellID->1756933914]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[13374, 358, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"8bfc889c-e81a-4b66-a23e-a3d69ef2d657",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1641140345],
+Cell[CellGroupData[{
+Cell[14789, 399, 1367, 36, 31, "ExampleSection",ExpressionUUID->"3fa91258-e7a8-479d-a130-87cec5b273eb",
+ CellID->365816347],
+Cell[16159, 437, 749, 22, 40, "ExampleText",ExpressionUUID->"0a0846f5-81ad-48d6-97b2-ca8cde1f0d82",
+ CellID->1881708440],
+Cell[CellGroupData[{
+Cell[16933, 463, 304, 7, 29, "Input",ExpressionUUID->"4f1827a3-4f72-4da3-98f1-5f83c542c77a",
+ CellID->632206651],
+Cell[17240, 472, 279, 6, 37, "Output",ExpressionUUID->"cf861614-52af-4399-b98c-b945092f5777",
+ CellID->533614290]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17556, 483, 281, 7, 29, "Input",ExpressionUUID->"05e10c4b-4b58-4306-9472-8aad7e4b7de0",
+ CellID->569953902],
+Cell[17840, 492, 5338, 110, 99, "Output",ExpressionUUID->"d4f59f47-5ae2-47a7-bab5-9a7ad2e9aac8",
+ CellID->1361395789]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23215, 607, 180, 3, 29, "Input",ExpressionUUID->"6c45740d-6a3f-4b56-9cb5-bcd92d55b1f4",
+ CellID->609527042],
+Cell[23398, 612, 63382, 1122, 367, "Output",ExpressionUUID->"1ccc026c-ea87-4bcc-b3e3-452cc82704cb",
+ CellID->834939145]
+}, Open  ]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[86929, 1742, 1404, 36, 70, "ExampleSection",ExpressionUUID->"43036fed-6065-4de2-89b1-dfaf8209b3e9",
+ CellID->1233549862],
+Cell[88336, 1780, 274, 5, 70, "ExampleText",ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556",
+ CellID->1504242725],
+Cell[CellGroupData[{
+Cell[88635, 1789, 427, 11, 70, "Input",ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae",
+ CellID->187057416],
+Cell[89065, 1802, 562, 10, 70, "Message",ExpressionUUID->"d882d90f-8e85-4753-9619-2d3d71fb536c",
+ CellID->1615823357],
+Cell[89630, 1814, 560, 10, 70, "Message",ExpressionUUID->"8f7984ed-8ad5-4508-a398-7c9eeb339924",
+ CellID->64961137],
+Cell[90193, 1826, 561, 10, 70, "Message",ExpressionUUID->"7598982c-6169-4133-a771-c2abf760b62d",
+ CellID->880136883],
+Cell[90757, 1838, 561, 10, 70, "Message",ExpressionUUID->"438e68b3-8ea7-42b8-9931-a13153e884b8",
+ CellID->593232045],
+Cell[91321, 1850, 473, 12, 37, "Output",ExpressionUUID->"63c2ffdc-b28d-4f4b-87a5-f1bc0d0a56cb",
+ CellID->1831890941]
+}, Open  ]],
+Cell[91809, 1865, 136, 1, 70, "ExampleText",ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad",
+ CellID->518202502],
+Cell[CellGroupData[{
+Cell[91970, 1870, 538, 14, 70, "Input",ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de",
+ CellID->1364137182],
+Cell[92511, 1886, 419, 11, 40, "Output",ExpressionUUID->"87bdd423-d95f-47a9-9d2e-195e1b12864e",
+ CellID->1100793678]
+}, Open  ]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "2"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[93172, 1906, 2267, 61, 70, "SeeAlsoSection",ExpressionUUID->"257cf3c6-153c-4f2a-b123-dce3300bc34c"],
+Cell[95442, 1969, 751, 20, 70, "TutorialsSection",ExpressionUUID->"6eac7a3b-9e1c-4dc3-8911-ab3bf5e013ec"],
+Cell[96196, 1991, 724, 19, 70, "MoreAboutSection",ExpressionUUID->"f6812309-eb56-4ce1-a83f-e72638dd63cc"],
+Cell[96923, 2012, 1083, 31, 70, "RelatedLinksSection",ExpressionUUID->"b6fa9b36-b0f0-48d2-9024-dd6db42eb38c"],
+Cell[98009, 2045, 78, 0, 70, "FooterCell",ExpressionUUID->"d7cb5d6e-0387-4d3e-8d88-aa157a6d5da0"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,831 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27103,        822]
+NotebookOptionsPosition[     18450,        638]
+NotebookOutlinePosition[     19125,        662]
+CellTagsIndexPosition[     19046,        657]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->15966321],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->2057984819],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1179234351],
+
+Cell["FaizonZaman/LexicalCases", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1345326305],
+
+Cell["FaizonZaman`LexicalCases`", "Categorization",
+ CellLabel->"Context",
+ CellID->43888872],
+
+Cell["FaizonZaman/LexicalCases/ref/LexicalPattern", "Categorization",
+ CellLabel->"URI",
+ CellID->1053380783]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1406200428],
+
+Cell["lexical pattern", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.857169172794217*^9}},
+ CellID->953058161],
+
+Cell["lexical patterns", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.8571691753848667`*^9}},
+ CellID->1729656613],
+
+Cell["pattern", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.857169184735878*^9}},
+ CellID->1838036415],
+
+Cell["text pattern", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.857169188352208*^9}},
+ CellID->1257437273],
+
+Cell["text patterns", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.857169190741695*^9}},
+ CellID->1246633607],
+
+Cell["patterns", "Keywords",
+ CellChangeTimes->{{3.8571691703549747`*^9, 3.8571691945234003`*^9}},
+ CellID->1387298207]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->2115472601],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1008745275],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->1745927507],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->587057541],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->1136217269]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["LexicalPattern", "ObjectName",
+ CellID->979050959],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["LexicalPattern",
+    BaseStyle->"Link",
+    ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"], "[", 
+   StyleBox["lp", "TI"], "]"}]], "InlineFormula"],
+ "\[LineSeparator]A wrapper for using lexical patterns in string functions"
+}], "Usage",
+ CellChangeTimes->{
+  3.8571689178386717`*^9, {3.857171854877573*^9, 3.8571718617930527`*^9}},
+ CellID->889764599],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["lp", "TI"]], "InlineFormula"],
+ " must be a valid lexical pattern. Use ",
+ Cell[BoxData[
+  ButtonBox["LexicalPatternQ",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPatternQ"]], 
+  "InlineFormula"],
+ " to test patterns."
+}], "Notes",
+ CellChangeTimes->{{3.857168933246286*^9, 3.857169025363056*^9}, {
+  3.857171857597138*^9, 3.857171859066176*^9}, {3.8640557894605017`*^9, 
+  3.8640558067241983`*^9}},
+ CellID->1344981332]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->688378602],
+
+Cell[TextData[ButtonBox["Lexical Cases Overview",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview"]], \
+"Tutorials",
+ CellChangeTimes->{{3.857169229525173*^9, 3.857169245137991*^9}},
+ CellID->1084757425]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1332684524],
+
+Cell[TextData[ButtonBox["LexicalCases GitHub Repository",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://github.com/dishmint/LexicalCases"], None}]], "RelatedLinks",
+ CellChangeTimes->{{3.857169259404933*^9, 3.857169267301182*^9}, 
+   3.857169306311639*^9},
+ CellID->174356658]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1244656498],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["StringCases",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["StringPosition",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["StringMatchQ",
+   BaseStyle->"Link"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["LexicalCases",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalCases"]], 
+  "InlineFormula"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.8571693465908003`*^9, 3.857169416876947*^9}},
+ CellID->303556459]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "MoreAboutSection",
+ CellChangeTimes->{{3.843042374232973*^9, 3.843042375545676*^9}},
+ CellID->1599744788],
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox["LexicalCases",
+  BaseStyle->"Link",
+  ButtonData->
+   "paclet:FaizonZaman/LexicalCases/guide/LexicalCases"]], "InlineFormula"]], \
+"MoreAbout",
+ CellChangeTimes->{{3.857169312195469*^9, 3.857169318321404*^9}},
+ CellID->415391476]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->15200735],
+
+Cell[TextData[{
+ "Search for a ",
+ Cell[BoxData[
+  ButtonBox["LexicalPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"]], 
+  "InlineFormula"],
+ " with ",
+ Cell[BoxData[
+  ButtonBox["StringCases",
+   BaseStyle->"Link"]], "InlineFormula"]
+}], "ExampleText",
+ CellChangeTimes->{{3.8571694385955153`*^9, 3.857169455005616*^9}, {
+  3.864055864439879*^9, 3.8640558668633633`*^9}},
+ CellID->1580439858],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.857169462231247*^9, 3.857169466725481*^9}},
+ CellID->1306622126],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"alice", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Text\>\"", ",", "\"\<AliceInWonderland\>\""}], "}"}], 
+    "]"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1403448716],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringCases", "[", 
+  RowBox[{"alice", ",", " ", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{"\"\<Alice\>\"", "~~", 
+     RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", 
+     RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.856551111862548*^9, 3.8565511795418377`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->509781875],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Alice had not\"\>", ",", "\<\"Alice was not\"\>", 
+   ",", "\<\"Alice's first\"\>", ",", "\<\"Alice went back\"\>", 
+   ",", "\<\"Alice took up\"\>", ",", "\<\"Alice had no\"\>", 
+   ",", "\<\"Alice was soon\"\>", ",", "\<\"Alice could only\"\>", 
+   ",", "\<\"Alice looked all\"\>", ",", "\<\"Alice could not\"\>", 
+   ",", "\<\"Alice was more\"\>", ",", "\<\"Alice crouched down\"\>", 
+   ",", "\<\"Alice went timidly\"\>", ",", "\<\"Alice was just\"\>", 
+   ",", "\<\"Alice looked down\"\>", ",", "\<\"Alice had not\"\>", 
+   ",", "\<\"Alice got up\"\>", ",", "\<\"Alice was very\"\>", 
+   ",", "\<\"Alice looked up\"\>", ",", "\<\"Alice was too\"\>", 
+   ",", "\<\"Alice got up\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.856551469271741*^9, 3.856552752269187*^9, 
+  3.857169510840857*^9},
+ CellLabel->"Out[2]=",
+ CellID->432042916]
+}, Open  ]],
+
+Cell[TextData[{
+ "Find the string positions of a ",
+ Cell[BoxData[
+  ButtonBox["LexicalPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"]], 
+  "InlineFormula"]
+}], "ExampleText",
+ CellChangeTimes->{{3.857169566879237*^9, 3.857169575445764*^9}, 
+   3.864055858658849*^9},
+ CellID->368094733],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringPosition", "[", 
+  RowBox[{"alice", ",", " ", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{"\"\<Alice\>\"", "~~", 
+     RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", 
+     RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.856552103285129*^9, 3.856552104022355*^9}, {
+  3.8565521617566977`*^9, 3.856552162247023*^9}},
+ CellLabel->"In[3]:=",
+ CellID->586211615],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1349", ",", "1361"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2548", ",", "2560"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3456", ",", "3468"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4360", ",", "4374"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8488", ",", "8500"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16084", ",", "16095"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18290", ",", "18303"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"22528", ",", "22543"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"25145", ",", "25160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26380", ",", "26394"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"29462", ",", "29475"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"30448", ",", "30466"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"32290", ",", "32307"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"35021", ",", "35034"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"35170", ",", "35186"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"36142", ",", "36154"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"38307", ",", "38318"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"43702", ",", "43715"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"44556", ",", "44570"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"44958", ",", "44970"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"51619", ",", "51630"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.856552155166236*^9, 3.856552164667469*^9}, 
+   3.856552753935412*^9, 3.8571695158144083`*^9},
+ CellLabel->"Out[3]=",
+ CellID->1602584746]
+}, Open  ]],
+
+Cell[TextData[{
+ "Check if a string matches a ",
+ Cell[BoxData[
+  ButtonBox["LexicalPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"]], 
+  "InlineFormula"]
+}], "ExampleText",
+ CellChangeTimes->{{3.857169581542838*^9, 3.857169586210124*^9}, 
+   3.864055853789528*^9},
+ CellID->1453536455],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<Alice walked quickly\>\"", ",", " ", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{"\"\<Alice\>\"", "~~", 
+     RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", 
+     RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8565520829673643`*^9, 3.8565520931393948`*^9}},
+ CellLabel->"In[4]:=",
+ CellID->474450722],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.8565521676724253`*^9, 3.8565527549693413`*^9, 
+  3.857169520033177*^9},
+ CellLabel->"Out[4]=",
+ CellID->743406197]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->2075682799],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->128957278],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["LexicalPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:FaizonZaman/LexicalCases/ref/LexicalPattern"]], 
+  "InlineFormula"],
+ " works in operator forms of ",
+ Cell[BoxData[
+  ButtonBox["StringMatchQ",
+   BaseStyle->"Link"]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  ButtonBox["StringPosition",
+   BaseStyle->"Link"]], "InlineFormula"],
+ ", and ",
+ Cell[BoxData[
+  ButtonBox["StringCases",
+   BaseStyle->"Link"]], "InlineFormula"],
+ "."
+}], "ExampleText",
+ CellChangeTimes->{{3.857169726502981*^9, 3.8571697334930973`*^9}, {
+   3.857170200766986*^9, 3.8571702378427887`*^9}, 3.864055875858575*^9},
+ CellID->574809786],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aliceVerbAdverbPattern", "=", 
+   RowBox[{"LexicalPattern", "[", 
+    RowBox[{"\"\<Alice\>\"", "~~", 
+     RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", 
+     RowBox[{"TextType", "[", "\"\<Adverb\>\"", "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.857170150236252*^9, 3.8571701596002913`*^9}},
+ CellLabel->"In[14]:=",
+ CellID->1768571604],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aliceVerbAdverbQ", "=", 
+   RowBox[{"StringMatchQ", "[", "aliceVerbAdverbPattern", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.857169676089377*^9, 3.857169700390462*^9}, {
+  3.857170148401895*^9, 3.8571701651025257`*^9}},
+ CellLabel->"In[15]:=",
+ CellID->1350084249],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aliceVerbAdverbQ", "[", "\"\<Alice walked quickly\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.857169639357856*^9, 3.857169705705689*^9}},
+ CellLabel->"In[16]:=",
+ CellID->240946476],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.857169664652603*^9, 3.857169707394226*^9}, 
+   3.857170167498131*^9},
+ CellLabel->"Out[16]=",
+ CellID->315530764]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aliceVerbAdverbPositions", "=", 
+   RowBox[{"StringPosition", "[", "aliceVerbAdverbPattern", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.857169746078022*^9, 3.857169763687099*^9}, 
+   3.857170172316785*^9},
+ CellLabel->"In[17]:=",
+ CellID->620534114],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aliceVerbAdverbPositions", "[", "alice", "]"}]], "Input",
+ CellChangeTimes->{{3.85716977692668*^9, 3.8571697872943563`*^9}},
+ CellLabel->"In[18]:=",
+ CellID->534205569],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1349", ",", "1361"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2548", ",", "2560"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3456", ",", "3468"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4360", ",", "4374"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8488", ",", "8500"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16084", ",", "16095"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18290", ",", "18303"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"22528", ",", "22543"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"25145", ",", "25160"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"26380", ",", "26394"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"29462", ",", "29475"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"30448", ",", "30466"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"32290", ",", "32307"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"35021", ",", "35034"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"35170", ",", "35186"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"36142", ",", "36154"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"38307", ",", "38318"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"43702", ",", "43715"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"44556", ",", "44570"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"44958", ",", "44970"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"51619", ",", "51630"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.857169788190699*^9, 3.857170175199602*^9},
+ CellLabel->"Out[18]=",
+ CellID->1495171735]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aliceVerbAdverbCases", "=", 
+   RowBox[{"StringCases", "[", "aliceVerbAdverbPattern", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.857169830191291*^9, 3.857169850095924*^9}, 
+   3.857170178100089*^9},
+ CellLabel->"In[19]:=",
+ CellID->1245996032],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aliceVerbAdverbCases", "[", "alice", "]"}]], "Input",
+ CellChangeTimes->{{3.8571698519688463`*^9, 3.857169854264339*^9}},
+ CellLabel->"In[20]:=",
+ CellID->2131348634],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Alice had not\"\>", ",", "\<\"Alice was not\"\>", 
+   ",", "\<\"Alice's first\"\>", ",", "\<\"Alice went back\"\>", 
+   ",", "\<\"Alice took up\"\>", ",", "\<\"Alice had no\"\>", 
+   ",", "\<\"Alice was soon\"\>", ",", "\<\"Alice could only\"\>", 
+   ",", "\<\"Alice looked all\"\>", ",", "\<\"Alice could not\"\>", 
+   ",", "\<\"Alice was more\"\>", ",", "\<\"Alice crouched down\"\>", 
+   ",", "\<\"Alice went timidly\"\>", ",", "\<\"Alice was just\"\>", 
+   ",", "\<\"Alice looked down\"\>", ",", "\<\"Alice had not\"\>", 
+   ",", "\<\"Alice got up\"\>", ",", "\<\"Alice was very\"\>", 
+   ",", "\<\"Alice looked up\"\>", ",", "\<\"Alice was too\"\>", 
+   ",", "\<\"Alice got up\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.857169855784604*^9, 3.85717018054464*^9},
+ CellLabel->"Out[20]=",
+ CellID->961691180]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->573971523],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->242844737],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1272565459],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1218028940]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1598271376],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1421559756],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1399246217],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->37750822],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->970389489]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{159, Automatic}, {103, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[11642, 411, 100, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"f5d3ff72-81ea-4eab-89ef-2b1b0e26307f",
+   CellTags->"ExtendedExamples",
+   CellID->2075682799]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 18852, 650}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 322, 14, 70, "History",ExpressionUUID->"c302ddd2-9c0f-4cd6-9feb-92380e380f98",
+ CellID->15966321],
+Cell[CellGroupData[{
+Cell[905, 38, 68, 1, 70, "CategorizationSection",ExpressionUUID->"27778b8f-cc88-450f-b087-8fd096f8c0c5",
+ CellID->2057984819],
+Cell[976, 41, 80, 2, 70, "Categorization",ExpressionUUID->"b89cda38-480d-41cc-a4b6-0a6f2f152f6b",
+ CellID->1179234351],
+Cell[1059, 45, 98, 2, 70, "Categorization",ExpressionUUID->"eb715978-c461-4cf1-b427-f9db42402297",
+ CellID->1345326305],
+Cell[1160, 49, 93, 2, 70, "Categorization",ExpressionUUID->"b1a44575-bbef-4807-b47e-0cc8a86a8376",
+ CellID->43888872],
+Cell[1256, 53, 109, 2, 70, "Categorization",ExpressionUUID->"dc393464-8274-4988-9beb-9f392b3d3e91",
+ CellID->1053380783]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1402, 60, 56, 1, 70, "KeywordsSection",ExpressionUUID->"0e45c3a6-e1b3-4303-820b-26d65a832f99",
+ CellID->1406200428],
+Cell[1461, 63, 123, 2, 70, "Keywords",ExpressionUUID->"45d03dcb-1ed6-4703-82df-426f8362fae6",
+ CellID->953058161],
+Cell[1587, 67, 127, 2, 70, "Keywords",ExpressionUUID->"c0e399d3-8de6-423b-9402-2862ffe28367",
+ CellID->1729656613],
+Cell[1717, 71, 116, 2, 70, "Keywords",ExpressionUUID->"52deb057-9b38-44d1-bcbe-3265730f4f2f",
+ CellID->1838036415],
+Cell[1836, 75, 121, 2, 70, "Keywords",ExpressionUUID->"07036139-a7b1-4193-990e-622088d3631c",
+ CellID->1257437273],
+Cell[1960, 79, 122, 2, 70, "Keywords",ExpressionUUID->"0686821c-dc6d-4b5d-94d3-3a82a649aef8",
+ CellID->1246633607],
+Cell[2085, 83, 119, 2, 70, "Keywords",ExpressionUUID->"84cea5bf-a923-4b4c-acac-cf520e10984e",
+ CellID->1387298207]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2241, 90, 65, 1, 70, "TemplatesSection",ExpressionUUID->"e47d77e4-8bd4-471e-8277-0915e2511d51",
+ CellID->2115472601],
+Cell[2309, 93, 94, 2, 70, "Template",ExpressionUUID->"f6b0d920-1366-421f-95bb-923ce70b4e67",
+ CellID->1008745275],
+Cell[2406, 97, 83, 2, 70, "Template",ExpressionUUID->"d59535f5-2582-421a-b33e-efda1371ba1f",
+ CellID->1745927507],
+Cell[2492, 101, 80, 2, 70, "Template",ExpressionUUID->"bcb8a387-1906-4810-8754-bc80eddd8e65",
+ CellID->587057541],
+Cell[2575, 105, 83, 2, 70, "Template",ExpressionUUID->"a4cc6a62-7f35-4537-9cf1-f8841c9fd460",
+ CellID->1136217269]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2695, 112, 56, 1, 70, "ObjectName",ExpressionUUID->"93d06730-35d1-4033-8be2-f77d81703b02",
+ CellID->979050959],
+Cell[2754, 115, 452, 12, 70, "Usage",ExpressionUUID->"e06140b7-b05e-482d-a864-72276ee04781",
+ CellID->889764599],
+Cell[3209, 129, 501, 14, 70, "Notes",ExpressionUUID->"8ffbadd3-05f7-4dd5-8301-1a3dd027692b",
+ CellID->1344981332]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3747, 148, 58, 1, 70, "TechNotesSection",ExpressionUUID->"b44fdb85-2b88-48ec-bd14-dc5fcc6bf8c2",
+ CellID->688378602],
+Cell[3808, 151, 254, 6, 70, "Tutorials",ExpressionUUID->"ed370615-b38a-40aa-9101-e43374389db2",
+ CellID->1084757425]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4099, 162, 65, 1, 70, "RelatedLinksSection",ExpressionUUID->"2312dbf0-fcba-4cc1-8f17-387cd6a9f1f7",
+ CellID->1332684524],
+Cell[4167, 165, 286, 6, 70, "RelatedLinks",ExpressionUUID->"74588b58-dce2-4189-8f57-8ad741394c63",
+ CellID->174356658]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4490, 176, 55, 1, 70, "SeeAlsoSection",ExpressionUUID->"f8dcb7ab-f6da-4f10-842d-2444f89cc1be",
+ CellID->1244656498],
+Cell[4548, 179, 618, 20, 70, "SeeAlso",ExpressionUUID->"4ce032d5-8f62-4f75-a38a-2ed72e17db39",
+ CellID->303556459]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5203, 204, 129, 2, 70, "MoreAboutSection",ExpressionUUID->"cc8fd346-e1cc-4c92-85ff-84db64a15396",
+ CellID->1599744788],
+Cell[5335, 208, 269, 7, 70, "MoreAbout",ExpressionUUID->"79ad1c0e-8067-472c-8281-7933cf3a4ccc",
+ CellID->415391476]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5641, 220, 355, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"6f123ae4-910a-4e38-ad3b-3fb5377a7fab",
+ CellID->15200735],
+Cell[5999, 233, 445, 14, 70, "ExampleText",ExpressionUUID->"6acafa12-d901-4dba-a321-f87e4e6e4191",
+ CellID->1580439858],
+Cell[6447, 249, 165, 3, 70, "Input",ExpressionUUID->"d230a14f-f1d0-4ca4-9169-b9fd8a519188",
+ CellID->1306622126],
+Cell[6615, 254, 245, 8, 70, "Input",ExpressionUUID->"54d997c8-9a97-41b3-ab71-beffb17d89ca",
+ CellID->1403448716],
+Cell[CellGroupData[{
+Cell[6885, 266, 401, 10, 70, "Input",ExpressionUUID->"70b7a932-f243-422e-a754-28134d1c0e71",
+ CellID->509781875],
+Cell[7289, 278, 883, 16, 70, "Output",ExpressionUUID->"ad3d22a6-740a-423b-85f7-a7a118764cc9",
+ CellID->432042916]
+}, Open  ]],
+Cell[8187, 297, 340, 10, 70, "ExampleText",ExpressionUUID->"963d19fd-23d0-428f-9c9b-c77bcec0a8ac",
+ CellID->368094733],
+Cell[CellGroupData[{
+Cell[8552, 311, 453, 11, 70, "Input",ExpressionUUID->"27655750-fbd7-44e0-8752-3e03df8d81ab",
+ CellID->586211615],
+Cell[9008, 324, 1610, 48, 70, "Output",ExpressionUUID->"75fd2f54-d4bc-4a40-a12e-320292c6b9d3",
+ CellID->1602584746]
+}, Open  ]],
+Cell[10633, 375, 338, 10, 70, "ExampleText",ExpressionUUID->"ef0b55fd-f7ed-4d3a-882b-efef50916ef6",
+ CellID->1453536455],
+Cell[CellGroupData[{
+Cell[10996, 389, 427, 10, 70, "Input",ExpressionUUID->"31ba24e5-fa90-49f4-9557-0c4db7ce9464",
+ CellID->474450722],
+Cell[11426, 401, 167, 4, 70, "Output",ExpressionUUID->"ab8af8f4-935c-4584-a88b-729cb5f3af24",
+ CellID->743406197]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11642, 411, 100, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"f5d3ff72-81ea-4eab-89ef-2b1b0e26307f",
+ CellTags->"ExtendedExamples",
+ CellID->2075682799],
+Cell[CellGroupData[{
+Cell[11767, 417, 124, 3, 70, "ExampleSection",ExpressionUUID->"fb564fdd-2d6a-471b-8768-1d79dd3521be",
+ CellID->128957278],
+Cell[11894, 422, 667, 22, 70, "ExampleText",ExpressionUUID->"80349ddc-3e4d-491a-ac91-f8eea80489d9",
+ CellID->574809786],
+Cell[12564, 446, 395, 10, 70, "Input",ExpressionUUID->"e85c56c2-cb45-4071-a80d-63aa40337d6e",
+ CellID->1768571604],
+Cell[12962, 458, 308, 8, 70, "Input",ExpressionUUID->"69ad869b-6b1e-4841-8a79-ecc4a37645d7",
+ CellID->1350084249],
+Cell[CellGroupData[{
+Cell[13295, 470, 209, 5, 70, "Input",ExpressionUUID->"e4345120-864f-4ddf-8f3a-6623ae072705",
+ CellID->240946476],
+Cell[13507, 477, 167, 4, 70, "Output",ExpressionUUID->"d9a7be18-8466-48de-a8c2-da3b5f1e1d44",
+ CellID->315530764]
+}, Open  ]],
+Cell[13689, 484, 292, 8, 70, "Input",ExpressionUUID->"54088f28-496b-4664-98e2-941e8bd7984a",
+ CellID->620534114],
+Cell[CellGroupData[{
+Cell[14006, 496, 192, 4, 70, "Input",ExpressionUUID->"b1710f7c-b0a3-4c73-ab64-140cd1d2c7e8",
+ CellID->534205569],
+Cell[14201, 502, 1559, 47, 70, "Output",ExpressionUUID->"463ec074-b59c-4c13-bfc7-7e26c562b73e",
+ CellID->1495171735]
+}, Open  ]],
+Cell[15775, 552, 286, 8, 70, "Input",ExpressionUUID->"38e729b0-6352-4b90-b330-cf04029bda4e",
+ CellID->1245996032],
+Cell[CellGroupData[{
+Cell[16086, 564, 190, 4, 70, "Input",ExpressionUUID->"f388b52b-5fa6-4ddd-a0c6-78ceba730128",
+ CellID->2131348634],
+Cell[16279, 570, 858, 15, 70, "Output",ExpressionUUID->"358f7990-bd31-4503-b495-5eff5a6302df",
+ CellID->961691180]
+}, Open  ]]
+}, Open  ]],
+Cell[17164, 589, 147, 3, 70, "ExampleSection",ExpressionUUID->"9aea3ca3-5afb-4503-b997-c5bd62e585ea",
+ CellID->573971523],
+Cell[CellGroupData[{
+Cell[17336, 596, 126, 3, 70, "ExampleSection",ExpressionUUID->"fd4a0489-1f05-4711-8b05-28b690379363",
+ CellID->242844737],
+Cell[17465, 601, 130, 3, 70, "ExampleSubsection",ExpressionUUID->"e0d7fecb-72a0-4678-a47e-ab97e1b2deb0",
+ CellID->1272565459],
+Cell[17598, 606, 130, 3, 70, "ExampleSubsection",ExpressionUUID->"db4ceae3-1470-4953-8525-0bfeb50f3785",
+ CellID->1218028940]
+}, Open  ]],
+Cell[17743, 612, 132, 3, 70, "ExampleSection",ExpressionUUID->"10afaf1f-3a51-423b-89e0-5713d9292509",
+ CellID->1598271376],
+Cell[17878, 617, 142, 3, 70, "ExampleSection",ExpressionUUID->"862f98c5-85ab-453f-b2a1-7cff35aa16c8",
+ CellID->1421559756],
+Cell[18023, 622, 135, 3, 70, "ExampleSection",ExpressionUUID->"a847df4f-af55-4acd-b988-75a432fd3208",
+ CellID->1399246217],
+Cell[18161, 627, 138, 3, 70, "ExampleSection",ExpressionUUID->"f624f1b3-bdd9-4e09-8be3-3a81d80e7dd5",
+ CellID->37750822],
+Cell[18302, 632, 132, 3, 70, "ExampleSection",ExpressionUUID->"f35953e2-ff06-47dd-a1a0-9c2c6f9f1bdc",
+ CellID->970389489]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
