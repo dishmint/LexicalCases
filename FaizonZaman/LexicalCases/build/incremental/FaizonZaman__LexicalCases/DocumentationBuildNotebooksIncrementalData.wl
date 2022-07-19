@@ -1,7 +1,7 @@
 <|"English/Guides/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.950245, "Seconds"]|>], 
-   "FileHash" -> "aW4R6j6pessqMdREDij1cEjPGeLKOOwVq1/2EFP4oHo="|>, 
+     <|"Time" -> Quantity[0.576101, "Seconds"]|>], 
+   "FileHash" -> "PuuTZw8iZOXfeQP0L5TS4mbAXQ5YpifVHZOUv6FN7ho="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.72584, "Seconds"]|>], 
