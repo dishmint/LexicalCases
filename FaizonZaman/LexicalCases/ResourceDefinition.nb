@@ -707,9 +707,9 @@ Documentation/English/Tutorials/LexicalCasesOverview.nb"],
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
  CellID->352343986,ExpressionUUID->"8d6c5871-c183-4bc5-8b28-c8776792967c"]
-}, Closed]]
-}, Closed]]
-}, Closed]],
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -4867,6 +4867,8 @@ subvalues. Consult the documentation for usage."
  CellID->441612482,ExpressionUUID->"c1aaae7f-d588-4f0c-8c09-ee4cd718d433"]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell[TextData[{
  "Details",
  Cell[BoxData[
@@ -4897,6 +4899,260 @@ examples on the webpage for the resource.", "MoreInfoText"], Background ->
  DefaultNewCellStyle->"Notes",
  CellTags->{"Details", "TemplateCellGroup"},
  CellID->484110581,ExpressionUUID->"352226ab-4d79-4cc1-8a2a-d8324aa5fd29"],
+
+Cell[TextData[{
+ "I\[CloseCurlyQuote]m a Lexical Programmer at Wolfram|Alpha and began \
+developing this functionality for a particular work task. I needed to look at \
+adjectives that precede certain phrases, so I gathered article text from \
+Wikipedia of relevant domains, then searched for the desired lexical \
+sequences. I initially tried using ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["TextCases", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/TextCases",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "327eae4d-3b61-4fe3-8227-69b4889bf363"],
+ " and ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["TextContents", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/TextContents",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f68815fe-35ea-4b38-bcce-1328ba58ac54"],
+ " with the ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Containing", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Containing",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d47ccc57-2de5-4fb5-bfa6-15dfdd1c86b2"],
+ " wrapper, (",
+ Cell[BoxData[
+  RowBox[{
+   TagBox[
+    ButtonBox[
+     StyleBox["Containing", "SymbolsRefLink",
+      ShowStringCharacters->True,
+      FontFamily->"Source Sans Pro"],
+     BaseStyle->Dynamic[
+       FEPrivate`If[
+        CurrentValue["MouseOver"], {
+        "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+     ButtonData->"paclet:ref/Containing",
+     ContentPadding->False],
+    MouseAppearanceTag["LinkHand"]], "[", 
+   RowBox[{
+    TagBox[
+     ButtonBox[
+      StyleBox[
+       StyleBox["\"\<AdjectivePhrase\>\"", "TextContentsRefLink",
+        ShowStringCharacters->True,
+        FontFamily->"Source Sans Pro"], "StringTypeLink",
+       StripOnInput->False],
+      BaseStyle->Dynamic[
+        FEPrivate`If[
+         CurrentValue["MouseOver"], {
+         "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+      ButtonData->"ref/textcontent/AdjectivePhrase",
+      ContentPadding->False],
+     MouseAppearanceTag["LinkHand"]], ",", 
+    RowBox[{
+     TagBox[
+      ButtonBox[
+       StyleBox["Verbatim", "SymbolsRefLink",
+        ShowStringCharacters->True,
+        FontFamily->"Source Sans Pro"],
+       BaseStyle->Dynamic[
+         FEPrivate`If[
+          CurrentValue["MouseOver"], {
+          "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+       
+       ButtonData->"paclet:ref/Verbatim",
+       ContentPadding->False],
+      MouseAppearanceTag["LinkHand"]], "[", 
+     "\"\<\!\(\*StyleBox[\"music\", \"TI\"]\)\>\"", "]"}]}], "]"}]], 
+  "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f3101925-97f9-427c-937e-b5c427d1b2eb"],
+ " for example), but it was slow. So I designed some lexical tokens I could \
+use in a ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox[
+     StyleBox["StringExpression", "SymbolsRefLink",
+      ShowStringCharacters->True,
+      FontFamily->"Source Sans Pro"], "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/StringExpression",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d291f43e-7208-4933-b145-9626ba49cc10"],
+ " to perform lexical searches with ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["StringCases", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/StringCases",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4432d735-c477-4b9a-a893-0d0c72313ece"],
+ ".\n\nHowever, ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["TextCases", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/TextCases",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3011764d-933a-4f78-a898-b99b23195cfa"],
+ " is used internally to extract examples of a content type from the source \
+text. These examples are then slotted into the ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["StringExpression", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/StringExpression",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c97df742-c793-43a8-94fb-ad46b3176152"],
+ ". You can see the lexical expression that is generated from a piece of text \
+with ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["ExpandPattern", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:FaizonZaman/LexicalCases/ref/ExpandPattern",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "84b1da8e-d83b-46e5-86ef-215e62e7dd93"],
+ ". Note that this means, for example, if you have ",
+ Cell[BoxData[
+  RowBox[{
+   TagBox[
+    ButtonBox[
+     StyleBox["TextType", "SymbolsRefLink",
+      ShowStringCharacters->True,
+      FontFamily->"Source Sans Pro"],
+     BaseStyle->Dynamic[
+       FEPrivate`If[
+        CurrentValue["MouseOver"], {
+        "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+     ButtonData->"paclet:FaizonZaman/LexicalCases/ref/TextType",
+     ContentPadding->False],
+    MouseAppearanceTag["LinkHand"]], "[", 
+   TagBox[
+    ButtonBox[
+     StyleBox[
+      StyleBox["\"\<Adjective\>\"", "TextContentsRefLink",
+       ShowStringCharacters->True,
+       FontFamily->"Source Sans Pro"], "StringTypeLink",
+      StripOnInput->False],
+     BaseStyle->Dynamic[
+       FEPrivate`If[
+        CurrentValue["MouseOver"], {
+        "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+     ButtonData->"ref/textcontent/Adjective",
+     ContentPadding->False],
+    MouseAppearanceTag["LinkHand"]], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7ab18a2d-69c4-4821-ae0e-5c4912e83374"],
+ " in your lexical pattern, the token will be replaced by all text snippets \
+identified as adjectives in the source text.\n\nI'd also like to say thanks \
+to Swastik Banerjee for helping improve ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["SearchIndexObject", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/SearchIndexObject",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "85f94f1f-2f5f-4700-b13e-a0b4c8612d0e"],
+ " support."
+}], "Text",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.867250094577227*^9, 3.867250207482535*^9}, {
+   3.867778469328055*^9, 3.86777850437639*^9}, {3.8677785407651854`*^9, 
+   3.8677785669650297`*^9}, {3.8677786480838118`*^9, 3.867778797576376*^9}, {
+   3.8677789410887947`*^9, 3.867779072031415*^9}, 3.867781738356016*^9, {
+   3.867781794059407*^9, 3.8677818655539103`*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->777846151,ExpressionUUID->"1729ea4b-7333-44fe-b4a4-1d1d2b57dce9"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -8845,7 +9101,6 @@ Cell[BoxData[
                  TagBox["\"Index size: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  
                   TemplateBox[{
                    "5", "\" \"", "\"documents\"", "\" \"", "\"(\"", 
                     "\"466.1 kB\"", "\")\""}, "RowDefault"], 
@@ -11582,7 +11837,7 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Notebooks"}], "\" \"", 
+            CheckboxBox["Notebooks", {False, "Notebooks"}], "\" \"", 
             "\"Notebooks\""},
            "RowDefault"],
           StripOnInput->False,
@@ -11636,6 +11891,7 @@ I8piKrCWhXR3891VaMC697Tx22J2mrFWhZCaoh3OSkKRWu/YL5ophvOPtu+XMFCfBxOPmF4/\
 3vL2kvFF9eEHv/ZVX46I+dTpqItDhDdGB+D+zePct+TQcGmPA/BfVquyiD4gyq+fWT0GL7S1ZmY/\
 QkiKyY3cOYr37yVtfyOXrYEX3eSqOmhiLUL2AsFZub3tKk+\
 N2U6vHkxPEELPlFqyqxs0q9Yxcxv4C9ikafM4ht9Zpk5O+AVJDcOo="},
+ CellChangeTimes->{{3.8677698258990593`*^9, 3.86776982597851*^9}},
  CellTags->{
   "CheckboxCell", "CompatibilityFeatures", "CompatibilityFeatures-Checkboxes"},
  CellID->716444359,ExpressionUUID->"87ab5338-5c8c-4a51-8f38-e8c9d9bc723d"]
@@ -11851,7 +12107,7 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[True, {False, True}], "\" \"", 
+            CheckboxBox[False, {False, True}], "\" \"", 
             "\"Supported in cloud\""},
            "RowDefault"],
           StripOnInput->False,
@@ -11878,6 +12134,7 @@ KF7Ru7fsHJXbNw8vABo68UHHje9ktOmhBzewjOkRfsjtoeW0OhmxNZ7cmhlxEOBQ1OiX5qo2UsJtM3\
 Fu9VTjRZnoj/\
 ZM6unRb1jFN6U4bxJ2wuaPBfmUqTCYPlYpHDrrSC3vlomcCwPhMZVDaHbYNMwbf4GF38uFZt5HwA7D\
 xZoQ=="},
+ CellChangeTimes->{{3.8677698033892193`*^9, 3.8677698034761677`*^9}},
  CellTags->{
   "CheckboxCell", "CompatibilityCloudSupport", 
    "CompatibilityCloudSupport-Checkboxes"},
@@ -12620,11 +12877,26 @@ sequences. I initially tried using ",
       ButtonData->"ref/textcontent/AdjectivePhrase",
       ContentPadding->False],
      MouseAppearanceTag["LinkHand"]], ",", 
-    "\"\<\!\(\*StyleBox[\"music\", \"TI\"]\)\>\""}], "]"}]], "InlineFormula",
+    RowBox[{
+     TagBox[
+      ButtonBox[
+       StyleBox["Verbatim", "SymbolsRefLink",
+        ShowStringCharacters->True,
+        FontFamily->"Source Sans Pro"],
+       BaseStyle->Dynamic[
+         FEPrivate`If[
+          CurrentValue["MouseOver"], {
+          "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+       
+       ButtonData->"paclet:ref/Verbatim",
+       ContentPadding->False],
+      MouseAppearanceTag["LinkHand"]], "[", 
+     "\"\<\!\(\*StyleBox[\"music\", \"TI\"]\)\>\"", "]"}]}], "]"}]], 
+  "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
   "35f8831e-3d69-4f40-935a-8833483ea273"],
- "), but it was slow. So I then implemented several lexical tokens that I \
-could use in a StringExpression to perform searches with ",
+ " for example), but it was slow. So I designed some lexical tokens I could \
+use in a StringExpression to perform lexical searches with ",
  Cell[BoxData[
   TagBox[
    ButtonBox[
@@ -12650,14 +12922,16 @@ support."
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.867250094577227*^9, 3.867250207482535*^9}},
+ CellChangeTimes->{{3.867250094577227*^9, 3.867250207482535*^9}, {
+  3.867778469328055*^9, 3.86777850437639*^9}, {3.8677785407651854`*^9, 
+  3.8677785669650297`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->908162033,ExpressionUUID->"b3e36472-f3e6-4c8f-8455-501eb357d0b9"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1440, 847},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{720, 847},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 WindowTitle->"LexicalCases | Definition Notebook",
 DockedCells->{
   Cell[
@@ -12714,38 +12988,38 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
     "DefaultContentMethod" -> "Tagged"}, "ToolsOpen" -> True, "StatusMessage" -> 
   "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True, 
   "PacletBuildData" -> {"FileHashes" -> ByteArray[CompressedData["
-1:eJwB4QQe+yFib1JiAQAAANQEAAA4Qzp4nJ2Wf1AUZRjHpYsSGSkEhXEykp+C
-7ZERoQeIyIGiJ3f53gEGHeztvXvs3N7utbt3x4FK9gNSCgmILJJhnDJjJIuo
-aWyKKUnzj2boB1MwWUOJZdiYaaWOTR3d2Xu3nOstf93Mc/f9fPb2effZp1CJ
-gXvVLOGwQUbABYplMosZC03xdZkbHJQZ8pkaWE8ROF2E85BXMqbCWzBwG2Ad
-HAE1Z8emIHC9V+mp6HHOAgVNR0T333Hcw/EYSAwOLWXMsD6z5j4lQfJ+KP7W
-MpaBiNM+EoHb7t7QgIFUKQ4PLTNf8TWrJFjH35oYgAe2kqGysiRYE62RF9de
-cpkwsCIUltICGQnabuPkZ409U8sxoApO2wpJyEGGgDrc4mkFcNtMLM1nrmcd
-jFnPWiEjaohu28vfnMqKNSGFqqrp9tr0gwYMFMtSFHkUAnDYbDjn1rAuyBGe
-/ots3z/6bJtaY01BtmNd27VPMgonBvJl2Yrr7Thj1uGCADnxf3Lu6rwSV1Jh
-Q5ZfPljMnYp4xo6BPFkWiZM8XLVgz9lhXIckndfmH8x798AmuTfOJ1FTvB1y
-vCego1lBZItwpe3L/batHNkqBhsa9yYlFWJg7Vxswe+c9ZB79Kkv2lVIQ31H
-FuAZNjcG1s1FAwTOQQgOTnwQTFHx6YZzwwlI1JJWue9EfnfuHP+P7+CJNMca
-wnpbOpqLkYZ3uxXkixOk3POmtc/8CqeDPUPLlp3Y29X8x2JkOfzmb2EXFk2v
-xsBqWRbgOdMuiqgTCT6yLygYOpNyDxI4+49cDTfUGuUK9LBe0Lvt4nbM//Sa
-YdK034gEMZHWXc9f/lgpt+96VvKAbfr5tYLUzsoMJPo9MaV3bD8WhoE1skQV
-LBd0oPE72l6oVlz1e8OYhkqmhJWtjXKfy2T/px9AzkkRs6ZAltD0huLx1Ehk
-+3r88PqX4qOTMZAR3AYgzhF13qmf7X2vQYmJ/9ieygHTX1yCHJ7UezIi6/jr
-xpJt4RhID5HHUxI43vRltf30gAMDWCg4koK0mVe6aAlks1GVT10cisPAA6Eg
-qZnPLVDAzbiAS5Mv746syXnQcBcGlKGQ/3+/3y/B/PCh0XO81ewMkeniKAEq
-aZawSjApgzax8gfDZgyk3YBphzQd4mLUvbOx0DhmCg2WfRNYfH/M4PjIec8d
-XHlTWEirVnbtwvN/Hk0jZQGl9q3BM9Oa4qh+lSygWQJ48sfovFdyy5NvfMJn
-A0Pe4nKCI/UOgeUoXLSBaJ0zQwi6RDNIFRZe8Mj0+3bEvzDcMZKtCNdiYMlm
-zwyGdOAiE/CMaCK70vI2jo9UoziqxAfGr8/0QMDT5Nulo5YrOxEAVe7wAWZW
-GrG4dd1XK8r4lhKUQ5VoXw7gNjs965LVP8HkmJLkeSiJKjG+pEGgaEqgZmUT
-5pXvIP6hy1AWVWJ92XKcpsz/dUQU3mjqzSFPv6pFYVRZqMMJGgqlDMmKUmGt
-SXVHjT1qlEKVaG9qC85QJOQF6fnVd+TX7UXZ7Z4daYne82Ne3FbB39pVWvp5
-30l3IYqjytKAOFrSRAjj8iea6L5JBUKgyiIvwnckZtl7jEvhKoXagKKoEuON
-+ncoIPvcoSjTnZe0fleOKrHebECHAsLvrKkIr8r4JBaFr1f+BeARYSHEuHHH
-
+1:eJwB/wQA+yFib1JiAQAAAPIEAAA4Qzp4nJ2WfVAUZRzHhZMSmFBeRIZ0QF4F
+3UMgR3kLUe4CPbiT5w4oHGBv7znYYW/32t3jOEgJMiksLEAyUXKaIoexlyGo
+/oioNM0/mrEGpnAgo4RCaypHm3Ds5YiL5245l1v+upnf3ffz2b3f8/LL2YqB
+LbkMYTFBmsd5kqGTFHQVRXLVSY9YSAPkklSwjiRwajfOQU5O63O8MXAfYCws
+AVUzo1MQWD8otVe0OFsFeVW7b9df69jHwjAQ5R6aTxtgXVLFVjlh5JxQ3MpC
+hoaIMzWdMnvT50MrBuLEOBysmvuKq0gWYemGK/f98ebVSk9ZqSKs1lyTudkb
+5mBgkycseRWkRWjPlk9+0dA9tRED6e5pRdAIWUgTUINX2VsBbCY9Q3FJuxgL
+bdAyNZAWNETz6MlvJlJD9EiRXtZ4f2VCrw4DCkmK3XYFDywmE87aVIwVsoS9
+/wLb1cefb8tV1cQi27nOJ9SHaFktBrIk2RR1Zpw2aHCeh6zwnWqbOmbXKUtM
+yHJ9aC074fucGQOZkiwiK3m4zK91ZhjXIEnH3VW9me+9ukfqH+eQ5JKcGbKc
+PaChGF5g87XGH88YbytGtpL++oaj0dH2dfXwcmzu/7maM7bLT3/1QjrSkN8a
+s/FEkw0DO5ejATxrIXgLK1wI+oCwBN3PwxFI1BJfevxiVlfGMt/HsfAEmnP1
+Xj0t7YcVSMPZbDLjy1eMUteb2jz3K5xyt4c2bLh4tPPw7bXIcvad37x+D7qx
+AwM7JFmAfU1bSaJaIPjE7Jc9MB0biQS1fW/f8dFVlksVaGEdr7WZhe1Y9fld
+3aT+VDkSBPvXNB3781O51L5rGdEFtuenN7LjOkoTkehmVGzP6CnMCwNpkkQl
+DOv2QOMOtL20X3bH6YbRDyin+M1HGqTuyxjn3Q8gW0sSi06BVL7xLVlznD+y
+fT12dteJsMAYDCS6twGIs0T1/Km/bf5egyInvrK54ORE7KBGCk/snoxI94vg
+fL5bjYEED3kcKYILGqlI7j42ZL92MU9wRhJSBk5upUSQgw9Wt75iJDEMPOQJ
+kpz7LIA8bsB5XJzc+5F3ZPshth4Dck/IC/d7itjcoWhSBEeH7vOQaWVJHsop
+hqgRYZI6dVTp97q9GIi/B9MMKcrDwajrYENO+ajeM1jqErD3iwfWc750gkew
+bUvAwvqC+8fO/7oeA5uXhHk0tw0pxyNXXqlUSgKKDW/90zdUioC+dEnANBHg
+tdGsLeEfNxZJAhpEgJd+CMx8LaM45t77bzHQ4xlzu3uk1sIzLIkL5iN17dwR
+Ca2CE/KXlNKRcVlIJeIXPYmduKDKyMZA6F77DQEp1zHLZQer/DvjM/PGzu9H
+cVQJc43/f+O4Ap4xvpt/uWr2IAKgymoHYG7gEoqP7BzZVMi1KFEOVQIdOYCb
+zNSiR879EcYEK2NWoCSqBDuSOp6kSJ5clI1YUXyA+IcqdDqvFyohjmwxTpGG
+/zoiCOfpe7Ybr72uRmFUeUCDExTk82kjI0hVr7kV+Xf/dSclqgTOpwpwmjRC
+jhc/XbuTZ27nJV+wz3ShWvuPOWFbeWdrZ37+l6cv2XJQHFXCXeJohBQgyjc+
+1UidnpQhBKoEzSMcS2KRvbs8HCbLcnVOD79QCZ6POnfIJfvimQD9mltqpydH
+lZD5rEuHXMKDaSU+ZYmfhTjddo7KvwPrmaVBq2gV
       "]], "LastBuiltArchive" -> 
     "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/build/\
-FaizonZaman__LexicalCases-1.0.1.paclet"}, 
+FaizonZaman__LexicalCases-1.0.2.paclet"}, 
   "Openers" -> {
    "NotesSection" -> Closed, "PrimaryExamplesSection" -> Open, 
     "ExampleSection" -> {"0" -> Closed, "1" -> Closed, "2" -> Closed}, 
