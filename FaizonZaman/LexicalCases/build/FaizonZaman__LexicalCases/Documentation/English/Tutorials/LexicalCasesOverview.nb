@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    266895,       5411]
-NotebookOptionsPosition[    254971,       5172]
-NotebookOutlinePosition[    257841,       5237]
-CellTagsIndexPosition[    257798,       5234]
+NotebookDataLength[    272942,       5574]
+NotebookOptionsPosition[    260761,       5329]
+NotebookOutlinePosition[    263598,       5394]
+CellTagsIndexPosition[    263555,       5391]
 WindowTitle->LexicalCases Overview
 WindowFrame->Normal*)
 
@@ -79,7 +79,7 @@ LexicalCases/tutorial/LexicalCasesOverview.html"], StandardForm]], "Input",
         Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
          NotebookLocate[{
            URL[(If[
-               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$221983], 
+               TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$68159], 
                "http://reference.wolfram.com/system-modeler/", 
                "http://reference.wolfram.com/language/"] <> 
              "FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview") <> 
@@ -154,9 +154,9 @@ Cell[BoxData[GridBox[{
      "GrayLinkWithIcon",
      BaseStyle->{"TutorialJumpBoxLink"}], 
     TemplateBox[{
-      Cell["Searching Files and Services"], 
+      Cell["Built-in String Functions"], 
       "paclet:FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview#\
-156924819", 
+323829644", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -195,9 +195,9 @@ Cell[BoxData[GridBox[{
      "GrayLinkWithIcon",
      BaseStyle->{"TutorialJumpBoxLink"}], 
     TemplateBox[{
-      Cell["Built-in String Functions"], 
+      Cell["Conclusion"], 
       "paclet:FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview#\
-323829644", 
+2118948183", 
       StyleBox[
        GraphicsBox[{
          Thickness[0.18], 
@@ -213,7 +213,28 @@ Cell[BoxData[GridBox[{
         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
        0.68 Inherited, StripOnInput -> False]},
      "GrayLinkWithIcon",
-     BaseStyle->{"TutorialJumpBoxLink"}]}
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell["Searching Files and Services"], 
+      "paclet:FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview#\
+156924819", 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.3843137254901961, 0.4627450980392157, 0.7019607843137254], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False], 
+      StyleBox[
+       GraphicsBox[{
+         Thickness[0.18], 
+         RGBColor[0.9686274509803922, 0.4666666666666667, 0.], 
+         LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited, StripOnInput -> False]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
   }]], "TechNoteJumpBox"]
 }, Open  ]],
 
@@ -223,23 +244,23 @@ Cell["Installation", "TechNoteSection",
  CellID->580651078],
 
 Cell[TextData[{
- "This may seem redundant, but this document might appear on the web at some \
-point. Paclet releases can be found ",
+ "This paclet is hosted on the ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
-     TextData["here"]], "https://github.com/dishmint/LexicalCases/releases"},
+     TextData["Wolfram Paclet Repository"]], 
+    "https://resources.wolframcloud.com/PacletRepository/"},
    "WebLink",
    BaseStyle->{"TechNoteText"}]]],
- ". Once downloaded, install with ",
+ ". First install the paclet from the ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
-     TextData["PacletInstall"]], "paclet:ref/PacletInstall"},
+     TextData["ResourceObject"]], "paclet:ref/ResourceObject"},
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- ", specifying the path to the downloaded paclet, then load definitions with ",
+ ", then load it with ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -257,10 +278,10 @@ Cell["Install the paclet and load its definitions with Needs", \
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{
-  "PacletInstall", "[", "\"\<path/to/LexicalCases-v.v.v.paclet\>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Needs", "[", "\"\<LexicalCases`\>\"", "]"}]}], "Input",
+  RowBox[{"PacletInstall", "[", 
+   RowBox[{"ResourceObject", "[", "\"\<FaizonZaman/LexicalCases\>\"", "]"}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<FaizonZaman`LexicalCases`\>\"", "]"}]}], "Input",
  CellID->700096613]
 }, Open  ]],
 
@@ -279,8 +300,8 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " searches text for string patterns with interpretable types. While similar \
-to ",
+ " searches text for patterns which can contain interpretable types. While \
+similar to ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -297,16 +318,9 @@ to ",
     "RefLink",
     BaseStyle->{"InlineFormula"}]}]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " etc., types are not restricted to the ",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["Containing"]], "paclet:ref/Containing"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula",
-  FontFamily->"Source Sans Pro"],
- " wrapper. With a few additional pattern types one can search for a variety \
-of strings at the lexical level."
+ " etc., types can be expressed anywhere in a lexical pattern, and with a few \
+additional pattern types one can search for a variety of text segments at the \
+lexical level."
 }], "TechNoteText",
  CellID->293313137],
 
@@ -426,8 +440,8 @@ Additional pattern constructs made available by the LexicalCases paclet.\
  CellID->589083746],
 
 Cell["\<\
-Here we can search the Origin Of Species for phrases taking the form \
-\"<Adverb> <Adjective> <specie|species>\"\
+Here we can search the Origin Of Species for adverb~adjective patterns ending \
+with \"specie\" or \"species\". \
 \>", "TechNoteText",
  CellID->1092979763],
 
@@ -719,8 +733,17 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " returns a LexicalSummary object which provides properties for managing and \
-analyzing the results."
+ " returns a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalSummary"]], 
+    "paclet:FaizonZaman/LexicalCases/ref/LexicalSummary", 
+    "FaizonZaman Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " object which supports several properties."
 }], "TechNoteText",
  CellID->485178528],
 
@@ -838,12 +861,12 @@ Cell[TextData[{
  " and ",
  Cell[BoxData["\"\<Dataset\>\""], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " properties to extract the results form the summary object."
+ " properties to extract the results from the summary object."
 }], "TechNoteText",
  CellID->1523155587],
 
 Cell[TextData[{
- "Easily view the search results in a ",
+ "View search results in a ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -3131,10 +3154,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
 }, Open  ]],
 
 Cell[TextData[{
- "Use the ",
+ "Use ",
  Cell[BoxData["\"\<Counts\>\""], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " and related properties to view the frequency of matches."
+ " to view the frequency of matches, or use ",
+ Cell[BoxData["\"\<CountGroups\>\""], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " to group matches by frequency."
 }], "TechNoteText",
  CellID->302090059],
 
@@ -3828,11 +3854,9 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
 }, Open  ]],
 
 Cell[TextData[{
- "You may just want to see a dashboard of results instead of calling the \
-individual properties, in that case use the ",
  Cell[BoxData["\"\<Survey\>\""], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " property."
+ " returns a dashboard of selected properties."
 }], "TechNoteText",
  CellID->1840397229],
 
@@ -4038,25 +4062,19 @@ search over. Using a ",
  " or ",
  Cell[BoxData["\"\<Category\>\""], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " rule, or just a ",
+ " rule, or just a lexical pattern itself as input will search over \
+Wikipedia. The ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
-     TextData["StringExpression"]], "paclet:ref/StringExpression"},
+     TextData["MaxItems"]], "paclet:ref/MaxItems"},
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " itself as input will search over Wikipedia. Use the MaxItems option to \
-restrict the number of articles to collect. When LexicalCases is given a lone \
-",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["StringExpression"]], "paclet:ref/StringExpression"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula",
-  FontFamily->"Source Sans Pro"],
- " an attempt is made to convert it to a Wikipedia search query. "
+ " option will restrict the number of articles collected. Note that when \
+LexicalCases is given just a lexical pattern, and no source text, an attempt \
+is made to convert the pattern to a Wikipedia search query, which might not \
+always work. "
 }], "TechNoteText",
  CellID->1086904220],
 
@@ -4778,18 +4796,11 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
 }, Open  ]],
 
 Cell[TextData[{
- "One can imagine there might be a cases where the ",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["StringExpression"]], "paclet:ref/StringExpression"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula",
-  FontFamily->"Source Sans Pro"],
- " is quite unwieldy, and therefore difficult to communicate.  The ",
+ "There is potential for lexical patterns to become quite unwieldy, making \
+them potentially difficult to read.  The ",
  Cell[BoxData["\"\<Structure\>\""], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " property or the ",
+ " property of a LexicalSummary object, or the ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -4799,11 +4810,12 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " function may help."
+ " function applied to a lexical pattern, might help clarify the pattern's \
+structure."
 }], "TechNoteText",
  CellID->1292831582],
 
-Cell["View the StringExpression structure", "TechNoteMathCaption",
+Cell["View a lexical pattern's structure", "TechNoteMathCaption",
  CellID->1687971595],
 
 Cell[CellGroupData[{
@@ -4851,10 +4863,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"LexicalStructure", "[", 
   RowBox[{
-   RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", "\"\<car\>\""}], 
+   RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}], "~~", "\"\<car\>\"", "~~", 
+   
+   RowBox[{"OptionalToken", "[", 
+    RowBox[{"BoundToken", "[", 
+     RowBox[{"\"\<price\>\"", "|", "\"\<prices\>\""}], "]"}], "]"}]}], 
   "]"}]], "Input",
- CellLabel->"In[45]:=",
- CellID->1479620295],
+ CellLabel->"In[4]:=",
+ CellID->1246165327],
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -4875,7 +4891,69 @@ Cell[BoxData[
             "RowWithSeparators"]}, {
            StyleBox["\"Text\"", "TextElementLabel"]}}, BaseStyle -> 
          "TextElementGrid"], 
-        TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>]]},
+        TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>]], 
+       InterpretationBox[
+        GridBox[{{
+           TemplateBox[{"\[ThinSpace]", "\" \"", 
+             InterpretationBox[
+              GridBox[{{
+                 TemplateBox[{"\[ThinSpace]", "\" \"", 
+                   InterpretationBox[
+                    GridBox[{{
+                    TemplateBox[{"\[ThinSpace]", "\" \"", 
+                    RowBox[{
+                    InterpretationBox[
+                    GridBox[{{
+                    
+                    TemplateBox[{"\[ThinSpace]", "\" \"", "\"price\""}, 
+                    "RowWithSeparators"]}, {
+                    StyleBox["\"Text\"", "TextElementLabel"]}}, BaseStyle -> 
+                    "TextElementGrid"], 
+                    TextElement[{"price"}, <|"GrammaticalUnit" -> "Text"|>]], 
+                    "|", 
+                    InterpretationBox[
+                    GridBox[{{
+                    
+                    TemplateBox[{"\[ThinSpace]", "\" \"", "\"prices\""}, 
+                    "RowWithSeparators"]}, {
+                    StyleBox["\"Text\"", "TextElementLabel"]}}, BaseStyle -> 
+                    "TextElementGrid"], 
+                    
+                    TextElement[{"prices"}, <|
+                    "GrammaticalUnit" -> "Text"|>]]}]}, 
+                    "RowWithSeparators"]}, {
+                    StyleBox["\"Alternatives\"", "TextElementLabel"]}}, 
+                    BaseStyle -> "TextElementGrid"], 
+                    TextElement[{
+                    Alternatives[
+                    TextElement[{"price"}, <|"GrammaticalUnit" -> "Text"|>], 
+                    
+                    TextElement[{"prices"}, <|
+                    "GrammaticalUnit" -> "Text"|>]]}, <|
+                    "GrammaticalUnit" -> "Alternatives"|>]]}, 
+                  "RowWithSeparators"]}, {
+                 StyleBox["\"BoundToken\"", "TextElementLabel"]}}, BaseStyle -> 
+               "TextElementGrid"], 
+              TextElement[{
+                TextElement[{
+                  Alternatives[
+                   TextElement[{"price"}, <|"GrammaticalUnit" -> "Text"|>], 
+                   
+                   TextElement[{"prices"}, <|
+                    "GrammaticalUnit" -> "Text"|>]]}, <|
+                 "GrammaticalUnit" -> "Alternatives"|>]}, <|
+               "GrammaticalUnit" -> "BoundToken"|>]]}, "RowWithSeparators"]}, {
+           StyleBox["\"Optional\"", "TextElementLabel"]}}, BaseStyle -> 
+         "TextElementGrid"], 
+        TextElement[{
+          TextElement[{
+            TextElement[{
+              Alternatives[
+               TextElement[{"price"}, <|"GrammaticalUnit" -> "Text"|>], 
+               TextElement[{"prices"}, <|"GrammaticalUnit" -> "Text"|>]]}, <|
+             "GrammaticalUnit" -> "Alternatives"|>]}, <|
+           "GrammaticalUnit" -> "BoundToken"|>]}, <|
+         "GrammaticalUnit" -> "Optional"|>]]},
       "RowWithSeparators"]},
     {
      StyleBox["\<\"StringExpression\"\>", "TextElementLabel"]}
@@ -4883,10 +4961,19 @@ Cell[BoxData[
    BaseStyle->"TextElementGrid"],
   TextElement[{
     TextElement[{"Verb"}, <|"GrammaticalUnit" -> "TextType"|>], 
-    TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
+    TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>], 
+    TextElement[{
+      TextElement[{
+        TextElement[{
+          Alternatives[
+           TextElement[{"price"}, <|"GrammaticalUnit" -> "Text"|>], 
+           TextElement[{"prices"}, <|"GrammaticalUnit" -> "Text"|>]]}, <|
+         "GrammaticalUnit" -> "Alternatives"|>]}, <|
+       "GrammaticalUnit" -> "BoundToken"|>]}, <|
+     "GrammaticalUnit" -> "Optional"|>]}, <|
    "GrammaticalUnit" -> "StringExpression"|>]]], "Output",
- CellLabel->"Out[45]=",
- CellID->1867513257]
+ CellLabel->"Out[4]=",
+ CellID->383272714]
 }, Open  ]]
 }, Open  ]],
 
@@ -4921,8 +5008,23 @@ Cell[TextData[{
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- "'s as input. If using a file-path string, either surround it with File or \
-List. ",
+ "'s as input. If using a file-path string, surround it with either ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["File"]], "paclet:ref/File"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " or ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["List"]], "paclet:ref/List"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ ". ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -4939,9 +5041,17 @@ List. ",
    "RefLink",
    BaseStyle->{"InlineFormula"}]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " to make one, then specify which files to use from the index by supplying a \
-search query. The way to do this is to use a Rule where the lhs is the index \
-and the rhs is the search query.  A ",
+ " to make one. In LexicalCases specify which files to use from the index by \
+supplying a search query. This is done with a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Rule"]], "paclet:ref/Rule"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " where the left-hand-side (lhs) is the index and the right-hand-side (rhs) \
+is the search query.  A ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -4969,8 +5079,17 @@ Cell["Built-in String Functions", "TechNoteSection",
  CellID->323829644],
 
 Cell[TextData[{
- "If you prefer not to return a LexicalSummary object, or would like \
-lightweight output, consider using the ",
+ "If you prefer lightweight output, instead of the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LexicalSummary"]], 
+    "paclet:FaizonZaman/LexicalCases/ref/LexicalSummary", 
+    "FaizonZaman Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " object, consider using the ",
  Cell[BoxData[
   TemplateBox[{
     Cell[
@@ -4980,7 +5099,8 @@ lightweight output, consider using the ",
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro"],
- " wrapper in basic String functions."
+ " wrapper in built-in String functions. Note that options are not supported \
+at the moment for this use case."
 }], "TechNoteText",
  CellID->1280570768],
 
@@ -5008,7 +5128,13 @@ Cell[BoxData[
  CellLabel->"In[22]:=",
  CellID->2050338705],
 
-Cell["Find cases of a lexical pattern in text", "TechNoteMathCaption",
+Cell[TextData[{
+ "Find cases of ",
+ Cell[BoxData[
+  StyleBox["aliceVerbAdverbPattern", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " in \"Alice In Wonderland\""
+}], "TechNoteMathCaption",
  CellID->16361184],
 
 Cell[CellGroupData[{
@@ -5036,7 +5162,13 @@ Cell[BoxData[
  CellID->907658816]
 }, Open  ]],
 
-Cell["Find the string positions of a LexicalPattern", "TechNoteMathCaption",
+Cell[TextData[{
+ "Find string positions of ",
+ Cell[BoxData[
+  StyleBox["aliceVerbAdverbPattern", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro"],
+ " matches in \"Alice In Wonderland\""
+}], "TechNoteMathCaption",
  CellID->1991854146],
 
 Cell[CellGroupData[{
@@ -5096,7 +5228,12 @@ Cell[BoxData[
  CellID->785845564]
 }, Open  ]],
 
-Cell["Check if a string matches a LexicalPattern", "TechNoteMathCaption",
+Cell[TextData[{
+ "Check if a string matches ",
+ Cell[BoxData[
+  StyleBox["aliceVerbAdverbPattern", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro"]
+}], "TechNoteMathCaption",
  CellID->198413051],
 
 Cell[CellGroupData[{
@@ -5147,6 +5284,26 @@ Cell[BoxData["True"], "Output",
 
 Cell[CellGroupData[{
 
+Cell["Conclusion", "TechNoteSection",
+ CellID->2118948183],
+
+Cell[TextData[{
+ "Now you've seen what LexicalCases can do! If you have ideas, comments, \
+questions, feel free to send a message on the paclet repository. The code is \
+also available on ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GitHub"]], "https://github.com/dishmint/LexicalCases"},
+   "WebLink",
+   BaseStyle->{"TechNoteText"}]]],
+ ". "
+}], "TechNoteText",
+ CellID->667725448]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[GridBox[{
    {
     DynamicBox[FEPrivate`ImportImage[
@@ -5183,7 +5340,7 @@ TaggingRules->{
   "NewStyles" -> True, "CitationPopupData" -> {"", ""}, "ShowCitation" -> 
   False, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 7, 19, 14, 24, 50.103046}", 
+   "built" -> "{2022, 7, 25, 18, 49, 13.909384}", 
     "history" -> {"??", "", "", ""}, "context" -> "FaizonZaman`LexicalCases`",
      "keywords" -> {
      "lexical cases overview", "lexical cases tutorial", 
@@ -5191,19 +5348,19 @@ TaggingRules->{
     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
      "label" -> "Faizon Zaman/ Lexical Cases Tech Note", "language" -> "en", 
     "paclet" -> "FaizonZaman/LexicalCases", "status" -> "None", "summary" -> 
-    "This may seem redundant, but this document might appear on the web at \
-some point. Paclet releases can be found here. Once downloaded, install with \
-PacletInstall, specifying the path to the downloaded paclet, then load \
-definitions with Needs. LexicalCases searches text for string patterns with \
-interpretable types. While similar to StringCases, TextCases etc., types are \
-not restricted to the Containing wrapper. With a few additional pattern types \
-one can search for a variety of strings at the lexical level. Here we can \
-search the Origin Of Species for phrases taking the form \"<Adverb> \
-<Adjective> <specie|species>\"", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$221841, "title" -> 
+    "This paclet is hosted on the Wolfram Paclet Repository. First install \
+the paclet from the ResourceObject, then load it with Needs. LexicalCases \
+searches text for patterns which can contain interpretable types. While \
+similar to StringCases, TextCases etc., types can be expressed anywhere in a \
+lexical pattern, and with a few additional pattern types one can search for a \
+variety of text segments at the lexical level. Here we can search the Origin \
+Of Species for adverb~adjective patterns ending with \"specie\" or \
+\"species\". ", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$68006, "title" -> 
     "LexicalCases Overview", "titlemodifier" -> "", "windowtitle" -> 
     "LexicalCases Overview", "type" -> "Tech Note", "uri" -> 
-    "FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview"}},
+    "FaizonZaman/LexicalCases/tutorial/LexicalCasesOverview", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
    Cell[
@@ -5236,183 +5393,189 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[593, 21, 3102, 76, 70, "AnchorBarGrid",ExpressionUUID->"db7b783a-adf3-41a1-95ab-4c5b8c7f3ac1",
+Cell[593, 21, 3101, 76, 70, "AnchorBarGrid",ExpressionUUID->"64afb5d0-dc9d-45d0-b8e2-faaaf3ace7ca",
  CellID->1],
 Cell[CellGroupData[{
-Cell[3720, 101, 936, 30, 70, "ObjectNameGrid",ExpressionUUID->"6a8f9556-88d7-4570-a2f2-070eaaabff2a"],
-Cell[4659, 133, 3554, 83, 70, "TechNoteJumpBox",ExpressionUUID->"084abea8-8b5a-4127-b6f9-6543f5584041"]
+Cell[3719, 101, 936, 30, 70, "ObjectNameGrid",ExpressionUUID->"17703e33-cbe9-480c-88c8-8168972b191a"],
+Cell[4658, 133, 4429, 104, 70, "TechNoteJumpBox",ExpressionUUID->"81f632c3-1750-4f78-8dad-cc87fd447835"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8250, 221, 59, 1, 70, "TechNoteSection",ExpressionUUID->"f863cf36-b82e-48d9-85de-287f1cd7d845",
+Cell[9124, 242, 59, 1, 70, "TechNoteSection",ExpressionUUID->"52b88436-ccd7-4527-8542-bbbfc86ae79d",
  CellID->580651078],
-Cell[8312, 224, 851, 27, 70, "TechNoteText",ExpressionUUID->"69ee8133-91a0-4601-bd16-e430578d80e9",
+Cell[9186, 245, 747, 27, 70, "TechNoteText",ExpressionUUID->"da2568ba-0f91-4467-8e0f-80aa03b727ba",
  CellID->1692548],
-Cell[9166, 253, 107, 2, 70, "TechNoteMathCaption",ExpressionUUID->"15c84189-a2cc-4329-aa6b-1135bef0ef63",
+Cell[9936, 274, 107, 2, 70, "TechNoteMathCaption",ExpressionUUID->"13a4708a-3789-46ae-beda-83f4858a48d7",
  CellID->803553206],
-Cell[9276, 257, 231, 6, 70, "Input",ExpressionUUID->"8935e68f-c2b1-4305-b755-cfbbd7298216",
+Cell[10046, 278, 274, 6, 70, "Input",ExpressionUUID->"bde48e9d-455f-4ac6-9074-188c2c6ec1fe",
  CellID->700096613]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9544, 268, 59, 1, 70, "TechNoteSection",ExpressionUUID->"70aaf539-2cda-4987-a4bf-740ad887d542",
+Cell[10357, 289, 59, 1, 70, "TechNoteSection",ExpressionUUID->"93a17ae7-83e0-4efb-8e7a-eff7af408f03",
  CellID->652844990],
-Cell[9606, 271, 1185, 39, 70, "TechNoteText",ExpressionUUID->"8d5e3adb-e73d-449a-ae9d-26bc474809b4",
+Cell[10419, 292, 1013, 32, 70, "TechNoteText",ExpressionUUID->"8a81dadf-6988-4bfe-bd57-e511e74b1979",
  CellID->293313137],
-Cell[10794, 312, 3453, 108, 70, "DefinitionBox",ExpressionUUID->"b917d90f-55c1-4984-b28c-7d3cd6a57b86",
+Cell[11435, 326, 3453, 108, 70, "DefinitionBox",ExpressionUUID->"b75f753e-358a-4c17-a03f-b99d02e824eb",
  CellID->1238923694],
-Cell[14250, 422, 127, 3, 70, "TechNoteCaption",ExpressionUUID->"aa25552f-3fc0-4be6-b200-6ac58f966bbe",
+Cell[14891, 436, 127, 3, 70, "TechNoteCaption",ExpressionUUID->"fe64e035-ca73-47b6-aebb-4d1b9a9a3c54",
  CellID->589083746],
-Cell[14380, 427, 165, 4, 70, "TechNoteText",ExpressionUUID->"944c12be-6046-49e1-aeb7-bd3f67ec4df3",
+Cell[15021, 441, 165, 4, 70, "TechNoteText",ExpressionUUID->"82dd887e-09db-48a9-b5a0-c83e26435f8d",
  CellID->1092979763],
-Cell[14548, 433, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"c1a61e1b-0882-418f-83cd-090661951883",
+Cell[15189, 447, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"21d9d7f9-ee01-432f-9a42-09c6203eab0a",
  CellID->830906352],
-Cell[14654, 437, 251, 8, 70, "Input",ExpressionUUID->"ad84379f-e824-4166-9b58-c8b645cd6661",
+Cell[15295, 451, 251, 8, 70, "Input",ExpressionUUID->"c24e544d-b4a5-45e7-b1df-621fbe91ce53",
  CellID->1445746235],
 Cell[CellGroupData[{
-Cell[14930, 449, 407, 11, 70, "Input",ExpressionUUID->"62eb281f-34ae-424e-9ec9-70fe6c66329e",
+Cell[15571, 463, 407, 11, 70, "Input",ExpressionUUID->"ff8ee390-85bf-456c-910f-56657ef206b7",
  CellID->1493889061],
-Cell[15340, 462, 12705, 246, 70, "Output",ExpressionUUID->"9855b598-facd-49f6-9d48-dd058ba5700c",
+Cell[15981, 476, 12705, 246, 70, "Output",ExpressionUUID->"e3f023dd-952b-4e22-ad1f-2feb9d37ec55",
  CellID->363180514]
 }, Open  ]],
-Cell[28060, 711, 427, 13, 70, "TechNoteText",ExpressionUUID->"97232a7d-db6a-4960-bad8-ae85e46cebef",
+Cell[28701, 725, 657, 22, 70, "TechNoteText",ExpressionUUID->"685ddc5d-4f67-40f3-ac89-6ac793c85611",
  CellID->485178528],
-Cell[28490, 726, 2811, 80, 70, "DefinitionBox",ExpressionUUID->"e7fdb900-42e9-41a4-9948-06d66eb70e7c",
+Cell[29361, 749, 2811, 80, 70, "DefinitionBox",ExpressionUUID->"25122521-0687-415d-9568-761604fd5e18",
  CellID->1696821134],
-Cell[31304, 808, 73, 1, 70, "TechNoteCaption",ExpressionUUID->"5ddfb218-53a7-407e-a263-bc6d03fce045",
+Cell[32175, 831, 73, 1, 70, "TechNoteCaption",ExpressionUUID->"74859802-bf27-4f5d-8411-89db5371ad90",
  CellID->2037450625],
-Cell[31380, 811, 80, 1, 70, "TechNoteMathCaption",ExpressionUUID->"459ed14c-a1c7-487c-a562-9056622248a3",
+Cell[32251, 834, 80, 1, 70, "TechNoteMathCaption",ExpressionUUID->"82f3d72f-b81f-416a-be19-98d4d725d4a1",
  CellID->1229863116],
 Cell[CellGroupData[{
-Cell[31485, 816, 117, 3, 70, "Input",ExpressionUUID->"7baaaf2b-7bc1-4be6-838a-7372c264397a",
+Cell[32356, 839, 117, 3, 70, "Input",ExpressionUUID->"09498220-12da-4c8b-aa1f-787b67c153f1",
  CellID->779288237],
-Cell[31605, 821, 474, 9, 70, "Output",ExpressionUUID->"85718239-467f-4daf-953d-4c61189343c8",
+Cell[32476, 844, 474, 9, 70, "Output",ExpressionUUID->"b4900cb5-a79c-4b87-9bba-28caf35a2cb2",
  CellID->1454822757]
 }, Open  ]],
-Cell[32094, 833, 309, 9, 70, "TechNoteText",ExpressionUUID->"aacb9bd0-b624-402e-a91c-14724bf08486",
+Cell[32965, 856, 309, 9, 70, "TechNoteText",ExpressionUUID->"f3f73cbd-c690-4101-bda7-6a361550f128",
  CellID->1523155587],
-Cell[32406, 844, 299, 11, 70, "TechNoteMathCaption",ExpressionUUID->"3297a034-b9b6-4b18-b848-235d4a4de2d2",
+Cell[33277, 867, 288, 11, 70, "TechNoteMathCaption",ExpressionUUID->"9d063dc7-bb0e-4b32-bf87-90ef6dbe1421",
  CellID->826374024],
 Cell[CellGroupData[{
-Cell[32730, 859, 114, 3, 70, "Input",ExpressionUUID->"de883284-1f71-4427-bd3f-963ef487448d",
+Cell[33590, 882, 114, 3, 70, "Input",ExpressionUUID->"692ccbcd-963a-428a-8d51-4bad5320cb5a",
  CellID->342895442],
-Cell[32847, 864, 124507, 2265, 70, "Output",ExpressionUUID->"4148254e-c4e0-4cc9-8c69-8d03d472e1c3",
+Cell[33707, 887, 124507, 2265, 70, "Output",ExpressionUUID->"fd341ccf-7883-4571-9835-a9c91db17a83",
  CellID->1109056777]
 }, Open  ]],
-Cell[157369, 3132, 213, 6, 70, "TechNoteText",ExpressionUUID->"6150565d-3f9b-498e-8c91-d665bea41556",
+Cell[158229, 3155, 319, 9, 70, "TechNoteText",ExpressionUUID->"dd2fb660-137e-4421-b3cf-e3b3e6e7008f",
  CellID->302090059],
-Cell[157585, 3140, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"c46640ee-415b-4860-aa5d-2feb66658c55",
+Cell[158551, 3166, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"e8ec2cf6-f3f2-4435-9e87-cd1fbaf503ec",
  CellID->793577259],
 Cell[CellGroupData[{
-Cell[157713, 3146, 117, 3, 70, "Input",ExpressionUUID->"c3dbb885-e008-4ef1-b9ca-e5bcb0702e4c",
+Cell[158679, 3172, 117, 3, 70, "Input",ExpressionUUID->"ca4465d8-a2cf-4238-9842-50e905507745",
  CellID->82992742],
-Cell[157833, 3151, 36963, 675, 70, "Output",ExpressionUUID->"1a2f7c27-6582-4f3a-b5e2-2637c3e8eaca",
+Cell[158799, 3177, 36963, 675, 70, "Output",ExpressionUUID->"21a7f2de-26a9-4d23-9db0-1fde55fdb6c7",
  CellID->1655670474]
 }, Open  ]],
-Cell[194811, 3829, 276, 7, 70, "TechNoteText",ExpressionUUID->"6aa4b303-dac4-4412-b08e-5b29f7bf8294",
+Cell[195777, 3855, 188, 5, 70, "TechNoteText",ExpressionUUID->"df2aec5a-6c3e-4f31-a45a-15bd246d92bc",
  CellID->1840397229],
-Cell[195090, 3838, 77, 1, 70, "TechNoteMathCaption",ExpressionUUID->"fb4c1f2d-4202-400f-b928-9b143e7c518f",
+Cell[195968, 3862, 77, 1, 70, "TechNoteMathCaption",ExpressionUUID->"f7da6e9f-3c31-48cd-9020-1e74daac3ab7",
  CellID->181087201],
 Cell[CellGroupData[{
-Cell[195192, 3843, 113, 3, 70, "Input",ExpressionUUID->"a737398b-8322-41b6-9c74-3398812153dc",
+Cell[196070, 3867, 113, 3, 70, "Input",ExpressionUUID->"33ae7c34-05a9-4927-8092-fc292836f9f9",
  CellID->548259408],
-Cell[195308, 3848, 8514, 170, 70, "Output",ExpressionUUID->"ccf9bcf4-23cb-4221-b0a9-4878b03001a5",
+Cell[196186, 3872, 8514, 170, 70, "Output",ExpressionUUID->"64d876d5-b762-41ab-b5db-445fc1894d25",
  CellID->1823446976]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[203871, 4024, 75, 1, 70, "TechNoteSection",ExpressionUUID->"3372c39b-d2a6-42c9-99e6-bb08db865b5d",
+Cell[204749, 4048, 75, 1, 70, "TechNoteSection",ExpressionUUID->"534759a4-2703-4b1c-afce-01b9ce1b48a8",
  CellID->156924819],
 Cell[CellGroupData[{
-Cell[203971, 4029, 70, 1, 70, "Subsection",ExpressionUUID->"c11124de-0319-4f84-998e-821e5ba9c29f",
+Cell[204849, 4053, 70, 1, 70, "Subsection",ExpressionUUID->"ba7216c6-65d7-47d4-8284-a467fcc863de",
  CellID->7236515],
-Cell[204044, 4032, 1000, 28, 70, "TechNoteText",ExpressionUUID->"ca21243c-15fd-487a-ab87-8d10839f1b1f",
+Cell[204922, 4056, 862, 22, 70, "TechNoteText",ExpressionUUID->"b853dbf1-5ef8-484c-a191-3e01a9880974",
  CellID->1086904220],
-Cell[205047, 4062, 133, 3, 70, "TechNoteMathCaption",ExpressionUUID->"f912790d-8c00-4aee-85b5-40590984aec1",
+Cell[205787, 4080, 133, 3, 70, "TechNoteMathCaption",ExpressionUUID->"4855378b-e1f7-4ab7-b325-3624bce7b3ea",
  CellID->2078442571],
-Cell[205183, 4067, 381, 11, 70, "Input",ExpressionUUID->"2ae13b09-c9d0-40d2-9f22-4ed5d2b4f6c2",
+Cell[205923, 4085, 381, 11, 70, "Input",ExpressionUUID->"4371bf9c-1525-4f97-8e5f-1537d188e539",
  CellID->383905135],
 Cell[CellGroupData[{
-Cell[205589, 4082, 119, 3, 70, "Input",ExpressionUUID->"504c255b-fb94-434b-989e-1ae6b296c247",
+Cell[206329, 4100, 119, 3, 70, "Input",ExpressionUUID->"9348556b-18e3-45ed-90ac-cedfa540d940",
  CellID->858358621],
-Cell[205711, 4087, 37709, 689, 70, "Output",ExpressionUUID->"5f8f4714-71f5-4d4a-8ad8-cdce822531fb",
+Cell[206451, 4105, 37709, 689, 70, "Output",ExpressionUUID->"74c9da55-ac73-46a5-9265-85fa3d72ef6f",
  CellID->1744701954]
 }, Open  ]],
-Cell[243435, 4779, 797, 24, 70, "TechNoteText",ExpressionUUID->"45058bef-de64-45b8-b631-914d0d340d77",
+Cell[244175, 4797, 679, 18, 70, "TechNoteText",ExpressionUUID->"708d8b87-e454-47b7-9d96-f8b358b3aadc",
  CellID->1292831582],
-Cell[244235, 4805, 87, 1, 70, "TechNoteMathCaption",ExpressionUUID->"1119302c-ba9a-4142-8953-875e9abc03d0",
+Cell[244857, 4817, 86, 1, 70, "TechNoteMathCaption",ExpressionUUID->"618a1d20-648b-4a5a-bef9-9328af4be2b4",
  CellID->1687971595],
 Cell[CellGroupData[{
-Cell[244347, 4810, 118, 3, 70, "Input",ExpressionUUID->"2893d0e2-c122-4a53-81cb-7f61043d70e4",
+Cell[244968, 4822, 118, 3, 70, "Input",ExpressionUUID->"69ea74bc-4339-4b11-9a3f-e32a59e7c6a2",
  CellID->475149696],
-Cell[244468, 4815, 1127, 30, 70, "Output",ExpressionUUID->"7e958645-0329-450a-a78d-146cb241f80e",
+Cell[245089, 4827, 1127, 30, 70, "Output",ExpressionUUID->"2a22a6b8-b570-4c9d-b621-0d0daf9b13b3",
  CellID->311248276]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[245632, 4850, 198, 6, 70, "Input",ExpressionUUID->"d84244db-4b11-4e18-899d-37a6580540ff",
- CellID->1479620295],
-Cell[245833, 4858, 1128, 30, 70, "Output",ExpressionUUID->"5f5dbd73-d419-46dd-852f-e027688503cd",
- CellID->1867513257]
+Cell[246253, 4862, 343, 10, 70, "Input",ExpressionUUID->"5e83e73b-59b3-405c-9353-c5369ba45327",
+ CellID->1246165327],
+Cell[246599, 4874, 4357, 101, 70, "Output",ExpressionUUID->"0ed817b3-b5df-4715-bf4e-2bee7a1bb26a",
+ CellID->383272714]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[247010, 4894, 48, 1, 70, "Subsection",ExpressionUUID->"7d354297-c24b-4a3e-953c-67eaf43bc250",
+Cell[251005, 4981, 48, 1, 70, "Subsection",ExpressionUUID->"78f934e2-5bc2-404e-a2b1-33b49b045651",
  CellID->1655250449],
-Cell[247061, 4897, 1980, 64, 70, "TechNoteText",ExpressionUUID->"6d1dfae1-cb37-4569-8567-bd379ade2e00",
+Cell[251056, 4984, 2571, 87, 70, "TechNoteText",ExpressionUUID->"3ac3a2f7-fd25-4900-b79f-322466432bac",
  CellID->1035615851]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[249090, 4967, 72, 1, 70, "TechNoteSection",ExpressionUUID->"69935f5c-39a5-4c4e-abba-50f71606f961",
+Cell[253676, 5077, 72, 1, 70, "TechNoteSection",ExpressionUUID->"06b73d2b-d8d8-4114-9cb8-8df9761b914d",
  CellID->323829644],
-Cell[249165, 4970, 480, 14, 70, "TechNoteText",ExpressionUUID->"1f3a5371-32c5-4dc0-9a49-98e2321500a1",
+Cell[253751, 5080, 800, 24, 70, "TechNoteText",ExpressionUUID->"0b992d55-a33e-454f-92de-d10ef3a2aec7",
  CellID->1280570768],
-Cell[249648, 4986, 68, 1, 70, "TechNoteMathCaption",ExpressionUUID->"8e08758e-5540-4417-a70f-1d3a4f9479df",
+Cell[254554, 5106, 68, 1, 70, "TechNoteMathCaption",ExpressionUUID->"1deb1cc8-d4fd-4f75-85d7-aabc69a7028d",
  CellID->1454019210],
-Cell[249719, 4989, 255, 8, 70, "Input",ExpressionUUID->"a65e149d-662e-4209-9d76-cbad0f01b2a6",
+Cell[254625, 5109, 255, 8, 70, "Input",ExpressionUUID->"b3933919-f587-41ce-8201-2c204152eca8",
  CellID->102638739],
-Cell[249977, 4999, 327, 9, 70, "Input",ExpressionUUID->"a4eb5480-eda6-421d-b08b-3f5122bd2376",
+Cell[254883, 5119, 327, 9, 70, "Input",ExpressionUUID->"eedf1ba0-d869-4f11-90bd-670b3ec6ced0",
  CellID->2050338705],
-Cell[250307, 5010, 89, 1, 70, "TechNoteMathCaption",ExpressionUUID->"25f674d8-b726-454b-a262-df30d84a2b06",
+Cell[255213, 5130, 222, 7, 70, "TechNoteMathCaption",ExpressionUUID->"c6613360-0bfe-4671-b34d-ab2360b5924d",
  CellID->16361184],
 Cell[CellGroupData[{
-Cell[250421, 5015, 161, 4, 70, "Input",ExpressionUUID->"1e4796f9-43a6-4984-af5a-09e85e7823b4",
+Cell[255460, 5141, 161, 4, 70, "Input",ExpressionUUID->"2d58c945-c5fb-4453-b151-1757587aa77b",
  CellID->509781875],
-Cell[250585, 5021, 795, 14, 70, "Output",ExpressionUUID->"6f5545cd-c69a-4a8f-8637-85bb563a89ec",
+Cell[255624, 5147, 795, 14, 70, "Output",ExpressionUUID->"e7f48f32-2dc1-437b-bea2-5f98ce5f2db8",
  CellID->907658816]
 }, Open  ]],
-Cell[251395, 5038, 97, 1, 70, "TechNoteMathCaption",ExpressionUUID->"c8c6e5a2-75e4-4f77-b4e7-b7697214bf62",
+Cell[256434, 5164, 243, 7, 70, "TechNoteMathCaption",ExpressionUUID->"2bb58566-0ae2-464c-bb6e-768d4d437d94",
  CellID->1991854146],
 Cell[CellGroupData[{
-Cell[251517, 5043, 164, 4, 70, "Input",ExpressionUUID->"a2ad0840-e671-418a-9931-2b71dbeae2f3",
+Cell[256702, 5175, 164, 4, 70, "Input",ExpressionUUID->"240cfcf7-7ec2-48a9-bde4-d0647c6db13a",
  CellID->586211615],
-Cell[251684, 5049, 1494, 46, 70, "Output",ExpressionUUID->"859808f4-4252-4379-9b05-a923262906d4",
+Cell[256869, 5181, 1494, 46, 70, "Output",ExpressionUUID->"1b0178d7-9518-4fee-9e39-24b56353966a",
  CellID->785845564]
 }, Open  ]],
-Cell[253193, 5098, 93, 1, 70, "TechNoteMathCaption",ExpressionUUID->"3ad1a3b1-7040-411f-b7aa-cbce9d0568fd",
+Cell[258378, 5230, 203, 6, 70, "TechNoteMathCaption",ExpressionUUID->"03a64b85-64f9-4999-90f1-c919226f9d71",
  CellID->198413051],
 Cell[CellGroupData[{
-Cell[253311, 5103, 191, 6, 70, "Input",ExpressionUUID->"f4aefdb7-b917-47ad-b964-26ccfddf916e",
+Cell[258606, 5240, 191, 6, 70, "Input",ExpressionUUID->"fe165fcb-c2de-4a6c-bb11-06042c469d68",
  CellID->474450722],
-Cell[253505, 5111, 75, 2, 70, "Output",ExpressionUUID->"af7ad7b8-9986-44c8-bbff-58a830e78531",
+Cell[258800, 5248, 75, 2, 70, "Output",ExpressionUUID->"71f34bac-1731-4470-a796-5b5482648393",
  CellID->354094330]
 }, Open  ]],
-Cell[253595, 5116, 116, 3, 70, "TechNoteText",ExpressionUUID->"626de542-3b3a-4684-a1ea-1394da1ad5a7",
+Cell[258890, 5253, 116, 3, 70, "TechNoteText",ExpressionUUID->"66246c0a-e183-4986-8cf4-2951e7a2ee8f",
  CellID->586218473],
-Cell[253714, 5121, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"37754167-1e76-4320-abc5-b66faa52a6dc",
+Cell[259009, 5258, 103, 2, 70, "TechNoteMathCaption",ExpressionUUID->"b2db612b-12be-42b1-8b40-013516a928c8",
  CellID->806281427],
-Cell[253820, 5125, 190, 6, 70, "Input",ExpressionUUID->"74c4543d-d758-45b0-b940-fa500ed44bd1",
+Cell[259115, 5262, 190, 6, 70, "Input",ExpressionUUID->"8bb00b49-99c6-4a06-8527-d0e33de43cd9",
  CellID->945678457],
 Cell[CellGroupData[{
-Cell[254035, 5135, 144, 4, 70, "Input",ExpressionUUID->"c6c68160-bb7a-492e-90f1-8ecb8db6082c",
+Cell[259330, 5272, 144, 4, 70, "Input",ExpressionUUID->"dc8c28f6-8e20-4d64-b523-956a7e65b8e5",
  CellID->1358433434],
-Cell[254182, 5141, 75, 2, 70, "Output",ExpressionUUID->"eaea0f11-3e8c-40b4-ae3f-3d843e4d44a7",
+Cell[259477, 5278, 75, 2, 70, "Output",ExpressionUUID->"5a8b9cbc-e31a-476f-b324-daf4da3acbb9",
  CellID->771432212]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[254306, 5149, 594, 16, 70, "TutorialMoreAboutSection",ExpressionUUID->"fc5b45e4-1422-40e3-bc46-130f89275d64"],
-Cell[254903, 5167, 26, 0, 70, "Input",ExpressionUUID->"f8899a53-7977-47d4-bebd-2539bbe1815a"]
+Cell[259601, 5286, 58, 1, 70, "TechNoteSection",ExpressionUUID->"f0f811b1-4eda-4be9-83bc-cb0867eb41d1",
+ CellID->2118948183],
+Cell[259662, 5289, 397, 12, 70, "TechNoteText",ExpressionUUID->"93b02a08-9a72-4303-be27-e7053fc47c84",
+ CellID->667725448]
 }, Open  ]],
-Cell[254944, 5170, 23, 0, 70, "FooterCell",ExpressionUUID->"5cf0164b-aea6-4012-aa80-633d09b1f3a4"]
+Cell[CellGroupData[{
+Cell[260096, 5306, 594, 16, 70, "TutorialMoreAboutSection",ExpressionUUID->"5864d633-99d4-4dfc-91fc-3059f6179970"],
+Cell[260693, 5324, 26, 0, 70, "Input",ExpressionUUID->"b7128eb3-0d05-4f65-8f93-e9bbfa4aec07"]
+}, Open  ]],
+Cell[260734, 5327, 23, 0, 70, "FooterCell",ExpressionUUID->"af2a8c4b-9240-4bb6-bd0a-8629f1455814"]
 }
 ]
 *)

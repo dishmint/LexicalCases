@@ -60,5 +60,5 @@
    "FileHash" -> "kEJC9yFC/dvA+TbWJutcJAQlvPD71MQtxLn2CjurP8o="|>, 
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[3.871489, "Seconds"]|>], 
-   "FileHash" -> "pPzjsVGzLO/FMEZnxHBrQzfLLccwaylWqFG1LUbrzuo="|>|>
+     <|"Time" -> Quantity[3.73581, "Seconds"]|>], 
+   "FileHash" -> "6LoqetFzW8izc1M2pPf1dmW+r1YI2222jydzo7aC8a0="|>|>
