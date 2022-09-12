@@ -61,6 +61,10 @@ $LexicalCasesServices::usage = "List of supported services"
 (* Analysis / Visualization *)
 
 LexicalDispersionPlot::usage = "LexicalDispersionPlot[text, w] plots the dispersion of word w across text\nLexicalDispersionPlot[text, {w1, \[Ellipsis], wi}] plots the dispersion of the wi across text"
+HideMissing::usage = "HideMissing is an option to LexicalDispersionPlot for hiding keywords from the plot if they were not found in the source text"
+DataJoin::usage = "DataJoin is an option to LexicalDispersionPlot specifying whether to combine results when given multiple source texts"
+DispersionPlotFunction::usage = "DispersionPlotFunction is an option to LexicalDispersionPlot specifying which kind of plot to use. Evaluate $DispersionPlotFunctions for a list of supported values"
+$DispersionPlotFunctions::usage = "$DispersionPlotFunctions returns a list of supported option values for DispersionPlotFunction"
 
 (* Options *)
 
