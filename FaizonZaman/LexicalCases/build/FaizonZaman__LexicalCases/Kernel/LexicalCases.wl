@@ -155,8 +155,7 @@ FormatToken[HoldPattern[h : (Blank | BlankSequence | BlankNullSequence
 	TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
 
 FormatToken[a_Alternatives] :=
-	TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit"
-		 -> "Alternatives"|>];
+	TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit"-> "Alternatives"|>];
 
 FormatToken[s_String] :=
 	TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
@@ -202,8 +201,7 @@ $LexicalCasesServices = {"Wikipedia"}
 ArticleIndex = 0;
 
 ArticleSearchIndicator[service_String, query_] :=
-	Row[{"Searching " <> service <> " for ", query, ProgressIndicator[Appearance
-		 -> "Ellipsis"]}]
+	Row[{"Searching " <> service <> " for ", query, ProgressIndicator[Appearance -> "Ellipsis"]}]
 
 (* Patterns *)
 
@@ -262,23 +260,24 @@ ExtractContainingContentTypes[se_] :=
 	Splice[Cases[se, TextType[type_Containing] :> type, {0, Infinity}]];
 
 ExtractContentTypes[se_] :=
-	Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes
-		}[se]]
+	Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes}[se]]
 
 ContentAssociation[st_String, (Rule | RuleDelayed)[se_, _]] :=
 	ContentAssociation[st, se]
 
 ContentAssociation[sourcetext_String, se_] :=
-	Map[UnwrapAlternatives] @ Merge[Identity] @ KeyValueMap[<|#1 -> Alternatives
-		 @@ DeleteDuplicates @ #2|>&][TextCases[sourcetext, ExtractContentTypes[
-		se]]]
+	Block[
+		{typecontent = TextCases[sourcetext, ExtractContentTypes[se]], valuealts, mergeonkey},
+		valuealts = KeyValueMap[<|#1 -> Alternatives@@ DeleteDuplicates @ #2|>&][typecontent];
+		mergeonkey = Merge[Identity] @ valuealts;
+		UnwrapAlternatives /@ mergeonkey
+		]
 
 ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
-	Module[{TRX, CA},
-		TRX = iExpandPattern[se];
-		CA = ContentAssociation[sourcetext, se];
-		Replace[TRX, TextType[type : (_String | _Containing)] :> ApplyTokenBoundary[
-			UnwrapAlternatives[CA[type]]], {0, Infinity}]
+	Module[{trx, ca},
+		trx = iExpandPattern[se];
+		ca = ContentAssociation[sourcetext, se];
+		Replace[trx, TextType[type : (_String | _Containing)] :> ApplyTokenBoundary[UnwrapAlternatives[ca[type]]], {0, Infinity}]
 	]
 
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] :=
@@ -350,28 +349,24 @@ iToWikipediaSearchQuery[RuleDelayed[lp_, _]] :=
 
 iToWikipediaSearchQuery[lp : Except[_TextType | _WordToken]] :=
 	Enclose[
-		Module[{CLP, WSQ},
-			CLP = Cases[List @@ lp, (h : Except[TextType | WordToken])[args__]
-				 :> Cases[{args}, _String, {0, Infinity}]];
-			WSQ = Confirm[WikipediaSearchQuery[CLP, lp]];
-			WSQ //
-			StringReplace[(" "..) -> " "] //
-			StringTrim
+		Module[{clp, wsq},
+			clp = Cases[List @@ lp, (h : Except[TextType | WordToken])[args__] :> Cases[{args}, _String, {0, Infinity}]];
+			wsq = Confirm[WikipediaSearchQuery[clp, lp]];
+			
+			wsq // StringReplace[(" "..) -> " "] // StringTrim
 		]
 	]
 
-iToWikipediaSearchQuery[lp_] :=
-	$Failed
+iToWikipediaSearchQuery[lp_] := $Failed
 
 ToWikipediaSearchQuery::novq = "`` did not produce any keywords."
 
-WikipediaArticlesFromRule["Content" -> a_Alternatives, opts : OptionsPattern[
-	{LexicalCases}]] :=
-	Module[{KWL = Apply[List][a], RULES},
-		RULES = Thread["Content" -> KWL];
-		Flatten @ Map[r |-> WikipediaArticlesFromRule[r, MaxItems -> (Ceiling[
-			OptionValue[MaxItems] / Length[KWL]]), FilterRules[{opts}, Except[MaxItems
-			]]]][RULES]
+WikipediaArticlesFromRule["Content" -> a_Alternatives, opts : OptionsPattern[{LexicalCases}]] :=
+	Module[
+		{kwl = Apply[List][a], rules, articlesfromrule},
+		rules = Thread["Content" -> kwl];
+		articlesfromrule = Map[rule |-> WikipediaArticlesFromRule[rule, MaxItems -> (Ceiling[OptionValue[MaxItems] / Length[kwl]]), FilterRules[{opts}, Except[MaxItems]]]][rules];
+		Flatten @ articlesfromrule
 	]
 
 WikipediaArticlesFromRule[rule : ("Content" -> _), opts : OptionsPattern[
@@ -388,25 +383,26 @@ WikipediaArticlesFromRule[rule : ("Category" -> _), opts : OptionsPattern[{Lexic
 	iGetCategoryArticles[WikipediaSearch[rule, MaxItems -> OptionValue[MaxCategories], Language -> OptionValue[Language]], OptionValue[MaxItems]]
 
 iGetWikipediaArticles[query_Rule, opts___] :=
-	Module[{ART, ARC, MTL, SQR = WikipediaKeywordString[Values[query]], 
-		TXT},
-		ART = Monitor[WikipediaArticlesFromRule[query, Sequence @@ FilterRules[
-			{opts}, OptionsJoin[WikipediaSearch, iSearchWikipedia]]], ArticleSearchIndicator[
-			"Wikipedia", SQR]];
-		ARC = Length[ART];
-		MTL = First @ TakeLargestBy[StringLength, 1][ART -> "Value"];
-		ASC = <|"Articles" -> ART, "ArticleCount" -> ARC, "ArticleCountString"
-			 -> ToString[ARC], "MaxTitleLength" -> MTL|>;
-		TXT = iGetWikipediaArticleText[ASC["Articles"], ASC["ArticleCount"],
-			 ASC["ArticleCountString"], ASC["MaxTitleLength"]];
-		<|"Text" -> TXT|> ~ Join ~ ASC
+	Module[
+		{art, arc, mtl, asc, sqr = WikipediaKeywordString[Values[query]], txt},
+		art =
+			Monitor[
+				WikipediaArticlesFromRule[query, Sequence @@ FilterRules[{opts}, OptionsJoin[WikipediaSearch, iSearchWikipedia]]],
+				ArticleSearchIndicator["Wikipedia", sqr]
+			];
+		arc = Length[art];
+		mtl = First @ TakeLargestBy[StringLength, 1][art -> "Value"];
+		asc = <|"Articles" -> art, "ArticleCount" -> arc, "ArticleCountString" -> ToString[arc], "MaxTitleLength" -> mtl|>;
+		txt = iGetWikipediaArticleText[asc["Articles"], asc["ArticleCount"], asc["ArticleCountString"], asc["MaxTitleLength"]];
+		<|"Text" -> txt|> ~ Join ~ asc
 	]
 
 iGetWikipediaArticleText[articles_List, articleCount_Integer, articleCountString_String, maxTitleLength_Integer] :=
-	Module[{TXT},
+	Module[
+		{txt},
 		SetSharedVariable[ArticleIndex];
 		ArticleIndex = 0;
-		TXT =
+		txt =
 			Monitor[
 				ParallelMap[
 					(
@@ -448,14 +444,20 @@ iGetWikipediaArticleText[articles_List, articleCount_Integer, articleCountString
 				]
 			];
 		ArticleIndex =.;
-		TXT
+		txt
 	]
 
 (* LexicalCases *)
 
-Options[LexicalCases] = {"Service" -> "Wikipedia", "StringTrim" -> True,
-	 IgnoreCase -> False, Overlaps -> False, MaxItems -> 50, MaxCategories
-	 -> 5, Language -> "English"};
+Options[LexicalCases] = {
+	"Service" -> "Wikipedia",
+	"StringTrim" -> True,
+	IgnoreCase -> False,
+	Overlaps -> False,
+	MaxItems -> 50,
+	MaxCategories -> 5,
+	Language -> "English"
+	};
 
 LexicalCases::unsupfmt = "`` is not a supported format. Valid formats are: .txt, .md, .csv and .tsv";
 
@@ -468,9 +470,9 @@ LexicalCases[file_File, args___] :=
 LexicalCases[input : List[__String], se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
-		Module[{files = Map[File][input], LPC},
-			LPC = iLexicalCases[files, se, opts];
-			GenerateLexicalSummary[LPC, "File", se]
+		Module[{files = Map[File][input], lpc},
+			lpc = iLexicalCases[files, se, opts];
+			GenerateLexicalSummary[lpc, "File", se]
 		]
 	]
 
@@ -483,10 +485,10 @@ oSourceType[List[__String]] :=
 LexicalCases[input : (List[__File] | List[__String]), se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
-		Module[{LPC, OST},
-			LPC = iLexicalCases[input, se, opts];
-			OST = oSourceType[input];
-			GenerateLexicalSummary[LPC, OST, se]
+		Module[{lpc, ost},
+			lpc = iLexicalCases[input, se, opts];
+			ost = oSourceType[input];
+			GenerateLexicalSummary[lpc, ost, se]
 		]
 	]
 
@@ -514,12 +516,12 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 				files,
 				f1 = DeleteMissing[Dataset[TextSearch[index, query][All, {"Text","Description"}]] // Normal, 2] // Flatten,
 				f2 = Map[File]@DeleteMissing[TextSearch[index, query][All, "Location"]],
-				LPC
+				lpc
 				},
 				If[Length@f1!=0,files = f1,files=f2];
 				ConfirmAssert[Not @* MatchQ[{}] @ files];
-				LPC = iLexicalCases[files, se, opts];
-				GenerateLexicalSummary[LPC, "SearchIndex", se]
+				lpc = iLexicalCases[files, se, opts];
+				GenerateLexicalSummary[lpc, "SearchIndex", se]
 			]
 			,
 			Failure["NoFilesFound",
@@ -539,35 +541,33 @@ LexicalCases[sourcetext_String, se_, opts : OptionsPattern[
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
 		ConfirmBy[se,LexicalPatternQ];
-		Module[{LPC, RES},
+		Module[{lpc, res},
 			ArticleIndex = 0;
 			(* Find Matches *)
-			LPC = Confirm[LexicalCasesOnString[sourcetext, se, opts]];
+			lpc = Confirm[LexicalCasesOnString[sourcetext, se, opts]];
 			(* Generate Summary Object *)
-			RES = GenerateLexicalSummary[LPC, "Text", se];
+			res = GenerateLexicalSummary[lpc, "Text", se];
 			(* Clear Article Index *)
 			ArticleIndex =.;
-			RES
+			res
 		]
 	]
 
 (* SourceText is a string *)
 
-LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[
-	LexicalCases]] :=
+LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] :=
 	Enclose[
-		Module[{RX, S = source, RES},
+		Module[{rx, s = source, res},
 			++ArticleIndex;
-			RX = ConfirmQuiet[ExpandPattern[S, se], {Java::excptn, JavaNew::fail
-				}];
-			RES = MatchTrim[OptionValue["StringTrim"]] @ Query[
+			rx = ConfirmQuiet[ExpandPattern[s, se], {Java::excptn, JavaNew::fail}];
+			res = MatchTrim[OptionValue["StringTrim"]] @ Query[
 				GroupBy[#Match&] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|>&]),
 				KeyDrop["Match"] /* Values /* (Flatten[#, 1]&)
 				] @ Map[AssociationThread[{"Match", "Position"} -> #]&] @ Transpose @ {
-					StringCases[S, RX, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
-					StringPosition[S, StripNamedPattern[RX], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
+					StringCases[s, rx, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
+					StringPosition[s, StripNamedPattern[rx], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 					};
-			RES
+			res
 		]
 	]
 
@@ -594,19 +594,18 @@ LexicalCases[query_Rule, se_?LexicalPatternQ, opts : OptionsPattern[{
 Options[LexicalCasesFromService] = {};
 
 StringSearch[text_, pattern_] :=
-	Module[{RES = LexicalCasesOnString[text, pattern]},
-		CriticalSection[lclock, MatchCount += Length[Replace[_Missing -> {}
-			] @ Flatten[Lookup[RES, "Position"], 1]]];
-		RES
+	Module[{res = LexicalCasesOnString[text, pattern]},
+		CriticalSection[lclock, MatchCount += Length[Replace[_Missing -> {}] @ Flatten[Lookup[res, "Position"], 1]]];
+		res
 	]
 
 SearchArticles[texts_List, se_?LexicalPatternQ, articles_List, articleCount_Integer, maxTitleLength_Integer] :=
-	Module[{MAT},
+	Module[{mat},
 		ArticleIndex = 0;
 		MatchCount = 0;
 		SetSharedVariable[se, MatchCount];
 		SetSharedFunction[StringSearch];
-		MAT = Monitor[
+		mat = Monitor[
 			ParallelMap[(StringSearch[#,se])&, texts],
 			Row[
 				{
@@ -626,18 +625,18 @@ SearchArticles[texts_List, se_?LexicalPatternQ, articles_List, articleCount_Inte
 			];
 		ArticleIndex =.;
 		MatchCount =.;
-		MAT
+		mat
 	]
 
 PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer
 	] :=
-	Module[{AMT, MAC},
-		AMT = Thread[{articles, ReplaceEmptyListWithMissing[matches]}];
-		SetSharedVariable[AMT, ArticleIndex];
+	Module[{amt, mac},
+		amt = Thread[{articles, ReplaceEmptyListWithMissing[matches]}];
+		SetSharedVariable[amt, ArticleIndex];
 		ArticleIndex = 0;
-		MAC =
+		mac =
 			Monitor[
-				ParallelMap[(++ArticleIndex;PrependArticleKey[#])&,AMT],
+				ParallelMap[(++ArticleIndex;PrependArticleKey[#])&,amt],
 				Row[
 					{
 						"Packaging results",
@@ -647,11 +646,10 @@ PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Int
 					]
 			];
 		ArticleIndex =.;
-		Flatten[MAC]
+		Flatten[mac]
 	]
 
-Options[iSearchWikipedia] = {MaxItems -> 50, MaxCategories -> 5, Language
-	 -> "English"};
+Options[iSearchWikipedia] = {MaxItems -> 50, MaxCategories -> 5, Language -> "English"};
 
 iSearchWikipedia[se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases}]] :=
 	Enclose[
@@ -676,26 +674,26 @@ LexicalCasesFromService["Wikipedia", query : (_Rule | _String | _List), se_?Lexi
 
 GetText[input : List[__String], opts : OptionsPattern[]] :=
 	Module[
-		{LEN = Length[input], REN},
-		REN = Range[LEN];
+		{len = Length[input], ren},
+		ren = Range[len];
 		<|
 			"Text" -> input,
-			"Articles" -> Map[ToString][REN],
-			"ArticleCount" -> LEN,
-			"ArticleCountString" -> ToString[LEN],
-			"MaxTitleLength" -> (First @ TakeLargestBy[REN -> "Value", IntegerDigits /* Length, 1])
+			"Articles" -> Map[ToString][ren],
+			"ArticleCount" -> len,
+			"ArticleCountString" -> ToString[len],
+			"MaxTitleLength" -> (First @ TakeLargestBy[ren -> "Value", IntegerDigits /* Length, 1])
 			|>
 	]
 
 GetText[input : List[__File], opts : OptionsPattern[]] :=
 	Module[
-		{LEN = Length[input], REN = Map[FileNameTake][input]},
+		{len = Length[input], ren = Map[FileNameTake][input]},
 		<|
 			"Text" -> Map[Import[#, "Text"]&][input],
-			"Articles" -> REN,
-			"ArticleCount" -> LEN,
-			"ArticleCountString" -> ToString[LEN],
-			"MaxTitleLength" -> (First @ TakeLargestBy[REN -> "Value", IntegerDigits /* Length, 1])
+			"Articles" -> ren,
+			"ArticleCount" -> len,
+			"ArticleCountString" -> ToString[len],
+			"MaxTitleLength" -> (First @ TakeLargestBy[ren -> "Value", IntegerDigits /* Length, 1])
 			|>
 	]
 
@@ -897,13 +895,12 @@ GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] :=
 
 iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ
 	] :=
-	Module[{MTC, DS = Dataset[data], cse = StripNamedPattern @ se, STC},
+	Module[{mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc},
 		
-		STC = LexicalStructure[cse];
-		MTC = DeleteMissing[GetDatasetCounts[DS, sourceType], 1, 1][Total, 
-			"Count"];
+		stc = LexicalStructure[cse];
+		mtc = DeleteMissing[GetDatasetCounts[ds, sourceType], 1, 1][Total, "Count"];
 		Confirm[
-			LexicalSummary[<|"Data" -> data, "Dataset" -> DS, "Source" -> sourceType, "TotalMatchCount" -> MTC, "LexicalStructure" -> STC|>],
+			LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> sourceType, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
 			Null,
 			"LexicalSummaryFailed"
 			]
@@ -967,9 +964,7 @@ ProcessWordData[w_] := w
 (* TODO: module-ize these functions for clarity *)
 
 PartOfSpeechGroups[ds_Dataset] :=
-	(ds[TextWords /* ToLowerCase /* Flatten /* DeleteStopwords /* DeleteDuplicates,
-		 "Matches"][AlphabeticSort][GroupBy[PartOfSpeechKey]][KeyDrop[None]] 
-		// KeySort) // KeyValueMap[<|"Words" -> #2, "PartOfSpeech" -> #1|>&]
+	(ds[TextWords /* ToLowerCase /* Flatten /* DeleteStopwords /* DeleteDuplicates, "Matches"][AlphabeticSort][GroupBy[PartOfSpeechKey]][KeyDrop[None]] // KeySort) // KeyValueMap[<|"Words" -> #2, "PartOfSpeech" -> #1|>&]
 
 GetWordStemCounts[ds_Dataset] :=
 	(
