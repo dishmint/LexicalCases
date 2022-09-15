@@ -11372,8 +11372,34 @@ Cell["text mining", "Item",
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.8672507855818777`*^9, 3.867250825483983*^9}, {
   3.867251762532044*^9, 3.867251769749071*^9}, {3.867251801749998*^9, 
-  3.867251805466688*^9}},
- CellID->2136157625,ExpressionUUID->"1c33fae2-debf-421c-8c9d-0ac7852965c1"]
+  3.867251805466688*^9}, {3.872210309921728*^9, 3.872210309924004*^9}},
+ CellID->2136157625,ExpressionUUID->"1c33fae2-debf-421c-8c9d-0ac7852965c1"],
+
+Cell["lexical dispersion", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8672507855818777`*^9, 3.867250825483983*^9}, {
+  3.867251762532044*^9, 3.867251769749071*^9}, {3.867251801749998*^9, 
+  3.867251805466688*^9}, {3.872210311194353*^9, 3.872210314498335*^9}},
+ CellID->2086878829,ExpressionUUID->"b1e4a302-0329-4217-b7b7-930f5906cc10"],
+
+Cell["text dispersion", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8672507855818777`*^9, 3.867250825483983*^9}, {
+  3.867251762532044*^9, 3.867251769749071*^9}, {3.867251801749998*^9, 
+  3.867251805466688*^9}, {3.872210311194353*^9, 3.8722103171136103`*^9}},
+ CellID->1074669460,ExpressionUUID->"59285e1f-a4ac-4223-832a-2621ee1cf49d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -12599,8 +12625,7 @@ modifications\n\[FilledSmallSquare] Internal handlers"}], "MoreInfoText"],
                    FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5, 
                    ImageSize -> {
                     Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> 
-                 True, 
-                 CellTags -> {
+                 True, CellTags -> {
                   "SectionMoreInfoDisclosuresWLSystemConfiguration"}, 
                  CellMargins -> {{66, 66}, {15, 15}}], 
                 HoldComplete[
@@ -13053,7 +13078,7 @@ support."
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{720, 847},
+WindowSize->{1156, 847},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 WindowTitle->"LexicalCases | Definition Notebook",
 DockedCells->{
