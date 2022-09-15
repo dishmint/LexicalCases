@@ -823,6 +823,8 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Counts"] :=
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups"] :=
 	(LexicalSummary[asc]["Counts"] // CountGroups)
 
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordCloud"] := asc["Dataset"][All, Table[#Match, Length[#Position]] &] // Normal/*Flatten/*WordCloud
+
 (* Count Properties Filtered *)
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer] :=
@@ -837,6 +839,15 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", DeleteStopwords] :=
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["CountGroups", n_Integer, DeleteStopwords] :=
 	(LexicalSummary[asc]["CountGroups", DeleteStopwords][ ;; UpTo[n]])
+
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordCloud", n_Integer] :=
+	(LexicalSummary[asc]["Dataset"][ ;; UpTo[n]][All, Table[#Match, Length[#Position]] &] // Normal/*Flatten/*WordCloud)
+
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordCloud", DeleteStopwords] :=
+	LexicalSummary[asc]["Dataset"][Select[Not@StopWordQ[#Match] &]][All, Table[#Match, Length[#Position]] &] // Normal/*Flatten/*WordCloud
+
+LexicalSummary[asc_?LexicalSummaryAscQ]["WordCloud", n_Integer, DeleteStopwords] :=
+	LexicalSummary[asc]["Dataset"][Select[Not@StopWordQ[#Match] &]][ ;; UpTo[n]][All, Table[#Match, Length[#Position]] &] // Normal/*Flatten/*WordCloud
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["Survey"] :=
 	GenerateDashboard[LexicalSummary[asc]]
@@ -995,16 +1006,21 @@ PercentDataset[ds_Dataset, matchcount_Integer] :=
 		"Percentage"]])
 
 GenerateDashboard[lps_LexicalSummary, params___] :=
-	With[{cogp = lps["CountGroupPercentages", params], lccp = lps["LowercaseCountGroupPercentages",
-		 params], posg = lps["PartOfSpeechGroups", params], wdsg = lps["WordStemCountGroups",
-		 params]},
+	With[
+		{
+			wcld = lps["WordCloud", params],
+			cogp = lps["CountGroupPercentages", params],
+			lccp = lps["LowercaseCountGroupPercentages",params],
+			posg = lps["PartOfSpeechGroups", params],
+			wdsg = lps["WordStemCountGroups",params]
+			},
 		DynamicModule[
 			{tab = "GroupPercentages"}
 			,
 			Column[
 				{
 					Panel[SetterBar[Dynamic[tab], {"GroupPercentages", "LowercaseGroupPercentages",
-						 "PartOfSpeechGroups", "WordStemCountGroups"}]]
+						 "PartOfSpeechGroups", "WordStemCountGroups", "WordCloud"}]]
 					,
 					Dynamic[
 						Switch[tab,
@@ -1018,6 +1034,9 @@ GenerateDashboard[lps_LexicalSummary, params___] :=
 								posg
 							,
 							"WordStemCountGroups",
+								wdsg
+							,
+							"WordCloud",
 								wdsg
 						]
 					]
