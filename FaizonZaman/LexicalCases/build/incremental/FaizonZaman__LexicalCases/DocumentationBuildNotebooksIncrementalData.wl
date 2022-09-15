@@ -1,7 +1,7 @@
 <|"English/Guides/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[0.576101, "Seconds"]|>], 
-   "FileHash" -> "PuuTZw8iZOXfeQP0L5TS4mbAXQ5YpifVHZOUv6FN7ho="|>, 
+     <|"Time" -> Quantity[1.300661, "Seconds"]|>], 
+   "FileHash" -> "Sf7fhzSl9neZdpndf2qVSth2FGTj9RuxTaB7EPzH/7Q="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.72584, "Seconds"]|>], 
@@ -20,8 +20,8 @@
    "FileHash" -> "UcHvXXQdBJLojo/+nQD7rs2jRFGTKT6wpi+evv+e9Q0="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionPlot.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[2.271903, "Seconds"]|>], 
-   "FileHash" -> "v0tDqxauO9qYSksaw3Vo5aDVXRT/4Fym/EyPi03sftw="|>, 
+     <|"Time" -> Quantity[1.682686, "Seconds"]|>], 
+   "FileHash" -> "al57ioSj/d1yDnsDxKU+WEXxLp6l6UuYcAzBIthNVZ0="|>, 
  "English/ReferencePages/Symbols/LexicalPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.228918, "Seconds"]|>], 
