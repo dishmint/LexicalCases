@@ -34,6 +34,7 @@ CountSummaryLowercase::usage = "CountSummaryLowercase[ds] lowercase matches in d
 
 StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 
+$FilterableProperties::usage = "List of filterable summary properties"
 (* Patterns *)
 
 TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
@@ -531,17 +532,16 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 
 (* SourceText and LexicalPattern Input *)
 
-LexicalCases[sourcetext_String, se_, opts : OptionsPattern[
-	LexicalCases]] :=
+LexicalCases[sourcetext_String, se_, opts: OptionsPattern[LexicalCases]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
 		ConfirmBy[se,LexicalPatternQ];
-		Module[{lpc, res},
+		Module[{lpc, src = Compress[sourcetext], res},
 			ArticleIndex = 0;
 			(* Find Matches *)
 			lpc = Confirm[LexicalCasesOnString[sourcetext, se, opts]];
 			(* Generate Summary Object *)
-			res = GenerateLexicalSummary[lpc, "Text", se];
+			res = GenerateLexicalSummary[lpc, "Text", src, se];
 			(* Clear Article Index *)
 			ArticleIndex =.;
 			res
@@ -762,7 +762,7 @@ LexicalSummary /: MakeBoxes[obj : LexicalSummary[asc_?LexicalSummaryAscQ
 	];
 
 LexicalSummaryAscQ[asc_?AssociationQ] :=
-	AllTrue[{"Data", "Dataset", "Source", "TotalMatchCount", "LexicalStructure"}, KeyExistsQ[asc, #]&]
+	AllTrue[{"Data", "Dataset", "Source", "SourceData", "TotalMatchCount", "LexicalStructure"}, KeyExistsQ[asc, #]&]
 
 LexicalSummaryAscQ[_] = False;
 
@@ -773,6 +773,9 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["Data"] :=
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["Source"] :=
 	asc["Source"]
+
+LexicalSummary[asc_?LexicalSummaryAscQ]["SourceData"] :=
+	asc["SourceData"]
 
 LexicalSummary[asc_?LexicalSummaryAscQ]["Dataset"] :=
 	asc["Dataset"]
@@ -792,7 +795,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages"] :=
 	PercentDataset[LexicalSummary[asc]["CountGroups"] // CountSummaryLowercase, asc["TotalMatchCount"]]
 
 (* Dataset Properties Filtered *)
-$FilterableProperties = {"CountGroupPercentages", "LowercaseCountGroupPercentages", "CountGroups", "Counts", "WordCloud", "Survey", "PartOfSpeechGroups", "WordStemCountGroups"};
+$FilterableProperties = {"Data", "Dataset", "CountGroupPercentages", "LowercaseCountGroupPercentages", "CountGroups", "Counts", "WordCloud", "Survey", "PartOfSpeechGroups", "WordStemCountGroups", "LexicalDispersion", "SmoothLexicalHistogram"};
 LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := Enclose[
 	ConfirmAssert[MemberQ[$FilterableProperties, prop], "Key [" <> prop <> "] is either an invalid LexicalSummary property or it does not support MaxItems or DeleteStopwords options"];
 	Module[
@@ -817,6 +820,42 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 			"Survey",
 			(
 				GenerateDashboard[LexicalSummary[asc], MaxItems -> maxitems, DeleteStopwords -> excludestopwords]
+			),
+			"LexicalDispersion",
+			(
+				res = asc["Dataset"] // ReverseSortBy[Length[#Position] &];
+				res = If[excludestopwords, FilterOutStopWordRows["Dataset", res], res];
+				res = res[ ;; UpTo[maxitems]];
+
+				(* NOTE: Plotting each match might take a while.. *)
+				Block[
+					{
+						keys = res[All,#Match&] // Normal // DeleteDuplicates,
+						ucmp = Uncompress[asc["SourceData"]]
+						},
+					LexicalDispersionPlot[ucmp, res, keys]
+				]
+			),
+			"SmoothLexicalHistogram",
+			(
+				res = asc["Dataset"] // ReverseSortBy[Length[#Position] &];
+				res = If[excludestopwords, FilterOutStopWordRows["Dataset", res], res];
+				res = res[ ;; UpTo[maxitems]];
+
+				(* NOTE: Plotting each match might take a while.. *)
+				Block[
+					{
+						keys = res[All,#Match&] // Normal // DeleteDuplicates,
+						ucmp = Uncompress[asc["SourceData"]]
+						},
+					LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram"]
+				]
+			),
+			"Data"|"Dataset", (
+				res = asc["Dataset"];
+				res = If[excludestopwords, FilterOutStopWordRows[prop, res], res];
+				res = res[;; UpTo[maxitems]];
+				If[prop==="Data", Normal[res], res]
 			),
 			_, (
 				res = LexicalSummary[asc][prop];
@@ -858,13 +897,35 @@ GenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] :=
 		"LexicalSummaryFailed"
 		]
 
-iGenerateLexicalSummary[data_, sourceType_String, se_?LexicalPatternQ] :=
+iGenerateLexicalSummary[data_, source_String, se_?LexicalPatternQ] := Enclose[
 	Module[{mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc},
-		
+		stc = LexicalStructure[cse];
+		mtc = DeleteMissing[GetDatasetCounts[ds, source], 1, 1][Total, "Count"];
+		Confirm[
+			LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> source, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
+			Null,
+			"LexicalSummaryFailed"
+			]
+		]
+	]
+
+GenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalPatternQ] :=
+	Enclose[
+		iGenerateLexicalSummary[data, sourceType, sourcedata, se],
+		Identity,
+		"LexicalSummaryFailed"
+		]
+
+
+iGenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalPatternQ] :=
+	Module[
+		{
+			mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc
+			},
 		stc = LexicalStructure[cse];
 		mtc = DeleteMissing[GetDatasetCounts[ds, sourceType], 1, 1][Total, "Count"];
 		Confirm[
-			LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> sourceType, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
+			LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> sourceType, "SourceData" -> sourcedata, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
 			Null,
 			"LexicalSummaryFailed"
 			]
@@ -921,8 +982,8 @@ FilterOutStopWordRows["Counts", ds_Dataset] :=
 	ds[All, Replace[#, KeyValuePattern[{"Match" -> s_String?StopWordQ}] :> <|"Match" -> Missing["StopWord"], "Count" -> #Count|>] &] // DeleteMissing[#, 1, 1] &
 FilterOutStopWordRows["WordCloud", ds_Dataset] :=
 	ds[All, Replace[#, KeyValuePattern[{"Match" -> s_String?StopWordQ}] :> <|"Match" -> Missing["StopWord"], "Position" -> #Position|>] &] // DeleteMissing[#, 1, 1] &
-(* FilterOutStopWordRows[ds_Dataset] :=
-	ds[(DeleteCases[#, _String?StopWordQ, 3]&) /* Select[Not @ SameQ[{}, #Matches]&]] *)
+FilterOutStopWordRows["Dataset", ds_Dataset] :=
+	ds[All, Replace[#, KeyValuePattern[{"Match" -> s_String?StopWordQ}] :> <|"Match" -> Missing["StopWord"], "Position" -> #Position|>] &] // DeleteMissing[#, 1, 1] &
 
 PartOfSpeechKey[word_String] :=
 	ProcessWordData[WordData[word, "PartsOfSpeech"]]
@@ -965,39 +1026,28 @@ PercentDataset[ds_Dataset, matchcount_Integer] :=
 		"Percentage"]])
 
 (* TODO: Dashboard should only present plots  *)
-GenerateDashboard[lps_LexicalSummary, opts:OptionsPattern[]] :=
+GenerateDashboard[lps_LexicalSummary, opts___Rule] :=
 	With[
 		{
 			wcld = lps["WordCloud", opts],
-			cogp = lps["CountGroupPercentages", opts],
-			lccp = lps["LowercaseCountGroupPercentages",opts],
-			posg = lps["PartOfSpeechGroups", opts],
-			wdsg = lps["WordStemCountGroups",opts]
+			ldpt = lps["LexicalDispersion", opts],
+			slhp = lps["SmoothLexicalHistogram", opts]
 			},
 		DynamicModule[
-			{tab = "GroupPercentages"}
-			,
+			{tab = "LexicalDispersion"},
 			Column[
 				{
-					Panel[SetterBar[Dynamic[tab], {"GroupPercentages", "LowercaseGroupPercentages",
-						 "PartOfSpeechGroups", "WordStemCountGroups", "WordCloud"}]]
-					,
+					Panel[SetterBar[Dynamic[tab], {"LexicalDispersion", "SmoothLexicalHistogram", "WordCloud"}]],
 					Dynamic[
 						Switch[tab,
-							"GroupPercentages",
-								cogp
+							"LexicalDispersion",
+								ldpt
 							,
-							"LowercaseGroupPercentages",
-								lccp
-							,
-							"PartOfSpeechGroups",
-								posg
-							,
-							"WordStemCountGroups",
-								wdsg
+							"SmoothLexicalHistogram",
+								slhp
 							,
 							"WordCloud",
-								wdsg
+								wcld
 						]
 					]
 				}
