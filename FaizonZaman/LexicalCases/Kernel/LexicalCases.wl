@@ -178,7 +178,7 @@ FormatToken[TextType, s_String] :=
 	TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
 
 FormatToken[t_, $Failed] :=
-	Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]
+	Enclose[Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]]
 
 FormatToken[h_, args__] :=
 	TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> ToString[
@@ -468,7 +468,7 @@ LexicalCases[input : List[__String], se_?LexicalPatternQ, opts : OptionsPattern[
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[{files = Map[File][input], lpc},
 			lpc = iLexicalCases[files, se, opts];
-			GenerateLexicalSummary[lpc, "File", se]
+			GenerateLexicalSummary[lpc["Results"], "File", lpc["Text"], se]
 		]
 	]
 
@@ -484,7 +484,7 @@ LexicalCases[input : (List[__File] | List[__String]), se_?LexicalPatternQ, opts 
 		Module[{lpc, ost},
 			lpc = iLexicalCases[input, se, opts];
 			ost = oSourceType[input];
-			GenerateLexicalSummary[lpc, ost, se]
+			GenerateLexicalSummary[lpc["Results"], ost, lpc["Text"], se]
 		]
 	]
 
@@ -517,7 +517,7 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 				If[Length@f1!=0,files = f1,files=f2];
 				ConfirmAssert[Not @* MatchQ[{}] @ files];
 				lpc = iLexicalCases[files, se, opts];
-				GenerateLexicalSummary[lpc, "SearchIndex", se]
+				GenerateLexicalSummary[lpc["Results"], "SearchIndex", lpc["Text"], se]
 			]
 			,
 			Failure["NoFilesFound",
@@ -568,22 +568,18 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[L
 
 (* LexicalPattern on Service *)
 
-LexicalCases[se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases,
-	 iSearchWikipedia}]] :=
+LexicalCases[se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases, iSearchWikipedia}]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[se, opts], 1]];
-		LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts
-			}, Options[iSearchWikipedia]]]
+		LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts}, Options[iSearchWikipedia]]]
 	]
 
 (* WikiQueryRyle and LexicalPattern Input *)
 
-LexicalCases[query_Rule, se_?LexicalPatternQ, opts : OptionsPattern[{
-	LexicalCases, iSearchWikipedia}]] :=
+LexicalCases[query_Rule, se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases, iSearchWikipedia}]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[query, se, opts], 2]];
-		LexicalCasesFromService[OptionValue["Service"], query, se, FilterRules[
-			{opts}, Options[iSearchWikipedia]]]
+		LexicalCasesFromService[OptionValue["Service"], query, se, FilterRules[{opts}, Options[iSearchWikipedia]]]
 	]
 
 Options[LexicalCasesFromService] = {};
@@ -623,8 +619,7 @@ SearchArticles[texts_List, se_?LexicalPatternQ, articles_List, articleCount_Inte
 		mat
 	]
 
-PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer
-	] :=
+PackageResults[matches_, articles_List, articleCount_Integer, maxTitleLength_Integer] :=
 	Module[{amt, mac},
 		amt = Thread[{articles, ReplaceEmptyListWithMissing[matches]}];
 		SetSharedVariable[amt, ArticleIndex];
@@ -662,10 +657,16 @@ iSearchWikipedia[query : (_String | _List), se_?LexicalPatternQ, opts: OptionsPa
 	iLexicalCases["Content" -> query, se, opts]
 
 LexicalCasesFromService["Wikipedia", se_?LexicalPatternQ, opts : OptionsPattern[]] :=
-	GenerateLexicalSummary[iSearchWikipedia[se, opts], "Wikipedia", se]
+	Module[
+		{data = iSearchWikipedia[se, opts]},
+		GenerateLexicalSummary[data["Results"], "Wikipedia", Compress[data["Text"]], se]
+	]
 
 LexicalCasesFromService["Wikipedia", query : (_Rule | _String | _List), se_?LexicalPatternQ, opts : OptionsPattern[]] :=
-	GenerateLexicalSummary[iSearchWikipedia[query, se, opts], "Wikipedia",se]
+	Module[
+		{data = iSearchWikipedia[query, se, opts]},	
+		GenerateLexicalSummary[data["Results"], "Wikipedia", Compress[data["Text"]], se]
+	]
 
 GetText[input : List[__String], opts : OptionsPattern[]] :=
 	Module[
@@ -705,7 +706,7 @@ iLexicalCases[input : (List[__String] | List[__File] | _Rule), se_?LexicalPatter
 		mtl = ard["MaxTitleLength"];
 		(* 3 - Search for LexicalPattern *)
 		mtc = SearchArticles[src, se, art, arc, mtl];
-		PackageResults[mtc, art, arc, mtl]
+		<|"Results"->PackageResults[mtc, art, arc, mtl], "Text" -> src|>
 	]
 
 (* LexicalSummary *)
@@ -731,7 +732,8 @@ DisplayArticlesWithMatch[source_, data_] :=
 (* LexicalSummary *)
 Options[LexicalSummary] = {
 	MaxItems -> All,
-	DeleteStopwords -> False
+	DeleteStopwords -> False,
+	ImageSize -> Automatic
 };
 
 LexicalSummary /: MakeBoxes[obj : LexicalSummary[asc_?LexicalSummaryAscQ
@@ -802,6 +804,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 		{
 			maxitems  = Replace[OptionValue[LexicalSummary, {opts}, MaxItems], All -> Infinity],
 			excludestopwords = OptionValue[LexicalSummary, {opts}, DeleteStopwords],
+			imgsize = OptionValue[LexicalSummary, {opts}, ImageSize],
 			res
 			},
 		Switch[prop,
@@ -819,7 +822,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 			),
 			"Survey",
 			(
-				GenerateDashboard[LexicalSummary[asc], MaxItems -> maxitems, DeleteStopwords -> excludestopwords]
+				GenerateDashboard[LexicalSummary[asc], MaxItems -> maxitems, DeleteStopwords -> excludestopwords, ImageSize -> imgsize]
 			),
 			"LexicalDispersion",
 			(
@@ -833,7 +836,10 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 						keys = res[All,#Match&] // Normal // DeleteDuplicates,
 						ucmp = Uncompress[asc["SourceData"]]
 						},
-					LexicalDispersionPlot[ucmp, res, keys]
+					Switch[asc["Source"],
+						"Wikipedia", LexicalDispersionPlot[ucmp, res, keys, DataJoin -> True],
+						_, LexicalDispersionPlot[ucmp, res, keys]
+					]
 				]
 			),
 			"SmoothLexicalHistogram",
@@ -848,7 +854,10 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 						keys = res[All,#Match&] // Normal // DeleteDuplicates,
 						ucmp = Uncompress[asc["SourceData"]]
 						},
-					LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram"]
+					Switch[asc["Source"],
+						"Wikipedia", LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram", DataJoin -> True],
+						_, LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram"]
+						]
 				]
 			),
 			"Data"|"Dataset", (
@@ -918,17 +927,17 @@ GenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalP
 
 
 iGenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalPatternQ] :=
-	Module[
-		{
-			mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc
-			},
-		stc = LexicalStructure[cse];
-		mtc = DeleteMissing[GetDatasetCounts[ds, sourceType], 1, 1][Total, "Count"];
-		Confirm[
-			LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> sourceType, "SourceData" -> sourcedata, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
-			Null,
-			"LexicalSummaryFailed"
-			]
+	Enclose[
+		Module[
+			{mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc},
+			stc = LexicalStructure[cse];
+			mtc = DeleteMissing[GetDatasetCounts[ds, sourceType], 1, 1][Total, "Count"];
+			Confirm[
+				LexicalSummary[<|"Data" -> data, "Dataset" -> ds, "Source" -> sourceType, "SourceData" -> sourcedata, "TotalMatchCount" -> mtc, "LexicalStructure" -> stc|>],
+				Null,
+				"LexicalSummaryFailed"
+				]
+		]
 	]
 
 (* Summary Utils *)
