@@ -13,12 +13,16 @@ Options[FaizonZaman`LexicalCases`LexicalDispersionPlot] = {
 
 FaizonZaman`LexicalCases`$DispersionPlotFunctions = {"MatrixPlot", "SmoothHistogram"}
 
-GetLexicalEvents[text_, tokens_] := Association@Map[
+GetLexicalEvents[text_String, tokens_] := Association@Map[
   (# -> StringPosition[text, FaizonZaman`LexicalCases`LexicalPattern[#]][[All, 1]]) &,
   tokens
   ]
 
+GetLexicalEvents[ds_Dataset, tokens_] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, Normal@ds]
+GetLexicalEvents[ds:List[__Association], tokens_] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, ds]
+
 FaizonZaman`LexicalCases`LexicalDispersionPlot[texts:{__String}, token_, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] := iMultiTextLDP[OptionValue[FaizonZaman`LexicalCases`DataJoin], texts, token, opts]
+FaizonZaman`LexicalCases`LexicalDispersionPlot[texts:{__String}, ds_Dataset, token_, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] := iMultiTextLDP[OptionValue[FaizonZaman`LexicalCases`DataJoin], ds, texts, token, opts]
 FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, token_, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] := FaizonZaman`LexicalCases`LexicalDispersionPlot[text, {token}, opts]
 FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, tokens_List, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] /; AllTrue[tokens, FaizonZaman`LexicalCases`LexicalPatternQ] := Module[
 	{
@@ -35,6 +39,23 @@ FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, tokens_List, opts:Op
 		]
 
 FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, ___] := $Failed
+
+
+FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, ds_Dataset, token_, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] := FaizonZaman`LexicalCases`LexicalDispersionPlot[text, ds, {token}, opts]
+FaizonZaman`LexicalCases`LexicalDispersionPlot[text_String, ds_Dataset, tokens_List, opts:OptionsPattern[{FaizonZaman`LexicalCases`LexicalDispersionPlot, MatrixPlot, SmoothHistogram}]] /; AllTrue[tokens, FaizonZaman`LexicalCases`LexicalPatternQ] := Module[
+	{
+		events,
+		plotfn = Replace[OptionValue[FaizonZaman`LexicalCases`DispersionPlotFunction], Automatic -> "MatrixPlot"]
+		},
+		events = GetLexicalEvents[ds, tokens];
+		If[
+			OptionValue[HideMissing],
+			events = DeleteCases[{}][events]
+			];
+		plot[plotfn, text, events, Keys[events], opts]
+]
+
+FaizonZaman`LexicalCases`LexicalDispersionPlot[ds_Dataset, ___] := $Failed
 
 Options[plot] = Options[FaizonZaman`LexicalCases`LexicalDispersionPlot];
 
@@ -92,7 +113,20 @@ iMultiTextLDP[True, texts_, tokens_, opts:OptionsPattern[]] := Block[
 
 		plot[plotfn, First@MaximalBy[texts, StringLength, 1], crosstextevents, Keys[crosstextevents], opts]
 	];
+iMultiTextLDP[True, ds_Dataset, texts_, tokens_, opts:OptionsPattern[]] := Block[
+	{
+		crosstextevents = Merge[Map[GetLexicalEvents[#, tokens]&, (Normal[ds] // SplitBy[#, #Article&]&)], Flatten],
+		plotfn = Replace[OptionValue[FaizonZaman`LexicalCases`DispersionPlotFunction], Automatic -> "MatrixPlot"]
+		},
+		If[
+			OptionValue[HideMissing],
+			crosstextevents = DeleteCases[{}][crosstextevents]
+			];
+
+		plot[plotfn, First@MaximalBy[texts, StringLength, 1], crosstextevents, Keys[crosstextevents], opts]
+	];
 iMultiTextLDP[False, texts_, tokens_, opts:OptionsPattern[]] := Map[FaizonZaman`LexicalCases`LexicalDispersionPlot[#, tokens, opts]&, texts];
+iMultiTextLDP[False, ds_Dataset, texts_, tokens_, opts:OptionsPattern[]] := Map[FaizonZaman`LexicalCases`LexicalDispersionPlot[ds, #, tokens, opts]&, texts];
 
 End[]
 EndPackage[]
