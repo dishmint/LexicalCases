@@ -32,8 +32,8 @@
    "FileHash" -> "O5I2lzWGqmKNkf2QEKARHbjaVM2kfcI5Emb7ORWIRX8="|>, 
  "English/ReferencePages/Symbols/LexicalSummary.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[4.741707, "Seconds"]|>], 
-   "FileHash" -> "d9dqg+vMunQSJtiVp2iZEAM4tgL9xBLEHZFzOKrcTlU="|>, 
+     <|"Time" -> Quantity[3.548555, "Seconds"]|>], 
+   "FileHash" -> "VHrrKn32iJZlGdlz2GsnhEfbUKV4IrzTXIL6Q4kUf4c="|>, 
  "English/ReferencePages/Symbols/OptionalToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.130619, "Seconds"]|>], 
