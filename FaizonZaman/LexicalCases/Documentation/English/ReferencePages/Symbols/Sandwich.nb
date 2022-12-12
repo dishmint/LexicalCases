@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     92400,       1952]
-NotebookOptionsPosition[     84034,       1774]
-NotebookOutlinePosition[     84705,       1798]
-CellTagsIndexPosition[     84625,       1793]
+NotebookDataLength[     91266,       1940]
+NotebookOptionsPosition[     83274,       1768]
+NotebookOutlinePosition[     84040,       1794]
+CellTagsIndexPosition[     83960,       1789]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -114,7 +114,7 @@ Cell["Sandwich", "ObjectName",
  CellID->2094893623],
 
 Cell[TextData[{
- Cell["   ", "ModInfo"],
+ Cell["   ", "ModInfo",ExpressionUUID->"e6b100d0-e4b5-4d62-9e97-5708db2fe647"],
  Cell[BoxData[
   RowBox[{
    ButtonBox["Sandwich",
@@ -122,28 +122,33 @@ Cell[TextData[{
     ButtonData->"paclet:FaizonZaman/LexicalCases/ref/Sandwich"], "[", 
    RowBox[{
     StyleBox["outer", "TI"], ",", 
-    StyleBox["inner", "TI"]}], "]"}]], "InlineFormula"],
- "\[LineSeparator]sandwiches ",
+    StyleBox["inner", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "141ad583-4d43-4ef1-b5a6-4c5ce3fd9f5d"],
+ "\[LineSeparator]sandwiches lexical pattern ",
  Cell[BoxData[
-  StyleBox["inner", "TI"]], "InlineFormula"],
- " between ",
+  StyleBox["inner", "TI"]], "InlineFormula",ExpressionUUID->
+  "9e1826fd-3331-4a88-a692-18237414b924"],
+ " between two instances of lexical pattern ",
  Cell[BoxData[
-  StyleBox["outer", "TI"]], "InlineFormula"],
+  StyleBox["outer", "TI"]], "InlineFormula",ExpressionUUID->
+  "e439591a-148c-475c-8200-f3f3a4833213"],
  "\n",
- Cell["   ", "ModInfo"],
+ Cell["   ", "ModInfo",ExpressionUUID->"0c908758-19b7-4511-8a71-98858c3a39a6"],
  Cell[BoxData[
   RowBox[{
    ButtonBox["Sandwich",
     BaseStyle->"Link",
     ButtonData->"paclet:FaizonZaman/LexicalCases/ref/Sandwich"], "[", 
-   StyleBox["outer", "TI"], "]"}]], "InlineFormula"],
+   StyleBox["outer", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "c8843a72-b62f-486f-8235-4f682b5ab960"],
  "\[LineSeparator]Represents an operator form that can be applied to an \
 expression"
 }], "Usage",
  CellChangeTimes->{{3.851646276792006*^9, 3.85164627699085*^9}, {
   3.852770678429731*^9, 3.852770697192687*^9}, {3.852770781025168*^9, 
-  3.8527708172949333`*^9}, {3.864432445163266*^9, 3.8644324690860357`*^9}},
- CellID->882729196],
+  3.8527708172949333`*^9}, {3.864432445163266*^9, 3.8644324690860357`*^9}, {
+  3.87986318640849*^9, 3.879863202201376*^9}},
+ CellID->882729196,ExpressionUUID->"c402ace1-2174-42db-968f-4fb483386163"],
 
 Cell[TextData[{
  Cell[BoxData[
@@ -301,17 +306,17 @@ Cell[BoxData[
     RowBox[{"WordToken", "[", "1", "]"}], ",", " ", 
     RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.852771103300289*^9, 3.852771106375245*^9}},
- CellLabel->"In[9]:=",
- CellID->632206651],
+ CellLabel->"In[60]:=",
+ CellID->632206651,ExpressionUUID->"4f1827a3-4f72-4da3-98f1-5f83c542c77a"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"WordToken", "[", "1", "]"}], "~~", 
   RowBox[{"BoundToken", "[", "\<\"car\"\>", "]"}], "~~", 
   RowBox[{"WordToken", "[", "1", "]"}]}]], "Output",
- CellChangeTimes->{3.852771106935213*^9},
- CellLabel->"Out[9]=",
- CellID->533614290]
+ CellChangeTimes->{3.852771106935213*^9, 3.879863225592162*^9},
+ CellLabel->"Out[60]=",
+ CellID->1309418731,ExpressionUUID->"70a90d36-26e9-4c1b-b0bf-c718f842f838"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -324,8 +329,8 @@ Cell[BoxData[
    "]"}]}]], "Input",
  CellChangeTimes->{{3.852770945417832*^9, 3.852770982145187*^9}, {
   3.85277110077358*^9, 3.852771120352373*^9}},
- CellLabel->"In[10]:=",
- CellID->569953902],
+ CellLabel->"In[61]:=",
+ CellID->569953902,ExpressionUUID->"b3343717-ffb8-4aa4-b16a-46666dd14ceb"],
 
 Cell[BoxData[
  TagBox[
@@ -347,11 +352,11 @@ Cell[BoxData[
                     RowBox[{
                     TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["39", "SummaryItem"]}]}, {
+                    TagBox["35", "SummaryItem"]}]}, {
                     RowBox[{
                     TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["805", "SummaryItem"]}]}}, 
+                    TagBox["633", "SummaryItem"]}]}}, 
                   GridBoxAlignment -> {
                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
                   AutoDelete -> False, 
@@ -375,11 +380,11 @@ Cell[BoxData[
                     RowBox[{
                     TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["39", "SummaryItem"]}]}, {
+                    TagBox["35", "SummaryItem"]}]}, {
                     RowBox[{
                     TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["805", "SummaryItem"]}]}}, 
+                    TagBox["633", "SummaryItem"]}]}}, 
                   GridBoxAlignment -> {
                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
                   AutoDelete -> False, 
@@ -405,12 +410,13 @@ Cell[BoxData[
              Or[$VersionNumber < 11.2, CurrentValue["RunningEvaluator"] =!= 
               "Local"], 
              Style["This object cannot be used as input.", "SummaryEmbed"], 
-             BoxForm`EmbedSummaryLabel[LexicalCases`LexicalSummary, 1113696, 
+             BoxForm`EmbedSummaryLabel[
+             FaizonZaman`LexicalCases`LexicalSummary, 1263440, 
               Dynamic[Typeset`embedState$$], Automatic]], StandardForm]], 
           ButtonFunction :> 
           BoxForm`EmbedSummaryInterpretation[
-           "Choose", LexicalCases`LexicalSummary, 1113696, 
-            7825646996666611676413403774667612267733389426861756355456, 
+           "Choose", FaizonZaman`LexicalCases`LexicalSummary, 1263440, 
+            7886052071833066553608442275410639807813506456628220526096, 
             EvaluationBox[], 
             Dynamic[Typeset`embedState$$], StandardForm, 
             ElisionsDump`embedSummaryBoxes], DefaultBaseStyle -> 
@@ -425,20 +431,20 @@ Cell[BoxData[
    "CopyTag",
    DisplayFunction->(#& ),
    InterpretationFunction->(
-    "LexicalSummary[<|Data -> {<|Article -> Car, Match -> the car when, \
-Position -> {{366, 377}, {6528, 6539}}|>, <|Article -> Car, Match -> American \
-car manufactured, Position -> {{570, 594}}|>, <|Article -> Car, Match -> to \
-car use, Position -> {{1649, 1658}}|>, <<697>>, <|<<3>>|>, <|Article -> \
-Police car, Match -> the car doors, Position -> {{22570, 22582}}|>}, \
-<<4>>|>]"& )],
+    "LexicalSummary[<|Data -> {<|Article -> Car, Match -> A car or, Position \
+-> {{1, 8}}|>, <|Article -> Car, Match -> American car manufactured, Position \
+-> {{455, 479}}|>, <|Article -> Car, Match -> The car is, Position -> {{705, \
+714}}|>, <<539>>, <|Article -> The Cars (album), <<2>>|>, <|Article -> Cars \
+(video game), Match -> Missing[NoMatches], Position -> {}|>}, <<5>>|>]"& )],
   False,
-  BoxID -> 7825646996666611676413403774667612267733389426861756355456,
+  BoxID -> 7886052071833066553608442275410639807813506456628220526096,
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.852770995975524*^9, 3.8527711295367403`*^9},
- CellLabel->"Out[10]=",
- CellID->1361395789]
+ CellChangeTimes->{3.852770995975524*^9, 3.8527711295367403`*^9, 
+  3.8798632457527514`*^9},
+ CellLabel->"Out[61]=",
+ CellID->1033627737,ExpressionUUID->"cb7f1296-d102-4aaa-a2df-15b1696277d0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -447,224 +453,178 @@ Cell[BoxData[
  RowBox[{"sndwchCases", "[", "\"\<CountGroups\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.8527709997641077`*^9, 3.8527710045712633`*^9}, {
   3.852771133474962*^9, 3.852771134300408*^9}},
- CellLabel->"In[11]:=",
- CellID->609527042],
+ CellLabel->"In[62]:=",
+ CellID->609527042,ExpressionUUID->"6787ab00-e88e-4c13-a57f-19ee5a20c3af"],
 
 Cell[BoxData[
  TagBox[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
     "InitialData" -> {<|
-       "Matches" -> {"sports car racing"}, "CountGroup" -> 28|>, <|
-       "Matches" -> {"a car that"}, "CountGroup" -> 11|>, <|
-       "Matches" -> {"the car is"}, "CountGroup" -> 10|>, <|
-       "Matches" -> {"a car with"}, "CountGroup" -> 8|>, <|
-       "Matches" -> {"The car was", "the car to", "race car who"}, 
-        "CountGroup" -> 7|>, <|
+       "Matches" -> {"stock car racing"}, "CountGroup" -> 19|>, <|
+       "Matches" -> {"the car is", "Stock car racing", "electric car to"}, 
+        "CountGroup" -> 9|>, <|
+       "Matches" -> {"The car was", "electric car in"}, "CountGroup" -> 8|>, <|
+       "Matches" -> {"the car was", "the car and"}, "CountGroup" -> 7|>, <|
        "Matches" -> {
-         "sports car was", "luxury car is", "European car classification"}, 
-        "CountGroup" -> 6|>, <|
-       "Matches" -> {"electric car in"}, "CountGroup" -> 5|>, <|
+         "sports car was", "sports car racing", "police car used", 
+          "luxury car is", "European car classification"}, "CountGroup" -> 
+        6|>, <|"Matches" -> {"the car as", "of car manufacturers"}, 
+        "CountGroup" -> 5|>, <|
+       "Matches" -> {"the car to", "sports car market", "a car with"}, 
+        "CountGroup" -> 4|>, <|
        "Matches" -> {
-         "touring car racing", "the car as", "the car and", 
-          "stock car racing", "Sports car racing", "sports car races", 
-          "sports car market", "of car manufacturers", "electric car to", 
-          "a car in"}, "CountGroup" -> 4|>, <|
+         "used car lot", "tuner car and", "The car is", "race car with", 
+          "premium car larger", "new car sales", "luxury car brands", 
+          "first car in", "electric car worldwide", "electric car for", 
+          "a car that", "a car in", "a car and"}, "CountGroup" -> 3|>, <|
        "Matches" -> {
-         "wheel car racing", "tuner car and", "Touring car racing", 
-          "touring car class", "the car when", "the car was", 
-          "Stock car racing", "sports car based", "rally car who", 
-          "race car and", "production car is", "premium car larger", 
-          "luxury car brands", "Indy car racing", "first car in", 
-          "derby car who"}, "CountGroup" -> 3|>, <|
+         "Touring car racing", "touring car racing", 
+          "touring car championships", "touring car and", "the car when", 
+          "the car that", "the car on", "the car design", 
+          "the car characters", "the car at", "the car are", 
+          "stock car series", "sports car since", "sports car races", 
+          "sports car of", "sports car manufacturer", "sports car is", 
+          "sports car called", "sports car based", "sports car and", 
+          "racing car was", "race car who", "race car driver", 
+          "police car to", "police car that", "police car is", 
+          "other car manufacturers", "of car use", "of car buyers", 
+          "luxury car sales", "luxury car manufacturers", "into car world", 
+          "Indy car team", "family car or", "executive car or", 
+          "electric car living", "electric car is", "electric car at", 
+          "bumper car floor", "and car paint"}, "CountGroup" -> 2|>, <|
        "Matches" -> {
-         "used car lot", "touring car championships", "The car is", 
-          "The car has", "the car had", "the car from", "the car characters", 
-          "the car at", "the car are", "sports car since", 
-          "sports car series", "sports car of", "sports car manufacturer", 
-          "sports car is", "sports car competition", "sports car called", 
-          "sports car and", "size car sold", "s car for", "racing car in", 
-          "race car with", "race car drivers", "race car driver", 
-          "police car may", "Passenger car gallery", 
-          "other car manufacturers", "of car use", "of car it", "of car is", 
-          "Muscle car performance", "Muscle car is", "muscle car era", 
-          "luxury car sales", "LMP car that", "is car that", "into car world",
-           "executive car or", "electric car is", "electric car at", 
-          "driving car is", "driving car industry", "derby car with", 
-          "cable car lines", "bumper car floor", "blue car who", 
-          "based car is", "autonomous car liability", "automated car was", 
-          "and car paint", "American car makers", "a car to"}, "CountGroup" -> 
-        2|>, <|"Matches" -> {
-         "young car who", "word car is", "with car alarms", "winning car for",
-           "why car manufacturers", "whole car could", "which car weights", 
-          "which car was", "Well car or", "wealthy car owners", 
-          "Volvo car left", "volume car theft", "vintage car selected", 
-          "V8 car in", "used car salesman", "ultimate car of", 
-          "tuner car who", "traffic car may", "traditional car lines", 
-          "touring car series", "touring car group", "touring car from", 
-          "touring car and", "total car sales", "top car builder", 
-          "to car use", "to car production", "through car share", 
-          "through car magazines", "this car were", "this car used", 
-          "This car model", "this car have", "This car has", "their car to", 
+         "young car who", "word car is", "with car horns", "whole car could", 
+          "wheeled car was", "wheel car is", "wealthy car owners", 
+          "war car was", "Volvo car left", "V8 car in", "used car salesman", 
+          "unmarked car is", "unmarked car and", "ultimate car of", 
+          "tuner car who", "transitCable car may", "touring car lap", 
+          "total car sales", "top car builder", "to car use", 
+          "to car production", "through car share", "This car model", 
+          "this car in", "This car has", "then car buyers", "their car to", 
           "their car models", "their car forms", "their car as", 
-          "the car yet", "the car within", "the car with", "the car were", 
-          "the car visible", "the car upon", "the car up", "The car that", 
-          "the car that", "the car stable", "the car since", 
-          "the car sensors", "the car seems", "The car returned", 
-          "the car or", "the car on", "the car navigation", "the car models", 
-          "the car market", "the car manufacturer", "the car manually", 
-          "the car maker", "the car looked", "The car industry", "the car in",
-           "the car if", "the car have", "the car hacked", "the car feels", 
-          "the car failed", "the car equally", "The car drove", 
-          "the car drive", "the car doors", "the car design", 
-          "the car crashes", "The car continued", "the car closely", 
-          "the car can", "the car but", "The car attempted", "the car around",
-           "The car also", "the car allowed", "that car use", "tank car with",
-           "tank car for", "supertouring car were", "superspy car named", 
-          "subcompact car market", "Subcompact car is", "subcompact car is", 
-          "subcompact car for", "styled car with", "stroke car engine", 
-          "stock car tracks", "Stock car race", "stock car in", 
-          "stock car governing", "stock car as", "stock car and", 
-          "steel car bodies", "States car industry", "sprint car ranks", 
-          "sports car with", "sports car which", "sports car to", 
-          "sports car that", "sports car scene", "Sports car races", 
-          "sports car production", "Sports car ownership", "Sports car only", 
+          "the car yet", "the car writes", "the car would", "the car with", 
+          "the car were", "The car went", "the car weighed", 
+          "the car visible", "the car upwards", "the car upon", 
+          "the car through", "the car stable", "the car slowed", 
+          "the car since", "The car returned", "the car raced", 
+          "the car passed", "the car onto", "The car of", "the car models", 
+          "the car missed", "the car market", "the car maker", 
+          "the car looked", "the car instead", "The car industry", 
+          "the car if", "the car have", "The car has", "The car had", 
+          "the car had", "the car from", "the car feels", "the car evolved", 
+          "the car equally", "the car doors", "the car crashes", 
+          "the car competitive", "the car but", "the car brand", 
+          "the car body", "The car became", "the car around", 
+          "the car allowed", "that car use", "that car rental", 
+          "Tesla car inspected", "surveillance car is", 
+          "supertouring car were", "subcompact car market", 
+          "Subcompact car is", "subcompact car is", "subcompact car for", 
+          "styled car with", "stroke car engine", "Stock car races", 
+          "stock car races", "stock car governing", "stock car formula", 
+          "stock car drivers", "stock car divisions", 
+          "stock car competitions", "stock car came", "stock car and", 
+          "steel car bodies", "States car industry", "sprint car tyres", 
+          "sports car world", "sports car with", "sports car which", 
+          "sports car to", "sports car that", "Sports car racing", 
+          "sports car production", "Sports car ownership", 
           "sports car models", "sports car manufacturers", 
-          "sports car manufacture", "sports car designed", 
-          "sports car concept", "sports car company", "sports car career", 
-          "Some car makers", "Some car hacking", "smart car it", 
-          "smaller car was", "small car who", "small car segment", 
-          "small car lineups", "small car and", "slower car getting", 
-          "sized car to", "sized car fitted", "size car with", 
-          "size car that", "size car or", "size car offered", 
-          "size car nameplate", "size car lines", "size car line", 
-          "size car from", "size car as", "significant car from", 
-          "Several car classification", "second car for", "seater car in", 
-          "seat car without", "s car model", "s car claiming", 
-          "saloon car which", "saloon car available", "rusty car with", 
-          "rusty car who", "Rotary car dumper", "road car not", 
-          "response car is", "reporter car voiced", "regarding car contact", 
-          "Refrigerator car or", "red car named", "red car displaying", 
-          "rally car painted", "rally car of", "rally car in", 
-          "rally car from", "rally car during", "railroad car manufacturers", 
-          "Rail car manufacturing", "racing car was", "racing car that", 
-          "racing car series", "racing car for", "racing car being", 
-          "racing car and", "race car that", "race car Francesco", 
-          "race car featuring", "race car engineering", "race car described", 
-          "race car built", "race car at", "race car around", "race car are", 
-          "purple car with", "purple car holding", "production car top", 
-          "Production car speed", "production car speed", 
-          "production car records", "production car race", 
-          "production car made", "production car in", 
-          "Production car definition", "production car definition", 
-          "production car achieved", "private car ownership", 
-          "previous car that", "powered car in", "powered car based", 
-          "popular car in", "pony car that", "Pony car is", "Pony car era", 
-          "pony car class", "police car would", "police car with", 
-          "police car was", "police car plays", "police car or", 
-          "police car might", "police car include", "police car can", 
-          "police car behind", "police car approaches", "police car and", 
-          "physical car form", "photo car voiced", "Phantom car watching", 
-          "permanent car manufacturing", "performance car was", 
-          "performance car of", "per car using", "pedestrian car casualties", 
-          "patrol car used", "passenger car with", "passenger car only", 
-          "passenger car models", "passenger car market", 
-          "passenger car exist", "passenger car division", 
-          "passenger car classification", "passenger car and", 
-          "parking car system", "pace car at", "overall car industry", 
-          "our car hadn", "Our car characters", "other car propulsion", 
-          "or car setup", "or car manufacturer", "or car in", "or car based", 
-          "only car with", "only car maker", "One car driven", 
-          "oldest car racing", "old car resembling", "of car was", 
-          "of car used", "of car usage", "of car radios", "of car production",
-           "of car may", "of car customizer", "of car and", "no car can", 
-          "new car sales", "new car one", "new car ever", "new car at", 
-          "Neither car reached", "muscle car with", "muscle car vary", 
-          "Muscle car series", "muscle car produced", "muscle car models", 
-          "muscle car lists", "muscle car is", "muscle car in", 
-          "muscle car heritage", "muscle car from", "muscle car formula", 
-          "muscle car due", "muscle car came", 
-          "multinational car manufacturer", "multi car crash", "motor car to",
-           "motor car in", "modern car rallies", "miniature car that", 
-          "MG car production", "massive car pile", "many car rental", 
-          "Mans car with", "Malaysian car company", "luxury car trim", 
+          "sports car manufacture", "sports car driver", 
+          "sports car designed", "sports car concept", "sports car company", 
+          "sports car aimed", "Some car hacking", "smaller car was", 
+          "smaller car in", "small car segment", "small car lineups", 
+          "slower car getting", "size car or", "size car as", 
+          "single car was", "significant car from", 
+          "Several car classification", "seater car in", "seat car without", 
+          "s car going", "s car for", "s car factories", "s car during", 
+          "saloon car which", "saloon car available", "road car not", 
+          "regarding car contact", "rear car tends", "rally car of", 
+          "rally car during", "racing car that", "racing car in", 
+          "racing car for", "racing car being", "race car the", 
+          "race car series", "race car rules", "race car or", 
+          "race car number", "race car Lightning", "race car Francesco", 
+          "race car drivers", "race car developer", "race car described", 
+          "race car built", "race car are", "race car and", 
+          "race car aerodynamics", "production car world", 
+          "production car top", "production car to", "production car race", 
+          "production car in", "production car 0", "private car ownership", 
+          "powered car in", "Pony car is", "pony car class", "police car was",
+           "police car tasked", "police car plays", "police car partially", 
+          "police car modified", "police car might", "police car lights", 
+          "police car has", "police car exist", "police car and", 
+          "physical car form", "permanent car manufacturing", 
+          "performance car was", "pedestrian car casualties", 
+          "patrol car used", "patrol car is", "patrol car allows", 
+          "passenger car with", "passenger car or", "passenger car only", 
+          "passenger car models", "passenger car model", 
+          "passenger car market", "passenger car manufacturer", 
+          "passenger car division", "passenger car classification", 
+          "overall car industry", "Our car characters", 
+          "other car propulsion", "other car manufacturer", "or car setup", 
+          "or car in", "only car maker", "one car for", "One car driven", 
+          "on car control", "oldest car racing", "of car was", "of car usage",
+           "of car technology", "of car production", "of car may", 
+          "of car it", "of car colors", "of car carriers", "of car body", 
+          "no car can", "new car was", "new car to", "new car tax", 
+          "new car market", "new car factory", "new car and", 
+          "Neither car reached", "Muscle car is", 
+          "multinational car manufacturer", "motor car in", 
+          "modern car rallies", "model car vary", "MG car production", 
+          "many car rental", "Malaysian car company", "luxury car trim", 
           "luxury car tax", "luxury car phenomenon", "luxury car marque", 
-          "luxury car market", "luxury car manufacturers", "luxury car in", 
-          "luxury car emerged", "Luxury car companies", "luxury car buyers", 
-          "luxury car at", "luxury car 98", "Lotus car models", 
-          "Lotus car manufacturing", "Lotus car fan", "LMP car she", 
-          "LMP car at", "LMP675 car was", "LMP2 car in", "like car sharing", 
-          "Liaison car for", "last car which", "last car built", 
-          "largest car company", "large car by", "kit car era", 
-          "kei car with", "Kei car specifications", "Japanese car who", 
-          "Jaguar car to", "its car naming", "is car service", 
-          "intermediate car manufactures", "influenced car design", 
-          "Indy car project", "in car entertainment", "in car accidents", 
-          "imported car to", "if car insurance", "ICE car fires", 
-          "hybrid car based", "hopper car with", "Historic car models", 
-          "her car to", "GT car started", "GT car racing", "grip car or", 
-          "green car seen", "green car in", "green car beside", 
-          "green car and", "GpC car histories", "government car size", 
-          "fuel car can", "from car radios", "French car industry", 
-          "Freight car gallery", "freight car gallery", "for car safety", 
-          "flat car or", "first car to", "first car that", "fiber car was", 
-          "Ferrari car manufacturer", "family car in", "F1 car that", 
+          "luxury car market", "luxury car in", "luxury car emerged", 
+          "Luxury car companies", "luxury car buyers", "Lotus car models", 
+          "Lotus car manufacturing", "Lotus car fan", "LMP2 car in", 
+          "like car sharing", "last car which", "last car built", 
+          "largest car company", "large car by", "lapped car of", 
+          "kit car industry", "kit car era", "kei car with", "Jaguar car to", 
+          "its car naming", "is car service", "intermediate car manufactures",
+           "influenced car design", "Indy car project", "Indy car designed", 
+          "individual car body", "independent car makers", "in car sales", 
+          "imported car bodies", "ICE car fires", "hybrid car based", 
+          "Hope car to", "Historic car models", "his car land", "his car in", 
+          "his car broke", "GT car racing", "government car size", 
+          "Gear car of", "fuel car can", "front car tends", "from car radios",
+           "four car models", "for car safety", "first car that", 
+          "first car model", "first car from", "family car is", 
+          "family car in", "factory car including", "factory car in", 
           "executive car launched", "Executive car is", "executive car is", 
-          "executive car introduced", "everyday car to", "every car she", 
-          "endurance car championship", "encouraging car users", 
-          "enclosed car with", "Emerging car technologies", 
-          "electric car works", "electric car will", "electric car was", 
+          "executive car introduced", "everyday car to", 
+          "Emerging car technologies", "electric car would", 
+          "electric car works", "electric car within", "electric car will", 
           "electric car stock", "electric car some", "electric car purchase", 
-          "electric car or", "electric car on", "electric car manufacturer", 
-          "electric car living", "electric car has", "electric car for", 
-          "electric car fleet", "electric car depends", "electric car can", 
-          "electric car and", "each car will", "each car on", 
-          "each car moves", "each car makes", "Each car is", "each car had", 
-          "DTM car with", "driving car that", "driving car project", 
-          "driving car liability", "driving car in", "driving car control", 
-          "driving car at", "driving car as", "Driverless car designers", 
-          "driven car is", "drive car to", "drive car that", "drift car and", 
-          "dominant car and", "documented car fatalities", "DMG car was", 
-          "dining car and", "diesel car has", "developed car classification", 
-          "designed car was", "designed car to", "derby car whose", 
-          "Derby car made", "cunning car salesman", "controlled car that", 
+          "electric car market", "electric car manufacturer", 
+          "electric car instead", "electric car has", "electric car fleet", 
+          "electric car depends", "electric car can", "electric car and", 
+          "each car moves", "each car makes", "each car had", "drive car to", 
+          "drive car that", "dominant car and", "documented car fatalities", 
+          "DMG car was", "diesel car when", "development car tested", 
+          "developed car classification", "Derby car made", "decoy car is", 
+          "cunning car salesman", "continued car production", 
           "connected car systems", "concept car with", "concept car was", 
-          "concept car that", "concept car for", "concept car based", 
-          "concept car at", "concept car and", "competition car production", 
-          "compact car was", "compact car platforms", "compact car or", 
-          "Compact car is", "compact car is", "compact car in", 
-          "compact car body", "commercial car are", "class car 444", 
-          "city car concept", "city car category", "Chinese car Roewe", 
-          "camera car voiced", "camera car in", "camera car at", 
-          "cable car systems", "cable car line", "cable car it", 
-          "cable car following", "cable car 72", "by car resulting", 
-          "business car and", "bumper car setup", "bumper car riders", 
-          "brown car who", "brown car towed", "brown car leaving", 
-          "British car production", "box car for", "blue car with", 
-          "blue car on", "blue car behind", "between car and", 
-          "best car achieving", "Benz car to", "because car ads", 
-          "average car weights", "average car the", "autonomous car lawsuit", 
-          "autonomous car in", "autonomous car appeared", 
-          "automated car that", "automated car testing", 
-          "automated car technology", "automated car technologies", 
-          "automated car needs", "automated car in", "automated car causes", 
-          "Australian car to", "at car shows", "as car racing", 
-          "as car manufacturers", "area car and", "any car model", 
-          "any car accident", "another car failed", 
-          "animating car characters", "and car seemed", "and car production", 
-          "and car manufacturers", "and car enthusiast", "American car with", 
-          "American car was", "American car manufactured", 
-          "American car classification", "all car classes", "a car whose", 
-          "a car who", "a car which", "a car used", "a car tire", 
-          "a car should", "a car satisfying", "a car registered", 
-          "a car parts", "a car partially", "a car on", "a car notorious", 
-          "a car may", "a car mater", "a car manufacturing", "a car made", 
-          "a car like", "a car is", "a car influences", "a car incorporating",
-           "a car for", "a car especially", "a car designed", "a car crashes",
-           "a car crash", "a car controlled", "A car considered", 
-          "a car built", "a car based", "a car at", "a car as", "a car and", 
-          "36 car pack", "1970s car standing", "1955 car from"}, "CountGroup" -> 
-        1|>}, "AllowEmbedding" -> True, "InitialShape" -> 
+          "concept car for", "concept car at", "competitive car in", 
+          "competition car production", "compact car was", 
+          "compact car platforms", "compact car or", "Compact car is", 
+          "compact car is", "compact car in", "city car concept", 
+          "city car category", "Chinese car Roewe", "Chinese car buyers", 
+          "catch car thieves", "Cable car most", "by car resulting", 
+          "by car enthusiasts", "business car and", "bumper car setup", 
+          "bumper car riders", "built car designed", "British car production",
+           "blue car who", "between car and", "better car of", 
+          "best car achieving", "Benz car to", "as car racing", 
+          "as car manufacturers", "any car model", "any car entered", 
+          "animating car characters", "and car production", 
+          "and car manufacturers", "and car had", "and car enthusiast", 
+          "and car body", "American car with", "American car was", 
+          "American car manufactured", "American car makers", 
+          "American car company", "American car classification", 
+          "all car classes", "a car which", "a car used", "a car tire", 
+          "A car or", "a car on", "a car may", "a car manufacturer", 
+          "A car is", "a car influences", "a car from", "a car especially", 
+          "a car designed", "a car crash", "A car considered", 
+          "a car classification", "a car cheaper", "a car called", 
+          "a car built", "a car as", "36 car pack"}, "CountGroup" -> 1|>}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
         1, {All, "CountGroup"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
@@ -674,12 +634,12 @@ Cell[BoxData[
           TypeSystem`PackageScope`RowShape[<|
            "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
             "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 11, 
+          DirectedInfinity[1], 2, {All}]], 10, 
         DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Matches", "CountGroup"}, {
          TypeSystem`Vector[
           TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 11], "Meta" -> <||>, "RowTarget" -> 20, 
+         TypeSystem`Atom[Integer]}], 10], "Meta" -> <||>, "RowTarget" -> 20, 
      "ColumnTarget" -> 10, "Shape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
         1, {All, "CountGroup"} -> 1|>, 
@@ -690,13 +650,13 @@ Cell[BoxData[
           TypeSystem`PackageScope`RowShape[<|
            "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
             "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 11, 
+          DirectedInfinity[1], 2, {All}]], 10, 
         DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Matches", "CountGroup"}, {
          TypeSystem`Vector[
           TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 11], "Path" -> {}, "DisplayedRowCount" -> 
-     11, "DisplayedColumnCount" -> 2, "DataRowCount" -> 11, "DataColumnCount" -> 
+         TypeSystem`Atom[Integer]}], 10], "Path" -> {}, "DisplayedRowCount" -> 
+     10, "DisplayedColumnCount" -> 2, "DataRowCount" -> 10, "DataColumnCount" -> 
      2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
      "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
     TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
@@ -775,11 +735,11 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  Style[{"sports car racing"}, ShowStringCharacters -> False], 
+                  Style[{"stock car racing"}, ShowStringCharacters -> False], 
+                  
                   Style[
-                   
-                   Style[{"sports car racing"}, ShowStringCharacters -> 
-                    False], FontColor -> 
+                   Style[{"stock car racing"}, ShowStringCharacters -> False],
+                    FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -804,7 +764,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["28"], 
+               RawBoxes["19"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
@@ -818,9 +778,13 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  Style[{"a car that"}, ShowStringCharacters -> False], 
+                  
+                  Style[{"the car is", "Stock car racing", "electric car to"},
+                    ShowStringCharacters -> False], 
                   Style[
-                   Style[{"a car that"}, ShowStringCharacters -> False], 
+                   
+                   Style[{"the car is", "Stock car racing", 
+                    "electric car to"}, ShowStringCharacters -> False], 
                    FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -846,7 +810,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["11"], 
+               RawBoxes["9"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
@@ -860,10 +824,13 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  Style[{"the car is"}, ShowStringCharacters -> False], 
+                  
+                  Style[{"The car was", "electric car in"}, 
+                   ShowStringCharacters -> False], 
                   Style[
-                   Style[{"the car is"}, ShowStringCharacters -> False], 
-                   FontColor -> 
+                   
+                   Style[{"The car was", "electric car in"}, 
+                    ShowStringCharacters -> False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -888,7 +855,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["10"], 
+               RawBoxes["8"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
@@ -902,10 +869,13 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  Style[{"a car with"}, ShowStringCharacters -> False], 
+                  
+                  Style[{"the car was", "the car and"}, ShowStringCharacters -> 
+                   False], 
                   Style[
-                   Style[{"a car with"}, ShowStringCharacters -> False], 
-                   FontColor -> 
+                   
+                   Style[{"the car was", "the car and"}, ShowStringCharacters -> 
+                    False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -930,7 +900,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["8"], 
+               RawBoxes["7"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
@@ -945,12 +915,16 @@ Cell[BoxData[
                 MouseAppearance[
                  Mouseover[
                   
-                  Style[{"The car was", "the car to", "race car who"}, 
-                   ShowStringCharacters -> False], 
+                  Style[{"sports car was", "sports car racing", 
+                    "police car used", "luxury car is", 
+                    "European car classification"}, ShowStringCharacters -> 
+                   False], 
                   Style[
                    
-                   Style[{"The car was", "the car to", "race car who"}, 
-                    ShowStringCharacters -> False], FontColor -> 
+                   Style[{"sports car was", "sports car racing", 
+                    "police car used", "luxury car is", 
+                    "European car classification"}, ShowStringCharacters -> 
+                    False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -975,7 +949,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["7"], 
+               RawBoxes["6"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
@@ -990,14 +964,12 @@ Cell[BoxData[
                 MouseAppearance[
                  Mouseover[
                   
-                  Style[{"sports car was", "luxury car is", 
-                    "European car classification"}, ShowStringCharacters -> 
-                   False], 
+                  Style[{"the car as", "of car manufacturers"}, 
+                   ShowStringCharacters -> False], 
                   Style[
                    
-                   Style[{"sports car was", "luxury car is", 
-                    "European car classification"}, ShowStringCharacters -> 
-                    False], FontColor -> 
+                   Style[{"the car as", "of car manufacturers"}, 
+                    ShowStringCharacters -> False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1022,7 +994,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["6"], 
+               RawBoxes["5"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
@@ -1036,10 +1008,13 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  Style[{"electric car in"}, ShowStringCharacters -> False], 
+                  
+                  Style[{"the car to", "sports car market", "a car with"}, 
+                   ShowStringCharacters -> False], 
                   Style[
-                   Style[{"electric car in"}, ShowStringCharacters -> False], 
-                   FontColor -> 
+                   
+                   Style[{"the car to", "sports car market", "a car with"}, 
+                    ShowStringCharacters -> False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -1064,7 +1039,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["5"], 
+               RawBoxes["4"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
@@ -1080,12 +1055,12 @@ Cell[BoxData[
                  Mouseover[
                   Style[
                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 13], " }\[ThinSpace]"}], 
                    GrayLevel[0.5]], 
                   Style[
                    Style[
                     Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 10], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 13], " }\[ThinSpace]"}], 
                     GrayLevel[0.5]], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -1112,7 +1087,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["4"], 
+               RawBoxes["3"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
@@ -1128,12 +1103,12 @@ Cell[BoxData[
                  Mouseover[
                   Style[
                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 16], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 40], " }\[ThinSpace]"}], 
                    GrayLevel[0.5]], 
                   Style[
                    Style[
                     Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 16], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 40], " }\[ThinSpace]"}], 
                     GrayLevel[0.5]], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -1160,7 +1135,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["3"], 
+               RawBoxes["2"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
@@ -1176,12 +1151,12 @@ Cell[BoxData[
                  Mouseover[
                   Style[
                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 51], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 386], " }\[ThinSpace]"}], 
                    GrayLevel[0.5]], 
                   Style[
                    Style[
                     Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 51], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 386], " }\[ThinSpace]"}], 
                     GrayLevel[0.5]], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -1208,58 +1183,10 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["2"], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
-                 Key["CountGroup"]}, "Item", False], "Mouse"], 
-              ImageSize -> {{34, Full}, Automatic}, 
-              ImageMargins -> {{5, 3}, {4, 5}}], 
-             ItemSize -> {Full, Automatic}]}, {
-            Item[
-             Pane[
-              Annotation[
-               EventHandler[
-                MouseAppearance[
-                 Mouseover[
-                  Style[
-                   Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 514], " }\[ThinSpace]"}], 
-                   GrayLevel[0.5]], 
-                  Style[
-                   Style[
-                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 514], " }\[ThinSpace]"}], 
-                    GrayLevel[0.5]], FontColor -> 
-                   RGBColor[
-                    0.27450980392156865`, 0.5372549019607843, 
-                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
-                If[
-                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
-                  TypeSystem`NestedGrid`PackagePrivate`updateState[
-                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
-                   TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    TypeSystem`NestedGrid`PackagePrivate`localHold[
-                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{11, 
-                    Key["Matches"]}, 4]]], 
-               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
-                TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
-                 Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
-               GrayLevel[0.5]}], 
-            Item[
-             Pane[
-              Annotation[
                RawBoxes["1"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
-                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
                  Key["CountGroup"]}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
@@ -1553,13 +1480,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{421., {168.3544921875, 173.6455078125}},
+      ImageSizeCache->{619., {155.3544921875, 160.6455078125}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{421., {168.3544921875, 173.6455078125}}],
+     ImageSizeCache->{619., {155.3544921875, 160.6455078125}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -1571,9 +1498,10 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.852771005046975*^9, 3.852771136861804*^9},
- CellLabel->"Out[11]=",
- CellID->834939145]
+ CellChangeTimes->{3.852771005046975*^9, 3.852771136861804*^9, 
+  3.87986325037959*^9},
+ CellLabel->"Out[62]=",
+ CellID->1540027169,ExpressionUUID->"65d666d7-fe1c-492b-b7a7-0ffc6953140b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1629,12 +1557,13 @@ Cell[BoxData[
  CellID->1233549862],
 
 Cell["\<\
-Naming the pattern outer will not work since it will produce the same name \
+Naming the 'outer' pattern will not work since it will produce the same name \
 for the left flanking pattern and right flanking pattern. This may change in \
 the future.\
 \>", "ExampleText",
- CellChangeTimes->{3.854391084429017*^9},
- CellID->1504242725],
+ CellChangeTimes->{
+  3.854391084429017*^9, {3.8798632685281754`*^9, 3.879863272266321*^9}},
+ CellID->1504242725,ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556"],
 
 Cell[CellGroupData[{
 
@@ -1648,76 +1577,141 @@ Cell[BoxData[
        RowBox[{"WordToken", "[", "1", "]"}]}], ",", " ", 
       RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}]}], "]"}], ":>", "w"}]}],
    "]"}]], "Input",
- CellChangeTimes->{{3.8543909662184963`*^9, 3.854391012300275*^9}},
- CellLabel->"In[9]:=",
- CellID->187057416],
+ CellChangeTimes->{{3.8543909662184963`*^9, 3.854391012300275*^9}, {
+  3.879863324017447*^9, 3.879863352262238*^9}},
+ CellLabel->"In[65]:=",
+ CellID->187057416,ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae"],
 
 Cell[BoxData[
- TemplateBox[{
-  "StringExpression", "cond", 
-   "\"Warning: restrictions on pattern variable \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
-RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
-as they are not associated with the first occurrence of \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 2, 23008128130180833061, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.854391013240931*^9},
- CellLabel->"During evaluation of In[9]:=",
- CellID->1615823357],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringExpression", "cond", 
-   "\"Warning: restrictions on pattern variable \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
-RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
-as they are not associated with the first occurrence of \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 3, 23008128130180833061, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.85439101325247*^9},
- CellLabel->"During evaluation of In[9]:=",
- CellID->64961137],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringExpression", "cond", 
-   "\"Warning: restrictions on pattern variable \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
-RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
-as they are not associated with the first occurrence of \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 4, 23008128130180833061, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.854391013259439*^9},
- CellLabel->"During evaluation of In[9]:=",
- CellID->880136883],
-
-Cell[BoxData[
- TemplateBox[{
-  "StringExpression", "cond", 
-   "\"Warning: restrictions on pattern variable \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\) in \\!\\(\\*RowBox[{\\\"w\\\", \\\":\\\", \
-RowBox[{\\\"WordToken\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]}]\\) are ignored \
-as they are not associated with the first occurrence of \
-\\!\\(\\*RowBox[{\\\"w\\\"}]\\).\"", 2, 9, 5, 23008128130180833061, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.854391013266263*^9},
- CellLabel->"During evaluation of In[9]:=",
- CellID->593232045],
-
-Cell[BoxData[
- RowBox[{"LexicalCases", "[", 
-  RowBox[{"\<\"a nice car is good.\"\>", ",", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"w", ":", 
-      RowBox[{"WordToken", "[", "1", "]"}]}], "~~", 
-     RowBox[{"BoundToken", "[", "\<\"car\"\>", "]"}], "~~", 
-     RowBox[{"w", ":", 
-      RowBox[{"WordToken", "[", "1", "]"}]}]}], "\[RuleDelayed]", "w"}]}], 
-  "]"}]], "Output",
- CellChangeTimes->{3.854390968806285*^9, 3.854391013272668*^9},
- CellLabel->"Out[9]=",
- CellID->1831890941]
+ InterpretationBox[
+  RowBox[{
+   TagBox["LexicalSummary",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Text\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{
+                    RowBox[{"DeleteMissing", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{
+                    "FaizonZaman`LexicalCases`Utilities`MatchTrim", "[", 
+                    "True", "]"}], "[", 
+                    RowBox[{"\[LeftAssociation]", 
+                    RowBox[{
+                    RowBox[{"\"Match\"", "\[Rule]", 
+                    RowBox[{"Missing", "[", 
+                    RowBox[{"\"PartInvalid\"", ",", "\"Match\""}], "]"}]}], 
+                    ",", 
+                    RowBox[{"\"Count\"", "\[Rule]", "0"}]}], 
+                    "\[RightAssociation]"}], "]"}], ",", "1", ",", "1"}], 
+                    "]"}], "[", 
+                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Text\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{
+                    RowBox[{"DeleteMissing", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{
+                    "FaizonZaman`LexicalCases`Utilities`MatchTrim", "[", 
+                    "True", "]"}], "[", 
+                    RowBox[{"\[LeftAssociation]", 
+                    RowBox[{
+                    RowBox[{"\"Match\"", "\[Rule]", 
+                    RowBox[{"Missing", "[", 
+                    RowBox[{"\"PartInvalid\"", ",", "\"Match\""}], "]"}]}], 
+                    ",", 
+                    RowBox[{"\"Count\"", "\[Rule]", "0"}]}], 
+                    "\[RightAssociation]"}], "]"}], ",", "1", ",", "1"}], 
+                    "]"}], "[", 
+                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  FaizonZaman`LexicalCases`LexicalSummary[<|
+   "Data" -> FaizonZaman`LexicalCases`Utilities`MatchTrim[True][
+      Failure[
+      GroupBy, <|
+       "MessageTemplate" :> MessageName[GroupBy, "list1"], 
+        "MessageParameters" -> {
+          HoldForm[
+           Transpose[<|"Match" -> {}, "Position" -> {{2, 13}}|>]]}|>]], 
+    "Dataset" -> Dataset[
+      FaizonZaman`LexicalCases`Utilities`MatchTrim[True][
+       Failure[
+       GroupBy, <|
+        "MessageTemplate" :> MessageName[GroupBy, "list1"], 
+         "MessageParameters" -> {
+           HoldForm[
+            Transpose[<|"Match" -> {}, "Position" -> {{2, 13}}|>]]}|>]], 
+      TypeSystem`AnyType, <||>], "Source" -> "Text", "SourceData" -> 
+    "1:eJxTTMoPChZmYGBIVMjLTE5VSE4sUsgsVkjPz0/RAwBqqQgU", "TotalMatchCount" -> 
+    DeleteMissing[
+      FaizonZaman`LexicalCases`Utilities`MatchTrim[
+      True][<|"Match" -> Missing["PartInvalid", "Match"], "Count" -> 0|>], 1, 
+      1][Total, "Count"], "LexicalStructure" -> TextElement[{
+       TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>], 
+       TextElement[{
+         TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
+        "GrammaticalUnit" -> "BoundToken"|>], 
+       TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>]}, <|
+      "GrammaticalUnit" -> "StringExpression"|>]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.854390968806285*^9, 3.854391013272668*^9, {3.8798633281557283`*^9, 
+   3.8798633541715727`*^9}},
+ CellLabel->"Out[65]=",
+ CellID->3526044,ExpressionUUID->"b6f7ddf0-9871-4a5f-b36d-73eebeb3849a"]
 }, Open  ]],
 
 Cell["For now, explicitly name each pattern.", "ExampleText",
@@ -1741,8 +1735,8 @@ Cell[BoxData[
   "]"}]], "Input",
  CellChangeTimes->{{3.858014075132609*^9, 3.8580141492506742`*^9}, {
   3.8580141804820747`*^9, 3.858014225014339*^9}},
- CellLabel->"In[13]:=",
- CellID->1364137182],
+ CellLabel->"In[66]:=",
+ CellID->1364137182,ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1755,9 +1749,9 @@ Cell[BoxData[
        RowBox[{"3", ",", "13"}], "}"}], "}"}]}]}], "\[RightAssociation]"}], 
   "}"}]], "Output",
  CellChangeTimes->{{3.858014118488275*^9, 3.858014149758926*^9}, {
-  3.858014184008812*^9, 3.858014225742875*^9}},
- CellLabel->"Out[13]=",
- CellID->1100793678]
+   3.858014184008812*^9, 3.858014225742875*^9}, 3.879863366304955*^9},
+ CellLabel->"Out[66]=",
+ CellID->1325651071,ExpressionUUID->"99d18bd3-004d-4227-9e84-0d4d5d715312"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1772,12 +1766,14 @@ Cell[BoxData[
  CellID->884307898]
 }, Open  ]]
 },
-WindowSize->{720, 410},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"Paclet" -> "None"|>,
 CellContext->"Global`",
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"236ecc2a-79c1-48de-9e18-dc4540f98176"
 ]
 (* End of Notebook Content *)
 
@@ -1785,22 +1781,22 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[77781, 1581, 100, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"a7cfd794-b45f-4950-a034-7b9c9ef9b09a",
+  Cell[73507, 1509, 100, 2, 58, "ExtendedExamplesSection",ExpressionUUID->"a7cfd794-b45f-4950-a034-7b9c9ef9b09a",
    CellTags->"ExtendedExamples",
    CellID->1884696395]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 84430, 1786}
+ {"ExtendedExamples", 83765, 1782}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 323, 14, 70, "History",ExpressionUUID->"51a2987b-f5c6-4788-ba24-dd2c917acbd9",
+Cell[558, 20, 323, 14, 26, "History",ExpressionUUID->"51a2987b-f5c6-4788-ba24-dd2c917acbd9",
  CellID->860902038],
 Cell[CellGroupData[{
-Cell[906, 38, 68, 1, 70, "CategorizationSection",ExpressionUUID->"467a15c3-f363-475e-b9d1-9492909269ad",
+Cell[906, 38, 68, 1, 21, "CategorizationSection",ExpressionUUID->"467a15c3-f363-475e-b9d1-9492909269ad",
  CellID->1583222827],
 Cell[977, 41, 80, 2, 70, "Categorization",ExpressionUUID->"1701f9b9-07d2-4d37-bf67-674ec373179f",
  CellID->1903667059],
@@ -1812,150 +1808,141 @@ Cell[1259, 53, 102, 2, 70, "Categorization",ExpressionUUID->"e6ff0a20-0a76-449b-
  CellID->403517716]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1398, 60, 56, 1, 70, "KeywordsSection",ExpressionUUID->"bb3fa1ca-1e09-4321-8bc5-05707488029c",
+Cell[1398, 60, 56, 1, 21, "KeywordsSection",ExpressionUUID->"bb3fa1ca-1e09-4321-8bc5-05707488029c",
  CellID->1607766713],
-Cell[1457, 63, 117, 2, 70, "Keywords",ExpressionUUID->"29ed98f6-e9e0-48a3-91d1-4d197a7f3f9c",
+Cell[1457, 63, 117, 2, 21, "Keywords",ExpressionUUID->"29ed98f6-e9e0-48a3-91d1-4d197a7f3f9c",
  CellID->2095898837],
-Cell[1577, 67, 124, 2, 70, "Keywords",ExpressionUUID->"2d85dd45-b562-4f61-9e3f-997ab0a58dcf",
+Cell[1577, 67, 124, 2, 21, "Keywords",ExpressionUUID->"2d85dd45-b562-4f61-9e3f-997ab0a58dcf",
  CellID->933193412],
-Cell[1704, 71, 114, 2, 70, "Keywords",ExpressionUUID->"74cad980-faef-464f-980a-af9c52d6c982",
+Cell[1704, 71, 114, 2, 21, "Keywords",ExpressionUUID->"74cad980-faef-464f-980a-af9c52d6c982",
  CellID->734784607],
-Cell[1821, 75, 126, 2, 70, "Keywords",ExpressionUUID->"058ec70e-8f40-46cd-9e2b-38a000232d0f",
+Cell[1821, 75, 126, 2, 21, "Keywords",ExpressionUUID->"058ec70e-8f40-46cd-9e2b-38a000232d0f",
  CellID->896549797],
-Cell[1950, 79, 129, 2, 70, "Keywords",ExpressionUUID->"898e7e3b-6e44-454c-a47f-e28b61f494a8",
+Cell[1950, 79, 129, 2, 21, "Keywords",ExpressionUUID->"898e7e3b-6e44-454c-a47f-e28b61f494a8",
  CellID->1863861231],
-Cell[2082, 83, 106, 2, 70, "Keywords",ExpressionUUID->"d44674ab-b4ae-49ca-8b85-20d6cbe145fb",
+Cell[2082, 83, 106, 2, 21, "Keywords",ExpressionUUID->"d44674ab-b4ae-49ca-8b85-20d6cbe145fb",
  CellID->621599172]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2225, 90, 64, 1, 70, "TemplatesSection",ExpressionUUID->"ffd96d75-795b-49cc-bc7f-6a1d78b33864",
+Cell[2225, 90, 64, 1, 31, "TemplatesSection",ExpressionUUID->"ffd96d75-795b-49cc-bc7f-6a1d78b33864",
  CellID->597491718],
-Cell[2292, 93, 93, 2, 70, "Template",ExpressionUUID->"7d1a51c2-44d2-494e-9971-17aab906b379",
+Cell[2292, 93, 93, 2, 30, "Template",ExpressionUUID->"7d1a51c2-44d2-494e-9971-17aab906b379",
  CellID->409771054],
-Cell[2388, 97, 81, 2, 70, "Template",ExpressionUUID->"65086ab3-375e-423c-a4b0-75de5dbbf5a5",
+Cell[2388, 97, 81, 2, 30, "Template",ExpressionUUID->"65086ab3-375e-423c-a4b0-75de5dbbf5a5",
  CellID->42048649],
-Cell[2472, 101, 80, 2, 70, "Template",ExpressionUUID->"1fff52fa-4f69-4686-9305-1c8d544e360d",
+Cell[2472, 101, 80, 2, 30, "Template",ExpressionUUID->"1fff52fa-4f69-4686-9305-1c8d544e360d",
  CellID->189523880],
-Cell[2555, 105, 82, 2, 70, "Template",ExpressionUUID->"fe71bc04-f347-464a-99a2-88dc3fa34a7a",
+Cell[2555, 105, 82, 2, 30, "Template",ExpressionUUID->"fe71bc04-f347-464a-99a2-88dc3fa34a7a",
  CellID->609602659]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2674, 112, 51, 1, 70, "ObjectName",ExpressionUUID->"8d75bf5c-48e2-4ac9-b25f-6d39ea685679",
+Cell[2674, 112, 51, 1, 74, "ObjectName",ExpressionUUID->"8d75bf5c-48e2-4ac9-b25f-6d39ea685679",
  CellID->2094893623],
-Cell[2728, 115, 1020, 30, 70, "Usage",ExpressionUUID->"c402ace1-2174-42db-968f-4fb483386163",
+Cell[2728, 115, 1514, 35, 125, "Usage",ExpressionUUID->"c402ace1-2174-42db-968f-4fb483386163",
  CellID->882729196],
-Cell[3751, 147, 961, 32, 70, "Notes",ExpressionUUID->"26bcfff6-67e6-4284-966c-dfbfe94b39bf",
+Cell[4245, 152, 961, 32, 47, "Notes",ExpressionUUID->"26bcfff6-67e6-4284-966c-dfbfe94b39bf",
  CellID->1756933914]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4749, 184, 58, 1, 70, "TutorialsSection",ExpressionUUID->"ec7a4065-090e-425f-848d-80c83f33cc48",
+Cell[5243, 189, 58, 1, 47, "TutorialsSection",ExpressionUUID->"ec7a4065-090e-425f-848d-80c83f33cc48",
  CellID->2085712289],
-Cell[4810, 187, 253, 6, 70, "Tutorials",ExpressionUUID->"786b2c20-2b81-415e-9954-ceec98054591",
+Cell[5304, 192, 253, 6, 19, "Tutorials",ExpressionUUID->"786b2c20-2b81-415e-9954-ceec98054591",
  CellID->1439213037]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5100, 198, 82, 1, 70, "RelatedDemonstrationsSection",ExpressionUUID->"ea6e2578-7520-4dcc-8f53-6236019a36c3",
+Cell[5594, 203, 82, 1, 34, "RelatedDemonstrationsSection",ExpressionUUID->"ea6e2578-7520-4dcc-8f53-6236019a36c3",
  CellID->425374254],
-Cell[5185, 201, 57, 1, 70, "RelatedDemonstrations",ExpressionUUID->"d9822080-7ad6-4def-8990-b8842d24191d",
+Cell[5679, 206, 57, 1, 19, "RelatedDemonstrations",ExpressionUUID->"d9822080-7ad6-4def-8990-b8842d24191d",
  CellID->292026115]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5279, 207, 65, 1, 70, "RelatedLinksSection",ExpressionUUID->"72cbc6f1-fe9d-4014-80a6-e8342bec29cc",
+Cell[5773, 212, 65, 1, 34, "RelatedLinksSection",ExpressionUUID->"72cbc6f1-fe9d-4014-80a6-e8342bec29cc",
  CellID->1082781410],
-Cell[5347, 210, 261, 5, 70, "RelatedLinks",ExpressionUUID->"c197d4da-5f5a-4def-99c0-07ea31fae55a",
+Cell[5841, 215, 261, 5, 19, "RelatedLinks",ExpressionUUID->"c197d4da-5f5a-4def-99c0-07ea31fae55a",
  CellID->614176243]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5645, 220, 55, 1, 70, "SeeAlsoSection",ExpressionUUID->"8f99cc06-d9dd-418e-8176-531ef75dbd71",
+Cell[6139, 225, 55, 1, 34, "SeeAlsoSection",ExpressionUUID->"8f99cc06-d9dd-418e-8176-531ef75dbd71",
  CellID->1533171953],
-Cell[5703, 223, 615, 20, 70, "SeeAlso",ExpressionUUID->"169a4b0f-da7e-443e-8345-126b6329630f",
+Cell[6197, 228, 615, 20, 22, "SeeAlso",ExpressionUUID->"169a4b0f-da7e-443e-8345-126b6329630f",
  CellID->364733718]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6355, 248, 129, 2, 70, "MoreAboutSection",ExpressionUUID->"2a3b4953-8c73-49f8-a406-25152053b77e",
+Cell[6849, 253, 129, 2, 34, "MoreAboutSection",ExpressionUUID->"2a3b4953-8c73-49f8-a406-25152053b77e",
  CellID->1161269888],
-Cell[6487, 252, 233, 5, 70, "MoreAbout",ExpressionUUID->"2d87d7a2-fdfe-4bee-b261-d568cdc09cd0",
+Cell[6981, 257, 233, 5, 19, "MoreAbout",ExpressionUUID->"2d87d7a2-fdfe-4bee-b261-d568cdc09cd0",
  CellID->1881621836]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6757, 262, 357, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"7e4375cd-8404-49c2-978c-b76a59bdb197",
+Cell[7251, 267, 357, 11, 73, "PrimaryExamplesSection",ExpressionUUID->"7e4375cd-8404-49c2-978c-b76a59bdb197",
  CellID->1084011928],
-Cell[7117, 275, 598, 17, 70, "ExampleText",ExpressionUUID->"6c6af0fe-e311-447e-ac77-bef15fe9687f",
+Cell[7611, 280, 598, 17, 26, "ExampleText",ExpressionUUID->"6c6af0fe-e311-447e-ac77-bef15fe9687f",
  CellID->1881708440],
 Cell[CellGroupData[{
-Cell[7740, 296, 315, 8, 70, "Input",ExpressionUUID->"4f1827a3-4f72-4da3-98f1-5f83c542c77a",
+Cell[8234, 301, 371, 8, 27, "Input",ExpressionUUID->"4f1827a3-4f72-4da3-98f1-5f83c542c77a",
  CellID->632206651],
-Cell[8058, 306, 266, 7, 70, "Output",ExpressionUUID->"6e988644-a02e-475c-8a8a-80d9e47eb786",
- CellID->533614290]
+Cell[8608, 311, 345, 7, 26, "Output",ExpressionUUID->"70a90d36-26e9-4c1b-b0bf-c718f842f838",
+ CellID->1309418731]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8361, 318, 341, 9, 70, "Input",ExpressionUUID->"b3343717-ffb8-4aa4-b16a-46666dd14ceb",
+Cell[8990, 323, 396, 9, 27, "Input",ExpressionUUID->"b3343717-ffb8-4aa4-b16a-46666dd14ceb",
  CellID->569953902],
-Cell[8705, 329, 5350, 111, 70, "Output",ExpressionUUID->"d4f59f47-5ae2-47a7-bab5-9a7ad2e9aac8",
- CellID->1361395789]
+Cell[9389, 334, 5471, 112, 88, "Output",ExpressionUUID->"cb7f1296-d102-4aaa-a2df-15b1696277d0",
+ CellID->1033627737]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14092, 445, 245, 5, 70, "Input",ExpressionUUID->"6787ab00-e88e-4c13-a57f-19ee5a20c3af",
+Cell[14897, 451, 300, 5, 27, "Input",ExpressionUUID->"6787ab00-e88e-4c13-a57f-19ee5a20c3af",
  CellID->609527042],
-Cell[14340, 452, 63392, 1123, 70, "Output",ExpressionUUID->"1ccc026c-ea87-4bcc-b3e3-452cc82704cb",
- CellID->834939145]
+Cell[15200, 458, 58258, 1045, 328, "Output",ExpressionUUID->"65d666d7-fe1c-492b-b7a7-0ffc6953140b",
+ CellID->1540027169]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77781, 1581, 100, 2, 70, "ExtendedExamplesSection",ExpressionUUID->"a7cfd794-b45f-4950-a034-7b9c9ef9b09a",
+Cell[73507, 1509, 100, 2, 58, "ExtendedExamplesSection",ExpressionUUID->"a7cfd794-b45f-4950-a034-7b9c9ef9b09a",
  CellTags->"ExtendedExamples",
  CellID->1884696395],
-Cell[77884, 1585, 124, 3, 70, "ExampleSection",ExpressionUUID->"093f7740-90dc-4422-86df-973a6ba9fbe2",
+Cell[73610, 1513, 124, 3, 35, "ExampleSection",ExpressionUUID->"093f7740-90dc-4422-86df-973a6ba9fbe2",
  CellID->708517515],
-Cell[78011, 1590, 147, 3, 70, "ExampleSection",ExpressionUUID->"5416b5b9-9f35-496f-a637-752056c865f8",
+Cell[73737, 1518, 147, 3, 23, "ExampleSection",ExpressionUUID->"5416b5b9-9f35-496f-a637-752056c865f8",
  CellID->257051990],
 Cell[CellGroupData[{
-Cell[78183, 1597, 127, 3, 70, "ExampleSection",ExpressionUUID->"45715e9e-a25d-4a51-a04b-e21d8a02872e",
+Cell[73909, 1525, 127, 3, 23, "ExampleSection",ExpressionUUID->"45715e9e-a25d-4a51-a04b-e21d8a02872e",
  CellID->1683181813],
-Cell[78313, 1602, 129, 3, 70, "ExampleSubsection",ExpressionUUID->"c6f614d1-6889-4b56-b9c6-ec5778079861",
+Cell[74039, 1530, 129, 3, 26, "ExampleSubsection",ExpressionUUID->"c6f614d1-6889-4b56-b9c6-ec5778079861",
  CellID->434649160],
-Cell[78445, 1607, 130, 3, 70, "ExampleSubsection",ExpressionUUID->"4760e746-6730-42c2-bae5-6f1aea51429a",
+Cell[74171, 1535, 130, 3, 22, "ExampleSubsection",ExpressionUUID->"4760e746-6730-42c2-bae5-6f1aea51429a",
  CellID->1556548673]
 }, Open  ]],
-Cell[78590, 1613, 131, 3, 70, "ExampleSection",ExpressionUUID->"d3c20d30-751a-4cd4-a8a4-dd2da9347551",
+Cell[74316, 1541, 131, 3, 35, "ExampleSection",ExpressionUUID->"d3c20d30-751a-4cd4-a8a4-dd2da9347551",
  CellID->267759357],
-Cell[78724, 1618, 142, 3, 70, "ExampleSection",ExpressionUUID->"8e71ccc7-1d72-423f-9bc0-1a78f855cc9c",
+Cell[74450, 1546, 142, 3, 23, "ExampleSection",ExpressionUUID->"8e71ccc7-1d72-423f-9bc0-1a78f855cc9c",
  CellID->1253272634],
 Cell[CellGroupData[{
-Cell[78891, 1625, 135, 3, 70, "ExampleSection",ExpressionUUID->"0f77c9a2-75f7-48e9-91fb-8fe0436648f9",
+Cell[74617, 1553, 135, 3, 23, "ExampleSection",ExpressionUUID->"0f77c9a2-75f7-48e9-91fb-8fe0436648f9",
  CellID->1233549862],
-Cell[79029, 1630, 261, 6, 70, "ExampleText",ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556",
+Cell[74755, 1558, 369, 7, 41, "ExampleText",ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556",
  CellID->1504242725],
 Cell[CellGroupData[{
-Cell[79315, 1640, 440, 12, 70, "Input",ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae",
+Cell[75149, 1569, 545, 13, 47, "Input",ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae",
  CellID->187057416],
-Cell[79758, 1654, 549, 11, 70, "Message",ExpressionUUID->"d882d90f-8e85-4753-9619-2d3d71fb536c",
- CellID->1615823357],
-Cell[80310, 1667, 546, 11, 70, "Message",ExpressionUUID->"8f7984ed-8ad5-4508-a398-7c9eeb339924",
- CellID->64961137],
-Cell[80859, 1680, 548, 11, 70, "Message",ExpressionUUID->"7598982c-6169-4133-a771-c2abf760b62d",
- CellID->880136883],
-Cell[81410, 1693, 548, 11, 70, "Message",ExpressionUUID->"438e68b3-8ea7-42b8-9931-a13153e884b8",
- CellID->593232045],
-Cell[81961, 1706, 482, 13, 70, "Output",ExpressionUUID->"63c2ffdc-b28d-4f4b-87a5-f1bc0d0a56cb",
- CellID->1831890941]
+Cell[75697, 1584, 5853, 129, 70, "Output",ExpressionUUID->"b6f7ddf0-9871-4a5f-b36d-73eebeb3849a",
+ CellID->3526044]
 }, Open  ]],
-Cell[82458, 1722, 148, 2, 70, "ExampleText",ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad",
+Cell[81565, 1716, 148, 2, 24, "ExampleText",ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad",
  CellID->518202502],
 Cell[CellGroupData[{
-Cell[82631, 1728, 603, 16, 70, "Input",ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de",
+Cell[81738, 1722, 658, 16, 66, "Input",ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de",
  CellID->1364137182],
-Cell[83237, 1746, 480, 13, 70, "Output",ExpressionUUID->"87bdd423-d95f-47a9-9d2e-195e1b12864e",
- CellID->1100793678]
+Cell[82399, 1740, 558, 13, 29, "Output",ExpressionUUID->"99d18bd3-004d-4227-9e84-0d4d5d715312",
+ CellID->1325651071]
 }, Open  ]]
 }, Open  ]],
-Cell[83744, 1763, 139, 3, 70, "ExampleSection",ExpressionUUID->"7d01e129-27ad-40a9-b9f9-b4de6e2759a7",
+Cell[82984, 1757, 139, 3, 35, "ExampleSection",ExpressionUUID->"7d01e129-27ad-40a9-b9f9-b4de6e2759a7",
  CellID->465402496],
-Cell[83886, 1768, 132, 3, 70, "ExampleSection",ExpressionUUID->"1fb89031-11f1-4de3-b513-055d56a08f83",
+Cell[83126, 1762, 132, 3, 23, "ExampleSection",ExpressionUUID->"1fb89031-11f1-4de3-b513-055d56a08f83",
  CellID->884307898]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

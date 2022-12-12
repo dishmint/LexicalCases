@@ -1,64 +1,64 @@
 <|"English/Guides/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.300661, "Seconds"]|>], 
-   "FileHash" -> "Sf7fhzSl9neZdpndf2qVSth2FGTj9RuxTaB7EPzH/7Q="|>, 
+     <|"Time" -> Quantity[1.577982, "Seconds"]|>], 
+   "FileHash" -> "P7dpyyF6KTTcmrCcXTLfLKgNgXVP27tzRMUCsZ5inFk="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.72584, "Seconds"]|>], 
-   "FileHash" -> "bns1VPoQY/vSnNO4oQL275dXcm4ZymvM6JPdvwOImBM="|>, 
+     <|"Time" -> Quantity[1.358423, "Seconds"]|>], 
+   "FileHash" -> "Kj93gITta3ilqadqPucYhSVJ2mqEgbjTNgT2NSS9Cgs="|>, 
  "English/ReferencePages/Symbols/CountSummaryLowercase.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[2.066449, "Seconds"]|>], 
-   "FileHash" -> "aCyMbzwwoxE+zi35rDtiDEOU7KfYRlqSMyhmJDubuHo="|>, 
+     <|"Time" -> Quantity[1.476994, "Seconds"]|>], 
+   "FileHash" -> "tIirjayy9F+wIqevFqN/pGKvq1jJ37DeukS0sMjoxVM="|>, 
  "English/ReferencePages/Symbols/ExpandPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.063542, "Seconds"]|>], 
-   "FileHash" -> "1IuyMBI8xL6yZZs7nN1cIoMSt3Ul81uDfeVaNvff6xw="|>, 
+     <|"Time" -> Quantity[1.065895, "Seconds"]|>], 
+   "FileHash" -> "AqXeG/01iHXUjoSWqD8NxuYqoteDJglcDaVDmSxKh2Q="|>, 
  "English/ReferencePages/Symbols/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[3.268, "Seconds"]|>], 
-   "FileHash" -> "tyPt7rZAzMf8ai7RJu3Hj1l5he8JkrPoIxfkVqFq6N4="|>, 
+     <|"Time" -> Quantity[2.402441, "Seconds"]|>], 
+   "FileHash" -> "GT+n4DYK4WT8yzXQoNUFLfBjTRcvsLoNhLP4jH9JMZM="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionPlot.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.682686, "Seconds"]|>], 
-   "FileHash" -> "al57ioSj/d1yDnsDxKU+WEXxLp6l6UuYcAzBIthNVZ0="|>, 
+     <|"Time" -> Quantity[1.528384, "Seconds"]|>], 
+   "FileHash" -> "2ZAw75bU3aPeZqLy1z77XdVF4zzLwGHFZ05mE93fUeo="|>, 
  "English/ReferencePages/Symbols/LexicalPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.228918, "Seconds"]|>], 
-   "FileHash" -> "2Yo7gJMopl+pUaGKg1+migNezA3LFo+hbMjgY9xM0iA="|>, 
+     <|"Time" -> Quantity[1.147386, "Seconds"]|>], 
+   "FileHash" -> "84mBBxY3pUq2BOlI40KD6pjtnKFgUiGKqJ3emukeu9g="|>, 
  "English/ReferencePages/Symbols/LexicalStructure.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.149712, "Seconds"]|>], 
-   "FileHash" -> "O5I2lzWGqmKNkf2QEKARHbjaVM2kfcI5Emb7ORWIRX8="|>, 
+     <|"Time" -> Quantity[0.926086, "Seconds"]|>], 
+   "FileHash" -> "2essVvnRu4bucQXC39GQGtd9CjS+5iuwZwoJjRn2854="|>, 
  "English/ReferencePages/Symbols/LexicalSummary.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[3.548555, "Seconds"]|>], 
-   "FileHash" -> "VHrrKn32iJZlGdlz2GsnhEfbUKV4IrzTXIL6Q4kUf4c="|>, 
+     <|"Time" -> Quantity[3.210893, "Seconds"]|>], 
+   "FileHash" -> "IWYQS2OPZDI88KFHoKUM01a3iHci/0Cab55eUeuWoqI="|>, 
  "English/ReferencePages/Symbols/OptionalToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.130619, "Seconds"]|>], 
-   "FileHash" -> "0CTnAkhYV/1hVcVfmUK13fOKUvDzZCLMYFamn0mFw+w="|>, 
+     <|"Time" -> Quantity[0.927825, "Seconds"]|>], 
+   "FileHash" -> "dt+Vj1rQ/UT43Z2YzK5vkI5Emgtv70E5j9/R+jQ1kdU="|>, 
  "English/ReferencePages/Symbols/Sandwich.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.692642, "Seconds"]|>], 
-   "FileHash" -> "PL+v9wKxFBtG8yxrp0tjfHtZGxUnPXuaY7JQCu2Zytk="|>, 
+     <|"Time" -> Quantity[1.100349, "Seconds"]|>], 
+   "FileHash" -> "CnnnIU58g/2xv6G666nrzFczpdI+f0sytxMaQqmKfsE="|>, 
  "English/ReferencePages/Symbols/TextType.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.070852, "Seconds"]|>], 
-   "FileHash" -> "JFb/HqcdvfnV1jcI0DIwWtS37gw/FDZT4XOJXpWaj0k="|>, 
+     <|"Time" -> Quantity[1.076159, "Seconds"]|>], 
+   "FileHash" -> "AQk/TBfKSmgCdhKiwli7qQSfsKHGk89zyrDlZXjY0yQ="|>, 
  "English/ReferencePages/Symbols/ToLexicalPattern.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.666791, "Seconds"]|>], 
-   "FileHash" -> "G3yo7HyLXOk2BpIJeSMWnVp0KJ/rzISMLFJz1m80fnw="|>, 
+     <|"Time" -> Quantity[1.21081, "Seconds"]|>], 
+   "FileHash" -> "1xY+MBpfDQNqKEwrshN7rjOEDkd8qugUDGJRIn/RwQI="|>, 
  "English/ReferencePages/Symbols/WordToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[2.710617, "Seconds"]|>], 
-   "FileHash" -> "pdFQuGzr7XN9bBD5cNJQuJE9rH9qZ4LGnPgkHkwoU+k="|>, 
+     <|"Time" -> Quantity[1.389043, "Seconds"]|>], 
+   "FileHash" -> "V+ML4cUgSwmaMsrxD71f5ibSQ50Zmsvt0DLKvqNjZs4="|>, 
  "English/ReferencePages/Symbols/$LexicalCasesServices.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.13208, "Seconds"]|>], 
-   "FileHash" -> "kEJC9yFC/dvA+TbWJutcJAQlvPD71MQtxLn2CjurP8o="|>, 
+     <|"Time" -> Quantity[0.764999, "Seconds"]|>], 
+   "FileHash" -> "fG+/T3WztWOzTxL7zaQ3ql43eJU9Helpi76/VHzpEhw="|>, 
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[3.73581, "Seconds"]|>], 
-   "FileHash" -> "6LoqetFzW8izc1M2pPf1dmW+r1YI2222jydzo7aC8a0="|>|>
+     <|"Time" -> Quantity[1.605789, "Seconds"]|>], 
+   "FileHash" -> "1jy1gRuikcMDSa6Z5JXautVKSc3USzt+DOL9cenqmzM="|>|>
