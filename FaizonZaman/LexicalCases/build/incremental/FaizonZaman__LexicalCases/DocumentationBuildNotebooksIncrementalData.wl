@@ -1,11 +1,11 @@
 <|"English/Guides/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.300661, "Seconds"]|>], 
-   "FileHash" -> "Sf7fhzSl9neZdpndf2qVSth2FGTj9RuxTaB7EPzH/7Q="|>, 
+     <|"Time" -> Quantity[1.577982, "Seconds"]|>], 
+   "FileHash" -> "P7dpyyF6KTTcmrCcXTLfLKgNgXVP27tzRMUCsZ5inFk="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.72584, "Seconds"]|>], 
-   "FileHash" -> "bns1VPoQY/vSnNO4oQL275dXcm4ZymvM6JPdvwOImBM="|>, 
+     <|"Time" -> Quantity[1.358423, "Seconds"]|>], 
+   "FileHash" -> "Kj93gITta3ilqadqPucYhSVJ2mqEgbjTNgT2NSS9Cgs="|>, 
  "English/ReferencePages/Symbols/CountSummaryLowercase.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[2.066449, "Seconds"]|>], 
