@@ -507,8 +507,6 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Enclose[
 			Module[{
-				(* files = Map[File][TextSearch[index, query][All, "Location"]], *)
-				(* files = Dataaset[TextSearch[index, query]][All, "Text" | "Description" *)
 				files,
 				f1 = DeleteMissing[Dataset[TextSearch[index, query][All, {"Text","Description"}]] // Normal, 2] // Flatten,
 				f2 = Map[File]@DeleteMissing[TextSearch[index, query][All, "Location"]],
@@ -517,7 +515,7 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 				If[Length@f1!=0,files = f1,files=f2];
 				ConfirmAssert[Not @* MatchQ[{}] @ files];
 				lpc = iLexicalCases[files, se, opts];
-				GenerateLexicalSummary[lpc["Results"], "SearchIndex", lpc["Text"], se]
+				GenerateLexicalSummary[lpc["Results"], "SearchIndex", Compress[lpc["Text"]], se]
 			]
 			,
 			Failure["NoFilesFound",
