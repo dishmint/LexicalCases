@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     91266,       1940]
-NotebookOptionsPosition[     83274,       1768]
-NotebookOutlinePosition[     84040,       1794]
-CellTagsIndexPosition[     83960,       1789]
+NotebookDataLength[     99687,       2120]
+NotebookOptionsPosition[     91304,       1940]
+NotebookOutlinePosition[     92069,       1966]
+CellTagsIndexPosition[     91989,       1961]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1556,14 +1556,75 @@ Cell[BoxData[
   $Line = 0; Null]], "ExampleSection",
  CellID->1233549862],
 
-Cell["\<\
-Naming the 'outer' pattern will not work since it will produce the same name \
-for the left flanking pattern and right flanking pattern. This may change in \
-the future.\
-\>", "ExampleText",
+Cell[TextData[{
+ "Naming the 'outer' pattern will not work since it will produce the same \
+name for the left flanking pattern and right flanking pattern. Note the \
+duplicate ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"w", ":"}], "Input"]], "InlineFormula",
+  FormatType->StandardForm,ExpressionUUID->
+  "4da8548b-9f73-49f2-ae77-18318a015d46"],
+ "."
+}], "ExampleText",
  CellChangeTimes->{
-  3.854391084429017*^9, {3.8798632685281754`*^9, 3.879863272266321*^9}},
+  3.854391084429017*^9, {3.8798632685281754`*^9, 3.879863272266321*^9}, {
+   3.879878653218855*^9, 3.8798786921222887`*^9}},
  CellID->1504242725,ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandPattern", "[", 
+  RowBox[{"\"\<a nice car is good.\>\"", ",", 
+   RowBox[{
+    RowBox[{"Sandwich", "[", 
+     RowBox[{
+      RowBox[{"w", ":", 
+       RowBox[{"WordToken", "[", "1", "]"}]}], ",", " ", 
+      RowBox[{"BoundToken", "[", "\"\<car\>\"", "]"}]}], "]"}], ":>", "w"}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.879878681107833*^9, 3.879878682943879*^9}},
+ CellLabel->"In[4]:=",
+ CellID->1870854804,ExpressionUUID->"669f3e6a-7b7a-425e-9e29-f3a3185c6da2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", ":", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+      "WordBoundary", "|", "\<\" \"\>", "|", "StartOfString", "|", 
+       "StartOfLine"}], "~~", 
+      RowBox[{"WordCharacter", ".."}], "~~", 
+      RowBox[{
+      "WordBoundary", "|", "\<\" \"\>", "|", "EndOfString", "|", 
+       "EndOfLine"}]}], ")"}]}], "~~", 
+   RowBox[{
+   "WordBoundary", "|", "\<\" \"\>", "|", "StartOfString", "|", 
+    "StartOfLine"}], "~~", "\<\"car\"\>", "~~", 
+   RowBox[{
+   "WordBoundary", "|", "\<\" \"\>", "|", "EndOfString", "|", "EndOfLine"}], "~~", 
+   RowBox[{"w", ":", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+      "WordBoundary", "|", "\<\" \"\>", "|", "StartOfString", "|", 
+       "StartOfLine"}], "~~", 
+      RowBox[{"WordCharacter", ".."}], "~~", 
+      RowBox[{
+      "WordBoundary", "|", "\<\" \"\>", "|", "EndOfString", "|", 
+       "EndOfLine"}]}], ")"}]}]}], "\[RuleDelayed]", "w"}]], "Output",
+ CellChangeTimes->{3.8798786847395067`*^9},
+ CellLabel->"Out[4]=",
+ CellID->292715916,ExpressionUUID->"6072789b-68ba-4f8d-9fd2-f3344b63f536"]
+}, Open  ]],
+
+Cell["LexicalCases fails with this pattern:", "ExampleText",
+ CellChangeTimes->{{3.8798786987459097`*^9, 3.8798787102263327`*^9}, {
+  3.879878807002902*^9, 3.879878825465344*^9}},
+ CellID->2360343,ExpressionUUID->"0a192bed-8a9d-459e-8169-84feaf04af42"],
 
 Cell[CellGroupData[{
 
@@ -1579,139 +1640,250 @@ Cell[BoxData[
    "]"}]], "Input",
  CellChangeTimes->{{3.8543909662184963`*^9, 3.854391012300275*^9}, {
   3.879863324017447*^9, 3.879863352262238*^9}},
- CellLabel->"In[65]:=",
+ CellLabel->"In[3]:=",
  CellID->187057416,ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
-   TagBox["LexicalSummary",
+   TagBox["Failure",
     "SummaryHead"], "[", 
    DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
     
     TemplateBox[{
       PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {10., {0., 10.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox[
+             "\"\[WarningSign]\"", "Message", StripOnInput -> False, FontSize -> 
+              35], ContentPadding -> False, FrameMargins -> {{0, 0}, {0, 0}}, 
+             FrameStyle -> None, StripOnInput -> False], 
             GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"\\!\\(\\*TagBox[RowBox[{\\\"StringCases\\\", \\\"[\\\", \
+RowBox[{\\\"FaizonZaman`LexicalCases`Private`s$14921\\\", \\\",\\\", \
+\\\"FaizonZaman`LexicalCases`Private`rx$14921\\\", \\\",\\\", \
+RowBox[{\\\"IgnoreCase\\\", \\\"\[Rule]\\\", RowBox[{\\\"OptionValue\\\", \
+\\\"[\\\", RowBox[{\\\"LexicalCases\\\", \\\",\\\", RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"IgnoreCase\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{\\\"Overlaps\\\", \\\"\[Rule]\\\", RowBox[{\\\"OptionValue\\\", \\\"[\
+\\\", RowBox[{\\\"LexicalCases\\\", \\\",\\\", RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"Overlaps\\\"}], \\\"]\\\"}]}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) produced a message on evaluation.\"", 
+                    "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"ConfirmationFailed\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}}, 
+             AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
+               ImageSizeCache -> {10., {0., 10.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = False), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox[
+             "\"\[WarningSign]\"", "Message", StripOnInput -> False, FontSize -> 
+              35], ContentPadding -> False, FrameMargins -> {{0, 0}, {0, 0}}, 
+             FrameStyle -> None, StripOnInput -> False], 
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"\\!\\(\\*TagBox[RowBox[{\\\"StringCases\\\", \\\"[\\\", \
+RowBox[{\\\"FaizonZaman`LexicalCases`Private`s$14921\\\", \\\",\\\", \
+\\\"FaizonZaman`LexicalCases`Private`rx$14921\\\", \\\",\\\", \
+RowBox[{\\\"IgnoreCase\\\", \\\"\[Rule]\\\", RowBox[{\\\"OptionValue\\\", \
+\\\"[\\\", RowBox[{\\\"LexicalCases\\\", \\\",\\\", RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"IgnoreCase\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{\\\"Overlaps\\\", \\\"\[Rule]\\\", RowBox[{\\\"OptionValue\\\", \\\"[\
+\\\", RowBox[{\\\"LexicalCases\\\", \\\",\\\", RowBox[{\\\"{\\\", \
+\\\"}\\\"}], \\\",\\\", \\\"Overlaps\\\"}], \\\"]\\\"}]}]}], \\\"]\\\"}], \
+Function[Short[Slot[1], 5]]]\\) produced a message on evaluation.\"", 
+                    "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"ConfirmationFailed\"", "SummaryItem"]}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
                RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 TagBox[
+                  
+                  TemplateBox[{"\"ConfirmationType\"", "\": \""}, 
+                   "RowDefault"], "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  RowBox[{
-                    RowBox[{"DeleteMissing", "[", 
-                    RowBox[{
-                    RowBox[{
+                  TagBox["\"ConfirmQuiet\"", HoldForm], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"HeldExpression\"", "\": \""}, "RowDefault"],
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   RowBox[{"Hold", "[", 
+                    RowBox[{"StringCases", "[", 
                     
                     RowBox[{
-                    "FaizonZaman`LexicalCases`Utilities`MatchTrim", "[", 
-                    "True", "]"}], "[", 
-                    RowBox[{"\[LeftAssociation]", 
-                    RowBox[{
-                    RowBox[{"\"Match\"", "\[Rule]", 
-                    RowBox[{"Missing", "[", 
-                    RowBox[{"\"PartInvalid\"", ",", "\"Match\""}], "]"}]}], 
-                    ",", 
-                    RowBox[{"\"Count\"", "\[Rule]", "0"}]}], 
-                    "\[RightAssociation]"}], "]"}], ",", "1", ",", "1"}], 
-                    "]"}], "[", 
-                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
-                  "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
-          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
-          GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
-            GridBox[{{
+                    "FaizonZaman`LexicalCases`Private`s$14921", ",", 
+                    "FaizonZaman`LexicalCases`Private`rx$14921", ",", 
+                    RowBox[{"IgnoreCase", "\[Rule]", 
+                    RowBox[{"OptionValue", "[", 
+                    RowBox[{"LexicalCases", ",", 
+                    RowBox[{"{", "}"}], ",", "IgnoreCase"}], "]"}]}], ",", 
+                    RowBox[{"Overlaps", "\[Rule]", 
+                    RowBox[{"OptionValue", "[", 
+                    RowBox[{"LexicalCases", ",", 
+                    RowBox[{"{", "}"}], ",", "Overlaps"}], "]"}]}]}], "]"}], 
+                    "]"}], HoldForm], "SummaryItem"]}]}, {
                RowBox[{
-                 TagBox["\"Source: \"", "SummaryItemAnnotation"], 
-                 "\[InvisibleSpace]", 
-                 TagBox["\"Text\"", "SummaryItem"]}]}, {
-               RowBox[{
-                 TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                 TagBox[
+                  
+                  TemplateBox[{"\"HeldMessageName\"", "\": \""}, 
+                   "RowDefault"], "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                  RowBox[{
-                    RowBox[{"DeleteMissing", "[", 
+                  TagBox[
+                   RowBox[{"Hold", "[", 
+                    StyleBox[
+                    RowBox[{"StringExpression", "::", "cond"}], 
+                    "MessageName"], "]"}], HoldForm], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  
+                  TemplateBox[{"\"HeldMessageCall\"", "\": \""}, 
+                   "RowDefault"], "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   RowBox[{"Hold", "[", 
+                    RowBox[{"Message", "[", 
                     RowBox[{
+                    StyleBox[
+                    RowBox[{"StringExpression", "::", "cond"}], 
+                    "MessageName"], ",", "w", ",", 
+                    RowBox[{"w", ":", 
+                    RowBox[{"(", 
                     RowBox[{
                     
-                    RowBox[{
-                    "FaizonZaman`LexicalCases`Utilities`MatchTrim", "[", 
-                    "True", "]"}], "[", 
-                    RowBox[{"\[LeftAssociation]", 
-                    RowBox[{
-                    RowBox[{"\"Match\"", "\[Rule]", 
-                    RowBox[{"Missing", "[", 
-                    RowBox[{"\"PartInvalid\"", ",", "\"Match\""}], "]"}]}], 
-                    ",", 
-                    RowBox[{"\"Count\"", "\[Rule]", "0"}]}], 
-                    "\[RightAssociation]"}], "]"}], ",", "1", ",", "1"}], 
-                    "]"}], "[", 
-                    RowBox[{"Total", ",", "\"Count\""}], "]"}], 
-                  "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
+                    RowBox[{"WordBoundary", "|", "\" \"", "|", 
+                    "StartOfString", "|", "StartOfLine"}], "~~", 
+                    RowBox[{"WordCharacter", ".."}], "~~", 
+                    
+                    RowBox[{"WordBoundary", "|", "\" \"", "|", "EndOfString", 
+                    "|", "EndOfLine"}]}], ")"}]}]}], "]"}], "]"}], HoldForm], 
+                  "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Information\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                  "\"Message issued while calling StringCases\"", HoldForm], 
+                  "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
               ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
           GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  FaizonZaman`LexicalCases`LexicalSummary[<|
-   "Data" -> FaizonZaman`LexicalCases`Utilities`MatchTrim[True][
-      Failure[
-      GroupBy, <|
-       "MessageTemplate" :> MessageName[GroupBy, "list1"], 
-        "MessageParameters" -> {
-          HoldForm[
-           Transpose[<|"Match" -> {}, "Position" -> {{2, 13}}|>]]}|>]], 
-    "Dataset" -> Dataset[
-      FaizonZaman`LexicalCases`Utilities`MatchTrim[True][
-       Failure[
-       GroupBy, <|
-        "MessageTemplate" :> MessageName[GroupBy, "list1"], 
-         "MessageParameters" -> {
-           HoldForm[
-            Transpose[<|"Match" -> {}, "Position" -> {{2, 13}}|>]]}|>]], 
-      TypeSystem`AnyType, <||>], "Source" -> "Text", "SourceData" -> 
-    "1:eJxTTMoPChZmYGBIVMjLTE5VSE4sUsgsVkjPz0/RAwBqqQgU", "TotalMatchCount" -> 
-    DeleteMissing[
-      FaizonZaman`LexicalCases`Utilities`MatchTrim[
-      True][<|"Match" -> Missing["PartInvalid", "Match"], "Count" -> 0|>], 1, 
-      1][Total, "Count"], "LexicalStructure" -> TextElement[{
-       TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>], 
-       TextElement[{
-         TextElement[{"car"}, <|"GrammaticalUnit" -> "Text"|>]}, <|
-        "GrammaticalUnit" -> "BoundToken"|>], 
-       TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>]}, <|
-      "GrammaticalUnit" -> "StringExpression"|>]|>],
+  Failure[
+  "ConfirmationFailed", <|
+   "MessageTemplate" -> "`` produced a message on evaluation.", 
+    "MessageParameters" -> {
+      HoldForm[
+       StringCases[
+       FaizonZaman`LexicalCases`Private`s$14921, 
+        FaizonZaman`LexicalCases`Private`rx$14921, IgnoreCase -> 
+        OptionValue[FaizonZaman`LexicalCases`LexicalCases, {}, IgnoreCase], 
+        Overlaps -> 
+        OptionValue[FaizonZaman`LexicalCases`LexicalCases, {}, Overlaps]]]}, 
+    "ConfirmationType" -> "ConfirmQuiet", "HeldExpression" -> Hold[
+      StringCases[
+      FaizonZaman`LexicalCases`Private`s$14921, 
+       FaizonZaman`LexicalCases`Private`rx$14921, IgnoreCase -> 
+       OptionValue[FaizonZaman`LexicalCases`LexicalCases, {}, IgnoreCase], 
+       Overlaps -> 
+       OptionValue[FaizonZaman`LexicalCases`LexicalCases, {}, Overlaps]]], 
+    "HeldMessageName" -> Hold[
+      MessageName[StringExpression, "cond"]], "HeldMessageCall" -> Hold[
+      Message[
+       MessageName[StringExpression, "cond"], $CellContext`w, 
+       Pattern[$CellContext`w, 
+        StringExpression[
+         Alternatives[WordBoundary, " ", StartOfString, StartOfLine], 
+         Repeated[WordCharacter], 
+         Alternatives[WordBoundary, " ", EndOfString, EndOfLine]]]]], 
+    "Information" -> "Message issued while calling StringCases"|>],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
  CellChangeTimes->{
   3.854390968806285*^9, 3.854391013272668*^9, {3.8798633281557283`*^9, 
-   3.8798633541715727`*^9}},
- CellLabel->"Out[65]=",
- CellID->3526044,ExpressionUUID->"b6f7ddf0-9871-4a5f-b36d-73eebeb3849a"]
+   3.8798633541715727`*^9}, 3.879878169226201*^9, 3.879878401628028*^9, 
+   3.879878611789253*^9, 3.879879766862885*^9},
+ CellLabel->"Out[3]=",
+ CellID->892805826,ExpressionUUID->"46c21332-8abd-4ef9-968b-c626a088d650"]
 }, Open  ]],
 
 Cell["For now, explicitly name each pattern.", "ExampleText",
@@ -1766,8 +1938,8 @@ Cell[BoxData[
  CellID->884307898]
 }, Open  ]]
 },
-WindowSize->{1440, 847},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{941, 847},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 TaggingRules-><|"Paclet" -> "None"|>,
 CellContext->"Global`",
 FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
@@ -1788,7 +1960,7 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 83765, 1782}
+ {"ExtendedExamples", 91794, 1954}
  }
 *)
 (*NotebookFileOutline
@@ -1920,26 +2092,34 @@ Cell[74450, 1546, 142, 3, 23, "ExampleSection",ExpressionUUID->"8e71ccc7-1d72-42
 Cell[CellGroupData[{
 Cell[74617, 1553, 135, 3, 23, "ExampleSection",ExpressionUUID->"0f77c9a2-75f7-48e9-91fb-8fe0436648f9",
  CellID->1233549862],
-Cell[74755, 1558, 369, 7, 41, "ExampleText",ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556",
+Cell[74755, 1558, 588, 14, 41, "ExampleText",ExpressionUUID->"019ff9e0-6933-4b45-9191-06dbe568b556",
  CellID->1504242725],
 Cell[CellGroupData[{
-Cell[75149, 1569, 545, 13, 47, "Input",ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae",
- CellID->187057416],
-Cell[75697, 1584, 5853, 129, 70, "Output",ExpressionUUID->"b6f7ddf0-9871-4a5f-b36d-73eebeb3849a",
- CellID->3526044]
+Cell[75368, 1576, 495, 12, 47, "Input",ExpressionUUID->"669f3e6a-7b7a-425e-9e29-f3a3185c6da2",
+ CellID->1870854804],
+Cell[75866, 1590, 1099, 30, 127, "Output",ExpressionUUID->"6072789b-68ba-4f8d-9fd2-f3344b63f536",
+ CellID->292715916]
 }, Open  ]],
-Cell[81565, 1716, 148, 2, 24, "ExampleText",ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad",
+Cell[76980, 1623, 252, 3, 24, "ExampleText",ExpressionUUID->"0a192bed-8a9d-459e-8169-84feaf04af42",
+ CellID->2360343],
+Cell[CellGroupData[{
+Cell[77257, 1630, 544, 13, 47, "Input",ExpressionUUID->"08c176e6-996d-4e9c-b3a8-d93cc823cdae",
+ CellID->187057416],
+Cell[77804, 1645, 11776, 240, 57, "Output",ExpressionUUID->"46c21332-8abd-4ef9-968b-c626a088d650",
+ CellID->892805826]
+}, Open  ]],
+Cell[89595, 1888, 148, 2, 24, "ExampleText",ExpressionUUID->"5ca13c6f-aa49-4322-b6a1-3b633e56d4ad",
  CellID->518202502],
 Cell[CellGroupData[{
-Cell[81738, 1722, 658, 16, 66, "Input",ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de",
+Cell[89768, 1894, 658, 16, 66, "Input",ExpressionUUID->"32d98646-35d1-4229-8f4b-340f5e4bb0de",
  CellID->1364137182],
-Cell[82399, 1740, 558, 13, 29, "Output",ExpressionUUID->"99d18bd3-004d-4227-9e84-0d4d5d715312",
+Cell[90429, 1912, 558, 13, 29, "Output",ExpressionUUID->"99d18bd3-004d-4227-9e84-0d4d5d715312",
  CellID->1325651071]
 }, Open  ]]
 }, Open  ]],
-Cell[82984, 1757, 139, 3, 35, "ExampleSection",ExpressionUUID->"7d01e129-27ad-40a9-b9f9-b4de6e2759a7",
+Cell[91014, 1929, 139, 3, 35, "ExampleSection",ExpressionUUID->"7d01e129-27ad-40a9-b9f9-b4de6e2759a7",
  CellID->465402496],
-Cell[83126, 1762, 132, 3, 23, "ExampleSection",ExpressionUUID->"1fb89031-11f1-4de3-b513-055d56a08f83",
+Cell[91156, 1934, 132, 3, 23, "ExampleSection",ExpressionUUID->"1fb89031-11f1-4de3-b513-055d56a08f83",
  CellID->884307898]
 }, Open  ]]
 }

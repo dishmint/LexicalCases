@@ -557,7 +557,11 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[L
 				GroupBy[#Match&] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|>&]),
 				KeyDrop["Match"] /* Values /* (Flatten[#, 1]&)
 				] @ Map[AssociationThread[{"Match", "Position"} -> #]&] @ Transpose @ {
-					StringCases[s, rx, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
+					ConfirmQuiet[
+						StringCases[s, rx, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
+						{StringExpression::cond},
+						"Message issued while calling StringCases"
+						],
 					StringPosition[s, StripNamedPattern[rx], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 					};
 			res
