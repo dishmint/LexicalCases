@@ -507,8 +507,6 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Enclose[
 			Module[{
-				(* files = Map[File][TextSearch[index, query][All, "Location"]], *)
-				(* files = Dataaset[TextSearch[index, query]][All, "Text" | "Description" *)
 				files,
 				f1 = DeleteMissing[Dataset[TextSearch[index, query][All, {"Text","Description"}]] // Normal, 2] // Flatten,
 				f2 = Map[File]@DeleteMissing[TextSearch[index, query][All, "Location"]],
@@ -517,7 +515,7 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 				If[Length@f1!=0,files = f1,files=f2];
 				ConfirmAssert[Not @* MatchQ[{}] @ files];
 				lpc = iLexicalCases[files, se, opts];
-				GenerateLexicalSummary[lpc["Results"], "SearchIndex", lpc["Text"], se]
+				GenerateLexicalSummary[lpc["Results"], "SearchIndex", Compress[lpc["Text"]], se]
 			]
 			,
 			Failure["NoFilesFound",
@@ -559,7 +557,11 @@ LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[L
 				GroupBy[#Match&] /* (KeyValueMap[<|"Match" -> #1, "Position" -> #2|>&]),
 				KeyDrop["Match"] /* Values /* (Flatten[#, 1]&)
 				] @ Map[AssociationThread[{"Match", "Position"} -> #]&] @ Transpose @ {
-					StringCases[s, rx, IgnoreCase -> OptionValue[IgnoreCase],Overlaps -> OptionValue[Overlaps]],
+					ConfirmQuiet[
+						StringCases[s, rx, IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]],
+						{StringExpression::cond},
+						"Message issued while calling StringCases"
+						],
 					StringPosition[s, StripNamedPattern[rx], IgnoreCase -> OptionValue[IgnoreCase], Overlaps -> OptionValue[Overlaps]]
 					};
 			res
@@ -797,7 +799,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ]["LowercaseCountGroupPercentages"] :=
 	PercentDataset[LexicalSummary[asc]["CountGroups"] // CountSummaryLowercase, asc["TotalMatchCount"]]
 
 (* Dataset Properties Filtered *)
-$FilterableProperties = {"Data", "Dataset", "CountGroupPercentages", "LowercaseCountGroupPercentages", "CountGroups", "Counts", "WordCloud", "Survey", "PartOfSpeechGroups", "WordStemCountGroups", "LexicalDispersion", "SmoothLexicalHistogram"};
+$FilterableProperties = {"Data", "Dataset", "CountGroupPercentages", "LowercaseCountGroupPercentages", "CountGroups", "Counts", "WordCloud", "Survey", "PartOfSpeechGroups", "WordStemCountGroups", "LexicalDispersion"(* , "SmoothLexicalHistogram" *)};
 LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := Enclose[
 	ConfirmAssert[MemberQ[$FilterableProperties, prop], "Key [" <> prop <> "] is either an invalid LexicalSummary property or it does not support MaxItems or DeleteStopwords options"];
 	Module[
@@ -842,7 +844,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 					]
 				]
 			),
-			"SmoothLexicalHistogram",
+(* 			"SmoothLexicalHistogram",
 			(
 				res = asc["Dataset"] // ReverseSortBy[Length[#Position] &];
 				res = If[excludestopwords, FilterOutStopWordRows["Dataset", res], res];
@@ -859,7 +861,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 						_, LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram"]
 						]
 				]
-			),
+			), *)
 			"Data"|"Dataset", (
 				res = asc["Dataset"];
 				res = If[excludestopwords, FilterOutStopWordRows[prop, res], res];
@@ -1039,22 +1041,22 @@ GenerateDashboard[lps_LexicalSummary, opts___Rule] :=
 	With[
 		{
 			wcld = lps["WordCloud", opts],
-			ldpt = lps["LexicalDispersion", opts],
-			slhp = lps["SmoothLexicalHistogram", opts]
+			ldpt = lps["LexicalDispersion", opts]
+			(* slhp = lps["SmoothLexicalHistogram", opts] *)
 			},
 		DynamicModule[
 			{tab = "LexicalDispersion"},
 			Column[
 				{
-					Panel[SetterBar[Dynamic[tab], {"LexicalDispersion", "SmoothLexicalHistogram", "WordCloud"}]],
+					Panel[SetterBar[Dynamic[tab], {"LexicalDispersion"(* , "SmoothLexicalHistogram" *), "WordCloud"}]],
 					Dynamic[
 						Switch[tab,
 							"LexicalDispersion",
 								ldpt
 							,
-							"SmoothLexicalHistogram",
+(* 							"SmoothLexicalHistogram",
 								slhp
-							,
+							, *)
 							"WordCloud",
 								wcld
 						]
