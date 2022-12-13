@@ -40,8 +40,8 @@
    "FileHash" -> "dt+Vj1rQ/UT43Z2YzK5vkI5Emgtv70E5j9/R+jQ1kdU="|>, 
  "English/ReferencePages/Symbols/Sandwich.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.100349, "Seconds"]|>], 
-   "FileHash" -> "CnnnIU58g/2xv6G666nrzFczpdI+f0sytxMaQqmKfsE="|>, 
+     <|"Time" -> Quantity[2.486609, "Seconds"]|>], 
+   "FileHash" -> "CaWUJ2ytHeNJ6fzgGXSgRfPaSrECJxdb0yVApvyGun8="|>, 
  "English/ReferencePages/Symbols/TextType.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.076159, "Seconds"]|>], 
