@@ -63,10 +63,10 @@ plot["MatrixPlot", text_String, tokenevents_Association, ielm_, opts:OptionsPatt
 	{
 		label = Replace[OptionValue[PlotLabel], Automatic -> "Lexical Dispersion Plot"],
 		theme = Replace[OptionValue[PlotTheme], Automatic -> "Scientific"],
+		isize = Replace[OptionValue[ImageSize], Automatic -> Full],
 		length = StringLength[text],
 		rowindex, spardat, sparr, ticks
 		},
-	(* Echo[{opts}, "MPlot Options"]; *)
 	rowindex = AssociationThread[ielm -> Range[Length[ielm]]];
 	spardat = tokenevents // KeyValueMap[Thread[Thread[{rowindex[#1], #2}] -> 1] &] /* Flatten;
 	sparr = SparseArray[spardat, {Length[ielm], length}];
@@ -76,13 +76,13 @@ plot["MatrixPlot", text_String, tokenevents_Association, ielm_, opts:OptionsPatt
 		sparr,
 		FrameTicks -> {{ticks, None}, {Automatic, None}},
 		AspectRatio -> OptionValue[AspectRatio],
-		ImageSize -> OptionValue[ImageSize],
+		ImageSize -> isize,
 		PlotRange -> OptionValue[PlotRange],
 		PlotTheme -> theme,
 		PlotLabel -> label
 		]
 	];
-plot["SmoothHistogram", text_, tokenevents_, ielm_, opts:OptionsPattern[]] := Block[
+(* plot["SmoothHistogram", text_, tokenevents_, ielm_, opts:OptionsPattern[]] := Block[
 	{
 		label = Replace[OptionValue[PlotLabel], Automatic -> "Smooth Lexical Histogram"],
 		theme = Replace[OptionValue[PlotTheme], Automatic -> "Scientific"]
@@ -97,7 +97,7 @@ plot["SmoothHistogram", text_, tokenevents_, ielm_, opts:OptionsPattern[]] := Bl
  			PlotLabel -> label,
 			Frame -> None
  		]
-	];
+	]; *)
 
 Options[iMultiTextLDP] = Options[FaizonZaman`LexicalCases`LexicalDispersionPlot];
 (* TODO: Improve plot labeling for these multitext cases *)
