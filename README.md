@@ -6,7 +6,7 @@ Extract substrings matching a lexical pattern.
 Load the paclet from the Paclet Repository
 ```Mathematica
 PacletInstall[ResourceObject["FaizonZaman/LexicalCases"]]
-Needs["LexicalCases`]
+Needs["LexicalCases`"]
 ```
 
 _v12.3+ supported_
