@@ -920,7 +920,7 @@ iGenerateLexicalSummary[data_, source_String, se_?LexicalPatternQ] := Enclose[
 		]
 	]
 
-GenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalPatternQ] :=
+GenerateLexicalSummary[data_, sourceType_String, sourcedata:(List[__String]|_String), se_?LexicalPatternQ] :=
 	Enclose[
 		iGenerateLexicalSummary[data, sourceType, sourcedata, se],
 		Identity,
@@ -928,7 +928,7 @@ GenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalP
 		]
 
 
-iGenerateLexicalSummary[data_, sourceType_String, sourcedata_String, se_?LexicalPatternQ] :=
+iGenerateLexicalSummary[data_, sourceType_String, sourcedata:(List[__String]|_String), se_?LexicalPatternQ] :=
 	Enclose[
 		Module[
 			{mtc, ds = Dataset[data], cse = StripNamedPattern @ se, stc},
