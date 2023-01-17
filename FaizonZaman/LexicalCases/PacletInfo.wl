@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "1.4.1",
+    "Version" -> "1.4.2",
     "WolframVersion" -> "13.0+",
     "Extensions" -> {
       {
