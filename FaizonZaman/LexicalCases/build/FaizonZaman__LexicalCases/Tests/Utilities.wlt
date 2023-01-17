@@ -59,11 +59,14 @@ VerificationTest[
 		MaxItems -> 50,
 		MaxCategories -> 5, 
 		Language -> "English",
-		AspectRatio -> 1/5,
-		ImageSize -> Large, 
+		AspectRatio -> 1/GoldenRatio,
+		ImageSize -> Automatic, 
 		PlotRange -> All,
-		PlotTheme -> "Scientific", 
-		PlotLabel -> "Lexical Dispersion Plot"
+		PlotTheme -> Automatic, 
+		PlotLabel -> Automatic,
+		HideMissing -> False,
+		DataJoin -> False,
+		DispersionPlotFunction -> Automatic
 	},
 	"TestID" -> "Utilities-OptionsJoin-Test1"
 ]

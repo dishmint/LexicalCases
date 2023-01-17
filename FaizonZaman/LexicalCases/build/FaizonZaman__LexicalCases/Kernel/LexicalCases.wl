@@ -108,92 +108,80 @@ articlePluralize[_Integer?Positive] := "articles"
 
 (* Format *)
 
-FormatToken[StringExpression[args___]] :=
-	FormatToken[StringExpression, args];
+FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args]
 
-FormatToken[TextType[type_String]] :=
-	TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>]
 
-FormatToken[TextType[Containing[outer_, inner_]]] :=
-	TextElement[{inner}, <|"GrammaticalUnit" -> outer|>];
+FormatToken[TextType[Containing[outer_, inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>]
 
-FormatToken[TextType[types_Alternatives]] :=
-	TextElement[WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[
-		types]]], <|"GrammaticalUnit" -> "Alternatives"|>];
+FormatToken[TextType[types_Alternatives]] := TextElement[
+	WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]],
+	<|"GrammaticalUnit" -> "Alternatives"|>
+	]
 
-FormatToken[OptionalToken[args__]] :=
-	TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "Optional"
-		|>];
+FormatToken[OptionalToken[args__]] := TextElement[
+	Map[FormatToken][{args}],
+	<|"GrammaticalUnit" -> "Optional"|>
+	]
 
-FormatToken[AnyOrder[args__]] :=
-	TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "AnyOrder"
-		|>]
+FormatToken[AnyOrder[args__]] := TextElement[
+	Map[FormatToken][{args}],
+	<|"GrammaticalUnit" -> "AnyOrder"|>
+	]
 
-FormatToken[FixedOrder[args__]] :=
-	TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> "FixedOrder"
-		|>]
+FormatToken[FixedOrder[args__]] := TextElement[
+	Map[FormatToken][{args}],
+	<|"GrammaticalUnit" -> "FixedOrder"|>
+	]
 
-FormatToken[HoldPattern[WordToken[1]]] :=
-	TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>];
+FormatToken[HoldPattern[WordToken[1]]] := TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>];
 
-FormatToken[HoldPattern[WordToken[n_Integer]]] :=
-	TextElement[{n}, <|"GrammaticalUnit" -> "Words"|>];
+FormatToken[HoldPattern[WordToken[n_Integer]]] := TextElement[{n}, <|"GrammaticalUnit" -> "Words"|>];
 
-FormatToken[WordToken[args__Integer]] :=
-	TextElement[{Span[args]}, <|"GrammaticalUnit" -> "Words"|>];
+FormatToken[WordToken[args__Integer]] := TextElement[{Span[args]}, <|"GrammaticalUnit" -> "Words"|>];
 
-FormatToken[HoldPattern[_]] :=
-	TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"|>];
+FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"|>];
 
-FormatToken[HoldPattern[__]] :=
-	TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
+FormatToken[HoldPattern[__]] := TextElement[{"__"}, <|"GrammaticalUnit" -> "BlankSequence"|>];
 
-FormatToken[HoldPattern[___]] :=
-	TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
+FormatToken[HoldPattern[___]] := TextElement[{"___"}, <|"GrammaticalUnit" -> "BlankNullSequence"|>];
 
-FormatToken[HoldPattern[h : (Blank | BlankSequence | BlankNullSequence
-	)[type_]]] :=
-	TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
+FormatToken[HoldPattern[h : (Blank | BlankSequence | BlankNullSequence)[type_]]] := TextElement[{type}, <|"GrammaticalUnit" -> ToString[h]|>];
 
-FormatToken[a_Alternatives] :=
-	TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit"-> "Alternatives"|>];
+FormatToken[a_Alternatives] := TextElement[WrapAlternatives[Map[FormatToken][a]], <|"GrammaticalUnit"-> "Alternatives"|>];
 
-FormatToken[s_String] :=
-	TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
+FormatToken[s_String] := TextElement[{s}, <|"GrammaticalUnit" -> "Text"|>];
 
-FormatToken[s_Symbol] :=
-	s;
+FormatToken[s_Symbol] := s;
 
-FormatToken[atom_?AtomQ] :=
-	atom;
+FormatToken[atom_?AtomQ] := atom;
 
-FormatToken[h : Except[_Blank | _BlankSequence | _BlankNullSequence |
-	 _Words]] :=
-	With[{head = Head[h], arg = Check[Extract[1][h], $Failed, {Extract::partw,
-		 Extract::partd}]},
+FormatToken[h : Except[_Blank | _BlankSequence | _BlankNullSequence | _Words]] :=
+	With[
+		{
+			head = Head[h],
+			arg = Check[Extract[1][h], $Failed, {Extract::partw,Extract::partd}]
+			},
 		FormatToken[head, arg]
-	];
+	]
 
-FormatToken[TextType, s_String] :=
-	TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
 
-FormatToken[t_, $Failed] :=
-	Enclose[Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]]
+FormatToken[t_, $Failed] := Enclose[Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]]
 
-FormatToken[h_, args__] :=
-	TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> ToString[
-		h]|>];
+FormatToken[h_, args__] := TextElement[Map[FormatToken][{args}], <|"GrammaticalUnit" -> ToString[h]|>];
 
 FormatToken::nvld = "`1` is not supported in FormatToken"
 
 SetAttributes[LexicalStructure, HoldAll]
 
-LexicalStructure[expr_?LexicalPatternQ] :=
-	Enclose[FormatToken[expr], Identity, "InvalidToken"];
+LexicalStructure[expr_?LexicalPatternQ] := Enclose[FormatToken[expr], Identity, "InvalidToken"];
 
-LexicalStructure[(Rule | RuleDelayed)[expr_?LexicalPatternQ, _]] :=
-	Enclose[Construct[FormatToken, StripNamedPattern[expr]], Identity, "FormatToken`InvalidToken"
-		];
+LexicalStructure[(Rule | RuleDelayed)[expr_?LexicalPatternQ, _]] := Enclose[
+	Construct[FormatToken, StripNamedPattern[expr]],
+	Identity,
+	"FormatToken`InvalidToken"
+	]
 
 (* Service Utils *)
 
@@ -206,11 +194,9 @@ ArticleSearchIndicator[service_String, query_] :=
 
 (* Patterns *)
 
-Sandwich[bread_, expr_] :=
-	bread ~~ expr ~~ bread
+Sandwich[bread_, expr_] := bread ~~ expr ~~ bread
 
-Sandwich[bread_][expr_] :=
-	Sandwich[bread, expr]
+Sandwich[bread_][expr_] := Sandwich[bread, expr]
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives] @* Map[TextType] @* Apply[List])[alts]
 
@@ -302,37 +288,25 @@ InsertAnd[x_List] := Insert[x, "and", -2];
 
 WikipediaKeywordString[{s_String}] := "\"" <> s <> "\"";
 
-WikipediaKeywordString[l : {_String, _String}] :=
-	StringRiffle[Map[WikipediaKeywordString][l], ", "];
+WikipediaKeywordString[l : {_String, _String}] := StringRiffle[Map[WikipediaKeywordString][l], ", "];
 
-WikipediaKeywordString[x_List] :=
-	StringRiffle[InsertAnd[Map[WikipediaKeywordString][x]], ", "];
+WikipediaKeywordString[x_List] := StringRiffle[InsertAnd[Map[WikipediaKeywordString][x]], ", "];
 
-WikipediaKeywordString[x_Alternatives] :=
-	ToString[Map[WikipediaKeywordString][x]]
+WikipediaKeywordString[x_Alternatives] := ToString[Map[WikipediaKeywordString][x]]
 
-WikipediaKeywordString[x_] :=
-	"\"" <> x <> "\"";
+WikipediaKeywordString[x_] := "\"" <> x <> "\"";
 
-WikipediaSearchQuery[List[], lp_] :=
-	$Failed
+WikipediaSearchQuery[List[], lp_] := $Failed
 
-WikipediaSearchQuery[wsq : List[__String], _] :=
-	StringRiffle[wsq]
+WikipediaSearchQuery[wsq : List[__String], _] := StringRiffle[wsq]
 
-WikipediaSearchQuery[wsq : List[List[__String]], _] :=
-	Flatten[wsq]
+WikipediaSearchQuery[wsq : List[List[__String]], _] := Flatten[wsq]
 
-WikipediaSearchQuery[wsq_List, _] :=
-	Cases[List[(_List | _String)..]][wsq] // Map[StringRiffle]
+WikipediaSearchQuery[wsq_List, _] := Cases[List[(_List | _String)..]][wsq] // Map[StringRiffle]
 
-twsqErrorInfo[expr_TextType] :=
-	StringForm["TextType's do not produce keywords. A lexical pattern with one or more word/phrase strings in it should work",
-		 expr]
+twsqErrorInfo[expr_TextType] := StringForm["TextType's do not produce keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
 
-twsqErrorInfo[expr_] :=
-	StringForm["`` did not produce any keywords. A lexical pattern with one or more word/phrase strings in it should work",
-		 expr]
+twsqErrorInfo[expr_] := StringForm["`` did not produce any keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
 
 ToWikipediaSearchQuery[lp_?LexicalPatternQ] :=
 	Enclose[
@@ -411,31 +385,16 @@ iGetWikipediaArticleText[articles_List, articleCount_Integer, articleCountString
 				,
 				Row[
 					{
-						"Gathering text from " <> articleCountString <> " " <> articlePluralize[
-							articleCount] <> ":\n"
+						"Gathering text from " <> articleCountString <> " " <> articlePluralize[articleCount] <> ":\n"
 						,
 						Dynamic[
 							Which[
-								(ArticleIndex <= articleCount - 1),
-									StringPadRight["\"" <> articles[[ArticleIndex + 1]] <> "\"",
-										 maxTitleLength]
-								,
-								(ArticleIndex === 1),
-									"\"" <> articles[[1]] <> "\" "
-								,
-								True,
-									""
+								(ArticleIndex <= articleCount - 1), StringPadRight["\"" <> articles[[ArticleIndex + 1]] <> "\"", maxTitleLength],
+								(ArticleIndex === 1), "\"" <> articles[[1]] <> "\" ",
+								True,""
 							]
-						]
-						,
-						"\n"
-						,
-						ProgressIndicator[Dynamic[ArticleIndex], {0, articleCount}]
-						,
-						" "
-						,
-						Dynamic[NumberForm[PercentForm[N[ArticleIndex / articleCount]],
-							 {3, 2}]]
+						],
+						"\n", ProgressIndicator[Dynamic[ArticleIndex], {0, articleCount}], " ", Dynamic[NumberForm[PercentForm[N[ArticleIndex / articleCount]], {3, 2}]]
 					}
 				]
 			];
@@ -457,33 +416,20 @@ Options[LexicalCases] = {
 
 LexicalCases::unsupfmt = "`` is not a supported format. Valid formats are: .txt, .md, .csv and .tsv";
 
+(* If a supported `file` is given, import it and run LexicalCases on it with `args` *)
 LexicalCases[file_File, args___] :=
 	Enclose[
 		ConfirmAssert[SupportedFileQ[file], Message[LexicalCases::unsupfmt, GetFileExtension[file]]];
 		Module[{data = Import[file]}, LexicalCases[data, args]]
 	]
 
-LexicalCases[input : List[__String], se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] /; AllTrue[DirectoryQ \[Or] FileExistsQ][input] :=
-	Enclose[
-		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
-		Module[{files = Map[File][input], lpc},
-			lpc = iLexicalCases[files, se, opts];
-			GenerateLexicalSummary[lpc["Results"], "File", lpc["Text"], se]
-		]
-	]
-
-oSourceType[List[__File]] :=
-	"File"
-
-oSourceType[List[__String]] :=
-	"Text"
-
+(* If a list of `files` or `strings` is given *)
 LexicalCases[input : (List[__File] | List[__String]), se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Module[{lpc, ost},
 			lpc = iLexicalCases[input, se, opts];
-			ost = oSourceType[input];
+			ost = (ToString@*Head@*First@input) /. "String" -> "Text";
 			GenerateLexicalSummary[lpc["Results"], ost, lpc["Text"], se]
 		]
 	]
@@ -507,17 +453,16 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 		ConfirmAssert[CheckArguments[LexicalCases[input, se, opts], 2]];
 		Enclose[
 			Module[{
-				files,
-				f1 = DeleteMissing[Dataset[TextSearch[index, query][All, {"Text","Description"}]] // Normal, 2] // Flatten,
-				f2 = Map[File]@DeleteMissing[TextSearch[index, query][All, "Location"]],
-				lpc
+					files,
+					f1 = DeleteMissing[Dataset[TextSearch[index, query][All, {"Text","Description"}]] // Normal, 2] // Flatten,
+					f2 = Map[File]@DeleteMissing[TextSearch[index, query][All, "Location"]],
+					lpc
 				},
 				If[Length@f1!=0,files = f1,files=f2];
 				ConfirmAssert[Not @* MatchQ[{}] @ files];
 				lpc = iLexicalCases[files, se, opts];
 				GenerateLexicalSummary[lpc["Results"], "SearchIndex", Compress[lpc["Text"]], se]
-			]
-			,
+			],
 			Failure["NoFilesFound",
 				<|
 					"MessageTemplate" -> StringTemplate["No files found using `Query`."],
@@ -530,10 +475,9 @@ LexicalCases[input : Rule[index_SearchIndexObject, query_], se_?LexicalPatternQ,
 
 (* SourceText and LexicalPattern Input *)
 
-LexicalCases[sourcetext_String, se_, opts: OptionsPattern[LexicalCases]] :=
+LexicalCases[sourcetext_String, se_?LexicalPatternQ, opts: OptionsPattern[LexicalCases]] :=
 	Enclose[
 		ConfirmAssert[CheckArguments[LexicalCases[sourcetext, se, opts], 2]];
-		ConfirmBy[se,LexicalPatternQ];
 		Module[{lpc, src = Compress[sourcetext], res},
 			ArticleIndex = 0;
 			(* Find Matches *)
@@ -550,6 +494,7 @@ LexicalCases[sourcetext_String, se_, opts: OptionsPattern[LexicalCases]] :=
 
 LexicalCasesOnString[source_String, se_?LexicalPatternQ, opts : OptionsPattern[LexicalCases]] :=
 	Enclose[
+		ConfirmAssert[CheckArguments[LexicalCases[source, se, opts], 2]];
 		Module[{rx, s = source, res},
 			++ArticleIndex;
 			rx = ConfirmQuiet[ExpandPattern[s, se], {Java::excptn, JavaNew::fail}];
@@ -576,7 +521,7 @@ LexicalCases[se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases, iSearchWi
 		LexicalCasesFromService[OptionValue["Service"], se, FilterRules[{opts}, Options[iSearchWikipedia]]]
 	]
 
-(* WikiQueryRyle and LexicalPattern Input *)
+(* WikiQueryRule and LexicalPattern Input *)
 
 LexicalCases[query_Rule, se_?LexicalPatternQ, opts : OptionsPattern[{LexicalCases, iSearchWikipedia}]] :=
 	Enclose[
