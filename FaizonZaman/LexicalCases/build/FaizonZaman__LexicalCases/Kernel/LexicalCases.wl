@@ -919,8 +919,9 @@ CountSummaryLowercase[ds_Dataset] :=
 	ds
 
 ThreadMatchesWithCount[asc_Association] :=
-	Apply[Sequence][Map[<|"Matches" -> ToLowerCase[#], "Count" -> asc["CountGroup"
-		]|>&][asc["Matches"]]]
+	Apply[Sequence][
+		Map[<|"Matches" -> ToLowerCase[#], "Count" -> asc["CountGroup"]|>& ][ asc["Matches"] ]
+		]
 
 CountSummaryLowercase[ds_Dataset] /; CountGroupDSQ[ds] :=
 	ReverseSortBy[#CountGroup&] @ Query[
