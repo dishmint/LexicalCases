@@ -2316,7 +2316,7 @@ excluded using ",
  TaggingRules->{"TemplateGroupName" -> "ExampleInitialization"},
  CellTags->{
   "ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
- CellLabel->"In[8]:=",
+ CellLabel->"In[3]:=",
  CellID->468286435,ExpressionUUID->"0c06e565-1c6e-4403-b4c2-2834209837e3"],
 
 Cell[BoxData[
@@ -2346,7 +2346,7 @@ Cell[BoxData[
     Selectable->False], "]"}], ";"}]], "Input", "Excluded",
  TaggingRules->{},
  InitializationCell->True,
- CellLabel->"In[6]:=",
+ CellLabel->"In[1]:=",
  CellID->633295841,ExpressionUUID->"306d8939-e3a5-46aa-9689-af6da7abaa29"],
 
 Cell[BoxData[
@@ -2376,8 +2376,78 @@ Cell[BoxData[
     Selectable->False], "]"}], ";"}]], "Input", "Excluded",
  TaggingRules->{},
  InitializationCell->True,
- CellLabel->"In[7]:=",
+ CellLabel->"In[2]:=",
  CellID->256310072,ExpressionUUID->"13c4ea7d-36f7-4826-9039-6c7397d264ee"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tests", "Subsection", "Excluded",
+ CellChangeTimes->{{3.882937778205875*^9, 3.882937778932868*^9}},
+ CellID->1340259360,ExpressionUUID->"235e14fa-cca8-48ea-9bbd-a9f1161ddf8f"],
+
+Cell[BoxData[
+ RowBox[{"Block", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"test", "=", "0"}], ",", 
+     RowBox[{"tests", "=", 
+      RowBox[{
+       RowBox[{"PacletExtensionFiles", "[", 
+        RowBox[{
+         InterpretationBox[
+          DynamicModuleBox[{Typeset`open = False}, 
+           TemplateBox[{"Expression", 
+             StyleBox[
+             "\"Paclet Directory\"", "IconizedCustomName", StripOnInput -> 
+              False], 
+             GridBox[{{
+                RowBox[{
+                  TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                  
+                  TagBox["Symbol", "IconizedItem"]}]}, {
+                RowBox[{
+                  TagBox["\"Byte count: \"", "IconizedLabel"], 
+                  "\[InvisibleSpace]", 
+                  TagBox["0", "IconizedItem"]}]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+              "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             Dynamic[Typeset`open]},
+            "IconizedObject"]],
+          PacletResource`DefinitionNotebook`$PacletDirectory,
+          SelectWithContents->True,
+          Selectable->False], ",", "\"\<Resource\>\""}], "]"}], "//", 
+       RowBox[{"Values", "/*", "Flatten"}]}]}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Monitor", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"TestReport", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Increment", "[", "test", "]"}], ";", 
+         RowBox[{"TestReport", "[", "i", "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "tests"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"Row", "[", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Test\>\"", ",", 
+        RowBox[{"Dynamic", "[", "test", "]"}], ",", 
+        RowBox[{"ProgressIndicator", "[", 
+         RowBox[{
+          RowBox[{"Dynamic", "[", "test", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{
+             RowBox[{"Length", "[", "tests", "]"}], "-", "1"}]}], "}"}]}], 
+         "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input", "Excluded",
+ CellChangeTimes->{
+  3.882937822011593*^9, {3.882937870592862*^9, 3.882937898936121*^9}},
+ CellID->980444637,ExpressionUUID->"9915687b-13d5-4e0e-8e1f-2ced33136e76"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6095,6 +6165,7 @@ Cell[BoxData[
                 106.49900000000001`, 42.31699999999999}, {140.001, 
                 42.31699999999999}, {140.001, 54.54699999999999}, {
                 106.49900000000001`, 54.54699999999999}}}], 
+               
                FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0.706, 
                 61.36}, {43.376000000000005`, 61.36}, {43.376000000000005`, 
                 73.59}, {0.706, 73.59}}}], 
@@ -8100,6 +8171,7 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["WebAPI", {False, "WebAPI"}], "\" \"", 
+            
             TemplateBox[{
              "\"WebAPI\"", "\"API called through an HTTP request\""}, 
              "PrettyTooltipTemplate"]},
@@ -9271,8 +9343,8 @@ support."
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{720, 847},
-WindowMargins->{{Automatic, 0}, {Automatic, 540}},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 540}},
 DockedCells->{
   Cell[
    BoxData[
@@ -9325,7 +9397,7 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
     "Paclet", "PacletName" -> "PacletResource", "SourceID" -> 
     "92ce7a395baccd06b35bc67811577346991d7e35"}, 
-  "SubmissionReviewData" -> {"Review" -> False}, "ToolsOpen" -> False, 
+  "SubmissionReviewData" -> {"Review" -> False}, "ToolsOpen" -> True, 
   "UpdatedTimestamp" -> 3.882819468766594`16.34172218770468*^9, 
   "TemplateVersion" -> "2022.09.16", "StatusMessage" -> "", 
   "PacletBuildData" -> {"FileHashes" -> ByteArray[CompressedData["
