@@ -11,17 +11,8 @@ VerificationTest[
 
 (* LexicalPatternQ unvalued symbols *)
 VerificationTest[
-	LexicalPatternQ["Alice" ~~ xxx ~~ TextType["Adverb"]],
-	Failure["ConfirmationFailed",
-		<|
-			"MessageTemplate" -> "``[``] did not return True.", 
-			"MessageParameters" -> {GeneralUtilities`StringPatternQ, StringExpression["Alice", xxx, " "]},
-			"ConfirmationType" -> "ConfirmBy",
-			"Expression" -> StringExpression["Alice", xxx, " "],
-			"Function" -> GeneralUtilities`StringPatternQ,
-			"Information" -> StringForm["`1` contains invalid string patterns", StringExpression["Alice", xxx, " "]]
-			|>
-		],
+	FailureQ[LexicalPatternQ["Alice" ~~ xxx ~~ TextType["Adverb"]]],
+	True,
 	"TestID" -> "LexicalPatternQ-UnvaluedSymbols-Test1"
 ]
 

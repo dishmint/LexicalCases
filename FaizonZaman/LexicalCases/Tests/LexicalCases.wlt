@@ -109,8 +109,8 @@ VerificationTest[
 	]
 
 VerificationTest[
-	Quiet@Check[LexicalCases["a nice car is good.", Sandwich[w : WordToken[1], BoundToken["car"]] :> w], $Failed],
-	$Failed,
+	FailureQ[LexicalCases["a nice car is good.", Sandwich[w : WordToken[1], BoundToken["car"]] :> w]],
+	True,
 	"TestID" -> "LexicalCases-DocExamples-Sandwich-Test2"
 	]
 
