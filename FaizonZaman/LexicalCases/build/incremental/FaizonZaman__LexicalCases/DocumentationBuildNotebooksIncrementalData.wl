@@ -16,8 +16,8 @@
    "FileHash" -> "AqXeG/01iHXUjoSWqD8NxuYqoteDJglcDaVDmSxKh2Q="|>, 
  "English/ReferencePages/Symbols/LexicalCases.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[2.402441, "Seconds"]|>], 
-   "FileHash" -> "GT+n4DYK4WT8yzXQoNUFLfBjTRcvsLoNhLP4jH9JMZM="|>, 
+     <|"Time" -> Quantity[2.718219, "Seconds"]|>], 
+   "FileHash" -> "bBAbRJAhpA0+5DwhOLZf66wv83s7u/d3P4oZi2Ep7M8="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionPlot.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.528384, "Seconds"]|>], 
