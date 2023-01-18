@@ -9,7 +9,7 @@ PacletInstall[ResourceObject["FaizonZaman/LexicalCases"]]
 Needs["LexicalCases`"]
 ```
 
-_This paclet is supported in WLv13.0+ _
+_This paclet is supported in WLv13.0+_
 
 ## Usage
 
