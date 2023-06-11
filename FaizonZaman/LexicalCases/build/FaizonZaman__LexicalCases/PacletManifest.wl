@@ -6,12 +6,25 @@
             "File"
             ->
             File[
+                "Kernel/Abstractions.wl"
+            ]
+            ,
+            "Hash"
+            ->
+            "e93dfe034ca1a98f8c0adb8dd7fc83c2b238405730dcffd77f30fe96e2fd653f"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Kernel/LexicalCases.wl"
             ]
             ,
             "Hash"
             ->
-            "935fea203f968e394b475293544403d207e4bdfac8ec35669dd9287952563e22"
+            "7953695f99001ccba05d77bb01347fd4080ae5c2b2c483634b1b5a9cfe158c39"
                 
         |>
         ,

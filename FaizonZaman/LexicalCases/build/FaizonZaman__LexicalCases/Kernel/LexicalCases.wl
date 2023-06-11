@@ -18,6 +18,10 @@ LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid 
 
 ToLexicalPattern::usage = "ToLexicalPattern[s] converts string s to a lexical pattern."
 
+(* Abstractions *)
+
+LexicalMap::usage = "LexicalMap[f, source, lp] applies f to each match of lp in source."
+
 (* Samples *)
 
 $SampleSentence::usage = "A short example string."
@@ -80,6 +84,8 @@ Needs["FaizonZaman`LexicalCases`Utilities`"]
 Needs["FaizonZaman`LexicalCases`LexicalPattern`"]
 
 Needs["FaizonZaman`LexicalCases`Validation`"]
+
+Needs["FaizonZaman`LexicalCases`Abstractions`"]
 
 Needs["FaizonZaman`LexicalCases`Plots`"]
 
