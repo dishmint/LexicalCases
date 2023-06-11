@@ -21,6 +21,7 @@ PacletObject[
           "FaizonZaman`LexicalCases`ExpandPattern",
           "FaizonZaman`LexicalCases`LexicalCases",
           "FaizonZaman`LexicalCases`LexicalDispersionPlot",
+          "FaizonZaman`LexicalCases`LexicalMap",
           "FaizonZaman`LexicalCases`LexicalPattern",
           "FaizonZaman`LexicalCases`LexicalStructure",
           "FaizonZaman`LexicalCases`LexicalSummary",

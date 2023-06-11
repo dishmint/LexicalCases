@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "e93dfe034ca1a98f8c0adb8dd7fc83c2b238405730dcffd77f30fe96e2fd653f"
+            "134c8ed249b0394dc3fc1bb86630efd8c8704b6f3d123e6625e32503ee57a2de"
                 
         |>
         ,
@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "7953695f99001ccba05d77bb01347fd4080ae5c2b2c483634b1b5a9cfe158c39"
+            "088c7a390fc850637c1334e181c335fbdcbbb56e7482418556fbb493be48466d"
                 
         |>
         ,
@@ -238,6 +238,20 @@
             "Hash"
             ->
             "727670941292ba4314a4d814df81a8e75d92972398205e67dd6b1729d1f3be14"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexicalMap.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "aa54125b6a6267e12a1a9d8b6ddcf50b48410a7ceffb377e315445069d0a341c"
                 
         |>
         ,

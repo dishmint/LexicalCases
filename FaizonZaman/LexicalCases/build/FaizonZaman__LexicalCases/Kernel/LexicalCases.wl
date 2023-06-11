@@ -20,7 +20,7 @@ ToLexicalPattern::usage = "ToLexicalPattern[s] converts string s to a lexical pa
 
 (* Abstractions *)
 
-LexicalMap::usage = "LexicalMap[f, source, lp] applies f to each match of lp in source."
+LexicalMap::usage = "LexicalMap[f, source, lp] maps f over each match of lp in source."
 
 (* Samples *)
 
