@@ -61,4 +61,8 @@
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.750906, "Seconds"]|>], 
-   "FileHash" -> "hn1CtAhhBTvuJoV9X0koFEMoUfMKrlhDvS6w4NQdbT4="|>|>
+   "FileHash" -> "hn1CtAhhBTvuJoV9X0koFEMoUfMKrlhDvS6w4NQdbT4="|>, 
+ "English/ReferencePages/Symbols/LexicalMap.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.018373, "Seconds"]|>], 
+   "FileHash" -> "W9mjQzXKpubIQ604U/zwUFp2GBUK4aZ90DRxAkqbRQg="|>|>
