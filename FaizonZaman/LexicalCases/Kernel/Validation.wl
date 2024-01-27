@@ -18,6 +18,7 @@ ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[m_Integer, n_Integer,"Ke
 ValidateLexicalToken[expr_] := False
 
 FaizonZaman`LexicalCases`LexicalCases::snvld = "`1` contains invalid string patterns"
+FaizonZaman`LexicalCases`LexicalCases::pattc = "`1` contains multiple patterns witih the same name"
 FaizonZaman`LexicalCases`LexicalCases::invld = "`1` contains invalid lexical patterns"
 FaizonZaman`LexicalCases`LexicalCases::uvsym = "Symbols `1` are unvalued"
 
@@ -27,13 +28,18 @@ FaizonZaman`LexicalCases`LexicalPatternQ[expr_]:= Module[
 	{
 		se = Replace[expr, $ValidLexicalTokens :> " ", {0, Infinity}],
 		lt = extractLexicalTokens[expr]
-		},
-		Enclose[
-			ConfirmBy[se, GeneralUtilities`StringPatternQ, StringForm[FaizonZaman`LexicalCases`LexicalCases::snvld, se]];
-			ConfirmBy[lt, AllTrue[ValidateLexicalToken], StringForm[FaizonZaman`LexicalCases`LexicalCases::invld, expr]];
-			True
-		]
-		]
+	},
+	Enclose[
+		ConfirmBy[
+			se,
+			(Cases[#, p_Pattern :> First[p]] // Counts // Max // LessEqualThan[1])&,
+			StringForm[FaizonZaman`LexicalCases`LexicalCases::pattc, se]
+			];
+		ConfirmBy[se, GeneralUtilities`StringPatternQ, StringForm[FaizonZaman`LexicalCases`LexicalCases::snvld, se]];
+		ConfirmBy[lt, AllTrue[ValidateLexicalToken], StringForm[FaizonZaman`LexicalCases`LexicalCases::invld, expr]];
+		True
+	]
+]
 FaizonZaman`LexicalCases`LexicalPatternQ[Rule[expr_?FaizonZaman`LexicalCases`LexicalPatternQ,_]]:= True;
 FaizonZaman`LexicalCases`LexicalPatternQ[RuleDelayed[expr_?FaizonZaman`LexicalCases`LexicalPatternQ,_]]:= True;
 

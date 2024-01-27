@@ -206,38 +206,155 @@ Sandwich[bread_][expr_] := Sandwich[bread, expr]
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives] @* Map[TextType] @* Apply[List])[alts]
 
-$StartTokenBoundary = (WordBoundary | " " | StartOfString | StartOfLine)
-$EndTokenBoundary = (WordBoundary | " " | EndOfString | EndOfLine)
+BoundedWord[expr_] := WordBoundary~~expr~~WordBoundary
 
-ApplyTokenBoundary[expr_] := $StartTokenBoundary~~expr~~$EndTokenBoundary
+$WordAndContractionToken = BoundedWord[(WordCharacter | "'")..]
+$WordToken = BoundedWord[WordCharacter..]
 
-$WordAndContractionToken = ApplyTokenBoundary[(WordCharacter | "'")..]
-$WordToken = ApplyTokenBoundary[WordCharacter..]
+Unpattern[expr_, f_ : Identity] := MapAt[Comap[unpatterned[First, Last/*f]], expr, Position[expr, _Pattern]]
+Repattern[expr_] := expr /. unpatterned -> Pattern
+$UnpatternPattern[tok_] := (tok|unpatterned[uname_, tok])
 
-iExpand[expr_] :=
-	ReplaceAll[expr,
-	{
-		OptionalToken[opt_Alternatives] :> (Map[iExpand /* ApplyTokenBoundary][opt] ~ Join ~ Alternatives[" ", ""]),
+(* Generic Whitespace wrapping *)
+iWrapSpace[tk_, String] := Sandwich[" ", tk] 
+iWrapSpace[tk_, StartOfString] := (tk ~~ " ")
+iWrapSpace[tk_, EndOfString] := (" " ~~ tk)
+iWrapSpace[tk_, ContainsOnly] := tk
 
-		OptionalToken[opt_] :> (Alternatives[ApplyTokenBoundary[iExpand[opt]]] ~ Join ~ Alternatives[" ", ""]),
-		
-		TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts],
-		
-		BoundToken[s : Except[_Alternatives]] :> (ApplyTokenBoundary[iExpand[s]]),
-		
-		BoundToken[a_Alternatives] :> ApplyTokenBoundary[Map[iExpand, a]],
-		
+ExpandToken[tok_TextType, position_ : String, content_] := iExpandToken[tok, position, content]
+ExpandToken[utok:unpatterned[name_, tok_TextType], position_ : String, content_] := iExpandToken[utok, position, content]
+ExpandToken[tok_, position_ : String] := iExpandToken[tok, position]
+ExpandToken[utok:unpatterned[name_, tok_], position_ : String] := iExpandToken[utok, position]
+$UOpt[ot_] := ot /. (OptionalToken[alt_] :> alt)
+iExpandToken[opt:$UnpatternPattern[_OptionalToken], String] := With[{o = $UOpt[opt]}, Sandwich[" ", o] | " "]
+iExpandToken[opt:$UnpatternPattern[_OptionalToken], StartOfString] := With[{o = $UOpt[opt]}, (o ~~ " ") | ""]
+iExpandToken[opt:$UnpatternPattern[_OptionalToken], EndOfString] := With[{o = $UOpt[opt]}, (" " ~~ o) | ""]
+iExpandToken[opt:$UnpatternPattern[_OptionalToken], ContainsOnly] := With[{o = $UOpt[opt]}, o | ""]
+
+$WordTokenRules = {
 		WordToken[1] :> $WordToken,
 		
-		WordToken[n_Integer] :> StringExpression[$WordToken, Sequence @@ ConstantArray[$WordToken, n - 1]],
+		WordToken[n_Integer] :> StringExpression[
+			$WordToken, " ",
+			Sequence @@ Riffle[ConstantArray[$WordToken, n - 1], " "]
+			],
 		
-		WordToken[m_Integer, n_Integer] :> Alternatives @@ Array[iExpand @* WordToken, n - 1, m],
+		WordToken[m_Integer, n_Integer] :> Alternatives @@ Array[ReplaceAll[$WordTokenRules] @* WordToken, n - 1, m],
 		
 		WordToken[1, "KeepContractions"] :> $WordAndContractionToken,
 		
-		WordToken[n_Integer, "KeepContractions"] :> StringExpression[$WordAndContractionToken, Sequence @@ ConstantArray[$WordAndContractionToken, n - 1]],
+		WordToken[n_Integer, "KeepContractions"] :> StringExpression[
+			$WordAndContractionToken, " ",
+			Sequence @@ Riffle[ConstantArray[$WordAndContractionToken, n - 1], " "]
+			],
 		
-		WordToken[m_Integer, n_Integer, "KeepContractions"] :> Alternatives @@ Array[iExpand@* (WordToken[#, "KeepContractions"]&), n - 1, m]
+		WordToken[m_Integer, n_Integer, "KeepContractions"] :> Alternatives @@ Array[ReplaceAll[$WordTokenRules] @* (WordToken[#, "KeepContractions"]&), n - 1, m]
+};
+iExpandToken[word:$UnpatternPattern[_WordToken], pos_] := iExpandWord[word, pos] /. $WordTokenRules
+iExpandWord[word:$UnpatternPattern[_], String] := Sandwich[" ", word] 
+iExpandWord[word:$UnpatternPattern[_], StartOfString] := (word ~~ " ")
+iExpandWord[word:$UnpatternPattern[_], EndOfString] := (" " ~~ word)
+iExpandWord[word:$UnpatternPattern[_], ContainsOnly] := word
+
+MassTextType[ca_Association][expr_] := MassTextType[expr, ca]
+MassTextType[expr_, ca_]:= With[
+	{t = Replace[expr, TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts], {0, Infinity}]},
+	FixedPoint[
+		Replace[#, TextType[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&,
+		t
+		]
+	]
+
+iExpandToken[text:$UnpatternPattern[_TextType], pos_, content_] := iWrapSpace[text, pos] // MassTextType[#, content]&
+
+
+$ExpandableTokens = Alternatives[_OptionalToken, _WordToken];
+
+ParseToken[StringExpression[before_, tok:$UnpatternPattern[$ExpandableTokens], after_]] := StringExpression[before, ExpandToken[tok], after]
+ParseToken[StringExpression[tok:$UnpatternPattern[$ExpandableTokens], after_]] := StringExpression[ExpandToken[tok, StartOfString], after]
+ParseToken[StringExpression[before_, tok:$UnpatternPattern[$ExpandableTokens]]] := StringExpression[before, ExpandToken[tok, EndOfString]]
+ParseToken[tok:$UnpatternPattern[$ExpandableTokens]] := ExpandToken[tok, ContainsOnly]
+
+ParseToken[StringExpression[before_, tok:$UnpatternPattern[_TextType].., after_], content_] := before ~~ ExpandToken[tok, String, content] ~~ after
+ParseToken[StringExpression[tok:$UnpatternPattern[_TextType], after_], content_] := StringExpression[ExpandToken[tok, StartOfString, content], after]
+ParseToken[StringExpression[before_, tok:$UnpatternPattern[_TextType]], content_] := StringExpression[before, ExpandToken[tok, EndOfString, content]]
+ParseToken[tok:$UnpatternPattern[_TextType], content_] := ExpandToken[tok, ContainsOnly, content]
+
+StringSplice[expr_] := Splice[expr, StringExpression]
+LexicalPad[expr_List, pos_:None] := iLexicalPad[Riffle[expr, " "], pos]
+LexicalPad[expr__, pos_:None] := LexicalPad[{expr}, pos]
+iLexicalPad[expr_List, None] := expr
+iLexicalPad[expr_List, String] := Splice[ArrayPad[expr, {1,1}, " "], StringExpression]
+iLexicalPad[expr_List, StartOfString] := Splice[ArrayPad[expr, {0,1}, " "], StringExpression]
+iLexicalPad[expr_List, EndOfString] := Splice[ArrayPad[expr, {1,0}, " "], StringExpression]
+
+iStartContext[anchor[seq__], after__]:= StringExpression[LexicalPad[seq, StartOfString], after]
+iMiddleContext[before__, anchor[seq__], after__]:= StringExpression[before, LexicalPad[seq, String], after]
+iEndContext[before__, anchor[seq__]]:= StringExpression[before, LexicalPad[seq, EndOfString]]
+iSingletonContext[anchor[seq__]]:= StringExpression@@LexicalPad[{seq}]
+
+StartContext[TextType, content_][a:anchor[seq__], after__] := iStartContext[MassTextType[content]@a, after]
+MiddleContext[TextType, content_][before__, a:anchor[seq__], after__] := iMiddleContext[before, MassTextType[content]@a, after]
+EndContext[TextType, content_][before__, a:anchor[seq__]] := iEndContext[before, MassTextType[content]@a]
+SingletonContext[TextType, content_][a:anchor[seq__]] := iSingletonContext[MassTextType[content]@a]
+
+
+ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern
+ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr]
+iReformToken[expr_, content_] /; Not@*FreeQ[TextType]@expr := 
+	With[
+		{list = StringExpressionToList@expr},
+		SequenceReplace[
+			list,
+			{
+				{seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]], after__} :>
+					StartContext[TextType, content][anchor[seq], after],
+				
+				{before__, seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]]} :>
+					EndContext[TextType, content][before, anchor[seq]],
+				
+				{before__, seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]], after__} :>
+					MiddleContext[TextType, content][before, anchor[seq], after],
+
+				{seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]]} :>
+					SingletonContext[TextType, content][anchor[seq]]
+			}
+		] // First
+	]
+iReformToken[expr_, _] /; Not@*FreeQ[OptionalToken]@expr := 
+	With[
+		{list = StringExpressionToList@expr},
+		SequenceReplace[
+			list,
+			{
+				wrapped : {__, $UnpatternPattern[OptionalToken[_]], __} :> ParseToken[ListToStringExpression[wrapped]],
+				starts : {$UnpatternPattern[OptionalToken[_]], __} :> ParseToken[ListToStringExpression[starts]],
+				ends : {__, $UnpatternPattern[OptionalToken[_]]} :> ParseToken[ListToStringExpression[ends]],
+				singleton : {$UnpatternPattern[OptionalToken[_]]} :> ParseToken[ListToStringExpression[singleton]]
+			}
+		] // First
+	]
+iReformToken[expr_, _] /; Not@*FreeQ[WordToken]@expr := 
+	With[
+		{list = StringExpressionToList@expr},
+		SequenceReplace[
+			list,
+			{
+				wrapped : {__, $UnpatternPattern[WordToken[__]], __} :> ParseToken[ListToStringExpression[wrapped]],
+				starts : {$UnpatternPattern[WordToken[__]], __} :> ParseToken[ListToStringExpression[starts]],
+				ends : {__, $UnpatternPattern[WordToken[__]]} :> ParseToken[ListToStringExpression[ends]],
+				singleton : {$UnpatternPattern[WordToken[__]]} :> ParseToken[ListToStringExpression[singleton]]
+			}
+		] // First
+	]
+iReformToken[expr_, _] := expr
+
+iExpand[expr_] :=
+	ReplaceAll[expr,
+	{		
+		BoundToken[s : Except[_Alternatives]] :> (BoundedWord[iExpand[s]]),
+		
+		BoundToken[a_Alternatives] :> BoundedWord[Map[iExpand, a]]
 		}
 	]
 
@@ -268,13 +385,6 @@ ContentAssociation[sourcetext_String, se_] :=
 		UnwrapAlternatives /@ mergeonkey
 		]
 
-ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
-	Module[{trx, ca},
-		trx = iExpandPattern[se];
-		ca = ContentAssociation[sourcetext, se];
-		Replace[trx, TextType[type : (_String | _Containing)] :> ApplyTokenBoundary[UnwrapAlternatives[ca[type]]], {0, Infinity}]
-	]
-
 ExpandPattern[sourcetext_String, Rule[se_?LexicalPatternQ, expr_]] :=
 	Rule[ExpandPattern[sourcetext, se], expr]
 
@@ -286,6 +396,12 @@ ExpandPattern[sourcetext_String, RuleDelayed[se_?LexicalPatternQ, expr_]] :=
 ExpandPattern[sources : List[__String], se_?LexicalPatternQ] :=
 	Map[ExpandPattern[#, se]&][sources]
 
+ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
+	Module[{rft, trx, cas},
+		cas = ContentAssociation[sourcetext, se];
+		rft = ReformTokens[se, cas];
+		trx = iExpandPattern[rft]
+	]
 (* Wikipedia *)
 
 InsertAnd[l : List[_]] := l;
