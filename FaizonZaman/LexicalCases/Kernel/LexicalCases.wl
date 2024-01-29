@@ -265,87 +265,79 @@ MassTextType[expr_, ca_]:= With[
 		]
 	]
 
-iExpandToken[text:$UnpatternPattern[_TextType], pos_, content_] := iWrapSpace[text, pos] // MassTextType[#, content]&
+MassWordToken[expr_] := expr /. $WordTokenRules
 
-
-$ExpandableTokens = Alternatives[_OptionalToken, _WordToken];
-
-ParseToken[StringExpression[before_, tok:$UnpatternPattern[$ExpandableTokens], after_]] := StringExpression[before, ExpandToken[tok], after]
-ParseToken[StringExpression[tok:$UnpatternPattern[$ExpandableTokens], after_]] := StringExpression[ExpandToken[tok, StartOfString], after]
-ParseToken[StringExpression[before_, tok:$UnpatternPattern[$ExpandableTokens]]] := StringExpression[before, ExpandToken[tok, EndOfString]]
-ParseToken[tok:$UnpatternPattern[$ExpandableTokens]] := ExpandToken[tok, ContainsOnly]
-
-ParseToken[StringExpression[before_, tok:$UnpatternPattern[_TextType].., after_], content_] := before ~~ ExpandToken[tok, String, content] ~~ after
-ParseToken[StringExpression[tok:$UnpatternPattern[_TextType], after_], content_] := StringExpression[ExpandToken[tok, StartOfString, content], after]
-ParseToken[StringExpression[before_, tok:$UnpatternPattern[_TextType]], content_] := StringExpression[before, ExpandToken[tok, EndOfString, content]]
-ParseToken[tok:$UnpatternPattern[_TextType], content_] := ExpandToken[tok, ContainsOnly, content]
-
-StringSplice[expr_] := Splice[expr, StringExpression]
-LexicalPad[expr_List, pos_:None] := iLexicalPad[Riffle[expr, " "], pos]
-LexicalPad[expr__, pos_:None] := LexicalPad[{expr}, pos]
-iLexicalPad[expr_List, None] := expr
-iLexicalPad[expr_List, String] := Splice[ArrayPad[expr, {1,1}, " "], StringExpression]
-iLexicalPad[expr_List, StartOfString] := Splice[ArrayPad[expr, {0,1}, " "], StringExpression]
-iLexicalPad[expr_List, EndOfString] := Splice[ArrayPad[expr, {1,0}, " "], StringExpression]
-
-iStartContext[anchor[seq__], after__]:= StringExpression[LexicalPad[seq, StartOfString], after]
-iMiddleContext[before__, anchor[seq__], after__]:= StringExpression[before, LexicalPad[seq, String], after]
-iEndContext[before__, anchor[seq__]]:= StringExpression[before, LexicalPad[seq, EndOfString]]
-iSingletonContext[anchor[seq__]]:= StringExpression@@LexicalPad[{seq}]
-
-StartContext[TextType, content_][a:anchor[seq__], after__] := iStartContext[MassTextType[content]@a, after]
-MiddleContext[TextType, content_][before__, a:anchor[seq__], after__] := iMiddleContext[before, MassTextType[content]@a, after]
-EndContext[TextType, content_][before__, a:anchor[seq__]] := iEndContext[before, MassTextType[content]@a]
-SingletonContext[TextType, content_][a:anchor[seq__]] := iSingletonContext[MassTextType[content]@a]
-
-
-ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern
-ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr]
-iReformToken[expr_, content_] /; Not@*FreeQ[TextType]@expr := 
-	With[
-		{list = StringExpressionToList@expr},
+$UOpt[ot_] := ot /. (OptionalToken[alt_] :> alt)
+MapAtOptionalToken[func_, expr_]:= MapAt[func, expr, Position[expr, _OptionalToken]] 
+iExpandOptional[opt:anchor[__], String] := MapAtOptionalToken[With[{o = $UOpt[#]}, Sandwich[" ", o] | " "]&, opt]
+iExpandOptional[opt:anchor[__], StartOfString] := MapAtOptionalToken[With[{o = $UOpt[#]}, (o ~~ " ") | ""]&, opt]
+iExpandOptional[opt:anchor[__], EndOfString] := MapAtOptionalToken[With[{o = $UOpt[#]}, (" " ~~ o) | ""]&, opt]
+iExpandOptional[opt:anchor[__], ContainsOnly] := MapAtOptionalToken[With[{o = $UOpt[#]}, o | ""]&, opt]
+MassOptionalToken[expr_] /; Not@*FreeQ[OptionalToken]@expr := With[
+		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},
 		SequenceReplace[
 			list,
 			{
-				{seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]], after__} :>
-					StartContext[TextType, content][anchor[seq], after],
+				{$LPS, seq_anchor, after__, $LPE} :>
+					StringExpression[iExpandOptional[seq, StartOfString], after],
+					(* FIXME: These context patterns are not correct - fixing these should fix LexicalCases-DocExamples-OptionalToken-Test1 *)
+				{$LPS, before__, seq_anchor, $LPE} :>
+					StringExpression[before, iExpandOptional[seq, EndOfString]],
 				
-				{before__, seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]]} :>
-					EndContext[TextType, content][before, anchor[seq]],
-				
-				{before__, seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]], after__} :>
-					MiddleContext[TextType, content][before, anchor[seq], after],
+				{$LPS, before__, seq_anchor, after__, $LPE} :>
+					StringExpression[before, iExpandOptional[seq, String], after],
 
-				{seq:Longest[Repeated[$UnpatternPattern[TextType[_]]]]} :>
-					SingletonContext[TextType, content][anchor[seq]]
+				{$LPS, seq_anchor, $LPE} :>
+					StringExpression[iExpandOptional[seq, ContainsOnly]]
 			}
-		] // First
+		] // ReplaceAll[anchor[s__]:> s] // DeleteCases[$LPS|$LPE] // First
 	]
-iReformToken[expr_, _] /; Not@*FreeQ[OptionalToken]@expr := 
+MassOptionalToken[expr_] := expr // ReplaceAll[anchor[s__] :> s]
+(* An Exclusive attribute might be nice - the function only works on the defined pattern, otherwise expr is returned (that way I don't have to write an empty pattern of f[expr_] := expr)  *)
+
+MassTokens[content_Association] := (MassWordToken@*MassTextType[content])
+
+StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, " ", after]
+MiddleContext[content_][before__, a:anchor[seq__], after__] := MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
+EndContext[content_][before__, a:anchor[seq__]] := MassOptionalToken@StringExpression[before, " ", MassTokens[content]@a]
+SingletonContext[content_][a:anchor[seq__]] := MassOptionalToken@StringExpression[MassTokens[content]@a]
+
+TokenPostProcess[expr_] := With[
+	{list = StringExpressionToList@expr},
+
+	SequenceReplace[
+		list, 
+		rwb : {Repeated[WordBoundary, {2, Infinity}]} :> 
+		Splice[Riffle[rwb, " "]]
+  ] // ListToStringExpression
+
+	
+]
+
+$LPS = LexicalPatternDelimiter["Start"]
+$LPE = LexicalPatternDelimiter["End"]
+ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern // TokenPostProcess
+ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr] // TokenPostProcess
+(* ReformTokens[expr_, content_] := iReformToken[expr, content] *)
+iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken]@expr := 
 	With[
-		{list = StringExpressionToList@expr},
+		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},
 		SequenceReplace[
 			list,
 			{
-				wrapped : {__, $UnpatternPattern[OptionalToken[_]], __} :> ParseToken[ListToStringExpression[wrapped]],
-				starts : {$UnpatternPattern[OptionalToken[_]], __} :> ParseToken[ListToStringExpression[starts]],
-				ends : {__, $UnpatternPattern[OptionalToken[_]]} :> ParseToken[ListToStringExpression[ends]],
-				singleton : {$UnpatternPattern[OptionalToken[_]]} :> ParseToken[ListToStringExpression[singleton]]
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], after__, $LPE} :>
+					StartContext[content][anchor[seq], after],
+				
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], $LPE} :>
+					EndContext[content][before, anchor[seq]],
+				
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], after__, $LPE} :>
+					MiddleContext[content][before, anchor[seq], after],
+
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], $LPE} :>
+					SingletonContext[content][anchor[seq]]
 			}
-		] // First
-	]
-iReformToken[expr_, _] /; Not@*FreeQ[WordToken]@expr := 
-	With[
-		{list = StringExpressionToList@expr},
-		SequenceReplace[
-			list,
-			{
-				wrapped : {__, $UnpatternPattern[WordToken[__]], __} :> ParseToken[ListToStringExpression[wrapped]],
-				starts : {$UnpatternPattern[WordToken[__]], __} :> ParseToken[ListToStringExpression[starts]],
-				ends : {__, $UnpatternPattern[WordToken[__]]} :> ParseToken[ListToStringExpression[ends]],
-				singleton : {$UnpatternPattern[WordToken[__]]} :> ParseToken[ListToStringExpression[singleton]]
-			}
-		] // First
+		] // First // DeleteCases[$LPS|$LPE]
 	]
 iReformToken[expr_, _] := expr
 

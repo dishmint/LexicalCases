@@ -2278,13 +2278,14 @@ for your paclet."}], "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Primary Context", "PrimaryContext", "TemplateCellGroup"},
  CellID->945361513,ExpressionUUID->"1e6b1f47-e1e0-4a76-91f9-e61c67fceadb"],
 
-Cell["MyPublisherID`MyPaclet`", "Text",
+Cell["FaizonZaman`LexicalCases`", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.91537554390294*^9, 3.915375549069252*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->310388821,ExpressionUUID->"5bd10f6f-0119-4f33-a950-ce18d87608ef"]
 }, Open  ]],
@@ -2372,7 +2373,7 @@ Cell[BoxData[
  RowBox[{"Quit", "[", "]"}]], "Input", "Excluded",
  TaggingRules->{},
  CellChangeTimes->{{3.91522334954283*^9, 3.915223351147139*^9}},
- CellLabel->"In[2]:=",
+ CellLabel->"In[28]:=",
  CellID->926712916,ExpressionUUID->"c66c6b20-67c9-4124-89b9-e9a2d883ad93"],
 
 Cell[CellGroupData[{
@@ -2530,34 +2531,35 @@ Cell[BoxData[
           Selectable->False], ",", "\"\<Resource\>\""}], "]"}], "//", 
        RowBox[{"Values", "/*", "Flatten"}]}]}]}], "}"}], ",", 
    "\[IndentingNewLine]", 
-   RowBox[{"Monitor", "[", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"TestReport", "[", 
-      RowBox[{"Table", "[", 
-       RowBox[{
+   RowBox[{"QuietEcho", "@", 
+    RowBox[{"Monitor", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"TestReport", "[", 
+       RowBox[{"Table", "[", 
         RowBox[{
-         RowBox[{"Increment", "[", "test", "]"}], ";", 
-         RowBox[{"TestReport", "[", "i", "]"}]}], ",", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", "tests"}], "}"}]}], "]"}], "]"}], ",", 
-     RowBox[{"Row", "[", 
-      RowBox[{"{", 
-       RowBox[{"\"\<Test // \>\"", ",", 
-        RowBox[{"Dynamic", "[", "test", "]"}], ",", "\"\< \>\"", ",", 
-        RowBox[{"ProgressIndicator", "[", 
          RowBox[{
-          RowBox[{"Dynamic", "[", "test", "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", 
-            RowBox[{
-             RowBox[{"Length", "[", "tests", "]"}], "-", "1"}]}], "}"}]}], 
-         "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+          RowBox[{"Increment", "[", "test", "]"}], ";", 
+          RowBox[{"TestReport", "[", "i", "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "tests"}], "}"}]}], "]"}], "]"}], ",", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Test // \>\"", ",", 
+         RowBox[{"Dynamic", "[", "test", "]"}], ",", "\"\< \>\"", ",", 
+         RowBox[{"ProgressIndicator", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "test", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{
+              RowBox[{"Length", "[", "tests", "]"}], "-", "1"}]}], "}"}]}], 
+          "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}]}], 
   "\[IndentingNewLine]", "]"}]], "Input", "Excluded",
  TaggingRules->{},
  CellChangeTimes->{
   3.882937822011593*^9, {3.882937870592862*^9, 3.882937898936121*^9}, {
    3.9153224836311617`*^9, 3.915322484346751*^9}, {3.915334420271572*^9, 
-   3.9153344242710943`*^9}},
+   3.9153344242710943`*^9}, {3.915414414238249*^9, 3.915414415187216*^9}},
  CellLabel->"In[1]:=",
  CellID->980444637,ExpressionUUID->"e69dc852-d732-4961-b281-adac06945d92"],
 
@@ -2697,7 +2699,7 @@ Cell[BoxData[
                  TagBox[
                   
                   TemplateBox[{
-                   "5.906874`5.129481015320123", "\"s\"", "seconds", 
+                   "5.974578`5.134430543687185", "\"s\"", "seconds", 
                     "\"Seconds\""}, "Quantity", SyntaxForm -> Mod], 
                   "SummaryItem"]}], "\[SpanFromLeft]"}}, 
              GridBoxAlignment -> {
@@ -2719,17 +2721,17 @@ Cell[BoxData[
   TestReportObject[<|
    "Title" -> "Test Report: LexicalStructure.wlt", "Aborted" -> False, 
     "TestResults" -> <|
-     2301300820894054749 -> 
+     520155845864978681 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371961519423`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548974545977*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "e60f775c-3401-4d7a-aad4-43edcfc724df", "TestID" -> 
+         "fb0212ee-66ec-430f-b200-928091943667", "TestID" -> 
          "LexicalStructureTest1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalStructure.wlt", "EvaluationID" -> 
-         "98dd5e32-e3f6-4195-a0df-45ea87398856", "Input" -> HoldForm[
+         "1cf1dde5-ed40-4051-b29a-86f74a9029e1", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalStructure[
             StringExpression[
              Alternatives["computer", "computers"], 
@@ -2739,15 +2741,16 @@ Tests/LexicalStructure.wlt", "EvaluationID" ->
              TextElement[{
                Alternatives[
                 TextElement[{"computer"}, <|"GrammaticalUnit" -> "Text"|>], 
+                
                 TextElement[{"computers"}, <|
                  "GrammaticalUnit" -> "Text"|>]]}, <|
               "GrammaticalUnit" -> "Alternatives"|>], 
              TextElement[{"Verb"}, <|"GrammaticalUnit" -> "TextType"|>]}, <|
             "GrammaticalUnit" -> "StringExpression"|>]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000222`2.4968679722826304, "CPUTimeUsed" -> 
-         0.00022200000000083264`, "MemoryUsed" -> 7936, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
+         0.000221`2.494907271517105, "CPUTimeUsed" -> 0.00022099999999980469`,
+          "MemoryUsed" -> 7936, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[
            TextElement[{
              TextElement[{
                Alternatives[
@@ -2758,17 +2761,17 @@ Tests/LexicalStructure.wlt", "EvaluationID" ->
               "GrammaticalUnit" -> "Alternatives"|>], 
              TextElement[{"Verb"}, <|"GrammaticalUnit" -> "TextType"|>]}, <|
             "GrammaticalUnit" -> "StringExpression"|>]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 2326194715770677981 -> 
+         "Success", "FailureType" -> None|>], 39493429228152824 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371961639514`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897454715743`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "ab33a3a3-9270-4829-bd3a-29a0c2716049", "TestID" -> 
+         "8538c750-0ac0-41de-8f50-f20e0b324c85", "TestID" -> 
          "ShortStringTest1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "2ab91e3a-f554-4e17-9274-af7cbbb94a6a", "Input" -> HoldForm[
+         "eb035427-b157-4d01-88b3-8c570fa53029", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleSentence, 
             FaizonZaman`LexicalCases`$SampleStringExpression]["Data"]], 
@@ -2776,22 +2779,23 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          HoldForm[{<|
             "Match" -> "best key lime pie", "Position" -> {{5, 21}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         1.725084`6.387325244979419, "CPUTimeUsed" -> 0.19200599999999923`, 
-         "MemoryUsed" -> 1186840, "IntermediateTestsTree" -> {}, 
+         1.920659`6.433965263493198, "CPUTimeUsed" -> 0.19049399999999928`, 
+         "MemoryUsed" -> 1194352, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "best key lime pie", "Position" -> {{5, 21}}|>}], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 886503598468858885 -> 
+         "Outcome" -> "Success", "FailureType" -> None|>], 
+      2821317661874765365 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371978899965`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897473930674`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "a3c05098-356a-49cf-824b-be556748fe97", "TestID" -> 
+         "f291b78f-7205-4acd-a1b0-e2f501d178a4", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "f86a9b80-4cbd-4ffb-a4ee-09609d3519d2", "Input" -> HoldForm[
+         "f9b3f171-4c13-47f9-9351-991816d99ffe", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "The great machine whirs. The weak machines sputter.", 
             StringExpression["great ", 
@@ -2799,22 +2803,22 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.007021`3.9969139708666686, "CPUTimeUsed" -> 0.007009999999999295, 
-         "MemoryUsed" -> 11760, "IntermediateTestsTree" -> {}, 
+         0.006502`3.9635619629920993, "CPUTimeUsed" -> 0.006489000000000189, 
+         "MemoryUsed" -> 12080, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      4892715715586139840 -> 
+      5149432988056708416 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371978977475`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747400298*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "c6b11a64-81ef-4cab-887d-2578cc9b4265", "TestID" -> 
+         "57ca948b-6d7a-4aff-a6fe-3cb82b7c575c", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "c3c91d94-9a7f-4943-8dd0-e31915920a66", "Input" -> HoldForm[
+         "c34a1e5e-a809-4232-a184-5917727de067", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "The great machine whirs. The weak machines sputter.", 
             StringExpression["great ", 
@@ -2822,22 +2826,21 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.006347`3.9530834961459487, "CPUTimeUsed" -> 0.006344999999999601, 
-         "MemoryUsed" -> 7856, "IntermediateTestsTree" -> {}, 
+         0.005884`3.9201876618874842, "CPUTimeUsed" -> 0.0059080000000006905`,
+          "MemoryUsed" -> 7992, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>}], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      2121384569160342014 -> 
+         "Outcome" -> "Success", "FailureType" -> None|>], 945854321166037543 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337197904744*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747406842*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "f0106afd-510e-4e75-aa58-0618a6751a18", "TestID" -> 
+         "c6f76580-a915-4073-9950-08bef038859d", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "5dd2c47e-7d4e-4853-9e07-e885d81b73ba", "Input" -> HoldForm[
+         "6c8c09fc-3982-4843-89f9-b5af8113981d", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "The great machine whirs. The weak machines sputter.", 
             StringExpression["weak ", 
@@ -2845,22 +2848,22 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{<|"Match" -> "weak machines", "Position" -> {{30, 42}}|>}],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.00626`3.947089331042421, "CPUTimeUsed" -> 0.006281999999999677, 
+         0.005915`3.922469746795941, "CPUTimeUsed" -> 0.005914000000000641, 
          "MemoryUsed" -> 8448, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "weak machines", "Position" -> {{30, 42}}|>}],
           "Outcome" -> "Success", "FailureType" -> None|>], 
-      3296544781456320701 -> 
+      4775911649435330238 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337197911598*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897474133873`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "6a9b2642-37f4-483c-9cd1-33786904a035", "TestID" -> 
+         "cee30cae-6406-48ba-9fcf-c2ebec9dc44b", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "51ae76c2-8cb6-43e0-a93c-17953257dbaa", "Input" -> HoldForm[
+         "bbbda195-402e-442a-8061-a45125bf04f2", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "The great machine whirs. The weak machines sputter.", 
             StringExpression["weak ", 
@@ -2869,44 +2872,44 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          HoldForm[{}], "ActualOutput" -> 
          HoldForm[{<|"Match" -> "weak machines", "Position" -> {{30, 42}}|>}],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.005705`3.9067706465862226, "CPUTimeUsed" -> 0.005695999999999479, 
+         0.006009`3.9293172018452327, "CPUTimeUsed" -> 0.006008999999999709, 
          "MemoryUsed" -> 12128, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "weak machines", "Position" -> {{30, 42}}|>}],
           "Outcome" -> "Success", "FailureType" -> None|>], 
-      8038876161711954374 -> 
+      3029826977037589572 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979178643`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747420008*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "eb56bf86-dd72-465e-85c7-5dd121b4650b", "TestID" -> 
+         "1a63601b-32cb-4721-aa1b-0ed0d229c225", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test4", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "f89cef11-9a93-42ec-b988-2b9a03a5beb3", "Input" -> HoldForm[
+         "e4961771-a12f-4660-9631-494234d26804", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases["He was number 1!", 
             StringExpression["number ", 
              FaizonZaman`LexicalCases`BoundToken[DigitCharacter]]]["Data"]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{<|"Match" -> "number 1", "Position" -> {{8, 15}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.00549`3.890087342282084, "CPUTimeUsed" -> 0.005488999999999855, 
-         "MemoryUsed" -> 8128, "IntermediateTestsTree" -> {}, 
+         0.036838`4.716811041383351, "CPUTimeUsed" -> 0.023126999999999676`, 
+         "MemoryUsed" -> 56232, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "number 1", "Position" -> {{8, 15}}|>}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      1196548451321005080 -> 
+      1208256259751182041 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979239163`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548974745746*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "115558d0-20db-44d8-96d7-a23c9c3e76eb", "TestID" -> 
+         "7438f22c-6bcf-4aba-9de0-fdcdfa6bf654", "TestID" -> 
          "LexicalCases-DocExamples-BoundToken-Test5", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "95975363-7834-4a98-8277-3cd910f201f3", "Input" -> HoldForm[
+         "2879db04-f4ad-4584-b6ed-dafb560d69fc", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "The great machine whirs. The weak machines sputter.", 
             StringExpression[
@@ -2917,23 +2920,23 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>, <|
             "Match" -> "weak machines", "Position" -> {{30, 42}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.007317`4.014848052865385, "CPUTimeUsed" -> 0.007367999999999597, 
+         0.007026`3.997223143287996, "CPUTimeUsed" -> 0.007036000000000264, 
          "MemoryUsed" -> 28184, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>, <|
             "Match" -> "weak machines", "Position" -> {{30, 42}}|>}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      2668080724284521709 -> 
+      1215775001518638127 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337197931886*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747465157*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "06ecc9e3-d1d8-4ecd-bb63-4668fae26285", "TestID" -> 
+         "a4aec4ba-c8ec-458f-b4a3-cab49e7062b5", "TestID" -> 
          "LexicalCases-DocExamples-WordToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "5a946827-7f87-4b7f-a586-1ed5729fe56b", "Input" -> HoldForm[
+         "3666b061-5315-4424-bab0-054432158119", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleParagraph, 
             StringExpression[
@@ -2944,25 +2947,25 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
             "Match" -> "That blank screen", "Position" -> {{176, 192}}|>, <|
             "Match" -> "with the screen", "Position" -> {{480, 494}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.006171`3.9408705442463763, "CPUTimeUsed" -> 0.00617299999999954, 
-         "MemoryUsed" -> 26760, "IntermediateTestsTree" -> {}, 
+         0.006838`3.9854440942925677, "CPUTimeUsed" -> 0.006816000000000599, 
+         "MemoryUsed" -> 17920, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "a blank screen", "Position" -> {{144, 157}}|>, <|
             "Match" -> "That blank screen", "Position" -> {{176, 192}}|>, <|
             "Match" -> "with the screen", "Position" -> {{480, 494}}|>}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      5745843348273044446 -> 
+      3426296739839723836 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979385905`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747472804*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "b8d729e1-c2a6-4291-8967-75f530f51607", "TestID" -> 
+         "481ad390-67f1-4649-887a-dadee16cbe8e", "TestID" -> 
          "LexicalCases-DocExamples-WordToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "d1948b59-c3fe-4685-800e-cb151a2eee54", "Input" -> HoldForm[
+         "200492df-1f8e-4a63-ab93-eb2f165497ea", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleParagraph, 
             StringExpression[
@@ -2974,8 +2977,8 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
             "Match" -> "That blank screen", "Position" -> {{176, 192}}|>, <|
             "Match" -> "would end with the screen", 
              "Position" -> {{470, 494}}|>}], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.006974`3.993996940871947, "CPUTimeUsed" -> 
-         0.006974999999999731, "MemoryUsed" -> 14472, 
+         "AbsoluteTimeUsed" -> 0.008`4.053604984823935, "CPUTimeUsed" -> 
+         0.008001000000000147, "MemoryUsed" -> 13832, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "sat with a blank screen", 
@@ -2983,17 +2986,17 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
             "Match" -> "That blank screen", "Position" -> {{176, 192}}|>, <|
             "Match" -> "would end with the screen", 
              "Position" -> {{470, 494}}|>}], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 5207016243616884298 -> 
+         "FailureType" -> None|>], 6552923801753988847 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979460845`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548974748145*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "f6643624-f51b-478c-950f-abe680d7af5a", "TestID" -> 
+         "b7748ea5-c059-42fc-a0d0-b25bfcc9aaba", "TestID" -> 
          "LexicalCases-DocExamples-WordToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "186d3fe2-a492-4a1a-99d6-534c56d4d319", "Input" -> HoldForm[Length[
+         "30a28d32-7f8c-4337-be1e-c656b1685ee8", "Input" -> HoldForm[Length[
              Composition[Join, Flatten][{
                FaizonZaman`LexicalCases`LexicalCases[
                FaizonZaman`LexicalCases`$SampleParagraph, 
@@ -3014,21 +3017,21 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
                FaizonZaman`LexicalCases`WordToken[2, 4], "screen"], Overlaps -> 
               True]["Data"]]], "ExpectedMessages" -> HoldForm[{}], 
          "ActualOutput" -> HoldForm[True], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.022682`4.506196343937717, "CPUTimeUsed" -> 
-         0.022656999999999705`, "MemoryUsed" -> 18728, 
+         "AbsoluteTimeUsed" -> 0.025608`4.558890658968066, "CPUTimeUsed" -> 
+         0.02551799999999904, "MemoryUsed" -> 18600, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      8970321669835431889 -> 
+      3343742697245584497 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337197969407*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747507758*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "49360187-e9cf-47f3-9ab7-ec08d4b7adc0", "TestID" -> 
+         "4bfff305-79c0-47b2-a0c7-2a7f6cc4355a", "TestID" -> 
          "LexicalCases-DocExamples-OptionalToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "529681e0-4c7e-4a32-b3bd-4fc8fef1f0e9", "Input" -> HoldForm[
+         "88a88b98-ff91-44e7-81ea-026f733af59c", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "this is a cool string. this is a string.", 
             StringExpression["this is a", 
@@ -3038,24 +3041,24 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
             "Match" -> "this is a cool string", "Position" -> {{1, 21}}|>, <|
             "Match" -> "this is a string", "Position" -> {{24, 39}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.005926`3.923276644976024, "CPUTimeUsed" -> 0.0059200000000005915`, 
-         "MemoryUsed" -> 9152, "IntermediateTestsTree" -> {}, 
+         0.007041`3.9981493421502465, "CPUTimeUsed" -> 0.007024000000000363, 
+         "MemoryUsed" -> 10088, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "this is a cool string", "Position" -> {{1, 21}}|>, <|
             "Match" -> "this is a string", "Position" -> {{24, 39}}|>}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      3216895054339369417 -> 
+      6017175610256984293 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337197975942*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747515427*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "da8a51b6-c8ad-47f4-882d-fd32f1fbf338", "TestID" -> 
+         "515fecde-45ec-4ef0-81ee-2bf5e62c5fd8", "TestID" -> 
          "LexicalCases-DocExamples-Sandwich-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "8c0fa06a-d198-4db9-9a52-1387c32fe137", "Input" -> HoldForm[
+         "0423b051-1bdb-4ddf-b45e-b1b411fbd277", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleParagraph, 
             FaizonZaman`LexicalCases`Sandwich[
@@ -3068,8 +3071,8 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
              "Position" -> {{266, 296}}|>, <|
             "Match" -> "eight hours he was prepared", 
              "Position" -> {{404, 430}}|>}], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.007124`4.0032389086231985, "CPUTimeUsed" -> 
-         0.007164999999999644, "MemoryUsed" -> 12616, 
+         "AbsoluteTimeUsed" -> 0.007782`4.041606224299714, "CPUTimeUsed" -> 
+         0.007750999999999841, "MemoryUsed" -> 12280, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "but here he sat with", "Position" -> {{123, 142}}|>, <|
@@ -3077,17 +3080,17 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
              "Position" -> {{266, 296}}|>, <|
             "Match" -> "eight hours he was prepared", 
              "Position" -> {{404, 430}}|>}], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 2365472407798354155 -> 
+         "FailureType" -> None|>], 3651945764109476158 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979836125`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897475237303`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "b3833040-3577-4585-bda0-aa23046acd8c", "TestID" -> 
+         "1bc80c02-dbd9-4ce8-8e26-ea40a16cc8e9", "TestID" -> 
          "LexicalCases-DocExamples-Sandwich-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "d6576311-8523-4c08-a90d-b31efd4de45b", "Input" -> HoldForm[
+         "1370616f-38e6-4e5b-a884-0e54cfc9e3ae", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "a nice car is good.", FaizonZaman`LexicalCases`Sandwich[
               Pattern[$CellContext`w, 
@@ -3102,8 +3105,8 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
               Pattern[$CellContext`w, 
                FaizonZaman`LexicalCases`WordToken[1]]] :> $CellContext`w]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000476`2.8281219505524846, "CPUTimeUsed" -> 0.0004770000000000607, 
-         "MemoryUsed" -> 8120, "IntermediateTestsTree" -> {}, 
+         0.000483`2.834462128583502, "CPUTimeUsed" -> 0.000484000000000151, 
+         "MemoryUsed" -> 8208, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            "a nice car is good.", StringExpression[
@@ -3112,18 +3115,17 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
               FaizonZaman`LexicalCases`BoundToken["car"], 
               Pattern[$CellContext`w, 
                FaizonZaman`LexicalCases`WordToken[1]]] :> $CellContext`w]], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      1374726329016651175 -> 
+         "Outcome" -> "Success", "FailureType" -> None|>], 585654091028487661 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153371979849205`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489747525086*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "2b6b6ae3-89c1-4748-9f64-f891f741b042", "TestID" -> 
+         "874e31f2-c707-42aa-a9e8-52c76b95fd4e", "TestID" -> 
          "LexicalCases-DocExamples-TextType-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "3ce079f3-e9aa-4d75-a536-42d5e076af34", "Input" -> HoldForm[
+         "ee98b458-18c1-47f9-a83d-d604e4acdc44", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleParagraph, StringExpression[
               Pattern[$CellContext`adjective, 
@@ -3133,23 +3135,22 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          HoldForm[{<|
             "Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         3.945914`6.746662613534669, "CPUTimeUsed" -> 3.6714410000000006`, 
-         "MemoryUsed" -> 51493584, "IntermediateTestsTree" -> {}, 
+         3.797802`6.7300473166982515, "CPUTimeUsed" -> 3.629032999999999, 
+         "MemoryUsed" -> 51397400, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>}], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      2294346278908071581 -> 
+         "Outcome" -> "Success", "FailureType" -> None|>], 761010990817450592 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019313874`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513234544`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "3b45a296-d6b9-4f97-854a-34165071776f", "TestID" -> 
+         "d5e1ef8c-dbb6-47a7-991d-4e444a9d2942", "TestID" -> 
          "LexicalCases-DocExamples-TextType-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/LexicalCases.wlt", "EvaluationID" -> 
-         "b54c0ab7-1636-46b2-a6ac-53b22072c36b", "Input" -> HoldForm[
+         "004d97de-c737-4df2-8260-471d6bfb6c8a", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalCases[
            FaizonZaman`LexicalCases`$SampleParagraph, StringExpression[
               Pattern[$CellContext`adjectiveOrDeterminer, 
@@ -3161,62 +3162,62 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
             "Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>, <|
             "Match" -> "the", "Position" -> {{485, 494}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.030317`4.632201221576093, "CPUTimeUsed" -> 0.03857200000000027, 
-         "MemoryUsed" -> 29720, "IntermediateTestsTree" -> {}, 
+         0.028372`4.6034049490084845, "CPUTimeUsed" -> 0.02150199999999991, 
+         "MemoryUsed" -> 29784, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{<|
             "Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>, <|
             "Match" -> "the", "Position" -> {{485, 494}}|>}], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 3825086299576803587 -> 
+         "Success", "FailureType" -> None|>], 8438798413132177817 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019786773`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975136871*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "2582b702-9fd3-46c4-bc94-eb324ec86c18", "TestID" -> 
+         "0f627a93-ce36-4265-9301-2244741ea1d5", "TestID" -> 
          "LexicalPatternQTest1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "e24dc253-548e-43c1-8197-202b588dc64f", "Input" -> HoldForm[
+         "f4b101fa-54cc-4ba2-9ace-7a64ff114f2a", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
            FaizonZaman`LexicalCases`$SampleStringExpression]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000176`2.3960276656461414, "CPUTimeUsed" -> 
-         0.00017599999999973193`, "MemoryUsed" -> 3768, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      8911746919116971720 -> 
+         0.000182`2.4105863858170666, "CPUTimeUsed" -> 0.0001829999999998222, 
+         "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>], 7956383381767499412 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019793463`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751369401*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "a181b36d-7c89-4b81-b787-7a56541f6257", "TestID" -> 
+         "c3af1fbe-f2f2-4126-8afd-41157495f81b", "TestID" -> 
          "LexicalPatternQ-UnvaluedSymbols-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "89b9b47d-248a-4472-9df7-3e8a0a838911", "Input" -> HoldForm[
+         "60644dba-f5b4-413a-899a-2fc0eea08cac", "Input" -> HoldForm[
            FailureQ[
             FaizonZaman`LexicalCases`LexicalPatternQ[
              StringExpression["Alice", $CellContext`xxx, 
               FaizonZaman`LexicalCases`TextType["Adverb"]]]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000168`2.3758242795578566, "CPUTimeUsed" -> 0.0001669999999993621, 
-         "MemoryUsed" -> 4928, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 3383195072037083688 -> 
+         0.000172`2.3860434447395407, "CPUTimeUsed" -> 
+         0.00017199999999917281`, "MemoryUsed" -> 4928, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
+         "Outcome" -> "Success", "FailureType" -> None|>], 
+      9074339873270142232 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019799323`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751370008*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "ac7cd0c5-e079-4697-9d22-9caa4172cc0e", "TestID" -> 
+         "de6fafa5-1e75-4de0-9e57-e8c6a6a8a2e9", "TestID" -> 
          "LexicalPatternQ-BoundToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "06a7b12e-5fee-4024-9001-c7595004989c", "Input" -> HoldForm[
+         "2bf0ca08-4b50-4831-beec-b980d86ffaa9", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression[
              Alternatives["great", "weak"], 
@@ -3224,120 +3225,119 @@ Tests/Validation.wlt", "EvaluationID" ->
               Alternatives["machine", "machines"]]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000315`2.64882555162159, "CPUTimeUsed" -> 0.0003159999999997609, 
-         "MemoryUsed" -> 3920, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 4511665389784996937 -> 
+         0.000307`2.6376533733091803, "CPUTimeUsed" -> 
+         0.00030899999999967065`, "MemoryUsed" -> 3920, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
+         "Outcome" -> "Success", "FailureType" -> None|>], 
+      4950411452827105281 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019806232`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513706894`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "036327ba-9d87-483c-b646-bd9211d4e521", "TestID" -> 
+         "ad89b5d0-d98d-4a1e-bb00-4fa1e81238de", "TestID" -> 
          "LexicalPatternQ-BoundToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "788acc8d-80dd-4048-8054-a779dadc2f34", "Input" -> HoldForm[
+         "6a79b59f-3f8f-4eca-aa8a-67145a914e36", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["weak", 
              FaizonZaman`LexicalCases`BoundToken["machines"]]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000209`2.4706612839430453, "CPUTimeUsed" -> 0.0002099999999991553, 
-         "MemoryUsed" -> 3912, "IntermediateTestsTree" -> {}, 
+         0.000225`2.5026975159433524, "CPUTimeUsed" -> 0.0002080000000006521, 
+         "MemoryUsed" -> 3904, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 8684767257552654378 -> 
+         "FailureType" -> None|>], 8939488460871457652 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337201981213*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513712783`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "0c03d267-5ad8-4b84-aac3-29e7d139d761", "TestID" -> 
+         "3a6ee114-143f-4d1f-83a0-4c0f0862980d", "TestID" -> 
          "LexicalPatternQ-BoundToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "85ebbb1a-4ae6-48f8-b35f-e6084ec54196", "Input" -> HoldForm[
+         "aa214d2a-632a-429a-899d-255ef2a2e70e", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["weak", 
              FaizonZaman`LexicalCases`BoundToken[
               RegularExpression["\\w+"]]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000233`2.5178709188580126, "CPUTimeUsed" -> 
-         0.00023400000000073362`, "MemoryUsed" -> 3768, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      7225540896343160200 -> 
+         0.000213`2.478894601270729, "CPUTimeUsed" -> 0.00020399999999831664`,
+          "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>], 8975189749050264362 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019818325`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513718543`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "c77250cb-f78d-47d5-8e69-9666eb9981fc", "TestID" -> 
+         "1b57cfb7-aba6-47d7-b7ff-73a012cfe292", "TestID" -> 
          "LexicalPatternQ-BoundToken-Test4", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "02a31ad6-1c8d-48c2-a0d9-0d9e1ef12887", "Input" -> HoldForm[
+         "0adb80b7-279f-4849-9b48-a4452c56720d", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["number", 
              FaizonZaman`LexicalCases`BoundToken[DigitCharacter]]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000275`2.5898476916622544, "CPUTimeUsed" -> 
-         0.00027599999999949887`, "MemoryUsed" -> 3832, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      4925439646484675815 -> 
+         0.000204`2.4601451652578925, "CPUTimeUsed" -> 0.000204000000000093, 
+         "MemoryUsed" -> 3896, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>], 2045332144790778475 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337201982456*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513724103`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "df38d50f-ab29-44a7-9bdd-32e2bc5bef17", "TestID" -> 
+         "ea94c7bb-88be-47a0-a0f3-75dc5e5687c2", "TestID" -> 
          "BoundToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "158bda94-3051-4e10-a9b7-8d34b995ebca", "Input" -> HoldForm[
+         "51e98db5-ccf1-4036-8cd6-faebb5dcde03", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000032`1.6556649761518993, "CPUTimeUsed" -> 0.00003300000000017178,
-          "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[
+         0.000033`1.669028937709881, "CPUTimeUsed" -> 
+         0.000032999999998395424`, "MemoryUsed" -> 3832, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 9138291083727386656 -> 
+         "Success", "FailureType" -> None|>], 7923522888361861137 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019828544`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751372794*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "ea511ded-b53e-49c4-af17-d29543c69583", "TestID" -> 
+         "362cadb3-82d3-473f-a6b1-4a06f746390c", "TestID" -> 
          "BoundToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "52e5d127-9a07-4fe3-8e03-6a95d4d542c5", "Input" -> HoldForm[
+         "5efd8011-23e7-4342-904a-2da683f531d9", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "ActualMessages" -> {}, 
          "AbsoluteTimeUsed" -> 0.000032`1.6556649761518998, "CPUTimeUsed" -> 
-         0.000031999999999143824`, "MemoryUsed" -> 3848, 
+         0.00003300000000017178, "MemoryUsed" -> 3848, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 4723724992155725225 -> 
+         "FailureType" -> None|>], 5659529709703190270 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.91533720198323*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751373173*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "a90af9c9-bac3-4f55-baf1-fdab64eb18d9", "TestID" -> 
+         "374eab7c-3622-4db8-aae1-115772bebb85", "TestID" -> 
          "BoundToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "55f0b9b5-a4f1-4de0-bf7c-e500f43e6409", "Input" -> HoldForm[
+         "36275a8f-4717-40d0-9415-744a6d8c62a7", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["A", 
              FaizonZaman`LexicalCases`WordToken[1]]]], "ExpectedMessages" -> 
@@ -3345,123 +3345,122 @@ Tests/Validation.wlt", "EvaluationID" ->
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["A", 
              FaizonZaman`LexicalCases`WordToken[1]]]], "ActualMessages" -> {},
-          "AbsoluteTimeUsed" -> 0.0000469999999999999`1.8226128557677108, 
-         "CPUTimeUsed" -> 0.000047000000000352316`, "MemoryUsed" -> 3864, 
+          "AbsoluteTimeUsed" -> 0.000032`1.6556649761518951, "CPUTimeUsed" -> 
+         0.000031999999999143824`, "MemoryUsed" -> 3864, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["A", 
              FaizonZaman`LexicalCases`WordToken[1]]]], "Outcome" -> "Success",
-          "FailureType" -> None|>], 5928143092378303648 -> 
+          "FailureType" -> None|>], 2848160541449860577 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337201983653*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513735933`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "845fd6e3-d8ec-4b33-8128-b1ccccf5f4b6", "TestID" -> 
+         "f9743e64-eec7-4065-af35-e23117bbdacf", "TestID" -> 
          "LexicalPatternQ-WordToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "ea0ca87b-7a50-4f6c-8524-e8b32b3eb360", "Input" -> HoldForm[
+         "63bc4fa3-31a7-4b28-9b52-26069577b8dd", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["pattern", 
              FaizonZaman`LexicalCases`WordToken[1]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000133`2.2743666387990773, "CPUTimeUsed" -> 
-         0.00013299999999993872`, "MemoryUsed" -> 3832, 
+         0.000128`2.2577249674798603, "CPUTimeUsed" -> 
+         0.00012899999999760325`, "MemoryUsed" -> 3768, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      3147714358575480853 -> 
+      7725308376874488362 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019841504`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751374064*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "1bd50cfb-1128-4708-951a-40881f4c60d9", "TestID" -> 
+         "735346c9-2637-4f14-ac22-719db5b064b1", "TestID" -> 
          "LexicalPatternQ-WordToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "f6c8dc15-e8d8-4225-9569-e14057eb8bc9", "Input" -> HoldForm[
+         "ad35b1da-0e68-49c3-9856-cb38d70b19c6", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["number", 
              FaizonZaman`LexicalCases`WordToken[1, 2]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000125`2.247425010840048, "CPUTimeUsed" -> 0.0001270000000008764, 
-         "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 7141292444126970689 -> 
+         0.000126`2.2508855429495545, "CPUTimeUsed" -> 
+         0.00012699999999910005`, "MemoryUsed" -> 3888, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
+         "Outcome" -> "Success", "FailureType" -> None|>], 
+      1877229570363069837 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019846153`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751374577*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "3797d781-6475-4d9a-be62-4a200d9d76a9", "TestID" -> 
+         "51426c69-5103-4efd-bcff-c3783d594b47", "TestID" -> 
          "LexicalPatternQ-WordToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "e365817a-31d4-4d2b-a5d5-106e249cc262", "Input" -> HoldForm[
+         "29d8c8c6-9f41-4c5c-9312-23838d5c7f23", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["this", "is", 
              FaizonZaman`LexicalCases`WordToken[1, "KeepContractions"], 
              "place"]]], "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[True], "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000129`2.2611047081312408, "CPUTimeUsed" -> 
-         0.00012900000000115597`, "MemoryUsed" -> 3832, 
+         0.000133`2.2743666387990773, "CPUTimeUsed" -> 
+         0.00013399999999919032`, "MemoryUsed" -> 3888, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      4470015393346359313 -> 
+      2679871742357696055 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019851265`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513751364`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "11340de1-30fe-403f-a5b0-073dc3628a79", "TestID" -> 
+         "e265a48d-695b-4a52-a5ad-1986987fd7af", "TestID" -> 
          "LexicalPatternQ-OptionalToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "cdcb915c-db50-48bc-bb28-3f609af52adc", "Input" -> HoldForm[
+         "98876504-ee54-4b58-8be4-564d05ecb017", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["this is a", 
              FaizonZaman`LexicalCases`OptionalToken[
               FaizonZaman`LexicalCases`TextType["Adjective"]], "string"]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.0002140000000000001`2.4809287711811825, "CPUTimeUsed" -> 
-         0.00021599999999999397`, "MemoryUsed" -> 3856, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      4418085169798928750 -> 
+         0.000222`2.496867972282628, "CPUTimeUsed" -> 0.00022299999999830789`,
+          "MemoryUsed" -> 4048, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>], 2276351853748896265 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337201985678*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751375697*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "5b36535b-84a4-40de-bf68-c2258b33e713", "TestID" -> 
+         "769a5f28-7bd5-468c-908b-f16631a8b5ab", "TestID" -> 
          "LexicalPatternQ-OptionalToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "0a099729-17d7-4c99-861a-a1148a1f5d49", "Input" -> HoldForm[
+         "4fc634a4-8c57-4bfe-b991-757f882c0e3a", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["cool", 
              FaizonZaman`LexicalCases`OptionalToken["crazy"], "computer"]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000223`2.4988198608801526, "CPUTimeUsed" -> 
-         0.00021000000000093166`, "MemoryUsed" -> 3968, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      9086922020397098876 -> 
+         0.000199`2.449368074241699, "CPUTimeUsed" -> 0.00020000000000131024`,
+          "MemoryUsed" -> 3912, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>], 2562083362495213245 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019862423`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751376234*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "bb4991d9-2b82-4e5b-ac10-f378649a733b", "TestID" -> 
+         "2747eab9-2db6-428e-8f32-be7f2509038b", "TestID" -> 
          "LexicalPatternQ-OptionalToken-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "be6b19d4-996b-41c3-abdf-6dcd59592015", "Input" -> HoldForm[
+         "8cc9d9c6-a28e-492e-89a8-bd057967244a", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             StringExpression["this", 
              FaizonZaman`LexicalCases`OptionalToken[
@@ -3470,135 +3469,136 @@ Tests/Validation.wlt", "EvaluationID" ->
                FaizonZaman`LexicalCases`TextType["Adjective"]]], "place"]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.00023`2.512242833849587, "CPUTimeUsed" -> 0.00023099999999764975`, 
-         "MemoryUsed" -> 4272, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 5324998299796919026 -> 
+         0.000243`2.5361212714303036, "CPUTimeUsed" -> 
+         0.00024499999999960664`, "MemoryUsed" -> 4192, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
+         "Outcome" -> "Success", "FailureType" -> None|>], 131119339157132293 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019868565`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513768973`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "db85e292-5252-414b-bbc2-cf4103e8c250", "TestID" -> 
+         "18e3e901-e58d-4a38-85d2-69670bc133e8", "TestID" -> 
          "LexicalPatternQ-Sandwich-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "53293a46-264e-419d-bae1-fa06f8a7fc1d", "Input" -> HoldForm[
+         "e006d6d3-f10a-4114-bd82-1471d183788d", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[
             FaizonZaman`LexicalCases`Sandwich[
              FaizonZaman`LexicalCases`WordToken[1], 
              FaizonZaman`LexicalCases`BoundToken["car"]]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000208`2.4685783327947535, "CPUTimeUsed" -> 0.0002080000000006521, 
+         0.000228`2.5084498448324455, "CPUTimeUsed" -> 0.0002280000000016713, 
          "MemoryUsed" -> 3888, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 6575302909002493939 -> 
+         "FailureType" -> None|>], 25654626454185151 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372019874463`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513775454`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "d4adb50b-5f73-408b-8fa4-3b695b639502", "TestID" -> 
+         "64abdfab-5d28-4a10-8ca2-ddb3e1b137a0", "TestID" -> 
          "LexicalPatternQ-TextType-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Validation.wlt", "EvaluationID" -> 
-         "d5a50064-156d-42f1-8a7f-ade110d2777c", "Input" -> HoldForm[
+         "fd8cdddc-605d-4863-bf5b-7b0355e7e5ca", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPatternQ[StringExpression[
               Pattern[$CellContext`adjective, 
                FaizonZaman`LexicalCases`TextType["Adjective"]], 
               "sentence"] :> $CellContext`adjective]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000136`2.284053906202211, "CPUTimeUsed" -> 0.00013599999999769352`,
-          "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 2207211621423499248 -> 
+         0.000145`2.3118830000669646, "CPUTimeUsed" -> 
+         0.00014700000000011926`, "MemoryUsed" -> 3912, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
+         "Outcome" -> "Success", "FailureType" -> None|>], 
+      2063109797476561365 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020026574`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513932*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "64f1cda1-e4cd-4990-9a6b-9f79f858dac9", "TestID" -> 
+         "2d3e1747-f074-459d-a6eb-b2cc5736bb30", "TestID" -> 
          "BoundToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "42c5263e-3c0d-4553-b019-e34da230ce8f",
+Tests/Patterns.wlt", "EvaluationID" -> "c6c82d06-4ae9-43d4-8d35-eba3fd4d9410",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000042`1.7737642882298899, "CPUTimeUsed" -> 
-         0.000042999999999793204`, "MemoryUsed" -> 3832, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
+         0.00005`1.8494850021680085, "CPUTimeUsed" -> 0.00005100000000091143, 
+         "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken["machine"]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 4096891724056784600 -> 
+         "Success", "FailureType" -> None|>], 6031332046345658932 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020031195`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751393704*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "a24821bc-1163-41c1-bdfd-bdc23361cf1b", "TestID" -> 
+         "dca4be83-46d2-4135-872a-3ce86b654df1", "TestID" -> 
          "BoundToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "a4a3957e-2a1d-4b02-86c6-5f624f341f1c",
+Tests/Patterns.wlt", "EvaluationID" -> "9b5005b8-7ca3-4960-b100-11552c542714",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000034`1.6819939148742469, "CPUTimeUsed" -> 
-         0.00003500000000045134, "MemoryUsed" -> 3848, 
+         "AbsoluteTimeUsed" -> 0.000036`1.7068174985992763, "CPUTimeUsed" -> 
+         0.00003700000000073089, "MemoryUsed" -> 3848, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`BoundToken[
             Alternatives["machine", "machines"]]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 6991258230406484698 -> 
+         "FailureType" -> None|>], 6526190039214227209 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202003547*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751394162*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "3a8736f3-f7c5-4412-af1e-98f36a9dfb03", "TestID" -> 
+         "c38778d9-24ae-4731-91a7-f72731052965", "TestID" -> 
          "WordToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "2012f758-6d0a-4cd5-afe3-d1e8ddc4ce5a",
+Tests/Patterns.wlt", "EvaluationID" -> "2881f4cf-c5c1-4e54-95d2-969dfa0fdc12",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[3]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[3]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000032`1.6556649761518956, "CPUTimeUsed" -> 
-         0.000030999999999892225`, "MemoryUsed" -> 3768, 
+         "AbsoluteTimeUsed" -> 0.000033`1.669028937709881, "CPUTimeUsed" -> 
+         0.00003300000000017178, "MemoryUsed" -> 3768, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[3]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 4323855265561491319 -> 
+         "FailureType" -> None|>], 2485508023508427766 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020039144`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751394547*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "0d5a217d-8918-4519-8632-a7181586b69b", "TestID" -> 
+         "22a1a6f0-b76d-4e1f-ab84-8f02350f43c2", "TestID" -> 
          "WordToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "fc98da9c-fd67-4460-938d-249b764fdbe2",
+Tests/Patterns.wlt", "EvaluationID" -> "9e64b3b2-0c2f-46ee-a96b-2ae1c169cf9d",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[1, 4]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[1, 4]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000034`1.6819939148742489, "CPUTimeUsed" -> 
-         0.000031999999999143824`, "MemoryUsed" -> 3768, 
+         "AbsoluteTimeUsed" -> 0.000032`1.6556649761518993, "CPUTimeUsed" -> 
+         0.000032999999998395424`, "MemoryUsed" -> 3768, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`WordToken[1, 4]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 6309804747391125907 -> 
+         "FailureType" -> None|>], 4356160921092434808 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020043163`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513949723`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "212ffafe-5ff3-4c36-81db-7be2cc7046a8", "TestID" -> 
+         "3857de9d-4def-41ea-9f1a-248bdc41b9ea", "TestID" -> 
          "OptionalToken-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "491e7011-f2df-4662-9b0e-14a697c65f07",
+Tests/Patterns.wlt", "EvaluationID" -> "9481acff-e49d-444b-8181-37ca8fdc9f1d",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`OptionalToken[
             FaizonZaman`LexicalCases`TextType["Adjective"]]], 
@@ -3606,21 +3606,21 @@ Tests/Patterns.wlt", "EvaluationID" -> "491e7011-f2df-4662-9b0e-14a697c65f07",
            FaizonZaman`LexicalCases`OptionalToken[
             FaizonZaman`LexicalCases`TextType["Adjective"]]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000032`1.6556649761518956, "CPUTimeUsed" -> 0.00003200000000092018,
-          "MemoryUsed" -> 3848, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> HoldForm[
+         0.000032`1.6556649761518971, "CPUTimeUsed" -> 
+         0.000031999999999143824`, "MemoryUsed" -> 3848, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`OptionalToken[
             FaizonZaman`LexicalCases`TextType["Adjective"]]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 3885597486780288341 -> 
+         "Success", "FailureType" -> None|>], 4298861841690737919 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202004689*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975139535*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "ff0ddb67-b01c-4099-a172-c5406f7d8fe1", "TestID" -> 
+         "3b11294b-96c8-476d-96c8-b98b1b0fc93c", "TestID" -> 
          "OptionalToken-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "79ca1f0b-0b4d-47fe-a881-3916d64366fa",
+Tests/Patterns.wlt", "EvaluationID" -> "9257aeb6-023c-4d65-adff-d0899bf582ac",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`OptionalToken[
             StringExpression[
@@ -3632,64 +3632,63 @@ Tests/Patterns.wlt", "EvaluationID" -> "79ca1f0b-0b4d-47fe-a881-3916d64366fa",
              Pattern[$CellContext`adjective, 
               FaizonZaman`LexicalCases`TextType["Adjective"]], "sentence"]]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000032`1.6556649761518993, "CPUTimeUsed" -> 
-         0.000031999999999143824`, "MemoryUsed" -> 3896, 
+         0.000032`1.6556649761518978, "CPUTimeUsed" -> 
+         0.000033999999997647024`, "MemoryUsed" -> 3896, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`OptionalToken[
             StringExpression[
              Pattern[$CellContext`adjective, 
               FaizonZaman`LexicalCases`TextType["Adjective"]], "sentence"]]], 
-         "Outcome" -> "Success", "FailureType" -> None|>], 
-      4045013020764103025 -> 
+         "Outcome" -> "Success", "FailureType" -> None|>], 399817415056218782 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020050964`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513957853`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "2e7e4c5d-f562-4491-a5e5-95572acdcaef", "TestID" -> "TextType-Test1",
+         "27f3afad-7d01-45ed-a117-084919bae49b", "TestID" -> "TextType-Test1",
           "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "2592ef57-c90e-46c3-b2a5-7b05538efde4",
+Tests/Patterns.wlt", "EvaluationID" -> "81451705-3a43-4eb5-8859-300b1475db17",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`TextType["Adjective"]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`TextType["Adjective"]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000036`1.706817498599281, "CPUTimeUsed" -> 0.00002999999999886427, 
+         0.00003`1.6276362525516566, "CPUTimeUsed" -> 0.00002999999999886427, 
          "MemoryUsed" -> 3768, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`TextType["Adjective"]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 973102813693847087 -> 
+         "Success", "FailureType" -> None|>], 8318104500472409400 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020054812`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751396181*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "80ad9c6f-63ec-4085-b2d7-2efd1d6f1c22", "TestID" -> "TextType-Test2",
+         "daf92e0b-5901-4d94-8332-265086282fb0", "TestID" -> "TextType-Test2",
           "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "43f21f1c-69c5-448c-baf0-ef41bd4ca301",
+Tests/Patterns.wlt", "EvaluationID" -> "6ef64824-176a-4274-9e47-d8730c724747",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`TextType[
             Alternatives["Adjective", "Noun"]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[
            FaizonZaman`LexicalCases`TextType[
             Alternatives["Adjective", "Noun"]]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000029`1.612912995730948, "CPUTimeUsed" -> 
-         0.000030999999999892225`, "MemoryUsed" -> 3776, 
+         "AbsoluteTimeUsed" -> 0.000035`1.6945830421822676, "CPUTimeUsed" -> 
+         0.000036999999998954536`, "MemoryUsed" -> 3776, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`TextType[
             Alternatives["Adjective", "Noun"]]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 3425617092676347399 -> 
+         "FailureType" -> None|>], 4086154758069087853 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020059013`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897513966284`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "f57dc824-b732-4d35-965a-f37fd48ba9a2", "TestID" -> "Sandwich-Test1",
+         "178ccf61-6803-4484-83a1-6f146b963a26", "TestID" -> "Sandwich-Test1",
           "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "30409834-1df0-4a09-b8af-ee5925374451",
+Tests/Patterns.wlt", "EvaluationID" -> "866e08fb-c8ac-41cd-885d-ecbf83758d4e",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Sandwich[
             FaizonZaman`LexicalCases`TextType[
@@ -3700,24 +3699,24 @@ Tests/Patterns.wlt", "EvaluationID" -> "30409834-1df0-4a09-b8af-ee5925374451",
              Alternatives["Adjective", "Noun"]], "computer", 
             FaizonZaman`LexicalCases`TextType[
              Alternatives["Adjective", "Noun"]]]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000046`1.813272829513564, "CPUTimeUsed" -> 
-         0.00004599999999932436, "MemoryUsed" -> 3848, 
+         "AbsoluteTimeUsed" -> 0.000032`1.6556649761518978, "CPUTimeUsed" -> 
+         0.000033999999997647024`, "MemoryUsed" -> 3848, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            StringExpression[
             FaizonZaman`LexicalCases`TextType[
              Alternatives["Adjective", "Noun"]], "computer", 
             FaizonZaman`LexicalCases`TextType[
              Alternatives["Adjective", "Noun"]]]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 1775897497400234454 -> 
+         "FailureType" -> None|>], 4269737957691268579 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202006316*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751397045*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "2398e1d6-dbf4-4c28-bc27-70e84d5b2646", "TestID" -> "Sandwich-Test2",
+         "507f9ed8-509e-49a2-9421-697fc41ae723", "TestID" -> "Sandwich-Test2",
           "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "fcfb5f99-8deb-4a68-a2e6-fb9cd6253180",
+Tests/Patterns.wlt", "EvaluationID" -> "9de06f0c-3839-48fe-88e3-ae94b4cfaea8",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Sandwich[
             FaizonZaman`LexicalCases`OptionalToken[
@@ -3731,7 +3730,7 @@ Tests/Patterns.wlt", "EvaluationID" -> "fcfb5f99-8deb-4a68-a2e6-fb9cd6253180",
             FaizonZaman`LexicalCases`OptionalToken[
              FaizonZaman`LexicalCases`TextType[
               Alternatives["Adjective", "Noun"]]]]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.00003`1.627636252551654, "CPUTimeUsed" -> 
+         "AbsoluteTimeUsed" -> 0.000032`1.6556649761518956, "CPUTimeUsed" -> 
          0.000030999999999892225`, "MemoryUsed" -> 3856, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            StringExpression[
@@ -3741,16 +3740,16 @@ Tests/Patterns.wlt", "EvaluationID" -> "fcfb5f99-8deb-4a68-a2e6-fb9cd6253180",
             FaizonZaman`LexicalCases`OptionalToken[
              FaizonZaman`LexicalCases`TextType[
               Alternatives["Adjective", "Noun"]]]]], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 2572367657669223563 -> 
+         "FailureType" -> None|>], 6065919434796782988 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020067244`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975139753*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "0bb2d476-b0ab-48f3-87fc-335fe2c067fc", "TestID" -> 
+         "ae6357fb-9222-4787-beb4-09b0a9ed6c62", "TestID" -> 
          "LexicalPattern-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
-Tests/Patterns.wlt", "EvaluationID" -> "13073e73-ed2b-481e-9f51-d0187f07ebb5",
+Tests/Patterns.wlt", "EvaluationID" -> "88497afd-8907-4a80-9266-3c165f50c85a",
           "Input" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPattern[
             StringExpression["Alice", 
@@ -3762,24 +3761,24 @@ Tests/Patterns.wlt", "EvaluationID" -> "13073e73-ed2b-481e-9f51-d0187f07ebb5",
              FaizonZaman`LexicalCases`TextType["Verb"], 
              FaizonZaman`LexicalCases`TextType["Adverb"]]]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000031`1.6418766916662644, "CPUTimeUsed" -> 
-         0.000031999999999143824`, "MemoryUsed" -> 3784, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
+         0.000032`1.6556649761518956, "CPUTimeUsed" -> 0.00003400000000119974,
+          "MemoryUsed" -> 3784, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[
            FaizonZaman`LexicalCases`LexicalPattern[
             StringExpression["Alice", 
              FaizonZaman`LexicalCases`TextType["Verb"], 
              FaizonZaman`LexicalCases`TextType["Adverb"]]]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 5833815512764075522 -> 
+         "Success", "FailureType" -> None|>], 6822749720767081718 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202023918*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751413977*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "90fea34e-c1e2-4c4a-b7e0-cd06b424bf6b", "TestID" -> 
+         "ec11daae-717f-4822-a0a8-091af2676586", "TestID" -> 
          "Utilities-ExtractHeads-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "d67e8279-abf7-48e9-a150-dfb7aa282a58", "Input" -> HoldForm[
+         "b680d898-d597-4250-bfd7-59ceb787c239", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`ExtractHeads[
             StringExpression[
              FaizonZaman`LexicalCases`TextType["Adverb"], 
@@ -3792,25 +3791,25 @@ Tests/Utilities.wlt", "EvaluationID" ->
             FaizonZaman`LexicalCases`TextType, Alternatives, 
             FaizonZaman`LexicalCases`BoundToken, StringExpression}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000052`1.8665183414667932, "CPUTimeUsed" -> 0.00005300000000119098,
-          "MemoryUsed" -> 3872, "IntermediateTestsTree" -> {}, 
+         0.000057`1.906389853504483, "CPUTimeUsed" -> 0.00005599999999894578, 
+         "MemoryUsed" -> 3872, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{
            FaizonZaman`LexicalCases`TextType, 
             FaizonZaman`LexicalCases`TextType, Alternatives, 
             FaizonZaman`LexicalCases`BoundToken, StringExpression}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      5774992504279470597 -> 
+      4935876503675081457 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020243874`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751414494*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "311ab006-433e-439d-b80e-97fb2d97b4a7", "TestID" -> 
+         "2fcb33c1-db5b-4bc1-87af-dda81a7bd66f", "TestID" -> 
          "Utilities-ExtractHeads-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "adfe2af2-7c80-4307-84b3-4867dc6388f5", "Input" -> HoldForm[
+         "4a644fb2-6982-4e02-8c2a-4fafe765d50d", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`ExtractHeads[
             StringExpression[
              FaizonZaman`LexicalCases`TextType[
@@ -3819,44 +3818,44 @@ Tests/Utilities.wlt", "EvaluationID" ->
          HoldForm[{
            Alternatives, FaizonZaman`LexicalCases`TextType, 
             StringExpression}], "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000039`1.741579604858491, "CPUTimeUsed" -> 0.00003900000000101045, 
+         0.000056`1.898703024838192, "CPUTimeUsed" -> 0.00004199999999876525, 
          "MemoryUsed" -> 3848, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{
            Alternatives, FaizonZaman`LexicalCases`TextType, 
             StringExpression}], "Outcome" -> "Success", "FailureType" -> 
-         None|>], 3607383242768971031 -> 
+         None|>], 400369907379834320 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020248013`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751414934*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "91cd1d1d-4c42-45b7-95a5-3ef3a2ea19fd", "TestID" -> 
+         "0a74c868-3dd2-4e8d-939b-0b2652c68d64", "TestID" -> 
          "Utilities-ExtractHeads-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "ea876967-3d29-44f2-b94a-6da44f4dc6ef", "Input" -> HoldForm[
+         "ba74ac85-f39d-4a3a-bb1b-e59e27e46ef2", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`ExtractHeads[
            FaizonZaman`LexicalCases`$SampleStringExpression]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{FaizonZaman`LexicalCases`TextType, StringExpression}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000037`1.7187167218989872, "CPUTimeUsed" -> 
-         0.000036999999998954536`, "MemoryUsed" -> 3832, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> 
+         0.000038`1.7302985944487996, "CPUTimeUsed" -> 0.00004000000000026205,
+          "MemoryUsed" -> 3832, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> 
          HoldForm[{FaizonZaman`LexicalCases`TextType, StringExpression}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      7291431473235174908 -> 
+      2793121243847820798 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020252404`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514153852`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "e9592b15-ed22-4a47-9378-a136d2fa18c7", "TestID" -> 
+         "3732b0da-8078-4f95-94ba-5f83eb02ddbf", "TestID" -> 
          "Utilities-GetFileExtension-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "607ba678-3ded-4068-9973-84632399ff60", "Input" -> HoldForm[
+         "2eab6fbf-9b73-4220-8310-67f68944c5cf", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`GetFileExtension[
             File[
              
@@ -3865,20 +3864,20 @@ Tests/Utilities.wlt", "EvaluationID" ->
                "AliceInWonderland.txt"}]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm["txt"], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000442`2.795937267181084, "CPUTimeUsed" -> 0.0004390000000000782, 
+         0.000447`2.8008225209639286, "CPUTimeUsed" -> 0.0004479999999986717, 
          "MemoryUsed" -> 24320, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm["txt"], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 2498883888483613952 -> 
+         "FailureType" -> None|>], 763349262766482254 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.91533720202611*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751416274*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "3946480a-d033-4dc4-82d9-30ca3e7e1504", "TestID" -> 
+         "3a082bef-2ce9-4fb7-8a9a-2b7326c393f8", "TestID" -> 
          "Utilities-MatchTrim-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "c7c56b81-f4d4-4f25-9c70-e81a4ffc50fd", "Input" -> HoldForm[
+         "e2e3a7db-3e03-4401-b92f-44643e11eb17", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`MatchTrim[
            True, {<|"Match" -> " past", "Position" -> {{49, 53}}|>, <|
              "Match" -> " few", "Position" -> {{54, 57}}|>, <|
@@ -3892,25 +3891,25 @@ Tests/Utilities.wlt", "EvaluationID" ->
              "Position" -> {{146, 150}, {181, 185}, {506, 510}}|>, <|
             "Match" -> "single", "Position" -> {{305, 310}}|>}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000221`2.4949072715171003, "CPUTimeUsed" -> 0.0002200000000005531, 
-         "MemoryUsed" -> 6080, "IntermediateTestsTree" -> {}, 
-         "ExpectedOutput" -> 
+         0.000228`2.5084498448324433, "CPUTimeUsed" -> 
+         0.00022799999999989495`, "MemoryUsed" -> 6080, 
+         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> 
          HoldForm[{<|"Match" -> "past", "Position" -> {{50, 53}}|>, <|
             "Match" -> "few", "Position" -> {{55, 57}}|>, <|
             "Match" -> "blank", 
              "Position" -> {{146, 150}, {181, 185}, {506, 510}}|>, <|
             "Match" -> "single", "Position" -> {{305, 310}}|>}], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 3797067637826261988 -> 
+         "Success", "FailureType" -> None|>], 8633641585605076221 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020267982`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751416963*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "3e3d37a1-2d47-4dee-97e0-8ae0630539e2", "TestID" -> 
+         "80831caa-a23a-4fc7-bbce-f57c7ec24936", "TestID" -> 
          "Utilities-OptionsJoin-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "140abcd6-39c6-441e-9259-cb6b8cb8165e", "Input" -> HoldForm[
+         "4e679733-ebb8-4ceb-afc9-37eccf19c9db", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`OptionsJoin[
            FaizonZaman`LexicalCases`LexicalCases, 
             FaizonZaman`LexicalCases`LexicalDispersionPlot]], 
@@ -3925,8 +3924,8 @@ Tests/Utilities.wlt", "EvaluationID" ->
             FaizonZaman`LexicalCases`DataJoin -> False, 
             FaizonZaman`LexicalCases`DispersionPlotFunction -> Automatic}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000052`1.866518341466791, "CPUTimeUsed" -> 
-         0.000052999999999414626`, "MemoryUsed" -> 4528, 
+         0.000053`1.8747908674327807, "CPUTimeUsed" -> 
+         0.000053999999998666226`, "MemoryUsed" -> 4528, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> 
          HoldForm[{
            "Service" -> "Wikipedia", "StringTrim" -> True, IgnoreCase -> 
@@ -3938,36 +3937,36 @@ Tests/Utilities.wlt", "EvaluationID" ->
             FaizonZaman`LexicalCases`DataJoin -> False, 
             FaizonZaman`LexicalCases`DispersionPlotFunction -> Automatic}], 
          "Outcome" -> "Success", "FailureType" -> None|>], 
-      1867270927933481352 -> 
+      5324347341775932368 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020272555`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514174523`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "0b75c93a-a0f0-4045-89cb-8e473914c023", "TestID" -> 
+         "ec5fd0bc-b92d-4b28-9620-74e51da17bef", "TestID" -> 
          "Utilities-ReplaceEmptyListWithMissing-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "651bf0a7-9a51-475b-a0a4-20e3bdfbe901", "Input" -> HoldForm[
+         "2f214525-648c-4f58-bb36-5a15503a56bb", "Input" -> HoldForm[
            
            FaizonZaman`LexicalCases`Utilities`ReplaceEmptyListWithMissing[{{}}\
 ]], "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[{
             Missing["NoMatches"]}], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000043`1.7839834534115762, "CPUTimeUsed" -> 
-         0.00004400000000082116, "MemoryUsed" -> 3816, 
+         "AbsoluteTimeUsed" -> 0.000041`1.763298854551729, "CPUTimeUsed" -> 
+         0.000042000000000541604`, "MemoryUsed" -> 3816, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[{
             Missing["NoMatches"]}], "Outcome" -> "Success", "FailureType" -> 
-         None|>], 5111178994153089866 -> 
+         None|>], 9053655187731180619 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202027685*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975141791*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "32942ce1-1383-4703-915e-e6c88283fd1b", "TestID" -> 
+         "b2cbb62d-e846-4db9-be2a-b57db33007e0", "TestID" -> 
          "Utilities-SupportedFileQ-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "4b0a1326-ff1c-493f-b4e9-66d0f1763729", "Input" -> HoldForm[
+         "38cb6ca9-cc17-4dd7-b697-fad2c777db48", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`SupportedFileQ[
             File[
              
@@ -3975,92 +3974,92 @@ Tests/Utilities.wlt", "EvaluationID" ->
                "TextSearch", "TextSearch.m"}]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[False], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.000232`2.5160029827228896, "CPUTimeUsed" -> 0.0002329999999979293, 
-         "MemoryUsed" -> 4472, "IntermediateTestsTree" -> {}, 
+         0.000224`2.5007630161661547, "CPUTimeUsed" -> 0.0002250000000003638, 
+         "MemoryUsed" -> 4408, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[False], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 5102056719834894629 -> 
+         "FailureType" -> None|>], 797005802542571324 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020282993`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751418518*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "03b28514-76c5-4297-b10e-a9f0cb448631", "TestID" -> 
+         "f6731f6b-66f3-405b-b75a-464f3b965b3b", "TestID" -> 
          "Utilities-UnwrapAlternatives-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "538e44a1-260b-485e-98a0-e21904f1fbd5", "Input" -> HoldForm[
+         "4f649a7b-60ca-40ea-9692-604d335d2eb1", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`UnwrapAlternatives[{
              Alternatives["A", "B"]}]], "ExpectedMessages" -> HoldForm[{}], 
          "ActualOutput" -> HoldForm[
            Alternatives["A", "B"]], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000033`1.6690289377098773, "CPUTimeUsed" -> 
-         0.00003300000000194814, "MemoryUsed" -> 3768, 
+         "AbsoluteTimeUsed" -> 0.000031`1.6418766916662622, "CPUTimeUsed" -> 
+         0.000030999999999892225`, "MemoryUsed" -> 3768, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[
            Alternatives["A", "B"]], "Outcome" -> "Success", "FailureType" -> 
-         None|>], 181873454256699311 -> 
+         None|>], 6387875708539093647 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020286975`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751418919*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "7cbb7ba2-9523-4cae-b485-a5e475caa1a7", "TestID" -> 
+         "d3788ae4-daa1-4af2-beca-0fc84a551be4", "TestID" -> 
          "Utilities-WrapAlternatives-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "1530a239-85b3-48ec-8c8e-d0a4093b8e99", "Input" -> HoldForm[
+         "46bd3d98-d61f-44e0-820d-00819d763893", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`Utilities`WrapAlternatives[
             Alternatives["A", "B"]]], "ExpectedMessages" -> HoldForm[{}], 
          "ActualOutput" -> HoldForm[{
             Alternatives["A", "B"]}], "ActualMessages" -> {}, 
-         "AbsoluteTimeUsed" -> 0.000031`1.6418766916662644, "CPUTimeUsed" -> 
-         0.000031999999999143824`, "MemoryUsed" -> 3816, 
+         "AbsoluteTimeUsed" -> 0.000031`1.641876691666267, "CPUTimeUsed" -> 
+         0.00003200000000092018, "MemoryUsed" -> 3816, 
          "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[{
             Alternatives["A", "B"]}], "Outcome" -> "Success", "FailureType" -> 
-         None|>], 1018637834744408607 -> 
+         None|>], 2051256867257020346 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020290885`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514193163`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "c83beece-e893-4a9e-9214-31b5eea670fb", "TestID" -> 
+         "b84dbc29-eddf-4db7-8c40-cc00df43d714", "TestID" -> 
          "Utilities-StopWordQ-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "b2ec7e1f-f0d9-41b3-a0ee-a2375d314829", "Input" -> HoldForm[
+         "b516da7c-2c10-4a71-8469-a80901a6feae", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`StopWordQ["the"]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[True], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.001937`3.4376446185511047, "CPUTimeUsed" -> 0.001939000000000135, 
-         "MemoryUsed" -> 6336, "IntermediateTestsTree" -> {}, 
+         0.001911`3.4317756848870045, "CPUTimeUsed" -> 0.001898999999999873, 
+         "MemoryUsed" -> 6464, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 579684222760329038 -> 
+         "FailureType" -> None|>], 6956358024075454024 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020313764`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514215803`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "921e3dfc-d63d-4cf6-a0c4-8c09be34b103", "TestID" -> 
+         "cf10e9d0-50e1-4339-a23a-eb8b742930e4", "TestID" -> 
          "Utilities-StopWordQ-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "9bd7091b-c611-442e-a45e-13201ff3dc47", "Input" -> HoldForm[
+         "5f8b1696-0dfa-4193-92f5-ee8d24ce4fd7", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`StopWordQ["math"]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[False], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.00004`1.7525749891599518, "CPUTimeUsed" -> 0.00004099999999951365, 
-         "MemoryUsed" -> 3768, "IntermediateTestsTree" -> {}, 
+         0.000041`1.7632988545517252, "CPUTimeUsed" -> 0.00004099999999951365,
+          "MemoryUsed" -> 3768, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[False], "Outcome" -> "Success", 
-         "FailureType" -> None|>], 618365396489712087 -> 
+         "FailureType" -> None|>], 6542116363775553335 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202031866*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514220653`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "8b48a764-2d6d-4ab9-9348-18003f9c49ce", "TestID" -> 
+         "d01edffa-d2ac-442e-b756-1cfe95f3e3dd", "TestID" -> 
          "Utilities-ExpandPattern-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "6c6b0ddc-833c-4e3c-adce-07b4849ac5e9", "Input" -> HoldForm[
+         "db2beec4-8506-42b7-85b8-e9ee39603afe", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`ExpandPattern[
            FaizonZaman`LexicalCases`$SampleParagraph, 
             FaizonZaman`LexicalCases`Sandwich[
@@ -4068,13 +4067,14 @@ Tests/Utilities.wlt", "EvaluationID" ->
               Alternatives["Adjective", "Noun"]], "computer"]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[
            StringExpression[
-            Alternatives[{WordBoundary, 
-              Alternatives["past", "few", "blank", "single"], WordBoundary}, {
-             WordBoundary, 
+            Alternatives[
+             StringExpression[WordBoundary, 
+              Alternatives["past", "few", "blank", "single"], WordBoundary], 
+             StringExpression[WordBoundary, 
               Alternatives[
               "words", "fingers", "weeks", "writer", "block", "screen", 
                "front", "day", "mind", "type", "word", "process", "hours", 
-               "computer", "today", "blank"], WordBoundary}], " computer ", 
+               "computer", "today", "blank"], WordBoundary]], " computer ", 
             Alternatives[
              StringExpression[WordBoundary, 
               Alternatives["past", "few", "blank", "single"], WordBoundary], 
@@ -4084,17 +4084,18 @@ Tests/Utilities.wlt", "EvaluationID" ->
                "front", "day", "mind", "type", "word", "process", "hours", 
                "computer", "today", "blank"], WordBoundary]]]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.022703`4.506598246979285, "CPUTimeUsed" -> 0.017281000000000546`, 
-         "MemoryUsed" -> 6968, "IntermediateTestsTree" -> {}, 
+         0.023453`4.5207134013911014, "CPUTimeUsed" -> 0.017804000000001707`, 
+         "MemoryUsed" -> 5888, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[
            StringExpression[
-            Alternatives[{WordBoundary, 
-              Alternatives["past", "few", "blank", "single"], WordBoundary}, {
-             WordBoundary, 
+            Alternatives[
+             StringExpression[WordBoundary, 
+              Alternatives["past", "few", "blank", "single"], WordBoundary], 
+             StringExpression[WordBoundary, 
               Alternatives[
               "words", "fingers", "weeks", "writer", "block", "screen", 
                "front", "day", "mind", "type", "word", "process", "hours", 
-               "computer", "today", "blank"], WordBoundary}], " computer ", 
+               "computer", "today", "blank"], WordBoundary]], " computer ", 
             Alternatives[
              StringExpression[WordBoundary, 
               Alternatives["past", "few", "blank", "single"], WordBoundary], 
@@ -4103,17 +4104,17 @@ Tests/Utilities.wlt", "EvaluationID" ->
               "words", "fingers", "weeks", "writer", "block", "screen", 
                "front", "day", "mind", "type", "word", "process", "hours", 
                "computer", "today", "blank"], WordBoundary]]]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 181012818219963644 -> 
+         "Success", "FailureType" -> None|>], 8884899259247279308 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020550804`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514460163`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "cee74f8a-86c9-475f-8e0c-ac28f2efc1d7", "TestID" -> 
+         "d1bc606b-6c44-4e22-9e1d-43eccd07d14f", "TestID" -> 
          "Utilities-ExpandPattern-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "26c56db1-17d8-42ef-a98a-26919df0c646", "Input" -> HoldForm[
+         "fa1bd0c8-4c23-43b0-8209-43a8389ca24d", "Input" -> HoldForm[
            FaizonZaman`LexicalCases`ExpandPattern[
            "this is the best music ever.", 
             StringExpression[
@@ -4122,22 +4123,22 @@ Tests/Utilities.wlt", "EvaluationID" ->
            StringExpression[WordBoundary, 
             Alternatives["best"], WordBoundary, " music"]], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.005394`3.8824259399488645, "CPUTimeUsed" -> 0.003869999999999152, 
-         "MemoryUsed" -> 4408, "IntermediateTestsTree" -> {}, 
+         0.005496`3.890561721883486, "CPUTimeUsed" -> 0.004106000000000165, 
+         "MemoryUsed" -> 4456, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[
            StringExpression[WordBoundary, 
             Alternatives["best"], WordBoundary, " music"]], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 6255023418862620742 -> 
+         "Success", "FailureType" -> None|>], 6745582404726468528 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.915337202061006*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975145204*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "dead3daf-f2d0-49d3-973b-7b98a8245203", "TestID" -> 
+         "be59e368-3d93-4c09-8a99-f6c82794e76c", "TestID" -> 
          "Utilities-LexicalPattern-Test1", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "08ef2a51-1984-4de6-b809-c6913bcefa44", "Input" -> HoldForm[
+         "ddae51eb-ddf9-423f-aa4a-27c63ab5f4f3", "Input" -> HoldForm[
            StringCases[FaizonZaman`LexicalCases`$SampleParagraph, 
             FaizonZaman`LexicalCases`LexicalPattern[
              StringExpression[
@@ -4146,21 +4147,21 @@ Tests/Utilities.wlt", "EvaluationID" ->
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{"blank screen", "blank screen", "the screen"}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.027409`4.588408188701508, "CPUTimeUsed" -> 0.06421100000000024, 
+         0.021256`4.477996539234211, "CPUTimeUsed" -> 0.018675999999997472`, 
          "MemoryUsed" -> 5408, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{"blank screen", "blank screen", "the screen"}], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 2637204068478907410 -> 
+         "Success", "FailureType" -> None|>], 1438662129220384824 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372020889425`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.91548975147383*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "619c74d1-ba80-430e-92d0-f6e574d2c33b", "TestID" -> 
+         "be7f6f6b-7d03-4499-ae00-5ba1acbae2e1", "TestID" -> 
          "Utilities-LexicalPattern-Test2", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "572e20b2-38c1-417c-8359-1612db93f092", "Input" -> HoldForm[
+         "c8343fff-ae82-429b-ae51-abdfa7f76d8a", "Input" -> HoldForm[
            StringCases[FaizonZaman`LexicalCases`$SampleParagraph, 
             FaizonZaman`LexicalCases`LexicalPattern[
              StringExpression[
@@ -4169,21 +4170,21 @@ Tests/Utilities.wlt", "EvaluationID" ->
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> 
          HoldForm[{"blank screen", "blank screen", "the screen"}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.03098`4.641596411255179, "CPUTimeUsed" -> 0.0844819999999995, 
-         "MemoryUsed" -> 5448, "IntermediateTestsTree" -> {}, 
+         0.021687`4.486714477298624, "CPUTimeUsed" -> 0.025121999999999645`, 
+         "MemoryUsed" -> 5376, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> 
          HoldForm[{"blank screen", "blank screen", "the screen"}], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 7504252491339479126 -> 
+         "Success", "FailureType" -> None|>], 8069763660081024094 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372021204734`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9154897514960814`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "4958d5da-bbac-4fc9-8bce-ae9547f90edd", "TestID" -> 
+         "6946ee35-52ea-4c1e-87e9-2c2ae181143f", "TestID" -> 
          "Utilities-LexicalPattern-Test3", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "d980a919-fb78-49a6-adb0-a3cbc0668044", "Input" -> HoldForm[
+         "e2ed58bb-54ba-4c47-bf1f-7523122d48c1", "Input" -> HoldForm[
            StringPosition[FaizonZaman`LexicalCases`$SampleParagraph, 
             FaizonZaman`LexicalCases`LexicalPattern[
              StringExpression[
@@ -4193,20 +4194,20 @@ Tests/Utilities.wlt", "EvaluationID" ->
                Alternatives["Preposition", "Verb"]]]]]], "ExpectedMessages" -> 
          HoldForm[{}], "ActualOutput" -> HoldForm[{{144, 160}, {176, 201}}], 
          "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.020188`4.4556082938936425, "CPUTimeUsed" -> 0.021141999999999328`, 
-         "MemoryUsed" -> 8304, "IntermediateTestsTree" -> {}, 
+         0.019817`4.447552907211354, "CPUTimeUsed" -> 0.018750999999999962`, 
+         "MemoryUsed" -> 9312, "IntermediateTestsTree" -> {}, 
          "ExpectedOutput" -> HoldForm[{{144, 160}, {176, 201}}], "Outcome" -> 
-         "Success", "FailureType" -> None|>], 3615599582470274244 -> 
+         "Success", "FailureType" -> None|>], 3682355072559263040 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9153372021412225`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.915489751516448*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
-         "7f74924d-2d94-4026-8f0d-f40b4792cd89", "TestID" -> 
+         "169b794a-a279-4221-a98c-eaa3e614b36f", "TestID" -> 
          "Utilities-LexicalPattern-Test4", "TestFileName" -> 
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Utilities.wlt", "EvaluationID" -> 
-         "0e0fee63-9020-4716-9a46-9d2ff9af5f85", "Input" -> HoldForm[
+         "9a03d98f-963a-4f6f-a722-d908a0ccfba9", "Input" -> HoldForm[
            StringMatchQ["Alice walked quickly", 
             FaizonZaman`LexicalCases`LexicalPattern[
              StringExpression["Alice", 
@@ -4214,47 +4215,49 @@ Tests/Utilities.wlt", "EvaluationID" ->
               FaizonZaman`LexicalCases`TextType["Adverb"]]]]], 
          "ExpectedMessages" -> HoldForm[{}], "ActualOutput" -> HoldForm[True],
           "ActualMessages" -> {}, "AbsoluteTimeUsed" -> 
-         0.0047480000000000001`3.8270257081145473, "CPUTimeUsed" -> 
-         0.004076000000001301, "MemoryUsed" -> 5904, 
-         "IntermediateTestsTree" -> {}, "ExpectedOutput" -> HoldForm[True], 
-         "Outcome" -> "Success", "FailureType" -> None|>]|>, 
-    "FailureResults" -> <||>, "TestsNotEvaluatedKeys" -> {}, 
-    "TestsFailedWrongResultsKeys" -> {}, "TestsFailedWithMessagesKeys" -> {}, 
+         0.005531`3.89331865630116, "CPUTimeUsed" -> 0.004747999999999308, 
+         "MemoryUsed" -> 6376, "IntermediateTestsTree" -> {}, 
+         "ExpectedOutput" -> HoldForm[True], "Outcome" -> "Success", 
+         "FailureType" -> None|>]|>, "FailureResults" -> <||>, 
+    "TestsNotEvaluatedKeys" -> {}, "TestsFailedWrongResultsKeys" -> {}, 
+    "TestsFailedWithMessagesKeys" -> {}, 
     "TestsSucceededKeys" -> CompressedData["
-1:eJwtlLmNZTcQRdtQBJoIlEHtizP+ALIUwhgCZMkY5Q8dfrLRy2++elV3K/7x
-89+//v7+9fX16zd+/fnPr/9+fOODuaiLjMlsSEbHvnMr3WjNbqnuHf3xO+cz
-leK5EzWTw8+nPGbt1GrmlDqP5bZRU5/IWi3xMNH4nLttZUSP8sxNWvRzPuIz
-XVraqpvhfev5h3oaqZuKpMzrXzV8bgvjoWnLhZ8dOeEeY+0SfNU9/4wqC2fG
-TNjOnbstdK7acabqzD6clG0ijPt6bWg/eYDDVDnK8Aa8L04At8FomVKp2vfc
-bMOjrGcPXM25fH0MLmW72TDxnH54eDVQjb+1rW2Xr/s4ukBYvGUcDld/RjHP
-4TGxW+uvT010tWVnWh09b32bZQael8O2xOT2jzWKtqIQuxqYF//ioq0ysRF0
-GHX1hCwnTDQUYAxtr85rWOuyPB4Xp93Fr9HNgxwQBdalXzwaamv4pAZfqac/
-ERHRRHvUI3au/s71vHy0WaI3nRc/6taawcfpsidLF48fkFCg/qgqds8LGC64
-tSJUMOfFn5wYkpqG+aH38Ics0PQ4n4XU9XSrXbUctinkI93LVbj5fKTP0kBF
-vf0LaUbYtnYctlzplweqt2NoLjbjoW9u5FlUYFWo8CE/67jtSp0STdaMRLw2
-YcxDAKvGYYbcsdpYSnu+4esRedeLfJDoRo068jk7eWUbAoezaoyVkyF769VH
-lJSw5pIQIN+5JaQDralnDkD1xW0xHe+RIwk2Nt25gUUD6QmyzL2Rt7/3yQDQ
-e6zORfRiruhih1afQED71ZN+9mWW/cTOWQL6zlEMo2hA+bKA+5FNR6cd9siE
-da4XpgoDTmAxJtgO2HzKk9BwVxis5Ky2z+e4FNB5tuVwtSP+ay6KJ2PKJhL9
-q3GxcUdz7hYoYWTYu8LYoBMb/ON2aOy9mh11005oHI3JVz2NMYT7YgzhjS4R
-/wP+bQsS
+1:eJw1lDtuJkcMhBX4AmufwDfg+5FsLsDRHmEDA44crO8Pfz3TAqT5GxxONVlV
+5J8///3x9/ePj49fv/H4659f/33+ziFNNHMip2J7avTzG2HfWA9bs9G0sfj8
+gygHde0qnY6u9MonnhobbjsjWS0TWg/4Apu8UK0Sb45PenTnEjsfpbuYzxPn
+tGO13Sd5NtueuJqMZVlup+qYhN64JlBCBzrlo9YvTljZVvuOb4Pu9cQrk458
+RDt5NxM338M7zsUWhwuIePNJJLVUuH0HOt76aVtprStUFh405+VysjJkyZ+Y
+Q9MTJkFIXBntSMl9u5rwaVBhFIa6efvEe5NenHa6OnZD3/yVDqfsdmvRMPM3
+HpsQonFkahV+XnZmEZEeS6b1VJv33sMij1hJsQqvNw6tiGEa0VzVkJO3HvPE
+BwON0Kzqb530uvDZwp/rClVdk8RoSQZIOxz69tWWLuNdmCcO2lV3eGOILV4u
+8HzxrWAH/oPruxagtx6zLqeDRLOZLbsmPA4BHlgYwado+dAPv6oLc5iF6BHx
+25uewcdBoZM46JJQjla9j79LvxyOfRVyJMqDD+HWrqWs6F187UjSJvvixGTK
+YG2eYY0ZXrEc0BKy+Q+Pkdf6cYYHepkcyPde3ad43z2uUWxTBlNzNXQdRS+R
+wLOYUF7uQwBJlBuIRHdIuvCYG9RDpFpN9t62EBEvO5oX4BTxxodeGAOTPvPM
+GNwy1xNjJ1Ixd3Ns9ZTJ/V77Vj5Mk10r9DpDSqO4ibnl5Z0IRm4ZUmgJrsp3
+vTDDzkydMcKaXWavKOmHqvbQszjcvOZOxNlAeQyExrR8SUM9ESgA1x7NX3im
+qqfxGaysLFddo0kqbpjCoC0mHnddnEE8MCGsLgb7CwdYthdupZxkZvz1yFko
+s8uaMlSh9astU8xWAYVoBeTbG1doKVQ9W1Zg6GvLHu1giJUJw/LIe9fOYCeI
+seQKZiXkf9ROCYU=
      "]|>],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output", "Excluded",
  TaggingRules->{},
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmVkYGAwBOJLOhmy67XfOk5RfqW/CUjv13wUD6K3XuCZDaItkmN3
-gui4LzmXQXTT5bnfNgPpr98Zl2wD0sZ13ntB9KfpKT3bgfTLQps5IJplYdVW
-ED1rWfNtsHjwlL4dQHrOoffzQfS/XSrHQPQfk7p3IPpnVADPTiCtlnxLFUTf
-W//fCETvc97LvRtIx5ycLwqi9RQjlEH084+TdUC0kNcMRxCdtG97N4gu2bZ7
-Iog2OCbRvQdIqyvUbQfRxRHMvnuBdO82vhQQ7ReqtOw+kD73hHEdiHZ49+fx
-A5A/9ht5PALSghbisSA6Tiq1F0Tvtphh8Rhk/u8ZFSD6wx0NhSdAWkYsxxZE
-b9tz+9lzIF0+8WjiC5C7zv57CaIrZL7wvgTSjDHn4kD00w9/U0H0gYX2O0C0
-SYTbPhANAL5EzqQ=
+1:eJwdz1tIkwEYBuD9tItgc2aRybTYnK7C34q5ixHGGgOLDhILZYwdSB11MYiY
+4Bg5w3ZTy0A26KesMYhddJGg7NQOLiEhohHzygyVubQFrjWW4Wn5vV18PPBe
+vLyftO+uzsrweDwtXZa9c3yybUPjk/08O0XOnM5ZYOiL8AVU9Zti0FyxzcPR
++Zeb0+Sfv8zrMNnhupqE5WcDTyJk4V7nBOQHnCH4PPhw8X9+0/c0Sk7M/vLD
+6ruWObirdBXhluGGMEbK+7+2wqXJfwqY0iYFcdL40X8UnpHqZXD9t5eFh69w
+GtiXinjgYDg+Ds/NNXgS5EmJKwLt+gPXk+RYWDQAu3uag8tkJs+8hReLu6sr
++GNGcTlH1qmOmaBZbB2DcRWnWkX/DueApW+nJHmyqd52AYYTi2vr5ND4h1s/
+sOtztQAdTZWaAskYM2b4vbRnhemAOgqV+q4UrLzZyQjYDc37XrYC09lrdUJy
+c1pqhPW3uUHYIK4+hvxhi6CGbEwE/VDsvS8Xke5LzaPw1ZGD6lryk/uEHc7q
+TMwh0rWd6mTJB3utj6BO5+xuJ7tGQgbILZTPK8l9JLYKKA==
   "],
  CellLabel->"Out[1]=",
- CellID->720408842,ExpressionUUID->"92bfa4ac-38c4-46a3-9e07-401e3a29ee88"]
+ CellID->484754229,ExpressionUUID->"5735bfcc-3e85-413b-9b96-38b4ed422578"]
 }, Open  ]]
 }, Open  ]],
 
@@ -6513,7 +6516,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
  CellLabel->"Out[12]=",
  CellID->355320011,ExpressionUUID->"f07d341f-ca2b-45fc-8735-6feb1b00df70"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -6543,7 +6546,7 @@ Cell[BoxData[
  TaggingRules->{},
  CellChangeTimes->{{3.867251109517704*^9, 3.8672512099533*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[13]:=",
+ CellLabel->"In[2]:=",
  CellID->978490832,ExpressionUUID->"662d8154-fa39-4a14-aa92-9b98569039f0"],
 
 Cell[CellGroupData[{
@@ -6552,7 +6555,7 @@ Cell[BoxData[
  RowBox[{"darwin", "[", "\"\<CountGroups\>\"", "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.867251315746311*^9, 3.8672513188938837`*^9}},
- CellLabel->"In[14]:=",
+ CellLabel->"In[3]:=",
  CellID->2047610439,ExpressionUUID->"1288863a-2f6b-422e-96af-8a84979eb93c"],
 
 Cell[BoxData[
@@ -6560,84 +6563,76 @@ Cell[BoxData[
   TagBox[
    DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
     "InitialData" -> {<|
-       "Matches" -> {"theory of evolution"}, "CountGroup" -> 261|>, <|
-       "Matches" -> {"theory of natural"}, "CountGroup" -> 84|>, <|
-       "Matches" -> {"theory of the"}, "CountGroup" -> 36|>, <|
-       "Matches" -> {"theory of punctuated"}, "CountGroup" -> 13|>, <|
+       "Matches" -> {"theory of evolution"}, "CountGroup" -> 247|>, <|
+       "Matches" -> {"theory of natural"}, "CountGroup" -> 78|>, <|
+       "Matches" -> {"theory of the"}, "CountGroup" -> 33|>, <|
+       "Matches" -> {"theory of punctuated"}, "CountGroup" -> 12|>, <|
        "Matches" -> {"theory of inheritance"}, "CountGroup" -> 11|>, <|
-       "Matches" -> {"theory of sexual", "theory of biological"}, 
-        "CountGroup" -> 9|>, <|
+       "Matches" -> {"theory of sexual"}, "CountGroup" -> 10|>, <|
+       "Matches" -> {"theory of descent"}, "CountGroup" -> 8|>, <|
        "Matches" -> {
-         "theory of pangenesis", "theory of organic", "theory of molecular", 
-          "theory of heredity", "theory of descent"}, "CountGroup" -> 7|>, <|
+         "theory of pangenesis", "theory of molecular", 
+          "theory of biological"}, "CountGroup" -> 7|>, <|
        "Matches" -> {
-         "theory of species", "theory of social", "theory of neuronal", 
-          "theory of disease", "theory of cultural"}, "CountGroup" -> 5|>, <|
+         "theory of universal", "theory of organic", "theory of cultural"}, 
+        "CountGroup" -> 6|>, <|
+       "Matches" -> {"theory of species", "theory of neuronal"}, "CountGroup" -> 
+        5|>, <|"Matches" -> {
+         "theory of social", "theory of recapitulation", "theory of heredity",
+           "theory of disease", "theory of alienation"}, "CountGroup" -> 
+        4|>, <|"Matches" -> {
+         "theory of transmutation", "theory of transformation", 
+          "theory of sociocultural", "theory of human", "theory of how", 
+          "theory of higher", "theory of gravitation", "theory of diseases", 
+          "theory of Darwinism"}, "CountGroup" -> 3|>, <|
        "Matches" -> {
-         "theory of universal", "theory of recapitulation", 
-          "theory of alienation"}, "CountGroup" -> 4|>, <|
-       "Matches" -> {
-         "theory of transmutation", "theory of sociocultural", 
-          "theory of society", "theory of relativity", "theory of mind", 
-          "theory of how", "theory of higher", "theory of gravitation", 
-          "theory of genetics", "theory of diseases", "theory of Darwinism"}, 
-        "CountGroup" -> 3|>, <|
-       "Matches" -> {
-         "theory of unilinear", "theory of uniformitarianism", 
-          "theory of transformation", "theory of slow", 
+         "theory of uniformitarianism", "theory of transformationism", 
+          "theory of telegony", "theory of slow", "theory of relativity", 
+          "theory of regular", "theory of polygeny", "theory of polygenesis", 
           "theory of panspermia", "theory of modernization", 
-          "theory of intelligent", "theory of human", "theory of history", 
-          "theory of gradual", "theory of Evolution", 
-          "theory of discontinuous", "theory of business", "theory of atoll", 
-          "theory of a"}, "CountGroup" -> 2|>, <|
+          "theory of intelligent", "theory of history", "theory of gradual", 
+          "theory of genetics", "theory of Evolution", "theory of emotion", 
+          "theory of business", "theory of atoll", "theory of a"}, 
+        "CountGroup" -> 2|>, <|
        "Matches" -> {
-         "theory of world", "theory of two", "theory of truth", 
-          "theory of tripartite", "theory of transformationism", 
-          "theory of theistic", "theory of telegony", "theory of systems", 
+         "theory of world", "theory of unilinear", "theory of two", 
+          "theory of tripartite", "theory of theistic", "theory of systems", 
           "theory of survival", "theory of surplus", "theory of successive", 
-          "theory of statehood", "theory of spontaneous", 
-          "theory of speciation", "theory of somatic", "theory of soft", 
-          "theory of sex", "theory of selective", "theory of saltational", 
+          "theory of statehood", "theory of spontaneous", "theory of somatic",
+           "theory of soft", "theory of society", "theory of selective", 
           "theory of revolutions", "theory of reproduction", 
-          "theory of repression", "theory of regular", "theory of reciprocal",
-           "theory of ranges", "theory of racial", "theory of race", 
-          "theory of progress", "theory of Pringle", "theory of pre", 
-          "theory of potential", "theory of polygeny", 
-          "theory of polygenesis", "theory of phylogenetics", 
-          "theory of phrenology", "theory of petrifying", 
-          "theory of peppered", "theory of particulate", "theory of parallel",
-           "theory of pangenes", "theory of organogenesis", 
-          "theory of organizations", "theory of Oedipal", "theory of numbers",
-           "theory of non", "theory of neuroses", "theory of neural", 
-          "theory of Nazism", "theory of nature", "theory of mutationism", 
-          "theory of multilinear", "theory of Moon", "theory of migration", 
-          "theory of methodology", "theory of metaphysics", "theory of memes",
-           "theory of mankind", "theory of man", "theory of magic", 
-          "theory of linear", "theory of Lewis", "theory of Lamarck", 
-          "theory of knowledge", "theory of kin", "theory of island", 
-          "theory of Intelligent", "theory of humors", "theory of honest", 
-          "theory of Hoffman", "theory of historical", "theory of Heredity", 
-          "theory of Gustaf", "theory of George", "theory of geology", 
-          "theory of general", "theory of gene", "theory of Forms", 
-          "theory of forms", "theory of fitness", "theory of fevers", 
-          "theory of fever", "theory of facilitated", 
-          "theory of exploitation", "theory of evolutionary", 
-          "theory of Ernst", "theory of envariance", "theory of emotions", 
-          "theory of emotion", "theory of electromagnetic", 
-          "theory of education", "theory of economic", "theory of early", 
-          "theory of divine", "theory of divergence", 
-          "theory of distribution", "theory of diffraction", 
+          "theory of reciprocal", "theory of ranges", "theory of racial", 
+          "theory of race", "theory of progress", "theory of pre", 
+          "theory of phylogenetics", "theory of phrenology", 
+          "theory of petrifying", "theory of peppered", 
+          "theory of particulate", "theory of parallel", "theory of pangenes",
+           "theory of organogenesis", "theory of Oedipal", "theory of non", 
+          "theory of neuroses", "theory of neural", "theory of Nazism", 
+          "theory of nature", "theory of mutationism", "theory of Moon", 
+          "theory of migration", "theory of metaphysics", "theory of mankind",
+           "theory of man", "theory of magic", "theory of linear", 
+          "theory of Lewis", "theory of Lamarck", "theory of kin", 
+          "theory of island", "theory of Intelligent", "theory of humors", 
+          "theory of honest", "theory of historical", "theory of Heredity", 
+          "theory of Gustaf", "theory of germ", "theory of George", 
+          "theory of geology", "theory of general", "theory of gene", 
+          "theory of Forms", "theory of forms", "theory of fitness", 
+          "theory of facilitated", "theory of exploitation", 
+          "theory of evolutionary", "theory of Ernst", "theory of envariance",
+           "theory of emotions", "theory of electromagnetic", 
+          "theory of education", "theory of early", "theory of divine", 
+          "theory of divergence", "theory of distribution", 
+          "theory of discontinuous", "theory of diffraction", 
           "theory of development", "theory of derivation", 
-          "theory of Darwinian", "theory of creation", "theory of cosmic", 
-          "theory of continental", "theory of consciousness", 
-          "theory of complex", "theory of common", "theory of commodity", 
-          "theory of clinamen", "theory of Charles", "theory of character", 
-          "theory of bureaucracy", "theory of branching", 
-          "theory of Boerhaave", "theory of body", "theory of biogeography", 
+          "theory of Darwinian", "theory of cosmic", "theory of continental", 
+          "theory of consciousness", "theory of complex", "theory of common", 
+          "theory of commodity", "theory of clinamen", "theory of Charles", 
+          "theory of character", "theory of bureaucracy", 
+          "theory of branching", "theory of body", "theory of biogeography", 
           "theory of associationism", "theory of ape", 
           "theory of anticyclones", "theory of an", "theory of adaptation", 
-          "theory of 1809"}, "CountGroup" -> 1|>}, "AllowEmbedding" -> True, 
-     "InitialShape" -> 
+          "theory of acquired", "theory of 1809"}, "CountGroup" -> 1|>}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
         1, {All, "CountGroup"} -> 1|>, 
        TypeSystem`PackageScope`Limited[
@@ -6647,12 +6642,12 @@ Cell[BoxData[
           TypeSystem`PackageScope`RowShape[<|
            "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
             "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 12, 
+          DirectedInfinity[1], 2, {All}]], 14, 
         DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Matches", "CountGroup"}, {
          TypeSystem`Vector[
           TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 12], "Meta" -> <||>, "RowTarget" -> 20, 
+         TypeSystem`Atom[Integer]}], 14], "Meta" -> <||>, "RowTarget" -> 20, 
      "ColumnTarget" -> 10, "Shape" -> 
      TypeSystem`PackageScope`HeaderShape[<|{All, "Matches"} -> 
         1, {All, "CountGroup"} -> 1|>, 
@@ -6663,13 +6658,13 @@ Cell[BoxData[
           TypeSystem`PackageScope`RowShape[<|
            "Matches" -> TypeSystem`PackageScope`UnknownShape[False], 
             "CountGroup" -> TypeSystem`PackageScope`AtomShape[34]|>], 
-          DirectedInfinity[1], 2, {All}]], 12, 
+          DirectedInfinity[1], 2, {All}]], 14, 
         DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
        TypeSystem`Struct[{"Matches", "CountGroup"}, {
          TypeSystem`Vector[
           TypeSystem`Atom[String], TypeSystem`AnyLength], 
-         TypeSystem`Atom[Integer]}], 12], "Path" -> {}, "DisplayedRowCount" -> 
-     12, "DisplayedColumnCount" -> 2, "DataRowCount" -> 12, "DataColumnCount" -> 
+         TypeSystem`Atom[Integer]}], 14], "Path" -> {}, "DisplayedRowCount" -> 
+     14, "DisplayedColumnCount" -> 2, "DataRowCount" -> 14, "DataColumnCount" -> 
      2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
      "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
     TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
@@ -6779,7 +6774,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["261"], 
+               RawBoxes["247"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
@@ -6822,7 +6817,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["84"], 
+               RawBoxes["78"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
@@ -6864,7 +6859,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["36"], 
+               RawBoxes["33"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
@@ -6909,7 +6904,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["13"], 
+               RawBoxes["12"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
@@ -6968,13 +6963,11 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
+                  Style[{"theory of sexual"}, ShowStringCharacters -> False], 
                   
-                  Style[{"theory of sexual", "theory of biological"}, 
-                   ShowStringCharacters -> False], 
                   Style[
-                   
-                   Style[{"theory of sexual", "theory of biological"}, 
-                    ShowStringCharacters -> False], FontColor -> 
+                   Style[{"theory of sexual"}, ShowStringCharacters -> False],
+                    FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -6999,7 +6992,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["9"], 
+               RawBoxes["10"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
@@ -7013,16 +7006,11 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
-                  
-                  Style[{"theory of pangenesis", "theory of organic", 
-                    "theory of molecular", "theory of heredity", 
-                    "theory of descent"}, ShowStringCharacters -> False], 
+                  Style[{"theory of descent"}, ShowStringCharacters -> False], 
                   Style[
                    
-                   Style[{"theory of pangenesis", "theory of organic", 
-                    "theory of molecular", "theory of heredity", 
-                    "theory of descent"}, ShowStringCharacters -> False], 
-                   FontColor -> 
+                   Style[{"theory of descent"}, ShowStringCharacters -> 
+                    False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -7047,7 +7035,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["7"], 
+               RawBoxes["8"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
@@ -7062,14 +7050,12 @@ Cell[BoxData[
                 MouseAppearance[
                  Mouseover[
                   
-                  Style[{"theory of species", "theory of social", 
-                    "theory of neuronal", "theory of disease", 
-                    "theory of cultural"}, ShowStringCharacters -> False], 
+                  Style[{"theory of pangenesis", "theory of molecular", 
+                    "theory of biological"}, ShowStringCharacters -> False], 
                   Style[
                    
-                   Style[{"theory of species", "theory of social", 
-                    "theory of neuronal", "theory of disease", 
-                    "theory of cultural"}, ShowStringCharacters -> False], 
+                   Style[{"theory of pangenesis", "theory of molecular", 
+                    "theory of biological"}, ShowStringCharacters -> False], 
                    FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -7095,7 +7081,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["5"], 
+               RawBoxes["7"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
@@ -7110,12 +7096,12 @@ Cell[BoxData[
                 MouseAppearance[
                  Mouseover[
                   
-                  Style[{"theory of universal", "theory of recapitulation", 
-                    "theory of alienation"}, ShowStringCharacters -> False], 
+                  Style[{"theory of universal", "theory of organic", 
+                    "theory of cultural"}, ShowStringCharacters -> False], 
                   Style[
                    
-                   Style[{"theory of universal", "theory of recapitulation", 
-                    "theory of alienation"}, ShowStringCharacters -> False], 
+                   Style[{"theory of universal", "theory of organic", 
+                    "theory of cultural"}, ShowStringCharacters -> False], 
                    FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -7141,7 +7127,7 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["4"], 
+               RawBoxes["6"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
@@ -7155,15 +7141,13 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
+                  
+                  Style[{"theory of species", "theory of neuronal"}, 
+                   ShowStringCharacters -> False], 
                   Style[
-                   Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 11], " }\[ThinSpace]"}], 
-                   GrayLevel[0.5]], 
-                  Style[
-                   Style[
-                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 11], " }\[ThinSpace]"}], 
-                    GrayLevel[0.5]], FontColor -> 
+                   
+                   Style[{"theory of species", "theory of neuronal"}, 
+                    ShowStringCharacters -> False], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -7184,12 +7168,11 @@ Cell[BoxData[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
                  Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
-               GrayLevel[0.5]}], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["3"], 
+               RawBoxes["5"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
@@ -7203,15 +7186,16 @@ Cell[BoxData[
                EventHandler[
                 MouseAppearance[
                  Mouseover[
+                  
+                  Style[{"theory of social", "theory of recapitulation", 
+                    "theory of heredity", "theory of disease", 
+                    "theory of alienation"}, ShowStringCharacters -> False], 
                   Style[
-                   Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 15], " }\[ThinSpace]"}], 
-                   GrayLevel[0.5]], 
-                  Style[
-                   Style[
-                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 15], " }\[ThinSpace]"}], 
-                    GrayLevel[0.5]], FontColor -> 
+                   
+                   Style[{"theory of social", "theory of recapitulation", 
+                    "theory of heredity", "theory of disease", 
+                    "theory of alienation"}, ShowStringCharacters -> False], 
+                   FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
                     0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
@@ -7232,12 +7216,11 @@ Cell[BoxData[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
                  Key["Matches"]}, "Item", False], "Mouse"], 
-              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
-               GrayLevel[0.5]}], 
+              ImageMargins -> {{5, 3}, {4, 5}}]], 
             Item[
              Pane[
               Annotation[
-               RawBoxes["2"], 
+               RawBoxes["4"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
@@ -7253,12 +7236,12 @@ Cell[BoxData[
                  Mouseover[
                   Style[
                    Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 120], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 9], " }\[ThinSpace]"}], 
                    GrayLevel[0.5]], 
                   Style[
                    Style[
                     Row[{"\[ThinSpace]{ ", 
-                    Subscript["\[Ellipsis]", 120], " }\[ThinSpace]"}], 
+                    Subscript["\[Ellipsis]", 9], " }\[ThinSpace]"}], 
                     GrayLevel[0.5]], FontColor -> 
                    RGBColor[
                     0.27450980392156865`, 0.5372549019607843, 
@@ -7285,10 +7268,106 @@ Cell[BoxData[
             Item[
              Pane[
               Annotation[
-               RawBoxes["1"], 
+               RawBoxes["3"], 
                TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
                 TypeSystem`NestedGrid`PackagePrivate`localHold[
                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 19], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 19], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{13, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["CountGroup"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 100], " }\[ThinSpace]"}], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Row[{"\[ThinSpace]{ ", 
+                    Subscript["\[Ellipsis]", 100], " }\[ThinSpace]"}], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{14, 
+                    Key["Matches"]}, 4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["Matches"]}, "Item", False], "Mouse"], 
+              ImageMargins -> {{5, 3}, {4, 5}}], BaseStyle -> {
+               GrayLevel[0.5]}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["1"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
                  Key["CountGroup"]}, "Item", False], "Mouse"], 
               ImageSize -> {{34, Full}, Automatic}, 
               ImageMargins -> {{5, 3}, {4, 5}}], 
@@ -7314,6 +7393,7 @@ Cell[BoxData[
                     TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
                     TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
                     TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    
                     TypeSystem`NestedGrid`PackagePrivate`$\
 lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
                     MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
@@ -7582,13 +7662,13 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
         Hold[
           TypeSystem`NestedGrid`PackagePrivate`localHold[
           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
-      ImageSizeCache->{666., {182.134033203125, 187.865966796875}},
+      ImageSizeCache->{671., {209.134033203125, 214.865966796875}},
       TrackedSymbols:>{
        TypeSystem`NestedGrid`PackagePrivate`$state$$, 
         TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
      TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
      MouseAnnotation[],
-     ImageSizeCache->{666., {182.134033203125, 187.865966796875}}],
+     ImageSizeCache->{671., {209.134033203125, 214.865966796875}}],
     BaseStyle->{LineBreakWithin -> False},
     DynamicModuleValues:>{},
     Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
@@ -7601,9 +7681,10 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
   SelectWithContents->True,
   Selectable->False]], "Output",
  TaggingRules->{},
- CellChangeTimes->{3.867251319498002*^9, 3.9153379915488253`*^9},
- CellLabel->"Out[14]=",
- CellID->78953758,ExpressionUUID->"bb52d5b6-d9df-4fdd-9395-556d3ca25026"]
+ CellChangeTimes->{3.867251319498002*^9, 3.9153379915488253`*^9, 
+  3.915489946858872*^9},
+ CellLabel->"Out[3]=",
+ CellID->1577826330,ExpressionUUID->"d54c9773-19d7-4a5b-8952-7976529fd283"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7636,7 +7717,7 @@ Cell[BoxData[
  TaggingRules->{},
  CellChangeTimes->{{3.867251470251603*^9, 3.867251482656488*^9}, {
   3.872267862223223*^9, 3.872267862612677*^9}},
- CellLabel->"In[15]:=",
+ CellLabel->"In[4]:=",
  CellID->1994573855,ExpressionUUID->"e0798fd0-1353-4ef7-893a-47d1d4e27125"],
 
 Cell[BoxData[
@@ -7732,22 +7813,24 @@ Cell[BoxData[
                RowBox[{
                  TagBox["\"Short name: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
-                 TagBox["\"5cbd2b19\"", "SummaryItem"]}]}, {
+                 TagBox["\"027767fc\"", "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Creation date: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
-                 TagBox["\"Sat 27 Jan 2024 04:53:25\"", "SummaryItem"]}]}, {
+                 TagBox["\"Sun 28 Jan 2024 23:05:55\"", "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Index size: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
+                  
                   TemplateBox[{
                    "5", "\" \"", "\"documents\"", "\" \"", "\"(\"", 
                     "\"466.1 kB\"", "\")\""}, "RowDefault"], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
               "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
+             False, 
+             GridBoxItemSize -> {
               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
              GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
               BaseStyle -> {
@@ -7842,11 +7925,11 @@ Cell[BoxData[
                RowBox[{
                  TagBox["\"Short name: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
-                 TagBox["\"5cbd2b19\"", "SummaryItem"]}]}, {
+                 TagBox["\"027767fc\"", "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Creation date: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
-                 TagBox["\"Sat 27 Jan 2024 04:53:25\"", "SummaryItem"]}]}, {
+                 TagBox["\"Sun 28 Jan 2024 23:05:55\"", "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Index size: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
@@ -7860,14 +7943,14 @@ Cell[BoxData[
                  TagBox["\"Name: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
-                 "\"5cbd2b19-8a53-4cef-b7ab-82ab895ac2fd\"", 
+                 "\"027767fc-0170-48b0-8d7f-9e773b489b28\"", 
                   "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Location: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
                  TagBox[
                  "\"/Users/faizonzaman/Library/Mathematica/SearchIndices/\
-5cbd2b19-8a53-4cef-b7ab-82ab895ac2fd\"", "SummaryItem"]}]}, {
+027767fc-0170-48b0-8d7f-9e773b489b28\"", "SummaryItem"]}]}, {
                RowBox[{
                  TagBox["\"Indexed paths: \"", "SummaryItemAnnotation"], 
                  "\[InvisibleSpace]", 
@@ -7899,39 +7982,17 @@ Components/TextSearch/ExampleData/Text\""}},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   SearchIndexObject[
-   File["/Users/faizonzaman/Library/Mathematica/SearchIndices/5cbd2b19-8a53-\
-4cef-b7ab-82ab895ac2fd"]],
+   File["/Users/faizonzaman/Library/Mathematica/SearchIndices/027767fc-0170-\
+48b0-8d7f-9e773b489b28"]],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
  TaggingRules->{},
  CellChangeTimes->{3.867251483594005*^9, 3.872267868883519*^9, 
-  3.879868719351593*^9, 3.879874131117103*^9, 3.915338010784877*^9},
- CellLabel->"Out[15]=",
- CellID->523559549,ExpressionUUID->"8c1ea495-2c73-476d-8857-7aaf4853e681"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ExpandPattern", "[", 
-  RowBox[{"\"\<to be\>\"", ",", 
-   RowBox[{
-    RowBox[{"WordToken", "[", "1", "]"}], "~~", 
-    RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}]}]}], "]"}]], "Input",
- CellChangeTimes->{{3.915338109321632*^9, 3.915338143046133*^9}},
- CellLabel->"In[19]:=",
- CellID->1570140982,ExpressionUUID->"4ed2bc8f-939c-4f04-8407-6ef086ee960e"],
-
-Cell[BoxData[
- RowBox[{"WordBoundary", "~~", 
-  RowBox[{"WordCharacter", ".."}], "~~", "WordBoundary", "~~", "\<\"  \"\>", "~~",
-   "WordBoundary", "~~", 
-  RowBox[{"Alternatives", "[", "\<\"be\"\>", "]"}], "~~", 
-  "WordBoundary"}]], "Output",
- CellChangeTimes->{{3.9153381246479893`*^9, 3.91533814349561*^9}},
- CellLabel->"Out[19]=",
- CellID->1170101164,ExpressionUUID->"cbca0940-eec0-4e28-a86b-708a33eaed7a"]
+  3.879868719351593*^9, 3.879874131117103*^9, 3.915338010784877*^9, 
+  3.915489958236157*^9},
+ CellLabel->"Out[4]=",
+ CellID->2040714322,ExpressionUUID->"8f02c9bd-31ab-4d78-8f78-7e8c94d50f78"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7946,13 +8007,14 @@ Cell[BoxData[
     "WordBoundary"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.915338332851142*^9, 3.915338348684651*^9}, 
    3.9153384158651333`*^9},
- CellLabel->"In[24]:=",
+ CellLabel->"In[6]:=",
  CellID->903827371,ExpressionUUID->"e3e24cdd-fa3b-4bfc-b586-9f3a0acfa714"],
 
 Cell[BoxData["True"], "Output",
- CellChangeTimes->{3.915338349331254*^9, 3.915338416397238*^9},
- CellLabel->"Out[24]=",
- CellID->2089628898,ExpressionUUID->"7e7d7e85-37c0-4a4c-9a8b-97cfa1c725b0"]
+ CellChangeTimes->{3.915338349331254*^9, 3.915338416397238*^9, 
+  3.915489999870635*^9},
+ CellLabel->"Out[6]=",
+ CellID->888314066,ExpressionUUID->"7b2c59bc-a286-4382-adde-d56f824f9433"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -7968,8 +8030,161 @@ Cell[BoxData[
  TaggingRules->{},
  CellChangeTimes->{
   3.867251499863676*^9, {3.872267873063178*^9, 3.872267888482976*^9}},
- CellLabel->"In[16]:=",
+ CellLabel->"In[7]:=",
  CellID->620380776,ExpressionUUID->"22d3a9aa-fdef-4b28-b50a-c56331f58832"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandPattern", "[", 
+  RowBox[{"\"\<to be.\>\"", ",", " ", 
+   RowBox[{
+    RowBox[{"WordToken", "[", "1", "]"}], "~~", 
+    RowBox[{"TextType", "[", "\"\<Verb\>\"", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.915490128100439*^9, 3.9154901381585503`*^9}},
+ CellLabel->"In[9]:=",
+ CellID->81804752,ExpressionUUID->"e6e9fd6c-e505-438e-ac80-cd60735a0dbb"],
+
+Cell[BoxData[
+ RowBox[{"WordBoundary", "~~", 
+  RowBox[{"WordCharacter", ".."}], "~~", "WordBoundary", "~~", "\<\"  \"\>", "~~",
+   "WordBoundary", "~~", 
+  RowBox[{"Alternatives", "[", "\<\"be\"\>", "]"}], "~~", 
+  "WordBoundary"}]], "Output",
+ CellChangeTimes->{3.915490138797337*^9},
+ CellLabel->"Out[9]=",
+ CellID->325721081,ExpressionUUID->"db8c94db-0736-435f-b44a-bcb55b637b30"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LexicalCases", "[", 
+  RowBox[{
+   RowBox[{"index", "->", "All"}], ",", " ", 
+   RowBox[{"WordBoundary", "~~", 
+    RowBox[{"WordCharacter", ".."}], "~~", "WordBoundary", "~~", "\"\< \>\"", 
+    "~~", "WordBoundary", "~~", 
+    RowBox[{"Alternatives", "[", "\"\<be\>\"", "]"}], "~~", 
+    "WordBoundary"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.91549028795103*^9, 3.915490290758637*^9}},
+ CellLabel->"In[10]:=",
+ CellID->458392164,ExpressionUUID->"c56ca455-61ba-4efa-8bd6-d32abc0bac76"],
+
+Cell[BoxData[
+ TagBox[
+  TemplateBox[{
+    RowBox[{
+      StyleBox[
+       TagBox["LexicalSummary", "SummaryHead"], "NonInterpretableSummary"], 
+      StyleBox["[", "NonInterpretableSummary"], 
+      DynamicModuleBox[{
+       Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+       TemplateBox[{
+         TemplateBox[{
+           PaneSelectorBox[{False -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"SearchIndex\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["4", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1761", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}], True -> GridBox[{{
+                 GridBox[{{
+                    RowBox[{
+                    TagBox["\"Source: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"SearchIndex\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Articles: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["4", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Matches: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["1761", "SummaryItem"]}]}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                  AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                  BaseStyle -> {
+                   ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {1, 1}]}, 
+            Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+          "SummaryPanel"], 
+         ButtonBox[
+          DynamicBox[
+           ToBoxes[
+            If[
+             
+             Or[$VersionNumber < 11.2, CurrentValue["RunningEvaluator"] =!= 
+              "Local"], 
+             Style["This object cannot be used as input.", "SummaryEmbed"], 
+             BoxForm`EmbedSummaryLabel[
+             FaizonZaman`LexicalCases`LexicalSummary, 1561920, 
+              Dynamic[Typeset`embedState$$], Automatic]], StandardForm]], 
+          ButtonFunction :> 
+          BoxForm`EmbedSummaryInterpretation[
+           "Choose", FaizonZaman`LexicalCases`LexicalSummary, 1561920, 
+            6660438230134785274095758329710434308015030210233507458192, 
+            EvaluationBox[], 
+            Dynamic[Typeset`embedState$$], StandardForm, 
+            ElisionsDump`embedSummaryBoxes], DefaultBaseStyle -> 
+          "SummaryEmbedButton", ImageSize -> Inherited, 
+          BaseStyle -> {"DialogStyle"}, Enabled -> Dynamic[
+            
+            And[$VersionNumber >= 11.2, CurrentValue["RunningEvaluator"] === 
+             "Local", Typeset`embedState$$ === "Ready"]], Appearance -> 
+          Inherited, Method -> Inherited, Evaluator -> Automatic]}, 
+        "SummaryEmbedGrid"], DynamicModuleValues :> {}], 
+      StyleBox["]", "NonInterpretableSummary"]}]},
+   "CopyTag",
+   DisplayFunction->(#& ),
+   InterpretationFunction->(
+    "LexicalSummary[<|Data -> {<|Article -> AeneidEnglish.txt, <<1>>, \
+Position -> {{4825, 4832}, {8570, 8577}, {16367, 16374}, {16417, 16424}, \
+{35302, 35309}, {37865, 37872}, {51190, 51197}, {89466, 89473}, {93666, \
+93673}, {119359, 119366}, {123570, 123577}, <<21>>, {562397, 562404}, \
+{581628, 581635}, {591217, 591224}, {598638, 598645}, {598752, 598759}}|>, \
+<<250>>}, <<5>>|>]"& )],
+  False,
+  BoxID -> 6660438230134785274095758329710434308015030210233507458192,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.915490292390546*^9},
+ CellLabel->"Out[10]=",
+ CellID->527728623,ExpressionUUID->"440a583d-da49-4f36-8f2a-8672a3a5b70e"]
+}, Open  ]],
 
 Cell[TextData[{
  "Visualize the results in a ",

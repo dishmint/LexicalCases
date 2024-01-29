@@ -120,12 +120,12 @@ VerificationTest[
 
 VerificationTest[
 	ExpandPattern[$SampleParagraph, Sandwich[TextType["Adjective" | "Noun"], "computer"]],
-	{WordBoundary, "past" | "few" | "blank" | "single", 
-   WordBoundary} | {WordBoundary, 
-   "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
-    "front" | "day" | "mind" | "type" | "word" | "process" | "hours" |
-     "computer" | "today" | "blank", 
-   WordBoundary} ~~ " computer " ~~ (WordBoundary ~~ 
+	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
+    WordBoundary) | (WordBoundary ~~ 
+    "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
+     "front" | "day" | "mind" | "type" | "word" | "process" | 
+     "hours" | "computer" | "today" | "blank" ~~ 
+    WordBoundary) ~~ " computer " ~~ (WordBoundary ~~ 
     "past" | "few" | "blank" | "single" ~~ 
     WordBoundary) | (WordBoundary ~~ 
     "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
@@ -138,6 +138,12 @@ VerificationTest[
 	ExpandPattern["this is the best music ever.", TextType["Adjective"] ~~ "music"],
 	WordBoundary ~~ Alternatives["best"] ~~ WordBoundary ~~ " music",
     "TestID" -> "Utilities-ExpandPattern-Test2"
+]
+
+VerificationTest[
+	ExpandPattern["to be.", WordToken[1] ~~ TextType["Verb"]],
+	WordBoundary ~~ WordCharacter.. ~~ WordBoundary ~~ " " ~~ WordBoundary ~~ Alternatives["be"] ~~ WordBoundary,
+    "TestID" -> "Utilities-ExpandPattern-Test3"
 ]
 
 (* LexicalPattern *)
