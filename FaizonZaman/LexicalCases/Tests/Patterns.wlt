@@ -60,14 +60,14 @@ VerificationTest[
 (* Sandwich *)
 
 VerificationTest[
-	Sandwich[TextType["Adjective"|"Noun"], "computer"],
-	(TextType["Adjective" | "Noun"] ~~ "computer" ~~ TextType["Adjective" | "Noun"]),
+	Sandwich[TextType["Adjective"|"Noun"], " computer "],
+	(TextType["Adjective" | "Noun"] ~~ " computer " ~~ TextType["Adjective" | "Noun"]),
     "TestID" -> "Sandwich-Test1"
 ]
 
 VerificationTest[
-	Sandwich[OptionalToken[TextType["Adjective"|"Noun"]], "computer"],
-	(OptionalToken[TextType["Adjective" | "Noun"]] ~~ "computer" ~~ OptionalToken[TextType["Adjective" | "Noun"]]),
+	Sandwich[OptionalToken[TextType["Adjective"|"Noun"]], " computer "],
+	(OptionalToken[TextType["Adjective" | "Noun"]] ~~ " computer " ~~ OptionalToken[TextType["Adjective" | "Noun"]]),
     "TestID" -> "Sandwich-Test2"
 ]
 
@@ -75,8 +75,8 @@ VerificationTest[
 (* LexicalPattern *)
 
 VerificationTest[
-	LexicalPattern["Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"]],
-	LexicalPattern["Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"]],
+	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
+	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
     "TestID" -> "LexicalPattern-Test1"
 ]
 

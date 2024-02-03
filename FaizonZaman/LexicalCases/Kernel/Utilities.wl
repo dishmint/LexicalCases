@@ -15,6 +15,9 @@ ExtractHeads::usage = "ExtractHeads[expr] extracts all heads found in expr"
 UnwrapAlternatives::usage = "UnwrapAlternatives[expr] if expr is a list of alternatives return the alternatives"
 WrapAlternatives::usage = "WrapAlternatives[expr] if expr is an alternatives retun expr in a list"
 
+StringExpressionToList::usage = "StringExpressionToList[expr] replaces heads StringExpression with List in expr"
+ListToStringExpression::usage = "ListToStringExpression[expr] replaces heads List with StringExpression in expr"
+
 GetFileExtension::usage = "GetFileExtension[file] extract \"FileExtension\" from Information[file]"
 SupportedFileQ::usage = "SupportedFileQ[file] returns True if file is a plain text document"
 
@@ -104,6 +107,11 @@ FaizonZaman`LexicalCases`ToLexicalPattern[string_String, pos_List]:= FaizonZaman
   mapped =  DualSubsetMap[First/*Keys, First/*Values/*FaizonZaman`LexicalCases`TextType, components, newpos];
   StringExpression@@mapped
   ]
+
+
+StringExpressionToList[expr_StringExpression] := Replace[expr, StringExpression[args___] :> List[args], {0, Infinity}]
+StringExpressionToList[expr_] := {expr}
+ListToStringExpression[expr_] /; Not@*FreeQ[List]@expr := Replace[expr, List[args___] :> StringExpression[args], {0, Infinity}]
 
 End[]
 EndPackage[]
