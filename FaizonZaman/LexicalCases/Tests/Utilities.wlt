@@ -1,19 +1,19 @@
 BeginTestSection["Utilities"]
 (* ExtractHeads *)
 
-VerificationTest[
+TestCreate[
     FaizonZaman`LexicalCases`Utilities`ExtractHeads[TextType["Adverb"] ~~ TextType["Adjective"] ~~ BoundToken["specie" | "species"]],
     {TextType, TextType, Alternatives, BoundToken, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test1"
 ]
 
-VerificationTest[
+TestCreate[
     FaizonZaman`LexicalCases`Utilities`ExtractHeads[TextType["Adjective" | "Determiner"] ~~ "screen"],
     {Alternatives, TextType, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test2"
 ]
 
-VerificationTest[
+TestCreate[
     FaizonZaman`LexicalCases`Utilities`ExtractHeads[$SampleStringExpression],
     {TextType, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test3"
@@ -21,7 +21,7 @@ VerificationTest[
 
 (* GetFileExtension *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`GetFileExtension[File[FileNameJoin[{$TopDirectory, "SystemFiles", "Components", "TextSearch", "ExampleData", "Text", "AliceInWonderland.txt"}]]],
 	"txt",
 	"TestID" -> "Utilities-GetFileExtension-Test1"
@@ -29,7 +29,7 @@ VerificationTest[
 
 (* MatchTrim *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`MatchTrim[True,
 		{
 			<|"Match" -> " past", "Position" -> {{49, 53}}|>,
@@ -49,7 +49,7 @@ VerificationTest[
 
 (* OptionsJoin *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`OptionsJoin[LexicalCases, LexicalDispersionPlot],
 	{
 		"Service" -> "Wikipedia",
@@ -72,7 +72,7 @@ VerificationTest[
 ]
 (* ReplaceEmptyListWithMissing *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`ReplaceEmptyListWithMissing[{{}}],
 	{Missing["NoMatches"]},
 	"TestID" -> "Utilities-ReplaceEmptyListWithMissing-Test1"
@@ -80,7 +80,7 @@ VerificationTest[
 
 (* SupportedFileQ *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`SupportedFileQ@File[FileNameJoin[{$TopDirectory, "SystemFiles", "Components", "TextSearch", "TextSearch.m"}]],
 	False,
 	"TestID" -> "Utilities-SupportedFileQ-Test1"
@@ -88,7 +88,7 @@ VerificationTest[
 
 (* UnwrapAlternatives *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`UnwrapAlternatives[{"A" | "B"}],
 	("A"|"B"),
 	"TestID" -> "Utilities-UnwrapAlternatives-Test1"
@@ -96,7 +96,7 @@ VerificationTest[
 
 (* WrapAlternatives *)
 
-VerificationTest[
+TestCreate[
 	FaizonZaman`LexicalCases`Utilities`WrapAlternatives["A" | "B"],
 	{"A" | "B"},
 	"TestID" -> "Utilities-WrapAlternatives-Test1"
@@ -104,13 +104,13 @@ VerificationTest[
 
 (* StopWordQ *)
 
-VerificationTest[
+TestCreate[
 	StopWordQ["the"],
 	True,
 	"TestID" -> "Utilities-StopWordQ-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	StopWordQ["math"],
 	False,
 	"TestID" -> "Utilities-StopWordQ-Test2"
@@ -118,7 +118,7 @@ VerificationTest[
 
 (* ExpandPattern *)
 
-VerificationTest[
+TestCreate[
 	ExpandPattern[$SampleParagraph, Sandwich[TextType["Adjective" | "Noun"], " computer "]],
 	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
     WordBoundary) | (WordBoundary ~~ 
@@ -134,13 +134,13 @@ VerificationTest[
     "TestID" -> "Utilities-ExpandPattern-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	ExpandPattern["this is the best music ever.", TextType["Adjective"] ~~ " music"],
 	WordBoundary ~~ Alternatives["best"] ~~ WordBoundary ~~ " music",
     "TestID" -> "Utilities-ExpandPattern-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	ExpandPattern["to be.", WordToken[1] ~~ TextType["Verb"]],
 	WordBoundary ~~ WordCharacter.. ~~ WordBoundary ~~ " " ~~ WordBoundary ~~ Alternatives["be"] ~~ WordBoundary,
     "TestID" -> "Utilities-ExpandPattern-Test3"
@@ -148,25 +148,25 @@ VerificationTest[
 
 (* LexicalPattern *)
 
-VerificationTest[
+TestCreate[
 	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	StringPosition[$SampleParagraph, LexicalPattern[TextType["Determiner"] ~~ TextType["Adjective"] ~~ " screen " ~~ TextType["Preposition" | "Verb"]]],
 	{{144, 160}, {176, 201}},
     "TestID" -> "Utilities-LexicalPattern-Test3"
 ]
 
-VerificationTest[
+TestCreate[
 	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]]],
 	True,
     "TestID" -> "Utilities-LexicalPattern-Test4"

@@ -8,7 +8,8 @@ PacletObject[
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
     "Version" -> "1.5.0",
-    "WolframVersion" -> "13.0+",
+    "WolframVersion" -> "13.3+",
+    "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {
       {
         "Kernel",

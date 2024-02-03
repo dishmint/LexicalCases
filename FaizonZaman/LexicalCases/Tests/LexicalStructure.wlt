@@ -1,6 +1,6 @@
 BeginTestSection["LexicalStructure"]
 (* LexicalStructure *)
-VerificationTest[
+TestCreate[
 	LexicalStructure[StringExpression["computer" | "computers", TextType["Verb"]]],
 	TextElement[
 		List[

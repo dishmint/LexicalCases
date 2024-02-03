@@ -3,63 +3,63 @@
 BeginTestSection["Validation"]
 
 (* LexicalPattern Validation *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ[$SampleStringExpression],
 	True,
 	"TestID" -> "LexicalPatternQTest1"
 ]
 
 (* LexicalPatternQ unvalued symbols *)
-VerificationTest[
+TestCreate[
 	FailureQ[LexicalPatternQ["Alice" ~~ xxx ~~ TextType["Adverb"]]],
 	True,
 	"TestID" -> "LexicalPatternQ-UnvaluedSymbols-Test1"
 ]
 
 (* BoundToken *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ[("great" | "weak") ~~ BoundToken["machine" | "machines"]],
 	True
 ,
 "TestID" -> "LexicalPatternQ-BoundToken-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["weak" ~~ BoundToken["machines"]],
 	True
 ,
 "TestID" -> "LexicalPatternQ-BoundToken-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["weak" ~~ BoundToken[RegularExpression["\\w+"]]],
 	True
 ,
 "TestID" -> "LexicalPatternQ-BoundToken-Test3"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["number" ~~ BoundToken[DigitCharacter]],
 	True
 ,
 "TestID" -> "LexicalPatternQ-BoundToken-Test4"
 ]
 
-VerificationTest[
+TestCreate[
 	BoundToken["machine"],
 	BoundToken["machine"]
 ,
 "TestID" -> "BoundToken-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	BoundToken["machine"|"machines"],
 	BoundToken["machine"|"machines"]
 ,
 "TestID" -> "BoundToken-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	BoundToken["A" | WordToken[1]],
 	BoundToken["A" | WordToken[1]]
 ,
@@ -67,45 +67,45 @@ VerificationTest[
 ]
 
 (* WordToken *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["pattern" ~~ WordToken[1]],
     "TestID" -> "LexicalPatternQ-WordToken-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["number" ~~ WordToken[1,2]],
     "TestID" -> "LexicalPatternQ-WordToken-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["this" ~~ "is" ~~ WordToken[1, "KeepContractions"] ~~ "place"],
     "TestID" -> "LexicalPatternQ-WordToken-Test3"
 ]
 
 (* OptionalToken *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["this is a" ~~ OptionalToken[TextType["Adjective"]] ~~ "string"],
     "TestID" -> "LexicalPatternQ-OptionalToken-Test1"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["cool" ~~ OptionalToken["crazy"] ~~ "computer"],
     "TestID" -> "LexicalPatternQ-OptionalToken-Test2"
 ]
 
-VerificationTest[
+TestCreate[
 	LexicalPatternQ["this" ~~ OptionalToken[WordToken[1] ~~ TextType["Adjective"]] ~~ "place"],
     "TestID" -> "LexicalPatternQ-OptionalToken-Test3"
 ]
 
 (* Sandwich *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ[Sandwich[WordToken[1], BoundToken["car"]]],
     "TestID" -> "LexicalPatternQ-Sandwich-Test1"
 ]
 
 (* TextType *)
-VerificationTest[
+TestCreate[
 	LexicalPatternQ[adjective : TextType["Adjective"] ~~ "sentence" :> adjective],
     "TestID" -> "LexicalPatternQ-TextType-Test1"
 ]
