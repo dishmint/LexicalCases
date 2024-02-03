@@ -97,10 +97,10 @@ StripNames[True, c_Condition] := c
 StripNames[True, se_?LexicalPatternQ] := Replace[se, p_Pattern :> Extract[2][p], Infinity]
 StripNames[False,se_?LexicalPatternQ]:= se
 
-PrependArticleKey[{article_String, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
+PrependArticleKey[{article_String, data_List}] := Prepend@@@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_String, data_Missing}] := <|"Article" -> article, "Match" -> data, "Position" -> {}|>
 
-PrependArticleKey[{article_Integer, data_List}] := Map[Apply[Prepend]]@Thread[{data, "Article" -> article}]
+PrependArticleKey[{article_Integer, data_List}] := Prepend@@@Thread[{data, "Article" -> article}]
 PrependArticleKey[{article_Integer, data_Missing}] := <|"Article" -> article, "Match" -> data, "Position" -> {}|>
 
 (* Text Cleanup *)
