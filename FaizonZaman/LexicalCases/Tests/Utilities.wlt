@@ -119,7 +119,7 @@ VerificationTest[
 (* ExpandPattern *)
 
 VerificationTest[
-	ExpandPattern[$SampleParagraph, Sandwich[TextType["Adjective" | "Noun"], "computer"]],
+	ExpandPattern[$SampleParagraph, Sandwich[TextType["Adjective" | "Noun"], " computer "]],
 	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
     WordBoundary) | (WordBoundary ~~ 
     "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
@@ -135,7 +135,7 @@ VerificationTest[
 ]
 
 VerificationTest[
-	ExpandPattern["this is the best music ever.", TextType["Adjective"] ~~ "music"],
+	ExpandPattern["this is the best music ever.", TextType["Adjective"] ~~ " music"],
 	WordBoundary ~~ Alternatives["best"] ~~ WordBoundary ~~ " music",
     "TestID" -> "Utilities-ExpandPattern-Test2"
 ]
@@ -149,25 +149,25 @@ VerificationTest[
 (* LexicalPattern *)
 
 VerificationTest[
-	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ "screen"]],
+	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test1"
 ]
 
 VerificationTest[
-	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ "screen"]],
+	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test2"
 ]
 
 VerificationTest[
-	StringPosition[$SampleParagraph, LexicalPattern[TextType["Determiner"] ~~ TextType["Adjective"] ~~ "screen" ~~ TextType["Preposition" | "Verb"]]],
+	StringPosition[$SampleParagraph, LexicalPattern[TextType["Determiner"] ~~ TextType["Adjective"] ~~ " screen " ~~ TextType["Preposition" | "Verb"]]],
 	{{144, 160}, {176, 201}},
     "TestID" -> "Utilities-LexicalPattern-Test3"
 ]
 
 VerificationTest[
-	StringMatchQ["Alice walked quickly", LexicalPattern["Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"]]],
+	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]]],
 	True,
     "TestID" -> "Utilities-LexicalPattern-Test4"
 ]

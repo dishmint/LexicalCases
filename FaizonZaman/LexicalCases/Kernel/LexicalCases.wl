@@ -297,28 +297,24 @@ MassOptionalToken[expr_] := expr // ReplaceAll[anchor[s__] :> s]
 
 MassTokens[content_Association] := (MassWordToken@*MassTextType[content])
 
-StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, " ", after]
+StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, after]
 MiddleContext[content_][before__, a:anchor[seq__], after__] := MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
-EndContext[content_][before__, a:anchor[seq__]] := MassOptionalToken@StringExpression[before, " ", MassTokens[content]@a]
+EndContext[content_][before__, a:anchor[seq__]] := MassOptionalToken@StringExpression[before, MassTokens[content]@a]
 SingletonContext[content_][a:anchor[seq__]] := MassOptionalToken@StringExpression[MassTokens[content]@a]
 
 TokenPostProcess[expr_] := With[
 	{list = StringExpressionToList@expr},
-
 	SequenceReplace[
 		list, 
-		rwb : {Repeated[WordBoundary, {2, Infinity}]} :> 
-		Splice[Riffle[rwb, " "]]
+			rwb : {Repeated[WordBoundary, {2, Infinity}]} :> 
+				Splice[Riffle[rwb, " "]]
   ] // ListToStringExpression
-
-	
 ]
 
 $LPS = LexicalPatternDelimiter["Start"]
 $LPE = LexicalPatternDelimiter["End"]
 ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern // TokenPostProcess
 ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr] // TokenPostProcess
-(* ReformTokens[expr_, content_] := iReformToken[expr, content] *)
 iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken]@expr := 
 	With[
 		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},

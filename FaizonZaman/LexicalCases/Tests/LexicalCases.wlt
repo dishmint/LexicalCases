@@ -51,7 +51,7 @@ VerificationTest[
 (* Documentation examples - WordToken *)
 
 VerificationTest[
-	LexicalCases[$SampleParagraph, WordToken[2] ~~ "screen"]["Data"],
+	LexicalCases[$SampleParagraph, WordToken[2] ~~ " screen"]["Data"],
 	{
 		<|"Match" -> "a blank screen", "Position" -> {{144, 157}}|>,
 		<|"Match" -> "That blank screen", "Position" -> {{176, 192}}|>,
@@ -61,7 +61,7 @@ VerificationTest[
 	]
 
 VerificationTest[
-	LexicalCases[$SampleParagraph, WordToken[2, 4] ~~ "screen"]["Data"],
+	LexicalCases[$SampleParagraph, WordToken[2, 4] ~~ " screen"]["Data"],
 	{
 		<|"Match" -> "sat with a blank screen", "Position" -> {{135, 157}}|>,
 		<|"Match" -> "That blank screen", "Position" -> {{176, 192}}|>,
@@ -73,12 +73,12 @@ VerificationTest[
 VerificationTest[
 	Length[
 		Join@*Flatten@{
-			LexicalCases[$SampleParagraph, WordToken[2] ~~ "screen"]["Data"],
-			LexicalCases[$SampleParagraph, WordToken[3] ~~ "screen"]["Data"],
-			LexicalCases[$SampleParagraph, WordToken[4] ~~ "screen"]["Data"]
+			LexicalCases[$SampleParagraph, WordToken[2] ~~ " screen"]["Data"],
+			LexicalCases[$SampleParagraph, WordToken[3] ~~ " screen"]["Data"],
+			LexicalCases[$SampleParagraph, WordToken[4] ~~ " screen"]["Data"]
 			}
 		] === (
-			DeleteDuplicates/*Length@LexicalCases[$SampleParagraph, WordToken[2, 4] ~~ "screen", Overlaps -> True]["Data"]
+			DeleteDuplicates/*Length@LexicalCases[$SampleParagraph, WordToken[2, 4] ~~ " screen", Overlaps -> True]["Data"]
 		),
 		True,
 	"TestID" -> "LexicalCases-DocExamples-WordToken-Test3"
@@ -98,7 +98,7 @@ VerificationTest[
 
 (* Documentation examples - Sandwich *)
 VerificationTest[
-	LexicalCases[$SampleParagraph, Sandwich[WordToken[2, "KeepContractions"], "he"]]["Data"],
+	LexicalCases[$SampleParagraph, Sandwich[WordToken[2, "KeepContractions"], " he "]]["Data"],
 	{
   		<|"Match" -> "but here he sat with", "Position" -> {{123, 142}}|>,
   		<|"Match" -> "understand why he couldn't even", "Position" -> {{266, 296}}|>,
@@ -115,13 +115,13 @@ VerificationTest[
 
 (* Documentation examples - TextType *)
 VerificationTest[
-	LexicalCases[$SampleParagraph, adjective : TextType["Adjective"] ~~ "screen" :> adjective]["Data"],
+	LexicalCases[$SampleParagraph, adjective : TextType["Adjective"] ~~ " screen" :> adjective]["Data"],
 	{<|"Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>},
 	"TestID" -> "LexicalCases-DocExamples-TextType-Test1"
 	]
 
 VerificationTest[
-	LexicalCases[$SampleParagraph, adjectiveOrDeterminer : TextType["Adjective" | "Determiner"] ~~ "screen" :> adjectiveOrDeterminer]["Data"],
+	LexicalCases[$SampleParagraph, adjectiveOrDeterminer : TextType["Adjective" | "Determiner"] ~~ " screen" :> adjectiveOrDeterminer]["Data"],
 	{
 		<|"Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>,
 		<|"Match" -> "the", "Position" -> {{485, 494}}|>

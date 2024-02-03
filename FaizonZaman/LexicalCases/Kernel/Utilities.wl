@@ -111,8 +111,7 @@ FaizonZaman`LexicalCases`ToLexicalPattern[string_String, pos_List]:= FaizonZaman
 
 StringExpressionToList[expr_StringExpression] := Replace[expr, StringExpression[args___] :> List[args], {0, Infinity}]
 StringExpressionToList[expr_] := {expr}
-ListToStringExpression[expr_List] := Replace[expr, List[args___] :> StringExpression[args], {0, Infinity}]
-ListToStringExpression[expr : List[a_]] := a
+ListToStringExpression[expr_] /; Not@*FreeQ[List]@expr := Replace[expr, List[args___] :> StringExpression[args], {0, Infinity}]
 
 End[]
 EndPackage[]
