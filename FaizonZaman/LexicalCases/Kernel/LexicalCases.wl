@@ -315,22 +315,22 @@ $LPS = LexicalPatternDelimiter["Start"]
 $LPE = LexicalPatternDelimiter["End"]
 ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern // TokenPostProcess
 ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr] // TokenPostProcess
-iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken]@expr := 
+iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken|BoundToken]@expr := 
 	With[
 		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},
 		SequenceReplace[
 			list,
 			{
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], after__, $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], after__, $LPE} :>
 					StartContext[content][anchor[seq], after],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], $LPE} :>
 					EndContext[content][before, anchor[seq]],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], after__, $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], after__, $LPE} :>
 					MiddleContext[content][before, anchor[seq], after],
 
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken)[__]]]], $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], $LPE} :>
 					SingletonContext[content][anchor[seq]]
 			}
 		] // First // DeleteCases[$LPS|$LPE]
