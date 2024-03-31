@@ -899,7 +899,7 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 					]
 				]
 			),
-(* 			"SmoothLexicalHistogram",
+			"SmoothLexicalHistogram",
 			(
 				res = asc["Dataset"] // ReverseSortBy[Length[#Position] &];
 				res = If[excludestopwords, FilterOutStopWordRows["Dataset", res], res];
@@ -912,11 +912,11 @@ LexicalSummary[asc_?LexicalSummaryAscQ][prop_String, opts:OptionsPattern[]] := E
 						ucmp = Uncompress[asc["SourceData"]]
 						},
 					Switch[asc["Source"],
-						"Wikipedia", LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram", DataJoin -> True],
-						_, LexicalDispersionPlot[ucmp, res, keys, DispersionPlotFunction -> "SmoothHistogram"]
+						"Wikipedia", LexicalDispersionSmoothHistogram[ucmp, res, keys, DataJoin -> True],
+						_, LexicalDispersionSmoothHistogram[ucmp, res, keys]
 						]
 				]
-			), *)
+			),
 			"Data"|"Dataset", (
 				res = asc["Dataset"];
 				res = If[excludestopwords, FilterOutStopWordRows[prop, res], res];
