@@ -2785,7 +2785,7 @@ Cell[BoxData[
     "TestResults" -> <|
      4619440072522298734 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412446012`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.920851841244601*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -2936,7 +2936,7 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          "MemoryUsed" -> 8616, "IntermediateTestsTree" -> {}, "Outcome" -> 
          "Success", "FailureType" -> None|>], 7465325669327443893 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412570453`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412570457`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3171,7 +3171,7 @@ Tests/LexicalCases.wlt", "EvaluationID" ->
          "IntermediateTestsTree" -> {}, "Outcome" -> "Success", "FailureType" -> 
          None|>], 5806277608105684202 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412596793`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.92085184125968*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3272,8 +3272,9 @@ Tests/Abstractions.wlt", "EvaluationID" ->
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Abstractions.wlt", "EvaluationID" -> 
          "578e0c06-79ec-4e9d-8cb0-ea5553c8da07", "Input" -> HoldForm[
-           FaizonZaman`LexicalCases`LexicalMap[
-           "**" <> # <> "**"& , "This is cool", 
+           
+           FaizonZaman`LexicalCases`LexicalMap[("**" <> #) <> "**"& , 
+            "This is cool", 
             FaizonZaman`LexicalCases`TextType[
              Alternatives["Adjective", "Verb"]]]], "ExpectedOutput" -> 
          HoldForm["This **is** **cool**"], "ExpectedMessages" -> HoldForm[{}],
@@ -3292,8 +3293,9 @@ Tests/Abstractions.wlt", "EvaluationID" ->
          "/Users/faizonzaman/Developer/LexicalCases/FaizonZaman/LexicalCases/\
 Tests/Abstractions.wlt", "EvaluationID" -> 
          "960ffa4c-057a-4c8b-be89-920fab059ba0", "Input" -> HoldForm[
-           FaizonZaman`LexicalCases`LexicalMap[
-           "**" <> # <> "**"& , "This is cool", 
+           
+           FaizonZaman`LexicalCases`LexicalMap[("**" <> #) <> "**"& , 
+            "This is cool", 
             FaizonZaman`LexicalCases`BoundToken[
              FaizonZaman`LexicalCases`TextType[
               Alternatives["Adjective", "Verb"]]]]], "ExpectedOutput" -> 
@@ -3528,7 +3530,7 @@ Tests/Validation.wlt", "EvaluationID" ->
          "MemoryUsed" -> 3400, "IntermediateTestsTree" -> {}, "Outcome" -> 
          "Success", "FailureType" -> None|>], 5574749880102466106 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412859373`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412859383`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3612,7 +3614,7 @@ Tests/Validation.wlt", "EvaluationID" ->
          "IntermediateTestsTree" -> {}, "Outcome" -> "Success", "FailureType" -> 
          None|>], 7752237036737643760 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412867193`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.92085184128672*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3793,7 +3795,7 @@ Tests/Patterns.wlt", "EvaluationID" -> "65d6c0cc-401b-40e8-a76a-4a87242b8dbe",
          "IntermediateTestsTree" -> {}, "Outcome" -> "Success", "FailureType" -> 
          None|>], 2622457847593207773 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412996783`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.920851841299679*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3812,7 +3814,7 @@ Tests/Patterns.wlt", "EvaluationID" -> "58206fc7-9cbf-4040-8561-308dfe6dce42",
          "IntermediateTestsTree" -> {}, "Outcome" -> "Success", "FailureType" -> 
          None|>], 4017519075528949130 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518412999053`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.920851841299906*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -3883,7 +3885,7 @@ Tests/Patterns.wlt", "EvaluationID" -> "086f8e23-70dc-4d6a-9f65-316ea4b19e56",
          "IntermediateTestsTree" -> {}, "Outcome" -> "Success", "FailureType" -> 
          None|>], 9130625887907934664 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518413004923`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518413004932`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -4402,7 +4404,7 @@ Tests/Utilities.wlt", "EvaluationID" ->
          "MemoryUsed" -> 5008, "IntermediateTestsTree" -> {}, "Outcome" -> 
          "Success", "FailureType" -> None|>], 8619921546075507380 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518413177733`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.920851841317774*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -4425,7 +4427,7 @@ Tests/Utilities.wlt", "EvaluationID" ->
          "MemoryUsed" -> 4976, "IntermediateTestsTree" -> {}, "Outcome" -> 
          "Success", "FailureType" -> None|>], 1031230755256089020 -> 
       TestObject[<|
-        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518413179593`*^9, 
+        "MetaInformation" -> None, "AbsoluteTime" -> 3.9208518413179603`*^9, 
          "SameTest" -> SameQ, "SameMessages" -> Testing`MessageMatchQ, 
          "MemoryConstraint" -> DirectedInfinity[1], "TimeConstraint" -> 
          DirectedInfinity[1], "CreationID" -> 
@@ -4522,7 +4524,7 @@ aSisx9n/ATiuK8w=
    3.915983573354049*^9, 3.915984991274476*^9, 3.915986865583518*^9, 
    3.915988766263148*^9, 3.915989023843706*^9, {3.915989167140481*^9, 
    3.915989182955406*^9}, 3.920833771667491*^9, 3.920844197629675*^9, 
-   3.92084432066989*^9, 3.9208518458763123`*^9},
+   3.92084432066989*^9, 3.920851845876313*^9},
  CellLabel->"Out[1]=",
  CellID->1021813314,ExpressionUUID->"8eb45bb0-b3fc-4882-bb3a-b3eeb739ac38"]
 }, Open  ]]
@@ -11835,7 +11837,7 @@ Cell[BoxData[
             DynamicBox[ToBoxes[
              ResourceSystemClient`Private`$submitProgressContent, 
               StandardForm],
-             ImageSizeCache->{249., {3., 9.}}],
+             ImageSizeCache->{249., {2.1337890625, 8.26171875}}],
             StripOnInput->False,
             FontFamily->"Roboto",
             FontSize->10,
@@ -11875,7 +11877,7 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{720, 799},
+WindowSize->{811, 799},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[
