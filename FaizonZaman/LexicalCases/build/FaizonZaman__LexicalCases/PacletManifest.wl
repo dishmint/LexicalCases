@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "47ac0a916a75ca5db282aa0f29c3a83b21a429c6fbbb34411f9cb3f014fc73fe"
+            "69934326f9e51b8e67c44dfbcab4b88e883ff8a7ef6995eff1234b8197417a68"
                 
         |>
         ,
@@ -50,7 +50,7 @@
             ,
             "Hash"
             ->
-            "365b772b10051de48edc88fda5c1494bc72c225b205e7cf84dcad0560b85c4f3"
+            "4aec9bd8f09412e89adf43b6e95408b43a9f48b9d78a8022426ed1d5e076a097"
                 
         |>
         ,
@@ -250,7 +250,21 @@
             ,
             "Hash"
             ->
-            "727670941292ba4314a4d814df81a8e75d92972398205e67dd6b1729d1f3be14"
+            "da1617a323ee39037e463aa596165437c45c928c1996f040142fd9f1cf5eab49"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexicalDispersionSmoothHistogram.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "fbe3f24f53e667997b7fb90d0cac4896cf58ebe4472bb5df1d8c6da66d5af9e7"
                 
         |>
         ,

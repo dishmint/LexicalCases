@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "1.5.1",
+    "Version" -> "1.6.0",
     "WolframVersion" -> "13.3+",
     "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {
@@ -22,6 +22,7 @@ PacletObject[
           "FaizonZaman`LexicalCases`ExpandPattern",
           "FaizonZaman`LexicalCases`LexicalCases",
           "FaizonZaman`LexicalCases`LexicalDispersionPlot",
+          "FaizonZaman`LexicalCases`LexicalDispersionSmoothHistogram",
           "FaizonZaman`LexicalCases`LexicalMap",
           "FaizonZaman`LexicalCases`LexicalPattern",
           "FaizonZaman`LexicalCases`LexicalStructure",
