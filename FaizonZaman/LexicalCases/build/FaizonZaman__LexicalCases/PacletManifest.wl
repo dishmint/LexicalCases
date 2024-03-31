@@ -11,7 +11,7 @@
             ,
             "Hash"
             ->
-            "c0d86322add3de77283d7694b33592f37990a9b6b1317e0bee7d0f9cd0f3a951"
+            "8d8473bf9d0abd8f32d20b81a29112bf6f6ec7fd04b76b7ee06a1b59fb3e534b"
                 
         |>
         ,
@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "8eb8ab72b7c4d098f48a7c55577a9d84a6fd5afd36c7b24719d8ee4fe5364064"
+            "47ac0a916a75ca5db282aa0f29c3a83b21a429c6fbbb34411f9cb3f014fc73fe"
                 
         |>
         ,
@@ -116,6 +116,19 @@
             "Hash"
             ->
             "26d83ccc2ac24fcd41088c4038192f1b19c8deaa4cd2b748cb622e5ac78b1af2"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Tests/Abstractions.wlt"
+            ]
+            ,
+            "Hash"
+            ->
+            "d0cc25717e28d889f1584540523beba22832c7476371fd2dff313f36431a1907"
                 
         |>
         ,
@@ -251,7 +264,7 @@
             ,
             "Hash"
             ->
-            "aa54125b6a6267e12a1a9d8b6ddcf50b48410a7ceffb377e315445069d0a341c"
+            "2a637d522c859ae162d01ad4c804b8bc68f04abe9e8480b64d18655cc239841d"
                 
         |>
         ,
@@ -294,6 +307,20 @@
             "Hash"
             ->
             "569be8f1495b848655a2112c788d3339b19fd9ceb15c41631afdabf8e4270468"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/LexigramCount.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "cc673f7c89945f5ce22aae23c66c80d67d9c3e29988598c5f1682a8d0e910fd9"
                 
         |>
         ,

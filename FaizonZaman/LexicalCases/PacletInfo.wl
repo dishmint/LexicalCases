@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "1.5.0",
+    "Version" -> "1.5.1",
     "WolframVersion" -> "13.3+",
     "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {
@@ -26,6 +26,7 @@ PacletObject[
           "FaizonZaman`LexicalCases`LexicalPattern",
           "FaizonZaman`LexicalCases`LexicalStructure",
           "FaizonZaman`LexicalCases`LexicalSummary",
+          "FaizonZaman`LexicalCases`LexigramCount",
           "FaizonZaman`LexicalCases`OptionalToken",
           "FaizonZaman`LexicalCases`Sandwich",
           "FaizonZaman`LexicalCases`TextType",
@@ -42,6 +43,7 @@ PacletObject[
             "LexicalStructure.wlt"
           },
           {"LexicalCases", "LexicalCases.wlt"},
+          {"Abstractions", "Abstractions.wlt"},
           {"Validation", "Validation.wlt"},
           {"Patterns", "Patterns.wlt"},
           {"Utilities", "Utilities.wlt"}

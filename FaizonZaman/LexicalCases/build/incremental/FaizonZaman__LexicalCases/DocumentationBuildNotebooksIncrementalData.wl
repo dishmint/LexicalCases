@@ -64,5 +64,9 @@
    "FileHash" -> "hn1CtAhhBTvuJoV9X0koFEMoUfMKrlhDvS6w4NQdbT4="|>, 
  "English/ReferencePages/Symbols/LexicalMap.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.018373, "Seconds"]|>], 
-   "FileHash" -> "W9mjQzXKpubIQ604U/zwUFp2GBUK4aZ90DRxAkqbRQg="|>|>
+      "Time" -> Quantity[1.782983, "Seconds"]|>], 
+   "FileHash" -> "XezXi09ZAhjz/FQDD/PVHkcqRgrXv4UaDd+MMYDmlqc="|>, 
+ "English/ReferencePages/Symbols/LexigramCount.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.853518, "Seconds"]|>], 
+   "FileHash" -> "aAMLEZN4vlj8hKR56LSj7sY1XhyGzk10H0RATohAphY="|>|>
