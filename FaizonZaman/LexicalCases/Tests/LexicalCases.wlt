@@ -96,21 +96,22 @@ TestCreate[
 	"TestID" -> "LexicalCases-DocExamples-OptionalToken-Test1"
 	]
 
-(* Documentation examples - Sandwich *)
+(* Documentation examples - BoundToken *)
 TestCreate[
-	LexicalCases[$SampleParagraph, Sandwich[WordToken[2, "KeepContractions"], " he "]]["Data"],
+	LexicalCases[$SampleParagraph, BoundToken[WordToken[2, "KeepContractions"], " he "]]["Data"],
 	{
   		<|"Match" -> "but here he sat with", "Position" -> {{123, 142}}|>,
   		<|"Match" -> "understand why he couldn't even", "Position" -> {{266, 296}}|>,
   		<|"Match" -> "eight hours he was prepared", "Position" -> {{404, 430}}|>
    		},
-	"TestID" -> "LexicalCases-DocExamples-Sandwich-Test1"
+	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test1"
 	]
 
 TestCreate[
-	LexicalCases["a nice car is good.", Sandwich[w : WordToken[1], BoundToken["car"]] :> w],
-	LexicalCases["a nice car is good.", Sandwich[w : WordToken[1], BoundToken["car"]] :> w],
-	"TestID" -> "LexicalCases-DocExamples-Sandwich-Test2"
+	LexicalCases["a nice car is good.", BoundToken[w : WordToken[1], BoundToken["car"]] :> w],
+	_Failure,
+	SameTest -> MatchQ,
+	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test2"
 	]
 
 (* Documentation examples - TextType *)

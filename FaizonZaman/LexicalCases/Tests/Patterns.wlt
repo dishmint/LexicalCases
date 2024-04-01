@@ -57,27 +57,26 @@ TestCreate[
     "TestID" -> "TextType-Test2"
 ]
 
-(* Sandwich *)
-
-TestCreate[
-	Sandwich[TextType["Adjective"|"Noun"], " computer "],
-	(TextType["Adjective" | "Noun"] ~~ " computer " ~~ TextType["Adjective" | "Noun"]),
-    "TestID" -> "Sandwich-Test1"
-]
-
-TestCreate[
-	Sandwich[OptionalToken[TextType["Adjective"|"Noun"]], " computer "],
-	(OptionalToken[TextType["Adjective" | "Noun"]] ~~ " computer " ~~ OptionalToken[TextType["Adjective" | "Noun"]]),
-    "TestID" -> "Sandwich-Test2"
-]
-
-
 (* LexicalPattern *)
 
 TestCreate[
 	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
 	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
     "TestID" -> "LexicalPattern-Test1"
+]
+
+(* ExpandPattern *)
+
+TestCreate[
+	ExpandPattern["", BoundToken[BoundToken["outer"], "inner"]],
+	WordBoundary~~"outer"~~WordBoundary~~"inner"~~WordBoundary~~"outer"~~WordBoundary,
+	"TestID" -> "ExpandPattern-BoundToken-Test1"
+]
+
+TestCreate[
+	ExpandPattern["nice computer big", BoundToken[TextType["Adjective"|"Noun"]," computer "]],
+	 (WordBoundary~~"nice"|"big"~~WordBoundary)|(WordBoundary~~Alternatives["computer"]~~WordBoundary)~~ " computer " ~~(WordBoundary~~"nice"|"big"~~WordBoundary)|(WordBoundary~~Alternatives["computer"]~~WordBoundary),
+	"TestID" -> "ExpandPattern-BoundToken-Test2"
 ]
 
 EndTestSection[]

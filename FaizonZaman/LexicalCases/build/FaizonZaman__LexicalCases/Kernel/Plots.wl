@@ -19,8 +19,8 @@ GetLexicalEvents[text_String, tokens_] := Association@Map[
   tokens
   ]
 
-GetLexicalEvents[ds_Dataset, tokens_] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, Normal@ds]
-GetLexicalEvents[ds:List[__Association], tokens_] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, ds]
+GetLexicalEvents[ds_Dataset, _] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, Normal@ds]
+GetLexicalEvents[ds:List[__Association], _] := Association@Map[#Match -> Extract[{All, 1}][#Position] &, ds]
 
 FaizonZaman`LexicalCases`LexicalDispersionPlot[args__, opts:dispersionOpts]:= iLexicalDispersion["MatrixPlot", args, opts];
 FaizonZaman`LexicalCases`LexicalDispersionSmoothHistogram[args__, opts:dispersionOpts]:= iLexicalDispersion["SmoothHistogram", args, opts];
@@ -46,19 +46,17 @@ iLexicalDispersion[plotfn_String, text_String, tokens_List, opts:dispersionOpts]
 iLexicalDispersion[text_String, ___] := $Failed
 
 
-iLexicalDispersion[plotfn_String, text_String, ds_Dataset, token_, opts:dispersionOpts] := iLexicalDispersion[text, ds, {token}, opts]
-iLexicalDispersion[plotfn_String, text_String, ds_Dataset, tokens_List, opts:dispersionOpts] /; AllTrue[tokens, FaizonZaman`LexicalCases`LexicalPatternQ] := 
-	Module[
-		{events},
-		events = GetLexicalEvents[ds, tokens];
-		If[
-			OptionValue[HideMissing],
-			events = DeleteCases[{}][events]
-			];
-		plot[plotfn, text, events, Keys[events], opts]
+iLexicalDispersion[plotfn_String, smry_FaizonZaman`LexicalCases`LexicalSummary, opts:dispersionOpts] := 
+	Block[
+		{ucmp = Uncompress[smry["SourceData"]], res = smry["Dataset"] // ReverseSortBy[Length[#Position] &], keys},
+		keys = res[All,#Match&] // Normal // DeleteDuplicates;
+		Switch[smry["Source"],
+			"Wikipedia", iLexicalDispersion[plotfn, ucmp, res, keys, DataJoin -> True],
+			_, iLexicalDispersion[plotfn, ucmp, res, keys]
+		]
 	]
 
-iLexicalDispersion[ds_Dataset, ___] := $Failed
+iLexicalDispersion[smry_FaizonZaman`LexicalCases`LexicalSummary, ___] := $Failed
 
 
 Options[plot] = Options[FaizonZaman`LexicalCases`LexicalDispersionPlot];

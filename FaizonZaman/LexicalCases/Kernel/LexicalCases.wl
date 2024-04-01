@@ -46,11 +46,9 @@ TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
 
 OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\"."
 
-BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi."
+BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi.\nBoundToken[outer, inner] places inner between two outer's."
 
 WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces."
-
-Sandwich::usage = "Sandwich[outer, inner] sandwiches inner between outer."
 
 ExpandPattern::usage = "ExpandPattern[source, lp] expands lexical pattern lp into a valid StringExpression with content from source."
 
@@ -200,11 +198,11 @@ ArticleSearchIndicator[service_String, query_] :=
 
 (* Patterns *)
 
-Sandwich[bread_, expr_] := bread ~~ expr ~~ bread
-
-Sandwich[bread_][expr_] := Sandwich[bread, expr]
-
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives] @* Map[TextType] @* Apply[List])[alts]
+
+BoundedToken[outer_, inner_] := outer ~~ inner ~~ outer
+
+BoundToken[outer_][inner_] := BoundToken[outer, inner]
 
 BoundedWord[expr_] := WordBoundary~~expr~~WordBoundary
 
@@ -216,7 +214,7 @@ Repattern[expr_] := expr /. unpatterned -> Pattern
 $UnpatternPattern[tok_] := (tok|unpatterned[uname_, tok])
 
 (* Generic Whitespace wrapping *)
-iWrapSpace[tk_, String] := Sandwich[" ", tk] 
+iWrapSpace[tk_, String] := BoundedToken[" ", tk] 
 iWrapSpace[tk_, StartOfString] := (tk ~~ " ")
 iWrapSpace[tk_, EndOfString] := (" " ~~ tk)
 iWrapSpace[tk_, ContainsOnly] := tk
@@ -226,7 +224,7 @@ ExpandToken[utok:unpatterned[name_, tok_TextType], position_ : String, content_]
 ExpandToken[tok_, position_ : String] := iExpandToken[tok, position]
 ExpandToken[utok:unpatterned[name_, tok_], position_ : String] := iExpandToken[utok, position]
 $UOpt[ot_] := ot /. (OptionalToken[alt_] :> alt)
-iExpandToken[opt:$UnpatternPattern[_OptionalToken], String] := With[{o = $UOpt[opt]}, Sandwich[" ", o] | " "]
+iExpandToken[opt:$UnpatternPattern[_OptionalToken], String] := With[{o = $UOpt[opt]}, BoundedToken[" ", o] | " "]
 iExpandToken[opt:$UnpatternPattern[_OptionalToken], StartOfString] := With[{o = $UOpt[opt]}, (o ~~ " ") | ""]
 iExpandToken[opt:$UnpatternPattern[_OptionalToken], EndOfString] := With[{o = $UOpt[opt]}, (" " ~~ o) | ""]
 iExpandToken[opt:$UnpatternPattern[_OptionalToken], ContainsOnly] := With[{o = $UOpt[opt]}, o | ""]
@@ -251,7 +249,7 @@ $WordTokenRules = {
 		WordToken[m_Integer, n_Integer, "KeepContractions"] :> Alternatives @@ Array[ReplaceAll[$WordTokenRules] @* (WordToken[#, "KeepContractions"]&), n - 1, m]
 };
 iExpandToken[word:$UnpatternPattern[_WordToken], pos_] := iExpandWord[word, pos] /. $WordTokenRules
-iExpandWord[word:$UnpatternPattern[_], String] := Sandwich[" ", word] 
+iExpandWord[word:$UnpatternPattern[_], String] := BoundedToken[" ", word] 
 iExpandWord[word:$UnpatternPattern[_], StartOfString] := (word ~~ " ")
 iExpandWord[word:$UnpatternPattern[_], EndOfString] := (" " ~~ word)
 iExpandWord[word:$UnpatternPattern[_], ContainsOnly] := word
@@ -269,7 +267,7 @@ MassWordToken[expr_] := expr /. $WordTokenRules
 
 $UOpt[ot_] := ot /. (OptionalToken[alt_] :> alt)
 MapAtOptionalToken[func_, expr_]:= MapAt[func, expr, Position[expr, _OptionalToken]] 
-iExpandOptional[opt:anchor[__], String] := MapAtOptionalToken[With[{o = $UOpt[#]}, Sandwich[" ", o] | " "]&, opt]
+iExpandOptional[opt:anchor[__], String] := MapAtOptionalToken[With[{o = $UOpt[#]}, BoundedToken[" ", o] | " "]&, opt]
 iExpandOptional[opt:anchor[__], StartOfString] := MapAtOptionalToken[With[{o = $UOpt[#]}, (o ~~ " ") | ""]&, opt]
 iExpandOptional[opt:anchor[__], EndOfString] := MapAtOptionalToken[With[{o = $UOpt[#]}, (" " ~~ o) | ""]&, opt]
 iExpandOptional[opt:anchor[__], ContainsOnly] := MapAtOptionalToken[With[{o = $UOpt[#]}, o | ""]&, opt]
@@ -340,6 +338,8 @@ iReformToken[expr_, _] := expr
 iExpand[expr_] :=
 	ReplaceAll[expr,
 	{		
+		BoundToken[outer_, inner_] :> BoundedToken[iExpand[outer],iExpand[inner]],
+
 		BoundToken[s : Except[_Alternatives]] :> (BoundedWord[iExpand[s]]),
 		
 		BoundToken[a_Alternatives] :> BoundedWord[Map[iExpand, a]]

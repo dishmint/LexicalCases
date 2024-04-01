@@ -11,6 +11,7 @@ ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[a_Alternatives]] := 
 ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[opt_]] := FaizonZaman`LexicalCases`LexicalPatternQ[opt]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[a_Alternatives]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[e:Except[_Alternatives]]] := FaizonZaman`LexicalCases`LexicalPatternQ[e]
+ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[outer_, inner_]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][{outer, inner}]
 ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[n_Integer]] := True
 ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[m_Integer, n_Integer]] := True
 ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[n_Integer,"KeepContractions"]] := True
