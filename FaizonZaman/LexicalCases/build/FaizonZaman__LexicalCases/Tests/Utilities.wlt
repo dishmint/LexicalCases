@@ -65,8 +65,7 @@ TestCreate[
 		PlotTheme -> Automatic, 
 		PlotLabel -> Automatic,
 		HideMissing -> False,
-		DataJoin -> False,
-		DispersionPlotFunction -> Automatic
+		DataJoin -> False
 	},
 	"TestID" -> "Utilities-OptionsJoin-Test1"
 ]
@@ -119,7 +118,7 @@ TestCreate[
 (* ExpandPattern *)
 
 TestCreate[
-	ExpandPattern[$SampleParagraph, Sandwich[TextType["Adjective" | "Noun"], " computer "]],
+	ExpandPattern[$SampleParagraph, BoundToken[TextType["Adjective" | "Noun"], " computer "]],
 	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
     WordBoundary) | (WordBoundary ~~ 
     "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 

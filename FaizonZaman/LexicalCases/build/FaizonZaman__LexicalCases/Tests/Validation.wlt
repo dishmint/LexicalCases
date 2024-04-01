@@ -46,6 +46,20 @@ TestCreate[
 ]
 
 TestCreate[
+	LexicalPatternQ[BoundToken["outer", "inner"]],
+	True
+,
+"TestID" -> "LexicalPatternQ-BoundToken-Test5"
+]
+
+TestCreate[
+	LexicalPatternQ[BoundToken[BoundToken["outer"], "inner"]],
+	True
+,
+"TestID" -> "LexicalPatternQ-BoundToken-Test6"
+]
+
+TestCreate[
 	BoundToken["machine"],
 	BoundToken["machine"]
 ,
@@ -64,6 +78,13 @@ TestCreate[
 	BoundToken["A" | WordToken[1]]
 ,
 "TestID" -> "BoundToken-Test3"
+]
+
+TestCreate[
+	BoundToken["outer", "inner"],
+	BoundToken["outer", "inner"]
+,
+"TestID" -> "BoundToken-Test4"
 ]
 
 (* WordToken *)
@@ -98,10 +119,10 @@ TestCreate[
     "TestID" -> "LexicalPatternQ-OptionalToken-Test3"
 ]
 
-(* Sandwich *)
+(* BoundToken *)
 TestCreate[
-	LexicalPatternQ[Sandwich[WordToken[1], BoundToken["car"]]],
-    "TestID" -> "LexicalPatternQ-Sandwich-Test1"
+	LexicalPatternQ[BoundToken[WordToken[1], BoundToken["car"]]],
+    "TestID" -> "LexicalPatternQ-BoundToken-Test1"
 ]
 
 (* TextType *)
