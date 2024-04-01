@@ -50,7 +50,7 @@
             ,
             "Hash"
             ->
-            "47ba0d0496000c043a032879d5b8c02212e2aae8d240c9eab0fafeb096934a7d"
+            "9c125f14973519186d9bcc966f948d3c64e99bd726c5ae5c6397226720ebb38a"
                 
         |>
         ,
@@ -180,7 +180,7 @@
             ,
             "Hash"
             ->
-            "76d571c920e26ad9cf1a3c748c9392ac5292c227d77661b9b35e1fe59edd9c06"
+            "e422673ec2d7aab74e6b02db22f9f4b5630ecd5bc65b5e7483d165448f118ce2"
                 
         |>
         ,
@@ -356,20 +356,6 @@
             "File"
             ->
             File[
-                "Documentation/English/ReferencePages/Symbols/Sandwich.nb"
-                    
-            ]
-            ,
-            "Hash"
-            ->
-            "25feb3d1d36a7fdb3a33c11bb9fd537968190da61b54a98bf1f557780dadda7e"
-                
-        |>
-        ,
-        <|
-            "File"
-            ->
-            File[
                 "Documentation/English/ReferencePages/Symbols/TextType.nb"
                     
             ]
@@ -432,7 +418,7 @@
             ,
             "Hash"
             ->
-            "735f619dd0ea301794d85d5d2ead55d59ed3fd81d6015ff5dcf3163e93668eb4"
+            "235de28e132fb07ec0878ea3d3b5d0bcdbbc10597e479d42784ebcf6c6725bc2"
                 
         |>
     }
