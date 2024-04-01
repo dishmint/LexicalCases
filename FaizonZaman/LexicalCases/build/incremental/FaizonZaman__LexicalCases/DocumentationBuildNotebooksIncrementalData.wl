@@ -23,9 +23,9 @@
       "Time" -> Quantity[2.71781, "Seconds"]|>], 
    "FileHash" -> "LU2VeQWXNkgVCc9/ZTFIwxRiupA1H4AQy8sUou33LFE="|>, 
  "English/ReferencePages/Symbols/LexicalPattern.nb" -> 
-  <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.147386, "Seconds"]|>], 
-   "FileHash" -> "84mBBxY3pUq2BOlI40KD6pjtnKFgUiGKqJ3emukeu9g="|>, 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.58675, "Seconds"]|>], 
+   "FileHash" -> "G8QT1kwjVeWwvVeXCeLt8wHC83akBfrILDU9Mfm0KsQ="|>, 
  "English/ReferencePages/Symbols/LexicalStructure.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[0.926086, "Seconds"]|>], 
