@@ -29,7 +29,6 @@ PacletObject[
           "FaizonZaman`LexicalCases`LexicalSummary",
           "FaizonZaman`LexicalCases`LexigramCount",
           "FaizonZaman`LexicalCases`OptionalToken",
-          "FaizonZaman`LexicalCases`Sandwich",
           "FaizonZaman`LexicalCases`TextType",
           "FaizonZaman`LexicalCases`ToLexicalPattern",
           "FaizonZaman`LexicalCases`WordToken"

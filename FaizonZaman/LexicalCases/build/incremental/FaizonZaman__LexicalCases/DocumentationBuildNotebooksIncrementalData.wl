@@ -1,7 +1,7 @@
 <|"English/Guides/LexicalCases.nb" -> 
-  <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.577982, "Seconds"]|>], 
-   "FileHash" -> "P7dpyyF6KTTcmrCcXTLfLKgNgXVP27tzRMUCsZ5inFk="|>, 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.307374, "Seconds"]|>], 
+   "FileHash" -> "nAMWpGo4ONfhaBE1S651R5LS4SzjMNXcqD2TJTkcvoc="|>, 
  "English/ReferencePages/Symbols/BoundToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.358423, "Seconds"]|>], 
@@ -59,9 +59,9 @@
      <|"Time" -> Quantity[0.764999, "Seconds"]|>], 
    "FileHash" -> "fG+/T3WztWOzTxL7zaQ3ql43eJU9Helpi76/VHzpEhw="|>, 
  "English/Tutorials/LexicalCasesOverview.nb" -> 
-  <|"Result" -> Success["BuildDocumentationNotebook", 
-     <|"Time" -> Quantity[1.750906, "Seconds"]|>], 
-   "FileHash" -> "hn1CtAhhBTvuJoV9X0koFEMoUfMKrlhDvS6w4NQdbT4="|>, 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[2.85257, "Seconds"]|>], 
+   "FileHash" -> "oqbFTqy1khcCF5BrU/agp+qILo4tvPGYtIg0p2hwfZE="|>, 
  "English/ReferencePages/Symbols/LexicalMap.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[1.782983, "Seconds"]|>], 
