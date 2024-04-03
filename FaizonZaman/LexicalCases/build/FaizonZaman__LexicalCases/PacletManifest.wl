@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "6a4de834ee582c86c6bc413191f3e1d4fe12ebce174cb90b97c6308300daa225"
+            "8f0760b3712afe96b1006cb13540e723f026245b05385251fadfd94f06783e53"
                 
         |>
         ,
@@ -89,7 +89,7 @@
             ,
             "Hash"
             ->
-            "4e33e36afc81debfc7c0704a6f489194204c93b3640ce12de2913dd61615f7e6"
+            "440e787f65880b924a8417c0306f60d31ed56270c3315f92b69ae04d67478189"
                 
         |>
         ,
@@ -115,7 +115,7 @@
             ,
             "Hash"
             ->
-            "bd8d9ab3c3d464aacdfc52a11d12a2dec5d139677bc53c56f7d0dfbb9b6a5756"
+            "fa60f48c2330765150ee221faa9e4c29c8ddb49f5186bd94b1be55a1012bb5bc"
                 
         |>
         ,
@@ -141,7 +141,7 @@
             ,
             "Hash"
             ->
-            "4212dcfc9d814e783049e00bfbe7faaf6bb6af8331cc2d02d2d43e1fa56ce13a"
+            "2eed33594e7b3ff930811235d33e24325a9bc5e18ff9961c04ee353635f850c7"
                 
         |>
         ,
@@ -154,7 +154,7 @@
             ,
             "Hash"
             ->
-            "2f6a792f29e7d06a43e8a773e00316e95a35243d0cf6158091f0598644e809b5"
+            "1e42f8942cb6b6c9502a7b7ad081c9fa1cf9e4da5f06b21de147aaf63df7d297"
                 
         |>
         ,
@@ -349,6 +349,20 @@
             "Hash"
             ->
             "42051a0836c7d4ffcf10ed478b37c31240999bd1bf832c03591962459cdfb8b4"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/SynonymToken.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "d7de19180a45d73ed54e4e089e193fd4a81d48ccbf3ce6dc6384e54df24c68b7"
                 
         |>
         ,

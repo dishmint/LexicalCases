@@ -73,4 +73,8 @@
  "English/ReferencePages/Symbols/LexicalDispersionSmoothHistogram.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[1.955509, "Seconds"]|>], 
-   "FileHash" -> "lKyQ9WrTmPHqcVoAuOLPRqBqDB2twNLtLgEtPqdMljY="|>|>
+   "FileHash" -> "lKyQ9WrTmPHqcVoAuOLPRqBqDB2twNLtLgEtPqdMljY="|>, 
+ "English/ReferencePages/Symbols/SynonymToken.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.92474, "Seconds"]|>], 
+   "FileHash" -> "HOhZwkuJf7XdanDPMslW9dOIyM9DczWVAMEgARFG/Yo="|>|>

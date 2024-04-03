@@ -57,6 +57,20 @@ TestCreate[
     "TestID" -> "TextType-Test2"
 ]
 
+(* SynonymToken *)
+
+TestCreate[
+	SynonymToken["good"],
+	SynonymToken["good"],
+    "TestID" -> "SynonymToken-Test1"
+]
+
+TestCreate[
+	SynonymToken["good"|"bad"],
+	SynonymToken["good"|"bad"],
+    "TestID" -> "SynonymToken-Test2"
+]
+
 (* LexicalPattern *)
 
 TestCreate[

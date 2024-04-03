@@ -130,6 +130,17 @@ TestCreate[
 	"TestID" -> "LexicalCases-DocExamples-TextType-Test2"
 	]
 
+(* Documentation examples - SynonymToken *)
+TestCreate[
+	LexicalCases["cool person. nice mortal. great soul.", TextType["Adjective"] ~~ " " ~~ SynonymToken["person"]]["Data"],
+	{
+		<|"Match" -> "cool person", "Position" -> {{1, 11}}|>,
+		<|"Match" -> "nice mortal", "Position" -> {{14, 24}}|>,
+		<|"Match" -> "great soul", "Position" -> {{27, 36}}|>
+	},
+	"TestID" -> "LexicalCases-DocExamples-SynonymToken-Test1"
+	]
+
 (* FILES *)
 
 (* TestCreate[

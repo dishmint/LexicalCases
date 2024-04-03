@@ -131,4 +131,10 @@ TestCreate[
     "TestID" -> "LexicalPatternQ-TextType-Test1"
 ]
 
+(* SynonymToken *)
+TestCreate[
+	LexicalPatternQ[SynonymToken["cool"] ~~ " sentence"],
+    "TestID" -> "LexicalPatternQ-SynonymToken-Test1"
+]
+
 EndTestSection[]

@@ -2,20 +2,22 @@ BeginPackage["FaizonZaman`LexicalCases`Validation`"]
 
 Begin["`Private`"]
 
-$ValidLexicalTokens = (_FaizonZaman`LexicalCases`TextType|_FaizonZaman`LexicalCases`OptionalToken|_FaizonZaman`LexicalCases`BoundToken|_FaizonZaman`LexicalCases`WordToken)
+$ValidLexicalTokens = (_FaizonZaman`LexicalCases`TextType|_FaizonZaman`LexicalCases`OptionalToken|_FaizonZaman`LexicalCases`BoundToken|_FaizonZaman`LexicalCases`WordToken|_FaizonZaman`LexicalCases`SynonymToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
-ValidateLexicalToken[FaizonZaman`LexicalCases`TextType[_String]] := True
+ValidateLexicalToken[FaizonZaman`LexicalCases`TextType[_String]] = True
 ValidateLexicalToken[FaizonZaman`LexicalCases`TextType[a_Alternatives]] := AllTrue[StringQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[a_Alternatives]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[opt_]] := FaizonZaman`LexicalCases`LexicalPatternQ[opt]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[a_Alternatives]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[e:Except[_Alternatives]]] := FaizonZaman`LexicalCases`LexicalPatternQ[e]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[outer_, inner_]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][{outer, inner}]
-ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[n_Integer]] := True
-ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[m_Integer, n_Integer]] := True
-ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[n_Integer,"KeepContractions"]] := True
-ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[m_Integer, n_Integer,"KeepContractions"]] := True
+ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[_Integer]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[_Integer, _Integer]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[_Integer,"KeepContractions"]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`WordToken[_Integer, _Integer, "KeepContractions"]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`SynonymToken[_String]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`SynonymToken[a_Alternatives]] := AllTrue[StringQ][List @@ a]
 ValidateLexicalToken[expr_] := False
 
 FaizonZaman`LexicalCases`LexicalCases::snvld = "`1` contains invalid string patterns"
