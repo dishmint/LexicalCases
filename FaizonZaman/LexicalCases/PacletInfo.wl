@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "1.7.0",
+    "Version" -> "1.8.0",
     "WolframVersion" -> "13.3+",
     "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {
@@ -29,6 +29,7 @@ PacletObject[
           "FaizonZaman`LexicalCases`LexicalSummary",
           "FaizonZaman`LexicalCases`LexigramCount",
           "FaizonZaman`LexicalCases`OptionalToken",
+          "FaizonZaman`LexicalCases`SynonymToken",
           "FaizonZaman`LexicalCases`TextType",
           "FaizonZaman`LexicalCases`ToLexicalPattern",
           "FaizonZaman`LexicalCases`WordToken"

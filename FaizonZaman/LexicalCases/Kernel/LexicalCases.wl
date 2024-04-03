@@ -50,6 +50,8 @@ BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pat
 
 WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces."
 
+SynonymToken::usage = "SynonymToken[word] represents a curated set of synonyms for word."
+
 ExpandPattern::usage = "ExpandPattern[source, lp] expands lexical pattern lp into a valid StringExpression with content from source."
 
 LexicalPattern::usage = "LexicalPattern[patt] A wrapper for using lexical patterns in string functions"
@@ -123,6 +125,11 @@ FormatToken[TextType[types_Alternatives]] := TextElement[
 	<|"GrammaticalUnit" -> "Alternatives"|>
 	]
 
+FormatToken[SynonymToken[words_Alternatives]] := TextElement[
+	WrapAlternatives[Map[FormatToken][ExpandAlternativeSynonyms[words]]],
+	<|"GrammaticalUnit" -> "Alternatives"|>
+	]
+
 FormatToken[OptionalToken[args__]] := TextElement[
 	Map[FormatToken][{args}],
 	<|"GrammaticalUnit" -> "Optional"|>
@@ -143,6 +150,8 @@ FormatToken[HoldPattern[WordToken[1]]] := TextElement[{1}, <|"GrammaticalUnit" -
 FormatToken[HoldPattern[WordToken[n_Integer]]] := TextElement[{n}, <|"GrammaticalUnit" -> "Words"|>];
 
 FormatToken[WordToken[args__Integer]] := TextElement[{Span[args]}, <|"GrammaticalUnit" -> "Words"|>];
+
+FormatToken[SynonymToken[s_String]] := TextElement[{s}, <|"GrammaticalUnit" -> "Synonyms"|>];
 
 FormatToken[HoldPattern[_]] := TextElement[{"_"}, <|"GrammaticalUnit" -> "Blank"|>];
 
@@ -199,6 +208,7 @@ ArticleSearchIndicator[service_String, query_] :=
 (* Patterns *)
 
 ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives] @* Map[TextType] @* Apply[List])[alts]
+ExpandAlternativeSynonyms[alts_Alternatives] := (Apply[Alternatives] @* Map[SynonymToken] @* Apply[List])[alts]
 
 BoundedToken[outer_, inner_] := outer ~~ inner ~~ outer
 
@@ -293,7 +303,16 @@ MassOptionalToken[expr_] /; Not@*FreeQ[OptionalToken]@expr := With[
 MassOptionalToken[expr_] := expr // ReplaceAll[anchor[s__] :> s]
 (* An Exclusive attribute might be nice - the function only works on the defined pattern, otherwise expr is returned (that way I don't have to write an empty pattern of f[expr_] := expr)  *)
 
-MassTokens[content_Association] := (MassWordToken@*MassTextType[content])
+genSyn[word_] := (word|Splice[Synonyms[word], Alternatives])
+
+$SynonymTokenRules = {
+	SynonymToken[word_String] :> genSyn[word],
+	SynonymToken[words_Alternatives] :> Map[genSyn, words]
+};
+
+MassSynonymToken[expr_] := expr /. $SynonymTokenRules
+
+MassTokens[content_Association] := (MassSynonymToken@*MassWordToken@*MassTextType[content])
 
 StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, after]
 MiddleContext[content_][before__, a:anchor[seq__], after__] := MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
@@ -313,22 +332,22 @@ $LPS = LexicalPatternDelimiter["Start"]
 $LPE = LexicalPatternDelimiter["End"]
 ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern // TokenPostProcess
 ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr] // TokenPostProcess
-iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken|BoundToken]@expr := 
+iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken|BoundToken|SynonymToken]@expr := 
 	With[
 		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},
 		SequenceReplace[
 			list,
 			{
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], after__, $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
 					StartContext[content][anchor[seq], after],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
 					EndContext[content][before, anchor[seq]],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], after__, $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
 					MiddleContext[content][before, anchor[seq], after],
 
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken)[__]]]], $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
 					SingletonContext[content][anchor[seq]]
 			}
 		] // First // DeleteCases[$LPS|$LPE]
