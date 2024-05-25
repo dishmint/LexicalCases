@@ -20,8 +20,8 @@
    "FileHash" -> "Ny1ijj6ncVpObcHEhJz0WwTziKhbT4mEwnYgkXUISi0="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionPlot.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.598789, "Seconds"]|>], 
-   "FileHash" -> "4ImoGueAHUDB4pLq4puEaOCh43GWQuo7CuE7afoGkao="|>, 
+      "Time" -> Quantity[2.183739, "Seconds"]|>], 
+   "FileHash" -> "zeP13sVm2W5D5gvIzixuI6NG1Cfl6wleRB8Xf88AvHU="|>, 
  "English/ReferencePages/Symbols/LexicalPattern.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[1.245773, "Seconds"]|>], 
@@ -72,8 +72,8 @@
    "FileHash" -> "g8OWf+o4oo6XpJl3lUiTdrpQmElAdA+SX10WoyMvCEM="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionSmoothHistogram.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.725427, "Seconds"]|>], 
-   "FileHash" -> "ASTMCBnMHewtWY0NvrwZzk7dZuUHxJTDTBVESwKXd5s="|>, 
+      "Time" -> Quantity[2.457257, "Seconds"]|>], 
+   "FileHash" -> "KfBtCDHRhwLt17nY0Hbd5D9RK/qmVqL2WXgfVuWrqcQ="|>, 
  "English/ReferencePages/Symbols/SynonymToken.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[0.84404, "Seconds"]|>], 
