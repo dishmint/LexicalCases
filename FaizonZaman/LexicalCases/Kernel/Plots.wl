@@ -76,7 +76,7 @@ plot["MatrixPlot", text_String, tokenevents_Association, ielm_, opts:OptionsPatt
 	spardat = tokenevents // KeyValueMap[Thread[Thread[{rowindex[#1], #2}] -> 1] &] /* Flatten;
 	sparr = SparseArray[spardat, {Length[ielm], length}];
 		
-	ticks = KeyValueMap[{#2, #1}&, rowindex];
+	ticks = KeyValueMap[{#2, FaizonZaman`LexicalCases`FormatLexicalPattern[#1]}&, rowindex];
 	MatrixPlot[
 		sparr,
 		FrameTicks -> {{ticks, None}, {Automatic, None}},
@@ -96,7 +96,7 @@ plot["SmoothHistogram", text_, tokenevents_, ielm_, opts:OptionsPattern[]] := Bl
 		},
 		SmoothHistogram[
  			tokenevents,
- 			PlotLegends -> ielm,
+ 			PlotLegends -> Map[FaizonZaman`LexicalCases`FormatLexicalPattern] @ ielm,
  			AspectRatio -> OptionValue[AspectRatio],
  			ImageSize -> OptionValue[ImageSize],
  			PlotRange -> OptionValue[PlotRange],
