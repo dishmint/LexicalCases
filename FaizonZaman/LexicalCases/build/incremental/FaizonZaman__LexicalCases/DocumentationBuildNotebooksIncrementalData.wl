@@ -60,8 +60,8 @@
    "FileHash" -> "fG+/T3WztWOzTxL7zaQ3ql43eJU9Helpi76/VHzpEhw="|>, 
  "English/Tutorials/LexicalCasesOverview.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[2.85257, "Seconds"]|>], 
-   "FileHash" -> "oqbFTqy1khcCF5BrU/agp+qILo4tvPGYtIg0p2hwfZE="|>, 
+      "Time" -> Quantity[2.940273, "Seconds"]|>], 
+   "FileHash" -> "yTwfyufRnkA4SdWILOYOdCJTu9FIjLhwnx9tBu2pXYI="|>, 
  "English/ReferencePages/Symbols/LexicalMap.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[1.782983, "Seconds"]|>], 
@@ -77,4 +77,44 @@
  "English/ReferencePages/Symbols/SynonymToken.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[1.92474, "Seconds"]|>], 
-   "FileHash" -> "HOhZwkuJf7XdanDPMslW9dOIyM9DczWVAMEgARFG/Yo="|>|>
+   "FileHash" -> "HOhZwkuJf7XdanDPMslW9dOIyM9DczWVAMEgARFG/Yo="|>, 
+ "English/ReferencePages/Symbols/DataJoin.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.470785, "Seconds"]|>], 
+   "FileHash" -> "MxbuHjs+owABGZjqFIYGWyTg2xtHvrtj72NP0Ebq20E="|>, 
+ "English/ReferencePages/Symbols/FormatLexicalPattern.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[1.318414, "Seconds"]|>], 
+   "FileHash" -> "4d3pIdJl/eXfErhEjIvqSgVGHI+7QzE63EQxyIh+ha8="|>, 
+ "English/ReferencePages/Symbols/HideMissing.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.532989, "Seconds"]|>], 
+   "FileHash" -> "2YSKAXtwOYHO67CVtPR6XRkXzo/dvJeVqJAA9km7418="|>, 
+ "English/ReferencePages/Symbols/LexicalPatternQ.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.622118, "Seconds"]|>], 
+   "FileHash" -> "p5T9VBzEZ7bnmDKMXnjWO/R/1+9+74cjCzzw53/tTuI="|>, 
+ "English/ReferencePages/Symbols/MaxCategories.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.629855, "Seconds"]|>], 
+   "FileHash" -> "BkKXtLmmkCRJzb0XoFZS/qFd/hPBLHRnNIFIvK4FXVU="|>, 
+ "English/ReferencePages/Symbols/StopWordQ.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.722469, "Seconds"]|>], 
+   "FileHash" -> "UQQrXMuLmsfvcjd2KKdPxgIPxTg+ox59r1ayR9nA1K8="|>, 
+ "English/ReferencePages/Symbols/$FilterableProperties.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.74746, "Seconds"]|>], 
+   "FileHash" -> "YolLS/xppNxpssjr35AugfxGSTLptudmlHdfbNt1LzA="|>, 
+ "English/ReferencePages/Symbols/$SampleParagraph.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.792021, "Seconds"]|>], 
+   "FileHash" -> "Xn4eBasj1SResAL4Z+3w9PVongHFBddPwx3kOppEMKk="|>, 
+ "English/ReferencePages/Symbols/$SampleSentence.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.546565, "Seconds"]|>], 
+   "FileHash" -> "UNPffL8lX5wWYwIjBQnr4sTDbwFscU8Z0R0OgBR77mE="|>, 
+ "English/ReferencePages/Symbols/$SampleStringExpression.nb" -> 
+  <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
+      "Time" -> Quantity[0.789788, "Seconds"]|>], 
+   "FileHash" -> "2wJwI3BAeAQj+q0m0uE38M7zsewRFwWlROGAP4nJj6g="|>|>

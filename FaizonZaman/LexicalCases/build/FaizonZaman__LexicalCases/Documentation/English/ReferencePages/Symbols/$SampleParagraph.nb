@@ -1,0 +1,347 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13191,        337]
+NotebookOptionsPosition[      9555,        258]
+NotebookOutlinePosition[     11736,        313]
+CellTagsIndexPosition[     11651,        308]
+WindowTitle->$SampleParagraph
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell[
+          "FAIZON ZAMAN/ LEXICAL CASES SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "87d39cb1-9d8d-4195-843e-95cc44240a4c"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "5ed4c032-a619-4c72-8a2d-3b74dcb30d24"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "48de1d77-6bcf-40eb-9f93-fdabac4a8b67"]
+        }],ExpressionUUID->"305540d1-9a2a-4df4-b8fc-4ce28208b005"],
+        StripOnInput->False],{
+       "\"FaizonZaman/LexicalCases/ref/$SampleParagraph\"" :> None, 
+        "\"Copy Wolfram Documentation Center URL\"" :> 
+        Module[{DocumentationSearch`Private`nb$}, 
+          DocumentationSearch`Private`nb$ = 
+           NotebookPut[
+            Notebook[{Cell["FaizonZaman/LexicalCases/ref/$SampleParagraph"]}, 
+              Visible -> False]]; 
+          SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+          FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+          NotebookClose[DocumentationSearch`Private`nb$]; Null], Delimiter, 
+        "\"Copy web URL\"" :> 
+        Module[{DocumentationSearch`Private`nb$}, 
+          DocumentationSearch`Private`nb$ = 
+           NotebookPut[
+            Notebook[{
+              Cell[BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                  "http://reference.wolfram.com/language/FaizonZaman/\
+LexicalCases/ref/$SampleParagraph.html"], StandardForm]], "Input", 
+                TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+          SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+          FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+          NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        "\"Go to web URL\"" :> 
+        FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[TrueQ[False], 
+                "http://reference.wolfram.com/system-modeler/", 
+                "http://reference.wolfram.com/language/"] <> 
+              "FaizonZaman/LexicalCases/ref/$SampleParagraph" <> ".html"], 
+             None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "4c2ad52d-d54e-4b55-8612-3b692f8c8bda"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "a54b932d-dfcb-497b-b09f-5d710810ca95"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"c50e9b32-49ee-48a5-a26a-f864e80e6620"],
+
+Cell["FaizonZaman`LexicalCases`", "ContextNameCell",ExpressionUUID->"36d9f161-7127-4b01-a1db-1886dc910ad5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "$SampleParagraph", "ObjectName",ExpressionUUID->
+      "999e1cda-c7e1-4599-8b21-c81e74975ed0"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"758e3e3f-deb0-4b4c-98b7-45fdaf42353f"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "630e3973-0329-4ff3-a7a5-95019783cc3d"]
+    }],ExpressionUUID->"17460511-b084-4180-af5f-26485ae2d0aa"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"2b35a923-9500-4e29-bda2-\
+319d96fc6fac"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[
+    "A long example string.",ExpressionUUID->
+     "0037218f-f31e-4748-840b-726b206959f2"]}
+  }]], "Usage",
+ CellID->1308291052,ExpressionUUID->"59e6ae59-c85e-434a-97c0-b540c276a5bd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "e94b85e7-8ea8-41d9-91f6-83890e8a2699"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"7d6f1381-3e5e-445a-bd98-e18d82b8f2e5"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "d7139ca3-5996-486c-a083-0f8e980085fe"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1235391121,ExpressionUUID->"e267f6ae-a508-4369-aeb2-1586822bf99d"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<FaizonZaman`LexicalCases`\>\"", "]"}]], "Input", \
+"ExampleInitialization",
+ CellLabel->"In[1]:=",
+ CellID->866281488,ExpressionUUID->"3d8903c2-8540-4f21-a3f8-e73ec2d1a3db"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"},
+        Closed], 
+      Alternatives[Open, True]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{14., {5., 9.}}]],ExpressionUUID->
+  "002021be-e5cc-4d82-a09f-87ab5dd86e90"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"7858e252-3e1b-4657-9a84-5c7c53d35eef"],
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "0979d2f5-b958-4555-b65e-daaaf9c6ff1e"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellID->1346671451,ExpressionUUID->"3cfeac7d-3d0e-4919-9264-4113f77f7336"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$SampleParagraph"], "Input",
+ CellProlog:>Needs["FaizonZaman`LexicalCases`"],
+ CellLabel->"In[1]:=",
+ CellID->1395563408,ExpressionUUID->"11dd0c70-7149-4b32-84b3-d4eaa22c2796"],
+
+Cell[BoxData["\<\"The words hadn't flowed from his fingers for the past few \
+weeks. He never imagined he'd find himself with writer's block, but here he \
+sat with a blank screen in front of him. That blank screen taunting him day \
+after day had started to play with his mind. He didn't understand why he \
+couldn't even type a single word, just one to begin the process and build \
+from there. And yet, he already knew that the eight hours he was prepared to \
+sit in front of his computer today would end with the screen remaining blank.\
+\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->836352052,ExpressionUUID->"f5f05052-e8ca-4620-ab4b-87c61e792cbb"]
+}, Open  ]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, 
+  Closed]]]]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"188d2c50-e6d5-4919-9b22-\
+d37cc57ebb04"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"bd950a6b-4d0e-4cfd-bae5-2010fb5f933f"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$SampleParagraph",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2024, 5, 24, 23, 19, 49.835621}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "FaizonZaman`LexicalCases`",
+     "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Faizon Zaman/ Lexical Cases Symbol", "language" -> "en", "paclet" -> 
+    "FaizonZaman/LexicalCases", "status" -> "None", "summary" -> 
+    "A long example string.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "$SampleParagraph", "titlemodifier" -> "", "metadescription" -> "", 
+    "windowtitle" -> "$SampleParagraph", "type" -> "Symbol", "uri" -> 
+    "FaizonZaman/LexicalCases/ref/$SampleParagraph"}},
+CellContext->"Global`",
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "14.0 for Mac OS X ARM (64-bit) (December 12, 2023)", 
+  StyleDefinitions -> "Default.nb"],
+ExpressionUUID->"dd383791-3b05-484b-b660-6897850e5115"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4971, 133, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"e267f6ae-a508-4369-aeb2-1586822bf99d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1235391121]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 11451, 301}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 3429, 80, 57, "AnchorBarGrid",ExpressionUUID->"c50e9b32-49ee-48a5-a26a-f864e80e6620",
+ CellID->1],
+Cell[4020, 103, 107, 0, 23, "ContextNameCell",ExpressionUUID->"36d9f161-7127-4b01-a1db-1886dc910ad5"],
+Cell[CellGroupData[{
+Cell[4152, 107, 559, 14, 60, "ObjectNameGrid",ExpressionUUID->"2b35a923-9500-4e29-bda2-319d96fc6fac"],
+Cell[4714, 123, 220, 5, 90, "Usage",ExpressionUUID->"59e6ae59-c85e-434a-97c0-b540c276a5bd",
+ CellID->1308291052]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4971, 133, 1390, 37, 36, "PrimaryExamplesSection",ExpressionUUID->"e267f6ae-a508-4369-aeb2-1586822bf99d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1235391121],
+Cell[6364, 172, 215, 4, 31, "Input",ExpressionUUID->"3d8903c2-8540-4f21-a3f8-e73ec2d1a3db",
+ CellID->866281488],
+Cell[CellGroupData[{
+Cell[6604, 180, 1368, 36, 31, "ExampleSection",ExpressionUUID->"3cfeac7d-3d0e-4919-9264-4113f77f7336",
+ CellID->1346671451],
+Cell[CellGroupData[{
+Cell[7997, 220, 190, 3, 29, "Input",ExpressionUUID->"11dd0c70-7149-4b32-84b3-d4eaa22c2796",
+ CellID->1395563408],
+Cell[8190, 225, 658, 9, 123, "Output",ExpressionUUID->"f5f05052-e8ca-4620-ab4b-87c61e792cbb",
+ CellID->836352052]
+}, Open  ]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "ExampleSection", "0"}, Closed]]]]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[9090, 243, 380, 11, 114, "SeeAlsoSection",ExpressionUUID->"188d2c50-e6d5-4919-9b22-d37cc57ebb04"],
+Cell[9473, 256, 78, 0, 24, "FooterCell",ExpressionUUID->"bd950a6b-4d0e-4cfd-bae5-2010fb5f933f"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

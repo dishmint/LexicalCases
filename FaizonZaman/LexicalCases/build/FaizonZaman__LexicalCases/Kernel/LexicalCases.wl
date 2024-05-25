@@ -59,6 +59,7 @@ LexicalPattern::usage = "LexicalPattern[patt] A wrapper for using lexical patter
 (* Format *)
 
 LexicalStructure::usage = "LexicalStructure[lp] Visualize lexical pattern structure"
+FormatLexicalPattern::usage = "FormatLexicalPattern[lp] formats lexical pattern lp for labeling"
 
 (* Services *)
 
@@ -78,17 +79,13 @@ MaxCategories::usage = "MaxCategories is an option to LexicalCases restricting t
 Begin["`Private`"]
 
 Needs["FaizonZaman`LexicalCases`Samples`"]
-
 Needs["FaizonZaman`LexicalCases`Utilities`"]
-
 Needs["FaizonZaman`LexicalCases`LexicalPattern`"]
-
 Needs["FaizonZaman`LexicalCases`Validation`"]
-
 Needs["FaizonZaman`LexicalCases`Abstractions`"]
-
 Needs["FaizonZaman`LexicalCases`Plots`"]
 
+ContainsPatternHeadsQ::usage = "ContainsPatternHeadsQ[expr] returns True if expr contains the head Pattern"
 ContainsPatternHeadsQ[se_?LexicalPatternQ] := ContainsAny[ExtractHeads[se], {Pattern}]
 
 StripNamedPattern[se_?LexicalPatternQ] := StripNames[ContainsPatternHeadsQ[se], se]
@@ -114,6 +111,8 @@ articlePluralize[_Integer?Positive] := "articles"
 
 (* Format *)
 
+FormatToken::usage = "FormatToken[lp] formats lexical pattern lp for use in LexicalStructure"
+
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args]
 
 FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>]
@@ -123,27 +122,27 @@ FormatToken[TextType[Containing[outer_, inner_]]] := TextElement[{inner}, <|"Gra
 FormatToken[TextType[types_Alternatives]] := TextElement[
 	WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]],
 	<|"GrammaticalUnit" -> "Alternatives"|>
-	]
+]
 
 FormatToken[SynonymToken[words_Alternatives]] := TextElement[
 	WrapAlternatives[Map[FormatToken][ExpandAlternativeSynonyms[words]]],
 	<|"GrammaticalUnit" -> "Alternatives"|>
-	]
+]
 
 FormatToken[OptionalToken[args__]] := TextElement[
 	Map[FormatToken][{args}],
 	<|"GrammaticalUnit" -> "Optional"|>
-	]
+]
 
 FormatToken[AnyOrder[args__]] := TextElement[
 	Map[FormatToken][{args}],
 	<|"GrammaticalUnit" -> "AnyOrder"|>
-	]
+]
 
 FormatToken[FixedOrder[args__]] := TextElement[
 	Map[FormatToken][{args}],
 	<|"GrammaticalUnit" -> "FixedOrder"|>
-	]
+]
 
 FormatToken[HoldPattern[WordToken[1]]] := TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>];
 
@@ -194,7 +193,25 @@ LexicalStructure[(Rule | RuleDelayed)[expr_?LexicalPatternQ, _]] := Enclose[
 	Construct[FormatToken, StripNamedPattern[expr]],
 	Identity,
 	"FormatToken`InvalidToken"
-	]
+]
+
+(* ------------------ Formatting LexicalPattern for Labels ------------------ *)
+(* Format TextType *)
+FormatLexicalPattern[TextType[a_String]] := ToUpperCase[a]
+FormatLexicalPattern[TextType[a_Alternatives]] := Riffle[Map[ToUpperCase][a] // Apply[List], "|"] // Row
+(* Format BoundToken *)
+FormatLexicalPattern[BoundToken[a_]] := Row[{"[", FormatLexicalPattern[a], "]"}]
+(* Format WordToken *)
+FormatLexicalPattern[WordToken[n_]] := StringTemplate["\!\(\*SubscriptBox[\(WORD\), \(``\)]\)"][n]
+FormatLexicalPattern[WordToken[n_, m_]] := StringTemplate["\!\(\*SubscriptBox[\(WORD\), \(`` - ``\)]\)"][n, m]
+(* Format OptionalToken *)
+FormatLexicalPattern[OptionalToken[a_]] := Style[Row[{"(", FormatLexicalPattern[a], ")"}], Gray]
+(* Format SynonymToken *)
+FormatLexicalPattern[SynonymToken[s_String]] := Style[StringTemplate["\!\(\*SubscriptBox[\(``\), \(syn\)]\)"][s], Darker[Blue]]
+(* Format Alternatives *)
+FormatLexicalPattern[a_Alternatives?LexicalPatternQ] := Riffle[Map[FormatLexicalPattern, a] // Apply[List], "|"] // Row
+(* Format LexicalPattern *)
+FormatLexicalPattern[lp_?LexicalPatternQ] := Map[FormatLexicalPattern, lp] // Apply[List/*Row]
 
 (* Service Utils *)
 

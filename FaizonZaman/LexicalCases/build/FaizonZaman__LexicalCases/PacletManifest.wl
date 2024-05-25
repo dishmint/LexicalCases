@@ -24,7 +24,7 @@
             ,
             "Hash"
             ->
-            "8f0760b3712afe96b1006cb13540e723f026245b05385251fadfd94f06783e53"
+            "37ee36a4f9a8e8986d1bc842c2ca1c1c16a7999a19a6b01525e0a9feaf0695ac"
                 
         |>
         ,
@@ -216,6 +216,20 @@
             "File"
             ->
             File[
+                "Documentation/English/ReferencePages/Symbols/DataJoin.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "b944fcc29c947934a1d3f71e94993217e25b28166c8eb0b49df653db7f89a3c2"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Documentation/English/ReferencePages/Symbols/ExpandPattern.nb"
                     
             ]
@@ -223,6 +237,34 @@
             "Hash"
             ->
             "fc8fd8d06a2b942e7e11f9d041f270c2071bc0854eecc2b3dfecc8deaf12e8e1"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/FormatLexicalPattern.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "6ba4191d29ffdcc89032077dd897d648228c307ddc4c4c0311c1c0af60356955"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/HideMissing.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "57c5ce10e05f0a0514f9765ce9fe69272ce4a044a9c205e278c6db6cab68139d"
                 
         |>
         ,
@@ -300,6 +342,20 @@
             "File"
             ->
             File[
+                "Documentation/English/ReferencePages/Symbols/LexicalPatternQ.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "875951f3742cfccd2c3606378d7c79740431e3d6d525bef719255c84ba076061"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Documentation/English/ReferencePages/Symbols/LexicalStructure.nb"
                     
             ]
@@ -342,6 +398,20 @@
             "File"
             ->
             File[
+                "Documentation/English/ReferencePages/Symbols/MaxCategories.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "c0fabe0b6d6f3267019a6bca725d840cdb9cae229693c07df66a1619fe9c1110"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Documentation/English/ReferencePages/Symbols/OptionalToken.nb"
                     
             ]
@@ -349,6 +419,20 @@
             "Hash"
             ->
             "42051a0836c7d4ffcf10ed478b37c31240999bd1bf832c03591962459cdfb8b4"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/StopWordQ.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "a53671e2dabd7b57490285cb289b469beeccc61a73f0f10e3adb40eda9966461"
                 
         |>
         ,
@@ -412,6 +496,20 @@
             "File"
             ->
             File[
+                "Documentation/English/ReferencePages/Symbols/$FilterableProperties.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "1b79dd5d13593e85c5c16cc3527271c5675c390271c9541acfe4d0cf766d3322"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Documentation/English/ReferencePages/Symbols/$LexicalCasesServices.nb"
                     
             ]
@@ -426,13 +524,55 @@
             "File"
             ->
             File[
+                "Documentation/English/ReferencePages/Symbols/$SampleParagraph.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "ed1f89e278e03d66fd34ffd5d4a7a7d5d4ab960798cd2db47a098a93e578280f"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/$SampleSentence.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "cb078c3aeeec5130017bf682f667d291824454cbecb190185800fd580b95bd4e"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Documentation/English/ReferencePages/Symbols/$SampleStringExpression.nb"
+                    
+            ]
+            ,
+            "Hash"
+            ->
+            "41e6b78413bee1d276d920e6feb96732ed3ad863a28adcf88bb789a4e932d869"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
                 "Documentation/English/Tutorials/LexicalCasesOverview.nb"
                     
             ]
             ,
             "Hash"
             ->
-            "235de28e132fb07ec0878ea3d3b5d0bcdbbc10597e479d42784ebcf6c6725bc2"
+            "2375be6562454f631ab42d807676e872a8ff9d0a2d0441223d6fcde2c5cbe17d"
                 
         |>
     }
