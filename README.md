@@ -17,7 +17,7 @@ Search strings, files or wikipedia articles for a lexical pattern.
 
 ```Mathematica
 oosp = ExampleData[{"Text", "OriginOfSpecies"}];
-oospPattern = Sandwich[WordToken[2], BoundToken["specie"|"species"]];
+oospPattern = BoundToken[WordToken[2], BoundToken["specie"|"species"]];
 
 oospResults = LexicalCases[oosp, oospPattern]
 ```
