@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "1.8.0",
+    "Version" -> "2.0.0",
     "WolframVersion" -> "14.0+",
     "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {
@@ -40,8 +40,8 @@ PacletObject[
           "FaizonZaman`LexicalCases`OptionalToken",
           "FaizonZaman`LexicalCases`StopWordQ",
           "FaizonZaman`LexicalCases`SynonymToken",
-          "FaizonZaman`LexicalCases`TextType",
           "FaizonZaman`LexicalCases`ToLexicalPattern",
+          "FaizonZaman`LexicalCases`TypeToken",
           "FaizonZaman`LexicalCases`WordToken"
         }
       },

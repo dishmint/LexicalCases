@@ -2,20 +2,20 @@ BeginTestSection["Utilities"]
 (* ExtractHeads *)
 
 TestCreate[
-    FaizonZaman`LexicalCases`Utilities`ExtractHeads[TextType["Adverb"] ~~ TextType["Adjective"] ~~ BoundToken["specie" | "species"]],
-    {TextType, TextType, Alternatives, BoundToken, StringExpression},
+    FaizonZaman`LexicalCases`Utilities`ExtractHeads[TypeToken["Adverb"] ~~ TypeToken["Adjective"] ~~ BoundToken["specie" | "species"]],
+    {TypeToken, TypeToken, Alternatives, BoundToken, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test1"
 ]
 
 TestCreate[
-    FaizonZaman`LexicalCases`Utilities`ExtractHeads[TextType["Adjective" | "Determiner"] ~~ "screen"],
-    {Alternatives, TextType, StringExpression},
+    FaizonZaman`LexicalCases`Utilities`ExtractHeads[TypeToken["Adjective" | "Determiner"] ~~ "screen"],
+    {Alternatives, TypeToken, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test2"
 ]
 
 TestCreate[
     FaizonZaman`LexicalCases`Utilities`ExtractHeads[$SampleStringExpression],
-    {TextType, StringExpression},
+    {TypeToken, StringExpression},
     "TestID" -> "Utilities-ExtractHeads-Test3"
 ]
 
@@ -118,7 +118,7 @@ TestCreate[
 (* ExpandPattern *)
 
 TestCreate[
-	ExpandPattern[$SampleParagraph, BoundToken[TextType["Adjective" | "Noun"], " computer "]],
+	ExpandPattern[$SampleParagraph, BoundToken[TypeToken["Adjective" | "Noun"], " computer "]],
 	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
     WordBoundary) | (WordBoundary ~~ 
     "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
@@ -134,13 +134,13 @@ TestCreate[
 ]
 
 TestCreate[
-	ExpandPattern["this is the best music ever.", TextType["Adjective"] ~~ " music"],
+	ExpandPattern["this is the best music ever.", TypeToken["Adjective"] ~~ " music"],
 	WordBoundary ~~ Alternatives["best"] ~~ WordBoundary ~~ " music",
     "TestID" -> "Utilities-ExpandPattern-Test2"
 ]
 
 TestCreate[
-	ExpandPattern["to be.", WordToken[1] ~~ TextType["Verb"]],
+	ExpandPattern["to be.", WordToken[1] ~~ TypeToken["Verb"]],
 	WordBoundary ~~ WordCharacter.. ~~ WordBoundary ~~ " " ~~ WordBoundary ~~ Alternatives["be"] ~~ WordBoundary,
     "TestID" -> "Utilities-ExpandPattern-Test3"
 ]
@@ -148,25 +148,25 @@ TestCreate[
 (* LexicalPattern *)
 
 TestCreate[
-	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
+	StringCases[$SampleParagraph, LexicalPattern[TypeToken["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test1"
 ]
 
 TestCreate[
-	StringCases[$SampleParagraph, LexicalPattern[TextType["Adjective" | "Determiner"] ~~ " screen"]],
+	StringCases[$SampleParagraph, LexicalPattern[TypeToken["Adjective" | "Determiner"] ~~ " screen"]],
 	{"blank screen", "blank screen", "the screen"},
     "TestID" -> "Utilities-LexicalPattern-Test2"
 ]
 
 TestCreate[
-	StringPosition[$SampleParagraph, LexicalPattern[TextType["Determiner"] ~~ TextType["Adjective"] ~~ " screen " ~~ TextType["Preposition" | "Verb"]]],
+	StringPosition[$SampleParagraph, LexicalPattern[TypeToken["Determiner"] ~~ TypeToken["Adjective"] ~~ " screen " ~~ TypeToken["Preposition" | "Verb"]]],
 	{{144, 160}, {176, 201}},
     "TestID" -> "Utilities-LexicalPattern-Test3"
 ]
 
 TestCreate[
-	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]]],
+	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"]]],
 	True,
     "TestID" -> "Utilities-LexicalPattern-Test4"
 ]

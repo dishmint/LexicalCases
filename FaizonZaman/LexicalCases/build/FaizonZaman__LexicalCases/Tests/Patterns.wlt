@@ -32,29 +32,29 @@ TestCreate[
 (* OptionalToken *)
 
 TestCreate[
-	OptionalToken[TextType["Adjective"]],
-	OptionalToken[TextType["Adjective"]],
+	OptionalToken[TypeToken["Adjective"]],
+	OptionalToken[TypeToken["Adjective"]],
     "TestID" -> "OptionalToken-Test1"
 ]
 
 TestCreate[
-	OptionalToken[adjective : TextType["Adjective"] ~~ "sentence"],
-	OptionalToken[adjective : TextType["Adjective"] ~~ "sentence"],
+	OptionalToken[adjective : TypeToken["Adjective"] ~~ "sentence"],
+	OptionalToken[adjective : TypeToken["Adjective"] ~~ "sentence"],
     "TestID" -> "OptionalToken-Test2"
 ]
 
-(* TextType *)
+(* TypeToken *)
 
 TestCreate[
-	TextType["Adjective"],
-	TextType["Adjective"],
-    "TestID" -> "TextType-Test1"
+	TypeToken["Adjective"],
+	TypeToken["Adjective"],
+    "TestID" -> "TypeToken-Test1"
 ]
 
 TestCreate[
-	TextType["Adjective"|"Noun"],
-	TextType["Adjective"|"Noun"],
-    "TestID" -> "TextType-Test2"
+	TypeToken["Adjective"|"Noun"],
+	TypeToken["Adjective"|"Noun"],
+    "TestID" -> "TypeToken-Test2"
 ]
 
 (* SynonymToken *)
@@ -74,8 +74,8 @@ TestCreate[
 (* LexicalPattern *)
 
 TestCreate[
-	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
-	LexicalPattern["Alice " ~~ TextType["Verb"] ~~ TextType["Adverb"]],
+	LexicalPattern["Alice " ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"]],
+	LexicalPattern["Alice " ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"]],
     "TestID" -> "LexicalPattern-Test1"
 ]
 
@@ -88,7 +88,7 @@ TestCreate[
 ]
 
 TestCreate[
-	ExpandPattern["nice computer big", BoundToken[TextType["Adjective"|"Noun"]," computer "]],
+	ExpandPattern["nice computer big", BoundToken[TypeToken["Adjective"|"Noun"]," computer "]],
 	 (WordBoundary~~"nice"|"big"~~WordBoundary)|(WordBoundary~~Alternatives["computer"]~~WordBoundary)~~ " computer " ~~(WordBoundary~~"nice"|"big"~~WordBoundary)|(WordBoundary~~Alternatives["computer"]~~WordBoundary),
 	"TestID" -> "ExpandPattern-BoundToken-Test2"
 ]

@@ -1,7 +1,7 @@
 BeginTestSection["LexicalStructure"]
 (* LexicalStructure *)
 TestCreate[
-	LexicalStructure[StringExpression["computer" | "computers", TextType["Verb"]]],
+	LexicalStructure[StringExpression["computer" | "computers", TypeToken["Verb"]]],
 	TextElement[
 		List[
 			TextElement[
@@ -10,7 +10,7 @@ TestCreate[
 					],
 				Association[Rule["GrammaticalUnit","Alternatives"]]
 				],
-			TextElement[List["Verb"],Association[Rule["GrammaticalUnit","TextType"]]]
+			TextElement[List["Verb"],Association[Rule["GrammaticalUnit","TypeToken"]]]
 			],
 		Association[Rule["GrammaticalUnit","StringExpression"]]
 	]

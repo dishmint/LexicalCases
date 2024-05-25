@@ -114,25 +114,25 @@ TestCreate[
 	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test2"
 	]
 
-(* Documentation examples - TextType *)
+(* Documentation examples - TypeToken *)
 TestCreate[
-	LexicalCases[$SampleParagraph, adjective : TextType["Adjective"] ~~ " screen" :> adjective]["Data"],
+	LexicalCases[$SampleParagraph, adjective : TypeToken["Adjective"] ~~ " screen" :> adjective]["Data"],
 	{<|"Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>},
-	"TestID" -> "LexicalCases-DocExamples-TextType-Test1"
+	"TestID" -> "LexicalCases-DocExamples-TypeToken-Test1"
 	]
 
 TestCreate[
-	LexicalCases[$SampleParagraph, adjectiveOrDeterminer : TextType["Adjective" | "Determiner"] ~~ " screen" :> adjectiveOrDeterminer]["Data"],
+	LexicalCases[$SampleParagraph, adjectiveOrDeterminer : TypeToken["Adjective" | "Determiner"] ~~ " screen" :> adjectiveOrDeterminer]["Data"],
 	{
 		<|"Match" -> "blank", "Position" -> {{146, 157}, {181, 192}}|>,
 		<|"Match" -> "the", "Position" -> {{485, 494}}|>
 		},
-	"TestID" -> "LexicalCases-DocExamples-TextType-Test2"
+	"TestID" -> "LexicalCases-DocExamples-TypeToken-Test2"
 	]
 
 (* Documentation examples - SynonymToken *)
 TestCreate[
-	LexicalCases["cool person. nice mortal. great soul.", TextType["Adjective"] ~~ " " ~~ SynonymToken["person"]]["Data"],
+	LexicalCases["cool person. nice mortal. great soul.", TypeToken["Adjective"] ~~ " " ~~ SynonymToken["person"]]["Data"],
 	{
 		<|"Match" -> "cool person", "Position" -> {{1, 11}}|>,
 		<|"Match" -> "nice mortal", "Position" -> {{14, 24}}|>,

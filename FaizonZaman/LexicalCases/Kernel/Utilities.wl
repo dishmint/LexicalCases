@@ -91,7 +91,7 @@ DualSubsetMap[f1_, f2_, list_, pos_] := Module[
 FaizonZaman`LexicalCases`ToLexicalPattern[string_String]:= FaizonZaman`LexicalCases`ToLexicalPattern[string] = Block[
 	{structure, components},
 	structure = Normal@TextStructure[string, "PartsOfSpeech"];
-	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> FaizonZaman`LexicalCases`TextType[gu], Infinity];
+	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> FaizonZaman`LexicalCases`TypeToken[gu], Infinity];
 	StringExpression @@ components
   ]
 
@@ -104,7 +104,7 @@ FaizonZaman`LexicalCases`ToLexicalPattern[string_String, pos_List]:= FaizonZaman
   components = Cases[structure, TextElement[s_String, {"GrammaticalUnit" -> e : Entity["GrammaticalUnit", _]}] :> {s -> e["TagName"]}, Infinity];
   keypos = Position[components, Alternatives @@ Cases[pos, _String]] // Extract[{All, 1}];
   newpos = Union[Cases[pos, _Integer]~Join~keypos];
-  mapped =  DualSubsetMap[First/*Keys, First/*Values/*FaizonZaman`LexicalCases`TextType, components, newpos];
+  mapped =  DualSubsetMap[First/*Keys, First/*Values/*FaizonZaman`LexicalCases`TypeToken, components, newpos];
   StringExpression@@mapped
   ]
 
