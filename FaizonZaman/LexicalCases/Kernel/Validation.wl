@@ -2,11 +2,11 @@ BeginPackage["FaizonZaman`LexicalCases`Validation`"]
 
 Begin["`Private`"]
 
-$ValidLexicalTokens = (_FaizonZaman`LexicalCases`TextType|_FaizonZaman`LexicalCases`OptionalToken|_FaizonZaman`LexicalCases`BoundToken|_FaizonZaman`LexicalCases`WordToken|_FaizonZaman`LexicalCases`SynonymToken)
+$ValidLexicalTokens = (_FaizonZaman`LexicalCases`TypeToken|_FaizonZaman`LexicalCases`OptionalToken|_FaizonZaman`LexicalCases`BoundToken|_FaizonZaman`LexicalCases`WordToken|_FaizonZaman`LexicalCases`SynonymToken)
 extractLexicalTokens[expr_] := Cases[expr, $ValidLexicalTokens, {0, Infinity}];
 
-ValidateLexicalToken[FaizonZaman`LexicalCases`TextType[_String]] = True
-ValidateLexicalToken[FaizonZaman`LexicalCases`TextType[a_Alternatives]] := AllTrue[StringQ][List @@ a]
+ValidateLexicalToken[FaizonZaman`LexicalCases`TypeToken[_String]] = True
+ValidateLexicalToken[FaizonZaman`LexicalCases`TypeToken[a_Alternatives]] := AllTrue[StringQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[a_Alternatives]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][List @@ a]
 ValidateLexicalToken[FaizonZaman`LexicalCases`OptionalToken[opt_]] := FaizonZaman`LexicalCases`LexicalPatternQ[opt]
 ValidateLexicalToken[FaizonZaman`LexicalCases`BoundToken[a_Alternatives]] := AllTrue[FaizonZaman`LexicalCases`LexicalPatternQ][List @@ a]

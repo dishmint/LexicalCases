@@ -11,7 +11,7 @@ TestCreate[
 
 (* LexicalPatternQ unvalued symbols *)
 TestCreate[
-	FailureQ[LexicalPatternQ["Alice" ~~ xxx ~~ TextType["Adverb"]]],
+	FailureQ[LexicalPatternQ["Alice" ~~ xxx ~~ TypeToken["Adverb"]]],
 	True,
 	"TestID" -> "LexicalPatternQ-UnvaluedSymbols-Test1"
 ]
@@ -105,7 +105,7 @@ TestCreate[
 
 (* OptionalToken *)
 TestCreate[
-	LexicalPatternQ["this is a" ~~ OptionalToken[TextType["Adjective"]] ~~ "string"],
+	LexicalPatternQ["this is a" ~~ OptionalToken[TypeToken["Adjective"]] ~~ "string"],
     "TestID" -> "LexicalPatternQ-OptionalToken-Test1"
 ]
 
@@ -115,7 +115,7 @@ TestCreate[
 ]
 
 TestCreate[
-	LexicalPatternQ["this" ~~ OptionalToken[WordToken[1] ~~ TextType["Adjective"]] ~~ "place"],
+	LexicalPatternQ["this" ~~ OptionalToken[WordToken[1] ~~ TypeToken["Adjective"]] ~~ "place"],
     "TestID" -> "LexicalPatternQ-OptionalToken-Test3"
 ]
 
@@ -125,10 +125,10 @@ TestCreate[
     "TestID" -> "LexicalPatternQ-BoundToken-Test1"
 ]
 
-(* TextType *)
+(* TypeToken *)
 TestCreate[
-	LexicalPatternQ[adjective : TextType["Adjective"] ~~ "sentence" :> adjective],
-    "TestID" -> "LexicalPatternQ-TextType-Test1"
+	LexicalPatternQ[adjective : TypeToken["Adjective"] ~~ "sentence" :> adjective],
+    "TestID" -> "LexicalPatternQ-TypeToken-Test1"
 ]
 
 (* SynonymToken *)

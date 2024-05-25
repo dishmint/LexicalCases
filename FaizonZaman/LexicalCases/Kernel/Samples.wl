@@ -13,7 +13,7 @@ BeginPackage["FaizonZaman`LexicalCases`Samples`"]
 Begin["`Private`"]
 
 (* Samples *)
-FaizonZaman`LexicalCases`$SampleStringExpression = StringExpression[FaizonZaman`LexicalCases`TextType["Adjective"], " key lime pie"];
+FaizonZaman`LexicalCases`$SampleStringExpression = StringExpression[FaizonZaman`LexicalCases`TypeToken["Adjective"], " key lime pie"];
 (* From https://randomwordgenerator.com/sentence.php *)
 FaizonZaman`LexicalCases`$SampleSentence = "The best key lime pie is still up for debate."
 (* From https://randomwordgenerator.com/paragraph.php *)

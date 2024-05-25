@@ -42,7 +42,7 @@ StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
 $FilterableProperties::usage = "List of filterable summary properties"
 (* Patterns *)
 
-TextType::usage = "TextType[type] a symbolic wrapper for TextContentTypes"
+TypeToken::usage = "TypeToken[type] a symbolic wrapper for TextContentTypes"
 
 OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\"."
 
@@ -115,12 +115,12 @@ FormatToken::usage = "FormatToken[lp] formats lexical pattern lp for use in Lexi
 
 FormatToken[StringExpression[args___]] := FormatToken[StringExpression, args]
 
-FormatToken[TextType[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TextType"|>]
+FormatToken[TypeToken[type_String]] := TextElement[{type}, <|"GrammaticalUnit" -> "TypeToken"|>]
 
-FormatToken[TextType[Containing[outer_, inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>]
+FormatToken[TypeToken[Containing[outer_, inner_]]] := TextElement[{inner}, <|"GrammaticalUnit" -> outer|>]
 
-FormatToken[TextType[types_Alternatives]] := TextElement[
-	WrapAlternatives[Map[FormatToken][ExpandAlternativeTextTypes[types]]],
+FormatToken[TypeToken[types_Alternatives]] := TextElement[
+	WrapAlternatives[Map[FormatToken][ExpandAlternativeTypeTokens[types]]],
 	<|"GrammaticalUnit" -> "Alternatives"|>
 ]
 
@@ -177,7 +177,7 @@ FormatToken[h : Except[_Blank | _BlankSequence | _BlankNullSequence | _Words]] :
 		FormatToken[head, arg]
 	]
 
-FormatToken[TextType, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TextType"|>];
+FormatToken[TypeToken, s_String] := TextElement[s, <|"GrammaticalUnit" -> "TypeToken"|>];
 
 FormatToken[t_, $Failed] := Enclose[Confirm[$Failed, Message[FormatToken::nvld, t], "InvalidToken"]]
 
@@ -196,9 +196,9 @@ LexicalStructure[(Rule | RuleDelayed)[expr_?LexicalPatternQ, _]] := Enclose[
 ]
 
 (* ------------------ Formatting LexicalPattern for Labels ------------------ *)
-(* Format TextType *)
-FormatLexicalPattern[TextType[a_String]] := ToUpperCase[a]
-FormatLexicalPattern[TextType[a_Alternatives]] := Riffle[Map[ToUpperCase][a] // Apply[List], "|"] // Row
+(* Format TypeToken *)
+FormatLexicalPattern[TypeToken[a_String]] := ToUpperCase[a]
+FormatLexicalPattern[TypeToken[a_Alternatives]] := Riffle[Map[ToUpperCase][a] // Apply[List], "|"] // Row
 (* Format BoundToken *)
 FormatLexicalPattern[BoundToken[a_]] := Row[{"[", FormatLexicalPattern[a], "]"}]
 (* Format WordToken *)
@@ -224,7 +224,7 @@ ArticleSearchIndicator[service_String, query_] :=
 
 (* Patterns *)
 
-ExpandAlternativeTextTypes[alts_Alternatives] := (Apply[Alternatives] @* Map[TextType] @* Apply[List])[alts]
+ExpandAlternativeTypeTokens[alts_Alternatives] := (Apply[Alternatives] @* Map[TypeToken] @* Apply[List])[alts]
 ExpandAlternativeSynonyms[alts_Alternatives] := (Apply[Alternatives] @* Map[SynonymToken] @* Apply[List])[alts]
 
 BoundedToken[outer_, inner_] := outer ~~ inner ~~ outer
@@ -246,8 +246,8 @@ iWrapSpace[tk_, StartOfString] := (tk ~~ " ")
 iWrapSpace[tk_, EndOfString] := (" " ~~ tk)
 iWrapSpace[tk_, ContainsOnly] := tk
 
-ExpandToken[tok_TextType, position_ : String, content_] := iExpandToken[tok, position, content]
-ExpandToken[utok:unpatterned[name_, tok_TextType], position_ : String, content_] := iExpandToken[utok, position, content]
+ExpandToken[tok_TypeToken, position_ : String, content_] := iExpandToken[tok, position, content]
+ExpandToken[utok:unpatterned[name_, tok_TypeToken], position_ : String, content_] := iExpandToken[utok, position, content]
 ExpandToken[tok_, position_ : String] := iExpandToken[tok, position]
 ExpandToken[utok:unpatterned[name_, tok_], position_ : String] := iExpandToken[utok, position]
 $UOpt[ot_] := ot /. (OptionalToken[alt_] :> alt)
@@ -281,11 +281,11 @@ iExpandWord[word:$UnpatternPattern[_], StartOfString] := (word ~~ " ")
 iExpandWord[word:$UnpatternPattern[_], EndOfString] := (" " ~~ word)
 iExpandWord[word:$UnpatternPattern[_], ContainsOnly] := word
 
-MassTextType[ca_Association][expr_] := MassTextType[expr, ca]
-MassTextType[expr_, ca_]:= With[
-	{t = Replace[expr, TextType[alts_Alternatives] :> ExpandAlternativeTextTypes[alts], {0, Infinity}]},
+MassTypeToken[ca_Association][expr_] := MassTypeToken[expr, ca]
+MassTypeToken[expr_, ca_]:= With[
+	{t = Replace[expr, TypeToken[alts_Alternatives] :> ExpandAlternativeTypeTokens[alts], {0, Infinity}]},
 	FixedPoint[
-		Replace[#, TextType[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&,
+		Replace[#, TypeToken[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&,
 		t
 		]
 	]
@@ -329,7 +329,7 @@ $SynonymTokenRules = {
 
 MassSynonymToken[expr_] := expr /. $SynonymTokenRules
 
-MassTokens[content_Association] := (MassSynonymToken@*MassWordToken@*MassTextType[content])
+MassTokens[content_Association] := (MassSynonymToken@*MassWordToken@*MassTypeToken[content])
 
 StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, after]
 MiddleContext[content_][before__, a:anchor[seq__], after__] := MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
@@ -349,22 +349,22 @@ $LPS = LexicalPatternDelimiter["Start"]
 $LPE = LexicalPatternDelimiter["End"]
 ReformTokens[expr_, content_] /; ContainsPatternHeadsQ[expr] := ReformTokens[Unpattern[expr], content] // Repattern // TokenPostProcess
 ReformTokens[expr_, content_] := FixedPoint[iReformToken[#, content]&, expr] // TokenPostProcess
-iReformToken[expr_, content_] /; Not@*FreeQ[TextType|WordToken|OptionalToken|BoundToken|SynonymToken]@expr := 
+iReformToken[expr_, content_] /; Not@*FreeQ[TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken]@expr := 
 	With[
 		{list = {$LPS, Splice@StringExpressionToList@expr, $LPE}},
 		SequenceReplace[
 			list,
 			{
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
 					StartContext[content][anchor[seq], after],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
 					EndContext[content][before, anchor[seq]],
 				
-				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
+				{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
 					MiddleContext[content][before, anchor[seq], after],
 
-				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TextType|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
+				{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
 					SingletonContext[content][anchor[seq]]
 			}
 		] // First // DeleteCases[$LPS|$LPE]
@@ -386,14 +386,14 @@ iExpandPattern[se_?LexicalPatternQ] :=
 	iExpand[se]
 
 ExtractStringContentTypes[se_] :=
-	Splice[Cases[se, TextType[type_String] :> type, {0, Infinity}]];
+	Splice[Cases[se, TypeToken[type_String] :> type, {0, Infinity}]];
 
 ExtractAlternativeContentTypes[se_] :=
-	Splice[Cases[se, TextType[type_Alternatives] :> Splice[List @@ type],
+	Splice[Cases[se, TypeToken[type_Alternatives] :> Splice[List @@ type],
 		 {0, Infinity}]];
 
 ExtractContainingContentTypes[se_] :=
-	Splice[Cases[se, TextType[type_Containing] :> type, {0, Infinity}]];
+	Splice[Cases[se, TypeToken[type_Containing] :> type, {0, Infinity}]];
 
 ExtractContentTypes[se_] :=
 	Through[{ExtractStringContentTypes, ExtractContainingContentTypes, ExtractAlternativeContentTypes}[se]]
@@ -450,7 +450,7 @@ WikipediaSearchQuery[wsq : List[List[__String]], _] := Flatten[wsq]
 
 WikipediaSearchQuery[wsq_List, _] := Cases[List[(_List | _String)..]][wsq] // Map[StringRiffle]
 
-twsqErrorInfo[expr_TextType] := StringForm["TextType's do not produce keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
+twsqErrorInfo[expr_TypeToken] := StringForm["TypeToken's do not produce keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
 
 twsqErrorInfo[expr_] := StringForm["`` did not produce any keywords. A lexical pattern with one or more word/phrase strings in it should work", expr]
 
@@ -470,10 +470,10 @@ iToWikipediaSearchQuery[Rule[lp_, _]] :=
 iToWikipediaSearchQuery[RuleDelayed[lp_, _]] :=
 	iToWikipediaSearchQuery[StripNamedPattern[lp]]
 
-iToWikipediaSearchQuery[lp : Except[_TextType | _WordToken]] :=
+iToWikipediaSearchQuery[lp : Except[_TypeToken | _WordToken]] :=
 	Enclose[
 		Module[{clp, wsq},
-			clp = Cases[List @@ lp, (h : Except[TextType | WordToken])[args__] :> Cases[{args}, _String, {0, Infinity}]];
+			clp = Cases[List @@ lp, (h : Except[TypeToken | WordToken])[args__] :> Cases[{args}, _String, {0, Infinity}]];
 			wsq = Confirm[WikipediaSearchQuery[clp, lp]];
 			
 			wsq // StringReplace[(" "..) -> " "] // StringTrim

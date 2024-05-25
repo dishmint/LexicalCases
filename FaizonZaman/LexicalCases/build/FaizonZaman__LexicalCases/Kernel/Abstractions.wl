@@ -25,8 +25,8 @@ FaizonZaman`LexicalCases`LexigramCount[lexicalPattern_?FaizonZaman`LexicalCases`
     ReplaceAll[
         lexicalPattern,
         {
-        t : FaizonZaman`LexicalCases`TextType[_String] :> 1,
-        FaizonZaman`LexicalCases`TextType[a_Alternatives] :> Length[a],
+        t : FaizonZaman`LexicalCases`TypeToken[_String] :> 1,
+        FaizonZaman`LexicalCases`TypeToken[a_Alternatives] :> Length[a],
         FaizonZaman`LexicalCases`OptionalToken[args_] :> Interval[{0, FaizonZaman`LexicalCases`LexigramCount[args] // optmax}],
         FaizonZaman`LexicalCases`BoundToken[args_] :> FaizonZaman`LexicalCases`LexigramCount[args],
         FaizonZaman`LexicalCases`BoundToken[a_Alternatives] :> FaizonZaman`LexicalCases`LexigramCount[a],
