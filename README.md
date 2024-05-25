@@ -33,7 +33,7 @@ There's support for most text content types. In this example I've used parts-of-
 
 ```Mathematica
 alice = ExampleData[{"Text", "AliceInWonderland"}];
-alicePattern = "Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"];
+alicePattern = "Alice" ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"];
 
 aliceResults = LexicalCases[alice, alicePattern]
 ```
@@ -46,7 +46,7 @@ Use lexical patterns in `StringCases`, `StringPosition` and `StringmatchQ` by wr
 
 Use LexicalPattern in operator forms of string functions.
 ```Mathematica
-aliceOp = StringCases[LexicalPattern["Alice" ~~ TextType["Verb"] ~~ TextType["Adverb"]]];
+aliceOp = StringCases[LexicalPattern["Alice" ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"]]];
 ```
 
 ---
