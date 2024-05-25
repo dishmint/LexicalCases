@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Faizon Zaman",
     "License" -> "MIT",
     "PublisherID" -> "FaizonZaman",
-    "Version" -> "2.0.1",
+    "Version" -> "2.0.2",
     "WolframVersion" -> "14.0+",
     "PrimaryContext" -> "FaizonZaman`LexicalCases`",
     "Extensions" -> {

@@ -72,8 +72,8 @@
    "FileHash" -> "g8OWf+o4oo6XpJl3lUiTdrpQmElAdA+SX10WoyMvCEM="|>, 
  "English/ReferencePages/Symbols/LexicalDispersionSmoothHistogram.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[2.457257, "Seconds"]|>], 
-   "FileHash" -> "KfBtCDHRhwLt17nY0Hbd5D9RK/qmVqL2WXgfVuWrqcQ="|>, 
+      "Time" -> Quantity[2.7871, "Seconds"]|>], 
+   "FileHash" -> "4351Pw+YQphKKe8DRhwvCnE9dV7cs6msOsPk2DqBcLk="|>, 
  "English/ReferencePages/Symbols/SynonymToken.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
       "Time" -> Quantity[0.84404, "Seconds"]|>], 
