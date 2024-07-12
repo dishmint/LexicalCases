@@ -72,6 +72,7 @@ plot["MatrixPlot", text_String, tokenevents_Association, ielm_, opts:OptionsPatt
 		length = StringLength[text],
 		rowindex, spardat, sparr, ticks
 		},
+	
 	rowindex = AssociationThread[ielm -> Range[Length[ielm]]];
 	spardat = tokenevents // KeyValueMap[Thread[Thread[{rowindex[#1], #2}] -> 1] &] /* Flatten;
 	sparr = SparseArray[spardat, {Length[ielm], length}];

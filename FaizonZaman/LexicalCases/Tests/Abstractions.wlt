@@ -4,19 +4,19 @@ BeginTestSection["Abstractions"]
 
 (* LexicalMap *)
 TestCreate[
-	LexicalMap[ToUpperCase,"This is cool", TypeToken["Adjective"|"Verb"]],
+	LexicalMap[ToUpperCase,"This is cool", BoundToken[TypeToken["Adjective"|"Verb"]]],
 	"This IS COOL",
 	"TestID" -> "LexicalMapTest1"
 ]
 
 TestCreate[
-	LexicalMap[StringReverse/*ToUpperCase, "This is cool", TypeToken["Adjective" | "Verb"]],
+	LexicalMap[StringReverse/*ToUpperCase, "This is cool", BoundToken[TypeToken["Adjective" | "Verb"]]],
 	"This SI LOOC",
 	"TestID" -> "LexicalMapTest2"
 ]
 
 TestCreate[
-	LexicalMap["**" <> # <> "**" &, "This is cool", TypeToken["Adjective" | "Verb"]],
+	LexicalMap["**" <> # <> "**" &, "This is cool", BoundToken[TypeToken["Adjective" | "Verb"]]],
 	"This **is** **cool**",
 	"TestID" -> "LexicalMapTest3"
 ]

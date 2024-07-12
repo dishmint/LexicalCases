@@ -88,25 +88,78 @@ DualSubsetMap[f1_, f2_, list_, pos_] := Module[
   SubsetMap[Map[f2], l1, apos]
   ]
 
-FaizonZaman`LexicalCases`ToLexicalPattern[string_String]:= FaizonZaman`LexicalCases`ToLexicalPattern[string] = Block[
-	{structure, components},
-	structure = Normal@TextStructure[string, "PartsOfSpeech"];
-	components = Cases[structure, _[_String, {"GrammaticalUnit" -> Entity["GrammaticalUnit", gu_]}] :> FaizonZaman`LexicalCases`TypeToken[gu], Infinity];
-	StringExpression @@ components
+riffleStringAndTypeToken[patt_] := FixedPoint[
+	SequenceReplace[#, 
+		{before_FaizonZaman`LexicalCases`TypeToken, s_String, after_FaizonZaman`LexicalCases`TypeToken} :> 
+			Splice[{before, " ", s, " ", after}]
+	] &,
+	patt
+]
+
+riffleStrings[patt_] := FixedPoint[
+	SequenceReplace[patt, 
+	{before : Except[" "], s_String, after : Except[" "]} :> 
+		Splice[Riffle[{before, s, after}, " "]]
+	]&,
+	patt
+]
+
+riffleTypes[patt_] := FixedPoint[
+	SequenceReplace[#,
+		{types__FaizonZaman`LexicalCases`TypeToken} :> 
+			Splice[Riffle[{types}, " "]]
+    ] &,
+	patt
+]
+
+
+iToLexicalPattern[structure_, string_, None] := 
+	StringExpression @@ ReplaceTokens[structure, string, All]
+iToLexicalPattern[structure_, string_, spec_List] := 
+	StringExpression @@ ReplaceTokens[structure, string, spec]
+
+IndexTokens[s_String] := Block[
+	{splits = StringSplit[s, {" " -> " ", p : PunctuationCharacter :> p}]},
+	splits //= PositionIndex/*KeyValueMap[Splice[Thread[#2 -> #1]] &]/*KeySort
   ]
 
-FaizonZaman`LexicalCases`ToLexicalPattern[string_String, pos_List]:= FaizonZaman`LexicalCases`ToLexicalPattern[string, pos] = Block[
-  {
-   structure = Normal[TextStructure[string, "PartsOfSpeech"]],
-   components,
-   keypos, newpos, mapped
-   },
-  components = Cases[structure, TextElement[s_String, {"GrammaticalUnit" -> e : Entity["GrammaticalUnit", _]}] :> {s -> e["TagName"]}, Infinity];
-  keypos = Position[components, Alternatives @@ Cases[pos, _String]] // Extract[{All, 1}];
-  newpos = Union[Cases[pos, _Integer]~Join~keypos];
-  mapped =  DualSubsetMap[First/*Keys, First/*Values/*FaizonZaman`LexicalCases`TypeToken, components, newpos];
-  StringExpression@@mapped
-  ]
+FaizonZaman`LexicalCases`ToLexicalPattern[string_String, preservationSpec_ : None] :=
+	With[
+		{structure = Normal[TextStructure[string, "PartsOfSpeech"]]},
+
+		Block[
+			{
+				indexed = IndexTokens[string],
+				rules = 
+					Cases[
+						structure, 
+						TextElement[str_String, {"GrammaticalUnit" -> e : Entity["GrammaticalUnit", _]}] :>
+							{str -> FaizonZaman`LexicalCases`TypeToken[StringDelete[e["TagName"], " "]]},
+						Infinity
+					] // Flatten
+			},
+
+			iToLexicalPattern[rules, indexed, preservationSpec]
+		]
+]
+
+ReplaceTokens[struct_, indexed_Association, All] := indexed // ReplaceAll[struct]
+
+TokenPattern[token_String] := FaizonZaman`LexicalCases`TypeToken[token]
+TokenPattern[{token_String}] := FaizonZaman`LexicalCases`TypeToken[token]
+TokenPattern[tokens_List] := FaizonZaman`LexicalCases`TypeToken[Alternatives @@ tokens]
+
+ClearAll[replace]
+replace[True, s_String, _] := s;
+replace[False, " ", _] = " ";
+replace[False, s_String, rules_] := s /. rules;
+
+ReplaceTokens[struct_, indexed_Association, spec_List] := Block[
+	{intpos, typepos},
+	{intpos, typepos} = Lookup[{True,False}]@Merge[{GroupBy[spec, IntegerQ], <|True -> {}, False -> {}|>}, Flatten];
+
+	indexed // KeyValueMap[replace[ MemberQ[#1][intpos] \[Or] MemberQ[ReplaceAll[struct]/*ReplaceAll[" "->{{}}]/*First@#2][typepos], #2, struct ]&]
+]
 
 
 StringExpressionToList[expr_StringExpression] := Replace[expr, StringExpression[args___] :> List[args], {0, Infinity}]

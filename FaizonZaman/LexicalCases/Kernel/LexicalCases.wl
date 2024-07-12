@@ -13,9 +13,7 @@ BeginPackage["FaizonZaman`LexicalCases`"]
 (* Main *)
 
 LexicalCases::usage = "LexicalCases[source, lp] extract cases of LexicalPattern lp from Text source."
-
 LexicalPatternQ::usage = "LexicalPatternQ[expr] returns True if expr is a valid lexical pattern."
-
 ToLexicalPattern::usage = "ToLexicalPattern[s] converts string s to a lexical pattern."
 
 (* Abstractions *)
@@ -26,34 +24,24 @@ LexigramCount::usage = "LexigramCount[lp] returns the number of lexigrams in the
 (* Samples *)
 
 $SampleSentence::usage = "A short example string."
-
 $SampleParagraph::usage = "A long example string."
-
 $SampleStringExpression::usage = "A sample pattern used for testing."
 
 (* Summary *)
 
 LexicalSummary::usage = "A summary of LexicalCases results. Run LexicalSummary[<>][\"Properties\"] for a list or properties"
-
 CountSummaryLowercase::usage = "CountSummaryLowercase[ds] lowercase matches in ds and merge rows with the same match."
-
 StopWordQ::usage = "StopWordQ[s] returns True if s is a stop word."
-
 $FilterableProperties::usage = "List of filterable summary properties"
+
 (* Patterns *)
 
 TypeToken::usage = "TypeToken[type] a symbolic wrapper for TextContentTypes"
-
 OptionalToken::usage = "OptionalToken[lp] matches the lexical pattern lp, whitespace \" \", or an empty string \"\"."
-
 BoundToken::usage = "BoundToken[lp] represents a bounded form of the lexical pattern lp\nBounded[lp1|\[Ellipsis]|lpi] represents a bounded form of the alternatives lpi.\nBoundToken[outer, inner] places inner between two outer's."
-
 WordToken::usage = "WordToken[n] represents n words separated by spaces\nWordToken[m,n] represents m to n words separated by spaces."
-
 SynonymToken::usage = "SynonymToken[word] represents a curated set of synonyms for word."
-
 ExpandPattern::usage = "ExpandPattern[source, lp] expands lexical pattern lp into a valid StringExpression with content from source."
-
 LexicalPattern::usage = "LexicalPattern[patt] A wrapper for using lexical patterns in string functions"
 
 (* Format *)
@@ -285,7 +273,8 @@ MassTypeToken[ca_Association][expr_] := MassTypeToken[expr, ca]
 MassTypeToken[expr_, ca_]:= With[
 	{t = Replace[expr, TypeToken[alts_Alternatives] :> ExpandAlternativeTypeTokens[alts], {0, Infinity}]},
 	FixedPoint[
-		Replace[#, TypeToken[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&,
+		(* Replace[#, TypeToken[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&, *)
+		Replace[#, TypeToken[type : (_String | _Containing)] :> UnwrapAlternatives[ca[type]], {0, Infinity}]&,
 		t
 		]
 	]
@@ -342,7 +331,7 @@ TokenPostProcess[expr_] := With[
 		list, 
 			rwb : {Repeated[WordBoundary, {2, Infinity}]} :> 
 				Splice[Riffle[rwb, " "]]
-  ] // ListToStringExpression
+	] // ListToStringExpression // ReplaceAll[HoldPattern[Verbatim[Alternatives][s_String]] :> s]
 ]
 
 $LPS = LexicalPatternDelimiter["Start"]
