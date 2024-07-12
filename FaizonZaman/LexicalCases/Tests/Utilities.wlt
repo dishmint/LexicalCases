@@ -119,29 +119,25 @@ TestCreate[
 
 TestCreate[
 	ExpandPattern[$SampleParagraph, BoundToken[TypeToken["Adjective" | "Noun"], " computer "]],
-	(WordBoundary ~~ "past" | "few" | "blank" | "single" ~~ 
-    WordBoundary) | (WordBoundary ~~ 
-    "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
-     "front" | "day" | "mind" | "type" | "word" | "process" | 
-     "hours" | "computer" | "today" | "blank" ~~ 
-    WordBoundary) ~~ " computer " ~~ (WordBoundary ~~ 
-    "past" | "few" | "blank" | "single" ~~ 
-    WordBoundary) | (WordBoundary ~~ 
-    "words" | "fingers" | "weeks" | "writer" | "block" | "screen" | 
-     "front" | "day" | "mind" | "type" | "word" | "process" | 
-     "hours" | "computer" | "today" | "blank" ~~ WordBoundary),
+	("past" | "few" | "blank" | "single") | ("words" | "fingers" | 
+    "weeks" | "writer" | "block" | "screen" | "front" | "day" | 
+    "mind" | "type" | "word" | "process" | "hours" | "computer" | 
+    "today" | "blank") ~~ " computer " ~~ ("past" | "few" | "blank" | 
+    "single") | ("words" | "fingers" | "weeks" | "writer" | "block" | 
+    "screen" | "front" | "day" | "mind" | "type" | "word" | 
+    "process" | "hours" | "computer" | "today" | "blank"),
     "TestID" -> "Utilities-ExpandPattern-Test1"
 ]
 
 TestCreate[
 	ExpandPattern["this is the best music ever.", TypeToken["Adjective"] ~~ " music"],
-	WordBoundary ~~ Alternatives["best"] ~~ WordBoundary ~~ " music",
+	"best music",
     "TestID" -> "Utilities-ExpandPattern-Test2"
 ]
 
 TestCreate[
 	ExpandPattern["to be.", WordToken[1] ~~ TypeToken["Verb"]],
-	WordBoundary ~~ WordCharacter.. ~~ WordBoundary ~~ " " ~~ WordBoundary ~~ Alternatives["be"] ~~ WordBoundary,
+	WordBoundary ~~ WordCharacter .. ~~ WordBoundary ~~ "be",
     "TestID" -> "Utilities-ExpandPattern-Test3"
 ]
 
