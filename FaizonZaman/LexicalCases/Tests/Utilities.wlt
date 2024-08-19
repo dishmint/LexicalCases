@@ -156,13 +156,13 @@ TestCreate[
 ]
 
 TestCreate[
-	StringPosition[$SampleParagraph, LexicalPattern[TypeToken["Determiner"] ~~ TypeToken["Adjective"] ~~ " screen " ~~ TypeToken["Preposition" | "Verb"]]],
+	StringPosition[$SampleParagraph, LexicalPattern[TypeToken["Determiner"] ~~ " " ~~ TypeToken["Adjective"] ~~ " screen " ~~ TypeToken["Preposition" | "Verb"]]],
 	{{144, 160}, {176, 201}},
     "TestID" -> "Utilities-LexicalPattern-Test3"
 ]
 
 TestCreate[
-	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TypeToken["Verb"] ~~ TypeToken["Adverb"]]],
+	StringMatchQ["Alice walked quickly", LexicalPattern["Alice " ~~ TypeToken["Verb"] ~~ " " ~~ TypeToken["Adverb"]]],
 	True,
     "TestID" -> "Utilities-LexicalPattern-Test4"
 ]
