@@ -53,7 +53,7 @@ startTrim[False] := 0
 endTrim[True] := -1
 endTrim[False] := 0
 
-TrimMatchPositions[m_String, psns : {{_, _} ..}] := Map[p |-> Through[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}[m]] +p][psns]
+TrimMatchPositions[m_String, psns : {{_, _} ..}] := Map[pos |-> Comap[{startTrim@*StringStartsQ[" "], endTrim@*StringEndsQ[" "]}][m] + pos][psns]
 
 TrimMatchPositions[_,p_]:= p
 
