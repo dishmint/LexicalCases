@@ -320,10 +320,10 @@ MassSynonymToken[expr_] := expr /. $SynonymTokenRules
 
 MassTokens[content_Association] := (MassSynonymToken@*MassWordToken@*MassTypeToken[content])
 
-StartContext[content_][a:anchor[seq__], after__] := MassOptionalToken@StringExpression[MassTokens[content]@a, after]
-MiddleContext[content_][before__, a:anchor[seq__], after__] := MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
-EndContext[content_][before__, a:anchor[seq__]] := MassOptionalToken@StringExpression[before, MassTokens[content]@a]
-SingletonContext[content_][a:anchor[seq__]] := MassOptionalToken@StringExpression[MassTokens[content]@a]
+StartContext[content_][a:anchor[seq__], after__] := MassSynonymToken@MassWordToken@MassOptionalToken@StringExpression[MassTokens[content]@a, after]
+MiddleContext[content_][before__, a:anchor[seq__], after__] := MassSynonymToken@MassWordToken@MassOptionalToken@StringExpression[before, MassTokens[content]@a, after]
+EndContext[content_][before__, a:anchor[seq__]] := MassSynonymToken@MassWordToken@MassOptionalToken@StringExpression[before, MassTokens[content]@a]
+SingletonContext[content_][a:anchor[seq__]] := MassSynonymToken@MassWordToken@MassOptionalToken@StringExpression[MassTokens[content]@a]
 
 TokenPostProcess[expr_] := With[
 	{list = StringExpressionToList@expr},
