@@ -48,8 +48,8 @@
    "FileHash" -> "AQk/TBfKSmgCdhKiwli7qQSfsKHGk89zyrDlZXjY0yQ="|>, 
  "English/ReferencePages/Symbols/ToLexicalPattern.nb" -> 
   <|"Result" -> Success["ProcessedNotebook", <|"Action" -> "Build", 
-      "Time" -> Quantity[1.301405, "Seconds"]|>], 
-   "FileHash" -> "f1gvwoqja3nFgqB2/nL7gwT6KQtL3ZwsK/bgFiZoHko="|>, 
+      "Time" -> Quantity[1.851772, "Seconds"]|>], 
+   "FileHash" -> "Wd4noVgaG4BO6lXWlqYnT7++cbUVuFG1JqfmAwOVm3M="|>, 
  "English/ReferencePages/Symbols/WordToken.nb" -> 
   <|"Result" -> Success["BuildDocumentationNotebook", 
      <|"Time" -> Quantity[1.389043, "Seconds"]|>], 
