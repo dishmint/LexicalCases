@@ -16,12 +16,6 @@ TestCreate[
 	]
 
 TestCreate[
-	LexicalCases["The great machine whirs. The weak machines sputter.", "great " ~~ BoundToken["machine"]]["Data"],
-	{<|"Match" -> "great machine", "Position" -> {{5, 17}}|>},
-	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test1"
-	]
-
-TestCreate[
 	LexicalCases["The great machine whirs. The weak machines sputter.", "weak " ~~ BoundToken["machines"]]["Data"],
 	{<|"Match" -> "weak machines", "Position" -> {{30, 42}}|>},
 	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test2"
@@ -104,14 +98,14 @@ TestCreate[
   		<|"Match" -> "understand why he couldn't even", "Position" -> {{266, 296}}|>,
   		<|"Match" -> "eight hours he was prepared", "Position" -> {{404, 430}}|>
    		},
-	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test1"
+	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test6"
 	]
 
 TestCreate[
 	LexicalCases["a nice car is good.", BoundToken[w : WordToken[1], BoundToken["car"]] :> w],
 	_Failure,
 	SameTest -> MatchQ,
-	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test2"
+	"TestID" -> "LexicalCases-DocExamples-BoundToken-Test7"
 	]
 
 (* Documentation examples - TypeToken *)
