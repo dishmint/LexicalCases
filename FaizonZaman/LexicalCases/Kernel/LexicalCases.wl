@@ -556,7 +556,7 @@ iReformToken[expr_, content_] /; Not@*FreeQ[TypeToken|WordToken|OptionalToken|Bo
 				{
 					{$LPS, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], after__, $LPE} :>
 						StartContext[content][anchor[seq], after],
-						(* [^] Reform tokens appearing at the begining of the lexical pattern *)
+						(* [^] Reform tokens appearing at the beginning of the lexical pattern *)
 					{$LPS, before__, seq:Longest[Repeated[$UnpatternPattern[(TypeToken|WordToken|OptionalToken|BoundToken|SynonymToken)[__]]]], $LPE} :>
 						EndContext[content][before, anchor[seq]],
 						(* [^] Reform tokens appearing at the end of the lexical pattern *)
