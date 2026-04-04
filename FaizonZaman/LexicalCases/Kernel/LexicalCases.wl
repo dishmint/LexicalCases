@@ -168,7 +168,7 @@ FormatToken[FixedOrder[args__]] := TextElement[
 	Map[FormatToken][{args}],
 	<|"GrammaticalUnit" -> "FixedOrder"|>
 ]
-(* [^] Format args an a FixedOrder GU *)
+(* [^] Format args as a FixedOrder GU *)
 
 FormatToken[HoldPattern[WordToken[1]]] := TextElement[{1}, <|"GrammaticalUnit" -> "Word"|>];
 (* [^] Format Word Tokens *)
