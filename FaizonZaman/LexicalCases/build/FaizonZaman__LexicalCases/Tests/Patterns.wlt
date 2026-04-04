@@ -89,7 +89,8 @@ TestCreate[
 
 TestCreate[
 	ExpandPattern["nice computer big", BoundToken[TypeToken["Adjective"|"Noun"]," computer "]],
-	("nice" | "big") | "computer" ~~ " computer " ~~ ("nice" | "big") | "computer",
+	((WordBoundary ~~ ("nice" | "big") ~~ WordBoundary) | (WordBoundary ~~ "computer" ~~ WordBoundary)) ~~ " computer " ~~
+		((WordBoundary ~~ ("nice" | "big") ~~ WordBoundary) | (WordBoundary ~~ "computer" ~~ WordBoundary)),
 	"TestID" -> "ExpandPattern-BoundToken-Test2"
 ]
 

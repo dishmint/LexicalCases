@@ -404,8 +404,7 @@ MassTypeToken[expr_, ca_] :=
 			(* [^] Expand TypeToken[A|B|C] -> TypeToken[A]|... *)
 		},
 		FixedPoint[
-			(* Replace[#, TypeToken[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]&, *)
-			Function[Replace[#, TypeToken[type : (_String | _Containing)] :> UnwrapAlternatives[ca[type]], {0, Infinity}]],
+			Function[Replace[#, TypeToken[type : (_String | _Containing)] :> BoundedWord[UnwrapAlternatives[ca[type]]], {0, Infinity}]],
 			(* [^]  Replace TypeTokens with content via ca lookup on type *)
 			expandedTypeTokenAlts
 		]
@@ -653,7 +652,7 @@ ExpandPattern[sourcetext_String, se_?LexicalPatternQ] :=
 		(* [^] Recursively expands `se` until reaching a fixed point *)
 
 		(* [3] -- Expand BoundToken's *)
-		trx = iExpandPattern[rft]
+		trx = TokenPostProcess[iExpandPattern[rft]]
 	]
 
 (* Wikipedia *)
