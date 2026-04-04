@@ -620,7 +620,7 @@ ContentAssociation[sourcetext_String, se_] :=
 		typecontent = TextCases[sourcetext, ExtractContentTypes[se]];
 		(* [^] Get all the instances of text types from the source text *)
 		(* [2] -- Prune and sibling the content *)
-		valuealts = KeyValueMap[<|#1 -> Apply[Alternatives] @* DeleteDuplicates @ #2|>&][typecontent];
+		valuealts = KeyValueMap[<|#1 -> (Apply[Alternatives] @* DeleteDuplicates) @ #2|>&][typecontent];
 		(* [^] Map text-type to their instance-alternatives: Adjective -> cool|scary|fun *)
 		(* [3] -- Merge contents with the same key *)
 		mergeonkey = Merge[Identity] @ valuealts;
