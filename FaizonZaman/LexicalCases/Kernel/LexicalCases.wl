@@ -306,7 +306,7 @@ Repattern[expr_] :=
 	(* [^] Replace the inert head unpatterned with Pattern to reinstate original expr *)
 $UnpatternPattern[tok_] :=
 	(tok|unpatterned[uname_, tok])
-	(* [^] A pattern containing a token or an unpatterened token *)
+	(* [^] A pattern containing a token or an unpatterned token *)
 
 (* Generic Whitespace wrapping *)
 (* iWrapSpace[tk_, String] := BoundedToken[" ", tk] 
